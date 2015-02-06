@@ -22,4 +22,7 @@ Sections we need:
   `/articles/my-cool-new-irssi-feature/` where the directory contains an
   index.markdown with the article itself. The individual article directory can
   contain images and everything else needed to make the article look shiny.
+- Fancy "how to install irssi page" with the various popular distributions
+  listed + how to do it directly from Git. ahf quite likes something like
+  https://mosh.mit.edu
 - More ideas? :-)
