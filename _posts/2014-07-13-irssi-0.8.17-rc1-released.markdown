@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Irssi 0.8.17-rc1 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+Irssi 0.8.17-rc1 has been released. The changes includes bug fixes,
+documentation cleanup, 256 colour support, truecolour support and various other
+enhancements. Check out the NEWS file for all changes and please report bugs
+back to us.
+
+The release can be downloaded from
+[http://irssi.org/files/irssi-0.8.17-rc1.tar.gz](http://irssi.org/files/irssi-0.8.17-rc1.tar.gz).
+
+This is the first release candidate of Irssi after we moved to Github which
+means your feedback is much valued. Bugs can be reported via our [issue
+tracker](https://github.com/irssi/irssi/issues).

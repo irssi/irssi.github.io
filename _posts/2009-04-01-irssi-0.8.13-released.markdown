@@ -1,0 +1,44 @@
+---
+layout: post
+title: "Irssi 0.8.13 Released"
+author: "Geert Hauwaerts"
+email: "geert@irssi.org"
+---
+
+It has been a while since we last released. First off, this is ***NOT*** an
+April Fool's joke! Irssi 0.8.13 is out and we ask that you check the [NEWS
+file](/news/ChangeLog) for changes!
+
+It can be downloaded from
+[http://irssi.org/files/irssi-0.8.13.tar.gz](http://irssi.org/files/irssi-0.8.13.tar.gz).
+
+This release was brought to you by the Irssi Core Development teams tears, sweat
+and hard work and with invaluable contributions from our fabulous users. We'd
+also like to take this opportunity to welcome two new developers to the team;
+***Alexander Færøy (ahf)*** and ***Tom Wesley (tomaw)***
+
+Alexander has been involved with Irssi for a while and joined the development
+team back in October 2008. He's also involved with the [Exherbo
+project](http://www.exherbo.org/) and he will be implementing some nifty new
+features for the next release! So keep your eyes peeled on the changelog and
+look out for his contributions!
+
+Tom has also been around for some time, a long time Irssi user who over the
+years has dedicated much of his time to helping other users and easing the load
+on developers in the various #irssi support channels. He's recently agreed to
+take over the responsibility of maintaining the Scripts & Themes archives, so if
+you have updates, new scripts or themes and you would like them added to the
+site he's the person to talk to!
+
+So, here's to Alex and Tom, two valuable contributors -- Welcome to the team!
+
+If you want to get involved with Irssi, please get in touch with us! You can do
+so by having a chat with us in [#irssi @ IRCnet](irc://irc.ircnet.com/irssi) or
+by starting work on some of the outstanding issues in the [Irssi
+bug](https://github.com/irssi/irssi/issues) list! We don't bite, much! ;)
+
+If you just *love* Irssi you might want to join our [LinkedIn
+group](http://www.linkedin.com/groups?gid=147751) or the [Facebook fan
+page](http://www.facebook.com/pages/IRSSI/40806744458?ref=mf).
+
+The Irssi Team.

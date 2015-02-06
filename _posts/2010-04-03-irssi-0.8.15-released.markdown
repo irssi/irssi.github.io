@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Irssi 0.8.15 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+The Irssi team is pleased to announce the 0.8.15 release of Irssi. It has been
+quite some time since our last release and there has been various
+feature enhancements and bugfixes added since then.
+
+This release fixes two security issues: The first being that Irssi didn't check
+hostname on SSL connections and the other being a hard to exploit remote crash
+bug.
+
+For a complete listing of the changes and bugfixes since 0.8.14, please have a
+look at the [ChangeLog](/news/ChangeLog).
+
+Remember to check out Irssi's [Facebook fan page](http://www.facebook.com/irssi)
+and [LinkedIn](http://www.linkedin.com/groups?gid=147751) as well.
+
+The Irssi Team.

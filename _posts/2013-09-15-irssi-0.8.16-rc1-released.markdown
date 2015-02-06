@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Irssi 0.8.16-rc1 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+Irssi 0.8.16-rc1 has been released. The changes are mostly bugfixes,
+experimental DANE support and other small enhancements. Check the NEWS file for
+all changes and please report bugs back to us.
+
+The release can be downloaded from
+[http://irssi.org/files/irssi-0.8.16-rc1.tar.gz](http://irssi.org/files/irssi-0.8.16-rc1.tar.gz).
+
+Remember to check out Irssi's [Facebook fan
+page](http://www.facebook.com/irssi), [Google+
+Community](https://plus.google.com/communities/112792798498391615694) and
+[LinkedIn group](http://www.linkedin.com/groups?gid=147751) as well.
+
+The Irssi Team.

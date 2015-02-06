@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Irssi 0.8.17 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+Irssi 0.8.17 has been released. This release contains many new goodies
+including documentation cleanup, 256 colour support, truecolour support and
+tons of other smaller enhancements. For a complete list of changes and
+bugfixes, since 0.8.16, please have a look at the [ChangeLog](/news/ChangeLog).
+
+The release can be downloaded from [our download page](/download).
+
+Please report bugs at our [Github issue tracker](https://github.com/irssi/irssi/issues).
+
+Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
+[LinkedIn group](http://www.linkedin.com/groups?gid=147751), [Twitter
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on freenode.
+
+The Irssi Team.
