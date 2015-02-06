@@ -1,7 +1,10 @@
 Irssi.org
 =========
 
-Nothing to see here, yet ;-)
+We need a new shiny website! We would like help with that. We want a
+bootstrap-based, statically-generated, Jekyll-based website :-)
+
+Join us in `#irssi` on freenode, if you are interested in helping out.
 
 # What do we want?
 
