@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Irssi 0.8.12-rc1 Released"
+author: "Geert Hauwaerts"
+email: "geert@irssi.org"
+---
+
+Irssi 0.8.12-rc1 has been released. The changes are mostly bugfixes, and small
+improvements, so it should be quite safe to upgrade. Check the [NEWS
+file](/news/ChangeLog) for all changes!
+
+It can be downloaded from
+[http://irssi.org/files/irssi-0.8.12-rc1.tar.gz](http://irssi.org/files/irssi-0.8.12-rc1.tar.gz).
+
+The Irssi Team.

@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Irssi 0.8.17-rc2 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+Irssi 0.8.17-rc2 has been released. The changes mostly include stabilisation
+fixes reported by you guys after the RC1 release. Check out the NEWS file for
+all changes and please report bugs back to us.
+
+The release can be downloaded from
+[http://irssi.org/files/irssi-0.8.17-rc2.tar.gz](http://irssi.org/files/irssi-0.8.17-rc2.tar.gz).
+
+Please continue reporting bugs at our [issue
+tracker](https://github.com/irssi/irssi/issues).
+
+The Irssi project have also got an offical Twitter profile. Follow us at
+[@IrssiProject](https://twitter.com/IrssiProject).
