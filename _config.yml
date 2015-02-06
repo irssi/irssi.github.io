@@ -4,7 +4,10 @@ lsi: false
 safe: true
 
 baseurl: ""
-title: The Irssi Project
+url: "http://irssi.github.io"
+
+title: Irssi
+project: The Irssi Project
+description: The Client of the Future
 name: Irssi Core Team
 email: staff@irssi.org
-url: "http://irssi.github.io"
