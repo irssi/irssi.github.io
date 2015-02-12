@@ -8,7 +8,8 @@
             {{ node.author }}
         {% endif %}
 
-        on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html ordinalize=node.date | date: "%-d" %}</sup>
+		{% assign ordinalize = node.date | date: "%-d" %}
+        on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html ordinalize=ordinalize %}</sup>
         {{ node.date | date: "%Y" }}
     </small>
 </p>
