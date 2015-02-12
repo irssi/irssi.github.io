@@ -10,10 +10,9 @@ possible on github pages (unless built locally and pushed there).
         {% else %}
             {{ node.author }}
         {% endif %}
-        {% if node.date %}
-            {% assign ordinal=node.date | ordinal  %}
-            on {{ node.date | date: "%B %-d" }}{% if ordinal != node.date %}<sup>{{ ordinal }}</sup>{% endif %}
-            {{ node.date | date: "%Y" }}
-        {% endif %}
+
+        {% assign ordinalize=node.date | date: "%-d" %}
+        on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html %}</sup>
+        {{ node.date | date: "%Y" }}
     </small>
 </p>
