@@ -1,3 +1,9 @@
 body {
     padding-top: 50px;
+    overflow-y: scroll;
+}
+
+
+iframe {
+    max-width: 100%;
 }
