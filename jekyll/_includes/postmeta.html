@@ -1,0 +1,19 @@
+{% comment %}
+This will use the ordinal plugin when it's available. This is not
+possible on github pages (unless built locally and pushed there).
+{% endcomment %}
+<p>
+    <small>
+        Posted by
+        {% if node.email %}
+            <a href="mailto:{{ node.email }}">{{ node.author }}</a>
+        {% else %}
+            {{ node.author }}
+        {% endif %}
+        {% if node.date %}
+            {% assign ordinal=node.date | ordinal  %}
+            on {{ node.date | date: "%B %-d" }}{% if ordinal != node.date %}<sup>{{ ordinal }}</sup>{% endif %}
+            {{ node.date | date: "%Y" }}
+        {% endif %}
+    </small>
+</p>
