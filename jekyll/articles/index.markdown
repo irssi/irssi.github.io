@@ -7,5 +7,5 @@ Articles
 ========
 
 {% for article in site.articles %}
-- [{{ article.title }}]({{ article.url }})
+- [{{ article.title }}]({{ site.baseurl }}{{ article.url }})
 {% endfor %}
