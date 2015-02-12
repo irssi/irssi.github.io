@@ -2,14 +2,18 @@
 <p>
     <small>
         Posted by
-        {% if node.email %}
+        {% if node.web %}
+            <a href="{{ node.web }}">{{ node.author }}</a>
+        {% elsif node.email %}
             <a href="mailto:{{ node.email }}">{{ node.author }}</a>
         {% else %}
             {{ node.author }}
         {% endif %}
 
-		{% assign ordinalize = node.date | date: "%-d" %}
-        on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html ordinalize=ordinalize %}</sup>
-        {{ node.date | date: "%Y" }}
+        {% if node.date %}
+            {% assign ordinalize = node.date | date: "%-d" %}
+            on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html ordinalize=ordinalize %}</sup>
+            {{ node.date | date: "%Y" }}
+        {% endif %}
     </small>
 </p>
