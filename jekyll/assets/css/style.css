@@ -4,12 +4,19 @@ body {
 }
 
 
+/* This is for mobile devices and the size of the youtube video */
 iframe {
     max-width: 100%;
 }
 
+/* Better color for linked headers */
 h1 a,
 h2 a,
 h3 a {
     color: #333;
+}
+
+/* Position the irssi logo */
+.navbar-brand img {
+    margin-top: -14px;
 }
