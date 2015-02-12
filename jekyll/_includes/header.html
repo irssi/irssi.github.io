@@ -1,20 +1,38 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle" id="navbar-toggle">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img alt="Irssi Logo" class="navbar-irssi-logo" src="/assets/logo.png">
-                {{ site.title }}
+                {% comment %}{{ site.title }}{% endcomment %}
             </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="/">News</a></li>
+                {% comment %}
+                    Exclude the news feed and the paginated news pages.
+                {% endcomment %}
+                {% for node in site.pages %}
+                    {% if node.title != "News" and node.title != "News Feed" %}
+                        {% if page.url == node.url %}
+                            <li class="active">
+                                <a href="{{ node.url }}" class="active">{{ node.title }}</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{{ node.url }}">{{ node.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                <li><a href="http://scripts.irssi.org/">Scripts</a></li>
+                <li><a href="https://github.com/irssi/irssi/issues">Bugs</a></li>
             </ul>
         </div>
     </div>

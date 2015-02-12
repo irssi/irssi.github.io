@@ -2,5 +2,6 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
-{{ page.content|markdownify }}
+<h1>{{ page.title }}</h1>
+{% include postmeta.html node=page %}
+{{ page.content | markdownify }}
