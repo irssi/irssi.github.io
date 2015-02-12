@@ -1,7 +1,7 @@
 permalink: "/:year/:month/:day/:title"
 exclude: ["README.markdown"]
 lsi: false
-safe: true
+safe: false
 
 baseurl: ""
 url: "http://irssi.github.io"
