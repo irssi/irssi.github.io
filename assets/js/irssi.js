@@ -7,7 +7,7 @@ function initMenu() {
         // IE10+
         menu.classList.toggle("collapse");
     });
-};
+}
 
 // IE9+
 document.addEventListener("DOMContentLoaded", function(event) {
