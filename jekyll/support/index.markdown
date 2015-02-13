@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Support
+permalink: support/
 ---
 
 - [Mailing lists](mailinglists)
