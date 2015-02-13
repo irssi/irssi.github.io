@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Irssi
+permalink: about/
 ---
 
 Introduction
