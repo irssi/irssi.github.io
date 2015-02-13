@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Hacking irssi.org"
-author: "Nicolas Kuttler"
-email: "irssi@kuttler.eu"
-web: "http://kuttler.eu"
+title: Hacking irssi.org
+author: Nicolas Kuttler
+web: http://kuttler.eu
 ---
 
 Get a local copy
