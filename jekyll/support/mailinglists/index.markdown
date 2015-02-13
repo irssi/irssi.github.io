@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Mailing lists
+permalink: support/mailinglists/
 ---
 
 irssi-users
