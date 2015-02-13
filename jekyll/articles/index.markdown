@@ -1,6 +1,6 @@
 ---
-title: Articles
 layout: default
+title: Articles
 ---
 
 Articles

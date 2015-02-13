@@ -1,9 +1,8 @@
 ---
 layout: post
-title: "Contributing articles to irssi.org"
-author: "Nicolas Kuttler"
-email: "irssi@kuttler.eu"
-web: "http://kuttler.eu"
+title: Contributing articles to irssi.org
+author: Nicolas Kuttler
+web: http://kuttler.eu
 ---
 
 Forking the upstream repository
@@ -26,3 +25,4 @@ TODO
 - We could build a form with a [markdown editor](http://vuejs.org/examples/),
   where should we submit it to though?
 - Policy for images and other included content?
+- Email and web address and are optional
