@@ -1,6 +1,7 @@
 ---
 layout: page
 title: IRC
+permalink: support/irc/
 ---
 
 Official international channels
