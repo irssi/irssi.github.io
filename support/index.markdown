@@ -2,16 +2,18 @@
 layout: page
 title: Support
 permalink: support/
+categories: [ _nav ]
 ---
-
+- [FAQ](/documentation/faq)
+- [Startup How-To](/documentation/startup)
 - [Mailing lists](mailinglists)
-- [IRC](irc)
+- [`#irssi` IRC](irc)
 
-If your irssi crashes, it's always a bug. Please read bugreporting howto
+If your irssi crashes, it's always a bug. Please read [bugreporting howto](/documentation/crash)
 and send one. For other type of bugs, it would still be nice to hear of them,
-but chances are that it's already known. You could check the TODO file which
-comes with irssi if it's already there. Send all bugreports to irssi's bug
-reporting system.
+but chances are that it's already known. Send all bugreports to irssi's [bug
+reporting system](//github.com/irssi/irssi/issues), but check if it has already
+been reported first.
 
 Compiling problems
 ------------------
@@ -22,12 +24,12 @@ problems.
 Still problems?
 ---------------
 
-Read [FAQ]()
+Read the [FAQ](/documentation/faq)
 before asking anything.
-[Startup-HOWTO]() is quite useful as well.
+The [Startup How-To](/documentation/startup) is quite useful as well.
 And if you just want to know about some setting, you could very well guess
 it yourself too, like if you want to change something related to windows,
 try `/SET window`.
 
-If you still haven't found what you're looking for, you can send mail to
-[mailing lists](mailinglists/), or join to #irssi.
+If you still haven't found what you're looking for, and googling didn't help either,
+try asking on IRC in `#irssi`.

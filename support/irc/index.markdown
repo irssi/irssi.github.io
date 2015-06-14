@@ -4,21 +4,21 @@ title: IRC
 permalink: support/irc/
 ---
 
-Official international channels
+Official international channel
 -------------------------------
 
-- \#irssi at IRCnet - English only
-- \#irssi at EFnet - English only
+- \#irssi at [Freenode](http://freenode.net/)- English only
 
-Non-English channels
---------------------
+Other channels
+--------------
 
-- \#irssi.fi at IRCnet - Finnish
-- \#irssi.de at IRCnet - German
-- \#irssi.pl at IRCnet - Polish
+Many other networks like IRCnet, EFNet or QuakeNet also have `#irssi` channels.
 
-There are also some active non-official channels in other networks, eg.
-Freenode and QuakeNet.
+There may be some international channels on IRCnet, like
+
+- \#irssi.fi - Finnish
+- \#irssi.de - German
+- \#irssi.pl - Polish
 
 If you have something to ask, **please JUST ASK instead of asking if you
 can ask or if someone can help or if anyone is there**.
@@ -26,8 +26,10 @@ can ask or if someone can help or if anyone is there**.
 Servers
 -------
 
+To connect with Freenode, `/connect Freenode` or `/connect chat.freenode.net`
+
 Most IRCnet servers aren't open for everyone, so if you're having trouble
 finding one, use open.ircnet.net which resolves to a number of open IRCnet
 servers that you should be able to use.
 
-For EFNet, use `irc.efnet.net`. Most countries have an `irc.efnet.TLD`.
+For EFNet, use `irc.efnet.org`, or check their website for more servers.
