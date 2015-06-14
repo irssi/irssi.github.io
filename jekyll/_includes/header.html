@@ -18,21 +18,25 @@
                 {% comment %}
                     Exclude the news feed and the paginated news pages.
                 {% endcomment %}
-                {% for node in site.pages %}
-                    {% if node.title != "News" and node.title != "News Feed" %}
-                        {% if page.url == node.url %}
-                            <li class="active">
-                                <a href="{{ site.baseurl }}{{ node.url }}" class="active">{{ node.title }}</a>
-                            </li>
-                        {% else %}
-                            <li>
-                                <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
-                            </li>
-                        {% endif %}
-                    {% endif %}
+                {% capture pageidx %}{% include weighted_sorted_pages.html %}{% endcapture %}{% assign pageidx = pageidx | strip_newlines | split:',' %}
+                {% assign ap = site.pages %}
+                {% for it in pageidx %}{% assign p_idx = it | times:1 %}{% assign node = ap[p_idx] %}{% comment %}
+                {% endcomment %}
+                {% if node.categories contains "_nav" %}
+                {% if page.url == node.url %}
+                <li class="active">
+                    <a href="{{ site.baseurl }}{{ node.url }}" class="active">{{ node.title }}</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+                </li>
+                {% endif %}
+                {% endif %}
                 {% endfor %}
-                <li><a href="http://scripts.irssi.org/">Scripts</a></li>
-                <li><a href="https://github.com/irssi/irssi/issues">Bugs</a></li>
+                <li><a rel="external" href="/themes/">Themes</a></li>
+                <li><a rel="external" href="http://scripts.irssi.org/">Scripts</a></li>
+                <li><a rel="external" href="https://github.com/irssi/irssi/issues">Bugs</a></li>
             </ul>
         </div>
     </div>

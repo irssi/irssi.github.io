@@ -3,6 +3,14 @@ body {
     overflow-y: scroll;
 }
 
+/* fix for anchored links to scroll the top bar */
+*[id]:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -65px; 
+  height: 65px; 
+  visibility: hidden; 
+}
 
 /* This is for mobile devices and the size of the youtube video */
 iframe {
@@ -23,4 +31,29 @@ h3 a {
 
 footer {
     margin-top: 20ex;
+}
+
+/* Out of site link */
+a[rel="external"],a.rel-external {
+  padding-right: 10px;
+}
+
+.navbar-nav a[rel="external"] {
+  padding-right: 10px;
+}
+
+a[rel="external"]:after,a.rel-external:after {
+  position: absolute;
+  font-family: 'Glyphicons Halflings';
+  content: "\e164"; /* glyphicon-new-window */
+  padding-left: 2px;
+  font-size: 51%;
+}
+
+.navbar-nav a[rel="external"]:after {
+    font-size: 100%;
+}
+
+a[rel="external"]:hover:after,a.rel-external:hover:after {
+  text-decoration: none;
 }

@@ -10,7 +10,7 @@ fixes reported by you guys after the RC1 release. Check out the NEWS file for
 all changes and please report bugs back to us.
 
 The release can be downloaded from
-[http://irssi.org/files/irssi-0.8.17-rc2.tar.gz](http://irssi.org/files/irssi-0.8.17-rc2.tar.gz).
+[our releases page](//github.com/irssi-import/irssi/releases).
 
 Please continue reporting bugs at our [issue
 tracker](https://github.com/irssi/irssi/issues).

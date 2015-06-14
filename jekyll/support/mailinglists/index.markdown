@@ -13,7 +13,7 @@ irssi-users
 - [Unsubscribe](mailto:irssi-users-request@dragoncat.net?subject=unsubscribe)
   with subject **unsubscribe** (same email as above).
 - [Send mails](irssi-users@dragoncat.net) to **irssi-users@dragoncat.net**.
-- [Read](http://www.dragoncat.net/lists/irssi-users) the irssi-users archives.
+- [Read](http://marc.info/?l=irssi-users) the irssi-users archives.
 
 irssi-dev
 ---------
@@ -24,4 +24,4 @@ irssi-dev
 - [Unsubscribe](irssi-dev-request@dragoncat.net?subject=unsubscribe)
   with subject **unsubscribe** (same email as above).
 - [Send](irssi-dev@dragoncat.net) mails to **irssi-dev@dragoncat.net**.
-- [Read](http://www.dragoncat.net/lists/irssi-dev) the irssi-dev archives.
+- [Read](http://marc.info/?l=irssi-dev) the irssi-dev archives.

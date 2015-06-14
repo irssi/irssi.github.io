@@ -11,7 +11,7 @@ enhancements. Check out the NEWS file for all changes and please report bugs
 back to us.
 
 The release can be downloaded from
-[http://irssi.org/files/irssi-0.8.17-rc1.tar.gz](http://irssi.org/files/irssi-0.8.17-rc1.tar.gz).
+[our releases page](//github.com/irssi-import/irssi/releases).
 
 This is the first release candidate of Irssi after we moved to Github which
 means your feedback is much valued. Bugs can be reported via our [issue
