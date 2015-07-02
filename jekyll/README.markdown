@@ -26,3 +26,18 @@ Sections we need:
   listed + how to do it directly from Git. ahf quite likes something like
   https://mosh.mit.edu
 - More ideas? :-)
+
+Things to think about:
+
+- [Permalinks](http://jekyllrb.com/docs/permalinks/) in jekyll are... tricky.
+  The best optioned seemed to be to hardcode a permalink into every page to
+  get [cool URIs](http://www.w3.org/Provider/Style/URI).
+- While jekyll does obfuscate email addresses in markdown, this functionality
+  is not available in filters. Hence contributor's email addresses are
+  on the site.
+- There was some objection to adding {{ site.baseurl }} to links in templates.
+  Using the `<base>` tag does not seem to be a viable option due to the
+  inflexible URI schemes, jekyll doesn't seem to want to generate relative
+  URIs it requires.
+
+These issues might be fixable with or without plugins.

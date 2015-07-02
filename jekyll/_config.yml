@@ -1,10 +1,10 @@
-permalink: "/:year/:month/:day/:title"
+permalink: "/:year/:month/:day/:title/"
 exclude: ["README.markdown"]
 lsi: false
 safe: true
 
 baseurl: ""
-url: "http://irssi.github.io"
+#url: "//irssi-import.github.io"
 
 title: Irssi
 project: The Irssi Project
@@ -12,9 +12,14 @@ description: The Client of the Future
 name: Irssi Core Team
 email: staff@irssi.org
 
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
 paginate: 8
 paginate_path: "news/:num/"
 
 collections:
   articles:
     output: true
+    permalink: "/articles/:title/"
