@@ -3,7 +3,7 @@ function initMenu() {
     var toggle = document.getElementById("navbar-toggle"),
         menu = document.getElementById("navbar");
     toggle.addEventListener('click', function (event) {
-        menu.classList.toggle("collapse");
+        menu.classList.toggle("in");
     });
 }
 

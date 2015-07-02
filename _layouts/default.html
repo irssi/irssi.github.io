@@ -17,6 +17,26 @@
                         client Irssi, for more information see the about
                         section.
                     </p>
+                    <h4 style='margin-bottom:0'>Search this site</h4>
+                    <div><script>
+  (function() {
+    var cx = '013138746835038969445:mlfkigveyj4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox-only></gcse:searchbox-only></div>
+                    <h4>What's new?</h4>
+                    <p><a href="/2014/10/11/irssi-0.8.17-released">Irssi 0.8.17 has been released!</a></p>
+                    {% if page.title contains 'News' %}<div>
+                        <a class="twitter-timeline" data-widget-id="600720083413962752" href="https://twitter.com/IrssiProject" data-screen-name="IrssiProject" height="400">Tweets by @IrssiProject</a>
+                        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                    </div>{% endif %}
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ hostname on SSL connections and the other being a hard to exploit remote crash
 bug.
 
 For a complete listing of the changes and bugfixes since 0.8.14, please have a
-look at the [ChangeLog](/news/ChangeLog).
+look at the [ChangeLog](//github.com/irssi-import/irssi/releases).
 
 Remember to check out Irssi's [Facebook fan page](http://www.facebook.com/irssi)
 and [LinkedIn](http://www.linkedin.com/groups?gid=147751) as well.
