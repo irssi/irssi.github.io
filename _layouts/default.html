@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
     {% include head.html %}
 
     <body>
@@ -32,11 +32,8 @@
 </script>
 <gcse:searchbox-only></gcse:searchbox-only></div>
                     <h4>What's new?</h4>
-                    <p><a href="/2014/10/11/irssi-0.8.17-released">Irssi 0.8.17 has been released!</a></p>
-                    {% if page.title contains 'News' %}<div>
-                        <a class="twitter-timeline" data-widget-id="600720083413962752" href="https://twitter.com/IrssiProject" data-screen-name="IrssiProject" height="400">Tweets by @IrssiProject</a>
-                        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
-                    </div>{% endif %}
+		    {% include sb_whatsnew.html %}
+		    {% include sb_sidebar.html %}
                 </div>
             </div>
         </div>
