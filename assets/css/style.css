@@ -3,14 +3,47 @@ body {
     overflow-y: scroll;
 }
 
+div.jumbotron {
+    padding-top: 16px;
+}
+
+.jumbotron h1 {
+/*font-size: 36px;*/
+    margin-bottom: 0;
+}
+.jumbotron p {
+    font-size: 18px;
+}
+p {
+    text-align: justify;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
+p.center {
+    text-align: center;
+    hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+}
+
+.jumbotron h1, .jumbotron h2 {
+    line-height: 1;
+    margin-top: 0;
+    text-align: center;
+}
+
 /* fix for anchored links to scroll the top bar */
 *[id]:before { 
   display: block; 
   content: " "; 
   margin-top: -65px; 
-  height: 65px; 
-  visibility: hidden; 
+  height: 65px;
+  visibility: hidden;
 }
+#___gcse_0:before { display: inline; }
 
 /* This is for mobile devices and the size of the youtube video */
 iframe {
@@ -33,7 +66,7 @@ footer {
     margin-top: 20ex;
 }
 
-/* Out of site link */
+/* Out of site link image */
 a[rel="external"],a.rel-external {
   padding-right: 10px;
 }
@@ -56,4 +89,61 @@ a[rel="external"]:after,a.rel-external:after {
 
 a[rel="external"]:hover:after,a.rel-external:hover:after {
   text-decoration: none;
+}
+
+/* Reduce navbar spacing on small resolutions,
+   to avoid wrapping */
+@media (max-width:991px) and (min-width:768px) {
+    .nav > li > a {
+        padding-left: 7px;
+        padding-right: 5px;
+	font-size: 98%;
+    }
+    .nav > li > a[rel="external"] {
+        padding-right: 20px;
+    }
+}
+
+/* Select box for settings docs */
+.col-xs-12.col-md-4 select {
+    display: block;
+    background: inherit;
+    border: inherit;
+    width: 11em;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    color: #337ab7;
+}
+
+select .header {
+    text-align: center;
+}
+
+.welcome-img {
+    background-image: url(https://cloud.githubusercontent.com/assets/5665186/4387267/d2401f24-43da-11e4-8753-666ea552580a.png);
+    background-color: #ffeeff;
+    background-repeat: no-repeat;
+    background-position: 5% 95%;
+    box-shadow: 20px 20px 15px black, inset 0 0 10px white;
+    border-radius: 5px;
+    background-blend-mode: darken;
+    transition-duration: 1s;
+}
+
+@media (min-width:992px) {
+    .jumbotron.flex .row {
+	display: flex;
+    }
+}
+
+@media (max-width:991px) {
+    .welcome-img {
+	height: 350px;
+    }
+}
+
+@media (max-width:767px) {
+    .welcome-img {
+	height: 250px;
+    }
 }
