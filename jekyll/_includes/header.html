@@ -14,7 +14,7 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li{% if page.url == "/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/">News</a></li>
+                <li{% if page.url == "/news/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/news">News</a></li>
                 {% comment %}
                     Exclude the news feed and the paginated news pages.
                 {% endcomment %}
@@ -34,7 +34,7 @@
                 {% endif %}
                 {% endif %}
                 {% endfor %}
-                <li><a rel="external" href="/themes/">Themes</a></li>
+                <li><a rel="external" href="//irssi-import.github.io/themes/">Themes</a></li>
                 <li><a rel="external" href="http://scripts.irssi.org/">Scripts</a></li>
                 <li><a rel="external" href="https://github.com/irssi/irssi/issues">Bugs</a></li>
             </ul>
