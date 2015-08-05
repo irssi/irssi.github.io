@@ -95,14 +95,22 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
    to avoid wrapping */
 @media (max-width:991px) and (min-width:768px) {
     .nav > li > a {
-        padding-left: 7px;
-        padding-right: 5px;
-	font-size: 98%;
+        padding-left: 6px;
+        padding-right: 4px;
+	font-size: 95%;
+	letter-spacing: -0.2px;
     }
     .nav > li > a[rel="external"] {
-        padding-right: 20px;
+        padding-right: 18px;
     }
 }
+
+/* Tweak to make the menu visible (otherwise Bugs is cut off) */
+.navbar-fixed-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+  max-height: 390px;
+}
+
 
 /* Select box for settings docs */
 .col-xs-12.col-md-4 select {

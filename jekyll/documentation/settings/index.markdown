@@ -540,7 +540,7 @@ We ask the same respect in return. The Copyright and license notices are at the 
 {:#show_nickmode_empty}
 ` show_nickmode_empty = ON `
 
-> If a person has no chanel modes, prefix their nickname with a blank space. This keeps nicknames of normal people aligned with those of voiced, half-opped, and opped people.
+> If a person has no channel modes, prefix their nickname with a blank space. This keeps nicknames of normal people aligned with those of voiced, half-opped, and opped people.
 
 {:#beep_when_away}
 ` beep_when_away = ON `
