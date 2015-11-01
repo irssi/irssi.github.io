@@ -275,7 +275,7 @@ Status window has message level `ALL -MSGS`, meaning that all messages, except p
 
 ## 6\. How support for multiple servers works in irssi
 
-ircii and several other clients support multiple servers by placing the connection into some window. IRSSI DOES NOT. There is no required relationship between window and server. You can connect to 10 servers and manage them all in just one window, or join channel in each one of them to one sigle window if you really want to. That being said, here's how you do connect to new server without closing the old connection:
+ircii and several other clients support multiple servers by placing the connection into some window. IRSSI DOES NOT. There is no required relationship between window and server. You can connect to 10 servers and manage them all in just one window, or join channel in each one of them to one single window if you really want to. That being said, here's how you do connect to new server without closing the old connection:
 
 
      /CONNECT irc.server.org
