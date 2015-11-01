@@ -461,7 +461,7 @@ Use these settings with HTTP proxies:
 
 
      /SET -clear proxy_password
-     /EVAL SET proxy_string CONNECT %s:%d HTTP/1.0nn
+     /EVAL SET proxy_string CONNECT %s:%d HTTP/1.0\n\n
 
 
 **BNC**
