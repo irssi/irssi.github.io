@@ -155,3 +155,7 @@ select .header {
 	height: 250px;
     }
 }
+
+blockquote {
+    font-size: inherit;
+}
