@@ -7,12 +7,17 @@
 
         <div class="page-content">
             <div class="container">
+                {% if page.sidebar %}
                 <div class="col-xs-12 col-md-8">
                     {{ content }}
                 </div>
                 <div class="col-xs-12 col-md-4">
-		    {% include sb_sidebar.html %}
+                    <br />
+                    {% include {{page.sidebar}} %}
                 </div>
+                {% else %}
+                    {{ content }}
+                {% endif %}
             </div>
         </div>
 

@@ -2,8 +2,8 @@
 layout: page
 title: Settings Documentation
 permalink: documentation/settings/
+sidebar: sb_sidebar_settings.html
 ---
-{% assign sidebar = "xxx" %}
 Irssi 0.8.10 settings notes. Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
 
 This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
