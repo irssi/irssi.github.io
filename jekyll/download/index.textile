@@ -9,8 +9,6 @@ There are several ways you can get Irssi:
 # "Ready-Made Packages":#packages
 # "Compiling from Sources":#sources
 
-* "Miscellaneous Links":#misc
-
 h2(#packages). Distributions' Packages
 
 <div class="row">
@@ -18,7 +16,7 @@ h2(#packages). Distributions' Packages
 
 div{margin-bottom:1ex}. !{padding-right:1ex}/assets/Windows.png!*Windows*
 
-p. Dowload setup.exe from "(rel-external)Cygwin":https://www.cygwin.com/ and select irssi during the package selection step. To start irssi, open MinTTY (link should be on your Desktop) and type @irssi@
+p. Download setup.exe from "(rel-external)Cygwin":https://www.cygwin.com/ and select irssi during the package selection step. To start irssi, open MinTTY (link should be on your Desktop) and type @irssi@
 
 </div>
 <div class="col-md-4">
@@ -31,18 +29,20 @@ You may find more up to date version on "(rel-external)Debian Backports":http://
 </div>
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/gentoo.png!*Gentoo*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*OS X*
 
-@emerge irssi@
+Install "(rel-external)Homebrew":http://brew.sh/, then
+@brew install irssi@
+You can also install Git with @--HEAD@
 
 </div>
 </div>
 <div class="row">
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/slackware.png!*Slackware*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/gentoo.png!*Gentoo*
 
-@slackpkg install irssi@
+@emerge irssi@
 
 </div>
 <div class="col-md-4">
@@ -79,27 +79,18 @@ div{margin-bottom:1ex}. !{padding-right:1ex}/assets/opencsw.png!*Solaris*
 </div>
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*Apple MacOS*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/slackware.png!*Slackware*
 
-Install "(rel-external)Homebrew":http://brew.sh/, then
-@brew install irssi@.
-You can also install Git with:
-@brew install --HEAD irssi@
+@slackpkg install irssi@
 
 </div>
 </div>
 
 h2(#sources). Sources
 
-h3. Sources for the latest release
-
 Latest release version: *0.8.17* - "(rel-external)Downloads"://github.com/irssi-import/irssi/releases
 
-They sources are pretty easy to compile once you have all the prerequisites:
-
-bc. ./configure && make && sudo make install
-  
-but read the included @INSTALL@ file if you get into trouble.
+See the included "(rel-external)INSTALL"://github.com/irssi/irssi/blob/master/INSTALL file for building instructions
 
 To verify the signatures:
 
@@ -111,27 +102,15 @@ bc. gpg --verify irssi-0.8.17.tar.gz.asc
 
 (This key is different from the one used to sign binaries of versions before 0.8.10. More gpg help can be found from GPG manual)
 
-
-"(rel-external)GLIB":https://developer.gnome.org/glib/ (at least version 2.0) is required to compile Irssi
-
 h3. Development sources
 
-"Git":1 - You can also get the development version. To check it out, run
+"(rel-external)Git":1 - You can also get the development version. To check it out, run
 
 bc. git clone https://github.com/irssi/irssi
   
 After check-out, you *must* run @./autogen.sh@. It may be necessary to install additional packages. More information can be found on "(rel-external)the wiki.":https://github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
 
-*Note*, the @INSTALL@ document is **not** valid for Git clones, only for release tarballs (even though it is also included in the Git checkout)
-
-
-h2(#misc). Misc
-
-* "(rel-external)Commit Log"://github.com/irssi/irssi/commits/master
-* "(rel-external)Release ChangeLog"://github.com/irssi-import/irssi/releases
-* "(rel-external)Czech translation patch":http://nomi.cz/download/releases/irssi-cz/
-* "(rel-external)IrssiX":http://adlr.info/?Irssix for Mac OS X / Cocoa
-* "(rel-external)MacIrssi"://github.com/MacIrssi/MacIrssi is another interface for the Mac users you may want to take a look at.
+See also: "(rel-external)Commit Log"://github.com/irssi/irssi/commits/master
 
 
 [1]https://github.com/irssi/irssi

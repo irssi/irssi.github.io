@@ -4,4 +4,19 @@ title: Search results
 permalink: /gsearch/
 ---
 <div class="row">
-<gcse:searchresults-only linkTarget="_self"></gcse:searchresults-only></div>
+
+<script>
+  (function() {
+    var cx = '013138746835038969445:mlfkigveyj4';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search linkTarget="_self"></gcse:search>
+
+</div>
