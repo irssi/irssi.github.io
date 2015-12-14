@@ -159,3 +159,7 @@ select .header {
 blockquote {
     font-size: inherit;
 }
+
+.gsearch-form input.form-control {
+    width: 120px;
+}
