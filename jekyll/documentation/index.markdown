@@ -14,6 +14,7 @@ categories: [ _nav ]
 - [Writing good bug reports](//github.com/irssi/irssi/blob/master/docs/crash.txt){:rel='external'}
 - [Design](//github.com/irssi/irssi/blob/master/docs/design.txt){:rel='external'}
 - [Manual](//github.com/irssi/irssi/blob/master/docs/manual.txt){:rel='external'}, a bit dated and unfinished
+- [Contributing](/development)
 
 ### Miscellaneous
 - [Tips & Tricks](tips)
