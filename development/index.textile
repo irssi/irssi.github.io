@@ -2,7 +2,6 @@
 layout: page
 title: Contributing
 permalink: /development/
-categories: [ _nav, _9 ]
 ---
 
 h3. Development sources
