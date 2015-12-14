@@ -29,12 +29,11 @@ You may find more up to date version on "(rel-external)Debian Backports":http://
 </div>
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*Apple MacOS*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*OS X*
 
 Install "(rel-external)Homebrew":http://brew.sh/, then
-@brew install irssi@.
-You can also install Git with:
-@brew install --HEAD irssi@
+@brew install irssi@
+You can also install Git with @--HEAD@
 
 </div>
 </div>
