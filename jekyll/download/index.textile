@@ -29,18 +29,21 @@ You may find more up to date version on "(rel-external)Debian Backports":http://
 </div>
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/gentoo.png!*Gentoo*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*Apple MacOS*
 
-@emerge irssi@
+Install "(rel-external)Homebrew":http://brew.sh/, then
+@brew install irssi@.
+You can also install Git with:
+@brew install --HEAD irssi@
 
 </div>
 </div>
 <div class="row">
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/slackware.png!*Slackware*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/gentoo.png!*Gentoo*
 
-@slackpkg install irssi@
+@emerge irssi@
 
 </div>
 <div class="col-md-4">
@@ -77,12 +80,9 @@ div{margin-bottom:1ex}. !{padding-right:1ex}/assets/opencsw.png!*Solaris*
 </div>
 <div class="col-md-4">
 
-div{margin-bottom:1ex}. !{padding-right:1ex}/assets/macosx.png!*Apple MacOS*
+div{margin-bottom:1ex}. !{padding-right:1ex}/assets/slackware.png!*Slackware*
 
-Install "(rel-external)Homebrew":http://brew.sh/, then
-@brew install irssi@.
-You can also install Git with:
-@brew install --HEAD irssi@
+@slackpkg install irssi@
 
 </div>
 </div>
