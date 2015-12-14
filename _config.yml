@@ -16,6 +16,10 @@ gems:
   - jekyll-redirect-from
   - jekyll-sitemap
 
+whitelist:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
 paginate: 8
 paginate_path: "news/:num/"
 

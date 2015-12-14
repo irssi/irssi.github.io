@@ -2,7 +2,6 @@
 layout: page
 title: Contributing
 permalink: /development/
-categories: [ _nav, _9 ]
 ---
 
 h3. Development sources
@@ -13,8 +12,6 @@ bc. git clone https://github.com/irssi/irssi
   
 After check-out, you *must* run @./autogen.sh@. It may be necessary to install additional packages. More information can be found on "(rel-external)the wiki.":https://github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
 
-*Note*, the @INSTALL@ document is **not** valid for Git clones, only for release tarballs (even though it is also included in the Git checkout)
-
 h2. Helping Development
 
 Hey you! Irssi is desperately looking for developers. No groundbreaking development has occured since ten years. Apart from fixing "(rel-external)bugs"://github.com/irssi/irssi/issues and reviewing "(rel-external)patches"://github/com/irssi/irssi/pulls, there are also many huge issues which noone is tackling at the moment. Some of those are:
@@ -23,11 +20,13 @@ Hey you! Irssi is desperately looking for developers. No groundbreaking developm
 * Rewrite the core to optionally work in a distributed manner (where you can run the server connections on one server and connect to it with multiple fe-text front-ends)
 * Revamp the API to better integrate multiple scripting languages (like Javascript, Lua) and require less (Perl-specific) glue code
 * Fix and improve network Proxy support (SSL-enabled proxies, SSL connections over proxies, native SOCKS proxies in Irssi, better TOR support, per network proxies) ("#148"://github.com/irssi/irssi/pull/148)
-* Extend the IRC code to work better with any IRCv3 features, finish integration of SASL ("(rel-external)#222"://github.com/irssi/irssi/pull/222)
+* Extend the IRC code to work better with any IRCv3 features.
 * XMPP improvements
 * Website improvements
 
 Also review the "(rel-external)Unofficial Roadmap"://github.com/shabble/irssi-docs/wiki/Roadmap for a further source of TODOs.
+
+If you're lucky, you might find issues in the tracker that are "(rel-external)labeled 'easy'"://github.com/irssi/irssi/labels/easy
 
 h3. Scripts
 

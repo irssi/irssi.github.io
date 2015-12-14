@@ -2,6 +2,7 @@
 layout: page
 title: Startup How-To
 permalink: documentation/startup/
+redirect_from: /beginner/
 ---
 ### To new Irssi users (not to new IRC users ..)
 
