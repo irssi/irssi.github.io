@@ -132,8 +132,10 @@ select .header {
     background-color: #ffeeff;
     background-repeat: no-repeat;
     background-position: 5% 95%;
-    box-shadow: 20px 20px 15px black, inset 0 0 10px white;
-    border-radius: 5px;
+    background-size: cover;
+    border: 5px solid black;
+    box-shadow: 0px 0px 5px black, inset 0 0 10px white;
+    border-radius: 10px;
     background-blend-mode: darken;
     transition-duration: 1s;
 }
