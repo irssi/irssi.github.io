@@ -163,3 +163,7 @@ blockquote {
 .gsearch-form input.form-control {
     width: 120px;
 }
+
+.twitter-timeline {
+    height: 80vh !important;
+}
