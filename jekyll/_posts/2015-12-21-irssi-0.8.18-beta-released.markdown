@@ -1,0 +1,38 @@
+---
+layout: post
+title: "Irssi 0.8.18-beta1 Released"
+---
+
+**Irssi 0.8.18-beta1 has been released.** This beta release awaits your
+testing and sports 2281 line insertions, and 1014 deletions, compared
+to 1965 insertions and 604 deletions that were on the road to our
+0.8.17 release roughly one year ago. Our top contributor TheLemonMan
+changed 1937 lines and the up-runner dequis changed 805. There were
+also several contributions from the community, see
+[AUTHORS](https://raw.githubusercontent.com/irssi/irssi/master/AUTHORS)
+for a list of names and our [Github](https://github.com/irssi/irssi)
+repository for details.
+
+**New in this release**. CAP SASL supported natively. ZNC "self
+messages" shown in the correct window. Line splitting now splits on
+space. Bracketed paste markers supported for better paste
+detection. Nick is hilighted everywhere in a message. Config parser is
+more robust. And as usual many fixes, see the
+[NEWS](https://raw.githubusercontent.com/irssi/irssi/0.8.18-beta1/NEWS)
+for details.
+
+This pre-release can be downloaded from
+https://github.com/irssi/irssi/releases
+
+Thanks to the [Open Build Service](https://build.opensuse.org/) testing packages for some distributions were prepared on [ailin_nemui:irssi-test](http://download.opensuse.org/repositories/home:/ailin_nemui:/irssi-test/).
+
+We are always looking for contributors so if you find any
+[Issues](https://github.com/irssi/irssi/issues) report them, and if
+you can fix any of them do not hesitate to send in a
+[Patch](https://github.com/irssi/irssi/pulls)!
+
+Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
+[LinkedIn group](http://www.linkedin.com/groups?gid=147751), [Twitter
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on freenode.
+
+The Irssi Team.
