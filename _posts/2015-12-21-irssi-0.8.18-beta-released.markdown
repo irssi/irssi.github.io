@@ -22,7 +22,7 @@ more robust. And as usual many fixes, see the
 for details.
 
 This pre-release can be downloaded from
-https://github.com/irssi/irssi/releases
+[our releases page](https://github.com/irssi/irssi/releases).
 
 Thanks to the [Open Build Service](https://build.opensuse.org/) testing packages for some distributions were prepared on [ailin_nemui:irssi-test](http://download.opensuse.org/repositories/home:/ailin_nemui:/irssi-test/).
 
