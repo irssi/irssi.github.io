@@ -16,9 +16,9 @@ You might be wondering what makes Irssi such an easy and comfortable client
 to use; Joost Vunderink wrote a summary of the most beneficial Irssi features.
 
 ### Autologging
-Irssi will automatically log any channels, queries or special windows that
-you want. The logfiles will be separated per IRC network, and even log
-rotation is supported. Log file formats, themes and destination directories
+Irssi can automatically log any channels, queries or special windows that
+you want. The logfiles will be separated per IRC network by default, and even
+log rotation is supported. Log file formats, themes and destination directories
 can be easily configured with the Irssi log settings.
 
 ### Formats and themes
