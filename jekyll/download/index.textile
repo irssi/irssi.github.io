@@ -90,7 +90,7 @@ h2(#sources). Sources
 
 Latest release version: *0.8.17* - "(rel-external)Downloads"://github.com/irssi-import/irssi/releases
 
-Latest pre-release version: *0.8.18-beta1* - "(rel-external)Downloads"://github.com/irssi/irssi/releases
+Latest pre-release version: *0.8.18-beta2* - "(rel-external)Downloads"://github.com/irssi/irssi/releases
 
 See the included "(rel-external)INSTALL"://github.com/irssi/irssi/blob/master/INSTALL file for building instructions
 
