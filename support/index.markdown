@@ -6,7 +6,6 @@ categories: [ _nav ]
 ---
 - [FAQ](/documentation/faq)
 - [Startup How-To](/documentation/startup)
-- [Mailing lists](mailinglists)
 - [`#irssi` IRC](irc)
 
 If your irssi crashes, it's always a bug. Please read [bugreporting howto](/documentation/crash)
