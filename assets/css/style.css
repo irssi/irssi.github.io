@@ -169,3 +169,8 @@ blockquote {
 .twitter-timeline {
     height: 80vh !important;
 }
+
+.osicon {
+    padding-right: 1ex;
+    margin-bottom: 1ex;
+}
