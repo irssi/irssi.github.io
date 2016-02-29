@@ -113,9 +113,7 @@ You may find more up to date versions on [openSUSE Package Search][20]{:rel='ext
 
 ## Sources
 
-Latest release version: **0.8.17** – [Downloads][13]{:rel='external'}
-
-Latest pre-release version: **0.8.18-beta2** – [Downloads][14]{:rel='external'}
+Latest release version: **0.8.18** – [Downloads][14]{:rel='external'}
 
 See the included [INSTALL][15]{:rel='external'} file for building instructions
 
@@ -125,7 +123,7 @@ To verify the signatures:
 
 You shouldn't really trust this key without verifying its fingerprint. See it with `gpg --fingerprint staff@irssi.org` and ask someone if it matches (eg. on `#irssi`).
 
-    gpg --verify irssi-0.8.17.tar.gz.asc
+    gpg --verify irssi-0.8.18.tar.xz.asc
 
 (This key is different from the one used to sign binaries of versions before 0.8.10. More gpg help can be found from GPG manual)
 
