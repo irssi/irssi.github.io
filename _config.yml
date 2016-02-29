@@ -13,10 +13,12 @@ name: Irssi Core Team
 email: staff@irssi.org
 
 gems:
+  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap
 
 whitelist:
+  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap
 

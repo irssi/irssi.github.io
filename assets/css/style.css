@@ -21,6 +21,13 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 }
+.raggedright p {
+    text-align: inherit;
+    hyphens: inherit;
+    -moz-hyphens: inherit;
+    -webkit-hyphens: inherit;
+    -ms-hyphens: inherit;
+}
 p.center {
     text-align: center;
     hyphens: none;
@@ -33,6 +40,13 @@ p.center {
     line-height: 1;
     margin-top: 0;
     text-align: center;
+}
+
+/* center buttons in xs view */
+@media (max-width: 767px) {
+    .jumbotron .col-xs-11 p {
+	text-align: center;
+    }
 }
 
 /* fix for anchored links to scroll the top bar */
@@ -108,7 +122,7 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
 /* Tweak to make the menu visible (otherwise Bugs is cut off) */
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 390px;
+  max-height: 412px;
 }
 
 
@@ -168,4 +182,26 @@ blockquote {
 
 .twitter-timeline {
     height: 80vh !important;
+}
+
+.osicon {
+    padding-right: 1ex;
+    margin-bottom: 1ex;
+}
+
+@media (min-width:992px) {
+.two-column {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -moz-column-fill: balance;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    -webkit-column-fill: balance;
+    column-count: 2;
+    column-gap: 20px;
+    column-fill: balance;
+}
+.two-column > div {
+    display: inline-block;
+}
 }
