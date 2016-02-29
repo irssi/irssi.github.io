@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Irssi 0.8.18 Released"
+---
+Irssi 0.8.18 has been released. This release contains many new goodies
+including native CAP SASL support, "self messages" shown in the
+correct window, line splitting on spaces, bracketed paste markers
+support for better paste detection, nick hilighting everywhere in a
+message, a more robust Config parser, and as usual many fixes, see the
+[NEWS](//raw.githubusercontent.com/irssi/irssi/0.8.18/NEWS) for
+details. **Thanks to everyone who made this possible!**
+
+This release can be downloaded from [our releases
+page](https://github.com/irssi/irssi/releases).
+
+We are always looking for contributors so if you find any
+[Issues](https://github.com/irssi/irssi/issues) report them, and if
+you can fix any of them do not hesitate to send in a
+[Patch](https://github.com/irssi/irssi/pulls)!
+
+Remember to check out Irssi's [Facebook fan
+page](https://facebook.com/irssi), [LinkedIn
+group](http://www.linkedin.com/groups?gid=147751), [Twitter
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on
+freenode.
+
+The Irssi Team.
+

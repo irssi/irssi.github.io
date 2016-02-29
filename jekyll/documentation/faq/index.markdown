@@ -27,13 +27,13 @@ A: `/FORMAT timestamp {timestamp %%H:%%M:%%S}` - and remember to add the trailin
 
 A: Possibly a bug in irssi, or ircd you're using does something that irssi didn't really notice. The new code should make this happen far less often than before, but one known reason for this is when irssi doesn't notice that you were unable to join some channel. Currently however I don't know of any such events irssi doesn't know about.
 
-Anyway, if this does happen, do `/RAWLOG SAVE ~/rawlog` soon after joining to channel, and either try to figure out yourself why irssi didn't get reply to WHO request, or send the whole log to cras@irssi.org. Note that the rawlog is by default only 200 lines and it may not be enough to show all needed information, so you might want to do `/SET rawlog_lines 1000` or so.
+Anyway, if this does happen, do `/RAWLOG SAVE ~/rawlog` soon after joining to channel, and either try to figure out yourself why irssi didn't get reply to WHO request, or open a Github issue with the full log included. Note that the rawlog is by default only 200 lines and it may not be enough to show all needed information, so you might want to do `/SET rawlog_lines 1000` or so.
 
 `MODE +b` still works fine though.
 
 ### Q: Where's the GUI version?
 
-A: Read [About](/about)
+A: There was one on [irssi-import/xirssi](https://github.com/irssi-import/xirssi) but it has not been maintained for a long time.
 
 ### Q: How do I autorejoin channels after being kicked?
 
@@ -57,7 +57,7 @@ A: Make sure your terminal supports UTF-8 (for example, `xterm -u8`). If you use
 
 ### Q: Will there be /DETACH-like feature?
 
-A: Maybe. Detach code already is there, attach is just missing :) But I don't have much interest in coding it, [screen](http://www.gnu.org/software/screen/screen.html) and [dtach](http://dtach.sf.net/) can be used to do it just fine.
+A: [tmux](http://tmux.github.io/), [screen](http://www.gnu.org/software/screen/screen.html) and [dtach](http://dtach.sf.net/) can be used to do it just fine.
 
 ### Q: How do I run scripts automatically at startup?
 
