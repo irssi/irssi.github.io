@@ -4,9 +4,9 @@ title: Modules
 permalink: modules/
 categories: [ _nav ]
 ---
-These third-party modules come **without any  support or warranty** from the Irssi developers. Please use at your own risk and contact the responsible module owners for help and support.
+These third-party modules come **without any support or warranty** from the Irssi developers. Please use at your own risk and contact the responsible module owners for help and support.
 
-##Protocol Modules
+## Protocol Modules
 * IRC (built-in)
 * [ICB](https://github.com/jperkin/irssi-icb)
 * [SILC](http://www.silcnet.org/)
