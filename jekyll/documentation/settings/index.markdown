@@ -3,6 +3,7 @@ layout: page
 title: Settings Documentation
 permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
+licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
 Irssi 0.8.10 settings notes. Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
 

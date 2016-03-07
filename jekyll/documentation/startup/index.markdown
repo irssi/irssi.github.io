@@ -3,6 +3,7 @@ layout: page
 title: Startup How-To
 permalink: documentation/startup/
 redirect_from: /beginner/
+licence: "[GNU FDL](http://www.gnu.org/licenses/fdl.html) 1.1 license"
 ---
 ### To new Irssi users (not to new IRC users ..)
 
