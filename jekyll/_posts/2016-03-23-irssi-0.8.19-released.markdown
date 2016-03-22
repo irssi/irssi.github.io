@@ -1,0 +1,27 @@
+---
+layout: post
+title: "Irssi 0.8.19 Released"
+---
+
+Irssi 0.8.19 has been released. This is a bugfix release addressing
+the worst regressions in the 0.8.18 release. All packagers are
+encouraged to package this version. See the
+[NEWS](//raw.githubusercontent.com/irssi/irssi/0.8.18/NEWS) for
+details.
+
+This release can be downloaded from [our releases
+page](https://github.com/irssi/irssi/releases).
+
+We are always looking for contributors so if you find any
+[Issues](https://github.com/irssi/irssi/issues) report them, and if
+you can fix any of them do not hesitate to send in a
+[Patch](https://github.com/irssi/irssi/pulls)!
+
+Remember to check out Irssi's [Facebook fan
+page](https://facebook.com/irssi), [LinkedIn
+group](http://www.linkedin.com/groups?gid=147751), [Twitter
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on
+freenode.
+
+The Irssi Team.
+
