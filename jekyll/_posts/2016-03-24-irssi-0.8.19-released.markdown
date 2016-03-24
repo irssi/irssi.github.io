@@ -29,7 +29,8 @@ Report [Issues](https://github.com/irssi/irssi/issues) and  do not hesitate to s
 Remember to check out Irssi's [Facebook fan
 page](https://facebook.com/irssi), [LinkedIn
 group](http://www.linkedin.com/groups?gid=147751), [Twitter
-profile](https://twitter.com/IrssiProject) or pop into `#irssi` on
-freenode.
+profile](https://twitter.com/IrssiProject),
+discuss this news on [reddit](https://www.reddit.com/r/linux/comments/4brrb7)
+or pop into `#irssi` on freenode.
 
 The Irssi Team.
