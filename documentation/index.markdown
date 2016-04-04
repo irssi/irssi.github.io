@@ -32,6 +32,7 @@ categories: [ _nav ]
 - [Split windows handling](//quadpoint.org/articles/irssisplit/){:rel='external'}
 - [Split windows handling Addendum](http://wouter.coekaerts.be/irssi/split){:rel='external'}
 - [Showing events in different windows](http://wouter.coekaerts.be/site/irssi/wclf){:rel='external'}
+- [Connecting to networks with SASL](https://nullroute.eu.org/~grawity/irssi-connect.html){:rel='external'}
 
 ### Scripting
 
