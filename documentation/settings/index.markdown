@@ -5,13 +5,10 @@ permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
 licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
-Irssi 0.8.10 settings notes. Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
+Irssi settings notes. This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
-This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
+See the [appendix F](#a_f) for credits and license information of this document.
 
-We respect the work of others. Parts of this document have been collected from other locations. Wherever possible, we have made every effort to locate and attribute the original authors. Please let us know if we've overlooked you.
-
-We ask the same respect in return. The Copyright and license notices are at the end.
 
 * * *
 
@@ -1586,16 +1583,14 @@ From <http://irssi.org/documentation/formats>:
 
 * * *
 
-## Appendix F is for FAQ.
+## Appendix F: Credits and copyright
 {:#a_f}
 
-### Q: Will you relicense this document under YOUR_FAVORITE_LICENSE?
+Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
 
-A: The Creative Commons Attribution-ShareAlike license best embodies the author's wishes for use and redistribution of his work. It is strictly a license and does not promulgate a political or ideological agenda. YOUR_FAVORITE_LICENSE will be considered if its terms are very similar (if not identical) to the current license, but it will be rejected if it's someone's soapbox.
+We respect the work of others. Parts of this document have been collected from other locations. Wherever possible, we have made every effort to locate and attribute the original authors. Please let us know if we've overlooked you.
 
-* * *
-
-### Copyright License.
+We ask the same respect in return.
 
 The original portions of this document are Copyright 2005 by Rocco Caputo rcaputo@cpan.org and Nei (on irc.freenode.net #irssi). Other portions are Copyright by their respective authors or licensors.
 
