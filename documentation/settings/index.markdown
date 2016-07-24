@@ -9,39 +9,6 @@ Irssi settings notes. This is not an attempt to document Irssi completely. It sh
 
 See the [appendix F](#a_f) for credits and license information of this document.
 
-
-* * *
-
-2008-Apr-20: (dngor)
-
-> Added a FAQ.
-
-2005-Dec-08: (dngor)
-
-> Switched to Creative Commons' ShareAlike license. We'd like to thank Coekie coekie@irssi.org for pointing out out that the previous license was weak, and that he could just alter it and redistribute our work without attribution.
->
-> Minor revisions throughout a major portion of the document.
-
-2005-Dec-07: (Nei)
-
-> Set example values to default values where appropriate. Add new settings from 0.8.10. Sorted settings according to my local /set output.
->
-> (dngor) Marked the 0.8.10 settings as coming from that version.
-
-2005-Dec-01: (Nei)
-
-> Updated some links. Renamed term_type.
-
-2005-06-05: (dngor)
-
-> Tweaked an example to use the same command the surrounding text said it was.
-
-2005-05-04: (dngor)
-
-> Not terribly significant. All edits happened in the introduction.
-
-* * *
-
 ##  [completion]
 
 {:#completion_strict}
