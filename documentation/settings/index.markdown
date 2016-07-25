@@ -1505,8 +1505,6 @@ From <http://irssi.org/documentation/formats>:
 ## Appendix E: Credits and copyright
 {:#a_credits}
 
-Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
-
 We respect the work of others. Parts of this document have been collected from other locations. Wherever possible, we have made every effort to locate and attribute the original authors. Please let us know if we've overlooked you.
 
 We ask the same respect in return.
