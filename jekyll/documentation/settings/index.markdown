@@ -361,10 +361,22 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > Flag a channel as active when messages of this type are displayed there.
 
-{:#actlist_moves}
-` actlist_moves = OFF `
+{:#actlist_names}
+` actlist_names = OFF `
 
-> When on, irssi rearranges the activity list so windows with more recent activity appear first. Otherwise windows are listed in numeric order.
+> Turn on to add active items names in 'act' statusbar item.
+
+{:#actlist_sort}
+` actlist_sort = refnum `
+
+> Specifies the sorting type used for the activity bar. Accepted values:
+>
+> * `refnum` (default) - windows are listed in numeric order
+> * `recent` - windows with more recent activity appear first
+> * `level` - sort by window level (hilight, msg, etc), same ordering used by active_window command. Windows with the same level are sorted by refnum.
+> * `level,recent` - same as level, but windows with the same level are sorted by recent.
+>
+>Added in irssi 0.8.12. Before irssi 0.8.12, a boolean `actlist_moves` setting existed, which was equivalent to setting actlist_sort to refnum.
 
 {:#autoclose_query}
 ` autoclose_query = 0 `
