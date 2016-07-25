@@ -995,6 +995,27 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > Automatically save your settings when you quit irssi, or once per hour, rather than waiting for you to /save them yourself.
 
+{:#split_line_end}
+` split_line_end = `
+
+> When automatically splitting long lines, this is added to the end of line fragments.
+>
+> Added in irssi 0.8.17
+
+{:#split_line_on_space}
+` split_line_on_space = ON`
+
+> When this is ON, irssi tries to split long lines on spaces, instead of splitting in the middle of words.
+>
+> Added in irssi 0.8.18
+
+{:#split_line_start}
+` split_line_start = `
+
+> When automatically splitting long lines, this is added to the beginning of line fragments.
+>
+> Added in irssi 0.8.17
+
 {:#STATUS_OPER}
 ` STATUS_OPER = * `
 
