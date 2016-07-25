@@ -241,13 +241,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > Setting scrollback_lines to zero also seems to thwart the scrollback_burst_remove optimization.
 
-{:#scrollback_save_formats}
-` scrollback_save_formats = OFF `
-
-> Turn on to save formats in the scrollback buffer, so that old messages are not changed by new themes. Turn off so the current theme applies to your entire scrollback buffer.
->
-> Setting this to OFF doesn't seem to do anything, however.
-
 {:#scrollback_time}
 ` scrollback_time = 1day `
 
@@ -648,13 +641,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > When turned on, a quit message will only be shown once. Otherwise it will be displayed in every window you share with the quitter.
 
-{:#term_auto_detach}
-` term_auto_detach = OFF `
-
-> Automatically detach from the terminal when it disappears.
->
-> This doesn't actually work. Or if it does, there's currently no way to re-attach to the terminal. It may be useful for setting up daemons where you don't want to run nohup or screen, however.
-
 {:#term_charset}
 ` term_charset = US-ASCII `
 
@@ -903,11 +889,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > How often to check for someone online when /notify is on.
 
-{:#notify_idle_time}
-` notify_idle_time = 1hour `
-
-> Irssi will notify you when someone you're watching becomes idle for this long.
-
 {:#notify_whois_time}
 ` notify_whois_time = 5min `
 
@@ -930,13 +911,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 ` part_message = `
 
 > Default message to send when parting a channel.
-
-{:#paste_detect_keycount}
-` paste_detect_keycount = 5 `
-
-> Introduced in 0.8.10.
->
-> TODO - What's this?
 
 {:#paste_detect_time}
 ` paste_detect_time = 5msecs `
@@ -1012,13 +986,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 ` STATUS_OPER = * `
 
 > TODO - What's this?
-
-{:#translation}
-` translation = `
-
-> Set the translation table to use. See Appendix E.
->
-> TODO - Does this still work even?
 
 {:#usermode}
 ` usermode = +i `
@@ -1133,28 +1100,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 ` skip_motd = OFF `
 
 > Turn this on to avoid displaying the server's message of the day. Messages of the day are often noisy, and few people actually read them, but they contain important information amongst the ASCII art and song lyrics. :)
-
-{:#ssl_cacert}
-` ssl_cacert = `
-
-{:#ssl_cafile}
-` ssl_cafile = `
-
-{:#ssl_cert}
-` ssl_cert = `
-
-{:#ssl_pkey}
-` ssl_pkey = `
-
-{:#ssl_verify}
-` ssl_verify = OFF `
-
-{:#use_ssl}
-` use_ssl = OFF `
-
-> SSL options. Set the certificates and keys, and stuff you'll use to connect to a secure server.
->
-> TODO - Does verify work? If so, how?
 
 {:#user_name}
 ` user_name = $IRCUSER `
