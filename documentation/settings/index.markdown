@@ -5,7 +5,9 @@ permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
 licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
-Irssi settings notes. This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
+Irssi settings notes. Updated for 0.8.19.
+
+This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
 See the [appendix](#a_credits) for credits and license information of this document.
 
