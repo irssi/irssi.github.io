@@ -706,11 +706,11 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#whois_hide_safe_channel_id}
 ` whois_hide_safe_channel_id = ON `
 
-> Introduced in 0.8.10.
->
 > Hides the unique id of !channels in /whois output (IRCNet/irc2 networks only).
 >
 > E.g. shows !channel instead of !12345channel
+>
+> Added in irssi 0.8.10
 
 {:#window_auto_change}
 ` window_auto_change = OFF `
@@ -751,8 +751,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#channel_max_who_sync}
 ` channel_max_who_sync = 1000 `
 
-> Introduced in 0.8.10.
->
 > The maximum number of users that may be in a channel for Irssi to issue a
 >
 >>
@@ -761,6 +759,8 @@ See the [appendix F](#a_f) for credits and license information of this document.
 > in order to obtain the hostmasks of every participant.
 >
 > If this is set too high, IRC servers might kick you for Sendq exceeded.
+>
+> Added in irssi 0.8.10
 
 {:#channel_sync}
 ` channel_sync = ON `
@@ -929,11 +929,11 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#paste_join_multiline}
 ` paste_join_multiline = ON `
 
-> Introduced in 0.8.10.
->
 > Irssi will try to concatenate multiple lines into a single lined message when these lines have the same indentation level and look like they were copied out of Irssi.
 >
 > It's useful for quoting e-mail or other large-text messages, but it will probably bite you if you try to pasted indented text, such as code listings. Irssi will join multiple lines of code, destroying any structure you wanted to preserve.
+>
+> Added in irssi 0.8.10
 
 {:#paste_use_bracketed_mode}
 ` paste_use_bracketed_mode = OFF `
@@ -961,43 +961,43 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#recode}
 ` recode = ON `
 
-> Introduced in 0.8.10.
->
 > This setting allows you to disable irssi's recode functionality, if you prefer your messages not being messed with.
+>
+> Added in irssi 0.8.10
 
 {:#recode_autodetect_utf8}
 ` recode_autodetect_utf8 = ON `
 
-> Introduced in 0.8.10.
->
 > Irssi's recode system is broken. This tries to cover up for it by leaving messages intact that seem to decode fine as Unicode UTF-8.
+>
+> Added in irssi 0.8.10
 
 {:#recode_fallback}
 ` recode_fallback = CP1252 `
 
-> Introduced in 0.8.10.
->
 > If you have Irssi compiled with recode support and Irssi believes that a message you received did not recode properly in your terminal default character set (or the specified one), it will recode the message using this character set.
 >
 > (CP1252, the irssi default, is the Microsoft(R) Windows default character set for Western Europe.)
 >
 > Also see /help recode for more details about recoding.
+>
+> Added in irssi 0.8.10
 
 {:#recode_out_default_charset}
 ` recode_out_default_charset = `
 
-> Introduced in 0.8.10.
->
 > The outgoing character set you want your messags to be recoded into, if different from your term_charset.
+>
+> Added in irssi 0.8.10
 
 {:#recode_transliterate}
 ` recode_transliterate = ON `
 
-> Introduced in 0.8.10.
->
 > If enabled, irssi tells iconv to try and replace characters that don't recode well with similar looking ones that exist in the target character set.
 >
 > If disabled, irssi replaces the character it could not recode with a ? instead.
+>
+> Added in irssi 0.8.10
 
 {:#settings_autosave}
 ` settings_autosave = ON `
