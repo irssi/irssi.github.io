@@ -926,6 +926,19 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > It's useful for quoting e-mail or other large-text messages, but it will probably bite you if you try to pasted indented text, such as code listings. Irssi will join multiple lines of code, destroying any structure you wanted to preserve.
 
+{:#paste_use_bracketed_mode}
+` paste_use_bracketed_mode = OFF `
+
+> Enables bracketed paste mode, which is an alternative to the time-based paste detection.
+>
+> If supported by the terminal, it's much more reliable since irssi knows exactly where and when a paste starts and ends, because the terminal sends special control sequences (the "brackets") indicating those positions.
+>
+> To take full advantage of this feature, time-based paste detection should be disabled by setting `paste_detect_time` to 0.
+>
+> See <https://cirw.in/blog/bracketed-paste> for more details on how this works.
+>
+> Added in irssi 0.8.18
+
 {:#paste_verify_line_count}
 ` paste_verify_line_count = 5 `
 
