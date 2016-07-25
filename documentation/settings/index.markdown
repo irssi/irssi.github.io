@@ -40,16 +40,12 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#completion_keep_privates}
 ` completion_keep_privates = 10 `
 
-> Irssi keeps a list of nicknames from private messages to search during nick completion. This setting determines how many nicknames are held.
->
-> TODO - Is this list maintained by people who privately message you, who you privately message, or both?
+> Irssi keeps a list of nicknames from private messages (sent and received) to search during nick completion. This setting determines how many nicknames are held.
 
 {:#completion_keep_publics}
 ` completion_keep_publics = 50 `
 
-> Irssi keeps a list of nicknames from public messages to search during nick completion. This setting determines how many nicknames are held.
->
-> TODO - Is this list maintained by watching who you speak to, who speak to you, or both?
+> Irssi keeps a list of nicknames from public messages (sent and received) to search during nick completion. This setting determines how many nicknames are held.
 
 {:#completion_nicks_lowercase}
 ` completion_nicks_lowercase = OFF `
@@ -231,8 +227,6 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` scrollback_burst_remove = 10 `
 
 > This is a speed optimization: Don't bother removing messages from the scrollback buffer until the line limit has been exceeded by scrollback_burst_remove lines. This lets irssi do its memory management in chunks rather than one line at a time.
->
-> TODO - Is this right?
 
 {:#scrollback_lines}
 ` scrollback_lines = 500 `
@@ -593,9 +587,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#query_track_nick_changes}
 ` query_track_nick_changes = ON `
 
-> Query windows will track nick changes when this is on. That is, it looks for a matching user@host if a message comes in with an unknown nick.
->
-> TODO - Really?
+> Query windows will track nick changes when this is on. That is, when receiving a message from an unknown nick, it looks for a query with a matching user@host before creating a new one, and if it finds one, it gets renamed to use the new nick.
 
 {:#reuse_unused_windows}
 ` reuse_unused_windows = OFF `
@@ -809,9 +801,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#join_auto_chans_on_invite}
 ` join_auto_chans_on_invite = ON `
 
-> Automatically join a channel when invited to it.
->
-> TODO - Does this only work with channels on the /channel add -auto list?
+> Automatically join a channel when invited to it, if that channel was previously added to the autojoin list (`/channel add -auto`).
 
 {:#kick_first_on_kickban}
 ` kick_first_on_kickban = OFF `
@@ -850,9 +840,9 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#massjoin_max_wait}
 ` massjoin_max_wait = 5000 `
 
-> The amount of time to watch for mass-joins.
+> The amount of time to watch for mass-joins, in seconds.
 >
-> I'm not sure which unit of time is used to measure massjoin_max_wait.
+> 5000 is probably a bit too much.
 
 {:#max_wildcard_modes}
 ` max_wildcard_modes = 6 `
@@ -878,15 +868,11 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` netjoin_max_nicks = 10 `
 
 > When non-zero, limits the number of nicknames to display during netjoins.
->
-> TODO - Is this correct?
 
 {:#netsplit_max_nicks}
 ` netsplit_max_nicks = 10 `
 
 > When non-zero, limits the number of nicknames to display during netsplits.
->
-> TODO - Is this correct?
 
 {:#netsplit_nicks_hide_threshold}
 ` netsplit_nicks_hide_threshold = 15 `
@@ -1028,7 +1014,9 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#STATUS_OPER}
 ` STATUS_OPER = * `
 
-> TODO - What's this?
+> Determines what's shown in the `$O` expando when the user is an oper.
+>
+> TODO - why
 
 {:#usermode}
 ` usermode = +i `
