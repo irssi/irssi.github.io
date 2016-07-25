@@ -1054,6 +1054,8 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#proxy_address}
 ` proxy_address = `
 
+> The address of your IRC proxy.
+
 {:#proxy_password}
 ` proxy_password = `
 
@@ -1062,7 +1064,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#proxy_port}
 ` proxy_port = 6667 `
 
-> The address and port of your IRC proxy.
+> The port of your IRC proxy.
 
 {:#proxy_string}
 ` proxy_string = CONNECT %s %d `
