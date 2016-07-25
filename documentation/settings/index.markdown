@@ -7,7 +7,7 @@ licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativec
 ---
 Irssi settings notes. This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
-See the [appendix F](#a_f) for credits and license information of this document.
+See the [appendix](#a_credits) for credits and license information of this document.
 
 ##  [completion]
 
@@ -1512,78 +1512,8 @@ From <http://irssi.org/documentation/formats>:
 
 * * *
 
-## Appendix E comes directly from <http://irc.fu-berlin.de/irc/help/SET/TRANSLATION.html>:
-{:#a_e} 
-
-    Usage: SET TRANSLATION character translation table
-
-    The TRANSLATION variable defines a character translation table.  By
-    default, ircII assumes that all text processed over the network is
-    in the ISO 8859/1 map, also known as Latin-1.  This is identical to
-    standard ASCII, except that it is extended with additional
-    characters in the range 128-255.  Many environments by default use
-    the Latin-1 map, such as X Windows, MS Windows, AmigaDOS, and modern
-    ANSI terminals including Digital VT200, VT300, VT400 series and
-    MS-Kermit.  However, many older environments use non-standard
-    extensions to ASCII, and yet others use 7-bit national replacement
-    sets.
-
-    Some available settings for the TRANSLATION variable:
-
-    8-bit sets:
-      CP437               Old IBM PC, compatibles and Atari ST.
-      CP850               New IBM PC compatibles and IBM PS/2.
-      DEC_MCS             DEC Multinational Character Set.
-                          VAX/VMS.  VT320's and other 8-bit
-                          Digital terminals use this set by
-                          default, but I recommend changing to
-                          Latin-1 in the terminal Set-Up.
-      DG_MCS              Data General Multinational Character Set.
-      HP_MCS              Hewlett Packard Extended Roman 8.
-      LATIN_1             ISO 8859/1.  Default.
-      MACINTOSH           Apple Macintosh computers and boat
-                          anchors.
-      NEXT                NeXT.
-
-    7-bit sets:
-      ASCII               ANSI ASCII, ISO Reg. 006.  For American
-                          terminals in 7-bit environments.  Use
-                          this one if everything else fails.
-      DANISH              Norwegian/Danish.
-      DUTCH               Dutch.
-      FINNISH             Finnish.
-      FRENCH              ISO French, ISO Reg. 025.
-      FRENCH_CANADIAN     French in Canada.
-      GERMAN              ISO German, ISO Reg. 021.
-      IRV                 International Reference Version, ISO
-                          Reg. 002.  For use pedantic in ISO 646
-                          environments.
-      ITALIAN             ISO Italian, ISO Reg. 015.
-      JIS                 JIS ASCII, ISO Reg. 014.  Japanese
-                          ASCII hybrid.
-      NORWEGIAN_1         ISO Norwegian, Version 1, ISO Reg. 060.
-      NORWEGIAN_2         ISO Norwegian, Version 2, ISO Reg. 061.
-      PORTUGUESE          ISO Portuguese, ISO Reg. 016.
-      PORTUGUESE_COM      Portuguese on Digital terminals.
-      RUSSIAN             Russian
-      RUSSIAN_ALT         Alternative Russian.
-      SPANISH             ISO Spanish, ISO Reg. 017.
-      SWEDISH             ISO Swedish, ISO Reg. 010.
-      SWEDISH_NAMES       ISO Swedish for Names, ISO Reg. 011.
-      SWEDISH_NAMES_COM   Swedish.  Digital, Hewlett Packard.
-      SWISS               Swiss.
-      UNITED_KINGDOM      ISO United Kingdom, ISO Reg. 004.
-      UNITED_KINGDOM_COM  United Kingdom on DEC and HP terminals.
-
-    Please forward any extra translation tables to the ircII development
-    team by using the ircbug utility that comes with the package, or,
-    failing that, sending mail to ircii-bugs@eterna.com.au directly.
-
-
-* * *
-
-## Appendix F: Credits and copyright
-{:#a_f}
+## Appendix E: Credits and copyright
+{:#a_credits}
 
 Gathered through much effort by Rocco Caputo rcaputo at cpan dot org (aka dngor). Includes original work by Nei, and advice and guidance from irc.freenode.net #irssi.
 
