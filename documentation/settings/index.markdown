@@ -11,30 +11,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 ##  [completion]
 
-{:#completion_strict}
-` completion_strict = OFF `
-
-> When on, nicknames are matched strictly. That is, the partial nickname you enter must be at the beginning of a nickname in one of irssi's lists.
->
-> When off, irssi will first try a strict match. If a strict match can't be found, irssi will look for nicknames that match when their leading non-alphanumeric characters are removed. For example:
->
->>
->>     vis: hello
->
-> With strict completion on, it will only match nicknames beginning with vis. With strict completion off, it may match visitors or _visitors_ or [visitors], and so on.
-
-{:#completion_keep_privates}
-` completion_keep_privates = 10 `
-
-> Irssi keeps a list of nicknames from private messages to search during nick completion. This setting determines how many nicknames are held.
->
-> TODO - Is this list maintained by people who privately message you, who you privately message, or both?
-
-{:#completion_char}
-` completion_char = : `
-
-> The text that irssi puts after a tab-completed nickname, or that it uses to detect nicknames when you have completion_auto turned on. Some people alter this to colorize the completion character, creating the oft-dreaded bold colon.
-
 {:#completion_auto}
 ` completion_auto = OFF `
 
@@ -56,10 +32,17 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > This will eventually bite you.
 
-{:#completion_nicks_lowercase}
-` completion_nicks_lowercase = OFF `
+{:#completion_char}
+` completion_char = : `
 
-> When enabled, irssi forces completed nicknames to lowercase. Manually typed nicknames retain their case.
+> The text that irssi puts after a tab-completed nickname, or that it uses to detect nicknames when you have completion_auto turned on. Some people alter this to colorize the completion character, creating the oft-dreaded bold colon.
+
+{:#completion_keep_privates}
+` completion_keep_privates = 10 `
+
+> Irssi keeps a list of nicknames from private messages to search during nick completion. This setting determines how many nicknames are held.
+>
+> TODO - Is this list maintained by people who privately message you, who you privately message, or both?
 
 {:#completion_keep_publics}
 ` completion_keep_publics = 50 `
@@ -68,28 +51,34 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > TODO - Is this list maintained by watching who you speak to, who speak to you, or both?
 
+{:#completion_nicks_lowercase}
+` completion_nicks_lowercase = OFF `
+
+> When enabled, irssi forces completed nicknames to lowercase. Manually typed nicknames retain their case.
+
+{:#completion_strict}
+` completion_strict = OFF `
+
+> When on, nicknames are matched strictly. That is, the partial nickname you enter must be at the beginning of a nickname in one of irssi's lists.
+>
+> When off, irssi will first try a strict match. If a strict match can't be found, irssi will look for nicknames that match when their leading non-alphanumeric characters are removed. For example:
+>
+>>
+>>     vis: hello
+>
+> With strict completion on, it will only match nicknames beginning with vis. With strict completion off, it may match visitors or _visitors_ or [visitors], and so on.
+
 ##  [dcc]
 
-{:#dcc_autorename}
-` dcc_autorename = OFF `
+{:#dcc_autoaccept_lowports}
+` dcc_autoaccept_lowports = OFF `
 
-> Turn on this setting to automatically rename received files so they don't overwrite existing files.
->
-> I think this setting may thwart dcc_autoresume, since the auto-resume feature looks for existing filenames when resuming. Auto-renaming downloads makes sure that filenames never conflict, so resuming is not possible.
+> When this setting is OFF, irssi will not auto-accept DCC requests from privileged ports (those below 1024) even when auto-accept is otherwise on.
 
-{:#dcc_autoresume}
-` dcc_autoresume = OFF `
+{:#dcc_autochat_masks}
+` dcc_autochat_masks = `
 
-> When on, dcc_autoresume will cause irssi to look for existing files with the same name as a new DCC transfer. If a file already exists by that name, irssi will try to resume the transfer by appending any new data to the existing file.
->
-> I think this option clashes with dcc_autorename. See dcc_autorename for more information.
->
-> Dcc_autoresume is ignored if dcc_autoget is off.
-
-{:#dcc_timeout}
-` dcc_timeout = 5min `
-
-> How long to keep track of pending DCC requests. Requests that do not receive responses within this time will be automatically canceled.
+> Set dcc_autochat_masks with user masks to auto-accept chat requests from. When unset, irssi's auto-accept settings work for everyone who tries to DCC chat you. The drawbacks can range from annoying through downright dangerous. Use auto-accept with care.
 
 {:#dcc_autoget}
 ` dcc_autoget = OFF `
@@ -97,11 +86,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 > Turn DCC auto-get on or off. When on, irssi will attempt to auto-get files sent to you.
 >
 > This feature can be abused, so it is usually off by default. If you enable it, consider also setting dcc_autoget_masks and dcc_autoget_max_size to make this feature more secure.
-
-{:#dcc_upload_path}
-` dcc_upload_path = ~ `
-
-> The path where you keep public files available to send via DCC.
 
 {:#dcc_autoget_masks}
 ` dcc_autoget_masks = `
@@ -119,15 +103,21 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > This setting is only significant if dcc_autoget is ON.
 
-{:#dcc_send_replace_space_with_underscore}
-` dcc_send_replace_space_with_underscore = OFF `
+{:#dcc_autorename}
+` dcc_autorename = OFF `
 
-> When enabled, irssi will replace spaces with underscores in the names of files you send. It should only be necessary when sending files to clients that don't support quoted filenames, or if you hate spaces in filenames.
+> Turn on this setting to automatically rename received files so they don't overwrite existing files.
+>
+> I think this setting may thwart dcc_autoresume, since the auto-resume feature looks for existing filenames when resuming. Auto-renaming downloads makes sure that filenames never conflict, so resuming is not possible.
 
-{:#dcc_own_ip}
-` dcc_own_ip = `
+{:#dcc_autoresume}
+` dcc_autoresume = OFF `
 
-> Set dcc_own_ip to force irssi to always send DCC requests from a particular virtual host (vhost). Irssi will always bind sockets to this address when answering DCC requests. Otherwise irssi will determine your IP address on its own.
+> When on, dcc_autoresume will cause irssi to look for existing files with the same name as a new DCC transfer. If a file already exists by that name, irssi will try to resume the transfer by appending any new data to the existing file.
+>
+> I think this option clashes with dcc_autorename. See dcc_autorename for more information.
+>
+> Dcc_autoresume is ignored if dcc_autoget is off.
 
 {:#dcc_download_path}
 ` dcc_download_path = ~ `
@@ -143,6 +133,16 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >>     644 is read/write by you, and readable by everybody else.  600
 >>     is read/write by you, nobody else can read or write.
 
+{:#dcc_mirc_ctcp}
+` dcc_mirc_ctcp = OFF `
+
+> Tells irssi to send CTCP messages that are compatible with mIRC clients. This lets you use /me actions in DCC chats with mIRC users, among other things.
+
+{:#dcc_own_ip}
+` dcc_own_ip = `
+
+> Set dcc_own_ip to force irssi to always send DCC requests from a particular virtual host (vhost). Irssi will always bind sockets to this address when answering DCC requests. Otherwise irssi will determine your IP address on its own.
+
 {:#dcc_port}
 ` dcc_port = 0 `
 
@@ -153,20 +153,20 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >>
 >>     /set dcc_port 10000 20000
 
-{:#dcc_autochat_masks}
-` dcc_autochat_masks = `
+{:#dcc_send_replace_space_with_underscore}
+` dcc_send_replace_space_with_underscore = OFF `
 
-> Set dcc_autochat_masks with user masks to auto-accept chat requests from. When unset, irssi's auto-accept settings work for everyone who tries to DCC chat you. The drawbacks can range from annoying through downright dangerous. Use auto-accept with care.
+> When enabled, irssi will replace spaces with underscores in the names of files you send. It should only be necessary when sending files to clients that don't support quoted filenames, or if you hate spaces in filenames.
 
-{:#dcc_mirc_ctcp}
-` dcc_mirc_ctcp = OFF `
+{:#dcc_timeout}
+` dcc_timeout = 5min `
 
-> Tells irssi to send CTCP messages that are compatible with mIRC clients. This lets you use /me actions in DCC chats with mIRC users, among other things.
+> How long to keep track of pending DCC requests. Requests that do not receive responses within this time will be automatically canceled.
 
-{:#dcc_autoaccept_lowports}
-` dcc_autoaccept_lowports = OFF `
+{:#dcc_upload_path}
+` dcc_upload_path = ~ `
 
-> When this setting is OFF, irssi will not auto-accept DCC requests from privileged ports (those below 1024) even when auto-accept is otherwise on.
+> The path where you keep public files available to send via DCC.
 
 ##  [flood]
 
@@ -207,12 +207,15 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 ##  [history]
 
-{:#scrollback_save_formats}
-` scrollback_save_formats = OFF `
+{:#max_command_history}
+` max_command_history = 100 `
 
-> Turn on to save formats in the scrollback buffer, so that old messages are not changed by new themes. Turn off so the current theme applies to your entire scrollback buffer.
->
-> Setting this to OFF doesn't seem to do anything, however.
+> The number of lines of your own input to keep for recall.
+
+{:#rawlog_lines}
+` rawlog_lines = 200 `
+
+> Irssi's raw log is a buffer of raw IRC messages. It's used for debugging irssi and maybe some other things. This setting tells irssi how many raw messages to keep around.
 
 {:#scroll_page_count}
 ` scroll_page_count = /2 `
@@ -224,25 +227,12 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >>     .33 = Scroll about a third of a page.
 >>     4   = Scroll four lines.
 
-{:#window_history}
-` window_history = OFF `
+{:#scrollback_burst_remove}
+` scrollback_burst_remove = 10 `
 
-> When turned ON, command history will be kept per-window. When off, irssi uses a single command history for all windows.
-
-{:#max_command_history}
-` max_command_history = 100 `
-
-> The number of lines of your own input to keep for recall.
-
-{:#scrollback_time}
-` scrollback_time = 1day `
-
-> Keep at least scrollback_time worth of messages in the scrollback buffer, even if it means having more than scrollback_lines lines in the buffer.
-
-{:#rawlog_lines}
-` rawlog_lines = 200 `
-
-> Irssi's raw log is a buffer of raw IRC messages. It's used for debugging irssi and maybe some other things. This setting tells irssi how many raw messages to keep around.
+> This is a speed optimization: Don't bother removing messages from the scrollback buffer until the line limit has been exceeded by scrollback_burst_remove lines. This lets irssi do its memory management in chunks rather than one line at a time.
+>
+> TODO - Is this right?
 
 {:#scrollback_lines}
 ` scrollback_lines = 500 `
@@ -251,28 +241,29 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > Setting scrollback_lines to zero also seems to thwart the scrollback_burst_remove optimization.
 
-{:#scrollback_burst_remove}
-` scrollback_burst_remove = 10 `
+{:#scrollback_save_formats}
+` scrollback_save_formats = OFF `
 
-> This is a speed optimization: Don't bother removing messages from the scrollback buffer until the line limit has been exceeded by scrollback_burst_remove lines. This lets irssi do its memory management in chunks rather than one line at a time.
+> Turn on to save formats in the scrollback buffer, so that old messages are not changed by new themes. Turn off so the current theme applies to your entire scrollback buffer.
 >
-> TODO - Is this right?
+> Setting this to OFF doesn't seem to do anything, however.
+
+{:#scrollback_time}
+` scrollback_time = 1day `
+
+> Keep at least scrollback_time worth of messages in the scrollback buffer, even if it means having more than scrollback_lines lines in the buffer.
+
+{:#window_history}
+` window_history = OFF `
+
+> When turned ON, command history will be kept per-window. When off, irssi uses a single command history for all windows.
 
 ##  [log]
 
-{:#log_close_string}
-` log_close_string = --- Log closed %a %b %d %H:%M:%S %Y `
+{:#autolog}
+` autolog = OFF `
 
-> The message to log when logs are closed.
->
-> See Appendix C for the meanings of Irssi's time format codes.
-
-{:#log_timestamp}
-` log_timestamp = %H:%M `
-
-> The time format for log timestamps.
->
-> See Appendix C for the meanings of Irssi's time format codes.
+> Automatically log everything, or at least the types of messages defined by autolog_level.
 
 {:#autolog_colors}
 ` autolog_colors = OFF `
@@ -284,23 +275,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > The types of messages to auto-log. See the autolog setting.
 
-{:#awaylog_colors}
-` awaylog_colors = ON `
-
-> Whether to store color information in /away logs.
-
-{:#log_day_changed}
-` log_day_changed = --- Day changed %a %b %d %Y `
-
-> The message to log when a new day begins.
->
-> See Appendix C for the meanings of Irssi's time format codes.
-
-{:#autolog}
-` autolog = OFF `
-
-> Automatically log everything, or at least the types of messages defined by autolog_level.
-
 {:#autolog_path}
 ` autolog_path = ~/irclogs/$tag/$0.log `
 
@@ -308,10 +282,10 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > See Appendix B for Irssi's special variables. Irssi's special variables can be used to do fancy things like daily log rotations.
 
-{:#awaylog_level}
-` awaylog_level = msgs hilight `
+{:#awaylog_colors}
+` awaylog_colors = ON `
 
-> The types of messages to log to awaylog_file while you're away.
+> Whether to store color information in /away logs.
 
 {:#awaylog_file}
 ` awaylog_file = ~/.irssi/away.log `
@@ -320,10 +294,17 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > I assume irssi's special variables also work here. See Appendix B for more information about them.
 
-{:#log_theme}
-` log_theme = `
+{:#awaylog_level}
+` awaylog_level = msgs hilight `
 
-> Logs can have a different theme than what you see on the screen. This can be used to create machine-parseable versions of logs, for example.
+> The types of messages to log to awaylog_file while you're away.
+
+{:#log_close_string}
+` log_close_string = --- Log closed %a %b %d %H:%M:%S %Y `
+
+> The message to log when logs are closed.
+>
+> See Appendix C for the meanings of Irssi's time format codes.
 
 {:#log_create_mode}
 ` log_create_mode = 600 `
@@ -332,6 +313,13 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > 600 is read/write by you, but nobody else can see them. A sensible default mode. It can also be set to 644 if you want the rest of the world to read your logs.
 
+{:#log_day_changed}
+` log_day_changed = --- Day changed %a %b %d %Y `
+
+> The message to log when a new day begins.
+>
+> See Appendix C for the meanings of Irssi's time format codes.
+
 {:#log_open_string}
 ` log_open_string = --- Log opened %a %b %d %H:%M:%S %Y `
 
@@ -339,12 +327,356 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > See Appendix C for the meanings of Irssi's time format codes.
 
+{:#log_theme}
+` log_theme = `
+
+> Logs can have a different theme than what you see on the screen. This can be used to create machine-parseable versions of logs, for example.
+
+{:#log_timestamp}
+` log_timestamp = %H:%M `
+
+> The time format for log timestamps.
+>
+> See Appendix C for the meanings of Irssi's time format codes.
+
 ##  [lookandfeel]
+
+{:#activity_hide_level}
+` activity_hide_level = `
+
+> Message levels that don't count towards channel activity. That is, channels won't be marked as active if messages of these types appear.
+
+{:#activity_hide_targets}
+` activity_hide_targets = `
+
+> Sometimes you don't care at all about a channel's activity. This can be set to a list of channels that will never appear to be active.
+
+{:#activity_hilight_level}
+` activity_hilight_level = MSGS DCCMSGS `
+
+> There are times when you want to highlight channel activity in a window. Like when someone sends you a private message, or a DCC message. Activity_highlight_level sets the kind of messages you think are extra important.
+
+{:#activity_msg_level}
+` activity_msg_level = PUBLIC `
+
+> Flag a channel as active when messages of this type are displayed there.
+
+{:#actlist_moves}
+` actlist_moves = OFF `
+
+> When on, irssi rearranges the activity list so windows with more recent activity appear first. Otherwise windows are listed in numeric order.
+
+{:#autoclose_query}
+` autoclose_query = 0 `
+
+> Automatically close query windows after autoclose_query seconds of inactivity. Setting autoclose_query to zero will keep them open until you decide to close them yourself.
+
+{:#autoclose_windows}
+` autoclose_windows = ON `
+
+> Automatically close windows when nobody is in them. This keeps your window list tidy, but it means that query windows may rearrange as people log off then privately message you later.
+
+{:#autocreate_own_query}
+` autocreate_own_query = ON `
+
+> Turn on to automatically create query windows when you /msg someone.
+
+{:#autocreate_query_level}
+` autocreate_query_level = MSGS DCCMSGS `
+
+> Automatically create query windows when receiving these types of messages.
+
+{:#autocreate_windows}
+` autocreate_windows = ON `
+
+> When on, create new windows for certain operations, such as /join. When off, everything is just dumped into one window.
+
+{:#autocreate_split_windows}
+` autocreate_split_windows = OFF `
+
+> Automatically created windows will be created as split windows with this setting on.
+>
+> Split windows are the kind where multiple windows are on one screen.
+
+{:#autofocus_new_items}
+` autofocus_new_items = ON `
+
+> Switch the focus to a new item when it's created. This may be disturbing at first when combined with query window auto-creation, and it may be downright dangerous if it causes you to accidentally misdirect messages.
+
+{:#autostick_split_windows}
+` autostick_split_windows = ON `
+
+> TODO - What is this?
+>
+> Nei says: Setting split windows to stick means that their content won't change. Best thing to come up with a viable description might be if you tried it.
+>
+> f0rked has written an excellent guide to irssi's split windows: <<http://f0rked.com/articles/irssisplit>>
+
+{:#beep_msg_level}
+` beep_msg_level = `
+
+> Beep when messages match this level mask.
+
+{:#beep_when_away}
+` beep_when_away = ON `
+
+> Should beeps be noisy when you're /away? Great for people who sleep near their terminals or keep irssi running at work. :)
+
+{:#beep_when_window_active}
+` beep_when_window_active = ON `
+
+> Should beeps be noisy in a window you're watching? Perhaps not, since you are theoretically watching that window. You ARE watching it, aren't you?
+
+{:#bell_beeps}
+` bell_beeps = OFF `
+
+> Tell irssi whether bell characters (chr 7, ^G) should actually cause beeps.
+>
+> According to Nei, bell_beeps seems to cover the case where a beep is caused by a printed message/format. It's unrelated to activity beeps.
+
+{:#chanmode_expando_strip}
+` chanmode_expando_strip = OFF `
+
+> When on, $M will not return mode parameters.
+>
+> This means for example that the channel limit and channel key won't be shown in your statusbar (a common place where $M is used) (but also not in all other places that refer to $M for whatever reason).
+
+{:#colors}
+` colors = ON `
+
+> Enable or disable colors.
+
+{:#emphasis}
+` emphasis = ON `
+
+> Enable or disable real underlining and bolding when someone says *bold* or _underlined_.
+
+{:#emphasis_multiword}
+` emphasis_multiword = OFF `
+
+> Turn on to allow *more than one word bold* and _multiple underlined words_. Used in conjunction with the emphasis setting.
+
+{:#emphasis_replace}
+` emphasis_replace = OFF `
+
+> If emphasis is turned on, the * or _ characters indicating emphasis will be removed when the word is made bold or underlined. Some people find this looks cleaner.
+>
+> See the emphasis setting for more information.
+
+{:#expand_escapes}
+` expand_escapes = OFF `
+
+> Detect escapes in input, and expand them to the characters they describe. For example
+>
+>>
+>>     t
+>
+> Is literally '' and 't' when expand_escapes is off, but it's the tab character (chr 9) when expand_escapes is on.
+
+{:#hide_colors}
+` hide_colors = OFF `
+
+> Hide mIRC and ANSI colors when turned on. This can be used to eliminate angry fruit salad syndrome in some channels.
+
+{:#hide_server_tags}
+` hide_server_tags = OFF `
+
+> Server tags are prefixes to some messages (server messages?) that let you know which server the message came from. They're often considered noisy, so this option lets you hide them.
+
+{:#hide_text_style}
+` hide_text_style = OFF `
+
+> Hide bold, blink, underline, and reverse attributes.
+
+{:#hilight_act_color}
+` hilight_act_color = %M `
+
+> The color to use to highlight window activity in the status bar. That's the section that shows [Act: ...].
+>
+> See Appendix D for Irssi's color codes.
+
+{:#hilight_color}
+` hilight_color = %Y `
+
+> The default color for /hilight.
+>
+> See Appendix D for Irssi's color codes.
+
+{:#hilight_level}
+` hilight_level = PUBLIC DCCMSGS `
+
+> The types of messages that can be highlighted.
+
+{:#hilight_nick_matches}
+` hilight_nick_matches = ON `
+
+> Tell irssi whether it should automatically highlight text that matches your nickname.
+
+{:#indent}
+` indent = 10 `
+
+> How many columns to indent subsequent lines of a wrapped message.
+>
+> Attention: This can be overwritten by themes.
+
+{:#indent_always}
+` indent_always = OFF `
+
+> Should we indent the long words that are forcibly wrapped to the next line? This can break long words such as URLs by inserting spaces in the middle of them.
+>
+> Turn off if you would like to copy/paste or otherwise use URLs from your terminal.
+
+{:#mirc_blink_fix}
+` mirc_blink_fix = OFF `
+
+> Some terminals interpret bright background colors as blinking text. mIRC doesn't support blinking at all. This fixes the blinky terminals by replacing high colors with their low equivalents.
+>
+> From irssi's ChangeLog:
+>
+>>
+>>     /SET mirc_blink_fix - if ON, the bright/blink bit is stripped
+>>     from MIRC colors. Set this to ON, if your terminal shows bright
+>>     background colors as blinking.
+
+{:#names_max_columns}
+` names_max_columns = 6 `
+
+> Maximum number of columns to use for /names listing. Also shown on channel join. Set to 0 for as many as fit in your terminal.
+
+{:#names_max_width}
+` names_max_width = 0 `
+
+> Maximum number of columns to consume with a /names listing. Overrides names_max_columns if non-zero. Set to 0 for as many as fit in your terminal.
+
+{:#print_active_channel}
+` print_active_channel = OFF `
+
+> Always print the channel with the nickname (like nick:channel) even if the message is from the channel you currently have active.
+
+{:#query_track_nick_changes}
+` query_track_nick_changes = ON `
+
+> Query windows will track nick changes when this is on. That is, it looks for a matching user@host if a message comes in with an unknown nick.
+>
+> TODO - Really?
+
+{:#reuse_unused_windows}
+` reuse_unused_windows = OFF `
+
+> When set on, irssi will reuse unused windows when looking for a new window to put something in. Otherwise unused windows are ignored, and new ones are always created.
+
+{:#scroll}
+` scroll = ON `
+
+> Set scroll ON to have irssi scroll your screen when it fills up. Set it OFF to require manual scrolling.
+>
+> Warning: If set to OFF, this will stop scrolling in all windows and not reenable scrolling even if you set it back to ON. (You need to manually scroll to the bottom in each window first.)
+
+{:#show_away_once}
+` show_away_once = ON `
+
+> When on, only show /away messages in the window that's currently open. Otherwise the message will appear in every window you share with the away person.
 
 {:#show_names_on_join}
 ` show_names_on_join = ON `
 
 > Display the list of names in a channel when you join that channel. It's generally recommended, but you can disable it for pathologically huge channels or in case you just don't care.
+
+{:#show_nickmode}
+` show_nickmode = ON `
+
+> Prefix nicknames with their channel status:
+>
+> voiced + half-op % op @
+
+{:#show_nickmode_empty}
+` show_nickmode_empty = ON `
+
+> If a person has no channel modes, prefix their nickname with a blank space. This keeps nicknames of normal people aligned with those of voiced, half-opped, and opped people.
+
+{:#show_own_nickchange_once}
+` show_own_nickchange_once = OFF `
+
+> Squash your own nick-change messages so they appear only once, not once in every window you have on that network.
+
+{:#show_quit_once}
+` show_quit_once = OFF `
+
+> When turned on, a quit message will only be shown once. Otherwise it will be displayed in every window you share with the quitter.
+
+{:#term_auto_detach}
+` term_auto_detach = OFF `
+
+> Automatically detach from the terminal when it disappears.
+>
+> This doesn't actually work. Or if it does, there's currently no way to re-attach to the terminal. It may be useful for setting up daemons where you don't want to run nohup or screen, however.
+
+{:#term_charset}
+` term_charset = US-ASCII `
+
+> Sets your native terminal character set. Irssi will take this into consideration when it needs to delete multibyte characters, for example.
+>
+> A common value is utf-8 for Unicode/UTF-8 enabled terminals.
+>
+> TODO - Does this still support Chinese terminal emulators? (Used to be term_type = big5 in old Irssi.)
+
+{:#term_force_colors}
+` term_force_colors = OFF `
+
+> Always display colors, even when the terminal type says colors aren't supported. Useful for working around really dumb terminals.
+
+{:#theme}
+` theme = default `
+
+> Irssi supports themes that can change most of the client's look and feel. This setting lets you name the theme you wish to use.
+
+{:#timestamp_format}
+` timestamp_format = %H:%M `
+
+> How to format the time used in timestamps.
+>
+> See Appendix C for the meanings of Irssi's time format codes.
+
+{:#timestamp_level}
+` timestamp_level = ALL `
+
+> Types of messages to prefix a timestamp to. Useful for explicit or automatic timestamps.
+>
+> Once timestamping is temporarily turned on, it may stay on for timestamp_timeout seconds.
+
+{:#timestamp_timeout}
+` timestamp_timeout = 0 `
+
+> The amount of time to leave timestamps on after a timestamp_level message triggered timestamping. Useful for people who think timestamps are noisy but would like timestamps for important conversations.
+
+{:#timestamps}
+` timestamps = ON `
+
+> Turn timestamps on or off. When off, not even timestamp_level will trigger them.
+
+{:#use_msgs_window}
+` use_msgs_window = OFF `
+
+> Use a single window for all private messages. This setting only makes sense if automatic query windows is turned off.
+
+{:#use_status_window}
+` use_status_window = ON `
+
+> Create a separate window for all server status messages, so they don't clutter up your channels.
+
+{:#whois_hide_safe_channel_id}
+` whois_hide_safe_channel_id = ON `
+
+> Introduced in 0.8.10.
+>
+> Hides the unique id of !channels in /whois output (IRCNet/irc2 networks only).
+>
+> E.g. shows !channel instead of !12345channel
+
+{:#window_auto_change}
+` window_auto_change = OFF `
+
+> Turn this on to automatically switch to newly-created windows. This may cause you to misdirect messages, so be careful.
 
 {:#window_check_level_first}
 ` window_check_level_first = OFF `
@@ -360,352 +692,22 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > Wouter Coekaerts has made a nice explanation about this, see <<http://wouter.coekaerts.be/site/irssi/wclf>>
 
-{:#emphasis}
-` emphasis = ON `
-
-> Enable or disable real underlining and bolding when someone says *bold* or _underlined_.
-
-{:#autocreate_split_windows}
-` autocreate_split_windows = OFF `
-
-> Automatically created windows will be created as split windows with this setting on.
->
-> Split windows are the kind where multiple windows are on one screen.
-
-{:#beep_msg_level}
-` beep_msg_level = `
-
-> Beep when messages match this level mask.
-
-{:#actlist_moves}
-` actlist_moves = OFF `
-
-> When on, irssi rearranges the activity list so windows with more recent activity appear first. Otherwise windows are listed in numeric order.
-
-{:#hilight_nick_matches}
-` hilight_nick_matches = ON `
-
-> Tell irssi whether it should automatically highlight text that matches your nickname.
-
-{:#emphasis_multiword}
-` emphasis_multiword = OFF `
-
-> Turn on to allow *more than one word bold* and _multiple underlined words_. Used in conjunction with the emphasis setting.
-
-{:#hide_colors}
-` hide_colors = OFF `
-
-> Hide mIRC and ANSI colors when turned on. This can be used to eliminate angry fruit salad syndrome in some channels.
-
-{:#names_max_width}
-` names_max_width = 0 `
-
-> Maximum number of columns to consume with a /names listing. Overrides names_max_columns if non-zero. Set to 0 for as many as fit in your terminal.
-
-{:#mirc_blink_fix}
-` mirc_blink_fix = OFF `
-
-> Some terminals interpret bright background colors as blinking text. mIRC doesn't support blinking at all. This fixes the blinky terminals by replacing high colors with their low equivalents.
->
-> From irssi's ChangeLog:
->
->>
->>     /SET mirc_blink_fix - if ON, the bright/blink bit is stripped
->>     from MIRC colors. Set this to ON, if your terminal shows bright
->>     background colors as blinking.
-
-{:#autoclose_windows}
-` autoclose_windows = ON `
-
-> Automatically close windows when nobody is in them. This keeps your window list tidy, but it means that query windows may rearrange as people log off then privately message you later.
-
-{:#bell_beeps}
-` bell_beeps = OFF `
-
-> Tell irssi whether bell characters (chr 7, ^G) should actually cause beeps.
->
-> According to Nei, bell_beeps seems to cover the case where a beep is caused by a printed message/format. It's unrelated to activity beeps.
-
-{:#hide_server_tags}
-` hide_server_tags = OFF `
-
-> Server tags are prefixes to some messages (server messages?) that let you know which server the message came from. They're often considered noisy, so this option lets you hide them.
-
-{:#show_nickmode}
-` show_nickmode = ON `
-
-> Prefix nicknames with their channel status:
->
-> voiced + half-op % op @
-
-{:#theme}
-` theme = default `
-
-> Irssi supports themes that can change most of the client's look and feel. This setting lets you name the theme you wish to use.
-
-{:#timestamps}
-` timestamps = ON `
-
-> Turn timestamps on or off. When off, not even timestamp_level will trigger them.
-
-{:#indent}
-` indent = 10 `
-
-> How many columns to indent subsequent lines of a wrapped message.
->
-> Attention: This can be overwritten by themes.
-
-{:#timestamp_format}
-` timestamp_format = %H:%M `
-
-> How to format the time used in timestamps.
->
-> See Appendix C for the meanings of Irssi's time format codes.
-
-{:#activity_msg_level}
-` activity_msg_level = PUBLIC `
-
-> Flag a channel as active when messages of this type are displayed there.
-
-{:#print_active_channel}
-` print_active_channel = OFF `
-
-> Always print the channel with the nickname (like nick:channel) even if the message is from the channel you currently have active.
-
-{:#autoclose_query}
-` autoclose_query = 0 `
-
-> Automatically close query windows after autoclose_query seconds of inactivity. Setting autoclose_query to zero will keep them open until you decide to close them yourself.
-
-{:#activity_hide_targets}
-` activity_hide_targets = `
-
-> Sometimes you don't care at all about a channel's activity. This can be set to a list of channels that will never appear to be active.
-
-{:#use_msgs_window}
-` use_msgs_window = OFF `
-
-> Use a single window for all private messages. This setting only makes sense if automatic query windows is turned off.
-
-{:#timestamp_timeout}
-` timestamp_timeout = 0 `
-
-> The amount of time to leave timestamps on after a timestamp_level message triggered timestamping. Useful for people who think timestamps are noisy but would like timestamps for important conversations.
-
-{:#use_status_window}
-` use_status_window = ON `
-
-> Create a separate window for all server status messages, so they don't clutter up your channels.
-
 {:#windows_auto_renumber}
 ` windows_auto_renumber = ON `
 
 > Closing windows can create gaps in the window list. When windows_auto_renumber is turned on, however, windows are shifted to lower numbers in the list to fill those gaps.
 
-{:#show_nickmode_empty}
-` show_nickmode_empty = ON `
-
-> If a person has no channel modes, prefix their nickname with a blank space. This keeps nicknames of normal people aligned with those of voiced, half-opped, and opped people.
-
-{:#beep_when_away}
-` beep_when_away = ON `
-
-> Should beeps be noisy when you're /away? Great for people who sleep near their terminals or keep irssi running at work. :)
-
-{:#timestamp_level}
-` timestamp_level = ALL `
-
-> Types of messages to prefix a timestamp to. Useful for explicit or automatic timestamps.
->
-> Once timestamping is temporarily turned on, it may stay on for timestamp_timeout seconds.
-
-{:#indent_always}
-` indent_always = OFF `
-
-> Should we indent the long words that are forcibly wrapped to the next line? This can break long words such as URLs by inserting spaces in the middle of them.
->
-> Turn off if you would like to copy/paste or otherwise use URLs from your terminal.
-
-{:#hilight_color}
-` hilight_color = %Y `
-
-> The default color for /hilight.
->
-> See Appendix D for Irssi's color codes.
-
-{:#emphasis_replace}
-` emphasis_replace = OFF `
-
-> If emphasis is turned on, the * or _ characters indicating emphasis will be removed when the word is made bold or underlined. Some people find this looks cleaner.
->
-> See the emphasis setting for more information.
-
-{:#hilight_level}
-` hilight_level = PUBLIC DCCMSGS `
-
-> The types of messages that can be highlighted.
-
-{:#hilight_act_color}
-` hilight_act_color = %M `
-
-> The color to use to highlight window activity in the status bar. That's the section that shows [Act: ...].
->
-> See Appendix D for Irssi's color codes.
-
-{:#expand_escapes}
-` expand_escapes = OFF `
-
-> Detect escapes in input, and expand them to the characters they describe. For example
->
->>
->>     t
->
-> Is literally '' and 't' when expand_escapes is off, but it's the tab character (chr 9) when expand_escapes is on.
-
-{:#autocreate_windows}
-` autocreate_windows = ON `
-
-> When on, create new windows for certain operations, such as /join. When off, everything is just dumped into one window.
-
-{:#autocreate_query_level}
-` autocreate_query_level = MSGS DCCMSGS `
-
-> Automatically create query windows when receiving these types of messages.
-
-{:#term_auto_detach}
-` term_auto_detach = OFF `
-
-> Automatically detach from the terminal when it disappears.
->
-> This doesn't actually work. Or if it does, there's currently no way to re-attach to the terminal. It may be useful for setting up daemons where you don't want to run nohup or screen, however.
-
-{:#hide_text_style}
-` hide_text_style = OFF `
-
-> Hide bold, blink, underline, and reverse attributes.
-
-{:#whois_hide_safe_channel_id}
-` whois_hide_safe_channel_id = ON `
-
-> Introduced in 0.8.10.
->
-> Hides the unique id of !channels in /whois output (IRCNet/irc2 networks only).
->
-> E.g. shows !channel instead of !12345channel
-
-{:#names_max_columns}
-` names_max_columns = 6 `
-
-> Maximum number of columns to use for /names listing. Also shown on channel join. Set to 0 for as many as fit in your terminal.
-
-{:#chanmode_expando_strip}
-` chanmode_expando_strip = OFF `
-
-> When on, $M will not return mode parameters.
->
-> This means for example that the channel limit and channel key won't be shown in your statusbar (a common place where $M is used) (but also not in all other places that refer to $M for whatever reason).
-
-{:#show_quit_once}
-` show_quit_once = OFF `
-
-> When turned on, a quit message will only be shown once. Otherwise it will be displayed in every window you share with the quitter.
-
-{:#show_away_once}
-` show_away_once = ON `
-
-> When on, only show /away messages in the window that's currently open. Otherwise the message will appear in every window you share with the away person.
-
-{:#autocreate_own_query}
-` autocreate_own_query = ON `
-
-> Turn on to automatically create query windows when you /msg someone.
-
-{:#term_charset}
-` term_charset = US-ASCII `
-
-> Sets your native terminal character set. Irssi will take this into consideration when it needs to delete multibyte characters, for example.
->
-> A common value is utf-8 for Unicode/UTF-8 enabled terminals.
->
-> TODO - Does this still support Chinese terminal emulators? (Used to be term_type = big5 in old Irssi.)
-
-{:#activity_hilight_level}
-` activity_hilight_level = MSGS DCCMSGS `
-
-> There are times when you want to highlight channel activity in a window. Like when someone sends you a private message, or a DCC message. Activity_highlight_level sets the kind of messages you think are extra important.
-
-{:#autostick_split_windows}
-` autostick_split_windows = ON `
-
-> TODO - What is this?
->
-> Nei says: Setting split windows to stick means that their content won't change. Best thing to come up with a viable description might be if you tried it.
->
-> f0rked has written an excellent guide to irssi's split windows: <<http://f0rked.com/articles/irssisplit>>
-
-{:#query_track_nick_changes}
-` query_track_nick_changes = ON `
-
-> Query windows will track nick changes when this is on. That is, it looks for a matching user@host if a message comes in with an unknown nick.
->
-> TODO - Really?
-
-{:#scroll}
-` scroll = ON `
-
-> Set scroll ON to have irssi scroll your screen when it fills up. Set it OFF to require manual scrolling.
->
-> Warning: If set to OFF, this will stop scrolling in all windows and not reenable scrolling even if you set it back to ON. (You need to manually scroll to the bottom in each window first.)
-
-{:#window_auto_change}
-` window_auto_change = OFF `
-
-> Turn this on to automatically switch to newly-created windows. This may cause you to misdirect messages, so be careful.
-
-{:#beep_when_window_active}
-` beep_when_window_active = ON `
-
-> Should beeps be noisy in a window you're watching? Perhaps not, since you are theoretically watching that window. You ARE watching it, aren't you?
-
-{:#activity_hide_level}
-` activity_hide_level = `
-
-> Message levels that don't count towards channel activity. That is, channels won't be marked as active if messages of these types appear.
-
-{:#show_own_nickchange_once}
-` show_own_nickchange_once = OFF `
-
-> Squash your own nick-change messages so they appear only once, not once in every window you have on that network.
-
-{:#reuse_unused_windows}
-` reuse_unused_windows = OFF `
-
-> When set on, irssi will reuse unused windows when looking for a new window to put something in. Otherwise unused windows are ignored, and new ones are always created.
-
-{:#colors}
-` colors = ON `
-
-> Enable or disable colors.
-
-{:#term_force_colors}
-` term_force_colors = OFF `
-
-> Always display colors, even when the terminal type says colors aren't supported. Useful for working around really dumb terminals.
-
-{:#autofocus_new_items}
-` autofocus_new_items = ON `
-
-> Switch the focus to a new item when it's created. This may be disturbing at first when combined with query window auto-creation, and it may be downright dangerous if it causes you to accidentally misdirect messages.
-
 ##  [misc]
 
-{:#opermode}
-` opermode = `
+{:#auto_whowas}
+` auto_whowas = ON `
 
-> When set, irssi will set your modes to match opermode when you /oper up. For example, you might
->
->>
->>     /set opermode +s 1048575
+> Automatically try /whowas if you /whois someone who isn't online.
+
+{:#ban_type}
+` ban_type = normal `
+
+> The default ban type to use: normal, user, host, domain, custom? See /help ban for a description of ban types.
 
 {:#channel_max_who_sync}
 ` channel_max_who_sync = 1000 `
@@ -721,37 +723,15 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > If this is set too high, IRC servers might kick you for Sendq exceeded.
 
-{:#recode_autodetect_utf8}
-` recode_autodetect_utf8 = ON `
+{:#channel_sync}
+` channel_sync = ON `
 
-> Introduced in 0.8.10.
->
-> Irssi's recode system is broken. This tries to cover up for it by leaving messages intact that seem to decode fine as Unicode UTF-8.
+> Set whether irssi should synchronize a channel on join. When enabled, irssi will gather extra information about a channel: modes, who list, ban list, ban exceptions, and invite list.
 
-{:#lag_check_time}
-` lag_check_time = 1min `
+{:#cmdchars}
+` cmdchars = / `
 
-> How long to wait between active lag checks. Irssi will passively check for lag when you're active, but sometimes it's necessary to actively check. This is the minimum amount of time between active checks.
-
-{:#quit_message}
-` quit_message = leaving `
-
-> Default message to send when /quit'ting.
-
-{:#paste_detect_time}
-` paste_detect_time = 5msecs `
-
-> Irssi will detect pastes when your input has less than this much time between lines.
-
-{:#notify_check_time}
-` notify_check_time = 1min `
-
-> How often to check for someone online when /notify is on.
-
-{:#help_path}
-` help_path = /usr/local/share/irssi/help `
-
-> One or more paths where irssi will look for its help database. Multiple paths are separated by :. It's very important that this is correct.
+> Prefix characters that tell irssi that your input is a command rather than chat text.
 
 {:#ctcp_userinfo_reply}
 ` ctcp_userinfo_reply = $Y `
@@ -760,10 +740,32 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > See <<http://irssi.org/documentation/special_vars>> for more special variables you can use.
 
-{:#override_coredump_limit}
-` override_coredump_limit = ON `
+{:#ctcp_version_reply}
+` ctcp_version_reply = irssi v$J - running on $sysname $sysarch `
 
-> Allow really really big coredumps if this is set on.
+> What to tell someone when they query your client's version.
+>
+> Some people consider announcing your client and operating system type and version to be a security hole. Those people change this setting.
+
+{:#group_multi_mode}
+` group_multi_mode = ON `
+
+> Consolidate multiple consecutive channel modes into a single message. This will delay the display of channel modes for a short period of time while it waits to see if multiple modes are occurring.
+
+{:#help_path}
+` help_path = /usr/local/share/irssi/help `
+
+> One or more paths where irssi will look for its help database. Multiple paths are separated by :. It's very important that this is correct.
+
+{:#hide_netsplit_quits}
+` hide_netsplit_quits = ON `
+
+> Don't display quit messages if they're the product of a netsplit. Some people find this helpful, while others find it creepy.
+
+{:#ignore_signals}
+` ignore_signals = `
+
+> Operating system signals to ignore. May be zero or more of: int, quit, term, alrm, usr1, and usr2.
 
 {:#join_auto_chans_on_invite}
 ` join_auto_chans_on_invite = ON `
@@ -772,49 +774,32 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > TODO - Does this only work with channels on the /channel add -auto list?
 
-{:#netjoin_max_nicks}
-` netjoin_max_nicks = 10 `
+{:#kick_first_on_kickban}
+` kick_first_on_kickban = OFF `
 
-> When non-zero, limits the number of nicknames to display during netjoins.
+> Kickban will normally ban first, then kick. Turn this option on to reverse the situation, which can create a race condition if the user rejoins between your kick and the subsequent ban.
+
+{:#knockout_time}
+` knockout_time = 5min `
+
+> Knockouts are temporary kickbans. Knockout_time is the default amount of time before each temporary ban is lifted.
 >
-> TODO - Is this correct?
+> See /help knockout
 
-{:#paste_join_multiline}
-` paste_join_multiline = ON `
+{:#lag_check_time}
+` lag_check_time = 1min `
 
-> Introduced in 0.8.10.
->
-> Irssi will try to concatenate multiple lines into a single lined message when these lines have the same indentation level and look like they were copied out of Irssi.
->
-> It's useful for quoting e-mail or other large-text messages, but it will probably bite you if you try to pasted indented text, such as code listings. Irssi will join multiple lines of code, destroying any structure you wanted to preserve.
+> How long to wait between active lag checks. Irssi will passively check for lag when you're active, but sometimes it's necessary to actively check. This is the minimum amount of time between active checks.
 
-{:#channel_sync}
-` channel_sync = ON `
+{:#lag_max_before_disconnect}
+` lag_max_before_disconnect = 5min `
 
-> Set whether irssi should synchronize a channel on join. When enabled, irssi will gather extra information about a channel: modes, who list, ban list, ban exceptions, and invite list.
+> Irssi detects your lag and will reconnect you automatically if your lag exceeds this value.
 
-{:#paste_detect_keycount}
-` paste_detect_keycount = 5 `
+{:#lag_min_show}
+` lag_min_show = 1sec `
 
-> Introduced in 0.8.10.
->
-> TODO - What's this?
-
-{:#recode_fallback}
-` recode_fallback = CP1252 `
-
-> Introduced in 0.8.10.
->
-> If you have Irssi compiled with recode support and Irssi believes that a message you received did not recode properly in your terminal default character set (or the specified one), it will recode the message using this character set.
->
-> (CP1252, the irssi default, is the Microsoft(R) Windows default character set for Western Europe.)
->
-> Also see /help recode for more details about recoding.
-
-{:#notify_idle_time}
-` notify_idle_time = 1hour `
-
-> Irssi will notify you when someone you're watching becomes idle for this long.
+> Lag is a part of life on IRC. Don't bother displaying lag that's below this threshold, presumably because you consider it to be insignificant.
 
 {:#massjoin_max_joins}
 ` massjoin_max_joins = 3 `
@@ -823,54 +808,12 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > TODO - Or is this when more than massjoin_max_joins people join per massjoin_max_wait seconds, regardless of the user mask?
 
-{:#write_buffer_size}
-` write_buffer_size = 0 `
+{:#massjoin_max_wait}
+` massjoin_max_wait = 5000 `
 
-> Amount of text (logs, etc) to buffer in memory before writing to disk. Useful for minimizing disk access.
-
-{:#write_buffer_timeout}
-` write_buffer_timeout = 0 `
-
-> Amount of time to keep text in memory. A buffer is flushed to disk if the text in it is this old, even if the buffer isn't full.
+> The amount of time to watch for mass-joins.
 >
-> Useful in conjunction with really large write_buffer_size values, to prevent a lot of text from being lost if irssi crashes or is killed.
-
-{:#STATUS_OPER}
-` STATUS_OPER = * `
-
-> TODO - What's this?
-
-{:#recode}
-` recode = ON `
-
-> Introduced in 0.8.10.
->
-> This setting allows you to disable irssi's recode functionality, if you prefer your messages not being messed with.
-
-{:#ban_type}
-` ban_type = normal `
-
-> The default ban type to use: normal, user, host, domain, custom? See /help ban for a description of ban types.
-
-{:#lag_max_before_disconnect}
-` lag_max_before_disconnect = 5min `
-
-> Irssi detects your lag and will reconnect you automatically if your lag exceeds this value.
-
-{:#part_message}
-` part_message = `
-
-> Default message to send when parting a channel.
-
-{:#auto_whowas}
-` auto_whowas = ON `
-
-> Automatically try /whowas if you /whois someone who isn't online.
-
-{:#paste_verify_line_count}
-` paste_verify_line_count = 5 `
-
-> Ask you whether you meant to paste something if it's longer than this many lines.
+> I'm not sure which unit of time is used to measure massjoin_max_wait.
 
 {:#max_wildcard_modes}
 ` max_wildcard_modes = 6 `
@@ -892,56 +835,113 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >>
 >>     /kick -yes *
 
-{:#hide_netsplit_quits}
-` hide_netsplit_quits = ON `
+{:#netjoin_max_nicks}
+` netjoin_max_nicks = 10 `
 
-> Don't display quit messages if they're the product of a netsplit. Some people find this helpful, while others find it creepy.
-
-{:#knockout_time}
-` knockout_time = 5min `
-
-> Knockouts are temporary kickbans. Knockout_time is the default amount of time before each temporary ban is lifted.
+> When non-zero, limits the number of nicknames to display during netjoins.
 >
-> See /help knockout
+> TODO - Is this correct?
 
-{:#massjoin_max_wait}
-` massjoin_max_wait = 5000 `
+{:#netsplit_max_nicks}
+` netsplit_max_nicks = 10 `
 
-> The amount of time to watch for mass-joins.
+> When non-zero, limits the number of nicknames to display during netsplits.
 >
-> I'm not sure which unit of time is used to measure massjoin_max_wait.
-
-{:#lag_min_show}
-` lag_min_show = 1sec `
-
-> Lag is a part of life on IRC. Don't bother displaying lag that's below this threshold, presumably because you consider it to be insignificant.
-
-{:#wall_format}
-` wall_format = [Wall/$0] $1- `
-
-> Format for wall messages.
+> TODO - Is this correct?
 
 {:#netsplit_nicks_hide_threshold}
 ` netsplit_nicks_hide_threshold = 15 `
 
 > Limit the number of nicks to display during netsplits to this many. Or don't limit them at all, if this is set to 0.
 
-{:#settings_autosave}
-` settings_autosave = ON `
+{:#notify_check_time}
+` notify_check_time = 1min `
 
-> Automatically save your settings when you quit irssi, or once per hour, rather than waiting for you to /save them yourself.
+> How often to check for someone online when /notify is on.
 
-{:#translation}
-` translation = `
+{:#notify_idle_time}
+` notify_idle_time = 1hour `
 
-> Set the translation table to use. See Appendix E.
+> Irssi will notify you when someone you're watching becomes idle for this long.
+
+{:#notify_whois_time}
+` notify_whois_time = 5min `
+
+> How often to check /whois on a user who's online, to see if their /away or idle status changes.
+
+{:#opermode}
+` opermode = `
+
+> When set, irssi will set your modes to match opermode when you /oper up. For example, you might
 >
-> TODO - Does this still work even?
+>>
+>>     /set opermode +s 1048575
 
-{:#group_multi_mode}
-` group_multi_mode = ON `
+{:#override_coredump_limit}
+` override_coredump_limit = ON `
 
-> Consolidate multiple consecutive channel modes into a single message. This will delay the display of channel modes for a short period of time while it waits to see if multiple modes are occurring.
+> Allow really really big coredumps if this is set on.
+
+{:#part_message}
+` part_message = `
+
+> Default message to send when parting a channel.
+
+{:#paste_detect_keycount}
+` paste_detect_keycount = 5 `
+
+> Introduced in 0.8.10.
+>
+> TODO - What's this?
+
+{:#paste_detect_time}
+` paste_detect_time = 5msecs `
+
+> Irssi will detect pastes when your input has less than this much time between lines.
+
+{:#paste_join_multiline}
+` paste_join_multiline = ON `
+
+> Introduced in 0.8.10.
+>
+> Irssi will try to concatenate multiple lines into a single lined message when these lines have the same indentation level and look like they were copied out of Irssi.
+>
+> It's useful for quoting e-mail or other large-text messages, but it will probably bite you if you try to pasted indented text, such as code listings. Irssi will join multiple lines of code, destroying any structure you wanted to preserve.
+
+{:#paste_verify_line_count}
+` paste_verify_line_count = 5 `
+
+> Ask you whether you meant to paste something if it's longer than this many lines.
+
+{:#quit_message}
+` quit_message = leaving `
+
+> Default message to send when /quit'ting.
+
+{:#recode}
+` recode = ON `
+
+> Introduced in 0.8.10.
+>
+> This setting allows you to disable irssi's recode functionality, if you prefer your messages not being messed with.
+
+{:#recode_autodetect_utf8}
+` recode_autodetect_utf8 = ON `
+
+> Introduced in 0.8.10.
+>
+> Irssi's recode system is broken. This tries to cover up for it by leaving messages intact that seem to decode fine as Unicode UTF-8.
+
+{:#recode_fallback}
+` recode_fallback = CP1252 `
+
+> Introduced in 0.8.10.
+>
+> If you have Irssi compiled with recode support and Irssi believes that a message you received did not recode properly in your terminal default character set (or the specified one), it will recode the message using this character set.
+>
+> (CP1252, the irssi default, is the Microsoft(R) Windows default character set for Western Europe.)
+>
+> Also see /help recode for more details about recoding.
 
 {:#recode_out_default_charset}
 ` recode_out_default_charset = `
@@ -949,21 +949,6 @@ See the [appendix F](#a_f) for credits and license information of this document.
 > Introduced in 0.8.10.
 >
 > The outgoing character set you want your messags to be recoded into, if different from your term_charset.
-
-{:#cmdchars}
-` cmdchars = / `
-
-> Prefix characters that tell irssi that your input is a command rather than chat text.
-
-{:#notify_whois_time}
-` notify_whois_time = 5min `
-
-> How often to check /whois on a user who's online, to see if their /away or idle status changes.
-
-{:#kick_first_on_kickban}
-` kick_first_on_kickban = OFF `
-
-> Kickban will normally ban first, then kick. Turn this option on to reverse the situation, which can create a race condition if the user rejoins between your kick and the subsequent ban.
 
 {:#recode_transliterate}
 ` recode_transliterate = ON `
@@ -974,29 +959,44 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > If disabled, irssi replaces the character it could not recode with a ? instead.
 
+{:#settings_autosave}
+` settings_autosave = ON `
+
+> Automatically save your settings when you quit irssi, or once per hour, rather than waiting for you to /save them yourself.
+
+{:#STATUS_OPER}
+` STATUS_OPER = * `
+
+> TODO - What's this?
+
+{:#translation}
+` translation = `
+
+> Set the translation table to use. See Appendix E.
+>
+> TODO - Does this still work even?
+
 {:#usermode}
 ` usermode = +i `
 
 > Default modes to set yourself once you've connected to a server.
 
-{:#ignore_signals}
-` ignore_signals = `
+{:#wall_format}
+` wall_format = [Wall/$0] $1- `
 
-> Operating system signals to ignore. May be zero or more of: int, quit, term, alrm, usr1, and usr2.
+> Format for wall messages.
 
-{:#netsplit_max_nicks}
-` netsplit_max_nicks = 10 `
+{:#write_buffer_size}
+` write_buffer_size = 0 `
 
-> When non-zero, limits the number of nicknames to display during netsplits.
+> Amount of text (logs, etc) to buffer in memory before writing to disk. Useful for minimizing disk access.
+
+{:#write_buffer_timeout}
+` write_buffer_timeout = 0 `
+
+> Amount of time to keep text in memory. A buffer is flushed to disk if the text in it is this old, even if the buffer isn't full.
 >
-> TODO - Is this correct?
-
-{:#ctcp_version_reply}
-` ctcp_version_reply = irssi v$J - running on $sysname $sysarch `
-
-> What to tell someone when they query your client's version.
->
-> Some people consider announcing your client and operating system type and version to be a security hole. Those people change this setting.
+> Useful in conjunction with really large write_buffer_size values, to prevent a lot of text from being lost if irssi crashes or is killed.
 
 ##  [perl]
 
@@ -1007,10 +1007,18 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 ##  [proxy]
 
-{:#use_proxy}
-` use_proxy = OFF `
+{:#proxy_address}
+` proxy_address = `
 
-> Tell irssi whether it should connect through a proxy server.
+{:#proxy_password}
+` proxy_password = `
+
+> The password to use if the proxy requires authentication.
+
+{:#proxy_port}
+` proxy_port = 6667 `
+
+> The address and port of your IRC proxy.
 
 {:#proxy_string}
 ` proxy_string = CONNECT %s %d `
@@ -1026,20 +1034,44 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > Text to send after setting NICK and USER through a proxy.
 
-{:#proxy_address}
-` proxy_address = `
+{:#use_proxy}
+` use_proxy = OFF `
 
-{:#proxy_port}
-` proxy_port = 6667 `
-
-> The address and port of your IRC proxy.
-
-{:#proxy_password}
-` proxy_password = `
-
-> The password to use if the proxy requires authentication.
+> Tell irssi whether it should connect through a proxy server.
 
 ##  [server]
+
+{:#alternate_nick}
+` alternate_nick = `
+
+> An alternate nickname to use if your preferred one is already taken.
+
+{:#hostname}
+` hostname = `
+
+> Your source hostname. Useful when you're on a multi-host system, and you want to look like you're connecting from a particular host.
+>
+> This setting tells irssi which IP to bind to.
+
+{:#nick}
+` nick = $IRCNICK `
+
+> Your main, preferred nick.
+
+{:#real_name}
+` real_name = $IRCNAME `
+
+> Your real name.
+
+{:#resolve_prefer_ipv6}
+` resolve_prefer_ipv6 = OFF `
+
+> Turn this option on to prefer using an ipv6 address when a host has both ipv4 and ipv6 addresses.
+
+{:#resolve_reverse_lookup}
+` resolve_reverse_lookup = OFF `
+
+> When connecting, resolve the server's IP address back into its hostname. Probably useful for figuring out exactly which server you're on after resolving a round-robin host.
 
 {:#server_connect_timeout}
 ` server_connect_timeout = 5min `
@@ -1048,10 +1080,15 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > Be careful using very short timeouts. Servers may recognize the activity as abuse.
 
-{:#resolve_reverse_lookup}
-` resolve_reverse_lookup = OFF `
+{:#server_reconnect_time}
+` server_reconnect_time = 5min `
 
-> When connecting, resolve the server's IP address back into its hostname. Probably useful for figuring out exactly which server you're on after resolving a round-robin host.
+> How long to wait between reconnects to the same server. Some servers will k-line you if you reconnect too quickly, so be careful setting this value lower.
+
+{:#skip_motd}
+` skip_motd = OFF `
+
+> Turn this on to avoid displaying the server's message of the day. Messages of the day are often noisy, and few people actually read them, but they contain important information amongst the ASCII art and song lyrics. :)
 
 {:#ssl_cacert}
 ` ssl_cacert = `
@@ -1075,47 +1112,10 @@ See the [appendix F](#a_f) for credits and license information of this document.
 >
 > TODO - Does verify work? If so, how?
 
-{:#hostname}
-` hostname = `
-
-> Your source hostname. Useful when you're on a multi-host system, and you want to look like you're connecting from a particular host.
->
-> This setting tells irssi which IP to bind to.
-
 {:#user_name}
 ` user_name = $IRCUSER `
 
 > Set your system user name. This is used in times when you don't have working ident.
-
-{:#resolve_prefer_ipv6}
-` resolve_prefer_ipv6 = OFF `
-
-> Turn this option on to prefer using an ipv6 address when a host has both ipv4 and ipv6 addresses.
-
-{:#nick}
-` nick = $IRCNICK `
-
-> Your main, preferred nick.
-
-{:#alternate_nick}
-` alternate_nick = `
-
-> An alternate nickname to use if your preferred one is already taken.
-
-{:#real_name}
-` real_name = $IRCNAME `
-
-> Your real name.
-
-{:#skip_motd}
-` skip_motd = OFF `
-
-> Turn this on to avoid displaying the server's message of the day. Messages of the day are often noisy, and few people actually read them, but they contain important information amongst the ASCII art and song lyrics. :)
-
-{:#server_reconnect_time}
-` server_reconnect_time = 5min `
-
-> How long to wait between reconnects to the same server. Some servers will k-line you if you reconnect too quickly, so be careful setting this value lower.
 
 ##  [servers]
 
