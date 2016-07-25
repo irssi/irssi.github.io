@@ -477,17 +477,26 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#emphasis}
 ` emphasis = ON `
 
-> Enable or disable real underlining and bolding when someone says *bold* or _underlined_.
+> Enable or disable real underlining and bolding when someone says `*bold*` or `_underlined_`.
+
+{:#emphasis_italics}
+` emphasis_italics = FALSE `
+
+> Enable or disable applying real italics when someone says `/italics/`.
+>
+> Note: not all terminals support this. Most notably, if the TERM environment variable is set to screen, it won't work.
+>
+> Added in irssi 0.8.17
 
 {:#emphasis_multiword}
 ` emphasis_multiword = OFF `
 
-> Turn on to allow *more than one word bold* and _multiple underlined words_. Used in conjunction with the emphasis setting.
+> Turn on to allow `*more than one word bold*` and `_multiple underlined words_`. Used in conjunction with the emphasis setting.
 
 {:#emphasis_replace}
 ` emphasis_replace = OFF `
 
-> If emphasis is turned on, the * or _ characters indicating emphasis will be removed when the word is made bold or underlined. Some people find this looks cleaner.
+> If emphasis is turned on, the `*` or `_` characters indicating emphasis will be removed when the word is made bold or underlined. Some people find this looks cleaner.
 >
 > See the emphasis setting for more information.
 
