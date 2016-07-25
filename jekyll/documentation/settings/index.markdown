@@ -270,6 +270,13 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > Whether to save colors in autologs. Colors make logs harder to parse and grep, but they may be vital for channels that deal heavily in ANSI art, or something.
 
+{:#autolog_ignore_targets}
+` autolog_ignore_targets = `
+
+> A space separated list of targets to exclude from autologging
+>
+> Added in irssi 0.8.13
+
 {:#autolog_level}
 ` autolog_level = all -crap -clientcrap -ctcps `
 
@@ -340,6 +347,15 @@ See the [appendix F](#a_f) for credits and license information of this document.
 > See Appendix C for the meanings of Irssi's time format codes.
 
 ##  [lookandfeel]
+
+{:#active_window_ignore_refnum}
+` active_window_ignore_refnum = ON `
+
+> When set ON, the active_window key (meta-a by default) switches to the window with the highest activity level that was last activated.
+>
+> When set OFF, the pre-0.8.15 behavior is used: it switches to the window with the highest activity level with the lowest refnum.
+>
+> Added in irssi 0.8.15
 
 {:#activity_hide_level}
 ` activity_hide_level = `
