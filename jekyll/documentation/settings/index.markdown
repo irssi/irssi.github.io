@@ -641,6 +641,15 @@ See the [appendix F](#a_f) for credits and license information of this document.
 
 > When turned on, a quit message will only be shown once. Otherwise it will be displayed in every window you share with the quitter.
 
+{:#term_appkey_mode}
+` term_appkey_mode = ON `
+
+> If this is ON, the application keys mode is used, which is needed for some terminals.
+>
+> Turn this off if your terminal doesn't need this mode and you need to bind meta-O (that's an uppercase O)
+>
+> Added in irssi 0.8.19
+
 {:#term_charset}
 ` term_charset = US-ASCII `
 
