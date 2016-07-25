@@ -547,7 +547,14 @@ See the [appendix F](#a_f) for credits and license information of this document.
 {:#hilight_nick_matches}
 ` hilight_nick_matches = ON `
 
-> Tell irssi whether it should automatically highlight text that matches your nickname.
+> Tell irssi whether it should automatically highlight text that starts with your nickname.
+
+{:#hilight_nick_matches_everywhere}
+` hilight_nick_matches_everywhere = OFF `
+
+> Turn on to extend hilight_nick_matches to match your nickname everywhere in messages, not just at the beginning.
+>
+> Added in irssi 0.8.18
 
 {:#indent}
 ` indent = 10 `
