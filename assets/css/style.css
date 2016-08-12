@@ -56,6 +56,18 @@ p.center {
   margin-top: -65px; 
   height: 65px;
   visibility: hidden;
+  position: relative;
+  z-index: -1;
+  pointer-events: none;
+}
+*[id]:not(button):not(input):not([href]):not(#navbar) {
+  position: inherit;
+  /* z-index: -1; */
+  /* pointer-events: none; */
+}
+/* there is this weird issue with above code making links not clickable below anchors... */
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  position: inherit;
 }
 #___gcse_0:before { display: inline; }
 
@@ -122,7 +134,7 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
 /* Tweak to make the menu visible (otherwise Bugs is cut off) */
 .navbar-fixed-top .navbar-collapse,
 .navbar-fixed-bottom .navbar-collapse {
-  max-height: 412px;
+  max-height: 416px;
 }
 
 
@@ -184,11 +196,97 @@ blockquote {
     height: 80vh !important;
 }
 
-.osicon {
+/* download page */
+.osicon, .obsicon {
     padding-right: 1ex;
     margin-bottom: 1ex;
 }
 
+.obsicon {
+    float: left;
+}
+
+.dlc .osimg {
+}
+
+.dlc input {
+    opacity: 0;
+    position: fixed;
+}
+.dlc .info h3 {
+    display: none;
+}
+
+.dlc .icon {
+    display: inline-block;
+    width: 105px;
+    text-align: center;
+    white-space: normal;
+    margin-top: 1ex;
+}
+
+.dlc input:checked + label {
+    background-color: #e6e6e6;
+}
+
+.dlc input:focus + label {
+    border: 1px dashed #666666;
+}
+
+@media (max-width: 768px) {
+    .irssi-release,.irssi-git { display: inline-block; }
+}
+
+.dlc .info, .dlc .obs-info { display: none; }
+.row.obs-info, .row.obs-info .btn { font-size: small; }
+
+.dlc input:nth-of-type(1):checked ~ .info:nth-of-type(1),
+.dlc input:nth-of-type(2):checked ~ .info:nth-of-type(2),
+.dlc input:nth-of-type(3):checked ~ .info:nth-of-type(3),
+.dlc input:nth-of-type(4):checked ~ .info:nth-of-type(4),
+.dlc input:nth-of-type(5):checked ~ .info:nth-of-type(5),
+.dlc input:nth-of-type(6):checked ~ .info:nth-of-type(6),
+.dlc input:nth-of-type(7):checked ~ .info:nth-of-type(7),
+.dlc input:nth-of-type(8):checked ~ .info:nth-of-type(8),
+.dlc input:nth-of-type(9):checked ~ .info:nth-of-type(9),
+.dlc input:nth-of-type(10):checked ~ .info:nth-of-type(10),
+.dlc input:nth-of-type(11):checked ~ .info:nth-of-type(11),
+.dlc input:nth-of-type(12):checked ~ .info:nth-of-type(12),
+.dlc input:nth-of-type(13):checked ~ .info:nth-of-type(13),
+.dlc input:nth-of-type(14):checked ~ .info:nth-of-type(14),
+.dlc input:nth-of-type(15):checked ~ .info:nth-of-type(15),
+.dlc input:nth-of-type(16):checked ~ .info:nth-of-type(16),
+.dlc input:nth-of-type(17):checked ~ .info:nth-of-type(17),
+.dlc input:nth-of-type(18):checked ~ .info:nth-of-type(18),
+.dlc input:nth-of-type(19):checked ~ .info:nth-of-type(19),
+.dlc input ~ .no-info
+{
+    display: block;
+    margin: 2em;
+    padding: 1em;
+    border: 1ex solid #d9edf7; /* @bg-info color */
+    border-radius: 4px; /* like @btn */
+}
+
+.dlc input ~ .no-info {
+    border-color: #f7ecb5; /* @bg-warning:hover color */
+}
+.dlc input:checked ~ .no-info { display: none; }
+
+/* here the hard-coded item numbers which show obs download info */
+.dlc input:nth-of-type(2):checked ~ .obs-info,
+.dlc input:nth-of-type(3):checked ~ .obs-info,
+.dlc input:nth-of-type(6):checked ~ .obs-info,
+.dlc input:nth-of-type(7):checked ~ .obs-info,
+.dlc input:nth-of-type(8):checked ~ .obs-info {
+    display: block;
+    padding: 1em;
+}
+/* no irssi-git for arch linux currently */
+.dlc input:nth-of-type(7):checked ~ .obs-info .irssi-git { display: none; }
+
+
+/* collapsing the about-page columns */
 @media (min-width:992px) {
 .two-column {
     -moz-column-count: 2;
