@@ -5,113 +5,156 @@ permalink: /download/
 categories: [ _nav, _6 ]
 ---
 
-There are several ways you can get Irssi:
+There are several ways you can get Irssi<span class="hidden-md hidden-lg">:</span>
 
-0. [Ready-Made Packages](#distributions-packages)
-0. [Compiling from Sources](#sources)
+<div class="hidden-md hidden-lg" markdown="1">
 
-## Distributions' Packages
+0. [Binary Packages](#binary-packages)
+0. [Compiling from Sources](#release-sources)
 
-<div class="row">
-<div class="col-md-4" markdown="1">
+</div>
 
-![][1]{:class='osicon'}**Windows**
+<div class="col-md-7 col-sm-12" markdown="1">
+
+## Binary Packages
+
+<div class="dlc row">{%
+include dl_os_icon.html name="Windows" text="**Windows**" %}{%
+include dl_os_icon.html name="debian" text="**Debian**" %}{%
+include dl_os_icon.html name="ubuntu" text="**Ubuntu**" %}{%
+include dl_os_icon.html name="macosx" text="**OS X**" %}{%
+include dl_os_icon.html name="gentoo" text="**Gentoo**" %}{%
+include dl_os_icon.html name="openSUSE" text="**SuSE**" %}{%
+include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
+include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
+include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
+include dl_os_icon.html name="slackware" text="**Slackware**"
+%}
+
+<!-- the following sections are opened purely based on the order, it
+     has to follow the buttons above. scrolling is done with javascript to
+     the about-class -->
+<div class="info about-Windows" markdown="1">
+
+### Windows
 
 Download setup.exe from [Cygwin][2]{:rel='external'} and select irssi during the package selection step. To start irssi, open MinTTY (link should be on your Desktop) and type `irssi`
 
-[1]: /assets/Windows.png
 [2]: https://www.cygwin.com/
 
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-debian" markdown="1">
 
-![][3]{:class='osicon'}![][4]{:class='osicon'}**Debian/Ubuntu**
+### Debian
 
 `apt-get install irssi`.  
 You may find more up to date version on [Debian Backports][5]{:rel='external'}
 
-[3]: /assets/debian.png
-[4]: /assets/ubuntu.png
 [5]: http://backports.debian.org/
 
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-ubuntu" markdown="1">
 
-![][6]{:class='osicon'}**OS X**
+### Ubuntu
+
+`apt-get install irssi`.  
+
+</div>
+<div class="info about-macosx" markdown="1">
+
+### OS X
 
 Install [Homebrew][7]{:rel='external'}, then  
 `brew install irssi`  
 You can also install Git with `--HEAD`
 
-[6]: /assets/macosx.png
 [7]: http://brew.sh/
 
 </div>
-</div>
-<div class="row">
-<div class="col-md-4" markdown="1">
+<div class="info about-gentoo" markdown="1">
 
-![][8]{:class='osicon'}**Gentoo**
+### Gentoo
 
 `emerge irssi`
 
-[8]: /assets/gentoo.png
-
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-openSUSE" markdown="1">
 
-![][19]{:class='osicon'}**SuSE**
+### SuSE
 
 `zypper in irssi`.
 
 You may find more up to date versions on [openSUSE Package Search][20]{:rel='external'}
 
-[19]: /assets/openSUSE.png
 [20]: http://software.opensuse.org/package/irssi
 
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-arch" markdown="1">
 
-![][9]{:class='osicon'}**ArchLinux**
+### ArchLinux
 
 `pacman -S irssi`
 
-[9]: /assets/arch.png
-
 </div>
-</div>
-<div class="row">
-<div class="col-md-4" markdown="1">
+<div class="info about-fedora" markdown="1">
 
-![][10]{:class='osicon'}**Fedora/Red Hat**
+### Fedora
 
 `dnf install irssi` or  
 `yum install irssi`
 
-[10]: /assets/fedora.png
-
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-opencsw" markdown="1">
 
-![][11]{:class='osicon'}**Solaris**
+### Solaris
 
 `pkg-get install irssi`
 
-[11]: /assets/opencsw.png
-
 </div>
-<div class="col-md-4" markdown="1">
+<div class="info about-slackware" markdown="1">
 
-![][12]{:class='osicon'}**Slackware**
+### Slackware
 
 `slackpkg install irssi`
 
-[12]: /assets/slackware.png
+</div>
+<div class="no-info" markdown="1">
+
+If your system is not listed, you can still check your systems' package manager or otherwise compile Irssi from source<span class="visible-xs-inline visible-sm-inline">.</span><span class="hidden-xs hidden-sm"> **&#10230;**</span>
+
+</div>
+
+<!-- unfortunately we have to hard-code the display criteria for obs-info in the style.css -->
+<div class="row obs-info" markdown="1">
+<div class="col-sm-2 col-md-3" markdown="1">
+
+![][19]{:class='obsicon'}
+
+</div>
+<div class="col-sm-10 col-md-9">
+<div class="col-sm-12 col-lg-6" markdown="1">
+
+The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is building Irssi release packages and Irssi git snapshot packages for Debian, Fedora, Ubuntu, and openSUSE.
+
+</div>
+<div class="irssi-git col-sm-6" markdown="1">
+
+[Install irssi-git](//software.opensuse.org/download.html?project=home:ailin_nemui:irssi-git;package=irssi-git){:class='btn btn-info'}
+
+</div>
+<div class="irssi-release col-sm-6" markdown="1">
+
+[Install irssi release](//software.opensuse.org/download.html?project=home:ailin_nemui:irssi-test;package=irssi){:class='btn btn-success'}
 
 </div>
 </div>
+</div>
+</div>
 
-## Sources
+</div>
+<div class="col-md-5" markdown="1">
+
+## Release Sources
 
 Latest release version: **0.8.19** – [Downloads][14]{:rel='external'}
 
@@ -127,7 +170,7 @@ You shouldn't really trust this key without verifying its fingerprint. See it wi
 
 (This key is different from the one used to sign binaries of versions before 0.8.10. More gpg help can be found from GPG manual)
 
-### Development sources
+## Development sources
 
 [Git][16]{:rel='external'} – You can also get the development version. To check it out, run
 
@@ -137,10 +180,12 @@ After check-out, you **must** run `./autogen.sh`. It may be necessary to install
 
 See also: [Commit Log][18]{:rel='external'}
 
+</div>
+
 [13]: //github.com/irssi-import/irssi/releases
 [14]: //github.com/irssi/irssi/releases
 [15]: //github.com/irssi/irssi/blob/master/INSTALL
 [16]: //github.com/irssi/irssi
 [17]: //github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
 [18]: //github.com/irssi/irssi/commits/master
-
+[19]: {{ site.baseurl }}/assets/obs.png
