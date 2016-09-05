@@ -92,6 +92,7 @@ function chooseDlc(e, name) {
 	if (checked) {
 	    ec.checked = false;
 	}
+	if (ec) ec.blur();
     }, 0);
     return true;
 }
