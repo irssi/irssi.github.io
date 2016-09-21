@@ -83,7 +83,7 @@ Fallback action
 Distributions which need to remain on Irssi 0.8.17 are strongly urged
 to apply the patch and provide updated packages.
 
-Those totally unable to upgrade, but with Perl support enabled in
+Those who cannot upgrade right now, but with Perl support enabled in
 their Irssi, can load the following script and add it to
 ~/.irssi/scripts/autorun as a first aid to mitigating these issues: 
 
