@@ -72,9 +72,7 @@ without any new features.
 
 After installing the updated packages, one can issue the /upgrade
 command to load the new binary. TLS connections will require
-/reconnect. If the buf.pl script is loaded and symlinked into
-~/.irssi/scripts/autorun, text buffer content will be saved and
-restored.
+/reconnect.
 
 
 Fallback action
