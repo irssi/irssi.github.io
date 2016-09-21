@@ -35,7 +35,8 @@ repository. The current development source code can be downloaded from
 send in [Patches](https://github.com/irssi/irssi/pulls)!
 
 Remember to follow Irssi on
-[Twitter](https://twitter.com/IrssiProject), or pop into `#irssi` on
-Freenode.
+[Twitter](https://twitter.com/IrssiProject), discuss this news on
+[reddit](https://www.reddit.com/r/linux/comments/53v4w7/urgent_irssi_security_update/)
+or pop into `#irssi` on Freenode.
 
 The Irssi Team.
