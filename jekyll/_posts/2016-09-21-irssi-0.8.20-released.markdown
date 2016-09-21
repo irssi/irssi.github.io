@@ -28,7 +28,8 @@ applied the hotfix to their stable versions instead of updating to
   ([DSA 3672-1](https://lists.debian.org/debian-security-announce/2016/msg00251.html))
 
 Note that the version shown by irssi internally is kept the same, but
-they are safe to use anyway.
+they are safe to use anyway. The installed version can be verified with
+`dpkg -l irssi` in ubuntu and debian.
 
 Read the [security advisory](/security/irssi_sa_2016.txt).
 
