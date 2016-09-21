@@ -10,6 +10,7 @@ and fixes one regression  in /hilight reported from beta 1 testing.
 See our [Github](https://github.com/irssi/irssi)
 repository for details.
 
+
 **New in this release** (unchanged from beta 1). CAP SASL supported
 natively. ZNC "self messages" shown in the correct window. Line splitting
 now splits on space. Bracketed paste markers supported for better paste

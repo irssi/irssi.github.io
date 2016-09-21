@@ -32,6 +32,7 @@ site he's the person to talk to!
 
 So, here's to Alex and Tom, two valuable contributors -- Welcome to the team!
 
+
 If you want to get involved with Irssi, please get in touch with us! You can do
 so by having a chat with us in [#irssi @ IRCnet](irc://irc.ircnet.com/irssi) or
 by starting work on some of the outstanding issues in the [Irssi

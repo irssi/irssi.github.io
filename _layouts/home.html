@@ -7,7 +7,9 @@ sidebar: sb_sidebar_news.html
 {% for post in paginator.posts %}
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% include postmeta.html node=post %}
-    {{ post.content }}
+    {{ post.excerpt }}{%
+    if post.excerpt != post.content %}<a href="{{ site.baseurl }}{{ post.url }}">Read more...</a> the Irssi Team.{%
+    endif %}
 {% endfor %}
 
 {% include paginate.html %}

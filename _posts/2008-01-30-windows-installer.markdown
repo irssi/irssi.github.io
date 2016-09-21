@@ -11,15 +11,15 @@ Irssi experience for Windows users. We made an installer built on NSIS and an
 USB archive made to be put on an USB stick and allow carrying your personal
 Irssi instance with you.
 
-<a href="/images/irssi_installer_100.png"><img src="/images/irssi_installer_40.png" /></a>
+<!-- <a href="/images/irssi_installer_100.png"><img src="/images/irssi_installer_40.png" /></a> -->
 
 Both packages offer running Irssi in two modes: either through cmd (the default
 Windows command line) or puttycyg (a Putty-based command line) which mainly
 looks better than cmd.
 
-<a href="/images/irssi_puttycyg_100.png"><img src="/images/irssi_puttycyg_40.png" /></a>
+<!-- <a href="/images/irssi_puttycyg_100.png"><img src="/images/irssi_puttycyg_40.png" /></a> -->
 
-<a href="/images/irssi_cmd_100.png"><img src="/images/irssi_cmd_40.png" /></a>
+<!-- <a href="/images/irssi_cmd_100.png"><img src="/images/irssi_cmd_40.png" /></a> -->
 
 Have fun with it and report any bugs!
 
