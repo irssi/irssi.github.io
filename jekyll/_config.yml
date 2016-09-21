@@ -4,7 +4,8 @@ lsi: false
 safe: true
 future: true
 baseurl: ""
-#url: "//irssi-import.github.io"
+excerpt_separator: "\n\n\n"
+
 
 title: Irssi
 project: The Irssi Project

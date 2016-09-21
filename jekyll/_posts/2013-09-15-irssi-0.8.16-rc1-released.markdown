@@ -9,6 +9,7 @@ Irssi 0.8.16-rc1 has been released. The changes are mostly bugfixes,
 experimental DANE support and other small enhancements. Check the NEWS file for
 all changes and please report bugs back to us.
 
+
 The release can be downloaded from
 [our download page](/download).
 

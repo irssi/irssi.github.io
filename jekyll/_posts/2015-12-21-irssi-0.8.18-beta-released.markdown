@@ -21,6 +21,7 @@ more robust. And as usual many fixes, see the
 [NEWS](https://raw.githubusercontent.com/irssi/irssi/0.8.18-beta1/NEWS)
 for details.
 
+
 This pre-release can be downloaded from
 [our releases page](https://github.com/irssi/irssi/releases).
 

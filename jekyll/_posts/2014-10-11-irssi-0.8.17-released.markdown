@@ -10,6 +10,7 @@ including documentation cleanup, 256 colour support, truecolour support and
 tons of other smaller enhancements. For a complete list of changes and
 bugfixes, since 0.8.16, please have a look at the [ChangeLog](//github.com/irssi-import/irssi/releases).
 
+
 The release can be downloaded from [our download page](/download).
 
 Please report bugs at our [Github issue tracker](https://github.com/irssi/irssi/issues).
