@@ -20,6 +20,10 @@ officially updated packages.
 
 Read the [security advisory](/security/irssi_sa_2016.txt).
 
+Those who cannot upgrade right now, but with Perl support enabled in
+their Irssi, can load [this](/security/sa_patch.pl) script and add it to
+`~/.irssi/scripts/autorun` as a first aid to mitigating these issues: 
+
 Furthermore, we are always looking for testers of the development
 version. Binaries of the current git development version are
 automatically packaged in the
