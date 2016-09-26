@@ -96,5 +96,6 @@ https://github.com/irssi/irssi/commit/295a4b77f07f14602eeaa371f00ddbf09910c82b
 
 References
 ----------
+
 [1] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7044
 [2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7045
