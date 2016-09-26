@@ -8,7 +8,7 @@ sidebar: sb_sidebar_news.html
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% include postmeta.html node=post %}
     {{ post.excerpt }}{%
-    if post.excerpt != post.content %}<a href="{{ site.baseurl }}{{ post.url }}">Read more...</a> the Irssi Team.{%
+    if post.excerpt != post.content %}<p><a href="{{ site.baseurl }}{{ post.url }}">Read more...</a> the Irssi Team.</p>{%
     endif %}
 {% endfor %}
 
