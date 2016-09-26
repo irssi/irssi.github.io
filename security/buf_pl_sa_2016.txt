@@ -1,0 +1,73 @@
+information disclosure vulnerability in buf.pl
+==============================================
+CWE Classification: CWE-732, CWE-538
+
+CVE-2016-7553 [1] was assigned to this bug.
+
+
+Description
+-----------
+
+An information disclosure vulnerability was found, reported and fixed
+in the buf.pl script by its author.
+
+
+Impact
+------
+
+Other users on the same machine may be able to retrieve the whole
+window contents after /UPGRADE when the buf.pl script is
+loaded. Furthermore, this dump of the windows contents is never
+removed afterwards.
+
+Since buf.pl is also an Irssi core script and we recommended its use
+to retain your window content, many people could potentially be
+affected by this.
+
+Remote users may be able to retrieve these contents when combined with
+other path traversal vulnerabilities in public facing services on that
+machine.
+
+
+Detailed analysis
+-----------------
+
+buf.pl restores the scrollbuffer between "/upgrade"s by writing the
+contents to a file, and reading that after the new process was spawned.
+Through that file, the contents of (private) chat conversations may leak to
+other users.
+
+
+Mitigating facts
+----------------
+
+Careful users with a limited umask (e.g. 077) are not affected by this bug.
+However, most Linux systems default to a umask of 022, meaning that files
+written without further restricting the permissions, are readable by any
+user.
+
+
+Affected versions
+-----------------
+
+All up to 2.13
+
+
+Fixed versions
+--------------
+
+buf.pl 2.20 [2]
+
+
+Resolution
+----------
+
+Update the buf.pl script with the latest version from
+https://scripts.irssi.org
+
+
+References
+----------
+
+[1] https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7553
+[2] https://scripts.irssi.org/scripts/buf.pl

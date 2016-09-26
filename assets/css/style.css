@@ -196,6 +196,23 @@ blockquote {
     height: 80vh !important;
 }
 
+/* news archive */
+.container.home h3,
+.container.home .h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container.home p + h2 {
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+}
+
+.container.home hr {
+    width: 70%;
+}
+
+
 /* download page */
 .osicon, .obsicon {
     padding-right: 1ex;
