@@ -40,35 +40,49 @@ Index with some FAQ questions that are answered in the chapter:
 
 ## 1\. First steps
 
-And example how to add servers:
+IRC Networks are made of servers, and servers have channels. The default config has a few predefined networks, to list them:
 
-(OFTC network, identify with nickserv and wait for 2 seconds before joining channels)
+     /NETWORK LIST
 
+And to connect to one of those networks and join a channel:
 
-     /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" OFTC
+     /CONNECT Freenode
+     /JOIN #irssi
 
+To add more networks:
 
-(NOTE: use /IRCNET with 0.8.9 and older)
+     /NETWORK ADD ExampleNet
 
-Then add some servers to different networks (network is already set up for them), irc.kpnqwest.fi is used by default for IRCNet but if it fails, irc.funet.fi is tried next:
+Then add some servers (with -auto to automatically connect):
 
+     /SERVER ADD -auto -network ExampleNet irc.example.net
 
-     /SERVER ADD -auto -network IRCnet irc.kpnqwest.fi 6667
-     /SERVER ADD -network IRCnet irc.funet.fi 6667
-     /SERVER ADD -auto -network efnet efnet.cs.hut.fi 6667
+Automatically join to channels after connected to server:
 
+     /CHANNEL ADD -auto #lounge ExampleNet
 
-Automatically join to channels after connected to server, send op request to bot after joined to efnet/#irssi:
+To modify existing networks (or servers, or channels) just ADD again using the same name as before. This configures a network to identify with nickserv and wait for 2 seconds before joining channels:
 
+     /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" ExampleNet
 
-     /CHANNEL ADD -auto #irssi IRCnet
-     /CHANNEL ADD -auto -bots *!*bot@host.org -botcmd "/^msg $0 op pass" #irssi efnet
+If you have irssi 0.8.18 or higher and the irc network supports it, you can use SASL instead of nickserv, which is more reliable:
 
+     /NETWORK ADD -sasl_username yourname -sasl_password yourpassword -sasl_mechanism PLAIN Freenode
+
+These commands have many more options, see their help for details:
+
+     /HELP NETWORK
+     /HELP SERVER
+     /HELP CHANNEL
+     /HELP
 
 If you want lines containing your nick to hilight:
 
-
      /HILIGHT nick
+
+Or, for irssi 0.8.18 or higher:
+
+     /SET hilight_nick_matches_everywhere ON
 
 
 ## 2\. Basic user interface usage
