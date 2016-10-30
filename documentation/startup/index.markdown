@@ -84,6 +84,11 @@ Or, for irssi 0.8.18 or higher:
 
      /SET hilight_nick_matches_everywhere ON
 
+To get beeps on private messages or highlights:
+
+     /SET beep_msg_level MSGS HILIGHT DCCMSGS
+
+No other irssi settings are needed (don't enable bell_beeps), but there may be settings to change in your terminal multiplexer (screen/tmux), your terminal, or your desktop environment.
 
 ## 2\. Basic user interface usage
 
