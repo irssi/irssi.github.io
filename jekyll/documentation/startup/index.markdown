@@ -89,7 +89,7 @@ Or, for irssi 0.8.18 or higher:
 
 Windows can be scrolled up/down with PgUp and PgDown keys. If they don't work for you, use Meta-p and Meta-n keys. For jumping to beginning or end of the buffer, use `/SB HOME` and `/SB END` commands.
 
-By default, irssi uses "hidden windows" for everything. Hidden window is created every time you `/JOIN` a channel or `/QUERY` someone. There's several ways you can change between these windows:
+By default, irssi uses "hidden windows" for everything. Hidden windows are created every time you `/JOIN` a channel or `/QUERY` someone. There's several ways you can change between these windows:
 
 
      Meta-1, Meta-2, .. Meta-0 - Jump directly between windows 1-10
@@ -98,7 +98,15 @@ By default, irssi uses "hidden windows" for everything. Hidden window is created
      Ctrl-P, Ctrl-N            - Jump to previous / next window
 
 
-Clearly the easiest way is to use Meta-number keys. And what is the Meta key? ESC key always works as Meta, but there's also easier ways. ALT could work as Meta, or if you have Windows keyboard, left Windows key might work as Meta. If they don't work directly, you'll need to set a few X resources (NOTE: these work with both xterm and rxvt):
+Clearly the easiest way is to use Meta-number keys. Meta usually means the ALT key, but if that doesn't work, you can use ESC.
+
+Mac OS X users with ALT key issues might prefer using [iTerm2][iterm] instead of the default terminal emulator.
+
+[iterm]: https://www.iterm2.com/
+
+### Alt key as meta, for xterm/rxvt users
+
+If you use xterm or rxvt, you may need to few X resources:
 
 
      XTerm*eightBitInput:   false
@@ -119,7 +127,11 @@ You could do this by changing the X key mappings:
 
 And how exactly do you set these X resources? For Debian, there's `/etc/X11/Xresources/xterm` file where you can put them and it's read automatically when X starts. `~/.Xresources` and `~/.Xdefaults` files might also work. If you can't get anything else to work, just copy and paste those lines to `~/.Xresources` and directly call `xrdb -merge ~/.Xresources` in some xterm. The resources affect only the new xterms you start, not existing ones.
 
-Many windows SSH clients also don't allow usage of ALT. One excellent client that does allow is putty, you can download it from [ http://www.chiark.greenend.org.uk/~sgtatham/putty/][2].
+### Split windows and window items
+
+*Note: [this guide][quadpoint] might be a better introduction to window splits*
+
+[quadpoint]: http://quadpoint.org/articles/irssisplit/
 
 Irssi also supports split windows, they've had some problems in past but I think they should work pretty well now :) Here's some commands related to them:
 
@@ -175,7 +187,7 @@ If you want to group only some channels or queries in one window, use
 
 Irssi's multiple IRC network support is IMHO very good - at least compared to other clients :) Even if you're only in one IRC network you should group all your servers to be in the same IRC network as this helps with reconnecting if your primary server breaks and is probably useful in some other ways too :) For information how to actually use irssi correctly with multiple servers see the chapter 6.
 
-First you need to have your IRC network set, use `/NETWORK` command to see if it's already there. If it isn't, use `/NETWORK ADD yournetwork`. If you want to execute some commands automatically when you're connected to some network, use `-autosendcmd` option. (NOTE: use /IRCNET with 0.8.9 and older.) Here's some examples:
+First you need to have your IRC network set, use `/NETWORK` command to see if it's already there. If it isn't, use `/NETWORK ADD yournetwork`. If you want to execute some commands automatically when you're connected to some network, use `-autosendcmd` option. Here's some examples:
 
 
      /NETWORK ADD -autosendcmd '^msg bot invite' IRCnet
@@ -479,8 +491,6 @@ psyBNC has internal support for multiple servers. However, it could be a bit ann
 
 So, you'll specify the usernames with `/NETWORK ADD` command, and the user's password with `/SERVER ADD`.
 
-(NOTE: use /IRCNET with 0.8.9 and older.)
-
 **Irssi proxy**
 
 Irssi contains it's own proxy which you can build giving `\--with-proxy` option to configure. You'll still need to run irssi in a screen to use it though.
@@ -537,7 +547,7 @@ The proxy_string is sent before NICK/USER commands, the proxy_string_after is se
 
 ## 11\. Irssi's settings
 
-You probably don't like Irssi's default settings. I don't like them. But I'm still convinced that they're pretty good defaults. Here's some of them you might want to change (the default value is shown): Also check the [Settings Documentation](/documentation/settings/)
+Here's some settings you might want to change (the default value is shown): Also check the [Settings Documentation](/documentation/settings/)
 
 **Queries**
 
