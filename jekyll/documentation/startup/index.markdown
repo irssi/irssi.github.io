@@ -526,7 +526,13 @@ Irssi proxy works fine with other IRC clients as well.
 
 **SOCKS**
 
-Irssi can be compiled with socks support (`\--with-socks` option to configure), but I don't really know how it works, if at all. `/SET proxy` settings don't have anything to do with socks however.
+Irssi can be compiled with socks support (`\--with-socks` option to configure), which requires "dante" and routes all connections through the proxy specified in the system-wide /etc/socks.conf. This method is known to have issues in Mac OS X.
+
+Note that `/SET proxy` settings don't have anything to do with socks.
+
+Using [proxychains-ng][] is recommended over recompiling irssi.
+
+[proxychains-ng]: https://github.com/rofl0r/proxychains-ng
 
 **Others**
 
