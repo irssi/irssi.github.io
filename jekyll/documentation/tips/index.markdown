@@ -24,10 +24,7 @@ to get notified off activities, while im working, i use the following setup:
 
 #### irssi
 
-    /set beep_when_window_active ON
-    /set beep_when_away ON
-    /set beep_msg_level MSGS NOTICES DCC DCCMSGS HILIGHT
-    /set bell_beeps ON
+    /set beep_msg_level MSGS HILIGHT DCCMSGS
 
 
 #### screen
