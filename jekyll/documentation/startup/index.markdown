@@ -11,8 +11,7 @@ Copyright (c) 2000-2002 by Timo Sirainen, release under [GNU FDL][1] 1.1 license
 
 Index with some FAQ questions that are answered in the chapter:
 
-1. [For all the ircII people](#for-all-the-ircii-people)
-    * This window management is just weird, I want it exactly like ircII
+1. [First steps](#first-steps)
 2. [Basic user interface usage](#basic-user-interface-usage)
     * Split windows work in weird way
     * How can I easily switch between windows?
@@ -35,49 +34,11 @@ Index with some FAQ questions that are answered in the chapter:
     * How do I make F1 key do something?
 10. [Proxies and IRC bouncers](#proxies-and-irc-bouncers)
 11. [Irssi's settings](#irssis-settings)
+    * [For all the ircII people](#for-all-the-ircii-people)
 12. [Statusbar](#statusbar)
     * I loaded a statusbar script but it's not visible anywhere!
 
-## 1\. For all the ircII people
-
-These settings should give you pretty good defaults (the ones I use):
-
-If colors don't work, and you know you're not going to use some weird non-VT compatible terminal (you most probably aren't), just say:
-
-
-     /SET term_force_colors ON
-
-
-I don't like automatic query windows, I don't like status window, I do like msgs window where all messages go:
-
-
-     /SET autocreate_own_query OFF
-     /SET autocreate_query_level DCCMSGS
-     /SET use_status_window OFF
-     /SET use_msgs_window ON
-
-
-Disable automatic window closing when `/PART`ing channel or `/UNQUERY`ing query:
-
-
-     /SET autoclose_windows OFF
-     /SET reuse_unused_windows ON
-
-
-Here's the settings that make irssi work exactly like ircII in window management (send me a note if you can think of more):
-
-
-     /SET autocreate_own_query OFF
-     /SET autocreate_query_level NONE
-     /SET use_status_window OFF
-     /SET use_msgs_window OFF
-     /SET reuse_unused_windows ON
-     /SET windows_auto_renumber OFF
-
-     /SET autostick_split_windows OFF
-     /SET autoclose_windows OFF
-     /SET print_active_channel ON
-
+## 1\. First steps
 
 And example how to add servers:
 
@@ -659,6 +620,38 @@ You probably don't like Irssi's default settings. I don't like them. But I'm sti
 
 /SET completion_char :
 : Completion character to use.
+
+### For all the ircII people
+
+I don't like automatic query windows, I don't like status window, I do like msgs window where all messages go:
+
+
+     /SET autocreate_own_query OFF
+     /SET autocreate_query_level DCCMSGS
+     /SET use_status_window OFF
+     /SET use_msgs_window ON
+
+
+Disable automatic window closing when `/PART`ing channel or `/UNQUERY`ing query:
+
+
+     /SET autoclose_windows OFF
+     /SET reuse_unused_windows ON
+
+
+Here's the settings that make irssi work exactly like ircII in window management (send me a note if you can think of more):
+
+
+     /SET autocreate_own_query OFF
+     /SET autocreate_query_level NONE
+     /SET use_status_window OFF
+     /SET use_msgs_window OFF
+     /SET reuse_unused_windows ON
+     /SET windows_auto_renumber OFF
+
+     /SET autostick_split_windows OFF
+     /SET autoclose_windows OFF
+     /SET print_active_channel ON
 
 ## 12\. Statusbar
 
