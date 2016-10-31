@@ -111,7 +111,7 @@ Mac OS X users with ALT key issues might prefer using [iTerm2][iterm] instead of
 
 ### Alt key as meta, for xterm/rxvt users
 
-If you use xterm or rxvt, you may need to few X resources:
+If you use xterm or rxvt, you may need to set a few X resources:
 
 
      XTerm*eightBitInput:   false
