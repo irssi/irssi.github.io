@@ -80,7 +80,7 @@ the proxy works just as a normal client which you can use, but you can also
 connect one or more clients to it to share the connections. Using Irssi as a
 proxy has the major advantage of Irssi's power as an IRC client. You never
 have to worry about losing your connection to IRC. Even if you don't want to
-use Issi as a client, I can strongly recommend it as a proxy because you can
+use Irssi as a client, I can strongly recommend it as a proxy because you can
 just connect to it with any IRC client by just connecting to the specified
 port instead of SSH-ing to the machine that your Irssi is running on.
 
