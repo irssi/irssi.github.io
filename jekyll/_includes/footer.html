@@ -3,7 +3,7 @@
         <p class="text-center">
             All the content of this site is copyright ©
             2000-{{ 'now' | date: "%Y" }}
-            <a href="http://irssi.org">The Irssi project</a>.
+            <a href="https://github.com/irssi">The Irssi project</a>.
         <br/>
         {% if page.licence and page.licence != "" %}
         This page is licensed under a {{ page.licence | markdownify | strip | split:"</p>" | join:"" | split:"<p>" }}.
