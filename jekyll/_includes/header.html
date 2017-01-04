@@ -14,26 +14,24 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li{% if page.url == "/news/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/news">News</a></li>
-                {% comment %}
+                <li{% if page.url == "/news/index.html" %} class="active"{% endif %}><a href="{{ site.baseurl }}/news">News</a></li>{%
+                  comment %}
                     Exclude the news feed and the paginated news pages.
-                {% endcomment %}
-                {% capture pageidx %}{% include weighted_sorted_pages.html %}{% endcapture %}{% assign pageidx = pageidx | strip_newlines | split:',' %}
-                {% assign ap = site.pages %}
+                {% endcomment %}{% capture pageidx %}{% include weighted_sorted_pages.html %}{% endcapture %}{% assign pageidx = pageidx | strip_newlines | split:',' %}{% comment %}
+                {% endcomment %}{% assign ap = site.pages %}
                 {% for it in pageidx %}{% assign p_idx = it | times:1 %}{% assign node = ap[p_idx] %}{% comment %}
-                {% endcomment %}
-                {% if node.categories contains "_nav" %}
-                {% if page.url == node.url %}
+                {% endcomment %}{% if node.categories contains "_nav" %}{% comment %}
+                {% endcomment %}{% if page.url == node.url %}
                 <li class="active">
                     <a href="{{ site.baseurl }}{{ node.url }}" class="active">{{ node.title }}</a>
-                </li>
-                {% else %}
+                </li>{% comment %}
+                {% endcomment %}{% else %}
                 <li>
                     <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
-                </li>
-                {% endif %}
-                {% endif %}
-                {% endfor %}
+                </li>{% comment %}
+                {% endcomment %}{% endif %}{% comment %}
+                {% endcomment %}{% endif %}{% comment %}
+                {% endcomment %}{% endfor %}
                 <li><a href="//irssi-import.github.io/themes/">Themes</a></li>
                 <li><a href="http://scripts.irssi.org/">Scripts</a></li>
                 <li><a href="https://github.com/irssi/irssi/issues">Bugs</a></li>
