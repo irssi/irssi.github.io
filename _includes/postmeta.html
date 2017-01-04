@@ -2,9 +2,9 @@
 {% if node.author or node.date %}
     <p>
         <small>
-            Posted
-            {% if node.author %}
-                by
+            Posted {% comment %}
+            {% endcomment %}{% if node.author %}{% comment %}
+                {% endcomment %}by
                 {% if node.web %}
                     <a href="{{ node.web }}">{{ node.author }}</a>
                 {% elsif node.email %}
@@ -12,12 +12,12 @@
                 {% else %}
                     {{ node.author }}
                 {% endif %}
-            {% endif %}
+            {% endif %}{% comment %}
 
-            {% if node.date %}
-                {% assign ordinalize = node.date | date: "%-d" %}
-                on {{ node.date | date: "%B %-d" }}<sup>{% include ordinal.html ordinalize=ordinalize %}</sup>
-                {{ node.date | date: "%Y" }}
+            {% endcomment %}{% if node.date %}{% comment %}
+                {% endcomment %}{% assign rd = node.date | date: "%-d" %}{% capture ordinalize %}{% include ordinal.html ordinalize=rd %}{% endcapture %}{% comment %}
+                {% endcomment %}on {{ node.date | date: "%B %-d" }}<sup>{{ ordinalize | strip_newlines }}</sup>{% comment %}
+                {% endcomment %} {{ node.date | date: "%Y" }}
             {% endif %}
         </small>
     </p>
