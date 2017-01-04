@@ -154,8 +154,8 @@ select .header {
 }
 
 .welcome-img {
-    background-image: url(https://cloud.githubusercontent.com/assets/5665186/4387267/d2401f24-43da-11e4-8753-666ea552580a.png);
-    background-color: #ffeeff;
+    background-image: url(../irssi2017.jpg);
+    /* background-color: #ffeeff; */
     background-repeat: no-repeat;
     background-position: 5% 95%;
     background-size: cover;
