@@ -1,4 +1,5 @@
 var deck = [
+    "//irssi-import.github.io/themes/pipeline.png",
     "//irssi-import.github.io/themes/sux.png",
     "//irssi-import.github.io/themes/swift.png",
     "//irssi-import.github.io/themes/syntax.png",
@@ -24,7 +25,8 @@ var deck = [
     "//irssi-import.github.io/themes/n.png",
     "//irssi-import.github.io/themes/screwer.png",
     "https://cloud.githubusercontent.com/assets/5665186/4387270/d24911ce-43da-11e4-8d59-f3a14c95d790.jpg",
-    "https://cloud.githubusercontent.com/assets/5665186/4387267/d2401f24-43da-11e4-8753-666ea552580a.png"
+    "https://cloud.githubusercontent.com/assets/5665186/4387267/d2401f24-43da-11e4-8753-666ea552580a.png",
+    "/assets/irssi2017.jpg"
     ];
 document.addEventListener("DOMContentLoaded", function(event) {
     'use strict';
