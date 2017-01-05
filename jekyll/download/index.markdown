@@ -3,6 +3,7 @@ layout: page
 title: Getting Irssi
 permalink: /download/
 categories: [ _nav, _6 ]
+version: 1.0.0
 ---
 
 There are several ways you can get Irssi<span class="hidden-md hidden-lg">:</span>
@@ -156,7 +157,7 @@ The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is bui
 
 ## Release Sources
 
-Latest release version: **0.8.20** – [Downloads][14]{:rel='external'}
+Latest release version: **{{ page.version }}** – [Downloads][14]{:rel='external'}
 
 See the included [INSTALL][15]{:rel='external'} file for building instructions
 
@@ -166,7 +167,7 @@ To verify the signatures:
 
 You shouldn't really trust this key without verifying its fingerprint. See it with `gpg --fingerprint staff@irssi.org` and ask someone if it matches (eg. on `#irssi`).
 
-    gpg --verify irssi-0.8.20.tar.xz.asc
+    gpg --verify irssi-{{ page.version }}.tar.xz.asc
 
 (This key is different from the one used to sign binaries of versions before 0.8.10. More gpg help can be found from GPG manual)
 
