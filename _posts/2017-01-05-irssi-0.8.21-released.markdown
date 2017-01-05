@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Irssi 0.8.21 Released"
+---
+
+Irssi 0.8.21 has been released. This release fixes four remote crash
+issues in older Irssi releases. There are no new features compared to
+0.8.20. **All users should upgrade to this version**. See the
+[NEWS](//raw.githubusercontent.com/irssi/irssi/0.8.21/NEWS) for
+details.
+
+This release can be downloaded from [our releases
+page](https://github.com/irssi/irssi/releases).
+
+Please check with your distro whether they provide officially updated
+packages.
+
+Read the [security advisory](/security/irssi_sa_2017_01.txt).
+
+We currently do not have any alternate advice.
+
+The Irssi Team.
