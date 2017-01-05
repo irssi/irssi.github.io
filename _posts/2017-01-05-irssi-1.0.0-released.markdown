@@ -36,7 +36,8 @@ available for download in the
 repository.
 
 Discuss this news on
-[reddit](https://www.reddit.com/r/linux/comments/5m77mm/irssi_100_released/)
-or [hacker news](https://news.ycombinator.com/item?id=13329108)
+[reddit](https://www.reddit.com/r/linux/comments/5m77mm/irssi_100_released/),
+[hacker news](https://news.ycombinator.com/item?id=13329108) or
+[lobsters](https://lobste.rs/s/zfky81/irssi_1_0_0_released)
 
 The Irssi Team.
