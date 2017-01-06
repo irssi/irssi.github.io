@@ -14,6 +14,11 @@ lines deleted and TheLemonMan officially joined the staff. **Thanks
 everyone!** See the [NEWS](//raw.githubusercontent.com/irssi/irssi/{{
 page.version }}/NEWS) for details.
 
+**This release also includes the security fixes from 0.8.21**, which
+was published at the same time as 1.0.0. Please read the
+[0.8.21 release notes](/2017/01/05/irssi-0.8.21-released/) and the
+[security advisory](/security/irssi_sa_2017_01.txt).
+
 Some hi(gh)lights:
 
 * irssiproxy can now forward all tags through a single port. By Lukas Mai
