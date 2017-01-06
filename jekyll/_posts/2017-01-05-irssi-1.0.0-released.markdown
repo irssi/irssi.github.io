@@ -11,8 +11,8 @@ B. Thibault, Joseph Bisch, Will Storey, Lauri Tirkkonen, Lauri Nurmi,
 Tom Feist, Thomas Samson, Dennis Schagt, Mantas Mikulėnas and François
 Revol. In total, 132 files changed, 3434 lines were added and 3202
 lines deleted and TheLemonMan officially joined the staff. **Thanks
-everyone!** See the [NEWS](//raw.githubusercontent.com/irssi/irssi/{{
-page.version }}/NEWS) for details.
+everyone!** See the [NEWS](//raw.githubusercontent.com/irssi/irssi/maint/1.0.0/NEWS)
+for details.
 
 **This release also includes the security fixes from 0.8.21**, which
 was published at the same time as 1.0.0. Please read the
