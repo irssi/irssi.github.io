@@ -1,6 +1,6 @@
 Multiple vulnerabilities in Irssi [1]
 =====================================
-
+CVE-2017-5193, CVE-2017-5194, CVE-2017-5195, CVE-2017-5196
 
 Description
 -----------
@@ -10,13 +10,21 @@ Four vulnerabilities have been located in Irssi.
 (a) A NULL pointer dereference in the nickcmp function found by Joseph
     Bisch. (CWE-690)
 
+    CVE-2017-5193 [2] was assigned to this bug
+
 (b) Use after free when receiving invalid nick message (Issue #466, CWE-146)
+
+    CVE-2017-5194 [3] was assigned to this bug
 
 (c) Out of bounds read in certain incomplete control codes found by
     Joseph Bisch. (CWE-126)
 
+    CVE-2017-5195 [4] was assigned to this bug
+
 (d) Out of bounds read in certain incomplete character sequences found
     by Hanno Böck and independently by J. Bisch. (CWE-126)
+
+    CVE-2017-5196 [5] was assigned to this bug
 
 
 Impact
@@ -99,3 +107,7 @@ References
 ----------
 
 [1] https://irssi.org/security/irssi_sa_2017_01.txt
+[2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5193
+[3] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5194
+[4] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
+[5] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
