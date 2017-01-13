@@ -1,11 +1,11 @@
 Multiple vulnerabilities in Irssi [1]
 =====================================
-CVE-2017-5193, CVE-2017-5194, CVE-2017-5195, CVE-2017-5196
+CVE-2017-5193, CVE-2017-5194, CVE-2017-5356, CVE-2017-5195, CVE-2017-5196
 
 Description
 -----------
 
-Four vulnerabilities have been located in Irssi.
+Five vulnerabilities have been located in Irssi.
 
 (a) A NULL pointer dereference in the nickcmp function found by Joseph
     Bisch. (CWE-690)
@@ -16,15 +16,21 @@ Four vulnerabilities have been located in Irssi.
 
     CVE-2017-5194 [3] was assigned to this bug
 
-(c) Out of bounds read in certain incomplete control codes found by
+(c) Out of bounds read when Printing the value %[
+    Found by Hanno Böck. (CWE-126)
+
+    CVE-2017-5356 [4] was assigned to this bug
+
+(d) Out of bounds read in certain incomplete control codes found by
     Joseph Bisch. (CWE-126)
 
-    CVE-2017-5195 [4] was assigned to this bug
+    CVE-2017-5195 [5] was assigned to this bug
 
-(d) Out of bounds read in certain incomplete character sequences found
+(e) Out of bounds read in certain incomplete character sequences found
     by Hanno Böck and independently by J. Bisch. (CWE-126)
 
-    CVE-2017-5196 [5] was assigned to this bug
+    CVE-2017-5196 [6] was assigned to this bug
+
 
 
 Impact
@@ -38,8 +44,9 @@ Affected versions
 
 (a) All Irssi versions that we observed
 (b) All Irssi versions that we observed
-(c) Irssi 0.8.17 and later
-(d) Irssi 0.8.18 and later
+(c) All Irssi versions that we observed
+(d) Irssi 0.8.17 and later
+(e) Irssi 0.8.18 and later
 
 
 Fixed in
@@ -88,13 +95,16 @@ report whether you had /upgrade done or not. We are looking for a ways
 to make this easier to handle for both packagers and us, so if you
 have a good idea on this matter please speak forth.
 
+
 Mitigating facts
 ----------------
 
 (a) requires control over the ircd
 
-(b), (d) require control over the ircd or otherwise can be triggered /
-    avoided by the user themselves
+(b) and (e) require control over the ircd or otherwise can be
+    triggered / avoided by the user themselves
+
+(c) can be triggered / avoided by the user themselves
 
 
 Patch
@@ -103,11 +113,75 @@ Patch
 https://github.com/irssi/irssi/commit/6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
 
 
+Discussion
+----------
+
+(a) CVE-2017-5193: A NULL pointer dereference in the nickcmp function
+    found by Joseph Bisch.
+
+    The irc_query_find function will call nick_comp_func in order to
+    retrieve an associated existing query.
+
+    However, the precondition whether nick was not NULL was not
+    verified, leading to incorrect API usage of the nick_comp_func and
+    ultimately NULL pointer dereference resulting in a crash whenever
+    the server produced such a message without nick.
+
+(b) CVE-2017-5194: Use after free when receiving invalid nick message.
+
+    Irssi is programmed to cancel the connection when the server
+    indicates an invalid nick during the registration phase (in the
+    event_nick_invalid function), because Irssi cannot recover from
+    this.
+
+    A complex (and still not properly fixed) chain of signal
+    dependencies emitted by the server_disconnect function, combined
+    with the lack of reference counting, leads to multiple use after
+    free issues when the server object has already been destroyed, but
+    there is currently no way to inform the surrounding code of this
+    fact.
+
+    As a mitigation, the server_disconnect function is no longer used
+    in this case and instead the clean-up is pushed to some upper
+    layer. Fixing this properly will still be a lot of work.
+
+(c) CVE-2017-5356: Out of bounds read when Printing the value %[
+    Found by Hanno Böck.
+
+    The formatting sequence %[...] can be used to execute the
+    timestamp and "line_start" commands on each printed line.
+
+    The scanner in format_expand_styles will expect it to read unto
+    the closing ], but in case the end of string has already been
+    reached while searching for the closing bracket, calling code is
+    not prepared to deal with this and may advance the char* beyond
+    end of string.
+
+(d) CVE-2017-5195: Out of bounds read in certain incomplete control
+    codes found by Joseph Bisch.
+
+    While parsing the ANSI x8 colour codes, Irssi in many cases failed
+    to check whether the end of string had already been reached,
+    resulting in this vulnerability.
+
+(e) CVE-2017-5196: Out of bounds read in certain incomplete character
+    sequences found by Hanno Böck and independently by J. Bisch.
+
+    When copying characters to the terminal screen in the term_addstr
+    function, the g_utf8_get_char function was used unconditionally
+    without verifying that the input string is proper utf8. As the
+    behaviour of that function is undefined for invalid input, it
+    would result in this invalid memory access. The correction is to
+    use the g_utf8_get_char_validated function instead.
+
+
+
 References
 ----------
 
 [1] https://irssi.org/security/irssi_sa_2017_01.txt
 [2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5193
 [3] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5194
-[4] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
-[5] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
+[4] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5356
+[5] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
+[6] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
