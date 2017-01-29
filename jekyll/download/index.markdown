@@ -25,7 +25,7 @@ include dl_os_icon.html name="debian" text="**Debian**" %}{%
 include dl_os_icon.html name="ubuntu" text="**Ubuntu**" %}{%
 include dl_os_icon.html name="macosx" text="**OS X**" %}{%
 include dl_os_icon.html name="gentoo" text="**Gentoo**" %}{%
-include dl_os_icon.html name="openSUSE" text="**openSUSE/SUSE**" %}{%
+include dl_os_icon.html name="openSUSE" text="**SUSE**" %}{%
 include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
