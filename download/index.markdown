@@ -25,7 +25,7 @@ include dl_os_icon.html name="debian" text="**Debian**" %}{%
 include dl_os_icon.html name="ubuntu" text="**Ubuntu**" %}{%
 include dl_os_icon.html name="macosx" text="**OS X**" %}{%
 include dl_os_icon.html name="gentoo" text="**Gentoo**" %}{%
-include dl_os_icon.html name="openSUSE" text="**SuSE**" %}{%
+include dl_os_icon.html name="openSUSE" text="**openSUSE/SUSE**" %}{%
 include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
@@ -81,11 +81,13 @@ You can also install Git with `--HEAD`
 </div>
 <div class="info about-openSUSE" markdown="1">
 
-### SuSE
+### openSUSE/SUSE
 
 `zypper in irssi`.
 
 You may find more up to date versions on [openSUSE Package Search][20]{:rel='external'}
+
+For SLES and SLED, you can also find irssi in the [SUSE Package Hub](https://packagehub.suse.com/){:rel='external'}
 
 [20]: http://software.opensuse.org/package/irssi
 
