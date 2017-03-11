@@ -12,7 +12,7 @@ Five vulnerabilities have been located in Irssi.
 
     CVE-2017-5193 [2] was assigned to this bug
 
-(b) Use after free when receiving invalid nick message (Issue #466, CWE-146)
+(b) Use after free when receiving invalid nick message (Issue #466, CWE-416)
 
     CVE-2017-5194 [3] was assigned to this bug
 
