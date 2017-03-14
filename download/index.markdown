@@ -15,7 +15,7 @@ There are several ways you can get Irssi<span class="hidden-md hidden-lg">:</spa
 
 </div>
 
-<div class="col-md-7 col-sm-12" markdown="1">
+<div class="col-lg-6 col-md-7" markdown="1">
 
 ## Binary Packages
 
@@ -155,11 +155,11 @@ The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is bui
 </div>
 
 </div>
-<div class="col-md-5" markdown="1">
+<div class="col-lg-6 col-md-5" markdown="1">
 
 ## Release Sources
 
-Latest release version: **{{ page.version }}** – [Downloads][14]{:rel='external'}
+Latest release version: **{{ page.version }}** – [Downloads / News][14]{:rel='external'} &nbsp;
 
 See the included [INSTALL][15]{:rel='external'} file for building instructions
 
@@ -167,7 +167,7 @@ To verify the signatures:
 
     gpg --keyserver wwwkeys.pgp.net --recv-keys '7EE6 5E30 82A5 FB06 AC7C 368D 00CC B587 DDBE F0E1'
 
-You shouldn't really trust this key without verifying its fingerprint. See it with `gpg --fingerprint staff@irssi.org` and ask someone if it matches (eg. on `#irssi`).
+You shouldn't really trust this key without verifying its fingerprint. See it with `gpg --fingerprint staff@irssi.org` and ask someone if it matches (eg. on <tt>[#irssi][20]</tt>).
 
     gpg --verify irssi-{{ page.version }}.tar.xz.asc
 
@@ -175,7 +175,7 @@ You shouldn't really trust this key without verifying its fingerprint. See it wi
 
 ## Development sources
 
-[Git][16]{:rel='external'} – You can also get the development version. To check it out, run
+[Source on GitHub][16]{:rel='external'} – You can also get the development version. To check it out, run
 
     git clone https://github.com/irssi/irssi
 
@@ -192,3 +192,4 @@ See also: [Commit Log][18]{:rel='external'}
 [17]: //github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
 [18]: //github.com/irssi/irssi/commits/master
 [19]: {{ site.baseurl }}/assets/obs.png
+[20]: {{ site.baseurl }}/support/irc
