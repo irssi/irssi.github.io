@@ -3,7 +3,7 @@ use after free condition during netjoin processing [1]
 CWE Classification: CWE-416
 
 
-CVE-2017-xxxx [2] will be updated once cve assigned.
+CVE-2017-7191 [2] was assigned to this bug
 
 
 Description
@@ -54,3 +54,4 @@ References
 ----------
 
 [1] https://irssi.org/security/irssi_sa_2017_03.txt
+[2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7191
