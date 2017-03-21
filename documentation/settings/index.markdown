@@ -5,7 +5,7 @@ permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
 licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
-Irssi settings notes. Updated for 0.8.19.
+Irssi settings notes. Updated for 1.0.0 (with git changes up to 2017-03-21 shown as "1.1.0").
 
 This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
@@ -38,6 +38,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` completion_char = : `
 
 > The text that irssi puts after a tab-completed nickname, or that it uses to detect nicknames when you have completion_auto turned on. Some people alter this to colorize the completion character, creating the oft-dreaded bold colon.
+
+{:#completion_empty_line}
+` completion_empty_line = ON `
+
+> When this setting is OFF, tab completion will be disabled when the input line is empty. Disabling it is useful when pasting text that starts with a tab character, since that normally results in a /msg to a recent target.
+>
+> Added in irssi 1.0.0
 
 {:#completion_keep_privates}
 ` completion_keep_privates = 10 `
@@ -447,9 +454,24 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#bell_beeps}
 ` bell_beeps = OFF `
 
-> Tell irssi whether bell characters (chr 7, ^G) should actually cause beeps.
+> Removed in irssi 1.0.0.
 >
-> According to Nei, bell_beeps seems to cover the case where a beep is caused by a printed message/format. It's unrelated to activity beeps.
+> Tell irssi whether bell characters (chr 7, ^G) included inside IRC messages should actually cause beeps. This doesn't mean that highlights will make a beep sound, this means that anyone in any irc channel can cause unexplained beeps.
+>
+> Since its only purpose is to be annoying, we decided to remove this. [See this issue for details](https://github.com/irssi/irssi/issues/524).
+>
+> Any guide that recommended enabling this to make beeps work is wrong. This setting is not needed for that.
+
+{:#break_wide}
+` break_wide = OFF `
+
+> When on, wide characters (fullwidth / CJK / east asian) are always considered line breaking points then wrapping lines for display, instead of only wrapping on space characters.
+>
+> Example:
+>
+> ![](break_wide.png)
+
+> Added in irssi 1.1.0
 
 {:#chanmode_expando_strip}
 ` chanmode_expando_strip = OFF `
@@ -687,6 +709,25 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Turn timestamps on or off. When off, not even timestamp_level will trigger them.
 
+{:#tls_verbose_connect}
+` tls_verbose_connect = ON `
+
+> When this setting is ON, irssi displays TLS connection information on connect, which includes the certificate chain, protocol version, cipher suite and fingerprints. Example:
+>
+>     -!- Irssi: Connecting to irc.example.net [198.51.100.1] port 6697
+>     -!- Irssi: Certificate Chain:
+>     -!- Irssi:   Subject: CN: irc.example.net
+>     -!- Irssi:   Issuer:  C: US, O: Let's Encrypt, CN: Let's Encrypt Authority X3
+>     -!- Irssi:   Subject: C: US, O: Let's Encrypt, CN: Let's Encrypt Authority X3
+>     -!- Irssi:   Issuer:  O: Digital Signature Trust Co., CN: DST Root CA X3
+>     -!- Irssi: Protocol: TLSv1.2 (256 bit, DHE-RSA-AES256-GCM-SHA384)
+>     -!- Irssi: EDH Key: 2048 bit DH
+>     -!- Irssi: Public Key: 4096 bit RSA, valid from Mar 20 05:16:00 2017 GMT to Jun 18 05:16:00 2017 GMT
+>     -!- Irssi: Public Key Fingerprint:  DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF:DE:AD:BE:EF (SHA256)
+>     -!- Irssi: Certificate Fingerprint: CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE:CA:FE:BA:BE (SHA256)
+>
+> Added in irssi 1.0.0
+
 {:#use_msgs_window}
 ` use_msgs_window = OFF `
 
@@ -804,6 +845,17 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` join_auto_chans_on_invite = ON `
 
 > Automatically join a channel when invited to it, if that channel was previously added to the autojoin list (`/channel add -auto`).
+
+{:#key_timeout}
+` key_timeout = 0 `
+
+> Time in msecs to wait until a key combo is flushed. If it's set to 0 (the default), there's no timeout, and key combos will wait until the next keystroke before processing.
+>
+> This is useful if you have key combos that extend others. For example, if you have `meta-a` and `meta-a-meta-b` this setting allows you to use `meta-a` after waiting some time.
+>
+> Setting it to very low values may result in issues such as partial key combos getting processed accidentally. 1000 or 500 might be good starting points
+>
+> Added in irssi 1.1.0
 
 {:#kick_first_on_kickban}
 ` kick_first_on_kickban = OFF `
@@ -1119,6 +1171,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > When connecting, resolve the server's IP address back into its hostname. Probably useful for figuring out exactly which server you're on after resolving a round-robin host.
 
+{:#sasl_disconnect_on_failure}
+` sasl_disconnect_on_failure = ON `
+
+> Turn this option off to continue connecting to servers even when sasl authentication errors happen.
+>
+> Added in irssi 1.0.0
+
 {:#server_connect_timeout}
 ` server_connect_timeout = 5min `
 
@@ -1147,6 +1206,17 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` channels_rejoin_unavailable = ON `
 
 > Attempt to rejoin a channel if it's temporarily unavailable. Channels may be unavailable during netsplits.
+
+{:#rejoin_channels_on_reconnect}
+` rejoin_channels_on_reconnect = ON `
+
+> Determines whether channels are rejoined on reconnect. Possible values are OFF, ON and AUTO:
+>
+> * OFF: no channels are rejoined.
+> * ON: all channels are rejoined (default).
+> * AUTO: only channels configured with autojoins are rejoined.
+>
+> Added in irssi 1.0.0
 
 * * *
 
