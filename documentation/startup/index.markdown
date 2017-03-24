@@ -38,7 +38,7 @@ Index with some FAQ questions that are answered in the chapter:
 12. [Statusbar](#statusbar)
     * I loaded a statusbar script but it's not visible anywhere!
 
-## 1\. First steps
+## 1\. First steps {#first-steps}
 
 IRC Networks are made of servers, and servers have channels. The default config has a few predefined networks, to list them:
 
@@ -90,7 +90,7 @@ To get beeps on private messages or highlights:
 
 No other irssi settings are needed (don't enable bell_beeps), but there may be settings to change in your terminal multiplexer (screen/tmux), your terminal, or your desktop environment.
 
-## 2\. Basic user interface usage
+## 2\. Basic user interface usage {#basic-user-interface-usage}
 
 Windows can be scrolled up/down with PgUp and PgDown keys. If they don't work for you, use Meta-p and Meta-n keys. For jumping to beginning or end of the buffer, use `/SB HOME` and `/SB END` commands.
 
@@ -188,7 +188,7 @@ If you want to group only some channels or queries in one window, use
     /QUERY -window nick
 
 
-## 3\. Server and channel automation
+## 3\. Server and channel automation {#server-and-channel-automation}
 
 Irssi's multiple IRC network support is IMHO very good - at least compared to other clients :) Even if you're only in one IRC network you should group all your servers to be in the same IRC network as this helps with reconnecting if your primary server breaks and is probably useful in some other ways too :) For information how to actually use irssi correctly with multiple servers see the chapter 6.
 
@@ -217,7 +217,7 @@ And finally channels:
 
 `-bots` and `-botcmd` should be the only ones needing a bit of explaining. They're used to send commands automatically to bot when channel is joined, usually to get ops automatically. You can specify multiple bot masks with `-bots` option separated with spaces (and remember to quote the string then). The $0 in `-botcmd` specifies the first found bot in the list. If you don't need the bot masks (ie. the bot is always with the same nick, like chanserv) you can give only the `-botcmd` option and the command is always sent.
 
-## 4\. Setting up windows and automatically restoring them at startup
+## 4\. Setting up windows and automatically restoring them at startup {#setting-up-windows-and-automatically-restoring-them-at-startup}
 
 First connect to all the servers, join the channels and create the queries you want. If you want to move the windows or channels around use commands:
 
@@ -230,7 +230,7 @@ When everything looks the way you like, use `/LAYOUT SAVE` command (and `/SAVE`,
 
 If you want to change the layout, you just rearrange the layout like you want it and use `/LAYOUT SAVE` again. If you want to remove the layout for some reason, use `/LAYOUT RESET.`
 
-## 5\. Status and msgs windows & message levels
+## 5\. Status and msgs windows & message levels {#status-and-msgs-windows--message-levels}
 
 By default, all the "extra messages" go to status window. This means pretty much all messages that don't clearly belong to some channel or query. Some people like it, some don't. If you want to remove it, use
 
@@ -267,7 +267,7 @@ This brings us to message levels.. What are they? All messages that irssi prints
 
 Status window has message level `ALL -MSGS`, meaning that all messages, except private messages, without more specific place go to status window. The `-MSGS` is there so it doesn't conflict with messages window.
 
-## 6\. How support for multiple servers works in irssi
+## 6\. How support for multiple servers works in irssi {#how-support-for-multiple-servers-works-in-irssi}
 
 ircii and several other clients support multiple servers by placing the connection into some window. IRSSI DOES NOT. There is no required relationship between window and server. You can connect to 10 servers and manage them all in just one window, or join channel in each one of them to one single window if you really want to. That being said, here's how you do connect to new server without closing the old connection:
 
@@ -338,7 +338,7 @@ This is useful if you wish to have multiple status or msgs windows, one for each
     /WINDOW SERVER -sticky network
 
 
-## 7\. /LASTLOG and jumping around in scrollback
+## 7\. /LASTLOG and jumping around in scrollback {#lastlog-and-jumping-around-in-scrollback}
 
 `/LASTLOG` command can be used for searching texts in scrollback buffer. Simplest usages are
 
@@ -358,7 +358,7 @@ With `-file` option you don't need `-force` even if there's more than 1000 lines
 
 Once you've found the lines you were interested in, you might want to check the discussion around them. Irssi has `/SCROLLBACK` (or alias `/SB`) command for jumping around in scrollback buffer. Since `/LASTLOG` prints the timestamp when the message was originally printed, you can use `/SB GOTO hh:mm` to jump directly there. To get back to the bottom of scrollback, use `/SB END` command.
 
-## 8\. Logging
+## 8\. Logging {#logging}
 
 Irssi can automatically log important messages when you're set away (`/AWAY reason`). When you set yourself unaway (`/AWAY`), the new messages in away log are printed to screen. You can configure it with:
 
@@ -393,7 +393,7 @@ The path is automatically created if it doesn't exist. $0 specifies the target (
 
 For logging only some specific channels or nicks, see `/HELP log`
 
-## 9\. Changing keyboard bindings
+## 9\. Changing keyboard bindings {#changing-keyboard-bindings}
 
 You can change any keyboard binding that terminal lets irssi know about. It doesn't let irssi know everything, so for example shift-backspace can't be bound unless you modify xterm resources somehow.
 
@@ -412,7 +412,7 @@ So in irssi you would use `/BIND ^[OP /ECHO F1 pressed`. If you use multiple ter
     /BIND F1 /ECHO F1 pressed.
 
 
-## 10\. Proxies and IRC bouncers
+## 10\. Proxies and IRC bouncers {#proxies-and-irc-bouncers}
 
 Irssi supports connecting to IRC servers via a proxy. All server connections are then made through it, and if you've set up everything properly, you don't need to do any `/QUOTE SERVER` commands manually.
 
@@ -556,7 +556,7 @@ Irssi's defaults for connect strings are
 
 The proxy_string is sent before NICK/USER commands, the proxy_string_after is sent after them. %s and %d can be used with both of them.
 
-## 11\. Irssi's settings
+## 11\. Irssi's settings {#irssis-settings}
 
 Here's some settings you might want to change (the default value is shown): Also check the [Settings Documentation](/documentation/settings/)
 
@@ -656,7 +656,7 @@ Here's some settings you might want to change (the default value is shown): Also
 /SET completion_char :
 : Completion character to use.
 
-### For all the ircII people
+### For all the ircII people {#for-all-the-ircii-people}
 
 I don't like automatic query windows, I don't like status window, I do like msgs window where all messages go:
 
@@ -688,7 +688,7 @@ Here's the settings that make irssi work exactly like ircII in window management
     /SET autoclose_windows OFF
     /SET print_active_channel ON
 
-## 12\. Statusbar
+## 12\. Statusbar {#statusbar}
 
 `/STATUSBAR` displays a list of statusbars:
 
