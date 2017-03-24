@@ -42,51 +42,51 @@ Index with some FAQ questions that are answered in the chapter:
 
 IRC Networks are made of servers, and servers have channels. The default config has a few predefined networks, to list them:
 
-     /NETWORK LIST
+    /NETWORK LIST
 
 And to connect to one of those networks and join a channel:
 
-     /CONNECT Freenode
-     /JOIN #irssi
+    /CONNECT Freenode
+    /JOIN #irssi
 
 To add more networks:
 
-     /NETWORK ADD ExampleNet
+    /NETWORK ADD ExampleNet
 
 Then add some servers (with -auto to automatically connect):
 
-     /SERVER ADD -auto -network ExampleNet irc.example.net
+    /SERVER ADD -auto -network ExampleNet irc.example.net
 
 Automatically join to channels after connected to server:
 
-     /CHANNEL ADD -auto #lounge ExampleNet
+    /CHANNEL ADD -auto #lounge ExampleNet
 
 To modify existing networks (or servers, or channels) just ADD again using the same name as before. This configures a network to identify with nickserv and wait for 2 seconds before joining channels:
 
-     /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" ExampleNet
+    /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" ExampleNet
 
 If you have irssi 0.8.18 or higher and the irc network supports it, you can use SASL instead of nickserv, which is more reliable:
 
-     /NETWORK ADD -sasl_username yourname -sasl_password yourpassword -sasl_mechanism PLAIN Freenode
+    /NETWORK ADD -sasl_username yourname -sasl_password yourpassword -sasl_mechanism PLAIN Freenode
 
 These commands have many more options, see their help for details:
 
-     /HELP NETWORK
-     /HELP SERVER
-     /HELP CHANNEL
-     /HELP
+    /HELP NETWORK
+    /HELP SERVER
+    /HELP CHANNEL
+    /HELP
 
 If you want lines containing your nick to hilight:
 
-     /HILIGHT nick
+    /HILIGHT nick
 
 Or, for irssi 0.8.18 or higher:
 
-     /SET hilight_nick_matches_everywhere ON
+    /SET hilight_nick_matches_everywhere ON
 
 To get beeps on private messages or highlights:
 
-     /SET beep_msg_level MSGS HILIGHT DCCMSGS
+    /SET beep_msg_level MSGS HILIGHT DCCMSGS
 
 No other irssi settings are needed (don't enable bell_beeps), but there may be settings to change in your terminal multiplexer (screen/tmux), your terminal, or your desktop environment.
 
@@ -97,10 +97,10 @@ Windows can be scrolled up/down with PgUp and PgDown keys. If they don't work fo
 By default, irssi uses "hidden windows" for everything. Hidden windows are created every time you `/JOIN` a channel or `/QUERY` someone. There's several ways you can change between these windows:
 
 
-     Meta-1, Meta-2, .. Meta-0 - Jump directly between windows 1-10
-     Meta-q .. Meta-o          - Jump directly between windows 11-19
-     /WINDOW <number>          - Jump to any window with specified number
-     Ctrl-P, Ctrl-N            - Jump to previous / next window
+    Meta-1, Meta-2, .. Meta-0 - Jump directly between windows 1-10
+    Meta-q .. Meta-o          - Jump directly between windows 11-19
+    /WINDOW <number>          - Jump to any window with specified number
+    Ctrl-P, Ctrl-N            - Jump to previous / next window
 
 
 Clearly the easiest way is to use Meta-number keys. Meta usually means the ALT key, but if that doesn't work, you can use ESC.
@@ -141,16 +141,16 @@ And how exactly do you set these X resources? For Debian, there's `/etc/X11/Xres
 Irssi also supports split windows, they've had some problems in past but I think they should work pretty well now :) Here's some commands related to them:
 
 
-     /WINDOW NEW                    - Create new split window
-     /WINDOW NEW HIDE               - Create new hidden window
-     /WINDOW CLOSE                  - Close split or hidden window
+    /WINDOW NEW                    - Create new split window
+    /WINDOW NEW HIDE               - Create new hidden window
+    /WINDOW CLOSE                  - Close split or hidden window
 
-     /WINDOW HIDE [<number>|<name>] - Make the split window hidden window
-     /WINDOW SHOW <number>|<name>   - Make the hidden window a split window
+    /WINDOW HIDE [<number>|<name>] - Make the split window hidden window
+    /WINDOW SHOW <number>|<name>   - Make the hidden window a split window
 
-     /WINDOW SHRINK [<lines>]       - Shrink the split window
-     /WINDOW GROW [<lines>]         - Grow the split window
-     /WINDOW BALANCE                - Balance the sizes of all split windows
+    /WINDOW SHRINK [<lines>]       - Shrink the split window
+    /WINDOW GROW [<lines>]         - Grow the split window
+    /WINDOW BALANCE                - Balance the sizes of all split windows
 
 
 By default, irssi uses "sticky windowing" for split windows. This means that windows created inside one split window cannot be moved to another split window without some effort. For example you could have following window layout:
@@ -166,26 +166,26 @@ When you are in win#1 and press ALT-6, irssi jumps to split window #3 and moves 
 With non-sticky windowing the windows don't have any relationship with split windows, pressing ALT-6 in win#1 moves win#6 to split window 1 and sets it active, except if win#6 was already visible in some other split window irssi just changes to that split window. This it the way windows work with ircii, if you prefer it you can set it with
 
 
-     /SET autostick_split_windows OFF
+    /SET autostick_split_windows OFF
 
 
 Each window can have multiple channels, queries and other "window items" inside them. If you don't like windows at all, you disable automatic creating of them with
 
 
-     /SET autocreate_windows OFF
+    /SET autocreate_windows OFF
 
 
 And if you keep all channels in one window, you most probably want the channel name printed in each line:
 
 
-     /SET print_active_channel ON
+    /SET print_active_channel ON
 
 
 If you want to group only some channels or queries in one window, use
 
 
-     /JOIN -window #channel
-     /QUERY -window nick
+    /JOIN -window #channel
+    /QUERY -window nick
 
 
 ## 3\. Server and channel automation
@@ -195,15 +195,15 @@ Irssi's multiple IRC network support is IMHO very good - at least compared to ot
 First you need to have your IRC network set, use `/NETWORK` command to see if it's already there. If it isn't, use `/NETWORK ADD yournetwork`. If you want to execute some commands automatically when you're connected to some network, use `-autosendcmd` option. Here's some examples:
 
 
-     /NETWORK ADD -autosendcmd '^msg bot invite' IRCnet
-     /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" OFTC
+    /NETWORK ADD -autosendcmd '^msg bot invite' IRCnet
+    /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" OFTC
 
 
 After that you need to add your servers. For example:
 
 
-     /SERVER ADD -auto -network IRCnet irc.kpnqwest.fi 6667
-     /SERVER ADD -auto -network worknet irc.mycompany.com 6667 password
+    /SERVER ADD -auto -network IRCnet irc.kpnqwest.fi 6667
+    /SERVER ADD -auto -network worknet irc.mycompany.com 6667 password
 
 
 The `-auto` option specifies that this server is automatically connected at startup. You don't need to make more than one server with `-auto` option to one IRC network, other servers are automatically connected in same network if the `-auto` server fails.
@@ -211,8 +211,8 @@ The `-auto` option specifies that this server is automatically connected at star
 And finally channels:
 
 
-     /CHANNEL ADD -auto -bots *!*bot@host.org -botcmd "/^msg $0 op pass" #irssi efnet
-     /CHANNEL ADD -auto #secret IRCnet password
+    /CHANNEL ADD -auto -bots *!*bot@host.org -botcmd "/^msg $0 op pass" #irssi efnet
+    /CHANNEL ADD -auto #secret IRCnet password
 
 
 `-bots` and `-botcmd` should be the only ones needing a bit of explaining. They're used to send commands automatically to bot when channel is joined, usually to get ops automatically. You can specify multiple bot masks with `-bots` option separated with spaces (and remember to quote the string then). The $0 in `-botcmd` specifies the first found bot in the list. If you don't need the bot masks (ie. the bot is always with the same nick, like chanserv) you can give only the `-botcmd` option and the command is always sent.
@@ -222,8 +222,8 @@ And finally channels:
 First connect to all the servers, join the channels and create the queries you want. If you want to move the windows or channels around use commands:
 
 
-     /WINDOW MOVE LEFT/RIGHT/number    - move window elsewhere
-     /WINDOW ITEM MOVE <number>|<name> - move channel/query to another window
+    /WINDOW MOVE LEFT/RIGHT/number    - move window elsewhere
+    /WINDOW ITEM MOVE <number>|<name> - move channel/query to another window
 
 
 When everything looks the way you like, use `/LAYOUT SAVE` command (and `/SAVE`, if you don't have autosaving enabled) and when you start irssi next time, irssi remembers the positions of the channels, queries and everything. This "remembering" doesn't mean that simply using `/LAYOUT SAVE` would automatically make irssi reconnect to all servers and join all channels, you'll need the `/SERVER ADD -auto` and `/CHANNEL ADD -auto` commands to do that.
@@ -235,7 +235,7 @@ If you want to change the layout, you just rearrange the layout like you want it
 By default, all the "extra messages" go to status window. This means pretty much all messages that don't clearly belong to some channel or query. Some people like it, some don't. If you want to remove it, use
 
 
-     /SET use_status_window OFF
+    /SET use_status_window OFF
 
 
 This doesn't have any effect until you restart irssi. If you want to remove it immediately, just `/WINDOW CLOSE` it.
@@ -243,18 +243,18 @@ This doesn't have any effect until you restart irssi. If you want to remove it i
 Another common window is "messages window", where all private messages go. By default it's disabled and query windows are created instead. To make all private messages go to msgs window, say:
 
 
-     /SET use_msgs_window ON
-     /SET autocreate_query_level DCCMSGS  (or if you don't want queries to
+    /SET use_msgs_window ON
+    /SET autocreate_query_level DCCMSGS  (or if you don't want queries to
      				      dcc chats either, say NONE)
 
 
 use_msgs_window either doesn't have any effect until restarting irssi. To create it immediately say:
 
 
-     /WINDOW NEW HIDE     - create the window
-     /WINDOW NAME (msgs)  - name it to "(msgs)"
-     /WINDOW LEVEL MSGS   - make all private messages go to this window
-     /WINDOW MOVE 1       - move it to first window
+    /WINDOW NEW HIDE     - create the window
+    /WINDOW NAME (msgs)  - name it to "(msgs)"
+    /WINDOW LEVEL MSGS   - make all private messages go to this window
+    /WINDOW MOVE 1       - move it to first window
 
 
 Note that neither use_msgs_window nor use_status_window have any effect at all if `/LAYOUT SAVE` has been used.
@@ -262,7 +262,7 @@ Note that neither use_msgs_window nor use_status_window have any effect at all i
 This brings us to message levels.. What are they? All messages that irssi prints have one or more "message levels". Most common are PUBLIC for public messages in channels, MSGS for private messages and CRAP for all sorts of messages with no real classification. You can get a whole list of levels with
 
 
-     /HELP levels
+    /HELP levels
 
 
 Status window has message level `ALL -MSGS`, meaning that all messages, except private messages, without more specific place go to status window. The `-MSGS` is there so it doesn't conflict with messages window.
@@ -272,7 +272,7 @@ Status window has message level `ALL -MSGS`, meaning that all messages, except p
 ircii and several other clients support multiple servers by placing the connection into some window. IRSSI DOES NOT. There is no required relationship between window and server. You can connect to 10 servers and manage them all in just one window, or join channel in each one of them to one single window if you really want to. That being said, here's how you do connect to new server without closing the old connection:
 
 
-     /CONNECT irc.server.org
+    /CONNECT irc.server.org
 
 
 Instead of the `/SERVER` which disconnects the existing connection. To see list of all active connections, use `/SERVER` without any parameters. You should see a list of something like:
@@ -290,20 +290,20 @@ Server tags beginning with `RECON-` mean server reconnections. Above we see that
 To disconnect one of the servers, or to stop irssi from reconnecting, use
 
 
-     /DISCONNECT network   - disconnect server with tag "network"
-     /DISCONNECT recon-1  - stop trying to reconnect to RECON-1 server
-     /RMRECONNS           - stop all server reconnections
+    /DISCONNECT network   - disconnect server with tag "network"
+    /DISCONNECT recon-1  - stop trying to reconnect to RECON-1 server
+    /RMRECONNS           - stop all server reconnections
 
-     /RECONNECT recon-1   - immediately try reconnecting back to RECON-1
-     /RECONNECT ALL       - immediately try reconnecting back to all
+    /RECONNECT recon-1   - immediately try reconnecting back to RECON-1
+    /RECONNECT ALL       - immediately try reconnecting back to all
      		       servers in reconnection queue
 
 
 Now that you're connected to all your servers, you'll have to know how to specify which one of them you want to use. One way is to have an empty window, like status or msgs window. In it, you can specify which server to set active with
 
 
-     /WINDOW SERVER tag    - set server "tag" active
-     Ctrl-X                - set the next server in list active
+    /WINDOW SERVER tag    - set server "tag" active
+    Ctrl-X                - set the next server in list active
 
 
 When the server is active, you can use it normally. When there's multiple connected servers, irssi adds [servertag] prefix to all messages in non-channel/query messages so you'll know where it came from.
@@ -311,9 +311,9 @@ When the server is active, you can use it normally. When there's multiple connec
 Several commands also accept `-servertag` option to specify which server it should use:
 
 
-     /MSG -tag nick message
-     /JOIN -tag #channel
-     /QUERY -tag nick
+    /MSG -tag nick message
+    /JOIN -tag #channel
+    /QUERY -tag nick
 
 
 `/MSG` tab completion also automatically adds the `-tag` option when nick isn't in active server.
@@ -321,21 +321,21 @@ Several commands also accept `-servertag` option to specify which server it shou
 Window's server can be made sticky. When sticky, it will never automatically change to anything else, and if server gets disconnected, the window won't have any active server. When the server gets connected again, it is automatically set active in the window. To set the window's server sticky use
 
 
-     /WINDOW SERVER -sticky tag
+    /WINDOW SERVER -sticky tag
 
 
 This is useful if you wish to have multiple status or msgs windows, one for each server. Here's how to do them (repeat for each server)
 
 
-     /WINDOW NEW HIDE
-     /WINDOW NAME (status)
-     /WINDOW LEVEL ALL -MSGS
-     /WINDOW SERVER -sticky network
+    /WINDOW NEW HIDE
+    /WINDOW NAME (status)
+    /WINDOW LEVEL ALL -MSGS
+    /WINDOW SERVER -sticky network
 
-     /WINDOW NEW HIDE
-     /WINDOW NAME (msgs)
-     /WINDOW LEVEL MSGS
-     /WINDOW SERVER -sticky network
+    /WINDOW NEW HIDE
+    /WINDOW NAME (msgs)
+    /WINDOW LEVEL MSGS
+    /WINDOW SERVER -sticky network
 
 
 ## 7\. /LASTLOG and jumping around in scrollback
@@ -343,15 +343,15 @@ This is useful if you wish to have multiple status or msgs windows, one for each
 `/LASTLOG` command can be used for searching texts in scrollback buffer. Simplest usages are
 
 
-     /LASTLOG word     - print all lines with "word" in them
-     /LASTLOG word 10  - print last 10 occurances of "word"
-     /LASTLOG -topics  - print all topic changes
+    /LASTLOG word     - print all lines with "word" in them
+    /LASTLOG word 10  - print last 10 occurances of "word"
+    /LASTLOG -topics  - print all topic changes
 
 
 If there's more than 1000 lines to be printed, irssi thinks that you probably made some mistake and won't print them without `-force` option. If you want to save the full lastlog to file, use
 
 
-     /LASTLOG -file ~/irc.log
+    /LASTLOG -file ~/irc.log
 
 
 With `-file` option you don't need `-force` even if there's more than 1000 lines. `/LASTLOG` has a lot of other options too, see `/HELP lastlog` for details.
@@ -363,32 +363,32 @@ Once you've found the lines you were interested in, you might want to check the 
 Irssi can automatically log important messages when you're set away (`/AWAY reason`). When you set yourself unaway (`/AWAY`), the new messages in away log are printed to screen. You can configure it with:
 
 
-     /SET awaylog_level MSGS HILIGHT     - Specifies what messages to log
-     /SET awaylog_file ~/.irssi/away.log - Specifies the file to use
+    /SET awaylog_level MSGS HILIGHT     - Specifies what messages to log
+    /SET awaylog_file ~/.irssi/away.log - Specifies the file to use
 
 
 Easiest way to start logging with Irssi is to use autologging. With it Irssi logs all channels and private messages to specified directory. You can turn it on with
 
 
-     /SET autolog ON
+    /SET autolog ON
 
 
 By default it logs pretty much everything execept CTCPS or CRAP (`/WHOIS` requests, etc). You can specify the logging level yourself with
 
 
-     /SET autolog_level ALL -CRAP -CLIENTCRAP -CTCPS (this is the default)
+    /SET autolog_level ALL -CRAP -CLIENTCRAP -CTCPS (this is the default)
 
 
 By default irssi logs to ~/irclogs/<servertag>/<target>.log. You can change this with
 
 
-     /SET autolog_path ~/irclogs/$tag/$0.log (this is the default)
+    /SET autolog_path ~/irclogs/$tag/$0.log (this is the default)
 
 
 The path is automatically created if it doesn't exist. $0 specifies the target (channel/nick). You can make irssi automatically rotate the logs by adding date/time formats to the file name. The formats are in "man strftime" format. For example
 
 
-     /SET autolog_path ~/irclogs/%Y/$tag/$0.%m-%d.log
+    /SET autolog_path ~/irclogs/%Y/$tag/$0.%m-%d.log
 
 
 For logging only some specific channels or nicks, see `/HELP log`
@@ -407,9 +407,9 @@ You can change any keyboard binding that terminal lets irssi know about. It does
 So in irssi you would use `/BIND ^[OP /ECHO F1 pressed`. If you use multiple terminals which have different bindings for the key, it would be better to use eg.:
 
 
-     /BIND ^[OP key F1
-     /BIND ^[11~ key F1
-     /BIND F1 /ECHO F1 pressed.
+    /BIND ^[OP key F1
+    /BIND ^[11~ key F1
+    /BIND F1 /ECHO F1 pressed.
 
 
 ## 10\. Proxies and IRC bouncers
@@ -419,20 +419,20 @@ Irssi supports connecting to IRC servers via a proxy. All server connections are
 Here's an example: You have your bouncer (lets say, BNC or BNC-like) listening in irc.bouncer.org port 5000. You want to use it to connect to servers irc.dalnet and irc.efnet.org. First you'd need to setup the bouncer:
 
 
-     /SET use_proxy ON
-     /SET proxy_address irc.bouncer.org
-     /SET proxy_port 5000
+    /SET use_proxy ON
+    /SET proxy_address irc.bouncer.org
+    /SET proxy_port 5000
 
-     /SET proxy_password YOUR_BNC_PASSWORD_HERE
-     /SET -clear proxy_string
-     /SET proxy_string_after conn %s %d
+    /SET proxy_password YOUR_BNC_PASSWORD_HERE
+    /SET -clear proxy_string
+    /SET proxy_string_after conn %s %d
 
 
 Then you'll need to add the server connections. These are done exactly as if you'd want to connect directly to them. Nothing special about them:
 
 
-     /SERVER ADD -auto -network dalnet irc.dal.net
-     /SERVER ADD -auto -network efnet irc.efnet.org
+    /SERVER ADD -auto -network dalnet irc.dal.net
+    /SERVER ADD -auto -network efnet irc.efnet.org
 
 
 With the proxy `/SET`s however, irssi now connects to those servers through your BNC. All server connections are made through them so you can just forget that your bouncer even exists.
@@ -444,9 +444,9 @@ If you don't want to use the proxy for some reason, there's `-noproxy` option wh
 All proxies have these settings in common:
 
 
-     /SET use_proxy ON
-     /SET proxy_address <Proxy host address>
-     /SET proxy_port <Proxy port>
+    /SET use_proxy ON
+    /SET proxy_address <Proxy host address>
+    /SET proxy_port <Proxy port>
 
 
 **HTTP proxy**
@@ -454,16 +454,16 @@ All proxies have these settings in common:
 Use these settings with HTTP proxies:
 
 
-     /SET -clear proxy_password
-     /EVAL SET proxy_string CONNECT %s:%d HTTP/1.0\n\n
+    /SET -clear proxy_password
+    /EVAL SET proxy_string CONNECT %s:%d HTTP/1.0\n\n
 
 
 **BNC**
 
 
-     /SET proxy_password your_pass
-     /SET -clear proxy_string
-     /SET proxy_string_after conn %s %d
+    /SET proxy_password your_pass
+    /SET -clear proxy_string
+    /SET proxy_string_after conn %s %d
 
 
 **dircproxy**
@@ -471,11 +471,11 @@ Use these settings with HTTP proxies:
 dircproxy separates the server connections by passwords. So, if you for example have network connection with password ircpass and OFTC connection with oftcpass, you would do something like this:
 
 
-     /SET -clear proxy_password
-     /SET -clear proxy_string
+    /SET -clear proxy_password
+    /SET -clear proxy_string
 
-     /SERVER ADD -auto -network IRCnet fake.network 6667 ircpass
-     /SERVER ADD -auto -network OFTC fake.oftc 6667 oftcpass
+    /SERVER ADD -auto -network IRCnet fake.network 6667 ircpass
+    /SERVER ADD -auto -network OFTC fake.oftc 6667 oftcpass
 
 
 The server name and port you give isn't used anywhere, so you can put anything you want in there.
@@ -485,13 +485,13 @@ The server name and port you give isn't used anywhere, so you can put anything y
 psyBNC has internal support for multiple servers. However, it could be a bit annoying to use, and some people just use different users for connecting to different servers. You can manage this in a bit same way as with dircproxy, by creating fake connections:
 
 
-     /SET -clear proxy_password
-     /SET -clear proxy_string
+    /SET -clear proxy_password
+    /SET -clear proxy_string
 
-     /NETWORK ADD -user networkuser IRCnet
-     /SERVER ADD -auto -network IRCnet fake.network 6667 ircpass
-     /NETWORK ADD -user oftcuser OFTC
-     /SERVER ADD -auto -network OFTC fake.oftc 6667 oftcpass
+    /NETWORK ADD -user networkuser IRCnet
+    /SERVER ADD -auto -network IRCnet fake.network 6667 ircpass
+    /NETWORK ADD -user oftcuser OFTC
+    /SERVER ADD -auto -network OFTC fake.oftc 6667 oftcpass
 
 
 So, you'll specify the usernames with `/NETWORK ADD` command, and the user's password with `/SERVER ADD`.
@@ -507,15 +507,15 @@ Irssi proxy supports sharing multiple server connections in different ports, lik
 Usage in proxy side:
 
 
-     /LOAD proxy
-     /SET irssiproxy_password <password>
-     /SET irssiproxy_ports <network>=<port> ... (eg. IRCnet=2777 efnet=2778)
+    /LOAD proxy
+    /SET irssiproxy_password <password>
+    /SET irssiproxy_ports <network>=<port> ... (eg. IRCnet=2777 efnet=2778)
 
 
 **NOTE**: you **MUST** add all the servers you are using to server and network lists with `/SERVER ADD` and `/NETWORK ADD`. ..Except if you really don't want to for some reason, and you only use one server connection, you may simply set:
 
 
-     /SET irssiproxy_ports *=2777
+    /SET irssiproxy_ports *=2777
 
 
 Usage in client side:
@@ -523,8 +523,8 @@ Usage in client side:
 Just connect to the irssi proxy like it is a normal server with password specified in `/SET irssiproxy_password`. For example:
 
 
-     /SERVER ADD -network IRCnet my.irssi-proxy.org 2777 secret
-     /SERVER ADD -network efnet my.irssi-proxy.org 2778 secret
+    /SERVER ADD -network IRCnet my.irssi-proxy.org 2777 secret
+    /SERVER ADD -network efnet my.irssi-proxy.org 2778 secret
 
 
 Irssi proxy works fine with other IRC clients as well.
@@ -544,14 +544,14 @@ Using [proxychains-ng][] is recommended over recompiling irssi.
 IRC bouncers usually work like IRC servers, and want a password. You can give it with:
 
 
-     /SET proxy_password <password>
+    /SET proxy_password <password>
 
 
 Irssi's defaults for connect strings are
 
 
-     /SET proxy_string CONNECT %s %d
-     /SET proxy_string_after
+    /SET proxy_string CONNECT %s %d
+    /SET proxy_string_after
 
 
 The proxy_string is sent before NICK/USER commands, the proxy_string_after is sent after them. %s and %d can be used with both of them.
@@ -661,32 +661,32 @@ Here's some settings you might want to change (the default value is shown): Also
 I don't like automatic query windows, I don't like status window, I do like msgs window where all messages go:
 
 
-     /SET autocreate_own_query OFF
-     /SET autocreate_query_level DCCMSGS
-     /SET use_status_window OFF
-     /SET use_msgs_window ON
+    /SET autocreate_own_query OFF
+    /SET autocreate_query_level DCCMSGS
+    /SET use_status_window OFF
+    /SET use_msgs_window ON
 
 
 Disable automatic window closing when `/PART`ing channel or `/UNQUERY`ing query:
 
 
-     /SET autoclose_windows OFF
-     /SET reuse_unused_windows ON
+    /SET autoclose_windows OFF
+    /SET reuse_unused_windows ON
 
 
 Here's the settings that make irssi work exactly like ircII in window management (send me a note if you can think of more):
 
 
-     /SET autocreate_own_query OFF
-     /SET autocreate_query_level NONE
-     /SET use_status_window OFF
-     /SET use_msgs_window OFF
-     /SET reuse_unused_windows ON
-     /SET windows_auto_renumber OFF
+    /SET autocreate_own_query OFF
+    /SET autocreate_query_level NONE
+    /SET use_status_window OFF
+    /SET use_msgs_window OFF
+    /SET reuse_unused_windows ON
+    /SET windows_auto_renumber OFF
 
-     /SET autostick_split_windows OFF
-     /SET autoclose_windows OFF
-     /SET print_active_channel ON
+    /SET autostick_split_windows OFF
+    /SET autoclose_windows OFF
+    /SET print_active_channel ON
 
 ## 12\. Statusbar
 
@@ -705,17 +705,17 @@ Here's the settings that make irssi work exactly like ircII in window management
 Type can be window or root, meaning if the statusbar should be created for each split window, or just once. Placement can be top or bottom. Position is a number, the higher the value the lower in screen it is. Visible can be always, active or inactive. Active/inactive is useful only with split windows, one split window is active and the rest are inactive. These settings can be changed with:
 
 
-     /STATUSBAR <name> TYPE window|root
-     /STATUSBAR <name> PLACEMENT top|bottom
-     /STATUSBAR <name> POSITION <num>
-     /STATUSBAR <name> VISIBLE always|active|inactive
+    /STATUSBAR <name> TYPE window|root
+    /STATUSBAR <name> PLACEMENT top|bottom
+    /STATUSBAR <name> POSITION <num>
+    /STATUSBAR <name> VISIBLE always|active|inactive
 
 
 When loading a new statusbar scripts, you'll need to also specify where you want to show it. Statusbar items can be modified with:
 
 
-     /STATUSBAR <name> ADD [-before | -after <item>] [-priority #] [-alignment left|right] <item>
-     /STATUSBAR <name> REMOVE <item>
+    /STATUSBAR <name> ADD [-before | -after <item>] [-priority #] [-alignment left|right] <item>
+    /STATUSBAR <name> REMOVE <item>
 
 
 The item name with statusbar scripts is usually same as the script's name. Script's documentation should tell if this isn't the case. So, to add mail.pl before the window activity item (see the list with `/STATUSBAR` window), use: `/STATUSBAR window ADD -before act mail`.
