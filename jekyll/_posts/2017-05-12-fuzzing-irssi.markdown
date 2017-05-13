@@ -122,7 +122,7 @@ data from stdin.
 
 Here is an image showing the AFL UI that displays:
 
-<img src="/images/afl_nocrash.png" />
+<img style="max-width:100%" src="/images/afl_nocrash.png" />
 
 As you can see no crashes have been found so far during that fuzzing session.
 AFL has found a total of 3090 inputs that cause new paths to be taken and
@@ -136,7 +136,7 @@ indication that something is wrong, but in this case the program is just a
 simple program that AFL can't find any additional paths through, hence the
 warning.
 
-<img src="/images/afl_crash.png" />
+<img style="max-width:100%" src="/images/afl_crash.png" />
 
 Now we can go to `afl/out/crashes` in our program's source tree and find crashes
 with filenames like `out/crashes/id:000000,sig:06,src:000000,op:havoc,rep:32`,
