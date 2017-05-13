@@ -14,6 +14,7 @@ the security bugs revealed in the [first Irssi security advisory of
 this blog post, we will cover an introduction to fuzzing, how to fuzz Irssi, and
 a look at a couple of actual bugs found in past versions of Irssi.
 
+
 ### Intro to Fuzzing
 
 At its most basic level, fuzzing can be thought of as generating random input
