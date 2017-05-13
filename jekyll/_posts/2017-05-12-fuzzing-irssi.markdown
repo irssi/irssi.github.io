@@ -190,11 +190,11 @@ help if you are interested in doing so.
 
 We could use more code coverage. Of course we can't find bugs in code that we're
 not able to reach. The above patch was written as a quick hack to get fuzzing of
-Irssi working and it may be possible to tweak it to get better coverage. For
-example, the patch forces a default Irssi config instead of reading the config
-from the filesystem. So if a bug is only triggerable with a particular
-configuration or layout, it will be missed when fuzzing with the patch in its
-current state.
+Irssi working and it may be possible to write a patch that results in better
+coverage. For example, the patch forces a default Irssi config instead of
+reading the config from the filesystem. So if a bug is only triggerable with a
+particular configuration or layout, it will be missed when fuzzing with the
+patch in its current state.
 
 There are also other approaches to fuzzing besides using this patch with AFL.
 While it wasn't the subject of this blog post, we have a [fuzzing
@@ -207,4 +207,4 @@ As always, #irssi on Freenode is a great place to discuss Irssi.
 And we would like to hear about any bugs you find, whether by fuzzing or other
 methods. You can report non-security bugs via the [Irssi GitHub
 repo](https://github.com/irssi/irssi). Security bugs can be reported to Irssi
-staff.
+staff. Staff can be reached at staff@irssi.org.
