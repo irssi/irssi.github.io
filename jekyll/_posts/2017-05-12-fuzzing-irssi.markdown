@@ -61,7 +61,11 @@ like preventing the reading from and saving to of the user's config files, so
 that we start with a default Irssi config every program execution.
 
 The following commands will clone a fresh copy of Irssi and apply the above
-patch (named fuzz.diff) to your copy of Irssi.
+patch (named fuzz.diff) to your copy of Irssi. Note that the patch doesn't
+apply to git master anymore, so you'll either need to correct the part in
+`src/fe-text/irssi.c` that fails to apply, or checkout any commit prior to
+`70f9db3cbdc0a3c6b622e64edbd504592f921892` before applying the patch. Note that
+this includes any Irssi release at the time of this writing (1.0.2 or earlier).
 
 ```
 git clone https://github.com/irssi/irssi.git irssi-fuzz
