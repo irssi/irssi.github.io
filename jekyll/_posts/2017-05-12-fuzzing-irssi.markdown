@@ -212,3 +212,5 @@ And we would like to hear about any bugs you find, whether by fuzzing or other
 methods. You can report non-security bugs via the [Irssi GitHub
 repo](https://github.com/irssi/irssi). Security bugs can be reported to Irssi
 staff. Staff can be reached at staff@irssi.org.
+
+[hacker news discussion](https://news.ycombinator.com/item?id=14330989)
