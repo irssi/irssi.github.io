@@ -6,7 +6,7 @@ categories: [ _nav ]
 ---
 <table class="table">
     <thead>
-        <tr>
+        <tr class="text-nowrap">
             <th>External links</th>
 	    <th>Exploitable by</th>
 	    <th>Affected versions</th>
@@ -22,18 +22,16 @@ categories: [ _nav ]
     {% assign name = item[0] %}
     {% assign values = item[1] %}
         <tr>
-	    <td>
-	        <ul>
+	    <td class="text-nowrap">
 	        {% for link in values.external_links %}
-		    <li><a href="{{ link.url }}">{{ link.id }}</a></li>
+		<div><a href="{{ link.url }}">{{ link.id }}</a></div>
 	        {% endfor %}
-		</ul>
 	    </td>
 	    <td>{{ values.exploitable_by }}</td>
 	    <td>{{ values.affected_versions }}</td>
 	    <td>{{ values.fixed_version }}</td>
-	    <td>{{ values.release_date }}</td>
-	    <td><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">{{ values.git_commit }}</a></td>
+	    <td class="text-nowrap">{{ values.release_date }}</td>
+	    <td><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">{{ values.git_commit | truncate: 8, "" }}</a></td>
 	    <td>{{ values.credit }}</td>
         </tr>
 {% endfor %}
