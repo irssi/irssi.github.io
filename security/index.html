@@ -14,6 +14,7 @@ categories: [ _nav ]
 	    <th>Release date</th>
 	    <th>Git commit</th>
 	    <th>Credit</th>
+	    <th>Description</th>
         </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@ categories: [ _nav ]
 	    <td class="text-nowrap">{{ values.release_date }}</td>
 	    <td><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">{{ values.git_commit | truncate: 8, "" }}</a></td>
 	    <td>{{ values.credit }}</td>
+	    <td>{{ values.description }}</td>
         </tr>
 {% endfor %}
     </tbody>
