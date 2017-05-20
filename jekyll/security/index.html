@@ -12,7 +12,6 @@ categories: [ _nav ]
 	    <th>Affected versions</th>
 	    <th>Fixed in version</th>
 	    <th>Release date</th>
-	    <th>Git commit</th>
 	    <th>Credit</th>
 	    <th>Description</th>
         </tr>
@@ -30,9 +29,13 @@ categories: [ _nav ]
 	    </td>
 	    <td>{{ values.exploitable_by }}</td>
 	    <td>{{ values.affected_versions }}</td>
-	    <td>{{ values.fixed_version }}</td>
+	    <td>
+		{{ values.fixed_version }}
+		<a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">
+		    (git)
+		</a>
+	    </td>
 	    <td class="text-nowrap">{{ values.release_date }}</td>
-	    <td><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">{{ values.git_commit | truncate: 8, "" }}</a></td>
 	    <td>{{ values.credit }}</td>
 	    <td>{{ values.description }}</td>
         </tr>
