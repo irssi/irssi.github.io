@@ -1,0 +1,41 @@
+---
+layout: page
+title: Security
+permalink: /security/
+categories: [ _nav ]
+---
+<table class="table">
+    <thead>
+        <tr>
+            <th>External links</th>
+	    <th>Exploitable by</th>
+	    <th>Affected versions</th>
+	    <th>Fixed in version</th>
+	    <th>Release date</th>
+	    <th>Git commit</th>
+	    <th>Credit</th>
+        </tr>
+    </thead>
+    <tbody>
+{% assign items = site.data.security | sort %}
+{% for item in items reversed %}
+    {% assign name = item[0] %}
+    {% assign values = item[1] %}
+        <tr>
+	    <td>
+	        <ul>
+	        {% for link in values.external_links %}
+		    <li><a href="{{ link.url }}">{{ link.id }}</a></li>
+	        {% endfor %}
+		</ul>
+	    </td>
+	    <td>{{ values.exploitable_by }}</td>
+	    <td>{{ values.affected_versions }}</td>
+	    <td>{{ values.fixed_version }}</td>
+	    <td>{{ values.release_date }}</td>
+	    <td><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">{{ values.git_commit }}</a></td>
+	    <td>{{ values.credit }}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
