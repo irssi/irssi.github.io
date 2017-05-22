@@ -7,13 +7,13 @@ categories: [ _nav ]
 <table class="table">
     <thead>
         <tr class="text-nowrap">
+	    <th>Release date</th>
             <th>External links</th>
-	    <th>Exploitable by</th>
 	    <th>Affected versions</th>
 	    <th>Fixed in version</th>
-	    <th>Release date</th>
-	    <th>Credit</th>
+	    <th>Exploitable by</th>
 	    <th>Description</th>
+	    <th>Credit</th>
         </tr>
     </thead>
     <tbody>
@@ -22,12 +22,12 @@ categories: [ _nav ]
     {% assign name = item[0] %}
     {% assign values = item[1] %}
         <tr>
+	    <td class="text-nowrap">{{ values.release_date }}</td>
 	    <td class="text-nowrap">
 	        {% for link in values.external_links %}
 		<div><a href="{{ link.url }}">{{ link.id }}</a></div>
 	        {% endfor %}
 	    </td>
-	    <td>{{ values.exploitable_by }}</td>
 	    <td>{{ values.affected_versions }}</td>
 	    <td>
 		{{ values.fixed_version }}
@@ -35,10 +35,33 @@ categories: [ _nav ]
 		    (git)
 		</a>
 	    </td>
-	    <td class="text-nowrap">{{ values.release_date }}</td>
-	    <td>{{ values.credit }}</td>
+	    <td>{{ values.exploitable_by }}</td>
 	    <td>{{ values.description }}</td>
+	    <td>{{ values.credit }}</td>
         </tr>
 {% endfor %}
     </tbody>
 </table>
+
+<h2>Reference</h2>
+
+<p>"Exploitable by" column:</p>
+
+<ul>
+    <li>
+	<b>Server</b>: Triggered by malicious inputs sent by a server with complete control over the connection<br />
+	Example: malformed raw IRC commands
+    </li>
+    <li>
+	<b>Client</b>: Triggered by malicious inputs sent by remote clients with no privileges over the network<br />
+	Example: malformed color codes inside a message
+    </li>
+    <li>
+	<b>Local users</b>: Exploitable by unprivileged system users with access to the same filesystem<br />
+	Example: CVE-2016-7553 (buf.pl information disclosure)
+    </li>
+    <li>
+	<b>Local formats</b>: Exploitable through internal format codes used in themes and configs. These are not normally processed from the network but may be in combination with buggy scripts.<br />
+	Example: CVE-2017-5356 (Crash on <code>%[</code>)
+    </li>
+</ul>
