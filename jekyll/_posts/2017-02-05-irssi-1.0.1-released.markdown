@@ -9,7 +9,7 @@ importantly, a mistake that broke tab completion of settings and
 aliases has been corrected, as well as a memory leak during SASL found
 by Joseph Bisch. **All users of 1.0.0 should upgrade to this
 version**. See the
-[NEWS](//raw.githubusercontent.com/irssi/irssi/maint/1.0.1/NEWS) for
+[NEWS](//raw.githubusercontent.com/irssi/irssi/1.0.1/NEWS) for
 details.
 
 This release can be downloaded from [our releases
