@@ -2,6 +2,7 @@ body {
     padding-top: 50px;
     overflow-y: scroll;
 }
+/* header bar: 50px */
 
 div.jumbotron {
     padding-top: 16px;
@@ -205,6 +206,24 @@ blockquote {
 
 .page > .sticken {
     overflow-y: auto;
+}
+
+p.hidden-edit a.hidden-edit,
+p.hidden-edit a.hidden-edit + span.hidden-edit {
+    opacity: 0;
+}
+p.hidden-edit:hover a.hidden-edit,
+p.hidden-edit:hover a.hidden-edit + span.hidden-edit,
+p.hidden-edit a.hidden-edit:focus,
+p.hidden-edit a.hidden-edit:active,
+p.hidden-edit a.hidden-edit:focus + span.hidden-edit,
+p.hidden-edit a.hidden-edit:active + span.hidden-edit {
+    opacity: 1;
+}
+p.hidden-edit span.hidden-balance {
+    display: inline-block;
+    /* width should roughly equal "Source file -" */
+    width: 10ex;
 }
 
 /* news archive */
