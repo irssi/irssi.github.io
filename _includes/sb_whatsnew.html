@@ -1,4 +1,19 @@
-<p><small>2017-05-12</small> <a href="/2017/05/12/fuzzing-irssi">Introduction to  fuzzing Irssi</a> </p>
-<p><small>2017-05-06</small> <a href="/2017/05/06/test-sideways-splits"><b>Test</b> horizontal/vertical splits</a> </p>
-<p><small>2017-03-12</small> <a href="/2017/03/12/poll-non-utf8-discontinuation"><b>Poll</b> Non-UTF-8 discontinuation</a> </p>
-<p><small>2017-03-11</small> <a href="/2017/03/11/irssi-1.0.2-released"><b>Security</b> Irssi 1.0.2 released!</a> </p>
+{% comment %}
+
+Edit /_data/sb_whatsnew.yml to generate the content of this sidebar
+
+{% endcomment
+%}{% for new in site.data.sb_whatsnew
+%}{%   assign found = 0
+%}{%   for post in site.posts
+%}{%     if post.slug == new.key
+%}
+<p><small>{{ post.date | date: "%Y-%m-%d" }}</small>&nbsp;<a href="{{ post.url }}">{% if new.tag %}<b>{{ new.tag }}</b> {% endif %}{% if new.title %}{{ new.title }}{% else %}{{ post.title }}{% endif %}</a> </p>{% assign found = 1 %}{% break
+%}{%     endif
+%}{%   endfor
+%}{%   if found == 0
+%}
+<p class="bg-danger">#error# {{ new.key }} not found</p>{%
+       endif
+%}{% endfor
+%}

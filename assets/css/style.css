@@ -70,6 +70,7 @@ p.center {
   position: inherit;
 }
 #___gcse_0:before { display: inline; }
+#___gcse_0 div.gsc-adBlock { display: none ! important; }
 
 /* This is for mobile devices and the size of the youtube video */
 iframe {
@@ -194,6 +195,16 @@ blockquote {
 
 .twitter-timeline {
     height: 80vh !important;
+}
+
+.sticken {
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+}
+
+.page > .sticken {
+    overflow-y: auto;
 }
 
 /* news archive */
