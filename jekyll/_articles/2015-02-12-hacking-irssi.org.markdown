@@ -38,4 +38,6 @@ Notes
 <!--
 Yeah, it's really weird how liquid renders the curly braces below...
 -->
-All urls should be prefixed with `{{ "{{" }} site.baseurl {{ }} }}`.
+{% raw %}
+All urls should be prefixed with `{{ site.baseurl }}`.
+{% endraw %}

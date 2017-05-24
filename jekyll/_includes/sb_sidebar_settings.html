@@ -1,399 +1,87 @@
 <h4>Quick Nav</h4>
 
 <p>
-	<select name="all"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- all --]</option>
-	<option value="activity_hide_level">activity_hide_level</option>
-	<option value="activity_hide_targets">activity_hide_targets</option>
-	<option value="activity_hilight_level">activity_hilight_level</option>
-	<option value="activity_msg_level">activity_msg_level</option>
-	<option value="actlist_names">actlist_names</option>
-	<option value="actlist_sort">actlist_sort</option>
-	<option value="alternate_nick">alternate_nick</option>
-	<option value="auto_whowas">auto_whowas</option>
-	<option value="autoclose_query">autoclose_query</option>
-	<option value="autoclose_windows">autoclose_windows</option>
-	<option value="autocreate_own_query">autocreate_own_query</option>
-	<option value="autocreate_query_level">autocreate_query_level</option>
-	<option value="autocreate_split_windows">autocreate_split_windows</option>
-	<option value="autocreate_windows">autocreate_windows</option>
-	<option value="autofocus_new_items">autofocus_new_items</option>
-	<option value="autoignore_level">autoignore_level</option>
-	<option value="autoignore_time">autoignore_time</option>
-	<option value="autolog">autolog</option>
-	<option value="autolog_colors">autolog_colors</option>
-	<option value="autolog_ignore_targets">autolog_ignore_targets</option>
-	<option value="autolog_level">autolog_level</option>
-	<option value="autolog_path">autolog_path</option>
-	<option value="autostick_split_windows">autostick_split_windows</option>
-	<option value="awaylog_colors">awaylog_colors</option>
-	<option value="awaylog_file">awaylog_file</option>
-	<option value="awaylog_level">awaylog_level</option>
-	<option value="ban_type">ban_type</option>
-	<option value="beep_msg_level">beep_msg_level</option>
-	<option value="beep_when_away">beep_when_away</option>
-	<option value="beep_when_window_active">beep_when_window_active</option>
-	<option value="bell_beeps">bell_beeps</option>
-	<option value="chanmode_expando_strip">chanmode_expando_strip</option>
-	<option value="channel_max_who_sync">channel_max_who_sync</option>
-	<option value="channel_sync">channel_sync</option>
-	<option value="channels_rejoin_unavailable">channels_rejoin_unavailable</option>
-	<option value="cmd_queue_speed">cmd_queue_speed</option>
-	<option value="cmdchars">cmdchars</option>
-	<option value="cmds_max_at_once">cmds_max_at_once</option>
-	<option value="colors">colors</option>
-	<option value="completion_auto">completion_auto</option>
-	<option value="completion_char">completion_char</option>
-	<option value="completion_keep_privates">completion_keep_privates</option>
-	<option value="completion_keep_publics">completion_keep_publics</option>
-	<option value="completion_nicks_lowercase">completion_nicks_lowercase</option>
-	<option value="completion_strict">completion_strict</option>
-	<option value="ctcp_userinfo_reply">ctcp_userinfo_reply</option>
-	<option value="ctcp_version_reply">ctcp_version_reply</option>
-	<option value="dcc_autoaccept_lowports">dcc_autoaccept_lowports</option>
-	<option value="dcc_autochat_masks">dcc_autochat_masks</option>
-	<option value="dcc_autoget">dcc_autoget</option>
-	<option value="dcc_autoget_masks">dcc_autoget_masks</option>
-	<option value="dcc_autoget_max_size">dcc_autoget_max_size</option>
-	<option value="dcc_autorename">dcc_autorename</option>
-	<option value="dcc_autoresume">dcc_autoresume</option>
-	<option value="dcc_download_path">dcc_download_path</option>
-	<option value="dcc_file_create_mode">dcc_file_create_mode</option>
-	<option value="dcc_mirc_ctcp">dcc_mirc_ctcp</option>
-	<option value="dcc_own_ip">dcc_own_ip</option>
-	<option value="dcc_port">dcc_port</option>
-	<option value="dcc_send_replace_space_with_underscore">dcc_send_replace_space_with_underscore</option>
-	<option value="dcc_timeout">dcc_timeout</option>
-	<option value="dcc_upload_path">dcc_upload_path</option>
-	<option value="emphasis">emphasis</option>
-	<option value="emphasis_italics">emphasis_italics</option>
-	<option value="emphasis_multiword">emphasis_multiword</option>
-	<option value="emphasis_replace">emphasis_replace</option>
-	<option value="expand_escapes">expand_escapes</option>
-	<option value="flood_max_msgs">flood_max_msgs</option>
-	<option value="flood_timecheck">flood_timecheck</option>
-	<option value="group_multi_mode">group_multi_mode</option>
-	<option value="help_path">help_path</option>
-	<option value="hide_colors">hide_colors</option>
-	<option value="hide_netsplit_quits">hide_netsplit_quits</option>
-	<option value="hide_server_tags">hide_server_tags</option>
-	<option value="hide_text_style">hide_text_style</option>
-	<option value="hilight_act_color">hilight_act_color</option>
-	<option value="hilight_color">hilight_color</option>
-	<option value="hilight_level">hilight_level</option>
-	<option value="hilight_nick_matches">hilight_nick_matches</option>
-	<option value="hilight_nick_matches_everywhere">hilight_nick_matches_everywhere</option>
-	<option value="hostname">hostname</option>
-	<option value="ignore_signals">ignore_signals</option>
-	<option value="indent">indent</option>
-	<option value="indent_always">indent_always</option>
-	<option value="join_auto_chans_on_invite">join_auto_chans_on_invite</option>
-	<option value="kick_first_on_kickban">kick_first_on_kickban</option>
-	<option value="knockout_time">knockout_time</option>
-	<option value="lag_check_time">lag_check_time</option>
-	<option value="lag_max_before_disconnect">lag_max_before_disconnect</option>
-	<option value="lag_min_show">lag_min_show</option>
-	<option value="log_close_string">log_close_string</option>
-	<option value="log_create_mode">log_create_mode</option>
-	<option value="log_day_changed">log_day_changed</option>
-	<option value="log_open_string">log_open_string</option>
-	<option value="log_theme">log_theme</option>
-	<option value="log_timestamp">log_timestamp</option>
-	<option value="massjoin_max_joins">massjoin_max_joins</option>
-	<option value="massjoin_max_wait">massjoin_max_wait</option>
-	<option value="max_command_history">max_command_history</option>
-	<option value="max_ctcp_queue">max_ctcp_queue</option>
-	<option value="max_wildcard_modes">max_wildcard_modes</option>
-	<option value="mirc_blink_fix">mirc_blink_fix</option>
-	<option value="names_max_columns">names_max_columns</option>
-	<option value="names_max_width">names_max_width</option>
-	<option value="netjoin_max_nicks">netjoin_max_nicks</option>
-	<option value="netsplit_max_nicks">netsplit_max_nicks</option>
-	<option value="netsplit_nicks_hide_threshold">netsplit_nicks_hide_threshold</option>
-	<option value="nick">nick</option>
-	<option value="notify_check_time">notify_check_time</option>
-	<option value="notify_whois_time">notify_whois_time</option>
-	<option value="opermode">opermode</option>
-	<option value="override_coredump_limit">override_coredump_limit</option>
-	<option value="part_message">part_message</option>
-	<option value="paste_detect_time">paste_detect_time</option>
-	<option value="paste_join_multiline">paste_join_multiline</option>
-	<option value="paste_use_bracketed_mode">paste_use_bracketed_mode</option>
-	<option value="paste_verify_line_count">paste_verify_line_count</option>
-	<option value="perl_use_lib">perl_use_lib</option>
-	<option value="print_active_channel">print_active_channel</option>
-	<option value="proxy_address">proxy_address</option>
-	<option value="proxy_password">proxy_password</option>
-	<option value="proxy_port">proxy_port</option>
-	<option value="proxy_string">proxy_string</option>
-	<option value="proxy_string_after">proxy_string_after</option>
-	<option value="query_track_nick_changes">query_track_nick_changes</option>
-	<option value="quit_message">quit_message</option>
-	<option value="rawlog_lines">rawlog_lines</option>
-	<option value="real_name">real_name</option>
-	<option value="recode">recode</option>
-	<option value="recode_autodetect_utf8">recode_autodetect_utf8</option>
-	<option value="recode_fallback">recode_fallback</option>
-	<option value="recode_out_default_charset">recode_out_default_charset</option>
-	<option value="recode_transliterate">recode_transliterate</option>
-	<option value="resolve_prefer_ipv6">resolve_prefer_ipv6</option>
-	<option value="resolve_reverse_lookup">resolve_reverse_lookup</option>
-	<option value="reuse_unused_windows">reuse_unused_windows</option>
-	<option value="scroll">scroll</option>
-	<option value="scroll_page_count">scroll_page_count</option>
-	<option value="scrollback_burst_remove">scrollback_burst_remove</option>
-	<option value="scrollback_lines">scrollback_lines</option>
-	<option value="scrollback_time">scrollback_time</option>
-	<option value="server_connect_timeout">server_connect_timeout</option>
-	<option value="server_reconnect_time">server_reconnect_time</option>
-	<option value="settings_autosave">settings_autosave</option>
-	<option value="show_away_once">show_away_once</option>
-	<option value="show_names_on_join">show_names_on_join</option>
-	<option value="show_nickmode">show_nickmode</option>
-	<option value="show_nickmode_empty">show_nickmode_empty</option>
-	<option value="show_own_nickchange_once">show_own_nickchange_once</option>
-	<option value="show_quit_once">show_quit_once</option>
-	<option value="skip_motd">skip_motd</option>
-	<option value="split_line_end">split_line_end</option>
-	<option value="split_line_on_space">split_line_on_space</option>
-	<option value="split_line_start">split_line_start</option>
-	<option value="STATUS_OPER">STATUS_OPER</option>
-	<option value="term_appkey_mode">term_appkey_mode</option>
-	<option value="term_charset">term_charset</option>
-	<option value="term_force_colors">term_force_colors</option>
-	<option value="theme">theme</option>
-	<option value="timestamp_format">timestamp_format</option>
-	<option value="timestamp_level">timestamp_level</option>
-	<option value="timestamp_timeout">timestamp_timeout</option>
-	<option value="timestamps">timestamps</option>
-	<option value="use_msgs_window">use_msgs_window</option>
-	<option value="use_proxy">use_proxy</option>
-	<option value="use_status_window">use_status_window</option>
-	<option value="user_name">user_name</option>
-	<option value="usermode">usermode</option>
-	<option value="wall_format">wall_format</option>
-	<option value="whois_hide_safe_channel_id">whois_hide_safe_channel_id</option>
-	<option value="window_auto_change">window_auto_change</option>
-	<option value="window_check_level_first">window_check_level_first</option>
-	<option value="window_default_level">window_default_level</option>
-	<option value="window_history">window_history</option>
-	<option value="windows_auto_renumber">windows_auto_renumber</option>
-	<option value="write_buffer_size">write_buffer_size</option>
-	<option value="write_buffer_timeout">write_buffer_timeout</option>
-	</select>
-</p>
-<p>
-	<select name="cat_completion"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- completion --]</option>
-	<option value="completion_auto">completion_auto</option>
-	<option value="completion_char">completion_char</option>
-	<option value="completion_keep_privates">completion_keep_privates</option>
-	<option value="completion_keep_publics">completion_keep_publics</option>
-	<option value="completion_nicks_lowercase">completion_nicks_lowercase</option>
-	<option value="completion_strict">completion_strict</option>
-	</select> <select name="cat_dcc"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- dcc --]</option>
-	<option value="dcc_autoaccept_lowports">dcc_autoaccept_lowports</option>
-	<option value="dcc_autochat_masks">dcc_autochat_masks</option>
-	<option value="dcc_autoget">dcc_autoget</option>
-	<option value="dcc_autoget_masks">dcc_autoget_masks</option>
-	<option value="dcc_autoget_max_size">dcc_autoget_max_size</option>
-	<option value="dcc_autorename">dcc_autorename</option>
-	<option value="dcc_autoresume">dcc_autoresume</option>
-	<option value="dcc_download_path">dcc_download_path</option>
-	<option value="dcc_file_create_mode">dcc_file_create_mode</option>
-	<option value="dcc_mirc_ctcp">dcc_mirc_ctcp</option>
-	<option value="dcc_own_ip">dcc_own_ip</option>
-	<option value="dcc_port">dcc_port</option>
-	<option value="dcc_send_replace_space_with_underscore">dcc_send_replace_space_with_underscore</option>
-	<option value="dcc_timeout">dcc_timeout</option>
-	<option value="dcc_upload_path">dcc_upload_path</option>
-	</select> <select name="cat_flood"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- flood --]</option>
-	<option value="autoignore_level">autoignore_level</option>
-	<option value="autoignore_time">autoignore_time</option>
-	<option value="cmd_queue_speed">cmd_queue_speed</option>
-	<option value="cmds_max_at_once">cmds_max_at_once</option>
-	<option value="flood_max_msgs">flood_max_msgs</option>
-	<option value="flood_timecheck">flood_timecheck</option>
-	<option value="max_ctcp_queue">max_ctcp_queue</option>
-	</select> <select name="cat_history"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- history --]</option>
-	<option value="max_command_history">max_command_history</option>
-	<option value="rawlog_lines">rawlog_lines</option>
-	<option value="scroll_page_count">scroll_page_count</option>
-	<option value="scrollback_burst_remove">scrollback_burst_remove</option>
-	<option value="scrollback_lines">scrollback_lines</option>
-	<option value="scrollback_time">scrollback_time</option>
-	<option value="window_history">window_history</option>
-	</select> <select name="cat_log"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- log --]</option>
-	<option value="autolog">autolog</option>
-	<option value="autolog_colors">autolog_colors</option>
-	<option value="autolog_ignore_targets">autolog_ignore_targets</option>
-	<option value="autolog_level">autolog_level</option>
-	<option value="autolog_path">autolog_path</option>
-	<option value="awaylog_colors">awaylog_colors</option>
-	<option value="awaylog_file">awaylog_file</option>
-	<option value="awaylog_level">awaylog_level</option>
-	<option value="log_close_string">log_close_string</option>
-	<option value="log_create_mode">log_create_mode</option>
-	<option value="log_day_changed">log_day_changed</option>
-	<option value="log_open_string">log_open_string</option>
-	<option value="log_theme">log_theme</option>
-	<option value="log_timestamp">log_timestamp</option>
-	</select> <select name="cat_lookandfeel"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- lookandfeel --]</option>
-	<option value="active_window_ignore_refnum">active_window_ignore_refnum</option>
-	<option value="activity_hide_level">activity_hide_level</option>
-	<option value="activity_hide_targets">activity_hide_targets</option>
-	<option value="activity_hilight_level">activity_hilight_level</option>
-	<option value="activity_msg_level">activity_msg_level</option>
-	<option value="actlist_names">actlist_names</option>
-	<option value="actlist_sort">actlist_sort</option>
-	<option value="autoclose_query">autoclose_query</option>
-	<option value="autoclose_windows">autoclose_windows</option>
-	<option value="autocreate_own_query">autocreate_own_query</option>
-	<option value="autocreate_query_level">autocreate_query_level</option>
-	<option value="autocreate_split_windows">autocreate_split_windows</option>
-	<option value="autocreate_windows">autocreate_windows</option>
-	<option value="autofocus_new_items">autofocus_new_items</option>
-	<option value="autostick_split_windows">autostick_split_windows</option>
-	<option value="beep_msg_level">beep_msg_level</option>
-	<option value="beep_when_away">beep_when_away</option>
-	<option value="beep_when_window_active">beep_when_window_active</option>
-	<option value="bell_beeps">bell_beeps</option>
-	<option value="chanmode_expando_strip">chanmode_expando_strip</option>
-	<option value="colors">colors</option>
-	<option value="emphasis">emphasis</option>
-	<option value="emphasis_italics">emphasis_italics</option>
-	<option value="emphasis_multiword">emphasis_multiword</option>
-	<option value="emphasis_replace">emphasis_replace</option>
-	<option value="expand_escapes">expand_escapes</option>
-	<option value="hide_colors">hide_colors</option>
-	<option value="hide_server_tags">hide_server_tags</option>
-	<option value="hide_text_style">hide_text_style</option>
-	<option value="hilight_act_color">hilight_act_color</option>
-	<option value="hilight_color">hilight_color</option>
-	<option value="hilight_level">hilight_level</option>
-	<option value="hilight_nick_matches">hilight_nick_matches</option>
-	<option value="hilight_nick_matches_everywhere">hilight_nick_matches_everywhere</option>
-	<option value="indent">indent</option>
-	<option value="indent_always">indent_always</option>
-	<option value="mirc_blink_fix">mirc_blink_fix</option>
-	<option value="names_max_columns">names_max_columns</option>
-	<option value="names_max_width">names_max_width</option>
-	<option value="print_active_channel">print_active_channel</option>
-	<option value="query_track_nick_changes">query_track_nick_changes</option>
-	<option value="reuse_unused_windows">reuse_unused_windows</option>
-	<option value="scroll">scroll</option>
-	<option value="show_away_once">show_away_once</option>
-	<option value="show_names_on_join">show_names_on_join</option>
-	<option value="show_nickmode">show_nickmode</option>
-	<option value="show_nickmode_empty">show_nickmode_empty</option>
-	<option value="show_own_nickchange_once">show_own_nickchange_once</option>
-	<option value="show_quit_once">show_quit_once</option>
-	<option value="term_appkey_mode">term_appkey_mode</option>
-	<option value="term_charset">term_charset</option>
-	<option value="term_force_colors">term_force_colors</option>
-	<option value="theme">theme</option>
-	<option value="timestamp_format">timestamp_format</option>
-	<option value="timestamp_level">timestamp_level</option>
-	<option value="timestamp_timeout">timestamp_timeout</option>
-	<option value="timestamps">timestamps</option>
-	<option value="use_msgs_window">use_msgs_window</option>
-	<option value="use_status_window">use_status_window</option>
-	<option value="whois_hide_safe_channel_id">whois_hide_safe_channel_id</option>
-	<option value="window_auto_change">window_auto_change</option>
-	<option value="window_check_level_first">window_check_level_first</option>
-	<option value="window_default_level">window_default_level</option>
-	<option value="windows_auto_renumber">windows_auto_renumber</option>
-	</select> <select name="cat_misc"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- misc --]</option>
-	<option value="auto_whowas">auto_whowas</option>
-	<option value="ban_type">ban_type</option>
-	<option value="channel_max_who_sync">channel_max_who_sync</option>
-	<option value="channel_sync">channel_sync</option>
-	<option value="cmdchars">cmdchars</option>
-	<option value="ctcp_userinfo_reply">ctcp_userinfo_reply</option>
-	<option value="ctcp_version_reply">ctcp_version_reply</option>
-	<option value="group_multi_mode">group_multi_mode</option>
-	<option value="help_path">help_path</option>
-	<option value="hide_netsplit_quits">hide_netsplit_quits</option>
-	<option value="ignore_signals">ignore_signals</option>
-	<option value="join_auto_chans_on_invite">join_auto_chans_on_invite</option>
-	<option value="kick_first_on_kickban">kick_first_on_kickban</option>
-	<option value="knockout_time">knockout_time</option>
-	<option value="lag_check_time">lag_check_time</option>
-	<option value="lag_max_before_disconnect">lag_max_before_disconnect</option>
-	<option value="lag_min_show">lag_min_show</option>
-	<option value="massjoin_max_joins">massjoin_max_joins</option>
-	<option value="massjoin_max_wait">massjoin_max_wait</option>
-	<option value="max_wildcard_modes">max_wildcard_modes</option>
-	<option value="netjoin_max_nicks">netjoin_max_nicks</option>
-	<option value="netsplit_max_nicks">netsplit_max_nicks</option>
-	<option value="netsplit_nicks_hide_threshold">netsplit_nicks_hide_threshold</option>
-	<option value="notify_check_time">notify_check_time</option>
-	<option value="notify_whois_time">notify_whois_time</option>
-	<option value="opermode">opermode</option>
-	<option value="override_coredump_limit">override_coredump_limit</option>
-	<option value="part_message">part_message</option>
-	<option value="paste_detect_time">paste_detect_time</option>
-	<option value="paste_join_multiline">paste_join_multiline</option>
-	<option value="paste_use_bracketed_mode">paste_use_bracketed_mode</option>
-	<option value="paste_verify_line_count">paste_verify_line_count</option>
-	<option value="quit_message">quit_message</option>
-	<option value="recode">recode</option>
-	<option value="recode_autodetect_utf8">recode_autodetect_utf8</option>
-	<option value="recode_fallback">recode_fallback</option>
-	<option value="recode_out_default_charset">recode_out_default_charset</option>
-	<option value="recode_transliterate">recode_transliterate</option>
-	<option value="settings_autosave">settings_autosave</option>
-	<option value="split_line_end">split_line_end</option>
-	<option value="split_line_on_space">split_line_on_space</option>
-	<option value="split_line_start">split_line_start</option>
-	<option value="STATUS_OPER">STATUS_OPER</option>
-	<option value="usermode">usermode</option>
-	<option value="wall_format">wall_format</option>
-	<option value="write_buffer_size">write_buffer_size</option>
-	<option value="write_buffer_timeout">write_buffer_timeout</option>
-	</select> <select name="cat_perl"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- perl --]</option>
-	<option value="perl_use_lib">perl_use_lib</option>
-	</select> <select name="cat_proxy"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- proxy --]</option>
-	<option value="proxy_address">proxy_address</option>
-	<option value="proxy_password">proxy_password</option>
-	<option value="proxy_port">proxy_port</option>
-	<option value="proxy_string">proxy_string</option>
-	<option value="proxy_string_after">proxy_string_after</option>
-	<option value="use_proxy">use_proxy</option>
-	</select> <select name="cat_server"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- server --]</option>
-	<option value="alternate_nick">alternate_nick</option>
-	<option value="hostname">hostname</option>
-	<option value="nick">nick</option>
-	<option value="real_name">real_name</option>
-	<option value="resolve_prefer_ipv6">resolve_prefer_ipv6</option>
-	<option value="resolve_reverse_lookup">resolve_reverse_lookup</option>
-	<option value="server_connect_timeout">server_connect_timeout</option>
-	<option value="server_reconnect_time">server_reconnect_time</option>
-	<option value="skip_motd">skip_motd</option>
-	<option value="user_name">user_name</option>
-	</select> <select name="cat_servers"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
-	<option class="header" value="">[-- servers --]</option>
-	<option value="channels_rejoin_unavailable">channels_rejoin_unavailable</option>
-	</select>
-</p>
+{% assign temp = page.content | split: "
+"
+%}{% for line in temp
+%}{%   assign header = line | normalize_whitespace | truncate: 4, ""
+%}{%   if header == "## ["
+%}{%     assign category = line | normalize_whitespace | replace: "## [" | replace: "]"
+%}{%     assign all_categories = all_categories | append: " " | append: category
+%}{%   endif
+%}{% endfor
+%}{% assign all_categories = all_categories | split: " " | sort | join: " " | prepend: "ALL " | split: " "
+%}{% for cat in all_categories
+%}
+	<select name="{% if cat == "ALL" %}all{% else %}cat_{{ cat }}{% endif %}"  onchange="location.hash='#' + options[options.selectedIndex].value;selectedIndex=0">
+	<option class="header" value="">[-- {{ cat | downcase }} --]</option>{%
+       capture cat_settings
+%}{%     for line in temp
+%}{%       assign header = line | normalize_whitespace | truncate: 4, ""
+%}{%       if header == "## ["
+%}{%         assign category = line | normalize_whitespace | replace: "## [" | replace: "]"
+%}{%       endif
+%}{%       if category == cat or cat == "ALL"
+%}{%         assign is_anchor = line | normalize_whitespace | truncate: 3, ""
+%}{%         assign is_setting = line | normalize_whitespace | truncate: 2, ""
+%}{%         if is_anchor == "{:#"
+%}{%           assign anchor = line | normalize_whitespace | replace: "{:#" | replace: "}"
+%}{%         elsif is_setting == "` "
+%}{%           assign setting0 = line | split: " "
+%}{%           assign setting = setting0[1]
+%}{%           if setting == anchor %}{{ setting | downcase }}#{{ setting }}
+{%             else %}#error#{{ setting }}{%
+               endif
+%}{%         else
+%}{%           assign anchor =
+%}{%           assign setting =
+%}{%         endif
+%}{%       endif
+%}{%     endfor
+%}{%   endcapture
+%}{%   assign cat_settings = cat_settings | normalize_whitespace | split: " " | sort
+%}{%   for sort_setting in cat_settings
+%}{%     assign sort_setting0 = sort_setting | split: "#"
+%}{%     assign setting = sort_setting0[1] %}
+	<option value="{{ setting }}">{{ setting }}</option>{%
+       endfor
+%}
+	</select>{% if cat == "ALL" %}</p><p>{% endif %}
+{%   endfor
+%}</p>{% comment %}
+
+
+
+
+
+
+
+{% endcomment %}
 <h4>Appendices</h4>
 <p>
-	<a href="#a_a">A: Levels</a>
-	<br />
-	<a href="#a_b">B: Special Variables and Expandos</a>
-	<br />
-	<a href="#a_c">C: Time Formats</a>
-	<br />
-	<a href="#a_d">D: Color Codes</a>
-	<br />
-	<a href="#a_credits">E: Credits and copyright</a>
+{% comment %}
+
+
+
+
+
+
+
+{% endcomment
+%}{% assign is_next = 0
+%}{% assign app_title =
+%}{% for line in temp
+%}{%   assign is_app = line | normalize_whitespace | truncate: 12, ""
+%}{%   assign is_anchor = line | normalize_whitespace | truncate: 3, ""
+%}{%   if is_app == "## Appendix "
+%}{%     assign app_title = line | normalize_whitespace | replace: "## Appendix "
+%}{%   elsif is_anchor == "{:#" and app_title
+%}{%     assign anchor = line | normalize_whitespace | replace: "{:#" | replace: "}"
+%}{%     if is_next == 1 %}<br />{% else %}{% assign is_next = 1 %}{% endif %}
+	<a href="#{{ anchor }}">{{ app_title }}</a>
+{%     else
+%}{%     assign app_title =
+%}{%     assign anchor =
+%}{%   endif
+%}{% endfor %}
 </p>
