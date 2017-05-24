@@ -8,7 +8,7 @@ Edit /_data/sb_whatsnew.yml to generate the content of this sidebar
 %}{%   for post in site.posts
 %}{%     if post.slug == new.key
 %}
-<p><small>{{ post.date | date: "%Y-%m-%d" }}</small>&nbsp;<a href="{{ post.url }}">{% if new.tag %}<b>{{ new.tag }}</b> {% endif %}{% if new.title %}{{ new.title }}{% else %}{{ post.title }}{% endif %}</a> </p>{% assign found = 1 %}{% break
+<p><small>{{ post.date | date: "%Y-%m-%d" }}</small>&nbsp;<a href="{{ site.baseurl }}{{ post.url }}">{% if new.tag %}<b>{{ new.tag }}</b> {% endif %}{% if new.title %}{{ new.title }}{% else %}{{ post.title }}{% endif %}</a> </p>{% assign found = 1 %}{% break
 %}{%     endif
 %}{%   endfor
 %}{%   if found == 0
