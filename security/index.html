@@ -27,13 +27,11 @@ categories: [ _nav ]
 	        {% for link in values.external_links %}
 		<div><a href="{{ link.url }}">{{ link.id }}</a></div>
 	        {% endfor %}
+		<div><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">git commit (fix)</a></div>
 	    </td>
 	    <td>{{ values.affected_versions }}</td>
 	    <td>
 		{{ values.fixed_version }}
-		<a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">
-		    (git)
-		</a>
 	    </td>
 	    <td>{{ values.exploitable_by }}</td>
 	    <td>{{ values.description }}</td>
