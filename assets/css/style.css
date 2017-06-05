@@ -136,6 +136,20 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
   text-decoration: none;
 }
 
+/* Reduce navbar spacing on resolutions that are small,
+   but not quite as small as the block below */
+@media (max-width:1200px) and (min-width:991px) {
+    .nav > li > a {
+        padding-left: 8px;
+	padding-right: 8px;
+	font-size: 100%;
+	letter-spacing: 0px;
+    }
+    .nav > li > a[rel="external"] {
+        padding-right: 18px;
+    }
+}
+
 /* Reduce navbar spacing on small resolutions,
    to avoid wrapping */
 @media (max-width:991px) and (min-width:768px) {
