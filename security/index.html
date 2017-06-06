@@ -17,10 +17,8 @@ categories: [ _nav ]
         </tr>
     </thead>
     <tbody>
-{% assign items = site.data.security | sort %}
-{% for item in items reversed %}
-    {% assign name = item[0] %}
-    {% assign values = item[1] %}
+{% assign items = site.data.security %}
+{% for values in items reversed %}
         <tr>
 	    <td class="text-nowrap">{{ values.release_date }}</td>
 	    <td class="text-nowrap">
