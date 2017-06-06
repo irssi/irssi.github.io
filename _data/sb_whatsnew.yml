@@ -1,4 +1,7 @@
 -
+  key: irssi-1.0.3-released
+  tag: Security
+-
   key: fuzzing-irssi
   title: Introduction to fuzzing Irssi
 -
@@ -9,7 +12,4 @@
   key: poll-non-utf8-discontinuation
   tag: Poll
   title: Non-UTF-8 discontinuation
--
-  key: irssi-1.0.2-released
-  tag: Security
 
