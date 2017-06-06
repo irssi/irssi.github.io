@@ -11,7 +11,7 @@ Two vulnerabilities have been located in Irssi.
     Bisch. (CWE-690)
 
 (b) When receiving certain incorrectly quoted DCC files, Irssi would
-    try to find the terminating quote outside of allocated
+    try to find the terminating quote one byte before the allocated
     memory. Found by Joseph Bisch. (CWE-129, CWE-127)
 
 
