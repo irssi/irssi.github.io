@@ -17,7 +17,8 @@ available for download in the
 repository.
 
 Please check with your distro whether they provide officially updated
-packages.
+packages. Debian users can refer to the [security tracker](https://security-tracker.debian.org/tracker/source-package/irssi)
+to follow the security status of their distro.
 
 Read the [security advisory](/security/irssi_sa_2017_06.txt).
 
