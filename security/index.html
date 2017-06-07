@@ -7,34 +7,47 @@ categories: [ _nav ]
 <table class="table">
     <thead>
         <tr class="text-nowrap">
-	    <th>Release date</th>
             <th>Links</th>
+	    <th>Exploitable by</th>
 	    <th>Affected versions</th>
 	    <th>Fixed in version</th>
-	    <th>Exploitable by</th>
-	    <th>Description</th>
+	    <th>Release date</th>
+	    <th>Git commit</th>
 	    <th>Credit</th>
+	    <th>Description</th>
         </tr>
     </thead>
     <tbody>
-{% assign items = site.data.security %}
-{% for values in items reversed %}
-        <tr>
-	    <td class="text-nowrap">{{ values.release_date }}</td>
-	    <td class="text-nowrap">
-	        {% for link in values.external_links %}
-		<div><a href="{{ link.url }}">{{ link.id }}</a></div>
-	        {% endfor %}
-		<div><a href="https://github.com/irssi/{% if values.repo %}{{ values.repo }}{% else %}irssi{% endif %}/commit/{{ values.git_commit }}">git commit (fix)</a></div>
-	    </td>
-	    <td>{{ values.affected_versions }}</td>
-	    <td>
-		{{ values.fixed_version }}
-	    </td>
-	    <td>{{ values.exploitable_by }}</td>
-	    <td>{{ values.description }}</td>
-	    <td>{{ values.credit }}</td>
-        </tr>
+{% assign advisories = site.data.security %}
+{% for advisory in advisories reversed %}
+	<tr>
+	    <td>{{ advisory.name }}</td>
+	    <td></td>
+	    <td></td>
+	    <td></td>
+	    <td>{{ advisory.release_date }}</td>
+	    <td><a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.git_commit | truncate: 8, "" }}</a></td>
+	    <td></td>
+	    <td></td>
+	</tr>
+	{% for bug in advisory.bugs %}
+        	<tr>
+		    <td class="text-nowrap">
+		        {% for link in bug.external_links %}
+			<div><a href="{{ link.url }}">{{ link.id }}</a></div>
+		        {% endfor %}
+		    </td>
+		    <td>{{ bug.exploitable_by }}</td>
+		    <td>{{ bug.affected_versions }}</td>
+		    <td>
+			{{ bug.fixed_version }}
+		    </td>
+		    <td></td>
+		    <td></td>
+		    <td>{{ bug.credit }}</td>
+		    <td>{{ bug.description }}</td>
+        	</tr>
+	{% endfor %}
 {% endfor %}
     </tbody>
 </table>
