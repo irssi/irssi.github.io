@@ -2,7 +2,7 @@
 layout: page
 title: About Irssi
 permalink: /about/
-categories: [ _nav, _1 ]
+categories: [ _1 ]
 twocolumn: true
 ---
 
