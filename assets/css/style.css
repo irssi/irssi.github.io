@@ -85,6 +85,23 @@ h3 a {
     color: #333;
 }
 
+.navbar-inverse .navbar-header > a.navbar-brand {
+    opacity: 0.62;
+}
+
+.navbar-inverse .navbar-header > a.navbar-brand:hover,
+.navbar-inverse .navbar-header > a.navbar-brand:focus {
+    opacity: 1;
+}
+
+.navbar-inverse .navbar-header > a.navbar-brand.active,
+.navbar-inverse .navbar-header > a.navbar-brand.active:hover,
+.navbar-inverse .navbar-header > a.navbar-brand.active:focus {
+    opacity: 1;
+    color: #fff;
+    background-color: #080808;
+}
+
 /* Position the irssi logo */
 .navbar-brand img {
     margin-top: -14px;

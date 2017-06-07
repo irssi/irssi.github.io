@@ -7,7 +7,7 @@ permalink: support/irc/
 Official international channel
 -------------------------------
 
-- \#irssi at [Freenode](http://freenode.net/)- English only
+- \#irssi at [Freenode](http://freenode.net/) -- English only
 
 Other channels
 --------------
@@ -16,9 +16,9 @@ Many other networks like IRCnet, EFNet or QuakeNet also have `#irssi` channels.
 
 There may be some international channels on IRCnet, like
 
-- \#irssi.fi - Finnish
-- \#irssi.de - German
-- \#irssi.pl - Polish
+- \#irssi.fi -- Finnish
+- \#irssi.de -- German
+- \#irssi.pl -- Polish
 
 If you have something to ask, **please JUST ASK instead of asking if you
 can ask or if someone can help or if anyone is there**.

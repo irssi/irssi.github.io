@@ -4,8 +4,6 @@ title: Contributing
 permalink: /development/
 ---
 
-# Irssi - Contributing
-
 ### Development sources
 
 To get started with Irssi development, first check out the git repository:
