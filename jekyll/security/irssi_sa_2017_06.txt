@@ -1,5 +1,6 @@
 IRSSI-SA-2017-06 Irssi Security Advisory [1]
 ============================================
+CVE-2017-9468, CVE-2017-9469
 
 Description
 -----------
@@ -10,9 +11,13 @@ Two vulnerabilities have been located in Irssi.
     attempt to dereference a NULL pointer. Found by Joseph
     Bisch. (CWE-690)
 
+    CVE-2017-9468 [2] was assigned to this bug
+
 (b) When receiving certain incorrectly quoted DCC files, Irssi would
     try to find the terminating quote one byte before the allocated
     memory. Found by Joseph Bisch. (CWE-129, CWE-127)
+    
+    CVE-2017-9469 [3] was assigned to this bug
 
 
 Impact
@@ -64,3 +69,5 @@ References
 ----------
 
 [1] https://irssi.org/security/irssi_sa_2017_06.txt
+[2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9468
+[3] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9469
