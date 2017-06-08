@@ -11,8 +11,6 @@ categories: [ _nav ]
 	    <th>Exploitable</th>
 	    <th colspan="3">Versions affected</th>
 	    <th>Fixed</th>
-	    <th>Release date</th>
-	    <th>Git commit</th>
 	    <th>Credit</th>
 	    <th colspan="2">Description</th>
 	</tr>
@@ -22,9 +20,8 @@ categories: [ _nav ]
     <tbody>
 	<tr>
 	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/{{ advisory.name | slugify	 | replace: '-', '_' }}.txt">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
-	    <th colspan="4">{% if advisory.affected_note %}{{ advisory.affected_note }}{% endif %}</th>
-	    <th>{{ advisory.release_date }}</th>
-	    <th>{% if advisory.git_commit %}<a class="link-icon" href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}"> </a>{% endif %}</th>
+	    <th colspan="3">{% if advisory.affected_note %}{{ advisory.affected_note }}{% endif %}</th>
+	    <th>{% if advisory.git_commit %}<a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.release_date }}</a>{% else %}{{ advisory.release_date }}{% endif %}</th>
 	    <th colspan="3"></th>
 	</tr>
     </tbody>
@@ -45,8 +42,6 @@ categories: [ _nav ]
 		    </td>
 		    <td rowspan="3">{{ bug.exploitable_by }}</td>
 		    <td class="has-next-row" colspan="4">{% if bug.affected_note_top %}{{ bug.affected_note_top }}{% endif %}</td>
-		    <td rowspan="3">{% comment %} release date {% endcomment %}</td>
-		    <td rowspan="3">{% if bug.git_commit %}<a class="link-icon" href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}"> </a>{% endif %}</td>
 		    <td rowspan="3">{{ bug.credit }}</td>
 		    <td rowspan="3">{{ bug.description }}</td>
 		    <td rowspan="3"></td>
