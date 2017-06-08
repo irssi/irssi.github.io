@@ -61,7 +61,7 @@
         to: 0.8.20
       fixed_version: 0.8.21
       credit: ~
-      description: "Use after free when receiving invalid nick message\n"
+      description: 'Use after free when receiving invalid nick message'
     -
       cve: CVE-2017-5356
       exploitable_by: formats
@@ -88,7 +88,7 @@
         to: 0.8.20
       fixed_version: 0.8.21
       credit: 'Hanno Böck and independently by Joseph Bisch'
-      description: "Out of bounds read in certain incomplete character sequences\n"
+      description: 'Out of bounds read in certain incomplete character sequences'
 -
   name: IRSSI-SA-2017-03
   release_date: 2017-03-10
@@ -103,4 +103,27 @@
         to: 1.0.1
       fixed_version: 1.0.2
       credit: APic
-      description: "Use after free while producing list of netjoins\n"
+      description: 'Use after free while producing list of netjoins'
+-
+  name: IRSSI-SA-2017-06
+  release_date: 2017-06-06
+  git_commit: fb08fc7f1aa6b2e616413d003bf021612301ad55
+  bugs:
+    -
+      cve: CVE-2017-9468
+      exploitable_by: server
+      affected_versions:
+        from: '*'
+        to: 1.0.2
+      fixed_version: 1.0.3
+      credit: 'Joseph Bisch'
+      description: 'NULL pointer dereference when receiving a DCC message without source nick/host'
+    -
+      cve: CVE-2017-9469
+      exploitable_by: client
+      affected_versions:
+        from: '*'
+        to: 1.0.2
+      fixed_version: 1.0.3
+      credit: 'Joseph Bisch'
+      description: 'Out of bounds read when parsing incorrectly quoted DCC files'
