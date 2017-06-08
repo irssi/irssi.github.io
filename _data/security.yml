@@ -1,151 +1,106 @@
-- name: IRSSI-SA-2016
+---
+-
+  name: IRSSI-SA-2016
   release_date: 2016-09-14
   git_commit: 295a4b77f07f14602eeaa371f00ddbf09910c82b
   bugs:
-    - name: CVE-2016-7044
-      external_links:
-              - id: CVE-2016-7044
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7044
-              - id: IRSSI-SA-2016
-                url: https://irssi.org/security/irssi_sa_2016.txt
+    -
+      cve: CVE-2016-7044
       exploitable_by: client
-      affected_versions: 0.8.17-0.8.19 (with truecolor)
+      affected_versions:
+        from: 0.8.17
+        to: 0.8.19
+      affected_note_bottom: '(with truecolor)'
       fixed_version: 0.8.20
-      release_date: 2016-09-14
-      git_commit: 295a4b77f07f14602eeaa371f00ddbf09910c82b
-      credit: Gabriel Campana and Adrien Guinet from Quarkslab
-      description: |
-              Remote crash and heap corruption in format parsing code
-
-    - name: CVE-2016-7045
-      external_links:
-              - id: CVE-2016-7045
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7045
-              - id: IRSSI-SA-2016
-                url: https://irssi.org/security/irssi_sa_2016.txt
+      credit: 'Gabriel Campana and Adrien Guinet from Quarkslab'
+      description: 'Remote crash and heap corruption in format parsing code'
+    -
+      cve: CVE-2016-7045
       exploitable_by: client
-      affected_versions: 0.8.17-0.8.19
+      affected_versions:
+        from: 0.8.17
+        to: 0.8.19
       fixed_version: 0.8.20
-      release_date: 2016-09-14
-      git_commit: 295a4b77f07f14602eeaa371f00ddbf09910c82b
-      credit: Gabriel Campana and Adrien Guinet from Quarkslab
-      description: |
-              Remote crash and heap corruption in format parsing code
-
-- name: BUF-PL-SA-2016
+      credit: 'Gabriel Campana and Adrien Guinet from Quarkslab'
+      description: 'Remote crash and heap corruption in format parsing code'
+-
+  name: BUF-PL-SA-2016
+  affected_note: buf.pl
   release_date: 2016-09-09
   git_commit: f1b1eb154baa684fad5d65bf4dff79c8ded8b65a
+  repo: scripts.irssi.org
   bugs:
-    - name: CVE-2016-7553
-      external_links:
-              - id: CVE-2016-7553
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7553
-              - id: BUF-PL-SA-2016
-                url: https://irssi.org/security/buf_pl_sa_2016.txt
-      exploitable_by: local users
-      affected_versions: "buf.pl *-2.13"
-      fixed_version: buf.pl 2.20
-      release_date: 2016-09-09
-      repo: scripts.irssi.org
-      git_commit: f1b1eb154baa684fad5d65bf4dff79c8ded8b65a
-      credit: Juerd Waalboer
-      description: |
-              Information disclosure vulnerability
-
-- name: IRSSI-SA-2017-01
+    -
+      cve: CVE-2016-7553
+      exploitable_by: local
+      affected_versions:
+        from: '*'
+        to: '2.13'
+      fixed_version: '2.20'
+      credit: 'Juerd Waalboer'
+      description: 'Information disclosure vulnerability'
+-
+  name: IRSSI-SA-2017-01
   release_date: 2017-01-05
   git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
   bugs:
-    - name: CVE-2017-5193
-      external_links:
-              - id: CVE-2017-5193
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5193
-              - id: IRSSI-SA-2017-01
-                url: https://irssi.org/security/irssi_sa_2017_01.txt
+    -
+      cve: CVE-2017-5193
       exploitable_by: server
-      affected_versions: "*-0.8.20"
+      affected_versions:
+        from: '*'
+        to: 0.8.20
       fixed_version: 0.8.21
-      release_date: 2017-01-05
-      git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
-      credit: Joseph Bisch
-      description: |
-              NULL pointer dereference in the nickcmp function
-
-    - name: CVE-2017-5194
-      external_links:
-              - id: CVE-2017-5194
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5194
-              - id: IRSSI-SA-2017-01
-                url: https://irssi.org/security/irssi_sa_2017_01.txt
+      credit: 'Joseph Bisch'
+      description: 'NULL pointer dereference in the nickcmp function'
+    -
+      cve: CVE-2017-5194
       exploitable_by: server
-      affected_versions: "*-0.8.20"
+      affected_versions:
+        from: '*'
+        to: 0.8.20
       fixed_version: 0.8.21
-      release_date: 2017-01-05
-      git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
-      credit: 
-      description: |
-              Use after free when receiving invalid nick message
-
-    - name: CVE-2017-5195
-      external_links:
-              - id: CVE-2017-5195
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5195
-              - id: IRSSI-SA-2017-01
-                url: https://irssi.org/security/irssi_sa_2017_01.txt
+      credit: ~
+      description: "Use after free when receiving invalid nick message\n"
+    -
+      cve: CVE-2017-5356
+      exploitable_by: formats
+      affected_versions:
+        from: '*'
+        to: 0.8.20
+      fixed_version: 0.8.21
+      credit: 'Hanno Böck'
+      description: 'Out of bounds read when printing the value %['
+    -
+      cve: CVE-2017-5195
       exploitable_by: client
-      affected_versions: 0.8.17-0.8.20
+      affected_versions:
+        from: 0.8.17
+        to: 0.8.20
       fixed_version: 0.8.21
-      release_date: 2017-01-05
-      git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
-      credit: Joseph Bisch
-      description: |
-              Out of bounds read in certain incomplete control codes
-
-    - name: CVE-2017-5196
-      external_links:
-              - id: CVE-2017-5196
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5196
-              - id: IRSSI-SA-2017-01
-                url: https://irssi.org/security/irssi_sa_2017_01.txt
+      credit: 'Joseph Bisch'
+      description: 'Out of bounds read in certain incomplete control codes'
+    -
+      cve: CVE-2017-5196
       exploitable_by: server
-      affected_versions: 0.8.18-0.8.20
+      affected_versions:
+        from: 0.8.18
+        to: 0.8.20
       fixed_version: 0.8.21
-      release_date: 2017-01-05
-      git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
-      credit: Hanno Böck and independently by Joseph Bisch
-      description: |
-              Out of bounds read in certain incomplete character sequences
-
-    - name: CVE-2017-5356
-      external_links:
-              - id: CVE-2017-5356
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5356
-              - id: IRSSI-SA-2017-01
-                url: https://irssi.org/security/irssi_sa_2017_01.txt
-      exploitable_by: local formats
-      affected_versions: "*-0.8.20"
-      fixed_version: 0.8.21
-      release_date: 2017-01-05
-      git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
-      credit: Hanno Böck
-      description: |
-              Out of bounds read when printing the value %[
-
-- name: IRSSI-SA-2017-03
+      credit: 'Hanno Böck and independently by Joseph Bisch'
+      description: "Out of bounds read in certain incomplete character sequences\n"
+-
+  name: IRSSI-SA-2017-03
   release_date: 2017-03-10
   git_commit: 77b2631c78461965bc9a7414aae206b5c514e1b3
   bugs:
-    - name: CVE-2017-7191
-      external_links:
-              - id: CVE-2017-7191
-                url: https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7191
-              - id: IRSSI-SA-2017-03
-                url: https://irssi.org/security/irssi_sa_2017_03.txt
+    -
+      cve: CVE-2017-7191
       exploitable_by: server
-      affected_versions: "1.0.0-1.0.1"
+      important: True
+      affected_versions:
+        from: 1.0.0
+        to: 1.0.1
       fixed_version: 1.0.2
-      release_date: 2017-03-10
-      git_commit: 77b2631c78461965bc9a7414aae206b5c514e1b3
       credit: APic
-      description: |
-              Use after free while producing list of netjoins
+      description: "Use after free while producing list of netjoins\n"

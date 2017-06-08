@@ -128,6 +128,23 @@ a[rel="external"]:after,a.rel-external:after {
   font-size: 51%;
 }
 
+a.link-icon:after {
+  position: absolute;
+  font-family: 'Glyphicons Halflings';
+  content: "\e164"; /* glyphicon-new-window */
+}
+
+.table td.has-next-row,
+.table th.has-next-row {
+    padding-top: 4px;
+    padding-bottom: 0;
+}
+
+.table td.has-previous-row {
+    border-top: 0;
+    padding-top: 0;
+}
+
 .navbar-nav a[rel="external"]:after {
     font-size: 100%;
 }
