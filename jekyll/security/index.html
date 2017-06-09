@@ -42,8 +42,8 @@ categories: [ _nav ]
 		    </td>
 		    <td rowspan="3">{{ bug.exploitable_by }}</td>
 		    {% if bug.affected_note_top %}<td class="has-next-row" colspan="4">{{ bug.affected_note_top }}</td>{% else %}
-		    <td class="has-next-row">{{ bug.affected_versions.from }}</td>
-		    <td class="has-next-row">&ndash;</td>
+		    <td class="has-next-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
+		    <td class="has-next-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
 		    <td class="has-next-row">{{ bug.affected_versions.to }}</td>
 		    <td class="has-next-row">
 		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version }}{% endif %}
@@ -55,8 +55,8 @@ categories: [ _nav ]
 		</tr>
 		<tr{% if bug.important %} class="warning"{% endif %}>
 		    {% if bug.affected_note_top %}
-		    <td class="has-next-row has-previous-row">{{ bug.affected_versions.from }}</td>
-		    <td class="has-next-row has-previous-row">&ndash;</td>
+		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
+		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
 		    <td class="has-next-row has-previous-row">{{ bug.affected_versions.to }}</td>
 		    <td class="has-next-row has-previous-row">
 		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version }}{% endif %}
