@@ -1,4 +1,41 @@
 ---
+# -
+#   name: Name of the bug group / security advisory, ex: IRSSI-SA-2099-01
+#   link: link to the advisory, ex: http://www.openwall.com/xxx (optional)
+#   affected_note: Some additional info for the Versions column, ex: script.pl if group affects only a single script (optional)
+#   release_date: date of release in YYYY-mm-dd format, ex: 2099-01-02
+#   repo: repository for the git commit, ex: scripts.irssi.org (optional, defaults to irssi)
+#   git_commit: git commit for the whole advisory (optional)
+#   # List of bugs
+#   bugs:
+#     -
+#       cve: CVE of bug, ex: CVE-2099-0999 (optional)
+#       name: name for the bug (in reference to the group), ex: (a) (optional)
+#       link: link to more information about the bug (optional)
+#       important: when True, will highlight the row in yellow (optional)
+#       # additional external links to display in the first column (optional)
+#       external_links:
+#         -
+#           id: text for the link
+#           url: href for the link
+#         -
+#           # add more links here...
+#       exploitable_by: one of server/client/local/formats/local (remote)/remote
+#       affected_note_top: some remark to show on a row before the versions (optional)
+#       # which versions are affected
+#       affected_versions:
+#         from: first version affected
+#         to: last version affected
+#       affected_note_bottom: some remarks to show below the versions, ex: only with compile flags xxx
+#       fixed_version: first version with the fix
+#       repo: repository for the git commit, ex: scripts.irssi.org (optional, defaults to irssi)
+#       git_commit: git commit of the individual bug fix (optional)
+#       credit: whom to credit for the discovery
+#       description: Content of the description column
+#     -
+#       # add the next bug here...
+# -
+#   # Add the next bug group / security advisory here...
 -
   name: Historic
   bugs:
@@ -6,7 +43,6 @@
       cve: CVE-2002-0983
       exploitable_by: client
       affected_versions:
-        from: '*'
         to: 0.8.4
       fixed_version: 0.8.6
       git_commit: b9b0917897bd3b78d105c3229deb390daa204cdd
@@ -19,7 +55,6 @@
       important: True
       affected_versions:
         from: 0.8.4
-        to: 0.8.4
       affected_note_bottom: 'downloaded after 2002-03-14'
       description: |
         The download server was compromised and the download was backdoored, which allows remote attackers to access the system. Always check the GPG signature!
@@ -31,7 +66,6 @@
       cve: CVE-2003-1020
       exploitable_by: client
       affected_versions:
-        from: '*'
         to: 0.8.8
       fixed_version: 0.8.9
       git_commit: ae7f177fb0ac0732239d3ff1b8dd208a31a7354d
@@ -47,7 +81,6 @@
       exploitable_by: client
       affected_versions:
         from: 0.8.9+
-        to: 0.8.9+
       fixed_version: 0.8.10
       git_commit: 6d42a00287ff144c5c597b5da158961e0c22847d
       description: |
@@ -60,7 +93,6 @@
       cve: CVE-2007-4396
       exploitable_by: local (remote)
       affected_versions:
-        from: '*'
         to: 0.8.10
       fixed_version: 0.8.11
       git_commit: f0fb4c19d45e25fddee76e7c442b1e900666cd0c
@@ -75,7 +107,6 @@
       cve: CVE-2009-1959
       exploitable_by: client
       affected_versions:
-        from: '*'
         to: 0.8.13
       fixed_version: 0.8.14
       git_commit: 1f9c560a7408bf5550e030b5ac0c07dad5435eb1
@@ -89,7 +120,6 @@
     -
       cve: CVE-2010-1155
       affected_versions:
-        from: '*'
         to: 0.8.14
       fixed_version: 0.8.15
       git_commit: bb4ce4562bd04eeb24a5953dd8da5c843c04e328
@@ -99,7 +129,6 @@
       cve: CVE-2010-1156
       exploitable_by: client
       affected_versions:
-        from: '*'
         to: 0.8.14
       fixed_version: 0.8.15
       git_commit: 1aa10ece887afd5d64eca1211aeced6cab310680
@@ -143,7 +172,6 @@
       cve: CVE-2016-7553
       exploitable_by: local
       affected_versions:
-        from: '*'
         to: '2.13'
       fixed_version: '2.20'
       credit: 'Juerd Waalboer'
@@ -157,7 +185,6 @@
       cve: CVE-2017-5193
       exploitable_by: server
       affected_versions:
-        from: '*'
         to: 0.8.20
       fixed_version: 0.8.21
       credit: 'Joseph Bisch'
@@ -166,7 +193,6 @@
       cve: CVE-2017-5194
       exploitable_by: server
       affected_versions:
-        from: '*'
         to: 0.8.20
       fixed_version: 0.8.21
       credit: ~
@@ -175,7 +201,6 @@
       cve: CVE-2017-5356
       exploitable_by: formats
       affected_versions:
-        from: '*'
         to: 0.8.20
       fixed_version: 0.8.21
       credit: 'Hanno Böck'
@@ -208,7 +233,6 @@
       exploitable_by: server
       affected_versions:
         from: 1.0.0
-        to: 1.0.0
       fixed_version: 1.0.1
       credit: 'Joseph Bisch'
       description: 'Memory leak in some cases where a hostile server would send certain incomplete SASL replies'
@@ -217,7 +241,6 @@
       name: '(b)'
       exploitable_by: '-'
       affected_versions:
-        from: '*'
         to: 1.0.0
       fixed_version: 1.0.1
       credit: 'Hanno Böck'
@@ -247,7 +270,6 @@
       cve: CVE-2017-9468
       exploitable_by: server
       affected_versions:
-        from: '*'
         to: 1.0.2
       fixed_version: 1.0.3
       credit: 'Joseph Bisch'
@@ -256,7 +278,6 @@
       cve: CVE-2017-9469
       exploitable_by: client
       affected_versions:
-        from: '*'
         to: 1.0.2
       fixed_version: 1.0.3
       credit: 'Joseph Bisch'
