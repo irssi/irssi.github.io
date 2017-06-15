@@ -1,16 +1,16 @@
 ---
 # -
-#   name: Name of the bug group / security advisory, ex: IRSSI-SA-2099-01
-#   link: link to the advisory, ex: http://www.openwall.com/xxx (optional)
-#   affected_note: Some additional info for the Versions column, ex: script.pl if group affects only a single script (optional)
-#   release_date: date of release in YYYY-mm-dd format, ex: 2099-01-02
-#   repo: repository for the git commit, ex: scripts.irssi.org (optional, defaults to irssi)
+#   name: Name of the bug group / security advisory, e.g.: IRSSI-SA-2099-01
+#   link: link to the advisory, e.g.: http://www.openwall.com/xxx (optional)
+#   affected_note: Some additional info for the Versions column, e.g.: script.pl if group affects only a single script (optional)
+#   release_date: date of release in YYYY-mm-dd format, e.g.: 2099-01-02
+#   repo: repository for the git commit, e.g.: scripts.irssi.org (optional, defaults to irssi)
 #   git_commit: git commit for the whole advisory (optional)
 #   # List of bugs
 #   bugs:
 #     -
-#       cve: CVE of bug, ex: CVE-2099-0999 (optional)
-#       name: name for the bug (in reference to the group), ex: (a) (optional)
+#       cve: CVE of bug, e.g.: CVE-2099-0999 (optional)
+#       name: name for the bug (in reference to the group), e.g.: (a) (optional)
 #       link: link to more information about the bug (optional)
 #       # additional external links to display in the first column (optional)
 #       external_links:
@@ -25,9 +25,9 @@
 #       affected_versions:
 #         from: first version affected
 #         to: last version affected
-#       affected_note_bottom: some remarks to show below the versions, ex: only with compile flags xxx
+#       affected_note_bottom: some remarks to show below the versions, e.g.: only with compile flags xxx
 #       fixed_version: first version with the fix
-#       repo: repository for the git commit, ex: scripts.irssi.org (optional, defaults to irssi)
+#       repo: repository for the git commit, e.g.: scripts.irssi.org (optional, defaults to irssi)
 #       git_commit: git commit of the individual bug fix (optional)
 #       credit: whom to credit for the discovery
 #       description: Content of the description column
