@@ -27,7 +27,7 @@ categories: [ _nav ]
     </tbody>
 	<tbody>
 	{% for bug in advisory.bugs %}
-		<tr{% if bug.important %} class="warning"{% endif %}>
+		<tr>
 		    <td rowspan="3"></td>
 		    <td rowspan="3" class="text-nowrap">
 			{% if bug.name %}
@@ -53,7 +53,7 @@ categories: [ _nav ]
 		    <td rowspan="3">{{ bug.description }}</td>
 		    <td rowspan="3"></td>
 		</tr>
-		<tr{% if bug.important %} class="warning"{% endif %}>
+		<tr>
 		    {% if bug.affected_note_top %}
 		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
 		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
@@ -66,7 +66,7 @@ categories: [ _nav ]
 		    <td class="has-previous-row" rowspan="2"></td>
 		    {% endif %}
 		</tr>
-		<tr{% if bug.important %} class="warning"{% endif %}>
+		<tr>
 		    {% if bug.affected_note_top %}
 		    <td class="has-previous-row" colspan="3">{% if bug.affected_note_bottom %}{{ bug.affected_note_bottom }}{% endif %}</td>
 		    <td class="has-previous-row"></td>

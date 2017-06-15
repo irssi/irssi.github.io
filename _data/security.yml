@@ -12,7 +12,6 @@
 #       cve: CVE of bug, ex: CVE-2099-0999 (optional)
 #       name: name for the bug (in reference to the group), ex: (a) (optional)
 #       link: link to more information about the bug (optional)
-#       important: when True, will highlight the row in yellow (optional)
 #       # additional external links to display in the first column (optional)
 #       external_links:
 #         -
@@ -52,7 +51,6 @@
     -
       cve: CVE-2002-1840
       exploitable_by: remote
-      important: True
       affected_versions:
         from: 0.8.4
       affected_note_bottom: 'downloaded after 2002-03-14'
@@ -143,7 +141,6 @@
     -
       cve: CVE-2016-7044
       exploitable_by: client
-      important: True
       affected_versions:
         from: 0.8.17
         to: 0.8.19
@@ -154,7 +151,6 @@
     -
       cve: CVE-2016-7045
       exploitable_by: client
-      important: True
       affected_versions:
         from: 0.8.17
         to: 0.8.19
@@ -254,7 +250,6 @@
     -
       cve: CVE-2017-7191
       exploitable_by: server
-      important: True
       affected_versions:
         from: 1.0.0
         to: 1.0.1
