@@ -220,29 +220,6 @@
       credit: 'Hanno Böck and independently by Joseph Bisch'
       description: 'Out of bounds read in certain incomplete character sequences'
 -
-  name: Bulletin
-  release_date: 2017-02-05
-  link: http://www.openwall.com/lists/oss-security/2017/02/05/8
-  bugs:
-    -
-      name: '(a)'
-      exploitable_by: server
-      affected_versions:
-        from: 1.0.0
-      fixed_version: 1.0.1
-      credit: 'Joseph Bisch'
-      description: 'Memory leak in some cases where a hostile server would send certain incomplete SASL replies'
-      git_commit: 19c51789967a2f63da033e60f6ef08848b9cd144
-    -
-      name: '(b)'
-      exploitable_by: '-'
-      affected_versions:
-        to: 1.0.0
-      fixed_version: 1.0.1
-      credit: 'Hanno Böck'
-      description: 'Missing NULL sentinel when initialising the Perl interpreter'
-      git_commit: 1f42d2aa950e4d70bf4c4aebae3a7040bd710cf3
--
   name: IRSSI-SA-2017-03
   release_date: 2017-03-10
   git_commit: 77b2631c78461965bc9a7414aae206b5c514e1b3
