@@ -1,0 +1,102 @@
+---
+layout: page
+title: Security
+permalink: security/
+categories: [ _nav ]
+---
+<table class="table">
+    <thead>
+	<tr class="text-nowrap">
+	    <th colspan="2">Links</th>
+	    <th>Exploitable</th>
+	    <th colspan="3">Versions affected</th>
+	    <th>Fixed</th>
+	    <th>Credit</th>
+	    <th colspan="2">Description</th>
+	</tr>
+    </thead>
+{% assign advisories = site.data.security %}
+{% for advisory in advisories reversed %}
+    <tbody>
+	<tr>
+	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/{{ advisory.name | slugify	 | replace: '-', '_' }}.txt">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
+	    <th colspan="3">{% if advisory.affected_note %}{{ advisory.affected_note }}{% endif %}</th>
+	    <th>{% if advisory.git_commit %}<a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.release_date }}</a>{% else %}{{ advisory.release_date }}{% endif %}</th>
+	    <th colspan="3"></th>
+	</tr>
+    </tbody>
+	<tbody>
+	{% for bug in advisory.bugs %}
+		<tr>
+		    <td rowspan="3"></td>
+		    <td rowspan="3" class="text-nowrap">
+			{% if bug.name %}
+			<div>{% if bug.link %}<a href="{{ bug.link }}">{{ bug.name }}</a>{% else %}{{ bug.name }}{% endif %}</div>
+			{% endif %}
+			{% if bug.cve %}
+			<div><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name={{ bug.cve }}">{{ bug.cve }}</a></div>
+			{% endif %}
+			{% for link in bug.external_links %}
+			<div><a href="{{ link.url }}">{{ link.id }}</a></div>
+			{% endfor %}
+		    </td>
+		    <td rowspan="3">{{ bug.exploitable_by }}</td>
+		    {% if bug.affected_note_top %}<td class="has-next-row" colspan="4">{{ bug.affected_note_top }}</td>{% else %}
+		    <td class="has-next-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
+		    <td class="has-next-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
+		    <td class="has-next-row">{{ bug.affected_versions.to }}</td>
+		    <td class="has-next-row">
+		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version }}{% endif %}
+		    </td>
+		    {% endif %}
+		    <td rowspan="3">{{ bug.credit }}</td>
+		    <td rowspan="3">{{ bug.description }}</td>
+		    <td rowspan="3"></td>
+		</tr>
+		<tr>
+		    {% if bug.affected_note_top %}
+		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
+		    <td class="has-next-row has-previous-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
+		    <td class="has-next-row has-previous-row">{{ bug.affected_versions.to }}</td>
+		    <td class="has-next-row has-previous-row">
+		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version }}{% endif %}
+		    </td>
+		    {% else %}
+		    <td class="has-previous-row" colspan="3" rowspan="2">{% if bug.affected_note_bottom %}{{ bug.affected_note_bottom }}{% endif %}</td>
+		    <td class="has-previous-row" rowspan="2"></td>
+		    {% endif %}
+		</tr>
+		<tr>
+		    {% if bug.affected_note_top %}
+		    <td class="has-previous-row" colspan="3">{% if bug.affected_note_bottom %}{{ bug.affected_note_bottom }}{% endif %}</td>
+		    <td class="has-previous-row"></td>
+		    {% endif %}
+		</tr>
+	{% endfor %}
+	</tbody>
+{% endfor %}
+    </tbody>
+</table>
+
+<h2>Reference</h2>
+
+<p>"Exploitable by" column:</p>
+
+<ul>
+    <li>
+	<b>Server</b>: Triggered by malicious inputs sent by a server with complete control over the connection<br />
+	Example: malformed raw IRC commands
+    </li>
+    <li>
+	<b>Client</b>: Triggered by malicious inputs sent by remote clients with no privileges over the network<br />
+	Example: malformed color codes inside a message
+    </li>
+    <li>
+	<b>Local</b>: Exploitable by unprivileged system users with access to the same filesystem<br />
+	Example: CVE-2016-7553 (buf.pl information disclosure)
+    </li>
+    <li>
+	<b>Formats</b>: Exploitable through internal format codes used in themes and configs. These are not normally processed from the network but may be in combination with buggy scripts.<br />
+	Example: CVE-2017-5356 (Crash on <code>%[</code>)
+    </li>
+</ul>
