@@ -30,6 +30,7 @@ include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
 include dl_os_icon.html name="slackware" text="**Slackware**"
+include dl_os_icon.html name="freebsd" text="**FreeBSD**"
 %}
 
 <!-- the following sections are opened purely based on the order, it
@@ -119,6 +120,13 @@ For SLES and SLED, you can also find irssi in the [SUSE Package Hub](https://pac
 ### Slackware
 
 `slackpkg install irssi`
+
+</div>
+<div class="info about-freebsd" markdown="1">
+
+### FreeBSD
+
+`pkg install irssi`
 
 </div>
 <div class="no-info" markdown="1">
