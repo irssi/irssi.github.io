@@ -1,0 +1,6 @@
+sudo: false
+language: ruby
+dist: trusty
+
+install: gem install github-pages
+script: jekyll build --future
