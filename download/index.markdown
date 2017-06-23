@@ -29,7 +29,7 @@ include dl_os_icon.html name="openSUSE" text="**SUSE**" %}{%
 include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
-include dl_os_icon.html name="slackware" text="**Slackware**"
+include dl_os_icon.html name="slackware" text="**Slackware**"%}{%
 include dl_os_icon.html name="freebsd" text="**FreeBSD**"
 %}
 
