@@ -12,9 +12,8 @@ If you would like to work on the source code of [irssi.org](http://irssi.org)
 
 1. Fork [the code](https://github.com/irssi/irssi.github.io).
 2. Clone your repository to your local machine.
-3. [Install](http://jekyllrb.com/) jekyll and see their instructions for serving
-   the project.
-4. Have fun!
+3. `gem install github-pages` if you have not already.
+4. Run `jekyll serve` to start the jekyll webserver.
 
 Make your changes previewable
 -----------------------------
