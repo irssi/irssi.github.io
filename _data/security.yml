@@ -254,3 +254,24 @@
       fixed_version: 1.0.3
       credit: 'Joseph Bisch'
       description: 'Out of bounds read when parsing incorrectly quoted DCC files'
+-
+  name: IRSSI-SA-2017-07
+  release_date: 2017-07-07
+  git_commit: 5e26325317c72a04c1610ad952974e206384d291
+  bugs:
+    -
+      cve: CVE-2017-10965
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.3
+      fixed_version: 1.0.4
+      credit: Brian 'geeknik' Carpenter of Geeknik Labs
+      description: 'NULL pointer dereference when receiving messages with invalid timestamp'
+    -
+      cve: CVE-2017-10966
+      exploitable_by: client
+      affected_versions:
+        to: 1.0.3
+      fixed_version: 1.0.4
+      credit: Brian 'geeknik' Carpenter of Geeknik Labs
+      description: 'Use after free after nicklist structure has been corrupted while updating a nick group'
