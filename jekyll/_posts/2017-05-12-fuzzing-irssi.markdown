@@ -214,3 +214,6 @@ repo](https://github.com/irssi/irssi). Security bugs can be reported to Irssi
 staff. Staff can be reached at staff@irssi.org.
 
 [hacker news discussion](https://news.ycombinator.com/item?id=14330989)
+
+Thanks to [Softdroid](http://softdroid.net/) for a
+[Russian translation](http://softdroid.net/fuzzing-irssi-ru) of this article.
