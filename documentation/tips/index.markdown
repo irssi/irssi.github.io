@@ -44,11 +44,13 @@ Audible bell (switch Ctrl+a Ctrl+g)
     /format pubmsg {pubmsgnick $2 {pubnick $[-9]0}}$1
     /format pubmsg_channel {pubmsgnick $3 {pubnick $[-9]0}{msgchannel $1}}$2
 
-### uptime alias
+### uptime 
 
-put it in your .irssi/config in the alias section as one line:  
+type
 
-``UPTIME = "eval exec - expr `date +%s` - \$F | awk '{print "Irssi uptime: "int(\\$1/3600/24)"d "int(\\$1/3600%24)"h "int(\\$1/60%60)"m "int(\\$1%60)"s" }'";``
+    /uptime
+
+to view irssi's uptime
 
 ### ssh/telnet alias
 
