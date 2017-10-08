@@ -690,7 +690,7 @@ Here's the settings that make irssi work exactly like ircII in window management
 
 ## 12\. Statusbar {#statusbar}
 
-`/STATUSBAR` displays a list of statusbars:
+`/STATUSBAR` displays a list of the current statusbars, along with their position and visibility:
 
 
      Name                           Type   Placement Position Visible
@@ -700,10 +700,9 @@ Here's the settings that make irssi work exactly like ircII in window management
      topic                          root   top       1        always
 
 
-`/STATUSBAR <name>` prints the statusbar settings and it's items. `/STATUSBAR <name> ENABLE|DISABLE` enables/disables the statusbar. `/STATUSBAR <name> RESET` resets the statusbar to it's default settings, or if the statusbar was created by you, it will be removed.
+`/STATUSBAR <name>` prints the statusbar settings (type, placement, position, visibility) as well as its items. `/STATUSBAR <name> ENABLE|DISABLE` enables/disables the statusbar. `/STATUSBAR <name> RESET` resets the statusbar to its default settings, or if the statusbar was created by you, it will be removed.
 
-Type can be window or root, meaning if the statusbar should be created for each split window, or just once. Placement can be top or bottom. Position is a number, the higher the value the lower in screen it is. Visible can be always, active or inactive. Active/inactive is useful only with split windows, one split window is active and the rest are inactive. These settings can be changed with:
-
+The statusbar type can be either window or root. If the type is window, then a statusbar will be created for each split window, otherwise it will be created only once. Placement can be top or bottom, which refers to the top or bottom of the screen. Position is a number, the higher the value the lower it will appear in-screen. Visible can be always, active or inactive. Active/inactive is useful only with split windows; one split window is active and the rest are inactive. To adjust these settings, the following commands are available:
 
     /STATUSBAR <name> TYPE window|root
     /STATUSBAR <name> PLACEMENT top|bottom
@@ -711,14 +710,13 @@ Type can be window or root, meaning if the statusbar should be created for each 
     /STATUSBAR <name> VISIBLE always|active|inactive
 
 
-When loading a new statusbar scripts, you'll need to also specify where you want to show it. Statusbar items can be modified with:
-
+Statusbar items can also be added or removed via command. Note that when loading new statusbar scripts that add items, you will need to specify where you want to show the item and how it is aligned. This can be accomplished using the below commands:
 
     /STATUSBAR <name> ADD [-before | -after <item>] [-priority #] [-alignment left|right] <item>
     /STATUSBAR <name> REMOVE <item>
 
 
-The item name with statusbar scripts is usually same as the script's name. Script's documentation should tell if this isn't the case. So, to add mail.pl before the window activity item (see the list with `/STATUSBAR` window), use: `/STATUSBAR window ADD -before act mail`.
+For statusbar scripts, the item name is usually equivalent to the script name. The documentation of the script ought to tell you if this is not the case. For example, to add mail.pl before the window activity item, use: `/STATUSBAR window ADD -before act mail`.
 
 [1]: http://www.gnu.org/licenses/fdl.html
 [2]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
