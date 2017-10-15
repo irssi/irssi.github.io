@@ -30,7 +30,8 @@ include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
 include dl_os_icon.html name="slackware" text="**Slackware**"%}{%
-include dl_os_icon.html name="freebsd" text="**FreeBSD**"
+include dl_os_icon.html name="freebsd" text="**FreeBSD**" %}{%
+include dl_os_icon.html name="nixos" text="**NixOS**"
 %}
 
 <!-- the following sections are opened purely based on the order, it
@@ -127,6 +128,13 @@ For SLES and SLED, you can also find irssi in the [SUSE Package Hub](https://pac
 ### FreeBSD
 
 `pkg install irssi`
+
+</div>
+<div class="info about-nixos" markdown="1">
+
+### Nix/NixOS
+
+`nix-env -i irssi`
 
 </div>
 <div class="no-info" markdown="1">
