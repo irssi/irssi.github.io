@@ -13,7 +13,7 @@ description: The Client of the Future
 name: Irssi Core Team
 email: staff@irssi.org
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap
