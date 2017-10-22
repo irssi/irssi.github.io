@@ -275,3 +275,49 @@
       fixed_version: 1.0.4
       credit: Brian 'geeknik' Carpenter of Geeknik Labs
       description: 'Use after free after nicklist structure has been corrupted while updating a nick group'
+-
+  name: IRSSI-SA-2017-10
+  release_date: 2017-10-23
+  git_commit: 43e44d553d44e313003cee87e6ea5e24d68b84a1
+  bugs:
+    -
+      cve: CVE-2017-15228
+      exploitable_by: formats
+      affected_versions:
+        to: 1.0.4
+      fixed_version: 1.0.5
+      credit: 'Hanno Böck'
+      description: 'Unterminated colour formatting sequences may cause data access beyond the end of the buffer'
+    -
+      cve: CVE-2017-15227
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.4
+      fixed_version: 1.0.5
+      credit: 'Joseph Bisch'
+      description: 'Failure to remove destroyed channels from the query list while waiting for the channel synchronisation may result in use after free conditions when updating the state later on'
+    -
+      cve: CVE-2017-15721
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.4
+      fixed_version: 1.0.5
+      credit: 'Joseph Bisch'
+      description: 'Certain incorrectly formatted DCC CTCP messages could cause NULL pointer dereference'
+    -
+      cve: CVE-2017-15723
+      exploitable_by: server
+      affected_versions:
+        from: 0.8.17
+        to: 1.0.4
+      fixed_version: 1.0.5
+      credit: 'Joseph Bisch'
+      description: 'Overlong nicks or targets may result in a NULL pointer dereference while splitting the message'
+    -
+      cve: CVE-2017-15722
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.4
+      fixed_version: 1.0.5
+      credit: 'Joseph Bisch'
+      description: 'Read beyond end of buffer may occur if a Safe channel ID is not long enough'
