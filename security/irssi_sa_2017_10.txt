@@ -30,13 +30,13 @@ Multiple vulnerabilities have been located in Irssi.
 (d) Overlong nicks or targets may result in a NULL pointer dereference
     while splitting the message. Found by Joseph Bisch. (CWE-690)
 
-    CVE-2017-15722 was assigned to this issue.
+    CVE-2017-15723 was assigned to this issue.
 
 (e) In certain cases Irssi may fail to verify that a Safe channel ID
     is long enough, causing reads beyond the end of the string. Found
     by Joseph Bisch. (CWE-126)
 
-    CVE-2017-15723 was assigned to this issue.
+    CVE-2017-15722 was assigned to this issue.
 
 
 Impact
