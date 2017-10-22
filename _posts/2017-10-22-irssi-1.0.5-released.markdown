@@ -10,7 +10,7 @@ features. **All Irssi users should upgrade to this version**. See the
 details.
 
 Most issues have been identified using fuzzing, thanks to Hanno Böck
-and Joseph Bisch. We expect he will be able to tell you more
+and Joseph Bisch. We expect Joseph will be able to tell you more
 about his newest fuzzer at [freenode.live](http://freenode.live) on the weekend!
 
 For more information refer to the [security advisory](/security/irssi_sa_2017_10.txt).
