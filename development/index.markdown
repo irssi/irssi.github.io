@@ -14,7 +14,7 @@ After check-out, you **must** run `./autogen.sh`. It may be necessary to install
 
 ## Helping Development
 
-Hey you! Irssi is desperately looking for developers. No groundbreaking development has occured since ten years. Apart from fixing [bugs][2]{:rel='external'} and reviewing [patches][3]{:rel='external'}, there are also many huge issues which noone is tackling at the moment. Some of those are:
+Hey you! Irssi is always looking for developers. Apart from fixing [bugs][2]{:rel='external'} and reviewing [patches][3]{:rel='external'}, there are also many potential areas of improvement. Some of those are:
 
 * Rewrite the fe-text front-end to include vertical splits, flexible and multi-line status bars, vertical bars, zoom, layout pre-sets, dynamic themes, message tags, time-stamped messages, etc.
 * Rewrite the core to optionally work in a distributed manner (where you can run the server connections on one server and connect to it with multiple fe-text front-ends)
