@@ -38,7 +38,7 @@ Most of the existing documentation regarding themes can be found in the `default
 
 [1]: https://github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
 [2]: //github.com/irssi/irssi/issues
-[3]: //github/com/irssi/irssi/pulls
+[3]: //github.com/irssi/irssi/pulls
 [4]: //github.com/irssi/irssi/pull/148
 [5]: //github.com/shabble/irssi-docs/wiki/Roadmap
 [6]: //github.com/irssi/irssi/labels/easy
