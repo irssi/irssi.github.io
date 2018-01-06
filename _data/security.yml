@@ -321,3 +321,39 @@
       fixed_version: 1.0.5
       credit: 'Joseph Bisch'
       description: 'Read beyond end of buffer may occur if a Safe channel ID is not long enough'
+-
+  name: IRSSI-SA-2018-01
+  release_date: 2018-01-07
+  bugs:
+    -
+      cve: CVE-2018-5206
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.5
+      fixed_version: 1.0.6
+      credit: 'Joseph Bisch'
+      description: 'When the channel topic is set without specifying a sender, Irssi may dereference NULL pointer.'
+    -
+      cve: CVE-2018-5205
+      exploitable_by: formats
+      affected_versions:
+        to: 1.0.5
+      fixed_version: 1.0.6
+      credit: 'Joseph Bisch'
+      description: 'When using incomplete escape codes, Irssi may access data beyond the end of the string.'
+    -
+      cve: CVE-2018-5208
+      exploitable_by: server
+      affected_versions:
+        to: 1.0.5
+      fixed_version: 1.0.6
+      credit: 'Joseph Bisch'
+      description: 'A calculation error in the completion code could cause a heap buffer overflow when completing certain strings.'
+    -
+      cve: CVE-2018-5207
+      exploitable_by: formats
+      affected_versions:
+        to: 1.0.5
+      fixed_version: 1.0.6
+      credit: 'Joseph Bisch'
+      description: 'When using an incomplete variable argument, Irssi may access data beyond the end of the string.'
