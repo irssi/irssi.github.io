@@ -1,15 +1,8 @@
 -
+  key: irssi-1.1.0-released
+-
   key: irssi-1.0.6-released
   tag: Security
 -
   key: fuzzing-irssi
   title: Introduction to fuzzing Irssi
--
-  key: test-sideways-splits
-  tag: Test
-  title: horizontal/vertical splits
--
-  key: poll-non-utf8-discontinuation
-  tag: Poll
-  title: Non-UTF-8 discontinuation
-
