@@ -3,7 +3,7 @@ layout: page
 title: Getting Irssi
 permalink: /download/
 categories: [ _nav, _6 ]
-version: 1.0.6
+version: 1.1.0
 ---
 
 There are several ways you can get Irssi<span class="hidden-md hidden-lg">:</span>
