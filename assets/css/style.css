@@ -82,7 +82,7 @@ iframe {
 h1 a,
 h2 a,
 h3 a {
-    color: #333; /* body color */
+    color: #2e3440; /* body color */
 }
 
 .navbar-inverse .navbar-header > a.navbar-brand {
@@ -99,7 +99,7 @@ h3 a {
 .navbar-inverse .navbar-header > a.navbar-brand.active:focus {
     opacity: 1;
     color: #fff; /* body background-color */
-    background-color: #080808; /* .navbar-inverse .navbar-nav > .active > a */
+    background-color: #2f435b; /* .navbar-inverse .navbar-nav > .active > a */
 }
 
 /* Position the irssi logo */
@@ -195,7 +195,7 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
     width: 11em;
     -moz-appearance: none;
     -webkit-appearance: none;
-    color: #337ab7; /* .text-primary */
+    color: #5e81ac; /* .text-primary */
 }
 
 select .header {
@@ -262,7 +262,7 @@ blockquote {
 }
 
 .container.home p + h2 {
-    border-top: 2px solid #eee; /* .page-header (thicker) */
+    border-top: 2px solid #eceff4; /* .page-header (thicker) */
     padding-top: 20px;
 }
 
@@ -305,7 +305,7 @@ blockquote {
 }
 
 .dlc input:focus + label {
-    border: 1px dashed #666666; /* .form-control:focus */
+    border: 1px dashed #81a1c1; /* .form-control:focus */
 }
 
 @media (max-width: 768px) {
@@ -339,12 +339,12 @@ blockquote {
     display: block;
     margin: 2em;
     padding: 1em;
-    border: 1ex solid #d9edf7; /* .bg-info color */
+    border: 1ex solid #f3dfb6; /* .bg-info color */
     border-radius: 4px; /* like .btn */
 }
 
 .dlc input ~ .no-info {
-    border-color: #f7ecb5; /* a.bg-warning:hover color */
+    border-color: #e3b7aa; /* a.bg-warning:hover color */
 }
 .dlc input:checked ~ .no-info { display: none; }
 
