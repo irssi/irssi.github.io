@@ -9,6 +9,12 @@ Official international channel
 
 - \#irssi at [Freenode](http://freenode.net/) -- English only
 
+To join, `/connect Freenode`, then `/join #irssi`
+
+If you have trouble getting Irssi to work, you can use the Freenode
+provided [webchat](https://webchat.freenode.net/?channels=irssi) in
+the meantime.
+
 Other channels
 --------------
 
