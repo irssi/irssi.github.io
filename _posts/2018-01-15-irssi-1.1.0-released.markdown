@@ -83,4 +83,8 @@ irssi-{python,otr,xmpp,icb,quassel,fish,theme-indent,...} to either
 distributions or the openSUSE Build Service (has to support all our
 current targets there.)
 
+Feel welcome to join our [IRC channel](/support/irc), or discuss this
+news, on
+[reddit](https://www.reddit.com/r/linux/comments/7qq1lt/irssi_110_released/).
+
 The Irssi Team.
