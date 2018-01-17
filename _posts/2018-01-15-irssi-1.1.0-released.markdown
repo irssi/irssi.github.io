@@ -73,7 +73,7 @@ repository.
 
 By the way, test packages for the Git version are also available for
 download in the
-[irssi-git](https://software.opensuse.org/download.html?project=home:ailin_nemui:irssi-test;package=irssi-git)
+[irssi-git](https://software.opensuse.org/download.html?project=home:ailin_nemui:irssi-git;package=irssi-git)
 repository, and an archive of the old stable version is available in
 [irssi-oldtest](https://software.opensuse.org/download.html?project=home:ailin_nemui:irssi-oldtest;package=irssi).
 
