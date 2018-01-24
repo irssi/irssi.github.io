@@ -500,7 +500,7 @@ So, you'll specify the usernames with `/NETWORK ADD` command, and the user's pas
 
 Irssi contains it's own proxy which you can build giving `\--with-proxy` option to configure. You'll still need to run irssi in a screen to use it though.
 
-Irssi proxy is a bit different than most proxies, normally proxies create a new connection to IRC server when you connect to it, but **irssi proxy shares your existing IRC connection(s) to multiple clients**. And even more clearly: **You can use only one IRC server connection to IRC with as many clients as you want**. Can anyone figure out even more easier ways to say this, so I wouldn't need to try to explain this thing for minutes every time? :)
+Irssi proxy is a bit different than most proxies, normally proxies create a new connection to IRC server when a new client connects to it, but **irssi proxy shares your existing IRC connection(s) to multiple clients**. And even more clearly: **You can use only one IRC server connection of the irssi proxy to IRC with as many clients as you want**. Can anyone figure out even more easier ways to say this, so I wouldn't need to try to explain this thing for minutes every time? :)
 
 Irssi proxy supports sharing multiple server connections in different ports, like you can share network in port 2777 and efnet in port 2778.
 
