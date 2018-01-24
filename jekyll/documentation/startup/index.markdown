@@ -441,7 +441,7 @@ If you don't want to use the proxy for some reason, there's `-noproxy` option wh
 
 **Proxy specific settings:**
 
-All proxies have these settings in common:
+All proxies except irssi proxy have these settings in common:
 
 
     /SET use_proxy ON
