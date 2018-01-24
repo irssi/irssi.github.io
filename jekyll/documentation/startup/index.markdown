@@ -416,7 +416,7 @@ So in irssi you would use `/BIND ^[OP /ECHO F1 pressed`. If you use multiple ter
 
 Irssi supports connecting to IRC servers via a proxy. All server connections are then made through it, and if you've set up everything properly, you don't need to do any `/QUOTE SERVER` commands manually.
 
-Here's an example: You have your bouncer (lets say, BNC or BNC-like) listening in irc.bouncer.org port 5000. You want to use it to connect to servers irc.dalnet and irc.efnet.org. First you'd need to setup the bouncer:
+Here's an example: You have your bouncer (lets say, BNC or BNC-like) listening in irc.bouncer.org port 5000. You want to use it to connect to servers irc.dal.net and irc.efnet.org. First you'd need to setup the bouncer:
 
 
     /SET use_proxy ON
