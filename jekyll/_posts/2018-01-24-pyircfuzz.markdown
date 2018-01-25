@@ -41,6 +41,7 @@ get a screenshot of the fuzzing in action.
 
 Here is the AddressSanitizer output (from asan.log):
 
+
 ```
 ASAN:DEADLYSIGNAL
 =================================================================
