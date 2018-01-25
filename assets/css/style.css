@@ -308,7 +308,7 @@ blockquote {
     border: 1px dashed #81a1c1; /* .form-control:focus */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .irssi-release,.irssi-git { display: inline-block; }
 }
 
@@ -377,4 +377,43 @@ blockquote {
 .two-column > div {
     display: inline-block;
 }
+}
+
+.container.post > p,
+.container.post > ul,
+.container.post > blockquote,
+.container.page > p,
+.container.page > ul,
+.container.page > ol,
+.container.page > blockquote,
+.container.page > dl {
+    max-width: 730px;
+}
+
+.container.page > dl > dd {
+    margin-left: 1em;
+}
+
+.container.page > h3 {
+    max-width: 750px;
+}
+
+.container.post > .wide {
+    max-width: 100%;
+}
+
+@media (min-width:768px) and (max-width: 991px) {
+    .container.post > div > div.highlight,
+    .container.page > div > div.highlight {
+	display: inline-block;
+	min-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container.post > div > div.highlight,
+    .container.page > div > div.highlight {
+	display: inline-block;
+	min-width: 730px;
+    }
 }

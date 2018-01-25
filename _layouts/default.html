@@ -13,7 +13,9 @@
                 </div>
                 <div class="sticken col-xs-12 col-md-4">
                     <br />
-                    {% include {{page.sidebar}} %}
+		    {% if page.sidebar
+                    %}{% include {{page.sidebar}}
+		    %}{% endif %}
                 </div>
                 {% else %}
                     {{ content }}
