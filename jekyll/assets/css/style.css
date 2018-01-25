@@ -44,6 +44,14 @@ p.center {
     text-align: center;
 }
 
+/* collapsible navbar css */
+#navbar-toggle-cbox {
+    display: none;
+}
+#navbar-toggle-cbox:checked ~ .collapse {
+    display: block;
+}
+
 /* center buttons in xs view */
 @media (max-width: 767px) {
     .jumbotron .col-xs-11 p {

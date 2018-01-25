@@ -1,12 +1,13 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
+        <input type="checkbox" id="navbar-toggle-cbox">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" id="navbar-toggle">
+            <label for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
+            </label>
             <a class="{% if page.url == "/index.html" or page.url == "/" %}active {% endif %} navbar-brand" href="{{ site.baseurl }}/">
                 <img alt="Irssi Logo" class="navbar-irssi-logo" src="{{ site.baseurl }}/assets/logo.png">
                 {% comment %}{{ site.title }}{% endcomment %}
