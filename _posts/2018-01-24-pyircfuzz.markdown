@@ -130,3 +130,5 @@ can be reported to Irssi staff. Staff can be reached at staff@irssi.org.
 
 Also, patches to improve pyircfuzz are welcome via the [GitHub
 repo](https://github.com/josephbisch/pyircfuzz).
+
+[hacker news discussion](https://news.ycombinator.com/item?id=16230189)
