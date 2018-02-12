@@ -363,6 +363,18 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Sometimes you don't care at all about a channel's activity. This can be set to a list of channels that will never appear to be active.
 
+  **Syntax**:
+  ::all		Ignore activity in all windows
+  ::channels		Ignore activity in all channels
+  ::queries		Ignore activity in all queries
+  ::dccqueries		Ignore activity in all dcc chats
+  #chan|[=]nick	Ignore activity in named target(channel, query, dcc chat)
+  tag/::all		Ignore all activity on network 'tag'
+  tag/::channels	Ignore activity in all channels on network 'tag'
+  tag/::queries	Ignore activity in all queries on network 'tag'
+  tag/::dccqueries	Ignore activity in all dcc chats on network 'tag'
+  tag/#chan|[=]nick	Ignore activity in named channel/query/dcc chat on network 'tag'
+
 {:#activity_hilight_level}
 ` activity_hilight_level = MSGS DCCMSGS `
 
