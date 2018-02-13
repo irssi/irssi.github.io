@@ -6,7 +6,7 @@
         {% include header.html %}
 
         <div class="page-content">
-            <div class="container {{page.layout}}">
+            <div class="container {{page.container_class}} {{page.layout}}">
                 {% if page.sidebar %}
                 <div class="col-xs-12 col-md-8">
                     {{ content }}
