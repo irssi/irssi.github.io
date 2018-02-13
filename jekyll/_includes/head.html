@@ -3,7 +3,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{% if page.title %}{% unless page.title contains 'Irssi' %}Irssi - {% endunless %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{%
+      if layout.title_from %}{%
+        assign title = page[layout.title_from] %}{%
+      elsif page.title %}{%
+        assign title = page.title %}{%
+      else
+        assign title = site.title %}{%
+      endif %}{%
+      unless page.title contains 'Irssi' %}{%
+        assign title = title | prepend: 'Irssi - ' %}{%
+      endunless
+    %}{{title}}</title>
 
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
