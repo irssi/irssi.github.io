@@ -30,3 +30,20 @@ collections:
   articles:
     output: true
     permalink: "/articles/:title/"
+  security_html:
+    output: true
+    permalink: "/security/html/:title/"
+  security:
+    output: true
+    permalink: "/security/:title.txt"
+
+defaults:
+ - scope:
+     path: "_security_html"
+   values:
+     layout: security_html
+ -
+   scope:
+     path: "_security"
+   values:
+     layout: security_txt
