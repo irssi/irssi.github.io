@@ -18,11 +18,12 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
 	    <th colspan="2">Description</th>
 	</tr>
     </thead>
-{% assign advisories = site.data.security %}
-{% for advisory in advisories reversed %}
+{% assign advisories = site.data.security | concat: site.security %}{%
+assign lttrs = 'abcdefghijklmn' | split: '' %}{%
+for advisory in advisories reversed %}
     <tbody>
 	<tr>
-	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/{{ advisory.name | slugify	 | replace: '-', '_' }}.txt">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
+	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/html/{{ advisory.name | slugify	 | replace: '-', '_' }}">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
 	    <th colspan="3">{% if advisory.affected_note %}{{ advisory.affected_note }}{% endif %}</th>
 	    <th>{% if advisory.git_commit %}<a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.release_date }}</a>{% else %}{{ advisory.release_date }}{% endif %}</th>
 	    <th colspan="3"></th>
@@ -39,17 +40,20 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
 			{% if bug.cve %}
 			<div><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name={{ bug.cve }}">{{ bug.cve }}</a></div>
 			{% endif %}
+			{% unless bug.cve %}{% unless bug.name %}{% unless bug.external_links
+			    %}({{lttrs[forloop.index0]}}){%
+			endunless %}{% endunless %}{% endunless %}
 			{% for link in bug.external_links %}
 			<div><a href="{{ link.url }}">{{ link.id }}</a></div>
 			{% endfor %}
 		    </td>
 		    <td rowspan="3">{{ bug.exploitable_by }}</td>
 		    {% if bug.affected_note_top %}<td class="has-next-row" colspan="4">{{ bug.affected_note_top }}</td>{% else %}
-		    <td class="has-next-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from }}{% else %}*{% endif %}</td>
+		    <td class="has-next-row">{% if bug.affected_versions.from %}{{ bug.affected_versions.from | join: "<br/>" }}{% else %}*{% endif %}</td>
 		    <td class="has-next-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
-		    <td class="has-next-row">{{ bug.affected_versions.to }}</td>
+		    <td class="has-next-row">{{ bug.affected_versions.to | join: "<br/>"}}</td>
 		    <td class="has-next-row">
-		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version }}{% endif %}
+		      {% if bug.git_commit %}<a href="https://github.com/irssi/{% if bug.repo %}{{ bug.repo }}{% else %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{% else %}{{ bug.fixed_version | join: "<br/>" }}{% endif %}
 		    </td>
 		    {% endif %}
 		    <td rowspan="3">{{ bug.credit }}</td>

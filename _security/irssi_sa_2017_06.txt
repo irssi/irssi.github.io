@@ -1,73 +1,45 @@
-IRSSI-SA-2017-06 Irssi Security Advisory [1]
-============================================
-CVE-2017-9468, CVE-2017-9469
+---
+name: IRSSI-SA-2017-06
+release_date: 2017-06-06
+git_commit: fb08fc7f1aa6b2e616413d003bf021612301ad55
+bugs:
+  -
+    cve: CVE-2017-9468
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.2
+    fixed_version: 1.0.3
+    credit: 'Joseph Bisch'
+    description: 'NULL pointer dereference when receiving a DCC message without source nick/host'
+    description_long: >
+      When receiving a DCC message without source nick/host, Irssi would
+      attempt to dereference a NULL pointer. Found by Joseph
+      Bisch. (CWE-690)
+    impact: >
+      May result in denial of service (remote crash).
+    mitigating_info: >
+      requires control over the ircd
+  -
+    cve: CVE-2017-9469
+    exploitable_by: client
+    affected_versions:
+      to: 1.0.2
+    fixed_version: 1.0.3
+    credit: 'Joseph Bisch'
+    description: 'Out of bounds read when parsing incorrectly quoted DCC files'
+    description_long: >
+      When receiving certain incorrectly quoted DCC files, Irssi would
+      try to find the terminating quote one byte before the allocated
+      memory. Found by Joseph Bisch. (CWE-129, CWE-127)
+    impact: >
+      May result in denial of service (remote crash), but in practice
+      this seems to be very unlikely unless address sanitizer is
+      enabled.
+recommended_action: >
+  Upgrade to Irssi 1.0.3. Irssi 1.0.3 is a maintenance release in the
+  1.0 series, without any new features.
 
-Description
------------
-
-Two vulnerabilities have been located in Irssi.
-
-(a) When receiving a DCC message without source nick/host, Irssi would
-    attempt to dereference a NULL pointer. Found by Joseph
-    Bisch. (CWE-690)
-
-    CVE-2017-9468 [2] was assigned to this bug
-
-(b) When receiving certain incorrectly quoted DCC files, Irssi would
-    try to find the terminating quote one byte before the allocated
-    memory. Found by Joseph Bisch. (CWE-129, CWE-127)
-    
-    CVE-2017-9469 [3] was assigned to this bug
-
-
-Impact
-------
-
-(a) May result in denial of service (remote crash).
-
-(b) May result in denial of service (remote crash), but in practice
-    this seems to be very unlikely unless address sanitizer is
-    enabled.
-
-
-Affected versions
------------------
-
-All Irssi versions that we observed.
-
-
-Fixed in
---------
-
-Irssi 1.0.3
-
-
-Recommended action
-------------------
-
-Upgrade to Irssi 1.0.3. Irssi 1.0.3 is a maintenance release in the
-1.0 series, without any new features.
-
-After installing the updated packages, one can issue the /upgrade
-command to load the new binary. TLS connections will require
-/reconnect.
-
-
-Mitigating facts
-----------------
-
-(a) requires control over the ircd
-
-
-Patch
------
-
-https://github.com/irssi/irssi/commit/fb08fc7f1aa6b2e616413d003bf021612301ad55
-
-
-References
-----------
-
-[1] https://irssi.org/security/irssi_sa_2017_06.txt
-[2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9468
-[3] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-9469
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+---

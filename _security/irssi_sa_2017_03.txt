@@ -1,57 +1,34 @@
-use after free condition during netjoin processing [1]
-======================================================
-CWE Classification: CWE-416
+---
+name: IRSSI-SA-2017-03
+heading: use after free condition during netjoin processing
+release_date: 2017-03-10
+git_commit: 77b2631c78461965bc9a7414aae206b5c514e1b3
+bugs:
+  -
+    cve: CVE-2017-7191
+    cwe: CWE-416
+    exploitable_by: server
+    affected_versions:
+      from: 1.0.0
+      to: 1.0.1
+    affected_note_long: >
 
+      We believe Irssi 0.8.21 and prior are not affected since a different
+      code path causes the netjoins to be flushed prior to reaching the use
+      after free condition.
+    fixed_version: 1.0.2
+    credit: APic
+    description: 'Use after free while producing list of netjoins'
+    description_long: >
+      Use after free while producing list of netjoins (CWE-416)
 
-CVE-2017-7191 [2] was assigned to this bug
+      This issue was found and reported to us by APic.
+impact: >
+  This issue usually leads to segmentation faults. Targeted code
+  execution should be difficult.
 
+recommended_action: >
+  Upgrade to Irssi 1.0.2. Irssi 1.0.2 is a maintenance release
+  without any new features.
 
-Description
------------
-
-Use after free while producing list of netjoins (CWE-416)
-
-This issue was found and reported to us by APic.
-
-
-Impact
-------
-
-This issue usually leads to segmentation faults. Targeted code
-execution should be difficult.
-
-
-Affected versions
------------------
-
-Irssi up to and including 1.0.1
-
-We believe Irssi 0.8.21 and prior are not affected since a different
-code path causes the netjoins to be flushed prior to reaching the use
-after free condition.
-
-
-Fixed in
---------
-
-Irssi 1.0.2
-
-
-Recommended action
-------------------
-
-Upgrade to Irssi 1.0.2. Irssi 1.0.2 is a maintenance release
-without any new features.
-
-
-Patch
------
-
-https://github.com/irssi/irssi/commit/77b2631c78461965bc9a7414aae206b5c514e1b3
-
-
-References
-----------
-
-[1] https://irssi.org/security/irssi_sa_2017_03.txt
-[2] http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7191
+---

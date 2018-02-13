@@ -1,0 +1,13 @@
+---
+layout: default
+title: Security Advisory
+title_from: name
+---
+
+{% capture markdown %}{% include sec_txt/master.txt md=true %}{% endcapture %}{{ markdown | markdownify }}{%
+if site.serving %}
+<style type="text/css">
+#markdown-source { display: none; }
+#markdown-source:target { display: inherit; }
+</style>
+<pre id="markdown-source">{{ markdown | xml_escape }}</pre>{% endif %}
