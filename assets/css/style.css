@@ -22,6 +22,7 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 }
+p.raggedright,
 .raggedright p {
     text-align: inherit;
     hyphens: inherit;
@@ -51,7 +52,7 @@ p.center {
 }
 
 /* fix for anchored links to scroll the top bar */
-*[id]:before { 
+*[id]:before {
   display: block; 
   content: " "; 
   margin-top: -65px; 
@@ -263,9 +264,16 @@ blockquote {
     font-weight: bold;
 }
 
-.container.home p + h2 {
+.container.home > :not(h1) + h2,
+.container.home > div > :not(h1) + h2 {
     border-top: 2px solid #eceff4; /* .page-header (thicker) */
     padding-top: 20px;
+}
+
+.container.news > hr {
+    border-top: 2px solid #eceff4; /* .page-header (thicker) */
+    max-width: 730px;
+    margin-left: 0;
 }
 
 .container.home hr {
@@ -427,6 +435,28 @@ blockquote {
 	display: inline-block;
 	min-width: 730px;
     }
+}
+
+.download-group,
+.download-links > a {
+  border: 1px solid transparent;
+  padding: 6px 10px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  border-radius: 4px;
+}
+.download-group {
+  display: inline-block;
+  vertical-align: baseline;
+  border-color: #d8dee9; /* .btn-default */
+}
+.download-links a {
+    display: inline-block;
+}
+.signature-icon {
+    background-image: url(../sign.svg);
+    width: 1.4em;
+    display: inline-block;
 }
 
 .container.security_html > ol > li:empty {

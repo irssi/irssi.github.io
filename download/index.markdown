@@ -177,7 +177,10 @@ The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is bui
 
 ## Release Sources
 
-Latest release version: **{{ page.version }}** – [Downloads / News][14]{:rel='external'} &nbsp;
+Latest release version: **{{ page.version }}** – [NEWS][14] &nbsp;
+
+{% include relnews_artef_block.markdown ver=page.version %}
+
 
 See the included [INSTALL][15]{:rel='external'} file for building instructions
 
@@ -204,7 +207,7 @@ See also: [Commit Log][18]{:rel='external'}
 </div>
 
 [13]: //github.com/irssi-import/irssi/releases
-[14]: //github.com/irssi/irssi/releases
+[14]: {{ site.baseurl }}/NEWS/#v{{page.version|slugify}}
 [15]: //github.com/irssi/irssi/blob/master/INSTALL
 [16]: //github.com/irssi/irssi
 [17]: //github.com/shabble/irssi-docs/wiki/Irssi-0.8.17#compiling-from-git
