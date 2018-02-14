@@ -483,3 +483,10 @@ blockquote {
     content: "[  ]"; position: absolute; margin-left:-1.4em;
     white-space: pre;
 }
+
+code {
+    hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+}
