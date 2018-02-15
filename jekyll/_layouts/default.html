@@ -6,6 +6,7 @@
         {% include header.html %}
 
         <div class="page-content">
+            <div class="toprule tr-{{page.layout}}"></div>
             <div class="container {{page.container_class}} {{page.layout}}">
                 {% if page.sidebar %}
                 <div class="col-xs-12 col-md-8">
@@ -14,8 +15,8 @@
                 <div class="sticken col-xs-12 col-md-4">
                     <br />
 		    {% if page.sidebar
-                    %}{% include {{page.sidebar}}
-		    %}{% endif %}
+                    %}<div class="default-sidebar">{% include {{page.sidebar}}
+		    %}</div>{% endif %}
                 </div>
                 {% else %}
                     {{ content }}
