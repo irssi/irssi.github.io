@@ -78,7 +78,7 @@ p.center {
 /* more hacks */
 li + a[id]:before { display: inline-block; }
 /* there is this weird issue with above code making links not clickable below anchors... */
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   position: inherit;
 }
 #___gcse_0:before { display: inline; }
@@ -261,7 +261,8 @@ blockquote {
     height: calc(100vh - 50px);
 }
 
-.page > .sticken {
+.page > .sticken > .default-sidebar {
+    height: calc(100vh - 74px);
     overflow-y: auto;
 }
 
@@ -272,12 +273,13 @@ blockquote {
     font-weight: bold;
 }
 
-.container.home > :not(h1) + h2,
-.container.home > div > :not(h1) + h2 {
+.container.home > div > :not(h1) + h2,
+.container.home > :not(h1) + h2 {
     border-top: 2px solid #eceff4; /* .page-header (thicker) */
     padding-top: 20px;
 }
 
+.container.news > div > hr,
 .container.news > hr {
     border-top: 2px solid #eceff4; /* .page-header (thicker) */
     max-width: 730px;
@@ -397,6 +399,19 @@ blockquote {
 }
 }
 
+.container.post > div > p,
+.container.post > div > ul,
+.container.post > div > blockquote,
+.container.page > div > p,
+.container.page > div > ul,
+.container.page > div > ol,
+.container.page > div > blockquote,
+.container.page > div > dl,
+.container.security_html > div > p,
+.container.security_html > div > ul,
+.container.security_html > div > ol,
+.container.security_html > div > blockquote,
+.container.security_html > div > dl,
 .container.post > p,
 .container.post > ul,
 .container.post > blockquote,
@@ -413,21 +428,29 @@ blockquote {
     max-width: 730px;
 }
 
+.container.page > div > dl > dd,
+.container.security_html > div > dl > dd,
 .container.page > dl > dd,
 .container.security_html > dl > dd {
     margin-left: 1em;
 }
 
+.container.page > div > h3,
+.container.security_html > div > h3,
 .container.page > h3,
 .container.security_html > h3 {
     max-width: 750px;
 }
 
+.container.post > div > .wide,
 .container.post > .wide {
     max-width: 100%;
 }
 
 @media (min-width:768px) and (max-width: 991px) {
+    .container.post > div > div > div.highlight,
+    .container.page > div > div > div.highlight,
+    .container.security_html > div > div > div.highlight,
     .container.post > div > div.highlight,
     .container.page > div > div.highlight,
     .container.security_html > div > div.highlight {
@@ -437,6 +460,9 @@ blockquote {
 }
 
 @media (min-width: 992px) {
+    .container.post > div > div > div.highlight,
+    .container.page > div > div > div.highlight,
+    .container.security_html > div > div > div.highlight,
     .container.post > div > div.highlight,
     .container.page > div > div.highlight,
     .container.security_html > div > div.highlight {
@@ -445,6 +471,7 @@ blockquote {
     }
 }
 
+/* NEWS page */
 .download-group,
 .download-links > a {
   border: 1px solid transparent;
@@ -467,14 +494,18 @@ blockquote {
     display: inline-block;
 }
 
+/* Security advisories */
+.container.security_html > div > ol > li:empty,
 .container.security_html > ol > li:empty {
     visibility: hidden;
     height: 0;
 }
+.container.security_html > div > ol > li::before,
 .container.security_html > ol > li::before {
     content: "(  )"; position: absolute; margin-left:-1.5em;
     white-space: pre;
 }
+.container.security_html > div > ol,
 .container.security_html > ol {
     list-style-type: lower-alpha;
     list-style-position: outside;
@@ -484,6 +515,7 @@ blockquote {
     white-space: pre;
 }
 
+/* * * * */
 code {
     hyphens: none;
     -moz-hyphens: none;
@@ -491,6 +523,7 @@ code {
     -ms-hyphens: none;
 }
 
+/* dark rule on heading */
 div.container > div > h1:nth-child(1),
 div.container > h1:nth-child(1) {
     color: #eceff4; /* @gray-lighter */
@@ -507,7 +540,17 @@ div.toprule {
     position: absolute;
     z-index: -1;
 }
+.default-sidebar {
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-top: 1px;
+    margin-right: -15px;
+    padding-right: 15px;
+    margin-top: 4px;
+}
 
+/* Welcome page */
 .page-content > .container > .jumbotron.flex {
     /* offset for the brand icon */
     margin-left: -15px;
@@ -517,14 +560,4 @@ div.toprule {
 	/* flush to right */
 	margin-right: -15px;
     }
-}
-
-.default-sidebar {
-    background-color: #fff;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-top: 1px;
-    margin-right: -15px;
-    padding-right: 15px;
-    margin-top: 4px;
 }
