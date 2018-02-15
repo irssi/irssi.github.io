@@ -82,3 +82,5 @@ A: Modify the window-line in statusbar section in config file to `window = "{sb 
 ### Q: How to pronounce Irssi?
 
 A: Check [here](/assets/irssi.wav)
+
+<script type="text/javascript" src="/assets/js/faq.js"></script>
