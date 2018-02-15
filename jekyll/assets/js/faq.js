@@ -1,6 +1,6 @@
 (function(){
   // the container which contains the faq
-  var el = document.querySelector('.container.page')
+  var el = document.querySelector('.container.page > div')
 
   // hide or show content
   var hs = function(e,val){
