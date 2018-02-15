@@ -206,7 +206,6 @@ See also: [Commit Log][18]{:rel='external'}
 
 </div>
 
-[13]: //github.com/irssi-import/irssi/releases
 [14]: {{ site.baseurl }}/NEWS/#v{{page.version|slugify}}
 [15]: //github.com/irssi/irssi/blob/master/INSTALL
 [16]: //github.com/irssi/irssi

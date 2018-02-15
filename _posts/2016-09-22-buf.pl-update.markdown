@@ -9,4 +9,4 @@ vulnerability. All users should upgrade to this version.
 
 The updated buf.pl script can be found on [scripts.irssi.org](//scripts.irssi.org).
 
-Read the [security advisory](/security/buf_pl_sa_2016.txt).
+Read the [security advisory](/security/html/buf_pl_sa_2016).

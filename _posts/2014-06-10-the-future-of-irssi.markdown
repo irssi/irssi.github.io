@@ -101,7 +101,7 @@ happen on July 31st, 2014.*** Until then, neither of the two systems will be
 maintained and no new content will be published there.
 
 Until the migration to Github is completed, you can find our official script
-repository at [ghscripts.irssi.org](http://ghscripts.irssi.org/).  tomaw will
+repository at [ghscripts.irssi.org](http://scripts.irssi.org/).  tomaw will
 continue being in charge of scripts and will happily review your pull requests
 on Github.
 
