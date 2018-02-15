@@ -7,12 +7,52 @@
 
 ---
 
+## 1.1.1
+{:#v1-1-1 }
+
+The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.1.1" %}
+
+Contains all changes from 1.0.7
+
+### Fixes
+
+- Restore compatibility with OpenSSL &lt; 1.0.2 ([#820](https://github.com/irssi/irssi/issues/820), [#831](https://github.com/irssi/irssi/issues/831))
+- Fix test compilation on some platforms ([#815](https://github.com/irssi/irssi/issues/815), [#816](https://github.com/irssi/irssi/issues/816))
+- Fix portability and backwards compatibility of test runner ([#818](https://github.com/irssi/irssi/issues/818), [#845](https://github.com/irssi/irssi/issues/845))
+
+---
+
+## 1.0.7
+{:#v1-0-7 }
+
+The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.0.7" %}
+
+### Fixes
+
+- Prevent use after free error during the execution of some commands. Found by Joseph Bisch ([GL#17](https://gitlab.com/irssi/irssi/issues/17), [GL!24](https://gitlab.com/irssi/irssi/merge_requests/24)).
+- Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465), [#809](https://github.com/irssi/irssi/issues/809), [#812](https://github.com/irssi/irssi/issues/812), [#819](https://github.com/irssi/irssi/issues/819), [#824](https://github.com/irssi/irssi/issues/824)).
+- Fix use after free when SASL messages are received in unexpected order ([GL#26](https://gitlab.com/irssi/irssi/issues/26), [GL!33](https://gitlab.com/irssi/irssi/merge_requests/33)).
+- Fix null pointer dereference in the tab completion when an empty nick is joined ([GL#24](https://gitlab.com/irssi/irssi/issues/24), [GL!31](https://gitlab.com/irssi/irssi/merge_requests/31)).
+- Fix use after free when entering oper password ([GL#22](https://gitlab.com/irssi/irssi/issues/22), [GL!32](https://gitlab.com/irssi/irssi/merge_requests/32)).
+- Fix null pointer dereference when too many windows are opened ([GL#27](https://gitlab.com/irssi/irssi/issues/27), [#837](https://github.com/irssi/irssi/issues/837)).
+- Fix out of bounds access in theme strings when the last escape is incomplete. Credit to Oss-Fuzz ([#842](https://github.com/irssi/irssi/issues/842)).
+- Fix out of bounds write when using negative counts on window resize ([GL#25](https://gitlab.com/irssi/irssi/issues/25), [GL#29](https://gitlab.com/irssi/irssi/issues/29), [#836](https://github.com/irssi/irssi/issues/836)).
+- Minor help correction. By William Jackson ([#834](https://github.com/irssi/irssi/issues/834)).
+
+---
+
 ## 1.1.0
 {:#v1-1-0 }
 
 The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15</abbr> 
 
 {% include relnews_artef_block.markdown ver="1.1.0" %}
+
+**Warning**. Irssi is broken and will crash with OpenSSL &lt; 1.0.2 due to [openssl/openssl@`5b4b9ce97`](https://github.com/openssl/openssl/commit/5b4b9ce976fce09a7a92e2f25b91a1635cb840fe)
 
 ### Changes
 
@@ -73,6 +113,8 @@ The Irssi team released this <abbr class="timeago" title="2018-01-07">2018-01-07
 
 {% include relnews_artef_block.markdown ver="1.0.6" %}
 
+**Note**: Code and aliases using `$($`-like constructs are no longer supported due to issue [GL#18](https://gitlab.com/irssi/irssi/issues/18). Sorry about the inconvenience.
+
 ### Fixes
 
 - Fix invalid memory access when reading hilight configuration ([#787](https://github.com/irssi/irssi/issues/787), [#788](https://github.com/irssi/irssi/issues/788)).
@@ -130,6 +172,8 @@ The Irssi team released this <abbr class="timeago" title="2017-06-06">2017-06-06
 
 {% include relnews_artef_block.markdown ver="1.0.3" %}
 
+Regression info in 1.0.3: [#716](https://github.com/irssi/irssi/issues/716) Warnings on start up: invalid time '-1'
+
 ### Fixes
 
 - Fix out of bounds read when scanning expandos ([GL!11](https://gitlab.com/irssi/irssi/merge_requests/11)).
@@ -154,6 +198,8 @@ The Irssi team released this <abbr class="timeago" title="2017-06-06">2017-06-06
 The Irssi team released this <abbr class="timeago" title="2017-03-10">2017-03-10</abbr> 
 
 {% include relnews_artef_block.markdown ver="1.0.2" %}
+
+**Warning**. Irssi is broken on GLib 2.46 ([bgo#755496](https://bugzilla.gnome.org/show_bug.cgi?id=755496))
 
 ### Fixes
 
@@ -314,6 +360,8 @@ The Irssi team released this <abbr class="timeago" title="2016-03-23">2016-03-23
 
 {% include relnews_artef_block.markdown ver="0.8.19" %}
 
+If your cursor keys stopped working, try this first: `/bind meta-O key meta2`
+
 ### Fixes
 
 - Fixed regression when joining and parting channels on IRCnet ([#435](https://github.com/irssi/irssi/issues/435))
@@ -338,9 +386,17 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 ### Changes
 
 - Modules will now require to define a
-      void MODULENAME ## _abicheck(int *version) method to ensure that they are compiled against the correct Irssi version.
+  
+  
+      void MODULENAME ## _abicheck(int *version)
+  
+  method to ensure that they are compiled against the correct Irssi version.
 - The signature of "message private" has been changed to
-      5: server, message, nick, address, target in order to support "self messages". Module authors should implement this change if they are using this signal.
+  
+  
+      5: server, message, nick, address, target
+  
+  in order to support "self messages". Module authors should implement this change if they are using this signal.
 - Removing networks will now remove all attached servers and channels ([#45](https://github.com/irssi/irssi/issues/45)).
 - The proxy module now has an /irssiproxy command.
 - sb_search has been moved to scripts.irssi.org
@@ -351,10 +407,12 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 
 - CAP SASL PLAIN login is now supported natively.
 - Paste bracket markers can be requested from terminal with
+  
+  
       /set paste_use_bracketed_mode on
 - "Self messages" generated by some bouncers can now be received in the proper window.
-- Try to split long lines on spaces to avoid words being splitted. Adds a new option: 'split_line_on_space' which defaults to on.
-- Add setting hilight_nick_matches_everywhere ([#56](https://github.com/irssi/irssi/issues/56)).
+- Try to split long lines on spaces to avoid words being splitted. Adds a new option: `split_line_on_space` which defaults to on.
+- Add setting `hilight_nick_matches_everywhere` ([#56](https://github.com/irssi/irssi/issues/56)).
 - The config parser is more robust and prints out better diagnostics on incorrect config files.
 - Ctrl+^ ([FS#721](http://bugs.irssi.org/?do=details&task_id=721)) and Ctrl+J can now be bound.
 - Command history can be cleared with /window history -clear
