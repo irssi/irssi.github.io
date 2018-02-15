@@ -419,6 +419,7 @@ v1.0.7:
       sig:
         name: signature.asc
         url: https://github.com/irssi/irssi/releases/download/1.0.7/irssi-1.0.7.tar.gz.asc
+  last_modified: 'Thu, 15 Feb 2018 18:52:44 GMT'
 v1.1.0:
   artef_extra:
     -
@@ -456,3 +457,4 @@ v1.1.1:
       sig:
         name: signature.asc
         url: https://github.com/irssi/irssi/releases/download/1.1.1/irssi-1.1.1.tar.gz.asc
+  last_modified: 'Thu, 15 Feb 2018 18:52:54 GMT'
