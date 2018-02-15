@@ -10,7 +10,7 @@ Hello fellow Irssi users and people interested in learning about fuzzing,
 There have been recent efforts within the Irssi and open source security
 communities to make Irssi more secure through the use of fuzzing. For example
 the security bugs revealed in the [first Irssi security advisory of
-2017](https://irssi.org/security/irssi_sa_2017_01.txt) were found by fuzzing. In
+2017](https://irssi.org/security/html/irssi_sa_2017_01) were found by fuzzing. In
 this blog post, we will cover an introduction to fuzzing, how to fuzz Irssi, and
 a look at a couple of actual bugs found in past versions of Irssi.
 

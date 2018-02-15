@@ -8,10 +8,10 @@ email: "ahf@irssi.org"
 Irssi 0.8.17 has been released. This release contains many new goodies
 including documentation cleanup, 256 colour support, truecolour support and
 tons of other smaller enhancements. For a complete list of changes and
-bugfixes, since 0.8.16, please have a look at the [ChangeLog](//github.com/irssi-import/irssi/releases).
+bugfixes, since 0.8.16, please have a look at the [ChangeLog](/NEWS/#v0-8-17).
 
 
-The release can be downloaded from [our download page](/download).
+The release can be downloaded from [our download page](/NEWS/#v0-8-17).
 
 Please report bugs at our [Github issue tracker](https://github.com/irssi/irssi/issues).
 
