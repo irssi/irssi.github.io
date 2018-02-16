@@ -72,6 +72,6 @@ In the meantime, the following interesting changes happened in the development v
 - CAP 3.2 capability negotiation is now supported ([#775](https://github.com/irssi/irssi/pull/775))
 
 Feel welcome to join our [IRC channel](/support/irc), or discuss this
-news on reddit or Twitter.
+news on [reddit](https://www.reddit.com/r/linux/comments/7xvxxe/irssi_111_and_107_released_multiple_cve_fixes/) or Twitter.
 
 The Irssi Team.
