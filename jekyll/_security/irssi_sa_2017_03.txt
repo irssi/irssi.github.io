@@ -11,20 +11,22 @@ bugs:
     affected_versions:
       from: 1.0.0
       original_to: 1.0.1
-      to: 1.0.6
+      to: [ 1.0.6, 1.1.0 ]
     affected_note_long: >
 
       We believe Irssi 0.8.21 and prior are not affected since a different
       code path causes the netjoins to be flushed prior to reaching the use
       after free condition.
     original_fixed_version: 1.0.2
-    fixed_version: 1.0.7
+    fixed_version: [ 1.0.7, 1.1.1 ]
     credit: APic
-    description: 'Use after free while producing list of netjoins'
+    description: 'Use after free while producing list of netjoins. See CVE-2018-7054.'
     description_long: >
       Use after free while producing list of netjoins (CWE-416)
 
       This issue was found and reported to us by APic.
+
+      See CVE-2018-7054 for an update regarding this issue, this fix was incomplete.
 impact: >
   This issue usually leads to segmentation faults. Targeted code
   execution should be difficult.
