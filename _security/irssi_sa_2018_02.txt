@@ -11,7 +11,7 @@ bugs:
       to: [ 1.0.6, 1.1.0 ]
     fixed_version: [ 1.0.7, 1.1.1 ]
     credit: 'Joseph Bisch'
-    description: Use after free when server is disconnected during netsplits.
+    description: Use after free when server is disconnected during netsplits. Incomplete fix of CVE-2017-7191.
   -
     cve: CVE-2018-7053
     cwe: CWE-416, CWE-691
