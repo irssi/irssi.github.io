@@ -261,7 +261,7 @@ blockquote {
     height: calc(100vh - 50px);
 }
 
-.page > .sticken > .default-sidebar {
+.container > .sticken > .default-sidebar {
     height: calc(100vh - 74px);
     overflow-y: auto;
 }
@@ -279,8 +279,8 @@ blockquote {
     padding-top: 20px;
 }
 
-.container.news > div > hr,
-.container.news > hr {
+.container.relnews > div > hr,
+.container.relnews > hr {
     border-top: 2px solid #eceff4; /* .page-header (thicker) */
     max-width: 730px;
     margin-left: 0;
@@ -399,73 +399,45 @@ blockquote {
 }
 }
 
-.container.post > div > p,
-.container.post > div > ul,
-.container.post > div > blockquote,
-.container.page > div > p,
-.container.page > div > ul,
-.container.page > div > ol,
-.container.page > div > blockquote,
-.container.page > div > dl,
-.container.security_html > div > p,
-.container.security_html > div > ul,
-.container.security_html > div > ol,
-.container.security_html > div > blockquote,
-.container.security_html > div > dl,
-.container.post > p,
-.container.post > ul,
-.container.post > blockquote,
-.container.page > p,
-.container.page > ul,
-.container.page > ol,
-.container.page > blockquote,
-.container.page > dl,
-.container.security_html > p,
-.container.security_html > ul,
-.container.security_html > ol,
-.container.security_html > blockquote,
-.container.security_html > dl {
+.container.wrc > blockquote,
+.container.wrc > div > blockquote,
+.container.wrc > div > dl,
+.container.wrc > div > ol,
+.container.wrc > div > p,
+.container.wrc > div > ul,
+.container.wrc > dl,
+.container.wrc > ol,
+.container.wrc > p,
+.container.wrc > ul {
     max-width: 730px;
 }
 
-.container.page > div > dl > dd,
-.container.security_html > div > dl > dd,
-.container.page > dl > dd,
-.container.security_html > dl > dd {
+.container.wrc > div > dl > dd,
+.container.wrc > dl > dd {
     margin-left: 1em;
 }
 
-.container.page > div > h3,
-.container.security_html > div > h3,
-.container.page > h3,
-.container.security_html > h3 {
+.container.wrc > div > h3,
+.container.wrc > h3 {
     max-width: 750px;
 }
 
-.container.post > div > .wide,
-.container.post > .wide {
+.container.wrc > div > .wide,
+.container.wrc > .wide {
     max-width: 100%;
 }
 
 @media (min-width:768px) and (max-width: 991px) {
-    .container.post > div > div > div.highlight,
-    .container.page > div > div > div.highlight,
-    .container.security_html > div > div > div.highlight,
-    .container.post > div > div.highlight,
-    .container.page > div > div.highlight,
-    .container.security_html > div > div.highlight {
+    .container.wrc > div > div > div.highlight,
+    .container.wrc > div > div.highlight {
 	display: inline-block;
 	min-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-    .container.post > div > div > div.highlight,
-    .container.page > div > div > div.highlight,
-    .container.security_html > div > div > div.highlight,
-    .container.post > div > div.highlight,
-    .container.page > div > div.highlight,
-    .container.security_html > div > div.highlight {
+    .container.wrc > div > div > div.highlight,
+    .container.wrc > div > div.highlight {
 	display: inline-block;
 	min-width: 730px;
     }
