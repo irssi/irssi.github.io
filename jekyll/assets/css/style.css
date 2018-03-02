@@ -1,8 +1,9 @@
 body {
-    padding-top: 50px;
-    overflow-y: scroll;
 }
-/* header bar: 50px */
+
+.navbar-static-top {
+    margin-bottom: 0;
+}
 
 div.jumbotron {
     padding-top: 16px;
@@ -59,25 +60,8 @@ p.center {
     }
 }
 
-/* fix for anchored links to scroll the top bar */
-*[id]:before {
-  display: block; 
-  content: " "; 
-  margin-top: -65px; 
-  height: 65px;
-  visibility: hidden;
-  position: relative;
-  z-index: -1;
-  pointer-events: none;
-}
-*[id]:not(button):not(input):not([href]):not(#navbar) {
-  position: inherit;
-  /* z-index: -1; */
-  /* pointer-events: none; */
-}
-/* more hacks */
-li + a[id]:before { display: inline-block; }
 /* there is this weird issue with above code making links not clickable below anchors... */
+*[id]:not(button):not(input):not([href]):not(#navbar),
 .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   position: inherit;
 }
@@ -145,16 +129,6 @@ a.link-icon:after {
   content: "\e164"; /* glyphicon-new-window */
 }
 
-.table td.has-next-row,
-.table th.has-next-row {
-    padding-bottom: 0;
-}
-
-.table td.has-previous-row {
-    border-top: 0;
-    padding-top: 0;
-}
-
 .navbar-nav a[rel="external"]:after {
     font-size: 100%;
 }
@@ -213,6 +187,16 @@ select .header {
     text-align: center;
 }
 
+.table td.has-next-row,
+.table th.has-next-row {
+    padding-bottom: 0;
+}
+
+.table td.has-previous-row {
+    border-top: 0;
+    padding-top: 0;
+}
+
 .welcome-img {
     background-image: url(../irssi2017.jpg);
     background-repeat: no-repeat;
@@ -223,6 +207,17 @@ select .header {
     border-radius: 10px;
     background-blend-mode: darken;
     transition-duration: 1s;
+}
+
+.page-content > .container > .jumbotron.flex {
+    /* offset for the brand icon */
+    margin-left: -15px;
+}
+@media (max-width: 767px) {
+    .page-content > .container > .jumbotron.flex {
+	/* flush to right */
+	margin-right: -15px;
+    }
 }
 
 @media (min-width:992px) {
@@ -383,20 +378,20 @@ blockquote {
 
 /* collapsing the about-page columns */
 @media (min-width:992px) {
-.two-column {
-    -moz-column-count: 2;
-    -moz-column-gap: 20px;
-    -moz-column-fill: balance;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
-    -webkit-column-fill: balance;
-    column-count: 2;
-    column-gap: 20px;
-    column-fill: balance;
-}
-.two-column > div {
-    display: inline-block;
-}
+    .two-column {
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-moz-column-fill: balance;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	-webkit-column-fill: balance;
+	column-count: 2;
+	column-gap: 20px;
+	column-fill: balance;
+    }
+    .two-column > div {
+	display: inline-block;
+    }
 }
 
 .container.wrc > blockquote,
@@ -452,14 +447,17 @@ blockquote {
   margin-bottom: 1px;
   border-radius: 4px;
 }
+
 .download-group {
   display: inline-block;
   vertical-align: baseline;
   border-color: #d8dee9; /* .btn-default */
 }
+
 .download-links a {
     display: inline-block;
 }
+
 .signature-icon {
     background-image: url(../sign.svg);
     width: 1.4em;
@@ -472,19 +470,27 @@ blockquote {
     visibility: hidden;
     height: 0;
 }
+
 .container.security_html > div > ol > li::before,
 .container.security_html > ol > li::before {
     content: "(  )"; position: absolute; margin-left:-1.5em;
     white-space: pre;
 }
+
 .container.security_html > div > ol,
 .container.security_html > ol {
     list-style-type: lower-alpha;
     list-style-position: outside;
 }
+
 .container.security_html .references > ol > li::before {
     content: "[  ]"; position: absolute; margin-left:-1.4em;
     white-space: pre;
+}
+
+h3.collapsed {
+    font-size: 16px;
+    margin-bottom: 0;
 }
 
 /* * * * */
@@ -502,14 +508,17 @@ div.container > h1:nth-child(1) {
     background-color: #2e3440; /* @gray-base */
     padding-bottom: 10px; margin-bottom: 5px;
 }
+
 div.container > div > h1:nth-child(1) {
     margin-left: -30px; margin-right: -30px;
     padding-left: 30px; padding-right: 30px;
 }
+
 div.container > h1:nth-child(1) {
     margin-left: -15px; margin-right: -15px;
     padding-left: 15px; padding-right: 15px;
 }
+
 div.toprule {
     color: #eceff4; /* @gray-lighter */
     background-color: #2e3440; /* @gray-base */
@@ -518,6 +527,7 @@ div.toprule {
     position: absolute;
     z-index: -1;
 }
+
 .default-sidebar {
     background-color: #fff;
     border-radius: 5px;
@@ -526,16 +536,4 @@ div.toprule {
     margin-right: -15px;
     padding-right: 15px;
     margin-top: 4px;
-}
-
-/* Welcome page */
-.page-content > .container > .jumbotron.flex {
-    /* offset for the brand icon */
-    margin-left: -15px;
-}
-@media (max-width: 767px) {
-    .page-content > .container > .jumbotron.flex {
-	/* flush to right */
-	margin-right: -15px;
-    }
 }

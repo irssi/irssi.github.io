@@ -18,6 +18,7 @@
     } else {
       symb.textContent = '[+]'
     }
+    e.classList.toggle('collapsed',!val);
 
     var ns = e.nextSibling
     while (ns && !ns.onclick) {
@@ -83,21 +84,27 @@
   togelall.style.cursor = 'pointer'
   h1.parentNode.insertBefore(togelall, h1.nextSibling)
 
+  var retf = function(e){ return false; }
+
   // add bindings
   el.querySelectorAll(':scope > h3').forEach(
     function(e){
       e.onclick = hsclick
       var newel = document.createElement('a')
       newel.onkeypress = hskbd
+      newel.onclick = retf
       newel.tabIndex = 0
       newel.innerHTML = '[+]'
       newel.className = 'hideshow'
       newel.style.cursor = 'pointer'
+      newel.href='#'+e.id
       e.insertBefore(document.createTextNode(' '), e.childNodes[0])
       e.insertBefore(newel, e.childNodes[0])
     }
   )
 
   // collapse all by default
-  hsclicknone()
+  el.querySelectorAll(':scope > h3').forEach(
+    function(e){hs(e,('#' + e.id == window.location.hash))}
+  )
 })()
