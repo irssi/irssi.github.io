@@ -189,6 +189,8 @@ thanks to Valentin Batz (senneth) for the alias.
 you can use `/redraw`. on most terminals pressing `ctrl+l` (in screen `ctrl+a l`) should do the same.  
 of course you can bind it in irssi aswell: `/bind ^L redraw`.
 
+<script type="text/javascript" src="/assets/js/faq.js"></script>
+
 [1]: http://sourceforge.net/p/zsh/code/ci/master/tree/Completion/Unix/Command/_irssi?format=raw
 [2]: http://scripts.irssi.org/scripts/hide.pl
 [3]: //github.com/irssi/scripts.irssi.org/blob/gh-pages/scripts/hide.pl
