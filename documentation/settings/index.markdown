@@ -271,6 +271,8 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > A space separated list of targets to exclude from autologging
 >
+> See `activity_hide_targets` for additional ways to specify targets in irssi 1.0.0+.
+>
 > Added in irssi 0.8.13
 
 {:#autolog_level}
@@ -361,20 +363,25 @@ See the [appendix](#a_credits) for credits and license information of this docum
 {:#activity_hide_targets}
 ` activity_hide_targets = `
 
-> Sometimes you don't care at all about a channel's activity. This can be set to a list of channels that will never appear to be active.
+> Sometimes you don't care at all about a window's activity. This can be set to a space separated list of windows that will never appear to be active.
 >
-> | Syntax | | |
+> | Syntax | Version added | Description |
 > | --- | --- | --- |
-> | ::all		| |	Ignore activity in all windows |
-> | ::channels		| |	Ignore activity in all channels |
-> | ::queries		| |	Ignore activity in all queries |
-> | ::dccqueries	| |	Ignore activity in all dcc chats |
-> | #chan\|[=]nick	| |	Ignore activity in named target(channel, query, dcc chat) |
-> | tag/::all		| |	Ignore all activity on network 'tag' |
-> | tag/::channels	| |	Ignore activity in all channels on network 'tag' |
-> | tag/::queries	| |	Ignore activity in all queries on network 'tag' |
-> | tag/::dccqueries	| |	Ignore activity in all dcc chats on network 'tag' |
-> | tag/#chan\|[=]nick	| |	Ignore activity in named channel/query/dcc chat on network 'tag' |
+> | exactname		| 0.8.0 |	Ignore activity in window 'exactname' |
+> | tag/exactname	| 0.8.6 |	Ignore activity on network 'tag' and window 'exactname' |
+> | *			| 1.0.0 |	Ignore activity in all windows |
+> | tag/*		| 1.0.0 |	Ignore all activity on network 'tag' |
+> | ::all		| 1.1.0 |	Ignore activity in all windows |
+> | ::channels		| 1.1.0 |	Ignore activity in all channels |
+> | ::queries		| 1.1.0 |	Ignore activity in all queries |
+> | ::dccqueries	| 1.1.0 |	Ignore activity in all dcc chats |
+> | #chan\|[=]nick	| 1.1.0 |	Ignore activity in named target(channel, query, dcc chat) |
+> | tag/::all		| 1.1.0 |	Ignore all activity on network 'tag' |
+> | tag/::channels	| 1.1.0 |	Ignore activity in all channels on network 'tag' |
+> | tag/::queries	| 1.1.0 |	Ignore activity in all queries on network 'tag' |
+> | tag/::dccqueries	| 1.1.0 |	Ignore activity in all dcc chats on network 'tag' |
+> | tag/#chan\|[=]nick	| 1.1.0 |	Ignore activity in named channel/query/dcc chat on network 'tag' |
+> {: .table }
 
 {:#activity_hilight_level}
 ` activity_hilight_level = MSGS DCCMSGS `
