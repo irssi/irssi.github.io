@@ -5,7 +5,7 @@ permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
 licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
-Irssi settings notes. Updated for 1.0.0 (with git changes up to 2017-03-21 shown as "1.1.0").
+Irssi settings notes. Updated for 1.1.0
 
 This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
@@ -802,6 +802,32 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` ban_type = normal `
 
 > The default ban type to use: normal, user, host, domain, custom? See /help ban for a description of ban types.
+
+{:#capsicum}
+` capsicum = OFF `
+
+> FreeBSD/Capsicum builds only: Capsicum is a lightweight OS capability and sandbox framework provided by FreeBSD.
+>
+> This setting is only read when starting irssi. See `docs/capsicum.txt` for usage details and limitations.
+>
+> Added in irssi 1.1.0
+
+{:#capsicum_irclogs_path}
+` capsicum_irclogs_path = ~/irclogs `
+
+> FreeBSD/Capsicum builds only: Path that irssi is allowed to write irc logs to.
+>
+> Added in irssi 1.1.0
+
+{:#capsicum_port_min}
+` capsicum_port_max = 6667 `
+
+{:#capsicum_port_max}
+` capsicum_port_max = 6697 `
+
+> FreeBSD/Capsicum builds only: Range of ports that irssi is allowed to connect to.
+>
+> Added in irssi 1.1.0
 
 {:#channel_max_who_sync}
 ` channel_max_who_sync = 1000 `
