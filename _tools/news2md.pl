@@ -260,7 +260,7 @@ sub finish_S {
 	    s/`([^`']*)'/`$1`/g for @lines;
 
 	    # simple bold -> markdown bold
-	    s/(?<!\\)\*(.*?)(?<!\\)\*/**$1**/g for @lines;
+	    s/(?<!\\)\*(\S.*?)(?<!\\)\*/**$1**/g for @lines;
 
 	    # stop mentions
 	    if ($ENV{GITHUB}) {

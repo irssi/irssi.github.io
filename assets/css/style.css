@@ -400,6 +400,7 @@ blockquote {
 .container.wrc > div > ol,
 .container.wrc > div > p,
 .container.wrc > div > ul,
+.container.wrc > div > .table,
 .container.wrc > dl,
 .container.wrc > ol,
 .container.wrc > p,
@@ -418,6 +419,7 @@ blockquote {
 }
 
 .container.wrc > div > .wide,
+.container.wrc > div > .table.wide,
 .container.wrc > .wide {
     max-width: 100%;
 }
@@ -536,4 +538,70 @@ div.toprule {
     margin-right: -15px;
     padding-right: 15px;
     margin-top: 4px;
+}
+
+.syn { color: #2e3440; /* body color */ }
+.synB { font-weight: bold; }
+.synB05 { font-weight: bold; color: #bf616a; }
+.syn13 { color: #b48ead; }
+.syn14 { color: #4c566a; }
+.syn10 { color: #3e6766; }
+.syn09 { color: #719453; }
+
+.helpindex {
+    width: 100%;
+}
+.helpindex > ul {
+    column-gap: 3;
+}
+.helpindex > ul > li {
+    display: inline-block;
+    padding: 5px 15px;
+    min-width: 10em;
+    width: auto;
+}
+
+div.irssisyntax {
+    --cmdlen: 0ch;
+}
+div.irssisyntax pre {
+    word-break: inherit;
+    word-wrap: inherit;
+    padding-left: 9.5px;
+    padding-left: calc(9.5px + 1ch + var(--cmdlen));
+    text-indent: calc(0px - 1ch - var(--cmdlen));
+}
+
+table.kv > tbody > tr > td:first-child {
+    white-space: nowrap;
+}
+@media (min-width: 384px) {
+    .helpindex > ul {
+	column-count: 2;
+    }
+}
+@media (min-width: 480px) {
+    .helpindex > ul {
+	column-count: 3;
+    }
+}
+@media (min-width: 640px) {
+    .helpindex > ul {
+	column-count: 4;
+    }
+}
+@media (min-width: 768px) {
+    .helpindex > ul {
+	column-count: 5;
+    }
+}
+@media (min-width: 992px) {
+    .helpindex > ul {
+	column-count: 6;
+    }
+}
+@media (min-width: 1200px) {
+    .helpindex > ul {
+	column-count: 7;
+    }
 }
