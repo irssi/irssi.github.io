@@ -567,8 +567,12 @@ div.irssisyntax pre {
     word-break: inherit;
     word-wrap: inherit;
     padding-left: 9.5px;
-    padding-left: calc(9.5px + 1ch + var(--cmdlen));
-    text-indent: calc(0px - 1ch - var(--cmdlen));
+}
+@media (min-width: 768px) {
+    div.irssisyntax pre {
+	padding-left: calc(9.5px + 1ch + var(--cmdlen));
+	text-indent: calc(0px - 1ch - var(--cmdlen));
+    }
 }
 
 table.kv > tbody > tr > td:first-child {
