@@ -257,10 +257,10 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 - Fix potential crash if scripts insert undef values into the completion list ([#413](https://github.com/irssi/irssi/issues/413)).
 - Paste warning is now also shown on pasting overlong lines. By Manish Goregaokar ([#426](https://github.com/irssi/irssi/issues/426)).
 - autolog_ignore_targets and activity_hide_targets learn a new syntax
-      tag/** and ** to ignore whole networks or everything. By Jari Matilainen (vague666, [#437](https://github.com/irssi/irssi/issues/437))
+      tag/* and * to ignore whole networks or everything. By Jari Matilainen (vague666, [#437](https://github.com/irssi/irssi/issues/437))
 - /hilight got a -matchcase flag to hilight case sensitively. By Thibault B (isundil, [#421](https://github.com/irssi/irssi/issues/421), [#476](https://github.com/irssi/irssi/issues/476)).
 - Always build irssi with TLS support.
-- Rename SSL to TLS in the code and add -tls_** versions of the -ssl_** options to /CONNECT and /SERVER, but make sure the -ssl_* options continue to work.
+- Rename SSL to TLS in the code and add -tls_* versions of the -ssl_* options to /CONNECT and /SERVER, but make sure the -ssl_* options continue to work.
 - Use TLS for Freenode, EFnet, EsperNet, OFTC, Rizon, and IRC6 in the default configuration.
 - Display TLS connection information upon connect. You can disable this by setting tls_verbose_connect to FALSE.
 - Add -tls_pinned_cert and -tls_pinned_pubkey for x509 and public key pinning.
@@ -1117,7 +1117,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-04">2001-03-04<
 
 - /LASTLOG: added -case option for case-sensitive matching. -force option is now required to print lastlogs longer than 1000 lines.
 - /BANTYPE -> /SET ban_type. /BAN: -type option added to override default ban type.
-- /NAMES: -ops -halfops -voices -normal options added. /NAMES without parameters now prints nicklist in active channel, /NAMES **** shows all nicks in all channels.
+- /NAMES: -ops -halfops -voices -normal options added. /NAMES without parameters now prints nicklist in active channel, /NAMES ** shows all nicks in all channels.
 - delete_next_word key implemented, patch by Tinuk
 - /SET beep_when_window_active - works with /SET beep_msg_level, should we beep when the msg is printed to active window. If msg is printed to some other window it always beeps.
 - /JOIN #channel and /QUERY nick won't anymore automatically move channel/query to active window but send a notice to user how to move it. This was confusing people who did it accidentally.

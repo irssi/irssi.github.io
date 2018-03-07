@@ -9,7 +9,7 @@ categories: [ _nav ]
 
 - [Frequently Asked Questions](faq)
 - [Startup How-To](startup)
-- Check the built-in `/HELP`, it has all the details on command syntax
+- [Check the built-in `/HELP`](help), it has all the details on command syntax
 - [Settings](settings)
 - [Design](//github.com/irssi/irssi/blob/master/docs/design.txt){:rel='external'}
 - [Manual](//github.com/irssi/irssi/blob/master/docs/manual.txt){:rel='external'}, a bit dated and unfinished
