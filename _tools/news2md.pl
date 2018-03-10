@@ -238,8 +238,12 @@ sub finish_S {
     for my $section (@sections) {
 	my @e = @{ (delete $S{$section} || [] )};
 	next unless @e;
-	print "### $section_title{$section}\n\n"
-	    if defined $section_title{$section};
+	if (defined $section_title{$section}) {
+	    print "### $section_title{$section}\n";
+	    print "{:#v@{[ $S{ver} =~ s/[.]/-/gr ]}-\L@{[ $section_title{$section} =~ s/\W+/-/gr ]} }\n"
+		unless $ENV{GITHUB};
+	    print "\n";
+	}
 	for my $e (@e) {
 	    my @lines = split "\n", $e;
 	    s/</&lt;/g for @lines;

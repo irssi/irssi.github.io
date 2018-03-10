@@ -17,6 +17,7 @@ The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15
 Contains all changes from 1.0.7
 
 ### Fixes
+{:#v1-1-1-fixes }
 
 - Restore compatibility with OpenSSL &lt; 1.0.2 ([#820](https://github.com/irssi/irssi/issues/820), [#831](https://github.com/irssi/irssi/issues/831))
 - Fix test compilation on some platforms ([#815](https://github.com/irssi/irssi/issues/815), [#816](https://github.com/irssi/irssi/issues/816))
@@ -32,6 +33,7 @@ The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15
 {% include relnews_artef_block.markdown ver="1.0.7" %}
 
 ### Fixes
+{:#v1-0-7-fixes }
 
 - Prevent use after free error during the execution of some commands. Found by Joseph Bisch ([GL#17](https://gitlab.com/irssi/irssi/issues/17), [GL!24](https://gitlab.com/irssi/irssi/merge_requests/24)).
 - Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465), [#809](https://github.com/irssi/irssi/issues/809), [#812](https://github.com/irssi/irssi/issues/812), [#819](https://github.com/irssi/irssi/issues/819), [#824](https://github.com/irssi/irssi/issues/824)).
@@ -55,6 +57,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15
 **Warning**. Irssi is broken and will crash with OpenSSL &lt; 1.0.2 due to [openssl/openssl@`5b4b9ce97`](https://github.com/openssl/openssl/commit/5b4b9ce976fce09a7a92e2f25b91a1635cb840fe)
 
 ### Changes
+{:#v1-1-0-changes }
 
 - Colour is now re-set when reaching a comma, matching mIRC behaviour ([#742](https://github.com/irssi/irssi/issues/742), [#740](https://github.com/irssi/irssi/issues/740), [#790](https://github.com/irssi/irssi/issues/790))
 - Irssi now shows the initial nick and name on first start ([#785](https://github.com/irssi/irssi/issues/785), [#786](https://github.com/irssi/irssi/issues/786))
@@ -65,6 +68,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15
 - The net_ip_compare API function is now deprecated, and the previously deprecated net_connect has been removed ([#770](https://github.com/irssi/irssi/issues/770)). By Will Storey ([#770](https://github.com/irssi/irssi/issues/770))
 
 ### Additions
+{:#v1-1-0-additions }
 
 - Add an option to ignore all channels or ignore all queries using /set activity_hide_targets. By Jari Matilainen ([#612](https://github.com/irssi/irssi/issues/612), [#779](https://github.com/irssi/irssi/issues/779))
 - Add a startup warning if the TERM var is wrong inside tmux/screen ([#726](https://github.com/irssi/irssi/issues/726))
@@ -85,6 +89,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15
 - Add fuzzing code ([#610](https://github.com/irssi/irssi/issues/610), [#620](https://github.com/irssi/irssi/issues/620), [#701](https://github.com/irssi/irssi/issues/701), [#713](https://github.com/irssi/irssi/issues/713))
 
 ### Fixes
+{:#v1-1-0-fixes }
 
 - Netsplits show properly again ([#812](https://github.com/irssi/irssi/issues/812))
 - Do not error on blank lines when using /exec -o. By Fabian Kurz ([FS#902](http://bugs.irssi.org/?do=details&task_id=902), [#805](https://github.com/irssi/irssi/issues/805))
@@ -116,6 +121,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-07">2018-01-07
 **Note**: Code and aliases using `$($`-like constructs are no longer supported due to issue [GL#18](https://gitlab.com/irssi/irssi/issues/18). Sorry about the inconvenience.
 
 ### Fixes
+{:#v1-0-6-fixes }
 
 - Fix invalid memory access when reading hilight configuration ([#787](https://github.com/irssi/irssi/issues/787), [#788](https://github.com/irssi/irssi/issues/788)).
 - Fix null pointer dereference when the channel topic is set without specifying a sender ([GL#20](https://gitlab.com/irssi/irssi/issues/20), [GL!25](https://gitlab.com/irssi/irssi/merge_requests/25)).
@@ -133,6 +139,7 @@ The Irssi team released this <abbr class="timeago" title="2017-10-23">2017-10-23
 {% include relnews_artef_block.markdown ver="1.0.5" %}
 
 ### Fixes
+{:#v1-0-5-fixes }
 
 - Fix missing -sasl_method '' in /NETWORK ([#718](https://github.com/irssi/irssi/issues/718), [#719](https://github.com/irssi/irssi/issues/719)).
 - Fix incorrect restoration of term state when hitting SUSP inside screen ([#737](https://github.com/irssi/irssi/issues/737), [#733](https://github.com/irssi/irssi/issues/733)).
@@ -154,6 +161,7 @@ The Irssi team released this <abbr class="timeago" title="2017-07-07">2017-07-07
 {% include relnews_artef_block.markdown ver="1.0.4" %}
 
 ### Fixes
+{:#v1-0-4-fixes }
 
 - Fix null pointer dereference when parsing invalid timestamp ([GL#10](https://gitlab.com/irssi/irssi/issues/10), [GL!15](https://gitlab.com/irssi/irssi/merge_requests/15)). Reported by Brian 'geeknik' Carpenter.
 - Fix use-after-free condition when removing nicks from the internal nicklist ([GL#11](https://gitlab.com/irssi/irssi/issues/11), [GL!16](https://gitlab.com/irssi/irssi/merge_requests/16)). Reported by Brian 'geeknik' Carpenter.
@@ -175,6 +183,7 @@ The Irssi team released this <abbr class="timeago" title="2017-06-06">2017-06-06
 Regression info in 1.0.3: [#716](https://github.com/irssi/irssi/issues/716) Warnings on start up: invalid time '-1'
 
 ### Fixes
+{:#v1-0-3-fixes }
 
 - Fix out of bounds read when scanning expandos ([GL!11](https://gitlab.com/irssi/irssi/merge_requests/11)).
 - Fix invalid memory access with quoted filenames in DCC ([GL#8](https://gitlab.com/irssi/irssi/issues/8), [GL!12](https://gitlab.com/irssi/irssi/merge_requests/12)).
@@ -202,6 +211,7 @@ The Irssi team released this <abbr class="timeago" title="2017-03-10">2017-03-10
 **Warning**. Irssi is broken on GLib 2.46 ([bgo#755496](https://bugzilla.gnome.org/show_bug.cgi?id=755496))
 
 ### Fixes
+{:#v1-0-2-fixes }
 
 - Prevent some null-pointer crashes ([GL!9](https://gitlab.com/irssi/irssi/merge_requests/9)).
 - Fix compilation with OpenSSL 1.1.0 ([#628](https://github.com/irssi/irssi/issues/628), [#597](https://github.com/irssi/irssi/issues/597)).
@@ -220,6 +230,7 @@ The Irssi team released this <abbr class="timeago" title="2017-02-03">2017-02-03
 {% include relnews_artef_block.markdown ver="1.0.1" %}
 
 ### Fixes
+{:#v1-0-1-fixes }
 
 - Fix Perl compilation in object dir. By Martijn Dekker ([#602](https://github.com/irssi/irssi/issues/602), [#623](https://github.com/irssi/irssi/issues/623)).
 - Disable EC cryptography on Solaris to fix build ([#604](https://github.com/irssi/irssi/issues/604), [#598](https://github.com/irssi/irssi/issues/598)).
@@ -240,6 +251,7 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 {% include relnews_artef_block.markdown ver="1.0.0" %}
 
 ### Changes
+{:#v1-0-0-changes }
 
 - Removed \-\-disable-ipv6 ([#408](https://github.com/irssi/irssi/issues/408)).
 - /connect Network now aborts with an error if no servers have been added to that network ([#443](https://github.com/irssi/irssi/issues/443)).
@@ -248,6 +260,7 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 - Switch to GRegex instead of regex.h ([#412](https://github.com/irssi/irssi/issues/412)).
 
 ### Additions
+{:#v1-0-0-additions }
 
 - irssiproxy can now forward all tags through a single port. By Lukas Mai (mauke, [#425](https://github.com/irssi/irssi/issues/425)).
 - irssiproxy can also listen on unix sockets. By Lukas Mai ([#427](https://github.com/irssi/irssi/issues/427)).
@@ -296,6 +309,7 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 - New option sasl_disconnect_on_failure to disconnect when SASL log-in failed ([#514](https://github.com/irssi/irssi/issues/514)).
 
 ### Fixes
+{:#v1-0-0-fixes }
 
 - IP addresses are no longer stored when resolve_reverse_lookup is used.
 - Removed broken support for curses ([#521](https://github.com/irssi/irssi/issues/521)).
@@ -324,6 +338,7 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 {% include relnews_artef_block.markdown ver="0.8.21" %}
 
 ### Fixes
+{:#v0-8-21-fixes }
 
 - Correct a NULL pointer dereference in the nickcmp function found by Joseph Bisch ([GL#1](https://gitlab.com/irssi/irssi/issues/1))
 - Correct an out of bounds read in certain incomplete control codes found by Joseph Bisch ([GL#2](https://gitlab.com/irssi/irssi/issues/2))
@@ -340,6 +355,7 @@ The Irssi team released this <abbr class="timeago" title="2016-09-16">2016-09-16
 {% include relnews_artef_block.markdown ver="0.8.20" %}
 
 ### Fixes
+{:#v0-8-20-fixes }
 
 - Correct the name of an emitted sasl signal ([#484](https://github.com/irssi/irssi/issues/484))
 - Correct the prototype for the 'message private' signal ([#515](https://github.com/irssi/irssi/issues/515))
@@ -363,6 +379,7 @@ The Irssi team released this <abbr class="timeago" title="2016-03-23">2016-03-23
 If your cursor keys stopped working, try this first: `/bind meta-O key meta2`
 
 ### Fixes
+{:#v0-8-19-fixes }
 
 - Fixed regression when joining and parting channels on IRCnet ([#435](https://github.com/irssi/irssi/issues/435))
 - Fixed SASL EXTERNAL. By Mantas Mikulėnas (grawity, [#432](https://github.com/irssi/irssi/issues/432))
@@ -384,6 +401,7 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 {% include relnews_artef_block.markdown ver="0.8.18" %}
 
 ### Changes
+{:#v0-8-18-changes }
 
 - Modules will now require to define a
   
@@ -404,6 +422,7 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 - Garbage Collection support has been removed. This will hardly have any effect for anyone given that it has been unsupported for several years.
 
 ### Additions
+{:#v0-8-18-additions }
 
 - CAP SASL PLAIN login is now supported natively.
 - Paste bracket markers can be requested from terminal with
@@ -428,6 +447,7 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 - Added SNI support for SSL.
 
 ### Fixes
+{:#v0-8-18-fixes }
 
 - /ignore now respects -pattern on merge ([#78](https://github.com/irssi/irssi/issues/78)).
 - irssiproxy (BNC) module now uses correct line endings.
@@ -455,6 +475,7 @@ The Irssi team released this <abbr class="timeago" title="2014-10-11">2014-10-11
 {% include relnews_artef_block.markdown ver="0.8.17" %}
 
 ### Additions
+{:#v0-8-17-additions }
 
 - Document that SSL connections aren't properly handled during /UPGRADE. See Github PR [#39](https://github.com/irssi/irssi/issues/39).
 - Synchronize scripts with scripts.irssi.org.
@@ -468,6 +489,7 @@ The Irssi team released this <abbr class="timeago" title="2014-10-11">2014-10-11
 - Rewrote many help files.
 
 ### Fixes
+{:#v0-8-17-fixes }
 
 - Fixed various compiler warnings and use of deprecated functions.
 - Fixed Perl API usage and added PERL_NO_GET_CONTEXT to reduce code size.
@@ -487,6 +509,7 @@ The Irssi team released this <abbr class="timeago" title="2014-05-28">2014-05-28
 {% include relnews_artef_block.markdown ver="0.8.16" %}
 
 ### Additions
+{:#v0-8-16-additions }
 
 - Add -noautosendcmd to /SERVER and /CONNECT. Passing this option will force Irssi to not execute the content of the autosendcmd chatnet-setting upon connect.
 - Accept names replies with nick!user@host instead of just nick, if they are enabled (see bug [FS#805](http://bugs.irssi.org/?do=details&task_id=805)).
@@ -499,6 +522,7 @@ The Irssi team released this <abbr class="timeago" title="2014-05-28">2014-05-28
 - Add -ssl_pass to /connect and /server (see bug [FS#305](http://bugs.irssi.org/?do=details&task_id=305)).
 
 ### Fixes
+{:#v0-8-16-fixes }
 
 - Fix crashing bug that can happen if the terminal height decreases before the first window is created.
 - Fixed minor compiler warnings.
@@ -518,6 +542,7 @@ The Irssi team released this <abbr class="timeago" title="2010-04-03">2010-04-03
 {% include relnews_artef_block.markdown ver="0.8.15" %}
 
 ### Additions
+{:#v0-8-15-additions }
 
 - Add active_window_ignore_refnum option With active_window_ignore_refnum ON, the current behavior for the active_window key (meta-a by default) is preserved: it switches to the window with the highest activity level that was last activated. With active_window_ignore_refnum OFF, the old behavior is used: it switches to the window with the highest activity level with the lowest refnum. (by Matt Sparks, bug [FS#667](http://bugs.irssi.org/?do=details&task_id=667))
 - Show new Charybdis +q list in channel windows (numerics 728 and 729).
@@ -529,6 +554,7 @@ The Irssi team released this <abbr class="timeago" title="2010-04-03">2010-04-03
 - Make own nick and actions use default colour instead of white (by Tim Retout).
 
 ### Fixes
+{:#v0-8-15-fixes }
 
 - Change some characters illegal in Windows filenames to underscores in logs
 - Fix disconnects when sending large amounts of data over SSL
@@ -550,6 +576,7 @@ The Irssi team released this <abbr class="timeago" title="2009-07-28">2009-07-28
 {% include relnews_artef_block.markdown ver="0.8.14" %}
 
 ### Additions
+{:#v0-8-14-additions }
 
 - Make /reset an alias for /set -default.
 - Make /unset an alias for /set -clear.
@@ -559,6 +586,7 @@ The Irssi team released this <abbr class="timeago" title="2009-07-28">2009-07-28
 - The time duration parser is more strict now.
 
 ### Fixes
+{:#v0-8-14-fixes }
 
 - Fix out of bounds access in event_wallops().
 - Build fix for OS X.
@@ -574,6 +602,7 @@ The Irssi team released this <abbr class="timeago" title="2009-04-01">2009-04-01
 {% include relnews_artef_block.markdown ver="0.8.13" %}
 
 ### Additions
+{:#v0-8-13-additions }
 
 - Reject some obviously invalid values in /set.
 - Add perl bindings for Window::get_history_lines
@@ -616,6 +645,7 @@ The Irssi team released this <abbr class="timeago" title="2009-04-01">2009-04-01
 - Add sb_search.pl, a script for /SCROLLBACK SEARCH
 
 ### Fixes
+{:#v0-8-13-fixes }
 
 - Fix /NOTIFY list when nick is seen joining (bug [FS#642](http://bugs.irssi.org/?do=details&task_id=642)).
 - Include hostmask in 001 event sent by proxy (bug [FS#650](http://bugs.irssi.org/?do=details&task_id=650)).
@@ -656,6 +686,7 @@ The Irssi team released this <abbr class="timeago" title="2007-10-06">2007-10-06
 {% include relnews_artef_block.markdown ver="0.8.12" %}
 
 ### Additions
+{:#v0-8-12-additions }
 
 - Some changes to character set recoding.
 - Rewrite SSL connection/handshake code.
@@ -674,6 +705,7 @@ The Irssi team released this <abbr class="timeago" title="2007-10-06">2007-10-06
 - Make alt/meta+arrow keys work in recent versions of xterm (bug [FS#496](http://bugs.irssi.org/?do=details&task_id=496))
 
 ### Fixes
+{:#v0-8-12-fixes }
 
 - Fix DCC get when file size is 0 (bug [FS#494](http://bugs.irssi.org/?do=details&task_id=494)).
 - Ignore empty lines when pasting.
@@ -704,6 +736,7 @@ The Irssi team released this <abbr class="timeago" title="2007-04-25">2007-04-25
 {% include relnews_artef_block.markdown ver="0.8.11" %}
 
 ### Additions
+{:#v0-8-11-additions }
 
 - Add completion for /WINDOW GOTO
 - New crapbuster-like "scrollback levelclear" command
@@ -729,6 +762,7 @@ The Irssi team released this <abbr class="timeago" title="2007-04-25">2007-04-25
 - Recognize cursor left and cursor right sequences sent by recent xterm
 
 ### Fixes
+{:#v0-8-11-fixes }
 
 - Fix some UTF-8 issues, bugs [FS#452](http://bugs.irssi.org/?do=details&task_id=452) (Patch by Yi-Hsuan Hsin), [FS#459](http://bugs.irssi.org/?do=details&task_id=459), [FS#460](http://bugs.irssi.org/?do=details&task_id=460)
 - Fixed segfault on quit introduced in 0.8.10
@@ -767,6 +801,7 @@ The Irssi team released this <abbr class="timeago" title="2005-12-11">2005-12-11
 {% include relnews_artef_block.markdown ver="0.8.10" %}
 
 ### Changes
+{:#v0-8-10-changes }
 
 - Long delayed release, with lots of changes. Most important ones:
     + Recode support, by decadix and senneth
@@ -775,6 +810,7 @@ The Irssi team released this <abbr class="timeago" title="2005-12-11">2005-12-11
     - Many memleak fixes, by Toby Peterson
 
 ### Additions
+{:#v0-8-10-additions }
 
 - Moved to subversion
 - /SET paste_join_multiline ON - When paste detection is enabled and you paste lines which look like they're being copy&pasted from irssi itself, it attempts to merge lines said originally in a single line.
@@ -801,6 +837,7 @@ The Irssi team released this <abbr class="timeago" title="2005-12-11">2005-12-11
 - Avoid accidentally /VER in a channel, by requiring parameter
 
 ### Fixes
+{:#v0-8-10-fixes }
 
 - Pasted lines weren't added to command history. Some other paste detection fixes
 - Fixed /BIND escape_char
@@ -859,16 +896,19 @@ Timo Sirainen released this <abbr class="timeago" title="2003-12-11">2003-12-11<
 {% include relnews_artef_block.markdown ver="0.8.9" %}
 
 ### Changes
+{:#v0-8-9-changes }
 
 - Fixes a remote crash with:
     a) non-x86 hardware (one requiring memory alignmentation)
     b) script using "gui print text" signal (with x86 hardware too)
 
 ### Additions
+{:#v0-8-9-additions }
 
 - /SET auto_whowas OFF allows now disabling automatic /whowas when /whois doesn't find a nick (by Borys)
 
 ### Fixes
+{:#v0-8-9-fixes }
 
 - If pasted line starts with command char, treat it as command always. Paste detection can go on too easily with lagged connections.
 
@@ -882,6 +922,7 @@ Timo Sirainen released this <abbr class="timeago" title="2003-11-23">2003-11-23<
 {% include relnews_artef_block.markdown ver="0.8.8" %}
 
 ### Fixes
+{:#v0-8-8-fixes }
 
 - Just a few fixes to converting old settings automatically
 
@@ -895,6 +936,7 @@ Timo Sirainen released this <abbr class="timeago" title="2003-11-23">2003-11-23<
 {% include relnews_artef_block.markdown ver="0.8.7" %}
 
 ### Changes
+{:#v0-8-7-changes }
 
 - Settings changes - we have now "time", "size" and "level" setting types.
     - Level settings should work the same as before.
@@ -907,6 +949,7 @@ Timo Sirainen released this <abbr class="timeago" title="2003-11-23">2003-11-23<
   Your existing settings should be converted automatically.
 
 ### Additions
+{:#v0-8-7-additions }
 
 - Pasting detection. All keys except CR and LF are pasted as-is into prompt in pasting mode.
   
@@ -924,6 +967,7 @@ Timo Sirainen released this <abbr class="timeago" title="2003-11-23">2003-11-23<
 - Better displaying of DCC file transfer statistics.
 
 ### Fixes
+{:#v0-8-7-fixes }
 
 - Several other minor fixes and enhancements, see ChangeLog
 
@@ -937,10 +981,12 @@ Timo Sirainen released this <abbr class="timeago" title="2002-11-17">2002-11-17<
 {% include relnews_artef_block.markdown ver="0.8.6" %}
 
 ### Changes
+{:#v0-8-6-changes }
 
 - Tons of changes, here's only the largest that come to my mind now:
 
 ### Additions
+{:#v0-8-6-additions }
 
 - SSL support by vjt@users.sf.net
 - DCC send queues by Heikki Orsila
@@ -954,10 +1000,12 @@ Timo Sirainen released this <abbr class="timeago" title="2002-11-17">2002-11-17<
 Timo Sirainen released this <abbr class="timeago" title="2002-03-13">2002-03-13</abbr> 
 
 ### Changes
+{:#v0-8-4-changes }
 
 - Continuing to fix my stupid mistakes...
 
 ### Fixes
+{:#v0-8-4-fixes }
 
 - When a queried nick did a nick change, it might have crashed irssi
 - read ChangeLog for some other minor changes
@@ -970,6 +1018,7 @@ Timo Sirainen released this <abbr class="timeago" title="2002-03-13">2002-03-13<
 Timo Sirainen released this <abbr class="timeago" title="2002-03-13">2002-03-13</abbr> 
 
 ### Fixes
+{:#v0-8-3-fixes }
 
 - Perl scripts handling channel parts/kicks/quits printed some errors.
 - Connecting to IPv6 servers without IPv4 record didn't work
@@ -984,11 +1033,13 @@ Timo Sirainen released this <abbr class="timeago" title="2002-03-13">2002-03-13<
 Timo Sirainen released this <abbr class="timeago" title="2002-03-11">2002-03-11</abbr> 
 
 ### Changes
+{:#v0-8-2-changes }
 
 - Changed the list of scripts distributed with irssi. Separated example scripts to scripts/examples/ directory.
 - Hated infobar was removed, the same info is now in topicbar in empty windows. I don't think it would disturb anyone in there. If you still preferred always-empty topicbars, use /SBAR topic REMOVE topic_empty
 
 ### Additions
+{:#v0-8-2-additions }
 
 - Added info_eol field to theme. If true, timestamp and server tag are added to end of line, not at beginning.
 - If -4 or -6 option is used with /SERVER, irssi now forces the connection using the given protocol or fails.
@@ -1000,6 +1051,7 @@ Timo Sirainen released this <abbr class="timeago" title="2002-03-11">2002-03-11<
 - Added escape_char /BIND command. The next char after that would be added as-is to input line.
 
 ### Fixes
+{:#v0-8-2-fixes }
 
 - Writing lines longers than 1024 chars to input buffer crashed irssi (stupid missing sizeof() bug :)
 - Some UTF-8 fixes
@@ -1023,10 +1075,12 @@ Timo Sirainen released this <abbr class="timeago" title="2002-03-11">2002-03-11<
 Timo Sirainen released this <abbr class="timeago" title="2002-02-17">2002-02-17</abbr> 
 
 ### Changes
+{:#v0-8-1-changes }
 
 - Expected bugfix release :) Worst thing was that I forgot always to debug why /cat /dev/urandom crashed irssi. Well, found two ways that could make it happen.
 
 ### Fixes
+{:#v0-8-1-fixes }
 
 - Irssi was linked with -lcurses AND -lncurses
 - Logging could have produced GLib errors with certain conditions
@@ -1040,6 +1094,7 @@ Timo Sirainen released this <abbr class="timeago" title="2002-02-17">2002-02-17<
 Timo Sirainen released this <abbr class="timeago" title="2002-02-17">2002-02-17</abbr> 
 
 ### Changes
+{:#v0-8-0-changes }
 
 - I really should make releases more often. Once in every two weeks used to be nice. Maybe once in a month would be good now. There was many reasons why this release took this long .. first being addicted to books, then life stuff, then it took forever to figure out that irssi was crashing under solaris (and not because of one of the big changes I made while moving to IRC from solaris box).
   
@@ -1050,6 +1105,7 @@ Timo Sirainen released this <abbr class="timeago" title="2002-02-17">2002-02-17<
   This version was supposed to be called 0.7.99, but since there were so many changes, and I originally though of putting 0.8.0 out long time ago, and 0.7.100 would look stupid, I guess it's time for 0.8.0 :)
 
 ### Additions
+{:#v0-8-0-additions }
 
 - /UPGRADE - upgrade irssi to new version on-the-fly without disconnecting from server, so other people won't even notice you quit from IRC. This ONLY executes the new binary, it does NOT download/compile/whatever irssi.
 - UTF-8 support with /SET term_type UTF-8, default is "8bit". It's also automatically detected from system locale (if supported).
@@ -1075,6 +1131,7 @@ Timo Sirainen released this <abbr class="timeago" title="2002-02-17">2002-02-17<
 Timo Sirainen released this <abbr class="timeago" title="2001-03-17">2001-03-17</abbr> 
 
 ### Changes
+{:#v0-7-98-3-changes }
 
 - Highlighting changes: /HILIGHT -color, /SET hilight_color and /SET hilight_act_color don't accept the numeric color value anymore, the colors must be the %code format (see the beginning of docs/formats.txt). The color can also have background and underline/blinking set (%F%Y = blinking yellow)
 - Statusbar rewrite: Statusbar should finally work well when there's not enough space for it in screen. Least important items start shrinking/disappearing before more important ones, activity list should be always fully visible now.
@@ -1084,6 +1141,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-17">2001-03-17<
   FULLY configurable statusbar with possibility to create your own items and support for multiple lines will hopefully come soon.
 
 ### Additions
+{:#v0-7-98-3-additions }
 
 - /WINDOW CLOSE [&lt;first> [&lt;last>] - you can close multiple windows at once now.
 - Emphasis work with actions now
@@ -1091,6 +1149,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-17">2001-03-17<
 - All abstracts in theme files now default to same as in default.theme, so you may override only those you want to change leaving the rest commented out.
 
 ### Fixes
+{:#v0-7-98-3-fixes }
 
 - Irssi crashed when specifying vhost to use (not always?)
 - Fixed one nasty usage of already free'd memory. Hopefully solves some weird crashes?
@@ -1114,6 +1173,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-17">2001-03-17<
 Timo Sirainen released this <abbr class="timeago" title="2001-03-04">2001-03-04</abbr> 
 
 ### Additions
+{:#v0-7-98-2-additions }
 
 - /LASTLOG: added -case option for case-sensitive matching. -force option is now required to print lastlogs longer than 1000 lines.
 - /BANTYPE -> /SET ban_type. /BAN: -type option added to override default ban type.
@@ -1124,6 +1184,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-04">2001-03-04<
 - /SET autostick_split_windows (default ON) - should we do /WINDOW STICK ON to all new split windows and hidden windows that are created inside it. This hopefully makes it easier to use split windows.
 
 ### Fixes
+{:#v0-7-98-2-fixes }
 
 - All IPv6 problems are hopefully fixed. Everything now keeps both v4 and v6 addresses in memory and at connect() time it's decided which one should be used.
 - /IGNORE * level printed GLib error. /RELOADing printed some unignore texts. Autoignores had some problems.
@@ -1150,6 +1211,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-03-04">2001-03-04<
 Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22</abbr> 
 
 ### Fixes
+{:#v0-7-98-1-fixes }
 
 - fixed stupid remote crash with nick_match_msg()
 
@@ -1161,6 +1223,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22<
 Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22</abbr> 
 
 ### Changes
+{:#v0-7-98-changes }
 
 - Theme files aren't fully compatible with old ones, there's a few naming changes and some new items. Added lots of comments and help to default.theme, so creating themes should be a bit easier now :)
 - Perl scripts aren't compatible with old ones anymore. Biggest change is that $object->values()->{xxx} calls are now just $object->{xxx}, but there's a lot of other changes as well. docs/perl.txt is now up to date so you may want to read it.
@@ -1171,6 +1234,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22<
     /SET noact_channels -> activity_hide_targets
 
 ### Additions
+{:#v0-7-98-additions }
 
 - /SET prompt, /SET prompt_window - Specifies the text in prompt. 'prompt' is used when channel or query is active in window and 'prompt_window' is used with empty windows. You can also use % color codes in prompt.
 - /EXEC - rewrote it, has now all the same features as EPIC and a few more, like "interactive shell in window" support. See /HELP exec for information.
@@ -1201,6 +1265,7 @@ Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22<
 - LOTS of other smaller things that should make your life easier :)
 
 ### Fixes
+{:#v0-7-98-fixes }
 
 - /SET dcc_autorename OFF didn't work before.
 - Irssi compiled with IPv6 support didn't work properly with some operating systems.
@@ -1215,11 +1280,13 @@ Timo Sirainen released this <abbr class="timeago" title="2001-02-22">2001-02-22<
 Timo Sirainen released this <abbr class="timeago" title="2000-12-03">2000-12-03</abbr> 
 
 ### Changes
+{:#v0-7-97-changes }
 
 - Added templates for themes - this allowed separation of the actual texts and styling/coloring. See default.theme file for more information. You should remove your old ~/.irssi/default.theme or at least merge it with the defaul.theme.
 - If GLIB sources are found unpacked from some subdirectory, always compile it and use it even if GLIB is already installed somewhere else.
 
 ### Additions
+{:#v0-7-97-additions }
 
 - /SCROLLBACK REDRAW - redraw contents of current window according to active formats, ie. changing theme updates the scrollback. This requires /SET scrollback_save_formats ON.
 - /SET log_theme &lt;theme> - you can specify what theme to use for writing texts to log file.
@@ -1249,6 +1316,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-12-03">2000-12-03<
 - Proxy plugin now supports multiple servers, blocks CTCPs from clients behind it and if one client sends message to channel, other clients + proxy itself also receives the message.
 
 ### Fixes
+{:#v0-7-97-fixes }
 
 - Netsplit/netjoin printing fixes. Sometimes netsplits were hidden completely and some netjoins were forgotten and printed as normal joins instead.
 - Lag checking broke sometimes when nick was changed
@@ -1266,6 +1334,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-12-03">2000-12-03<
 Timo Sirainen released this <abbr class="timeago" title="2000-10-19">2000-10-19</abbr> 
 
 ### Changes
+{:#v0-7-96-changes }
 
 - new configure option: \-\-disable-curses-windows. Use this if curses always redraws the window when scrolling. This is a weird problem, I'd like to know why it happens. :)
 - Log settings are incompatible with previous versions. You'll need to setup them again. Or the targets are actually the only ones that irssi won't read correctly.
@@ -1277,6 +1346,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-10-19">2000-10-19<
    - /FORMAT own_dcc_me -> /FORMAT own_dcc_action
 
 ### Additions
+{:#v0-7-96-additions }
 
 - Small tutorial to new irssi users - docs/startup-HOWTO.txt
 - Proxy plugin works again, thanks to fuchs for fixing it :)
@@ -1291,6 +1361,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-10-19">2000-10-19<
 - Keyboard should never get stuck again when receiving huge amounts of text from server that irssi doesn't handle fast enough.
 
 ### Fixes
+{:#v0-7-96-fixes }
 
 - Hopefully fixed the problem when Irssi starts eating 100% CPU
 - Fixes to make irssi work with other (older and newer) perl versions than 5.005
@@ -1310,6 +1381,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-10-19">2000-10-19<
 Timo Sirainen released this <abbr class="timeago" title="2000-08-13">2000-08-13</abbr> 
 
 ### Changes
+{:#v0-7-95-changes }
 
 - Changes:
     - /LOG: Removed the -rotate option, it was pretty useless since
@@ -1319,6 +1391,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-08-13">2000-08-13<
       WJOIN and WQUERY aliases for them in default config..
 
 ### Additions
+{:#v0-7-95-additions }
 
 - /SAVEWINDOWS saves the current layout of windows. It's automatically reloaded at startup.
 - Theme fixes: /RELOAD reloads them, /SET theme changes the default theme, you can have window specific themes with /WINDOW THEME.
@@ -1338,6 +1411,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-08-13">2000-08-13<
       window.
 
 ### Fixes
+{:#v0-7-95-fixes }
 
 - Don't autoclose window after part/unquery if there was still some channels/queries left in window.
 - Autologging fixes: Don't log WHOIS replies by default (autolog_level = all -crap). And with /msg nick1,nick2 don't log to file nick1,nick2.log but nick1.log and nick2.log separately. It also failed if you hadn't created the base path for the logs, now irssi creates the whole directory path.
@@ -1350,6 +1424,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-08-13">2000-08-13<
 Timo Sirainen released this <abbr class="timeago" title="2000-07-24">2000-07-24</abbr> 
 
 ### Changes
+{:#v0-7-94-changes }
 
 - Help files! Use /HELP &lt;command> to see them. They're just very first beta versions so don't expect too much. They were written by Markus Vuori &lt;mm@vuori.net> with some help from EPIC's help files :)
 - Changes:
@@ -1360,6 +1435,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-07-24">2000-07-24<
      same prefix.
 
 ### Additions
+{:#v0-7-94-additions }
 
 - Implemented /WINDOW LAST for changing to last current window.
 - Added DCCMSGS message level. Actions match now either MSGS or PUBLIC level as well as the ACTIONS level always.
@@ -1371,6 +1447,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-07-24">2000-07-24<
 - /PERLFLUSH now cleans up the Perl interpreter properly (closes all the files opened in perl scripts, etc)
 
 ### Fixes
+{:#v0-7-94-fixes }
 
 - Awaylog didn't work right if you did /AWAY multiple times.
 - /NOTIFY -idle sometimes printed the unidle-message even if the nick really didn't stop idling. Fixed several other notify list bugs.
@@ -1387,6 +1464,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-07-24">2000-07-24<
 Timo Sirainen released this <abbr class="timeago" title="2000-07-09">2000-07-09</abbr> 
 
 ### Additions
+{:#v0-7-93-additions }
 
 - Implemented /BIND [&lt;key> [&lt;action> [&lt;data>]]] command. &lt;key> can be CTRL-x, ALT-X or ALT-SHIFT-X The most useful action is "command", give the command in &lt;data>. You can see the rest of the actions with typing /BIND without any parameters. Some actions might have more than one word, to use them type the action in "quotation marks".
 - When netsplit is over, irssi prints "Netsplit over, joins: (nicks)" and hides all the real JOIN messages.
@@ -1400,6 +1478,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-07-09">2000-07-09<
 - Ctrl-Y undeletes the last line deleted with Ctrl-U.
 
 ### Fixes
+{:#v0-7-93-fixes }
 
 - Reconnecting to server had a few bugs
 - /RELOADing configuration produced a few bugs
@@ -1415,6 +1494,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-07-09">2000-07-09<
 Timo Sirainen released this <abbr class="timeago" title="2000-06-30">2000-06-30</abbr> 
 
 ### Changes
+{:#v0-7-92-changes }
 
 - Some changes:
     /REHASH -> /RELOAD
@@ -1423,6 +1503,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-30">2000-06-30<
     /HILIGHT -nick -> /HILIGHT -mask (see below)
 
 ### Additions
+{:#v0-7-92-additions }
 
 - Automatic completion of /commands. Automatic completion of command -options. Complains about unknown -options.
 - /MSG [-&lt;server tag>] &lt;nick> &lt;msg> - you can specify what server to send the message to.
@@ -1458,6 +1539,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-30">2000-06-30<
 - /SET lag_min_show -1 disables displaying lag entirely.
 
 ### Fixes
+{:#v0-7-92-fixes }
 
 - /SCROLLBACK HOME, END and GOTO commands weren't working right.
 - Closing active window that had channels/queries could crash
@@ -1473,6 +1555,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-30">2000-06-30<
 Timo Sirainen released this <abbr class="timeago" title="2000-06-14">2000-06-14</abbr> 
 
 ### Additions
+{:#v0-7-91-additions }
 
 - Ctrl-X changes IRC server in stats/msgs/empty windows.
 - /JOIN -&lt;server tag> #channel joins to channel in specified server.
@@ -1489,6 +1572,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-14">2000-06-14<
 - Ctrl-W deletes word in left
 
 ### Fixes
+{:#v0-7-91-fixes }
 
 - Flood was detected wrong - /SET flood_timecheck's argument was supposed to be seconds, not milliseconds.
 - Unignoring autoignored nicks didn't work
@@ -1507,6 +1591,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-14">2000-06-14<
 Timo Sirainen released this <abbr class="timeago" title="2000-06-04">2000-06-04</abbr> 
 
 ### Changes
+{:#v0-7-90-changes }
 
 - On the way to 0.8.0 .. Major rewriting/rearranging code. There's some changes in behaviour because I'm trying to make Irssi compatible with EPIC as much as possible (except the scripting, perl should be enough?)
 - DOCUMENTATION! See docs/manual.txt
@@ -1528,6 +1613,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-04">2000-06-04<
 - Signal handlers changed - you don't anymore return value 0 if you wish to stop signal. Instead use signal_stop() or signal_stop_by_name().
 
 ### Additions
+{:#v0-7-90-additions }
 
 - Flood protection when sending commands to server works now better. It allows sending first 5 messages immediately, but after that only one message is sent every 2.2 seconds.
   
@@ -1612,6 +1698,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-06-04">2000-06-04<
 Timo Sirainen released this <abbr class="timeago" title="2000-03-11">2000-03-11</abbr> 
 
 ### Additions
+{:#v0-7-28-additions }
 
 - irssi-text: New improved "text widget". It takes less memory and if you resize the terminal horizonally, the text automatically changes to right size. Several other changes too:
   
@@ -1649,6 +1736,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-03-11">2000-03-11<
 - /LAST -new shows only the texts that came after latest /LAST.
 
 ### Fixes
+{:#v0-7-28-fixes }
 
 - Autojoining doesn't switch automatically to the joined channel's window (try [FS#2](http://bugs.irssi.org/?do=details&task_id=2) :)
 - Several (Perl) compilation problems fixed.
@@ -1664,6 +1752,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-03-11">2000-03-11<
 Timo Sirainen released this <abbr class="timeago" title="2000-02-25">2000-02-25</abbr> 
 
 ### Changes
+{:#v0-7-27-changes }
 
 - Perl support - finally! Took only a year or so to imlement it ;) Well, I could have done it ages ago but it wouldn't have had all the flexibility it now has - you should be able to do almost anything with perl scripts. See DOCS/PERL for some documentation and examples/ directory for a couple of example scripts.
   
@@ -1674,6 +1763,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-25">2000-02-25<
   If for some reason you don't wish to use Perl, you can disble it with giving \-\-disable-perl to configure.
 
 ### Additions
+{:#v0-7-27-additions }
 
 - /CYCLE [#channel] - parts/rejoins the channel
 - Autojoining doesn't switch automatically to the joined channel's window.
@@ -1681,6 +1771,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-25">2000-02-25<
 - irssi-text: Resizing terminal works now right even if your curses don't have resizeterm() function.
 
 ### Fixes
+{:#v0-7-27-fixes }
 
 - /NAMES crashed when done in a non-channel window
 - irssi-text: Resizing terminal when irssi had some empty windows messed them up..
@@ -1694,6 +1785,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-25">2000-02-25<
 Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19</abbr> 
 
 ### Fixes
+{:#v0-7-26-fixes }
 
 - Space (and maybe other keys) didn't work when caps/numlock was on.
 
@@ -1705,6 +1797,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19<
 Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19</abbr> 
 
 ### Additions
+{:#v0-7-25-additions }
 
 - /WQUERY - create query to current window
 - Irssi doesn't close the window anymore when using /PART
@@ -1713,6 +1806,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19<
 - irssi-text: /WINDOW MOVE PREV\|NEXT
 
 ### Fixes
+{:#v0-7-25-fixes }
 
 - Topic bar sometimes displayed some other channel's topic if the channel didn't have a topic.
 - Irssi automatically changed to auto-created query windows..
@@ -1728,6 +1822,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19<
 Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19</abbr> ▪ [stable]
 
 ### Additions
+{:#v0-7-24-additions }
 
 - French translation
 - Updated Brazilian Portuguese translation translation, now with the right pot file name :)
@@ -1741,6 +1836,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19<
 - /whois without any arguments gives a whois of yourself
 
 ### Fixes
+{:#v0-7-24-fixes }
 
 - Irc network list was still corrupted in channel dialog.
 - /LIST dialog - users column is now sorted numerically (10 shows after 9, not after 1)..
@@ -1761,12 +1857,14 @@ Timo Sirainen released this <abbr class="timeago" title="2000-02-19">2000-02-19<
 Timo Sirainen released this <abbr class="timeago" title="2000-01-23">2000-01-23</abbr> ▪ [stable]
 
 ### Additions
+{:#v0-7-23-additions }
 
 - channel's key (+k key) is displayed in irssi-text's statusbar if it has one.
 - Nick hilight detector is a bit smarter now, for example if your nick happens to be "its", "it's blahblah" doesn't trigger it..
 - colorless irssi-text (/set colors = no): activity list is split in two, Act and Det lists. Det displays list of windows where there's new messages for you.
 
 ### Fixes
+{:#v0-7-23-fixes }
 
 - /LAST without any parameters crashed
 - if queried nick was changed, GUI didn't notice it.
@@ -1782,6 +1880,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-01-23">2000-01-23<
 Timo Sirainen released this <abbr class="timeago" title="2000-01-16">2000-01-16</abbr> ▪ [stable]
 
 ### Additions
+{:#v0-7-22-additions }
 
 - configure displays a summary of things to compile
 - /set colors = yes\|no, sets colors on/off in irssi-text
@@ -1790,6 +1889,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-01-16">2000-01-16<
 - Improved hilighting: You can specify what color to hilight the text with, to channel field type the (mirc) color number, like "4 #blah" hilights the text with red in channel #blah, both color and channel(s) are optional. You can also hilight nicks' colors, to text field type "NICK:nick!mask", like NICK:nick, or NICK:\*!\*@*.blah.fi hilights people from blah.fi domain
 
 ### Fixes
+{:#v0-7-22-fixes }
 
 - Modeless channels (+channel) didn't get synced ever..
 - Some kB/s messages displayed wrong values when resuming DCC transfers. Also, kB/s is now displayed with two decimals
@@ -1812,6 +1912,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-01-16">2000-01-16<
 Timo Sirainen released this <abbr class="timeago" title="1999-12-20">1999-12-20</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-21-additions }
 
 - Irssi-text: Channel activities are displayed with different colors in statusbar
 - Keeps track of "wanted nick", ie. the nick you specified in the setup or to /server or /nick. When reconnecting to server it always tries the wanted nick before falling back to alternate nicks.
@@ -1825,6 +1926,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-12-20">1999-12-20<
 - /channel next, /channel prev - changes to next/previous channel in the current window. Ctrl-X is by default bound to /channel next.
 
 ### Fixes
+{:#v0-7-21-fixes }
 
 - /WHO could crash irssi
 - /join !!channel crashed
@@ -1837,14 +1939,17 @@ Timo Sirainen released this <abbr class="timeago" title="1999-12-20">1999-12-20<
 Timo Sirainen released this <abbr class="timeago" title="1999-11-28">1999-11-28</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-20-1-changes }
 
 - I just started #irssi in irc.openprojects.net too.. It's still in IRCNet too, don't know yet if I'll keep both or drop the other one..
 
 ### Additions
+{:#v0-7-20-1-additions }
 
 - You can use %n as current nick with aliases
 
 ### Fixes
+{:#v0-7-20-1-fixes }
 
 - Closing a window with split windows open crashed
 - Channel widgets weren't being updated when joined to channel in empty window
@@ -1859,12 +1964,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-11-28">1999-11-28<
 Timo Sirainen released this <abbr class="timeago" title="1999-11-27">1999-11-27</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-20-additions }
 
 - Polish and finnish translations started
 - SQL plugin which doesn't do much, currently supports MySQL only. Meant to be used by other plugins.
 - Botnet to bot plugin - it should already be possible to create a big bot network with this (each bot having multiple clients + uplink). The functionality is limited only to BCAST message for now which sends a message to all bots. Read docs/botnet.txt for my plans for it :)
 
 ### Fixes
+{:#v0-7-20-fixes }
 
 - If plugins failed in initialization (plugin_init()), irssi could crash.
 - Server settings (nick, realname, etc.) were saved to different place in configuration file than where they were read from.. So, saving them didn't really work.
@@ -1882,10 +1989,12 @@ Timo Sirainen released this <abbr class="timeago" title="1999-11-27">1999-11-27<
 Timo Sirainen released this <abbr class="timeago" title="1999-11-20">1999-11-20</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-19-changes }
 
 - Text formats changed - they should be compatible with epic/bx now. See docs/FORMATS for more information
 
 ### Additions
+{:#v0-7-19-additions }
 
 - Internationalization support - finally. No languages yet though..
 - /window new split creates a new splitted window
@@ -1911,6 +2020,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-11-20">1999-11-20<
 - Option: Show timestamps in msgs.
 
 ### Fixes
+{:#v0-7-19-fixes }
 
 - Joining to channel from channels dialog that had password set didn't work.
 - When scrolling, Irssi text widget sometimes left black spots in text area if some other window was overlaping it.
@@ -1925,6 +2035,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-11-20">1999-11-20<
 Timo Sirainen released this <abbr class="timeago" title="1999-11-04">1999-11-04</abbr> ▪ [stable]
 
 ### Fixes
+{:#v0-7-18-1-fixes }
 
 - Window didn't scroll if you were using GtkText
 - Resuming DCC transfers could mess up the existing transfers with the same nick..
@@ -1943,11 +2054,13 @@ Timo Sirainen released this <abbr class="timeago" title="1999-11-04">1999-11-04<
 Timo Sirainen released this <abbr class="timeago" title="1999-10-18">1999-10-18</abbr> ▪ [stable]
 
 ### Changes
+{:#v0-7-18-changes }
 
 - Finally a version I dare to call stable :) Just a bugfix release for 0.7.17 but it had only a few problems..
 - Status window is now off by default
 
 ### Fixes
+{:#v0-7-18-fixes }
 
 - Sound and speech plugins weren't working.
 - Proxy plugin shouldn't crash now while not connected to server
@@ -1967,6 +2080,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-10-18">1999-10-18<
 Timo Sirainen released this <abbr class="timeago" title="1999-10-16">1999-10-16</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-17-additions }
 
 - Irssi text widget! (replaces zvt)
    - supports proportional fonts
@@ -1990,6 +2104,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-10-16">1999-10-16<
 - You can specify what port to use with DCC.
 
 ### Fixes
+{:#v0-7-17-fixes }
 
 - Channel dialog fixes: after editing channel, it was moved to the end of the list, opening multiple channels edit dialogs didn't work right
 - Reconnecting to server didn't work (always)
@@ -2003,6 +2118,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-10-16">1999-10-16<
 Timo Sirainen released this <abbr class="timeago" title="1999-09-13">1999-09-13</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-16-additions }
 
 - Started bot plugin, it has simple user management functions and auto-opping/voicing done (but it does it well :)
 - "channel synced" text doesn't trigger channel activity anymore
@@ -2018,6 +2134,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-09-13">1999-09-13<
 - /gwhois dialog has now refresh button, /gwhois is used when clicking whois from nicklist popup menu
 
 ### Fixes
+{:#v0-7-16-fixes }
 
 - Restoring saved window size didn't work very accurately, restoring position also had some problems..
 - Rawlog doesn't crash anymore if not connected to server
@@ -2034,15 +2151,18 @@ Timo Sirainen released this <abbr class="timeago" title="1999-09-13">1999-09-13<
 Timo Sirainen released this <abbr class="timeago" title="1999-08-31">1999-08-31</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-15-3-changes }
 
 - _TOO_ many bugs in .15, mostly compilation problems, I really should test things better when I release them. This will be the last time, I swear :)
 
 ### Additions
+{:#v0-7-15-3-additions }
 
 - Rawlog window, /rawlog &lt;file name> also saves it.
 - \-\-without-imlib configure switch
 
 ### Fixes
+{:#v0-7-15-3-fixes }
 
 - After opened themes dialog, "(none)" window appeared, after opening it, irssi crashed.
 - "day changed" message was displayed at startup
@@ -2058,12 +2178,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-08-31">1999-08-31<
 Timo Sirainen released this <abbr class="timeago" title="1999-08-29">1999-08-29</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-15-changes }
 
 - Only week since last version, much better :) Lots of internal changes, hope they work right. No "weird crashes" found since last version, 0.8.0 can't be too far away :)
   
   CVS is also working again, no anonymous but I can give access if someone wants.
 
 ### Additions
+{:#v0-7-15-additions }
 
 - IPv6 support - yet another thing irssi is one of the first to support ;) Give \-\-enable-ipv6 switch to configure to compile it. Because of IPv6 addresses naming style (xxx:xxx:xxx..), /server server:port doesn't work anymore, you have to use /server server port instead.
 - Sound plugin updates, should work much better
@@ -2085,6 +2207,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-08-29">1999-08-29<
 - IPv6 for /ban, it bans all the last 64k addresses .. not sure if it's THAT good idea but did it anyway.
 
 ### Fixes
+{:#v0-7-15-fixes }
 
 - DCC resume was broken.
 - If someone quit from one ircnet but stayed on another, the nick was removed from both ircnets' channels.
@@ -2112,6 +2235,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-08-22">1999-08-22<
 My E-mail changed to cras@irccrew.org, don't use the old one anymore!
 
 ### Changes
+{:#v0-7-14-changes }
 
 - Hm.. Again a month since last version, 3 weeks should be max :) Hopefully this one will be bugfree, so I could finally release a "stable" version.. (somehow I think I'll end up with 0.7.14-2 anyway.. ;)
 - Irssi uses now libPropList to read and save configuration file, so you need to have libPropList installed, it's also in different format so your old config file doesn't work anymore.
@@ -2119,6 +2243,7 @@ My E-mail changed to cras@irccrew.org, don't use the old one anymore!
   Configuration file is located now in ~/.irssi/config file. Themes are also now stored in separate files in ~/.irssi/*.theme
 
 ### Additions
+{:#v0-7-14-additions }
 
 - Irssi can now notify you about new versions, you can also directly download them with DCC. (This will probably be changed to HTTP instead of using irssibot in IRC..)
 - User interface changes (settings, menus) as suggested by James M. Cape &lt;jcape@jcinteractive.com>
@@ -2139,6 +2264,7 @@ My E-mail changed to cras@irccrew.org, don't use the old one anymore!
 - Ctrl-N and Ctrl-P go to next/previous window
 
 ### Fixes
+{:#v0-7-14-fixes }
 
 - When using zvt and joining to new channels, window size grew bigger
 - /msg &lt;tab> completion was a bit buggy, if someone sent you multiple messages, you had to press tab multiple times until the nick changed to someone else..
@@ -2164,15 +2290,18 @@ My E-mail changed to cras@irccrew.org, don't use the old one anymore!
 Timo Sirainen released this <abbr class="timeago" title="1999-07-22">1999-07-22</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-13-2-changes }
 
 - Again, a small bugfix release
 
 ### Additions
+{:#v0-7-13-2-additions }
 
 - You can specify what string to send to IRC proxy after connected, this lets at least some proxies work with irssi.
 - Notifylist now displays which irc network nick joined/left (or if unknown, just IRC)
 
 ### Fixes
+{:#v0-7-13-2-fixes }
 
 - After closing some window, the numbers in window tabs didn't get updated
 - /window next and prev didn't work properly
@@ -2189,11 +2318,13 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-22">1999-07-22<
 Timo Sirainen released this <abbr class="timeago" title="1999-07-21">1999-07-21</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-13-changes }
 
 - %p in text formats is changed to $, looks much cleaner :) Old formats in configuration files are automatically converted.
 - I got some documentation done! :) I wrote a list of all commands irssi knows with (very) short descriptions, see COMMANDS file
 
 ### Additions
+{:#v0-7-13-additions }
 
 - Hebrew support by Ronen Tzur &lt;rtzur@shani.net> - see README-HEBREW
 - Users with gone-flag are displayed with different color in nicklist List is updated with USERHOST commands in small pieces every now and then..
@@ -2226,6 +2357,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-21">1999-07-21<
 - Ctrl-N changes to next window, Ctrl-P changes to previous window
 
 ### Fixes
+{:#v0-7-13-fixes }
 
 - Max. autoget size didn't work right, it got the file if the file was bigger than the max. size.. and it was compared as bytes, not kB's.
 - Panel applet should now work right
@@ -2247,6 +2379,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-21">1999-07-21<
 Timo Sirainen released this <abbr class="timeago" title="1999-07-06">1999-07-06</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-12-changes }
 
 - #irssi is now started in IRCnet
 - Release #2 :) The next day..
@@ -2260,6 +2393,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-06">1999-07-06<
      fwith gnome
 
 ### Additions
+{:#v0-7-12-additions }
 
 - Colorless theme, should be easy to start a new theme with using this. You need to copy the [theme:colorless] section to ~/.irssi.conf (or ~/.gnome/irssi whatever you happen to use..) from included irssi.conf to use this..
 - You can DCC send and get files via DCC chat (don't need to be connected to server), don't know if this works with any other client or if any other client has this ability.. BitchX didn't seem to have.
@@ -2279,6 +2413,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-06">1999-07-06<
 - \-\-without-gnome-panel switch to configure
 
 ### Fixes
+{:#v0-7-12-fixes }
 
 - http://blah@a.b opened e-mail client instead of http client
 - I set the socket non-blocking AFTER connect(), argh! This caused irssi to hang when trying to dcc get from bogus IPs or something.
@@ -2296,12 +2431,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-07-06">1999-07-06<
 Timo Sirainen released this <abbr class="timeago" title="1999-06-06">1999-06-06</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-11-changes }
 
 - Because of the color system changes, remove the [colors] section from irssi's configuration file or you will get some weird colors..
   
   The colors are pretty much taken from BitchX, IMO it looks nice :) But somehow I think many of you don't like it, so I made theme selector. Just need to make a few default themes..
 
 ### Additions
+{:#v0-7-11-additions }
 
 - Color system changed, the old one looked pretty ugly especially in text mode version.. You can now have more than one color/line by adding %fg[,bg] codes to text formats.. fg and bg are the normal 0-15 colors, in GUI version (without ZVT) you can use up to 99 user specified colors.
 - Theme selector
@@ -2320,6 +2457,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-06-06">1999-06-06<
 - You can try to find memory leaks with giving \-\-with-memdebug switch to configure
 
 ### Fixes
+{:#v0-7-11-fixes }
 
 - Still some bugs with DCC SEND fixed..
 - DCC list dialog crashed if there were dcc chats open, it also caused some random crashes when running..
@@ -2339,10 +2477,12 @@ Timo Sirainen released this <abbr class="timeago" title="1999-06-06">1999-06-06<
 Timo Sirainen released this <abbr class="timeago" title="1999-05-09">1999-05-09</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-10-changes }
 
 - ALL KNOWN CRASHES FIXED !! Weird, after changing the code with creating channels to empty windows, GtkText widget started working again, it used to crash after running the test ircserver for a while.. Maybe a few more versions and I'll release a "stable" labeled version again (08.0).
 
 ### Additions
+{:#v0-7-10-additions }
 
 - GNOME version can use ZVT widget to draw texts. This is a lot faster than GtkText and with it you can use nice non-scrolling backgrounds and transparency! However, you'll have to use the default colors with it for now and Window/Save Buffer or Find doesn't work in it. !!NOTE!! ZVT in gnome 1.0.9 is buggy, it sometimes crashes when destroying zvt widget (leaving channels). It should be fixed in next version (which doesn't currently exist..)
 - DCC transfer dialog, display list of all going dcc transfers, the old dialogs can also be created.
@@ -2351,6 +2491,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-05-09">1999-05-09<
 - dcc actions from mirc should work now
 
 ### Fixes
+{:#v0-7-10-fixes }
 
 - Text widget size is now saved instead of the window's size, should work better.
 - Right clicking text widget created a popup menu, but select selection got broken after it
@@ -2377,6 +2518,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-05-09">1999-05-09<
 Timo Sirainen released this <abbr class="timeago" title="1999-04-22">1999-04-22</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-9-additions }
 
 - Server/status dialog, displays list of all connected servers, channels, queries and dcc chats.
 - Host resolving is now done in a child processes. Hopefully works better than threads which aren't used anywhere anymore..
@@ -2384,6 +2526,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-22">1999-04-22<
 - gui_widget_depends_data(), widget will be automatically destroyed if the specified signal is called with the specified argument. Used to destroy DCC request dialogs when they're closed manually, timed out or rejected at the other end..
 
 ### Fixes
+{:#v0-7-9-fixes }
 
 - Fixed lots of memory leaks which some might have caused crashes.. src/memdebug.c has the debug functions I used ..
 - DCC CLOSE closed always the last dcc connection instead of the one that matched the parameters
@@ -2403,10 +2546,12 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-22">1999-04-22<
 Timo Sirainen released this <abbr class="timeago" title="1999-04-12">1999-04-12</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-8-changes }
 
 - This version has lots of internal changes, I haven't tried them much so hopefully everything works right..
 
 ### Additions
+{:#v0-7-8-additions }
 
 - external plugin, reads commands from named pipe and executes them
 - sample plugin updated, creating new plugins should when based on this one
@@ -2427,6 +2572,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-12">1999-04-12<
 - Channel settings: You can specify list of bots (masks) and command to send the first one found bot (nice for auto-opping ourself)
 
 ### Fixes
+{:#v0-7-8-fixes }
 
 - Changing user modes from menus didn't work. Moved the menu under server menu.
 - Speech plugin problems fixed.. It didn't compile without gnome libraries and with gnome libraries it didn't say anything because for some reason one line in sources was commented out..
@@ -2442,6 +2588,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-12">1999-04-12<
 Timo Sirainen released this <abbr class="timeago" title="1999-04-05">1999-04-05</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-7-additions }
 
 - speech plugin :) This is currently made to work with festival (http://www.cstr.ed.ac.uk/projects/festival/), it's not very usable but nice to play with :)
 - C-b (bold), C-c (color), C-g (bell), C-v (reverse), C-- (underline) keys work now but they don't display anything in entry line.
@@ -2449,6 +2596,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-05">1999-04-05<
 - Fixes and new features for plugins. Each plugin has now it's own menu under plugin menu and "Unload" menuitem there by default.
 
 ### Fixes
+{:#v0-7-7-fixes }
 
 - GTK version didn't build .. again..
 - I broke DCC send in 0.7.5
@@ -2467,10 +2615,12 @@ Timo Sirainen released this <abbr class="timeago" title="1999-04-05">1999-04-05<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-29">1999-03-29</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-6-changes }
 
 - New default colors .. I think they're better, not the best possible but anyway, I'm not good with these :)
 
 ### Additions
+{:#v0-7-6-additions }
 
 - Text mode version working again with colors! :)
 - New settings/servers dialog, changed connect and channels dialogs. You can now automatically connect to multiple servers at startup. All this made by Kari Lavikka (tuner@bdb.fi)
@@ -2480,6 +2630,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-29">1999-03-29<
 - private ctcp and notice messages now show up in query windows if it exists for sender
 
 ### Fixes
+{:#v0-7-6-fixes }
 
 - Fixed logging a bit, you can now log stuff from nicks without having query window for them.
 - If time stamps were enabled, log files had time stamps twice in each line
@@ -2494,11 +2645,13 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-29">1999-03-29<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-17">1999-03-17</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-5-changes }
 
 - Text mode version is broken and isn't built.
 - Configuration file has changed quite a lot, might be better if you would just erase the old one.. Server configuration is also going to change soon..
 
 ### Additions
+{:#v0-7-5-additions }
 
 - Plugins are back! But unfortunately I can't get perl plugin to work. See TODO for more information.
 - I divided setup dialogs to separate windows and grouped the options to different frames so they actually make some sense now :) Also some new options:
@@ -2520,6 +2673,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-17">1999-03-17<
 - Window size is now saved when quitting and it's used when creating windows in next session
 
 ### Fixes
+{:#v0-7-5-fixes }
 
 - Fixed lots of GLib-CRITICAL messages when disconnected from server while it was still trying to find ip address.
 - Window/find should now scroll to right position and it doesn't corrupt the text widget with inserting new texts to found texts positions.. It's also case-insensitive now.
@@ -2533,6 +2687,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-17">1999-03-17<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-13">1999-03-13</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-4-additions }
 
 - Applet for GNOME panel working again
 - You don't have to specify \-\-without-gnome anymore, configure checks this for you (finally)
@@ -2540,6 +2695,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-13">1999-03-13<
 - Window/find moves the scrollbar to position where you can actually see the found text (usually, find prev misses it sometimes..)
 
 ### Fixes
+{:#v0-7-4-fixes }
 
 - Disconnect button in disconnect dialog still wasn't working.
 - Channel mode buttons didn't change if channel wasn't focused
@@ -2556,15 +2712,18 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-13">1999-03-13<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-11">1999-03-11</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-3-changes }
 
 - Text mode version is not called irssi-text so make install can install both of them without overwriting the other..
 
 ### Additions
+{:#v0-7-3-additions }
 
 - Window menu: find text, save window buffer, close window, new, new tabbed .. And lots of fixing code to make empty windows possible.
 - After kicked from channel, the window isn't destroyed
 
 ### Fixes
+{:#v0-7-3-fixes }
 
 - While connecting to server and receiving "nick is temporarily unavailable" irssi didn't try different nick but got just stuck there.
 
@@ -2576,12 +2735,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-11">1999-03-11<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-10">1999-03-10</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-7-2-additions }
 
 - GUI for logging, /log start, /log stop
 - You can drag file from GMC over to nick in nicklist to send the file with DCC
 - Nicklist changed to GtkCList, ops and voices are marked with pixmaps (stolen from X-Chat, someone want to do better ones?). Had to be done because adding drag'n'drop to GtkList was too slow..
 
 ### Fixes
+{:#v0-7-2-fixes }
 
 - Pretty bad bugs with GTK version fixed, using several dialogs' buttons crashed..
 - WHOIS's idle line displayed seconds wrong. Maybe I finally got it fixed right this time.. :)
@@ -2595,11 +2756,13 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-10">1999-03-10<
 Timo Sirainen released this <abbr class="timeago" title="1999-03-08">1999-03-08</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-1-changes }
 
 - The 0.7.0 was actually quite stable, I thought it would crash all the time by itself and do some weird things :)
 - Hopefully now that GTK 1.2 is finished more people start using it and don't ask me to continue supporting GTK 1.0. So, this version requires GTK 1.1/1.2.
 
 ### Additions
+{:#v0-7-1-additions }
 
 - Started gui-text.. Should work somehow :) Prefers SLang but should work with curses also, except in X terminals I couldn't get colors out of it.
 - Logging, still lacks GUI.
@@ -2620,6 +2783,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-08">1999-03-08<
 - cleaned configure.in
 
 ### Fixes
+{:#v0-7-1-fixes }
 
 - Disconnect button in disconnect dialog didn't work.
 - Writing to DCC chat only sent the first word..
@@ -2633,6 +2797,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-03-08">1999-03-08<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-25">1999-02-25</abbr> ▪ [unstable]
 
 ### Changes
+{:#v0-7-0-changes }
 
 - Lots and lots and LOTS of rewriting code. Hope you like it :) At least I do, mostly. GUI still needs rewriting but.. well, it works anyway now.
   
@@ -2663,12 +2828,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-25">1999-02-25<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-12">1999-02-12</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-6-0-additions }
 
 - Plugins! See plugins/* and src/plugin-commands.h for more information
 - Small PERL plugin, anyone want to continue developing this?
 - Show menubar option
 
 ### Fixes
+{:#v0-6-0-fixes }
 
 - Some fixes and changes with clicking words.
 - Notify list didn't work if ircnet was specified.
@@ -2682,17 +2849,20 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-12">1999-02-12<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-10">1999-02-10</abbr> 
 
 ### Changes
+{:#v0-5-1-changes }
 
 - A big bugfix release, hopefully no crashes anymore? :)
 - Removed intl directory, we don't have any i18n support yet so it's not needed...
 
 ### Additions
+{:#v0-5-1-additions }
 
 - Time stamps
 - Use \-\-with-pthreads=no if they don't work right
 - socks4/5 support (untested), use \-\-with-socks=no if you don't want them.
 
 ### Fixes
+{:#v0-5-1-fixes }
 
 - If you got kicked from channel irssi was in quite unstable state
 - Using channel mode buttons in the upper right corner crashed
@@ -2711,6 +2881,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-10">1999-02-10<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-08">1999-02-08</abbr> 
 
 ### Additions
+{:#v0-5-0-additions }
 
 - DCC CHAT, SEND, GET
 - pthread support, no more blocking server connections.
@@ -2721,6 +2892,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-08">1999-02-08<
 - /PING
 
 ### Fixes
+{:#v0-5-0-fixes }
 
 - Changing topic from topic entry widget didn't work.
 - If window had only one channel, the channel widgets (topic, modes, etc) didn't show up.
@@ -2735,6 +2907,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-08">1999-02-08<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-04">1999-02-04</abbr> 
 
 ### Additions
+{:#v0-4-1-additions }
 
 - Preferences: completion - if you type &lt;tag> in entry field and press tab it gets completed, like setting homepage to http://blah and typing: home page is homepage&lt;tab> -> home page is http://blah
 - Tab nick completion.
@@ -2742,6 +2915,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-04">1999-02-04<
 - glib 1.0.6 didn't have g_get_user_name(), g_get_real_name(), g_get_home_dir() and g_strncasecmp(), made them..
 
 ### Fixes
+{:#v0-4-1-fixes }
 
 - Using \-\-no-applet crashed..
 - Using items in user modes menu crashed
@@ -2755,6 +2929,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-04">1999-02-04<
 Timo Sirainen released this <abbr class="timeago" title="1999-02-01">1999-02-01</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-4-0-additions }
 
 - **Lots** of internal changes with window handling, fixed some memory leaks also while doing them. You can now have multiple real windows with tabbed subwindows in them. It's also possible to have multiple channels in one subwindow. Commands for handling these.. :
    - /join - Works like before, creates real or subwindow depending
@@ -2772,6 +2947,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-01">1999-02-01<
 - GNOME version uses ~/.irssi.conf if it exists
 
 ### Fixes
+{:#v0-4-0-fixes }
 
 - Opping/deopping anyone made irssi think that you were opped/deopped
 - read_line() had some pretty bad bugs...
@@ -2784,6 +2960,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-02-01">1999-02-01<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-29">1999-01-29</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-3-6-additions }
 
 - irssi.spec to easily build .rpm
 - Preferences:
@@ -2799,6 +2976,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-29">1999-01-29<
 - Alt-1..0 changes between windows
 
 ### Fixes
+{:#v0-3-6-fixes }
 
 - Private actions didn't show up in query windows where they should have.
 - Alias and ignores lists were mixed together and didn't work.
@@ -2815,6 +2993,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-29">1999-01-29<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-26">1999-01-26</abbr> 
 
 ### Additions
+{:#v0-3-5-additions }
 
 - Finished the channels dialog, you can automatically join to channels in specific irc networks.
 - Changed the look of connect and disconnect dialogs
@@ -2822,6 +3001,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-26">1999-01-26<
 - Preferences: Maximum number of channels to display in panel
 
 ### Fixes
+{:#v0-3-5-fixes }
 
 - When leaving from channels, panel didn't redraw it's list correctly
 - Leaving channels in tabbed window mode crashed
@@ -2835,12 +3015,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-26">1999-01-26<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-24">1999-01-24</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-3-4-additions }
 
 - Tabbed windows work a lot better
 - User mode menu
 - Preferences: default user mode
 
 ### Fixes
+{:#v0-3-4-fixes }
 
 - Connecting to more than one server crashed...
 - Nick list redrawing was broken
@@ -2854,6 +3036,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-24">1999-01-24<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-23">1999-01-23</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-3-3-additions }
 
 - /ignore never - never autoignore nick
 - You can hide/show channel nick list from Channel menu, default state can be set from preferences.
@@ -2863,6 +3046,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-23">1999-01-23<
 - Started the tabbed windows, probably quite buggy and the window_create() code is getting REALLY ugly..
 
 ### Fixes
+{:#v0-3-3-fixes }
 
 - Servers didn't display QUIT message.. Couldn't think of any better way to fix this than not to disconnect the link but let the server do it.
 - ANSI colors didn't work right
@@ -2875,10 +3059,12 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-23">1999-01-23<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-22">1999-01-22</abbr> ▪ [unstable]
 
 ### Additions
+{:#v0-3-2-additions }
 
 - Dock applet, works at least with Enlightenment..
 
 ### Fixes
+{:#v0-3-2-fixes }
 
 - GTK version tried to move temp config file to real config file with rename() .. didn't work if /tmp and home were in different partitions.
 - Some servers sent a mode change before /names list, irssi didn't like that and crashed..
@@ -2892,12 +3078,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-22">1999-01-22<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-22">1999-01-22</abbr> 
 
 ### Changes
+{:#v0-3-1-changes }
 
 - 4 days since last release. too long :) I'm now starting to create "unstable" versions of irssi. They have the latest and greatest features while they might not build/work too well. Check http://www.sicom.fi/~ikioma/irssi-download.html, new versions will probably be released quite often.
 - GNOME version now builds without GNOME panel applet library
 - Works with GTK+ 1.0.6 now, maybe with older too.
 
 ### Additions
+{:#v0-3-1-additions }
 
 - Connect / disconnect dialogs, channel dialog also started
 - Server setup dialog changed some.
@@ -2908,6 +3096,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-22">1999-01-22<
 - If you get kicked from channel the channel window won't get destroyed.
 
 ### Fixes
+{:#v0-3-1-fixes }
 
 - Query was in op submenu in nicklist's popup menu .. whops.
 - 0.3.0 broke server tag generation so using multiple servers didn't work.
@@ -2920,11 +3109,13 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-22">1999-01-22<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-18">1999-01-18</abbr> 
 
 ### Changes
+{:#v0-3-0-changes }
 
 - Config changes in GTK version, delete old .irssi.conf file (or change all "tag = values" to "tag=values")
 - Default set of servers and aliases can be found from irssi.conf, copy that to ~/.gnome/irssi (if build with GNOME) or ~/.irssi.conf (if build without GNOME).
 
 ### Additions
+{:#v0-3-0-additions }
 
 - servers page added to preferences. Without connect dialog this is quite useless though :) But if you set "connect to IRC server at startup" on, irssi connects you to first local server.
 - aliases :
@@ -2951,6 +3142,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-18">1999-01-18<
 - /KNOCKOUT [secs] &lt;nick> &lt;reason> - kick+ban+delay (5min)+unban
 
 ### Fixes
+{:#v0-3-0-fixes }
 
 - nick completion was case-sensitive
 - again some minor bugs fixed and features added
@@ -2963,12 +3155,14 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-18">1999-01-18<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-17">1999-01-17</abbr> 
 
 ### Additions
+{:#v0-2-1-additions }
 
 - Preferences: color and font selection
 - gnome-stuff.c has some gnome_* compatible functions to get GTK+ version work. They're pretty slow and dum and maybe even buggy so if you want better, just compile the gnome libs :)
 - Doubleclicking in topic sets the entry editable/uneditable
 
 ### Fixes
+{:#v0-2-1-fixes }
 
 - nick completion was buggy
 - some minor bugs and features fixed
@@ -2981,6 +3175,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-17">1999-01-17<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-16">1999-01-16</abbr> 
 
 ### Additions
+{:#v0-2-0-additions }
 
 - CTCP VERSION returns system name and revisions
 - msgs window has now autoraise set on as default
@@ -2996,6 +3191,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-16">1999-01-16<
 - \-\-no-panel command line switch so you can build with GNOME support but don't need to be running it in panel.
 
 ### Fixes
+{:#v0-2-0-fixes }
 
 - some automake fixes
 - If someone was kicked, the kicker was removed from nick list insted of the kicked..
@@ -3009,6 +3205,7 @@ Timo Sirainen released this <abbr class="timeago" title="1999-01-16">1999-01-16<
 Timo Sirainen released this <abbr class="timeago" title="1999-01-14">1999-01-14</abbr> 
 
 ### Changes
+{:#v0-1-0-changes }
 
 - First release
 
