@@ -18,7 +18,9 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">LAYOUT</span> <span class="synB">SAVE</span></code></pre></div>
 
 
-LAYOUT RESET
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:-2ch"><code><span class="synB">LAYOUT</span> <span class="synB">RESET</span></code></pre></div>
+
+
 
 ### Parameters ###
 
