@@ -15,17 +15,21 @@ Please submit changes to
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">CAT</span> <span class="synB05">&lt;file></span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">CAT</span> <span class="synB05">&lt;file></span> <span class="syn10">[<span class="syn09">&lt;seek position></span>]</span></code></pre></div>
 
 
 
 ### Parameters ###
 
-The file to display.
+The file to display and optionally a position to seek in the file,
+in bytes.
 
 ### Description ###
 
 Displays the contents of the specified file into the active window.
+
+The seek position parameter is used internally to display away logs, if
+omitted the whole file is shown.
 
 ### Examples ###
 
