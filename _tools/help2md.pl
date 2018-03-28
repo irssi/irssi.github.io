@@ -138,7 +138,7 @@ sub main {
     system("cd \Q$dir\E; perl utils/syntax.pl");
 
     chomp (my @files = `find \Q$dir\E/docs/help -type f`);
-    @files = grep !/Makefile/, @files;
+    @files = grep !/[~#]$/, grep !/Makefile/, @files;
 
     s{^\Q$dir\E/docs/help(?:/|$)}{} for @files;
 
