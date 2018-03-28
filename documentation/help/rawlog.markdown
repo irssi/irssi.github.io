@@ -21,7 +21,9 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">RAWLOG</span> <span class="synB">OPEN</span> <span class="synB05">&lt;file></span></code></pre></div>
 
 
-RAWLOG CLOSE
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:-2ch"><code><span class="synB">RAWLOG</span> <span class="synB">CLOSE</span></code></pre></div>
+
+
 
 ### Parameters ###
 

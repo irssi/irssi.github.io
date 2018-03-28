@@ -27,7 +27,9 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">HOME</span></code></pre></div>
 
 
-SCROLLBACK END
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:-2ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">END</span></code></pre></div>
+
+
 
 ### Parameters ###
 
