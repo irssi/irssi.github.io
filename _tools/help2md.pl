@@ -221,7 +221,7 @@ Please submit changes to
 		    elsif (/^%9/) {
 			last;
 		    }
-		    if (s/%\|// || /^[[:upper:]]+$/) {
+		    if (s/%\|// || /^[[:upper:]]+(?: [[:upper:]]+)*$/) {
 			my $command;
 			for (split ' ') {
 			    if (/^[[:upper:]]+$/) {
