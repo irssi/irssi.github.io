@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window attribute manipulation"
+title: "Help: window attribute manipulation (1.0)"
 ---
 
 {% comment %}
@@ -10,15 +10,14 @@ Please submit changes to
 - https://github.com/irssi/irssi/blob/master/src/fe-common/core/fe-log.c
 - https://github.com/irssi/irssi/blob/master/src/fe-common/core/window-commands.c
 - https://github.com/irssi/irssi/blob/master/src/fe-text/mainwindows.c
-- https://github.com/irssi/irssi/blob/master/src/fe-text/textbuffer-commands.c
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.0))
 
-[Window subcommands index](/documentation/help/window)
+[Window subcommands index](/documentation/help/window_(1.0))
 
-[ [v1.0](/documentation/help/window_navigation_(1.0)) ] - [ v1.1 ]
+[ v1.0 ] - [ [v1.1](/documentation/help/window_properties) ]
 
 ### Syntax ###
 
@@ -44,9 +43,6 @@ Please submit changes to
 
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">STICK</span> <span class="syn10">[<span class="syn09">&lt;ref#></span>]</span> <span class="syn10">[<span class="syn">ON</span>|<span class="syn">OFF</span>]</span></code></pre></div>
-
-
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:16ch"><code><span class="synB">WINDOW</span> <span class="synB">HIDELEVEL</span> <span class="syn10">[<span class="syn09">&lt;level></span>]</span></code></pre></div>
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window"
+title: "Help: window (1.0)"
 ---
 
 {% comment %}
@@ -10,13 +10,12 @@ Please submit changes to
 - https://github.com/irssi/irssi/blob/master/src/fe-common/core/fe-log.c
 - https://github.com/irssi/irssi/blob/master/src/fe-common/core/window-commands.c
 - https://github.com/irssi/irssi/blob/master/src/fe-text/mainwindows.c
-- https://github.com/irssi/irssi/blob/master/src/fe-text/textbuffer-commands.c
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.0))
 
-[ [v1.0](/documentation/help/window_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/window_(1.2)) ]
+[ v1.0 ] - [ [v1.1](/documentation/help/window) ] - [ [v1.2](/documentation/help/window_(1.2)) ]
 
 ### Subcommands
 
@@ -47,7 +46,7 @@ Please submit changes to
 
 </div>
 
-#### [window attribute manipulation](/documentation/help/window_properties)
+#### [window attribute manipulation](/documentation/help/window_properties_(1.0))
 
 <div markdown="1" class="helpindex">
 
@@ -59,7 +58,6 @@ Please submit changes to
 * window history 
 * window theme 
 * window stick 
-* window hidelevel 
 
 </div>
 

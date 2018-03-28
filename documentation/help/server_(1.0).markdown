@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: server"
+title: "Help: server (1.0)"
 ---
 
 {% comment %}
@@ -14,13 +14,13 @@ Please submit changes to
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.0))
 
-[ [v1.0](/documentation/help/server_(1.0)) ] - [ v1.1 ]
+[ v1.0 ] - [ [v1.1](/documentation/help/server) ]
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">SERVER</span> <span class="synB">CONNECT</span> <span class="syn10">[<span class="syn">-4</span> | <span class="syn">-6</span>]</span> <span class="syn10">[<span class="syn">-tls</span>]</span> <span class="syn10">[<span class="syn">-tls_cert</span> <span class="syn09">&lt;cert></span>]</span> <span class="syn10">[<span class="syn">-tls_pkey</span> <span class="syn09">&lt;pkey></span>]</span>  <span class="syn10">[<span class="syn">-tls_pass</span> <span class="syn09">&lt;password></span>]</span> <span class="syn10">[<span class="syn">-tls_verify</span>]</span> <span class="syn10">[<span class="syn">-tls_cafile</span> <span class="syn09">&lt;cafile></span>]</span>  <span class="syn10">[<span class="syn">-tls_capath</span> <span class="syn09">&lt;capath></span>]</span> <span class="syn10">[<span class="syn">-tls_ciphers</span> <span class="syn09">&lt;list></span>]</span> <span class="syn10">[<span class="syn">-tls_pinned_cert</span> <span class="syn09">&lt;fingerprint></span>]</span> <span class="syn10">[<span class="syn">-tls_pinned_pubkey</span> <span class="syn09">&lt;fingerprint></span>]</span> <span class="syn10">[<span class="syn">-!</span>]</span> <span class="syn10">[<span class="syn">-noautosendcmd</span>]</span> <span class="syn10">[<span class="syn">-noproxy</span>]</span> <span class="syn10">[<span class="syn">-network</span> <span class="syn09">&lt;network></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;hostname></span>]</span> <span class="syn10">[<span class="syn">-rawlog</span> <span class="syn09">&lt;file></span>]</span> <span class="syn10">[<span class="syn">+</span>]</span><span class="synB05">&lt;address></span>|<span class="synB05">&lt;chatnet></span> <span class="syn10">[<span class="syn09">&lt;port></span> <span class="syn14">[<span class="syn13">&lt;password></span> <span class="syn13">[<span class="syn14">&lt;nick></span>]</span>]</span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:6ch"><code><span class="synB">SERVER</span> <span class="syn10">[<span class="syn">-4</span> | <span class="syn">-6</span>]</span> <span class="syn10">[<span class="syn">-ssl</span>]</span> <span class="syn10">[<span class="syn">-ssl_cert</span> <span class="syn09">&lt;cert></span>]</span> <span class="syn10">[<span class="syn">-ssl_pkey</span> <span class="syn09">&lt;pkey></span>]</span> <span class="syn10">[<span class="syn">-ssl_pass</span> <span class="syn09">&lt;password></span>]</span> <span class="syn10">[<span class="syn">-ssl_verify</span>]</span> <span class="syn10">[<span class="syn">-ssl_cafile</span> <span class="syn09">&lt;cafile></span>]</span> <span class="syn10">[<span class="syn">-ssl_capath</span> <span class="syn09">&lt;capath></span>]</span> <span class="syn10">[<span class="syn">-ssl_ciphers</span> <span class="syn09">&lt;list></span>]</span> <span class="syn10">[<span class="syn">-!</span>]</span> <span class="syn10">[<span class="syn">-noautosendcmd</span>]</span> <span class="syn10">[<span class="syn">-noproxy</span>]</span> <span class="syn10">[<span class="syn">-network</span> <span class="syn09">&lt;network></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;hostname></span>]</span> <span class="syn10">[<span class="syn">-rawlog</span> <span class="syn09">&lt;file></span>]</span> <span class="syn10">[<span class="syn">+</span>]</span><span class="synB05">&lt;address></span>|<span class="synB05">&lt;chatnet></span> <span class="syn10">[<span class="syn09">&lt;port></span> <span class="syn14">[<span class="syn13">&lt;password></span> <span class="syn13">[<span class="syn14">&lt;nick></span>]</span>]</span>]</span></code></pre></div>
 
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">SERVER</span> <span class="synB">REMOVE</span> <span class="synB05">&lt;address></span> <span class="syn10">[<span class="syn09">&lt;port></span>]</span> <span class="syn10">[<span class="syn09">&lt;network></span>]</span></code></pre></div>
@@ -92,6 +92,8 @@ method is applicable to the CONNECT parameter.
 ### Examples ###
 
     /SERVER
+    /SERVER chat.freenode.net
+    /SERVER +chat.freenode.net
     /SERVER CONNECT chat.freenode.net
     /SERVER CONNECT +chat.freenode.net
     /SERVER ADD -network Freenode -noautosendcmd orwell.freenode.net
