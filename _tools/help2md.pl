@@ -308,7 +308,7 @@ Please submit changes to
 		    s/^        ([* ] [[:alpha:]] ?[[:lower:]].*)$/$1/;
 
 		my $cmdlen = -1 + index $_, '%|';
-		if ($in eq 'syn' && (s/%\|// || /^[[:upper:]]+(?: [[:upper:]]+)?$/)) {
+		if ($in eq 'syn' && (s/%\|// || /^[[:upper:]]+(?: [[:upper:]]+)*$/)) {
 		    next
 			if !check_filter("$_ ", $page);
 

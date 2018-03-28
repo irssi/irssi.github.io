@@ -27,7 +27,6 @@ Please submit changes to
 * window list 
 * window hide 
 * window show 
-* window rshow 
 
 </div>
 
@@ -95,10 +94,6 @@ Please submit changes to
 * window shrink 
 * window size 
 * window balance 
-* window rgrow 
-* window rshrink 
-* window rsize 
-* window rbalance 
 
 </div>
 
@@ -107,11 +102,7 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window up 
-* window dup 
-* window dleft 
 * window down 
-* window ddown 
-* window dright 
 
 </div>
 
@@ -120,8 +111,6 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window stick 
-* window move dleft 
-* window move dright 
 * window move up 
 * window move down 
 
