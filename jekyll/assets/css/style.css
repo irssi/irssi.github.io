@@ -558,6 +558,7 @@ div.toprule {
     padding: 5px 15px;
     min-width: 10em;
     width: auto;
+    white-space: nowrap;
 }
 
 div.irssisyntax {
