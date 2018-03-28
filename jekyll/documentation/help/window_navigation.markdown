@@ -18,6 +18,8 @@ Please submit changes to
 
 [Window subcommands index](/documentation/help/window)
 
+[ v1.1 ] - [ [v1.2](/documentation/help/window_navigation_(1.2)) ]
+
 ### Syntax ###
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:8ch"><code><span class="synB">WINDOW</span> <span class="synB">UP</span></code></pre></div>

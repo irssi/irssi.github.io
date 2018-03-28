@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: network"
+title: "Help: network (1.0)"
 ---
 
 {% comment %}
@@ -11,13 +11,13 @@ Please submit changes to
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.0))
 
-[ [v1.0](/documentation/help/network_(1.0)) ] - [ v1.1 ]
+[ v1.0 ] - [ [v1.1](/documentation/help/network) ]
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">NETWORK</span> <span class="synB">ADD</span>|<span class="synB">MODIFY</span> <span class="syn10">[<span class="syn">-nick</span> <span class="syn09">&lt;nick></span>]</span> <span class="syn10">[<span class="syn">-alternate_nick</span> <span class="syn09">&lt;nick></span>]</span> <span class="syn10">[<span class="syn">-user</span> <span class="syn09">&lt;user></span>]</span> <span class="syn10">[<span class="syn">-realname</span> <span class="syn09">&lt;name></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;host></span>]</span> <span class="syn10">[<span class="syn">-usermode</span> <span class="syn09">&lt;mode></span>]</span> <span class="syn10">[<span class="syn">-autosendcmd</span> <span class="syn09">&lt;cmd></span>]</span> <span class="syn10">[<span class="syn">-querychans</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-whois</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-msgs</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-kicks</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-modes</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-cmdspeed</span> <span class="syn09">&lt;ms></span>]</span> <span class="syn10">[<span class="syn">-cmdmax</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-sasl_mechanism</span> <span class="syn09">&lt;mechanism></span>]</span> <span class="syn10">[<span class="syn">-sasl_username</span> <span class="syn09">&lt;username></span>]</span> <span class="syn10">[<span class="syn">-sasl_password</span> <span class="syn09">&lt;password></span>]</span> <span class="synB05">&lt;name></span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">NETWORK</span> <span class="synB">ADD</span>|<span class="synB">MODIFY</span> <span class="syn10">[<span class="syn">-nick</span> <span class="syn09">&lt;nick></span>]</span> <span class="syn10">[<span class="syn">-user</span> <span class="syn09">&lt;user></span>]</span> <span class="syn10">[<span class="syn">-realname</span> <span class="syn09">&lt;name></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;host></span>]</span> <span class="syn10">[<span class="syn">-usermode</span> <span class="syn09">&lt;mode></span>]</span> <span class="syn10">[<span class="syn">-autosendcmd</span> <span class="syn09">&lt;cmd></span>]</span> <span class="syn10">[<span class="syn">-querychans</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-whois</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-msgs</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-kicks</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-modes</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-cmdspeed</span> <span class="syn09">&lt;ms></span>]</span> <span class="syn10">[<span class="syn">-cmdmax</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-sasl_mechanism</span> <span class="syn09">&lt;mechanism></span>]</span> <span class="syn10">[<span class="syn">-sasl_username</span> <span class="syn09">&lt;username></span>]</span> <span class="syn10">[<span class="syn">-sasl_password</span> <span class="syn09">&lt;password></span>]</span> <span class="synB05">&lt;name></span></code></pre></div>
 
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">NETWORK</span> <span class="synB">REMOVE</span> <span class="synB05">&lt;network></span></code></pre></div>
@@ -35,7 +35,6 @@ Please submit changes to
 
 
 | `-nick`: |            Specifies the nickname to use. |
-| `-alternate_nick` | Specifies the alternate nickname to use. |
 | `-user`: |            Specifies the user identity to use. |
 | `-realname`: |        Specifies the real name to use. |
 | `-host`: |            Specifies the hostname to use. |

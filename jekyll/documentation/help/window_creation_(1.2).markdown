@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window/split window creation"
+title: "Help: window/split window creation (1.2)"
 ---
 
 {% comment %}
@@ -14,15 +14,15 @@ Please submit changes to
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.2))
 
-[Window subcommands index](/documentation/help/window)
+[Window subcommands index](/documentation/help/window_(1.2))
 
-[ v1.1 ] - [ [v1.2](/documentation/help/window_creation_(1.2)) ]
+[ [v1.1](/documentation/help/window_creation) ] - [ v1.2 ]
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">NEW</span> <span class="syn10">[<span class="syn">HIDDEN</span>|<span class="syn">SPLIT</span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">NEW</span> <span class="syn10">[<span class="syn">HIDDEN</span>|<span class="syn">SPLIT</span>|<span class="syn">RSPLIT</span>]</span></code></pre></div>
 
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">CLOSE</span> <span class="syn10">[<span class="syn09">&lt;first></span> <span class="syn14">[<span class="syn13">&lt;last></span>]</span>]</span></code></pre></div>
@@ -37,6 +37,9 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">SHOW</span> <span class="synB05">&lt;number></span>|<span class="synB05">&lt;name></span></code></pre></div>
 
 
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">RSHOW</span> <span class="synB05">&lt;number></span>|<span class="synB05">&lt;name></span></code></pre></div>
+
+
 
 ### Parameters ###
 
@@ -46,6 +49,7 @@ Please submit changes to
 | `LIST`: | List all the windows. |
 | `HIDE`: | Hides the current split window, or the split window specified by number or item name. |
 | `SHOW`: | Show the window specified by number or item name as a new split windows. It is made sticky when autostick_split_windows is turned on. |
+| `RSHOW`: | Show the window specified by number or item name as a new windows split to the right of the current window. It is made sticky when autostick_split_windows is turned on. |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.

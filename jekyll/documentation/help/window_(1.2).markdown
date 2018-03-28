@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window"
+title: "Help: window (1.2)"
 ---
 
 {% comment %}
@@ -14,14 +14,14 @@ Please submit changes to
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.2))
 
-[ [v1.0](/documentation/help/window_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/window_(1.2)) ]
+[ [v1.0](/documentation/help/window_(1.0)) ] - [ [v1.1](/documentation/help/window) ] - [ v1.2 ]
 
 ### Subcommands
 
 
-#### [window/split window creation](/documentation/help/window_creation)
+#### [window/split window creation](/documentation/help/window_creation_(1.2))
 
 <div markdown="1" class="helpindex">
 
@@ -30,6 +30,7 @@ Please submit changes to
 * window list 
 * window hide 
 * window show 
+* window rshow 
 
 </div>
 
@@ -89,7 +90,7 @@ Please submit changes to
 
 </div>
 
-#### [split window resizing](/documentation/help/window_resizing)
+#### [split window resizing](/documentation/help/window_resizing_(1.2))
 
 <div markdown="1" class="helpindex">
 
@@ -97,23 +98,33 @@ Please submit changes to
 * window shrink 
 * window size 
 * window balance 
+* window rgrow 
+* window rshrink 
+* window rsize 
+* window rbalance 
 
 </div>
 
-#### [split window navigation](/documentation/help/window_navigation)
+#### [split window navigation](/documentation/help/window_navigation_(1.2))
 
 <div markdown="1" class="helpindex">
 
 * window up 
+* window dup 
+* window dleft 
 * window down 
+* window ddown 
+* window dright 
 
 </div>
 
-#### [split window moving](/documentation/help/window_split_moving)
+#### [split window moving](/documentation/help/window_split_moving_(1.2))
 
 <div markdown="1" class="helpindex">
 
 * window stick 
+* window move dleft 
+* window move dright 
 * window move up 
 * window move down 
 

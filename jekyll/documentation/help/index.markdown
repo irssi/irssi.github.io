@@ -5,6 +5,8 @@ title: Help
 
 These are the `/help` pages of the Irssi on-line help.
 
+[ [v1.0](/documentation/help/index_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/index_(1.2)) ]
+
 <div markdown="1" class="helpindex">
 
 * [accept](accept)

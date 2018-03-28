@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window: split window resizing"
+title: "Help: window: split window resizing (1.2)"
 ---
 
 {% comment %}
@@ -14,11 +14,11 @@ Please submit changes to
 
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.2))
 
-[Window subcommands index](/documentation/help/window)
+[Window subcommands index](/documentation/help/window_(1.2))
 
-[ v1.1 ] - [ [v1.2](/documentation/help/window_resizing_(1.2)) ]
+[ [v1.1](/documentation/help/window_resizing) ] - [ v1.2 ]
 
 ### Syntax ###
 
@@ -34,6 +34,18 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">WINDOW</span> <span class="synB">BALANCE</span></code></pre></div>
 
 
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">RGROW</span> <span class="syn10">[<span class="syn09">&lt;columns></span>]</span></code></pre></div>
+
+
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">WINDOW</span> <span class="synB">RSHRINK</span> <span class="syn10">[<span class="syn09">&lt;lines></span>]</span></code></pre></div>
+
+
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">RSIZE</span> <span class="synB05">&lt;columns></span></code></pre></div>
+
+
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">WINDOW</span> <span class="synB">RBALANCE</span></code></pre></div>
+
+
 
 ### Parameters ###
 
@@ -42,6 +54,10 @@ Please submit changes to
 | `SHRINK`: | Decrease the size of the active split window by the specified number of lines. |
 | `SIZE`: | Set the current split window size to the specified numer of lines. |
 | `BALANCE`: | Balance the heights of all split windows. |
+| `RGROW`: | Increase the width of the active split window by the specified number of columns. |
+| `RSHRINK`: | Decrease the wodth of the active split window by the specified number of columns. |
+| `RSIZE`: | Set the current split window width to the specified numer of columns. |
+| `RBALANCE`: | Balance the widths of all split windows in this line. |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
