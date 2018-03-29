@@ -1,59 +1,12 @@
 use strict;
 use warnings;
+use YAML qw(LoadFile DumpFile);
+use FindBin;
+use List::Util qw(uniq);
+use version;
 
-my @categories = (
-    # [ "Category" => [ paths ], [ excludes ] ]
-    ['Connection' => [qr/fe-irc-server/, qr/fe-ircnet/, qr/core\/servers/, qr/core\/chat-commands/, qr/fe-server/, qr/rawlog/], [qw[MSG FOREACH]] ],
-    ['Core Commands' => [qr/core\/chat-commands/, qr/fe-channels/, qr/fe-queries/] ],
-    ['Window Commands' => [qr/textbuffer-commands/, qr/mainwindows/, qr/window-commands/, qr/lastlog/] ],
-    ['Settings' => [qr/fe-settings/, qr/themes/, qr/keyboard/, qr/statusbar-config/, qr/session/, qr/fe-recode/, qr/window-commands/, qr/completion/, qr/hilight-text/, qr/fe-ignore/, qr/fe-log/], [qw[FOREACH]] ],
-    ['Misc' => [qr/fe-modules/, qr/fe-help/, qr/fe-exec/, qr/fe-core-commands/, qr/core\/commands/] ],
-    ['IRC Commands' => [qr/irc-commands/, qr/fe-netsplit/, qr/dcc/, qr/notify-commands/, qr/irc\/core/] ],
-    ['IRC Proxy' => [qr/irc\/proxy/] ],
-    ['Other pages']
-   );
-
-my @subcommand_pages = (
-    # [ "command" => [ "page_name", "category title" => [ subcommands ], [ excludes ] ] ]
-    ['window' => [
-	['creation', 'window/split window creation' => [
-	    qw[
-		  new close hide show rshow list
-	     ]]],
-	['changing', 'window changing' => [
-	   qw[
-		 goto next last previous refnum left right
-	    ]]],
-	['properties', 'window attribute manipulation' => [
-	   qw[
-		 number level immortal server name history theme stick hidelevel
-	    ]]],
-	['items', 'window items' => [
-	   qw[
-		 item
-	    ]]],
-	['moving', 'window moving/number changing' => [
-	   qw[
-		 number move
-	    ]], ['move dleft', 'move dright', 'move up', 'move down']],
-	['resizing', 'split window resizing' => [
-	   qw[
-		 grow shrink size balance rgrow rshrink rsize rbalance
-	    ]]],
-	['navigation', 'split window navigation' => [
-	   qw[
-		 up dup dleft down ddown dright
-	    ]]],
-	['split_moving', 'split window moving' => [
-	    'move dleft', 'move dright', 'move up', 'move down', 'stick'
-	   ]],
-	['logging', 'logging' => [
-	   qw[
-		 log logfile
-	    ]]],
-	['misc', 'other subcommands'],
-       ]],
-   );
+my $config_file = "$FindBin::Bin/help2md.yml";
+my $config = LoadFile($config_file);
 
 sub _to_ic { 
     my ($cc, $cg, $type, $on) = @_;
@@ -108,6 +61,38 @@ sub _add_syn_colors {
                   length $4 ? _to_ic($cc,$cgroup,0,1)._html($4)._to_ic($cc,$cgroup,0,0) : ""
           }gexr;
 }
+sub _get_mv {
+    my ($page, $ver) = @_;
+    my $multiver_links = '';
+    my $ver_suffix = '';
+    my @multiver = map { @{ $_->{versions} || [] } } grep { $_->{page} && ($page eq 'index' || $_->{page} eq $page) } @{ $config->{multiversion_pages} || [] };
+    if (@multiver) {
+	my ($default_ver) = map { $_->{_default_} } grep { $_->{_default_} } @{ $config->{multiversion_pages} || [] };
+	@multiver = uniq sort { version->parse("v$a") <=> version->parse("v$b") } ($default_ver, @multiver);
+	$multiver_links = join ' - ', map {
+	    my $link;
+	    my $name = "v$_";
+	    my @latest = grep { version->parse("v$_") <= version->parse("v$ver") } @multiver;
+	    if (version->parse("v$_") == version->parse("v".$latest[-1])) {
+		$link = "[ $name ]";
+	    }
+	    else {
+		my $xz = "$_";
+		my $suffix = version->parse("v$xz") == version->parse("v$default_ver") ? '' : "_($xz)";
+		if ($page eq 'index' && $suffix eq '') {
+		    $link = "[ [$name](/documentation/help) ]";
+		}
+		else {
+		    $link = "[ [$name](/documentation/help/$page$suffix) ]";
+		}
+	    }
+	    $link
+	} @multiver;
+	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver) && version->parse("v$ver") != version->parse("v$default_ver") ? "_($ver)" : '';
+	$multiver_links = "\n$multiver_links\n";
+    }
+    ($multiver_links, $ver_suffix)
+}
 
 sub finish_table {
     my ($out, $state) = @_;
@@ -132,8 +117,16 @@ sub main {
     my $dir = shift;
     my $out = shift;
     unless ($dir && $out) {
-	die "syntax: perl $0 <path> <outpath>\n";
+	die "syntax: perl $0 <path> <outpath> [<version>]\n";
     }
+    my $ver = shift;
+    $ver ||= '';
+    $ver =~ s/^v//;
+
+    my @allver = uniq sort { version->parse("v$b") <=> version->parse("v$a") } map { $_->{_default_} ? ($_->{_default_}) : @{ $_->{versions} || [] } } @{ $config->{multiversion_pages} || [] };
+    my ($default_ver) = map { $_->{_default_} } grep { $_->{_default_} } @{ $config->{multiversion_pages} || [] };
+
+    $ver = $allver[0] unless $ver;
 
     system("cd \Q$dir\E; perl utils/syntax.pl");
 
@@ -162,14 +155,17 @@ sub main {
     @files = sort @files;
 
     system("mkdir -p \Q$out\E/documentation/help");
-    open my $index, '>', "$out/documentation/help/index.markdown";
-    print $index '---
+    my ($multiver_links_main, $ver_suffix_main) = _get_mv('index', $ver);
+    my $ver_suffix_title_main = $ver_suffix_main ? " ($ver)" : '';
+    my $ver_prefix_main = $ver_suffix_main ? '../' : '';
+    open my $index, '>', "$out/documentation/help/index${ver_suffix_main}.markdown";
+    print $index qq'---
 layout: page
-title: Help
+title: Help$ver_suffix_title_main
 ---
 
 These are the `/help` pages of the Irssi on-line help.
-
+$multiver_links_main
 <div markdown="1" class="helpindex">
 
 ';
@@ -177,8 +173,7 @@ These are the `/help` pages of the Irssi on-line help.
     my %table_state;
     for (@files) {
 	my $fn = $_;
-	print $index "* [$_]($_)\n";
-	my (@subcommand_split) = map { @{$_->[1]} } grep { $_->[0] eq $fn } @subcommand_pages;
+	my (@subcommand_split) = map { @{$_->{pages}} } grep { $_->{command} eq $fn } @{$config->{subcommand_pages} || []};
 	open my $sin, '<', "$dir/docs/help/$_";
 	chomp (my @tx = <$sin>);
 	my @otx = @tx;
@@ -186,10 +181,20 @@ These are the `/help` pages of the Irssi on-line help.
 	while (@sub_pages) {
 	    my $page = shift @sub_pages;
 	    @tx = @otx;
-	    open my $syn, '>', "$out/documentation/help/$page->{file}.markdown";
+	    my ($multiver_links, $ver_suffix) = _get_mv($page->{file}, $ver);
+	    open my $syn, '>', "$out/documentation/help/$page->{file}${ver_suffix}.markdown";
+	    my $ver_suffix_main_link = '';
+	    my $ver_suffix_title = '';
+	    if ($ver_suffix) {
+		$ver_suffix_main_link = "/index$ver_suffix";
+		$ver_suffix_title = " ($ver)";
+	    }
+	    if ($page->{file} eq $fn) {
+		print $index "* [$page->{file}]($ver_prefix_main$page->{file}$ver_suffix)\n";
+	    }
 	    print $syn qq'---
 layout: page
-title: "Help: $page->{title}"
+title: "Help: $page->{title}$ver_suffix_title"
 ---
 
 {% comment %}
@@ -205,10 +210,10 @@ Please submit changes to
 	    print $syn qq'
 
 {% endcomment %}
-[Help index](/documentation/help)
+[Help index](/documentation/help$ver_suffix_main_link)
 ';
 	    if ($page->{file} ne $fn) {
-		print $syn "\n[\u$fn subcommands index](/documentation/help/$fn)\n";
+		print $syn "\n[\u$fn subcommands index](/documentation/help/$fn$ver_suffix)\n$multiver_links";
 	    }
 	    elsif (@subcommand_split) {
 		# find valid subpages
@@ -234,9 +239,9 @@ Please submit changes to
 			push @commands, $command;
 		    }
 		}
-		print $syn "### Subcommands\n\n";
+		print $syn "$multiver_links\n### Subcommands\n\n";
 		for (@subcommand_split) {
-		    my ($name, $title, $commands, $not_commands) = @$_;
+		    my ($name, $title, $commands, $not_commands) = @{$_}{qw(name title commands excludes)};
 		    my @c1;
 		    if ($commands) {
 			my $re = join '|', map { quotemeta "$fn $_ " } sort { length $b <=> length $a } sort @$commands;
@@ -251,8 +256,9 @@ Please submit changes to
 			@c1 = grep !/^($not)/, @c1;
 		    }
 		    if (@c1) {
+			my ($multiver_links, $ver_suffix) = _get_mv("${fn}_$name", $ver);
 			print $syn qq'
-#### [$title](/documentation/help/${fn}_$name)
+#### [$title](/documentation/help/${fn}_$name$ver_suffix)
 
 <div markdown="1" class="helpindex">
 
@@ -272,6 +278,9 @@ Please submit changes to
 		my $all_re = join '|', map { quotemeta } sort { length $b <=> length $a } sort keys %commands_seen;
 		$page->{filter_re} = $page->{filter_not_re} = $all_re;
 		@tx = @otx;
+	    }
+	    elsif ($multiver_links) {
+		print $syn $multiver_links;
 	    }
 	    my $in = 'syn';
 	    for (@tx) {
@@ -300,7 +309,10 @@ Please submit changes to
 		    my @see_also = split " ", $2;
 		    s/,$// for @see_also;
 		    for (@see_also) {
-			$_ = "[$_](/documentation/help/\L$_\E)";
+			my (undef, $ver_suffix1) = _get_mv("\L$_", $ver);
+			my (undef, $ver_suffix2) = _get_mv($page->{file}, $ver);
+			my $ver_suffix = $ver_suffix1 eq $ver_suffix2 ? $ver_suffix2 : '';
+			$_ = "[$_](/documentation/help/\L$_\E$ver_suffix)";
 		    }
 		    $_ = $res . join ", ", @see_also;
 		}
@@ -425,10 +437,10 @@ Please submit changes to
 	}
     }
     my %seen;
-    for my $cat (@categories) {
+    for my $cat (@{$config->{categories}}) {
 	print $index qq'
 
-### $cat->[0]
+### $cat->{category}
 
 <div markdown="1" class="helpindex">
 
@@ -437,12 +449,12 @@ Please submit changes to
 	for (@files) {
 	    my $cmd = "\U$_";
 	    my $srcf = $cmd{$cmd};
-	    if ($cat->[2] && grep { $cmd eq $_ } @{$cat->[2]}) {
+	    if ($cat->{excludes} && grep { $cmd eq $_ } @{$cat->{excludes}}) {
 		next;
 	    }
 	    my $found;
-	    if ($cat->[1]) {
-		for my $sea (@{$cat->[1]}) {
+	    if ($cat->{paths}) {
+		for my $sea (@{$cat->{paths}}) {
 		    $found = grep { $_ =~ $sea } keys %$srcf;
 		    last if $found;
 		}
@@ -452,7 +464,8 @@ Please submit changes to
 	    }
 	    next unless $found;
 	    $seen{$_} = 1;
-	    print $index "* [$_]($_)\n";
+	    my ($multiver_links, $ver_suffix) = _get_mv($_, $ver);
+	    print $index "* [$_]($ver_prefix_main$_$ver_suffix)\n";
 	}
 	print $index '
 
