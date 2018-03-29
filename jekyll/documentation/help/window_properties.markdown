@@ -18,7 +18,7 @@ Please submit changes to
 
 [Window subcommands index](/documentation/help/window)
 
-[ [v1.0](/documentation/help/window_navigation_(1.0)) ] - [ v1.1 ]
+[ [v1.0](/documentation/help/window_properties_(1.0)) ] - [ v1.1 ]
 
 ### Syntax ###
 
