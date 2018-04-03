@@ -72,7 +72,7 @@ sub _get_mv {
 	$multiver_links = join ' - ', map {
 	    my $link;
 	    my $name = "v$_";
-	    my @latest = grep { version->parse("v$_") <= version->parse("v$ver") } @multiver;
+	    my @latest = ($default_ver, (grep { version->parse("v$_") <= version->parse("v$ver") } @multiver));
 	    if (version->parse("v$_") == version->parse("v".$latest[-1])) {
 		$link = "[ $name ]";
 	    }
@@ -165,6 +165,13 @@ title: Help$ver_suffix_title_main
 ---
 
 These are the `/help` pages of the Irssi on-line help.
+{% comment %}
+
+Please submit changes to
+- https://github.com/irssi/irssi/tree/master/docs/help/in
+- https://github.com/irssi/irssi.github.io/blob/master/_tools/help2md.yml
+
+{% endcomment %}
 $multiver_links_main
 <div markdown="1" class="helpindex">
 

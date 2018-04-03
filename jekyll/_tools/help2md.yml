@@ -81,6 +81,9 @@ multiversion_pages:
   - page: window_split_moving
     versions:
       - 1.2
+  - page: statusbar
+    versions:
+      - 1.2
   - page: window
     versions:
       - 1.0

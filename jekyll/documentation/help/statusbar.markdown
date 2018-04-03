@@ -13,6 +13,8 @@ Please submit changes to
 {% endcomment %}
 [Help index](/documentation/help)
 
+[ v1.1 ] - [ [v1.2](/documentation/help/statusbar_(1.2)) ]
+
 ### Syntax ###
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">STATUSBAR</span> <span class="synB05">&lt;name></span> <span class="synB">ENABLE</span></code></pre></div>

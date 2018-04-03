@@ -4,6 +4,13 @@ title: Help
 ---
 
 These are the `/help` pages of the Irssi on-line help.
+{% comment %}
+
+Please submit changes to
+- https://github.com/irssi/irssi/tree/master/docs/help/in
+- https://github.com/irssi/irssi.github.io/blob/master/_tools/help2md.yml
+
+{% endcomment %}
 
 [ [v1.0](/documentation/help/index_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/index_(1.2)) ]
 
