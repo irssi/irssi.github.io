@@ -77,5 +77,5 @@ prevent you from being kicked from the network due to flooding commands.
     /NETWORK REMOVE Freenode
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [SERVER](/documentation/help/server)
+[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [SERVER](/documentation/help/server_(1.0))
 

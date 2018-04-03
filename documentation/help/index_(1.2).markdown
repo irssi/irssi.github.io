@@ -4,6 +4,13 @@ title: Help (1.2)
 ---
 
 These are the `/help` pages of the Irssi on-line help.
+{% comment %}
+
+Please submit changes to
+- https://github.com/irssi/irssi/tree/master/docs/help/in
+- https://github.com/irssi/irssi.github.io/blob/master/_tools/help2md.yml
+
+{% endcomment %}
 
 [ [v1.0](/documentation/help/index_(1.0)) ] - [ [v1.1](/documentation/help) ] - [ v1.2 ]
 
@@ -73,6 +80,7 @@ These are the `/help` pages of the Irssi on-line help.
 * [notify](../notify)
 * [op](../op)
 * [oper](../oper)
+* [otr](../otr)
 * [part](../part)
 * [ping](../ping)
 * [query](../query)
@@ -97,7 +105,7 @@ These are the `/help` pages of the Irssi on-line help.
 * [squery](../squery)
 * [squit](../squit)
 * [stats](../stats)
-* [statusbar](../statusbar)
+* [statusbar](../statusbar_(1.2))
 * [time](../time)
 * [toggle](../toggle)
 * [topic](../topic)
@@ -193,7 +201,7 @@ These are the `/help` pages of the Irssi on-line help.
 * [reload](../reload)
 * [save](../save)
 * [set](../set)
-* [statusbar](../statusbar)
+* [statusbar](../statusbar_(1.2))
 * [toggle](../toggle)
 * [unalias](../unalias)
 * [unignore](../unignore)
@@ -312,6 +320,7 @@ These are the `/help` pages of the Irssi on-line help.
 
 * [flushbuffer](../flushbuffer)
 * [levels](../levels)
+* [otr](../otr)
 * [rmrejoins](../rmrejoins)
 * [script](../script)
 

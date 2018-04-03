@@ -104,5 +104,5 @@ method is applicable to the CONNECT parameter.
     /SERVER PURGE orwell.freenode.net
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)
+[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network_(1.0)), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)
 
