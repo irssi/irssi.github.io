@@ -94,7 +94,7 @@ Key generation should start if no key is found for your account name. Once the p
 
 Time to authenticate the person. Either use a shared secret exchange through phone or GPG-signed email or use the socialist millionaire problem mechanism (SMP) which is basically to ask a question for which the answer can only be known by the other person.
 
-<strong>/otr auth &lt;shared-secret>%n OR %9/otr authq "A question" &lt;shared-secret></strong>
+<strong>/otr auth &lt;shared-secret></strong> OR <strong>/otr authq "A question" &lt;shared-secret></strong>
 
 Or to respond to an authentication:
 
@@ -111,7 +111,7 @@ else unless you know what you are doing.
 * <strong>otr.fp</strong>
 The known fingerprints with their _trust_ status.
 
-* %9otr.instag
+* <strong>otr.instag</strong>
 Instance tag of the libotr. This should NEVER be copied to an other
 computer. If unsure, just ignore this file.
 
