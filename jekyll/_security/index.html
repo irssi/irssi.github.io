@@ -20,7 +20,8 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
     </thead>
 {% assign advisories = site.data.security | concat: site.security %}{%
 assign lttrs = 'abcdefghijklmn' | split: '' %}{%
-for advisory in advisories reversed %}
+for advisory in advisories reversed %}{%
+if advisory.bugs %}
     <tbody>
 	<tr>
 	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/html/{{ advisory.name | slugify	 | replace: '-', '_' }}">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
@@ -81,7 +82,7 @@ for advisory in advisories reversed %}
 		</tr>
 	{% endfor %}
 	</tbody>
-{% endfor %}
+{% endif %}{% endfor %}
 
 </table>
 
