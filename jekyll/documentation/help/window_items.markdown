@@ -14,9 +14,13 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help)
+</nav>
 
+<nav markdown="1">
 [Window subcommands index](/documentation/help/window)
+</nav>
 
 ### Syntax ###
 

@@ -10,7 +10,9 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help)
+</nav>
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">OTR</span> <span class="syn10">[<span class="syn">OPTION</span>]</span></code></pre></div>
 

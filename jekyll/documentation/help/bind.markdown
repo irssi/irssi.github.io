@@ -11,9 +11,13 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help)
+</nav>
 
+<nav markdown="1">
 [ v1.1 ] - [ [v1.2](/documentation/help/bind_(1.2)) ]
+</nav>
 
 ### Syntax ###
 

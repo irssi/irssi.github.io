@@ -14,9 +14,13 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help/index_(1.2))
+</nav>
 
+<nav markdown="1">
 [ [v1.0](/documentation/help/window_(1.0)) ] - [ [v1.1](/documentation/help/window) ] - [ v1.2 ]
+</nav>
 
 ### Subcommands
 
