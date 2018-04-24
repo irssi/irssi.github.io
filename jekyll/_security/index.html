@@ -26,7 +26,7 @@ if advisory.bugs %}
 	<tr>
 	    <th colspan="3">{% if advisory.link %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{% elsif advisory.name contains "-SA-" %}<a href="{{ site.baseurl }}/security/html/{{ advisory.name | slugify	 | replace: '-', '_' }}">{{ advisory.name }}</a>{% else %}{{ advisory.name }}{% endif %}</th>
 	    <th colspan="3">{% if advisory.affected_note %}{{ advisory.affected_note }}{% endif %}</th>
-	    <th>{% if advisory.git_commit %}<a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.release_date }}</a>{% else %}{{ advisory.release_date }}{% endif %}</th>
+	    <th class="text-nowrap">{% if advisory.git_commit %}<a href="https://github.com/irssi/{% if advisory.repo %}{{ advisory.repo }}{% else %}irssi{% endif %}/commit/{{ advisory.git_commit }}">{{ advisory.release_date }}</a>{% else %}{{ advisory.release_date }}{% endif %}</th>
 	    <th colspan="3"></th>
 	</tr>
     </tbody>
