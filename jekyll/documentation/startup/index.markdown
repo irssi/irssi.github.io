@@ -379,7 +379,7 @@ By default it logs pretty much everything execept CTCPS or CRAP (`/WHOIS` reques
     /SET autolog_level ALL -CRAP -CLIENTCRAP -CTCPS (this is the default)
 
 
-By default irssi logs to ~/irclogs/<servertag>/<target>.log. You can change this with
+By default irssi logs to ~/irclogs/&lt;servertag&gt;/&lt;target&gt;.log. You can change this with
 
 
     /SET autolog_path ~/irclogs/$tag/$0.log (this is the default)
