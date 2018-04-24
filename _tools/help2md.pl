@@ -89,7 +89,7 @@ sub _get_mv {
 	    $link
 	} @multiver;
 	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver) && version->parse("v$ver") != version->parse("v$default_ver") ? "_($ver)" : '';
-	$multiver_links = "\n$multiver_links\n";
+	$multiver_links = "\n<nav markdown=\"1\">\n$multiver_links\n</nav>\n";
     }
     ($multiver_links, $ver_suffix)
 }
@@ -217,10 +217,12 @@ Please submit changes to
 	    print $syn qq'
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help$ver_suffix_main_link)
+</nav>
 ';
 	    if ($page->{file} ne $fn) {
-		print $syn "\n[\u$fn subcommands index](/documentation/help/$fn$ver_suffix)\n$multiver_links";
+		print $syn "\n<nav markdown=\"1\">\n[\u$fn subcommands index](/documentation/help/$fn$ver_suffix)\n</nav>\n$multiver_links";
 	    }
 	    elsif (@subcommand_split) {
 		# find valid subpages
