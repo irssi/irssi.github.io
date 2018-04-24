@@ -10,7 +10,9 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help)
+</nav>
 
 ### Syntax ###
 

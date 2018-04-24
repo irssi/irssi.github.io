@@ -11,7 +11,9 @@ Please submit changes to
 
 
 {% endcomment %}
+<nav markdown="1">
 [Help index](/documentation/help)
+</nav>
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:16ch"><code><span class="synB">IRSSIPROXY</span> <span class="synB">STATUS</span></code></pre></div>
 
