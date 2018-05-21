@@ -248,6 +248,11 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` scrollback_time = 1day `
 
 > Keep at least scrollback_time worth of messages in the scrollback buffer, even if it means having more than scrollback_lines lines in the buffer.
+  Valid formats for the setting are:
+>>	day/hour/minute/min/second/sec/millisecond/millisec/msecond/msec
+>>	and the plural forms of the above: days, hours etc
+>>
+>>	The maximum value for days is 24
 
 {:#window_history}
 ` window_history = OFF `
