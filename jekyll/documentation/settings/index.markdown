@@ -542,9 +542,9 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Detect escapes in input, and expand them to the characters they describe. For example
 >
 >>
->>     t
+>>     \t
 >
-> Is literally '' and 't' when expand_escapes is off, but it's the tab character (chr 9) when expand_escapes is on.
+> Is literally '\\' and 't' when expand_escapes is off, but it's the tab character (chr 9) when expand_escapes is on.
 
 {:#hide_colors}
 ` hide_colors = OFF `
