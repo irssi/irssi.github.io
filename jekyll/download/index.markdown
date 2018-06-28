@@ -186,7 +186,7 @@ See the included [INSTALL][15]{:rel='external'} file for building instructions
 
 To verify the signatures:
 
-    gpg --keyserver wwwkeys.pgp.net --recv-keys '7EE6 5E30 82A5 FB06 AC7C 368D 00CC B587 DDBE F0E1'
+    gpg --keyserver keys.gnupg.net --recv-keys '7EE6 5E30 82A5 FB06 AC7C 368D 00CC B587 DDBE F0E1'
 
 You shouldn't really trust this key without verifying its fingerprint. See it with `gpg --fingerprint staff@irssi.org` and ask someone if it matches (eg. on <tt>[#irssi][20]</tt>).
 
