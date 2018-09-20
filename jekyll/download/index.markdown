@@ -52,7 +52,7 @@ Download setup.exe from [Cygwin][2]{:rel='external'} and select irssi during the
 
 ### Debian
 
-`apt-get install irssi`.  
+`apt install irssi`.  
 You may find more up to date version on [Debian Backports][5]{:rel='external'}
 
 [5]: http://backports.debian.org/
@@ -62,7 +62,7 @@ You may find more up to date version on [Debian Backports][5]{:rel='external'}
 
 ### Ubuntu
 
-`apt-get install irssi`.  
+`apt install irssi`.  
 
 </div>
 <div class="info about-macosx" markdown="1">
