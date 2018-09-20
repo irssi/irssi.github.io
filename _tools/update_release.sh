@@ -1,4 +1,7 @@
-#!/bin/sh -e
+#!/bin/sh
+
+set -e
+
 if [ $# -ne 1 ]; then
     echo Usage: "$0" /path/to/irssi
     exit 1
@@ -9,23 +12,24 @@ if [ ! -f "$P"/NEWS ]; then
     exit 1
 fi
 
-mydir=`pwd`
+mydir=$(pwd)
 
-srcdir=`dirname "$0"`
+srcdir=$(dirname "$0")
 test -z "$srcdir" && srcdir=.
 cd "$srcdir"
-srcdir=`pwd`
+srcdir=$(pwd)
 
 cd "$mydir"
 cd "$P"
-P=`pwd`
+P=$(pwd)
 
 cd "$srcdir"
 
 unset VER
 unset GITHUB
 ONLINE=${ONLINE-1} perl news2md.pl "$P"/NEWS > ../_includes/relnews.markdown~tmp~
-export version="$(grep '^## ' ../_includes/relnews.markdown~tmp~|grep -v '-head$'|head -1|awk '{print $2}')"
+version="$(grep '^## ' ../_includes/relnews.markdown~tmp~|grep -v '-head$'|head -1|awk '{print $2}')"
+export version
 if [ -z "$version" ]; then
     echo No version found
     exit 2

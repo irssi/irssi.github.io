@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set -e
+
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
     echo Usage: "$0" /path/to/irssi VERSION [path to release files]
     exit 1
@@ -17,20 +20,20 @@ fi
 
 ORG=${ORG:-irssi}
 
-mydir=`pwd`
+mydir=$(pwd)
 
-srcdir=`dirname "$0"`
+srcdir=$(dirname "$0")
 test -z "$srcdir" && srcdir=.
 cd "$srcdir"
-srcdir=`pwd`
+srcdir=$(pwd)
 
 cd "$mydir"
 cd "$P"
-P=`pwd`
+P=$(pwd)
 
 cd "$mydir"
 cd "$relpath"
-relpath=`pwd`
+relpath=$(pwd)
 
 cd "$srcdir"
 
