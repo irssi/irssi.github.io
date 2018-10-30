@@ -5,6 +5,8 @@ use warnings;
 
 use File::Basename;
 use IPC::Run 'run';
+use Text::CharWidth 'mbwidth';
+use List::Util 'max';
 
 sub info (@) {
     print STDERR "@_\n";
@@ -13,19 +15,23 @@ sub info (@) {
 for my $file (@ARGV) {
     info "loading $file...";
     my $fh;
-    unless (open $fh, '<', $file) {
+    unless (open $fh, '<:utf8', $file) {
 	info "..failed: $!";
 	next;
     }
     my $c = do { local $/; <$fh> };
-    while ($c =~ /^ (\`{3,}) \s? ascidia \s*? $
+    while ($c =~ /^ ((>*\s*)\`{3,}) \s? ascidia \s*? $
 		  (.*?)
-		  ^ \1 \s* 
-		  ^\{:(.*?)\}/gsmx) {
-	my ($tx, $k) = ($2, $3);
+		  ^ \1 \s*
+		  ^\2 \{:(.*?)\}/gsmx) {
+	my ($tx, $k, $p) = ($3, $4, $2);
 	if ($k =~ /\.repl\b/ && $k =~ /\#(\w+)/) {
 	    my $fn = $1;
+	    my $p_s = 0;
+	    $p =~ s/(\s+)$// && ($p_s = length $1);
+	    eval "\$tx =~ s/^\\Q\$p\\E\\s{0,$p_s}//gm";
 	    $tx =~ s/^\s*$//m;
+	    $tx =~ s/(.)/$1 . " " x max( 0, mbwidth($1) - 1 )/ge;
 	    my $ofn = dirname($file) . "/${fn}.svg";
 	    info ".. found image $fn";
 	    my $ac;
@@ -51,7 +57,8 @@ for my $file (@ARGV) {
 		next;
 	    }
 	    $out =~ s{<svg }{<svg width="$width" height="$height" };
-	    $out =~ s{ stroke-width="2\.5" }{ stroke-width="0.7" }gm;
+	    $out =~ s{ stroke-width="2\.5"(?= |>)}{ stroke-width="0.7"}gm;
+	    $out =~ s{ font-size="10"(?= |>)}{ font-size="12"}gm;
 	    my $oh;
 	    unless (open $oh, '>', $ofn) {
 		info ".. failed to open image for output: $!";
