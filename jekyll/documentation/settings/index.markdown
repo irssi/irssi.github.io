@@ -1523,8 +1523,10 @@ Irssi's colors that you can use in text formats, hilights, etc. :
 |  %w  |  %W  |  %7  | white    | bold white   | white      |
 {: .table }
 
+|      |      |      |                                      |
+| ---- | ---- | ---- | ------------------------------------ |
 |  %n  |  %N  |      | Changes the color to default color, removing all other coloring and formatting. %N is always the terminal's default color. %n is usually too, except in themes it changes to previous color, ie. hello = %Rhello%n and %G{hello} world would print hello in red, and %n would turn back into %G making world green. |
-|  %F  |      |      | Blinking on/off (think: flash) |
+|  %F  |      |      | Blinking on/off (think: flash)       |
 |  %U  |      |      | Underline on/off                     |
 |  %8  |      |      | Reverse on/off                       |
 |  %9  |  %_  |      | Bold on/off                          |
