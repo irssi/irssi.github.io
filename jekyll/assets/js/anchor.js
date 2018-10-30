@@ -83,7 +83,7 @@
 
       // Provide a sensible default selector, if none is given.
       if (!selector) {
-        selector = 'h2, h3, h4, h5, h6';
+        selector = 'p[id], h2, h3, h4, h5, h6';
       }
 
       elements = _getElements(selector);
