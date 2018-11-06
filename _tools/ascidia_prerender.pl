@@ -32,7 +32,7 @@ for my $file (@ARGV) {
 	    eval "\$tx =~ s/^\\Q\$p\\E\\s{0,$p_s}//gm";
 	    $tx =~ s/^\s*$//m;
 	    $tx =~ s/(.)/$1 . " " x max( 0, mbwidth($1) - 1 )/ge;
-	    my $ofn = dirname($file) . "/${fn}.svg";
+	    my $ofn = ($file =~ /\/index\.[^\/]*$/ ? dirname($file) : $file =~ s/\.[^.\/]*?$//r) . "/${fn}.svg";
 	    info ".. found image $fn";
 	    my $ac;
 	    my @cmd = ('ascidia', '-t', 'svg', '-c', '16');
@@ -59,6 +59,7 @@ for my $file (@ARGV) {
 	    $out =~ s{<svg }{<svg width="$width" height="$height" };
 	    $out =~ s{ stroke-width="2\.5"(?= |>)}{ stroke-width="0.7"}gm;
 	    $out =~ s{ font-size="10"(?= |>)}{ font-size="12"}gm;
+	    system("mkdir -p ".quotemeta(dirname($ofn)));
 	    my $oh;
 	    unless (open $oh, '>', $ofn) {
 		info ".. failed to open image for output: $!";
