@@ -48,5 +48,5 @@ API. (It's for `news2md.pl`)
 
 It will run [news2md.pl](News2md.md) to convert the NEWS into Markdown
 for the website (`/_includes/relnews.markdown`). Then update the
-version number in `/download/index.markdown`. You still have to
+version number in `/download.markdown`. You still have to
 **commit** the resulting changes.

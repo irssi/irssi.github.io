@@ -32,4 +32,4 @@ if [ -z "$version" ]; then
 fi
 mv ../_includes/relnews.markdown~tmp~ ../_includes/relnews.markdown
 
-perl -i -p -e '$found = s{^version: \K(.*)$}{$ENV{version}} unless $found' ../download/index.markdown
+perl -i -p -e '$found = s{^version: \K(.*)$}{$ENV{version}} unless $found' ../download.markdown
