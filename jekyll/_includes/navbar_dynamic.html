@@ -14,15 +14,9 @@ assign ap = site.pages %}{%
 for it in pageidx %}{%
     assign p_idx = it | times:1 %}{%
     assign node = ap[p_idx] %}{%
-    if node.categories contains "_nav" %}{%
-        if page.url == node.url %}
-<li class="active">
-    <a href="{{ site.baseurl }}{{ node.url }}" class="active">{{ node.title }}</a>
-</li>{%
-        else %}
-<li>
+    if node.categories contains "_nav" %}
+<li{% include active_class_in.html url=node.url %}>
     <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
 </li>{%
-        endif %}{%
     endif %}{%
 endfor %}

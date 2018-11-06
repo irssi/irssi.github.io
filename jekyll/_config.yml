@@ -24,7 +24,7 @@ whitelist:
   - jekyll-sitemap
 
 paginate: 8
-paginate_path: "news/:num/"
+paginate_path: "posts/:num/"
 
 collections:
   articles:
