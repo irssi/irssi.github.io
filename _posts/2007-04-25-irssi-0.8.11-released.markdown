@@ -6,7 +6,7 @@ email: "geert@irssi.org"
 ---
 
 Please welcome the new Irssi 0.8.11 release, check the [NEWS
-file](/news/ChangeLog) for all changes!
+file](/NEWS#v0-8-11) for all changes!
 
 It can be downloaded from
 [http://irssi.org/files/irssi-0.8.11.tar.gz](http://irssi.org/files/irssi-0.8.11.tar.gz).
