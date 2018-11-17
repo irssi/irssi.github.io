@@ -131,7 +131,7 @@ if you like to close irssi for some reason use `//quit`.
 Disclaimer: of course you will miss some stuff with this ignores. but for me it makes it more readable.
 
 Another way to get rid of some message levels is `/scrollback levelclear`
-I use: `/sb levelclear -levels JOINS,PARTS,QUITS,NICKS,CLIENTCRAP,CRAP,MODE,TOPICS,KICKS`.
+I use: `/sb levelclear -level JOINS,PARTS,QUITS,NICKS,CLIENTCRAP,CRAP,MODE,TOPICS,KICKS`.
 
 ### How to update all irssi scripts at once?
 Use `git pull`
