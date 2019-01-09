@@ -28,22 +28,16 @@ Please submit changes to
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:8ch"><code><span class="synB">WINDOW</span> <span class="synB">UP</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">WINDOW</span> <span class="synB">UP</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">WINDOW</span> <span class="synB">DUP</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">DOWN</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">DLEFT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">LEFT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">DOWN</span></code></pre></div>
-
-
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">DDOWN</span></code></pre></div>
-
-
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">DRIGHT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">RIGHT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
 
@@ -51,11 +45,14 @@ Please submit changes to
 
 
 | `UP`: | Set the split window left or above the current one active. At the top, wraps to the bottom. |
-| `DOWN`: | Set the split window right or below the current one active. At the bottom, wraps to the top. |
-| `DUP`: | Set the split window above the current one active. At the top, wraps to the bottom. |
-| `DDOWN`: | Set the split window below the current one active. At the bottom, wraps to the top. |
-| `DLEFT`: | Set the split window left to the current one active. At the left, wraps to the right. |
-| `DRIGHT`: | Set the split window right to the current one active. At the right, wraps to the left. |
+| `DOWN`: | Set the split window right or below the current one active. At the bottom, wraps teft. |
+| `LEFT`: | Go to the previous window numerically that is part of the current sticky group (or not part of any sticky group). |
+| `RIGHT`: | Go to the next window numerically that is part of the current sticky group (or not part of any sticky group). |
+{:.table.kv}
+
+
+| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
+| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.

@@ -96,7 +96,6 @@ subcommand_pages:
           - close
           - hide
           - show
-          - rshow
           - list
         name: creation
         title: window/split window creation
@@ -130,8 +129,6 @@ subcommand_pages:
           - number
           - move
         excludes:
-          - move dleft
-          - move dright
           - move up
           - move down
         name: moving
@@ -141,24 +138,18 @@ subcommand_pages:
           - shrink
           - size
           - balance
-          - rgrow
-          - rshrink
-          - rsize
-          - rbalance
         name: resizing
         title: split window resizing
       - commands:
           - up
-          - dup
-          - dleft
+          - left
           - down
-          - ddown
-          - dright
+          - right
         name: navigation
         title: split window navigation
       - commands:
-          - move dleft
-          - move dright
+          - move left
+          - move right
           - move up
           - move down
           - stick

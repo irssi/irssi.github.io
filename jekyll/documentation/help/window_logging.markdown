@@ -38,6 +38,11 @@ Please submit changes to
 | `LOGFILE`: | Sets the location of the log file to use for window logging without starting to log. |
 {:.table.kv}
 
+
+| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
+| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
+{:.table.kv}
+
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
 
 ### Description ###

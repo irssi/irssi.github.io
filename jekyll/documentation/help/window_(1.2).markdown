@@ -34,7 +34,6 @@ Please submit changes to
 * window list 
 * window hide 
 * window show 
-* window rshow 
 
 </div>
 
@@ -102,10 +101,6 @@ Please submit changes to
 * window shrink 
 * window size 
 * window balance 
-* window rgrow 
-* window rshrink 
-* window rsize 
-* window rbalance 
 
 </div>
 
@@ -114,11 +109,9 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window up 
-* window dup 
-* window dleft 
 * window down 
-* window ddown 
-* window dright 
+* window left 
+* window right 
 
 </div>
 
@@ -127,8 +120,8 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window stick 
-* window move dleft 
-* window move dright 
+* window move left 
+* window move right 
 * window move up 
 * window move down 
 
@@ -147,6 +140,11 @@ Please submit changes to
 
 ### Parameters ###
 
+
+
+| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
+| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
+{:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
 
