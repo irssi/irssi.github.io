@@ -3,6 +3,7 @@ name: IRSSI-SA-2019-01
 release_date: 2019-01-09
 bugs:
   -
+    cve: CVE-2019-5882
     cwe: CWE-417, CWE-825
     exploitable_by: client
     affected_versions:
