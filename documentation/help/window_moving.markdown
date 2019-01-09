@@ -42,10 +42,10 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">MOVE</span> <span class="synB05">&lt;number></span>|<span class="synB05">&lt;direction></span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:15ch"><code><span class="synB">WINDOW</span> <span class="synB">MOVE</span> <span class="synB">LEFT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:16ch"><code><span class="synB">WINDOW</span> <span class="synB">MOVE</span> <span class="synB">LEFT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:16ch"><code><span class="synB">WINDOW</span> <span class="synB">MOVE</span> <span class="synB">RIGHT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:17ch"><code><span class="synB">WINDOW</span> <span class="synB">MOVE</span> <span class="synB">RIGHT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
 
@@ -60,6 +60,11 @@ Please submit changes to
 | `MOVE`: | Move the window to the specified number or the first number that is in use when moving the window in the direction of the specified position. Any windows inbetween are shifted towards the old position of the window (unused positions remain empty) |
 | `MOVE LEFT`: | Move the window to the numerically previous location inside the current sticky group. |
 | `MOVE RIGHT`: | Move the window to the numerically next location inside the current sticky group. |
+{:.table.kv}
+
+
+| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
+| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
