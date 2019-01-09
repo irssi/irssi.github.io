@@ -55,10 +55,10 @@ for bug in page.bugs %}{%
         if bug.description_long
 	    %}{{ bug.description_long }}{%
         else
-	    %}{{ bug.description }} {%
+	    %}{{ bug.description }}{%
 
             if bug.credit %}{%
-	        assign desc_is_sent = bug.description | split: "" | reverse %}{%
+	        assign desc_is_sent = bug.description | split: "" | reverse %} {%
 		if desc_is_sent[0] == "." %}F{% else %}f{% endif %}ound by {{ bug.credit }}{%
             endif
             %}.{%
@@ -123,7 +123,7 @@ capture versions %}{%
 	endif %}{%
         capture text %}{%
     	    if bug.affected_versions.from
-    	        %}{{page.affected_versions | default: 'Irssi' }} {{bug.affected_versions.from|join: ", "}} and later{%
+    	        %}{{page.affected_note | default: 'Irssi' }} {{bug.affected_versions.from|join: ", "}} and later{%
     	    else
     	        %}All {{page.affected_note | default: 'Irssi' }} versions that we observed{%
     	    endif %}{%
