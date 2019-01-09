@@ -7,6 +7,32 @@
 
 ---
 
+## 1.1.2
+{:#v1-1-2 }
+
+The Irssi team released this <abbr class="timeago" title="2019-01-09">2019-01-09</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.1.2" %}
+
+### Fixes
+{:#v1-1-2-fixes }
+
+- Fix the resetting of window hiddenlevel ([#861](https://github.com/irssi/irssi/issues/861))
+- Fix clearing of hidelevel in layout ([#951](https://github.com/irssi/irssi/issues/951))
+- Fix accessing unallocated text when checking entry position ([#928](https://github.com/irssi/irssi/issues/928), [#930](https://github.com/irssi/irssi/issues/930))
+- Fix uninitialised memory on empty lines ([#873](https://github.com/irssi/irssi/issues/873), [GL#31](https://gitlab.com/irssi/irssi/issues/31), [#878](https://github.com/irssi/irssi/issues/878), [#877](https://github.com/irssi/irssi/issues/877), [#907](https://github.com/irssi/irssi/issues/907), [#914](https://github.com/irssi/irssi/issues/914))
+- Fix use-after-free on expiration of hidden lines ([#948](https://github.com/irssi/irssi/issues/948))
+- Fix use-after-frees. By Maya Rashish ([#919](https://github.com/irssi/irssi/issues/919))
+- Fix out of bounds access in help display when window width is small ([#949](https://github.com/irssi/irssi/issues/949))
+- Fix paste_join_multiline ([#970](https://github.com/irssi/irssi/issues/970), [#971](https://github.com/irssi/irssi/issues/971))
+- Correctly check for errno when displaying SSL errors. By Janik Rabe ([#895](https://github.com/irssi/irssi/issues/895))
+- Fix wrong signal emission argument count ([#965](https://github.com/irssi/irssi/issues/965))
+- Documentation ([#920](https://github.com/irssi/irssi/issues/920)). Sync NEWS, scripts ([#849](https://github.com/irssi/irssi/issues/849))
+- Fix Perl detection on MacOS. By Dominyk Tiller ([#927](https://github.com/irssi/irssi/issues/927))
+- Misc fixes. By Jaroslav Škarvada ([#981](https://github.com/irssi/irssi/issues/981), [#982](https://github.com/irssi/irssi/issues/982))
+
+---
+
 ## 1.1.1
 {:#v1-1-1 }
 
@@ -65,7 +91,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15
 - The command history no longer permits wrapping around ([#686](https://github.com/irssi/irssi/issues/686))
 - /foreach now correctly sends arguments as commands, stopping you from embarassing AMSGs ([#659](https://github.com/irssi/irssi/issues/659))
 - /server does not connect to servers anymore, use /server connect to change servers ([#559](https://github.com/irssi/irssi/issues/559), [#649](https://github.com/irssi/irssi/issues/649)).
-- The net_ip_compare API function is now deprecated, and the previously deprecated net_connect has been removed ([#770](https://github.com/irssi/irssi/issues/770)). By Will Storey ([#770](https://github.com/irssi/irssi/issues/770))
+- The net_ip_compare API function is now deprecated, and the previously deprecated net_connect has been removed. By Will Storey ([#770](https://github.com/irssi/irssi/issues/770)).
 
 ### Additions
 {:#v1-1-0-additions }

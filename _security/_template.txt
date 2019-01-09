@@ -1,0 +1,60 @@
+---
+# Rename to irssi_sa_YYYY_MM.txt
+name: Name of the bug group / security advisory, e.g.: IRSSI-SA-2099-01
+heading: Subheading above CVE list (optional)
+description: Description preface for whole advisory (optional)
+link: link to the advisory, e.g.: http://www.openwall.com/xxx (optional)
+affected_note: Some additional info for the Versions column, e.g.: script.pl if group affects only a single script (optional)
+release_date: date of release in YYYY-mm-dd format, e.g.: 2099-01-02
+repo: repository for the git commit, e.g.: scripts.irssi.org (optional, defaults to irssi)
+git_commit: git commit for the whole advisory (optional, instead of patch)
+# List of bugs
+bugs:
+  -
+    cve: CVE of bug, e.g.: CVE-2099-0999 (optional)
+    cwe: CWEs of bug, e.g.: CWE-123, CWE-456 (optional)
+    name: name for the bug (in reference to the group), e.g.: (a) (optional)
+    link: link to more information about the bug (optional)
+    # additional external links to display in the first column (optional)
+    external_links:
+      -
+        id: text for the link
+        url: href for the link
+      -
+        # add more links here...
+    exploitable_by: one of server/client/local/formats/local (remote)/remote
+    affected_note_top: some remark to show on a row before the versions (optional)
+    # which versions are affected
+    affected_versions:
+      from: first version affected
+      to: last version affected
+    affected_note_bottom: some remarks to show below the versions, e.g.: only with compile flags xxx
+    affected_note_long: Some remarks to show after the versions inside the advisory file (optional, defaults to affected_note_bottom)
+    fixed_version: first version with the fix
+    repo: repository for the git commit, e.g.: scripts.irssi.org (optional, defaults to irssi)
+    git_commit: git commit of the individual bug fix (optional)
+    credit: whom to credit for the discovery
+    description: Content of the description column
+    description_long: Description for the advisory file (optional, defaults to description + credit)
+    impact: Impact of bug (optional)
+    mitigating_info: Mitigating facts (optional)
+    discussion: Discussion (optional)
+  -
+    # add the next bug here...
+impact: >
+  General note on impact (optional)
+fixed_in: >
+  Alternate text for the Fixed in column (optional, defaults to bugs[0].fixed_version)
+recommended_action: >
+  Text for the recommended action section (optional)
+extra2:
+  - title: Extra section title
+    text: >
+      Extra section text (optional)
+  # add more sections...
+mitigating_info: >
+  General note on mitigating facts (optional)
+patch: Link to a patch file (optional)
+discussion: >
+  General discussion (optional)
+---

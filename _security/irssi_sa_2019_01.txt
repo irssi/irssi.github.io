@@ -1,0 +1,24 @@
+---
+name: IRSSI-SA-2019-01
+release_date: 2019-01-09
+bugs:
+  -
+    cwe: CWE-417, CWE-825
+    exploitable_by: client
+    affected_versions:
+      from: 1.1.0
+      to: 1.1.1
+    fixed_version: 1.1.2
+    git_commit: 011372ecdd966531c1fd6638a3c5b239c27112ed
+    description: Use after free when hidden lines were expired from the scroll buffer
+    mitigating_info: If lines are never hidden (no usage of /window hidelevel), this bug will not trigger.
+impact: >
+  May affect the stability of Irssi.
+recommended_action: >
+  Upgrade to Irssi 1.1.2. Irssi 1.1.2 is a maintenance release in the
+  1.1 series, without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+---
