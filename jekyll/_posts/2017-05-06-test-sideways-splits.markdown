@@ -2,6 +2,7 @@
 layout: post
 title: "Help us test horizontal/vertical splits"
 author: Nei
+updated: 2019-01-15
 ---
 
 It all started in 2005, when I [asked in FS#310](http://bugs.irssi.org/index.php?do=details&task_id=310) whether vertical splits would be possible. By that, of course, I meant to split the windows horizontally in a line. At that time, the most popular version of Irssi had been 0.8.9 for several years.
@@ -17,39 +18,37 @@ Any complicated window handling logic however did not exist. So after some vague
 
 ## How to test
 
-12 years from my initial report, I am now close to resolving half of my own request. The resulting code is currently sitting in [PR 697: sideways split support](https://github.com/irssi/irssi/pull/697) and waiting for you -- or anyone else interested in this feature -- to test it.
+12 years from my initial report, I am now close to resolving half of my own request. The resulting code is currently in the development version of Irssi and waiting for you -- or anyone else interested in this feature -- to test it.
 
-After compiling this branch, your Irssi will understand new commands: `/window new rsplit` - to make a new sideways split, `/window rshow <number>` - to show an existing window to the right, and `/window rgrow/rshrink/rsize/rbalance` - to manipulate the size of your sideways split windows.
+After compiling Irssi from git, your Irssi will understand new commands: `/window new -right split` - to make a new sideways split, `/window show -right <number>` - to show an existing window to the right, and `/window grow/shrink/size/balance -right` - to manipulate the size of your sideways split windows.
 
-A short reminder how to use Irssi split windows. First, do not confuse split windows (internally called mainwindows) with windows (these windows are the ones that have numbers assigned to them, and most people use Irssi in the 1 window = 1 channel mode)
+A short reminder how to use Irssi split windows.
 
-Generally, you have the choice of generating "transient" mainwindows, which allow you to display any window not currently visible (or stuck) in another mainwindow. The mainwindow contents changes whenever you change to another window while this mainwindow is active.
+Generally, you have the choice of generating "transient" split windows, which allow you to display any window not currently visible (or stuck) in another split window. The split window contents changes whenever you change to another window while this split window is active.
 
-The second choice is to stick one or more windows to a mainwindow. This can be done with `/window stick`. When you switch to this window in the future, it will always appear in the corresponding mainwindow. Remember, you can always check the sticky state of a mainwindow by typing `/window` (without arguments). 
+The second choice is to stick one or more (numbered) windows to a split window. This can be done with `/window stick`. When you switch to this window in the future, it will always appear in the corresponding split window. Remember, you can always check the sticky state of a split window by typing `/window` (without arguments). 
 
-To move between your mainwindows, use Alt+Up/Down (`/window up/down`).
+To move between your split windows, use Alt+Up/Down (`/window up/down`).
 
-If you are mostly working with sticky windows, then you can move sticky windows from one mainwindow to another mainwindow using `/window move dup/ddown/dleft/dright`. If you try to move a transient mainwindow, the mainwindow will instead collapse.
+If you are mostly working with sticky windows, then you can move sticky windows from one split window to another split window using `/window move up/down/left/right -directional`. If you try to move a transient split window, the split window will instead collapse!
 
-One final tip, the default Irssi configuration makes it a bit hard to tell which (main)window is active. My personal favourite is this small configuration change:
+One final tip, the default Irssi configuration makes it a bit hard to tell which split window is active. My personal favourite is this small configuration change:
 
 ```
-/sbar prompt visible active
-/sbar prompt position 0
-/sbar prompt type window
+/sbar modify -type window -position 0 -visible active prompt
 ```
 
-that will move the input line **into** the active mainwindow. Another choice would be to change the statusbar colour in your theme, by adding `sb_window_inact_bg = "%6";` to the abstracts.
+that will move the input line **into** the active split window. Another choice would be to change the statusbar colour in your theme, by adding `sb_window_inact_bg = "%6";` to the abstracts.
 
 That said, there is still lots of things to do:
 
 * vertical status bars
 * and for those to work, multi line status bars
-* mainwindow zoom/unzoom
-* mainwindow swap/move/rotate
+* split window zoom/unzoom
+* split window swap/move/rotate
 * multiple layout store/restore
 * layout set code
-* support for more complex mainwindow layouts
+* support for more complex split window layouts
 
 If any of that seems interesting to you, do not hesitate to contribute the code. We can also discuss any details if you feel unsure how to approach some things on IRC (#irssi on chat.freenode.net)
 
