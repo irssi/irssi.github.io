@@ -55,7 +55,7 @@ my %link_type = (
     '#'		=> 'https://github.com/irssi/irssi/issues/',
     'GL#'	=> 'https://gitlab.com/irssi/irssi/issues/',
     'GL!'	=> 'https://gitlab.com/irssi/irssi/merge_requests/',
-    'FS#'	=> 'http://bugs.irssi.org/?do=details&task_id=',
+    'FS#'	=> 'https://github.com/irssi-import/bugs.irssi.org/issues/',
     'bdo#'	=> 'https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=',
     'bgo#'      => 'https://bugzilla.gnome.org/show_bug.cgi?id=',
     'oss-fuzz#' => 'https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=',
