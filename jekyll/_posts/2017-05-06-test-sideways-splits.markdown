@@ -5,7 +5,7 @@ author: Nei
 updated: 2019-01-15
 ---
 
-It all started in 2005, when I [asked in FS#310](http://bugs.irssi.org/index.php?do=details&task_id=310) whether vertical splits would be possible. By that, of course, I meant to split the windows horizontally in a line. At that time, the most popular version of Irssi had been 0.8.9 for several years.
+It all started in 2005, when I [asked in FS#310](https://github.com/irssi-import/bugs.irssi.org/issues/310) whether vertical splits would be possible. By that, of course, I meant to split the windows horizontally in a line. At that time, the most popular version of Irssi had been 0.8.9 for several years.
 
 
 Fast forward another ten years, Ido Rosen transferred (half of) this issue to the new [GitHub issue tracker](https://github.com/irssi/irssi/issues/224). He compared the situation to WeeChat, another popular text mode IRC client which does support this. Technically, that application is using the [curses](https://en.wikipedia.org/wiki/Ncurses) library for text mode user interfaces, which can handle most of the window drawing. <a href="/images/vsq.png"><img class="img-thumbnail" style="float:right;width:30%;margin-left:1em;margin-top:1em" src="/images/vsq.png" alt="[screenshot]" /></a>
