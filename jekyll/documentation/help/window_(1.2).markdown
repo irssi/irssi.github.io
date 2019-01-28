@@ -37,7 +37,7 @@ Please submit changes to
 
 </div>
 
-#### [window changing](/documentation/help/window_changing)
+#### [window changing](/documentation/help/window_changing_(1.2))
 
 <div markdown="1" class="helpindex">
 

@@ -72,6 +72,9 @@ multiversion_pages:
   - page: window_creation
     versions:
       - 1.2
+  - page: window_changing
+    versions:
+      - 1.2
   - page: window_navigation
     versions:
       - 1.2
