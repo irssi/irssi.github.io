@@ -3,11 +3,13 @@ use warnings;
 use YAML qw(LoadFile DumpFile);
 use FindBin;
 use List::Util qw(uniq);
+use Hash::Util qw(lock_keys);
 use version;
 
 my $config_file = "$FindBin::Bin/help2md.yml";
 my $config = LoadFile($config_file);
 
+# HTML filter for Irssi syntax colouriser
 sub _to_ic { 
     my ($cc, $cg, $type, $on) = @_;
     my $col = @$cg >= 3 ? $cg->[$type] :
@@ -61,6 +63,8 @@ sub _add_syn_colors {
                   length $4 ? _to_ic($cc,$cgroup,0,1)._html($4)._to_ic($cc,$cgroup,0,0) : ""
           }gexr;
 }
+
+# Multi-version link/suffix generator
 sub _get_mv {
     my ($page, $ver) = @_;
     my $multiver_links = '';
@@ -107,11 +111,22 @@ sub finish_table {
     $state->{INFO} = [];
 }
 
+# Subcommand page command list filter
 sub check_filter {
     my ($string, $page) = @_;
     (!$page->{filter_re} || ("$string " =~ /^\s*$page->{filter_re}/i &&
 	(!$page->{filter_not_re} || "$string " !~ /^\s*$page->{filter_not_re}/i)))
 }
+
+my $indent_marker = '%|';
+my %re = (
+    indent_marker => qr/%\|/,
+    looks_like_plain_commands => qr/[[:upper:]]+(?: [[:upper:]]+)*/,
+    looks_like_single_command => qr/[[:upper:]]+/,
+    section_head => qr/%9(.*):%9/,
+    bold => qr/%9/,
+   );
+lock_keys(%re);
 
 sub main {
     my $dir = shift;
@@ -130,15 +145,15 @@ sub main {
 
     system("cd \Q$dir\E; perl utils/syntax.pl");
 
-    chomp (my @files = `find \Q$dir\E/docs/help -type f`);
-    @files = grep !/[~#]$/, grep !/Makefile/, @files;
+    chomp (my @help_files = `find \Q$dir\E/docs/help -type f`);
+    @help_files = grep !/[~#]$/, grep !/Makefile/, @help_files;
 
-    s{^\Q$dir\E/docs/help(?:/|$)}{} for @files;
+    s{^\Q$dir\E/docs/help(?:/|$)}{} for @help_files;
 
-    @files = grep !m{^in(?:/|$)}, @files;
-    @files = grep /./, @files;
+    @help_files = grep !m{^in(?:/|$)}, @help_files;
+    @help_files = grep /./, @help_files;
 
-    unless (@files) {
+    unless (@help_files) {
 	die "No help found in $dir/docs/help\n";
     }
 
@@ -152,12 +167,14 @@ sub main {
 	$cmd{ $command[0] }{ $srcfile } = 1;
     }
 
-    @files = sort @files;
+    @help_files = sort @help_files;
 
     system("mkdir -p \Q$out\E/documentation/help");
     my ($multiver_links_main, $ver_suffix_main) = _get_mv('index', $ver);
     my $ver_suffix_title_main = $ver_suffix_main ? " ($ver)" : '';
     my $ver_prefix_main = $ver_suffix_main ? '../' : '';
+
+    # Main help index page
     open my $index, '>', "$out/documentation/help/index${ver_suffix_main}.markdown";
     print $index qq'---
 layout: page
@@ -178,13 +195,14 @@ $multiver_links_main
 ';
 
     my %table_state;
-    for (@files) {
-	my $fn = $_;
-	my (@subcommand_split) = map { @{$_->{pages}} } grep { $_->{command} eq $fn } @{$config->{subcommand_pages} || []};
+    for (@help_files) {
+	my $help_file_name = $_;
+	# should this file be split into subcommand pages?
+	my (@subcommand_split) = map { @{$_->{pages}} } grep { $_->{command} eq $help_file_name } @{$config->{subcommand_pages} || []};
 	open my $sin, '<', "$dir/docs/help/$_";
 	chomp (my @tx = <$sin>);
 	my @otx = @tx;
-	my @sub_pages = ( +{ file => $fn, title => $fn } );
+	my @sub_pages = ( +{ file => $help_file_name, title => $help_file_name, is_sub_page => undef } );
 	while (@sub_pages) {
 	    my $page = shift @sub_pages;
 	    @tx = @otx;
@@ -196,7 +214,7 @@ $multiver_links_main
 		$ver_suffix_main_link = "/index$ver_suffix";
 		$ver_suffix_title = " ($ver)";
 	    }
-	    if ($page->{file} eq $fn) {
+	    unless ($page->{is_sub_page}) {
 		print $index "* [$page->{file}]($ver_prefix_main$page->{file}$ver_suffix)\n";
 	    }
 	    print $syn qq'---
@@ -207,10 +225,11 @@ title: "Help: $page->{title}$ver_suffix_title"
 {% comment %}
 
 Please submit changes to
-- https://github.com/irssi/irssi/blob/master/docs/help/in/$fn.in
+- https://github.com/irssi/irssi/blob/master/docs/help/in/$help_file_name.in
 ';
-	    if ($cmd{"\U$fn"}) {
-		for (sort keys %{$cmd{"\U$fn"}}) {
+	    # List of syntax sources
+	    if ($cmd{"\U$help_file_name"}) {
+		for (sort keys %{$cmd{"\U$help_file_name"}}) {
 		    print $syn "- https://github.com/irssi/irssi/blob/master/$_\n";
 		}
 	    }
@@ -221,67 +240,72 @@ Please submit changes to
 [Help index](/documentation/help$ver_suffix_main_link)
 </nav>
 ';
-	    if ($page->{file} ne $fn) {
-		print $syn "\n<nav markdown=\"1\">\n[\u$fn subcommands index](/documentation/help/$fn$ver_suffix)\n</nav>\n$multiver_links";
+
+	    if ($page->{is_sub_page}) {
+		print $syn "\n<nav markdown=\"1\">\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix)\n</nav>\n$multiver_links";
 	    }
-	    elsif (@subcommand_split) {
+	    elsif (@subcommand_split) { # main help page of a page with sub pages
 		# find valid subpages
-		my @commands;
+		my @all_commands;
 		my %commands_seen;
 		for (@tx) {
 		    if (/^%9Syntax:/) {
 			# continue
 		    }
 		    elsif (/^%9/) {
+			# next block after Syntax
 			last;
 		    }
-		    if (s/%\|// || /^[[:upper:]]+(?: [[:upper:]]+)*$/) {
+		    if (s/$re{indent_marker}// || /^$re{looks_like_plain_commands}$/) {
 			my $command;
 			for (split ' ') {
-			    if (/^[[:upper:]]+$/) {
+			    if (/^$re{looks_like_single_command}$/) { # uppercase letters
 				$command .= "\L$_ ";
 			    }
 			    else {
+				# flags, arguments, etc.
 				last;
 			    }
 			}
-			push @commands, $command;
+			push @all_commands, $command;
 		    }
 		}
 		print $syn "$multiver_links\n### Subcommands\n\n";
 		for (@subcommand_split) {
-		    my ($name, $title, $commands, $not_commands) = @{$_}{qw(name title commands excludes)};
-		    my @c1;
+		    my ($sub_page_name, $title, $commands, $not_commands) = @{$_}{qw(name title commands excludes)};
+		    my @sub_page_commands;
 		    if ($commands) {
-			my $re = join '|', map { quotemeta "$fn $_ " } sort { length $b <=> length $a } sort @$commands;
-			@c1 = grep /^($re)/, @commands;
+			my $re = join '|', map { quotemeta "$help_file_name $_ " } sort { length $b <=> length $a } sort @$commands;
+			@sub_page_commands = grep /^($re)/, @all_commands;
 		    }
 		    else {
-			@c1 = grep !$commands_seen{$_}, grep /^\Q$fn /, @commands;
+			# all left-over commands of this help file
+			@sub_page_commands = grep !$commands_seen{$_}, grep /^\Q$help_file_name /, @all_commands;
 		    }
 		    my $not;
 		    if ($not_commands) {
-			$not = join '|', map { quotemeta "$fn $_ " } sort { length $b <=> length $a } sort @$not_commands;
-			@c1 = grep !/^($not)/, @c1;
+			# remove excluded subcommands
+			$not = join '|', map { quotemeta "$help_file_name $_ " } sort { length $b <=> length $a } sort @$not_commands;
+			@sub_page_commands = grep !/^($not)/, @sub_page_commands;
 		    }
-		    if (@c1) {
-			my ($multiver_links, $ver_suffix) = _get_mv("${fn}_$name", $ver);
+		    if (@sub_page_commands) {
+			my ($multiver_links, $ver_suffix) = _get_mv("${help_file_name}_${sub_page_name}", $ver);
 			print $syn qq'
-#### [$title](/documentation/help/${fn}_$name$ver_suffix)
+#### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix)
 
 <div markdown="1" class="helpindex">
 
 '; #
-			for (@c1) {
+			for (@sub_page_commands) {
 			    print $syn "* $_\n";
 			}
 			print $syn '
 </div>
 ';
-			my $c1_re = join '|', map { quotemeta } @c1;
-			$title = "$fn: $title" unless $title =~ /^\Q$fn\E\b/i;
-			push @sub_pages, +{ file => "${fn}_$name", title => $title, filter => \@c1, filter_re => $c1_re, filter_not_re => $not };
-			@commands_seen{@c1} = (1) x @c1;
+			my $sub_page_commands_re = join '|', map { quotemeta } @sub_page_commands;
+			$title = "$help_file_name: $title" unless $title =~ /^\Q$help_file_name\E\b/i;
+			push @sub_pages, +{ file => "${help_file_name}_${sub_page_name}", title => $title, filter => \@sub_page_commands, filter_re => $sub_page_commands_re, filter_not_re => $not, is_sub_page => 1 };
+			@commands_seen{@sub_page_commands} = (1) x @sub_page_commands;
 		    }
 		}
 		my $all_re = join '|', map { quotemeta } sort { length $b <=> length $a } sort keys %commands_seen;
@@ -289,30 +313,31 @@ Please submit changes to
 		@tx = @otx;
 	    }
 	    elsif ($multiver_links) {
+		# Links to other versions of this help page
 		print $syn $multiver_links;
 	    }
 	    my $in = 'syn';
 	    for (@tx) {
-		if (/^%9Syntax:/) {
+		if (/^$re{bold}Syntax:/) {
 		    $in = 'syn';
 
 		    next
-			if @subcommand_split && $page->{file} eq $fn;
+			if @subcommand_split && !$page->{is_sub_page};
 
 		}
-		elsif (/^%9Parameters:/) {
+		elsif (/^$re{bold}Parameters:/) {
 		    $in = 'param';
 		}
-		elsif (/^%9References:/) {
+		elsif (/^$re{bold}References:/) {
 		    finish_table($syn, \%table_state);
 		    $in = 'refs';
 		}
-		elsif (/^%9/) {
+		elsif (/^$re{bold}/) {
 		    finish_table($syn, \%table_state);
 		    $in = '';
 		}
-		s/^%9(.*):%9$/### $1 ###/;
-		if (/^%9(See also):%9 (.*)$/i) {
+		s/^$re{section_head}$/### $1 ###/;
+		if (/^$re{bold}(See also):$re{bold} (.*)$/i) {
 		    my $res = "### $1 ###
 ";
 		    my @see_also = split " ", $2;
@@ -325,37 +350,43 @@ Please submit changes to
 		    }
 		    $_ = $res . join ", ", @see_also;
 		}
+		# deindent textual paragraphs (try to keep examples)
 		s/^    ([[:alpha:]] ?[[:lower:]].*)$/$1/ ||
 		    s/^        ([* ] [[:alpha:]] ?[[:lower:]].*)$/$1/;
 
-		my $cmdlen = -1 + index $_, '%|';
-		if ($in eq 'syn' && (s/%\|// || /^[[:upper:]]+(?: [[:upper:]]+)*$/)) {
+		my $cmdlen = -1 + index $_, $indent_marker;
+		if ($in eq 'syn' && (s/$re{indent_marker}// || /^$re{looks_like_plain_commands}$/)) {
 		    next
 			if !check_filter("$_ ", $page);
 
-		    $_ = qq'<div class="highlight irssisyntax"><pre style="--cmdlen:${cmdlen}ch"><code>'._add_syn_colors($_, ["*", "*05", "10"], ["09", "14"], ["*", "13", "13"], ["14"], []) . "</code></pre></div>\n\n";
+		    $_ = qq'<div class="highlight irssisyntax"><pre style="--cmdlen:${cmdlen}ch"><code>'
+			._add_syn_colors($_, ["*", "*05", "10"], ["09", "14"], ["*", "13", "13"], ["14"], [])
+			. "</code></pre></div>\n\n";
 		}
 		elsif ($in eq 'param'
+		       # detect tables with key lengths of 12-13 and column space of 4 (levels, modes)
 		       || /^        .............?    /
-		       || /^        ..    /) {
+		       # detect tables with key lengths of 2 and column space of 4 (stats, who)
+		       || /^        ..    /
+		      ) {
 		    if (/^\s{8}\s+(\S.*)$/) {
 			# continuation
 			$_ = $1;
-			s/%\|//;
+			s/$re{indent_marker}//;
 		    }
 		    elsif (/^\s+\S/) {
 			my ($word, $rest);
-			if (-1 != index $_, '%|') {
-			    ($word, $rest) = split /%\|/, $_, 2;
+			if (-1 != index $_, $indent_marker) {
+			    ($word, $rest) = split /$re{indent_marker}/, $_, 2;
 			}
 			elsif (-1 != index $_, ':') {
 			    ($word, $rest) = split /:/, $_, 2;
 			    $word .= ':';
 			}
-			elsif (/^\s+(\S+)\s{2,}(.*)$/) {
+			elsif (/^\s+(\S+)\s{2,}(.*)$/) { # column space >= 2
 			    ($word, $rest) = ($1, $2);
 			}
-			elsif (/^\s+(-?<[^>]+>)\s+(.*)$/) {
+			elsif (/^\s+(-?<[^>]+>)\s+(.*)$/) { # <placeholder> or -<placeholder>
 			    ($word, $rest) = ($1, $2);
 			} else {
 			    finish_table($syn, \%table_state);
@@ -365,14 +396,13 @@ Please submit changes to
 			    $word =~ s/\s+$//;
 			}
 
-			if ($page->{filter_re} && $word =~ /^[[:upper:]]+(?:\s[[:upper:]]+)*:?$/) {
-			    my $checkword = "$fn $word";
+			if ($page->{filter_re} && $word =~ /^$re{looks_like_plain_commands}:?$/) {
+			    my $checkword = "$help_file_name $word";
 			    $checkword =~ s/:$//;
 			    $checkword .= " ";
 
 			    next
 				if !check_filter($checkword, $page);
-
 			}
 
 			if ($word) {
@@ -384,7 +414,7 @@ Please submit changes to
 			}
 			else {
 			    finish_table($syn, \%table_state);
-			    s/%\|//;
+			    s/$re{indent_marker}//;
 			}
 		    }
 		    else {
@@ -396,7 +426,7 @@ Please submit changes to
 		    s/</&lt;/g;
 		}
 
-		unless (/^ {4}/ && $in ne 'param') { 
+		unless (/^ {4}/ && $in ne 'param') {
 		    # disable markdown smartypants on command line flags
 		    s/(?:\W|^)\K-(-\w+)/\\-\\$1/g;
 
@@ -412,6 +442,7 @@ Please submit changes to
 
 		    # disable markdown __ bold
 		    s/__/\\_\\_/g;
+		    # text monospace to markdown
 		    s/``((?:[^`']|`[^`]|'[^'])*)''/``$1``/g;
 		    s/`([^`']*)'/`$1`/g;
 
@@ -421,6 +452,7 @@ Please submit changes to
 		}
 
 		if ($in eq 'refs') {
+		    # hyperlinks
 		    s{(\w+://\S+)}{[$1]($1)}g;
 		    $_ .= "\n";
 		}
@@ -428,8 +460,9 @@ Please submit changes to
 		# irssi escapes
 		s/%%/%/g;
 
-		if ($in eq '' && /^ {4}/ && $page->{filter_re} && $page->{file} ne $fn) {
-		    if (/^ {4}\/(\Q$fn\E .*)/i) {
+		if ($in eq '' && /^ {4}/ && $page->{filter_re} && $page->{is_sub_page}) {
+		    if (/^ {4}\/(\Q$help_file_name\E .*)/i) {
+			# filter examples on sub pages
 			next if !check_filter("$1 ", $page);
 		    }
 		}
@@ -439,13 +472,15 @@ Please submit changes to
 		    push @{$table_state{INFO}}, $_;
 		}
 		else {
+		    # non-tabular line
 		    print $syn "$_\n";
 		}
 	    }
 	    #print $syn "```\n",(join "\n", @otx),"\n```\n";
 	}
     }
-    my %seen;
+    my %help_file_seen;
+    # create category sections on the main help index
     for my $cat (@{$config->{categories}}) {
 	print $index qq'
 
@@ -455,7 +490,7 @@ Please submit changes to
 
 ';
 
-	for (@files) {
+	for (@help_files) {
 	    my $cmd = "\U$_";
 	    my $srcf = $cmd{$cmd};
 	    if ($cat->{excludes} && grep { $cmd eq $_ } @{$cat->{excludes}}) {
@@ -469,10 +504,11 @@ Please submit changes to
 		}
 	    }
 	    else {
-		$found = !$seen{$_};
+		# the category without paths will collect any unseen help file
+		$found = !$help_file_seen{$_};
 	    }
 	    next unless $found;
-	    $seen{$_} = 1;
+	    $help_file_seen{$_} = 1;
 	    my ($multiver_links, $ver_suffix) = _get_mv($_, $ver);
 	    print $index "* [$_]($ver_prefix_main$_$ver_suffix)\n";
 	}
@@ -485,4 +521,4 @@ Please submit changes to
 
 main(@ARGV);
 
-#print "$_\n" for @files;
+#print "$_\n" for @help_files;
