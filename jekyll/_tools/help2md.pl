@@ -359,6 +359,8 @@ Please submit changes to
 		    next
 			if !check_filter("$_ ", $page);
 
+		    push @{$page->{_syn}}, $_;
+
 		    $_ = qq'<div class="highlight irssisyntax"><pre style="--cmdlen:${cmdlen}ch"><code>'
 			._add_syn_colors($_, ["*", "*05", "10"], ["09", "14"], ["*", "13", "13"], ["14"], [])
 			. "</code></pre></div>\n\n";
@@ -404,6 +406,15 @@ Please submit changes to
 			    next
 				if !check_filter($checkword, $page);
 			}
+			# filter not applicable command options
+			if ($page->{filter_re} && $page->{_syn} && $word && $word =~ /^-/) { # flag
+			    my $checkword = $word;
+			    $checkword =~ s/:$//;
+			    unless (grep { /\Q$checkword\E\b/ } @{ $page->{_syn} } ) {
+				next;
+			    }
+			}
+
 
 			if ($word) {
 			    $word = "`$word`";
