@@ -110,6 +110,8 @@ Please submit changes to
 
 * window up 
 * window down 
+* window left 
+* window right 
 
 </div>
 
@@ -118,6 +120,8 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window stick 
+* window move left 
+* window move right 
 * window move up 
 * window move down 
 

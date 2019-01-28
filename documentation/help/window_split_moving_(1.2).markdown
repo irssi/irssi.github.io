@@ -55,7 +55,6 @@ Please submit changes to
 {:.table.kv}
 
 
-| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
 | `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
 {:.table.kv}
 

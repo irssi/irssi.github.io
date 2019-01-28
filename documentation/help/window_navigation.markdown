@@ -34,12 +34,20 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">DOWN</span></code></pre></div>
 
 
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">LEFT</span></code></pre></div>
+
+
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">RIGHT</span></code></pre></div>
+
+
 
 ### Parameters ###
 
 
 | `UP`: | Set the split window above the current one active. At the top, wraps to the bottom. |
 | `DOWN`: | Set the split window below the current one active. At the bottom, wraps to the top. |
+| `LEFT`: | Go to the previous window numerically that is part of the current sticky group (or not part of any sticky group). |
+| `RIGHT`: | Go to the next window numerically that is part of the current sticky group (or not part of any sticky group). |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
