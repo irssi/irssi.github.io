@@ -345,7 +345,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Logs can have a different theme than what you see on the screen. This can be used to create machine-parseable versions of logs, for example.
 
 {:#log_timestamp}
-` log_timestamp` **`%H:%M`**
+` log_timestamp` **`%H:%M `**
 
 > The time format for log timestamps.
 >
@@ -455,7 +455,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Switch the focus to a new item when it's created. This may be disturbing at first when combined with query window auto-creation, and it may be downright dangerous if it causes you to accidentally misdirect messages.
 
 {:#autostick_split_windows}
-` autostick_split_windows` **`ON`**
+` autostick_split_windows` **`OFF`**
 
 > Whether creating split windows (or showing windows) will automatically stick them to the split window (/window stick on)
 
@@ -526,7 +526,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Enable or disable real underlining and bolding when someone says `*bold*` or `_underlined_`.
 
 {:#emphasis_italics}
-` emphasis_italics` **`FALSE`**
+` emphasis_italics` **`OFF`**
 
 > Enable or disable applying real italics when someone says `/italics/`.
 >
@@ -705,7 +705,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Added in Irssi 0.8.19
 
 {:#term_charset}
-` term_charset` **`US-ASCII`**
+` term_charset` **`UTF-8`**
 
 > Sets your native terminal character set. Irssi will take this into consideration when it needs to delete multibyte characters, for example.
 >
@@ -841,7 +841,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` capsicum_port_min` **`6667`**
 
 {:#capsicum_port_max}
-` capsicum_port_max` **`6697`**
+` capsicum_port_max` **`9999`**
 
 > FreeBSD/Capsicum builds only: Range of ports that Irssi is allowed to connect to.
 >
@@ -1016,7 +1016,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >>     /set opermode +s 1048575
 
 {:#override_coredump_limit}
-` override_coredump_limit` **`ON`**
+` override_coredump_limit` **`OFF`**
 
 > Allow really really big coredumps if this is set on.
 
@@ -1116,7 +1116,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Added in Irssi 0.8.17
 
 {:#split_line_on_space}
-` split_line_on_space = ON`
+` split_line_on_space` **`ON`**
 
 > When this is ON, Irssi tries to split long lines on spaces, instead of splitting in the middle of words.
 >
