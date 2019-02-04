@@ -1530,6 +1530,7 @@ Irssi's colors that you can use in text formats, hilights, etc. :
 |  %U  |      |      | Underline on/off                     |
 |  %8  |      |      | Reverse on/off                       |
 |  %9  |  %_  |      | Bold on/off                          |
+|  %I  |      |      | Italic on/off                        |
 |  %:  |      |      | Insert newline                       |
 |  %\| |      |      | Marks the indentation position       |
 |  %#  |      |      | Monospace font on/off (useful with lists and GUI) |
