@@ -1,9 +1,89 @@
-## 1.2-head
-{:#v1-2-head }
+## 1.3-head
+{:#v1-3-head }
 
 <span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/irssi/irssi`
 
 [Commit log](https://github.com/irssi/irssi/commits)
+
+---
+
+## 1.2.0
+{:#v1-2-0 }
+
+The Irssi team released this <abbr class="timeago" title="2019-02-11">2019-02-11</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.2.0" %}
+
+Contains all changes from 1.1.2
+
+### Changes
+{:#v1-2-0-changes }
+
+- Improved the /STATUSBAR commands ([#858](https://github.com/irssi/irssi/issues/858))
+- /SET no longer shows `=` between setting and value ([#886](https://github.com/irssi/irssi/issues/886))
+- /CUBES removed from default config (available as script) ([#956](https://github.com/irssi/irssi/issues/956))
+- /1 /2 /3 ... removed from default config (available as new setting window_number_commands) ([#958](https://github.com/irssi/irssi/issues/958))
+- Always redraw the screen on resize. By David Phillips ([#896](https://github.com/irssi/irssi/issues/896))
+- Private notices intended for channels are now displayed on the channel (new setting notice_channel_context) ([#959](https://github.com/irssi/irssi/issues/959))
+
+### Additions
+{:#v1-2-0-additions }
+
+- Imported the "Off-the-record" module into Irssi tree ([#854](https://github.com/irssi/irssi/issues/854), [#589](https://github.com/irssi/irssi/issues/589), [#196](https://github.com/irssi/irssi/issues/196))
+- Initial support for sideways split windows ([#697](https://github.com/irssi/irssi/issues/697), [#431](https://github.com/irssi/irssi/issues/431), [#224](https://github.com/irssi/irssi/issues/224), [#807](https://github.com/irssi/irssi/issues/807), [FS#310](https://github.com/irssi-import/bugs.irssi.org/issues/310), [#947](https://github.com/irssi/irssi/issues/947), [#955](https://github.com/irssi/irssi/issues/955), [#989](https://github.com/irssi/irssi/issues/989))
+- Change the implementation of `wcwidth`. This is used to calculate the width of emojis on your terminal screen ([#917](https://github.com/irssi/irssi/issues/917), [#720](https://github.com/irssi/irssi/issues/720))
+- Make the wcwidth functions available from Perl ([#973](https://github.com/irssi/irssi/issues/973)):
+      string_width(str)
+      string_chars_for_width(str, width)
+      wcwidth(char)
+- Added completion_keep_word setting ([#979](https://github.com/irssi/irssi/issues/979))
+- Allow activity_hide_targets to hide activity in itemless windows ([#967](https://github.com/irssi/irssi/issues/967), [#997](https://github.com/irssi/irssi/issues/997), [#1001](https://github.com/irssi/irssi/issues/1001), [#1003](https://github.com/irssi/irssi/issues/1003))
+- Added activity_hide_visible setting ([#990](https://github.com/irssi/irssi/issues/990))
+- Allow hiding of lines through the /IGNORE system ([#901](https://github.com/irssi/irssi/issues/901), [#900](https://github.com/irssi/irssi/issues/900), [#892](https://github.com/irssi/irssi/issues/892), [#890](https://github.com/irssi/irssi/issues/890), [#884](https://github.com/irssi/irssi/issues/884), [#937](https://github.com/irssi/irssi/issues/937))
+- Add window_default_hidelevel setting. By Doug Freed ([#941](https://github.com/irssi/irssi/issues/941))
+- Add activity_hide_window_hidelevel setting, defaulting to ON ([#938](https://github.com/irssi/irssi/issues/938))
+- Add autolog_only_saved_channels setting, to autolog only channels that are in the config ([#968](https://github.com/irssi/irssi/issues/968))
+- Add format support for the input line. By Ben Paxton, originally by Jonas Hurrelmann ([#764](https://github.com/irssi/irssi/issues/764), [FS#621](https://github.com/irssi-import/bugs.irssi.org/issues/621), [#1004](https://github.com/irssi/irssi/issues/1004))
+      use Irssi::TextUI;
+      gui_input_set_extent(pos, text)
+      gui_input_set_extents(pos, len, left, right)
+      gui_input_clear_extents(pos, len)
+      gui_input_get_extent(pos)
+      gui_input_get_text_and_extents()
+      gui_input_set_text_and_extents(...)
+- Parsing of IRCv3 CAP 3.2 ([#775](https://github.com/irssi/irssi/issues/775), [#869](https://github.com/irssi/irssi/issues/869))
+- Show CAP-related events in the user interface ([#918](https://github.com/irssi/irssi/issues/918), [#916](https://github.com/irssi/irssi/issues/916), [#870](https://github.com/irssi/irssi/issues/870), [#704](https://github.com/irssi/irssi/issues/704))
+- Continue using separators when addressing multiple nicks with tab completion. By Manish Goregaokar ([#822](https://github.com/irssi/irssi/issues/822))
+- Bind Shift-tab by default. By Niklas Luokkala ([#830](https://github.com/irssi/irssi/issues/830), [#829](https://github.com/irssi/irssi/issues/829))
+- Fuzzing more things ([#913](https://github.com/irssi/irssi/issues/913), [#780](https://github.com/irssi/irssi/issues/780), [#813](https://github.com/irssi/irssi/issues/813))
+
+### Fixes
+{:#v1-2-0-fixes }
+
+- Disconnect SASL properly in case the SASL module got unloaded from server ([#931](https://github.com/irssi/irssi/issues/931), [#629](https://github.com/irssi/irssi/issues/629), [#618](https://github.com/irssi/irssi/issues/618), [#616](https://github.com/irssi/irssi/issues/616))
+- Fix backward completion jumping to the first instead of last word ([#979](https://github.com/irssi/irssi/issues/979))
+- Improve empty topic handling ([#961](https://github.com/irssi/irssi/issues/961), [#905](https://github.com/irssi/irssi/issues/905), [#911](https://github.com/irssi/irssi/issues/911), [#897](https://github.com/irssi/irssi/issues/897), [#888](https://github.com/irssi/irssi/issues/888))
+- Prevent config truncation when no space left. By dequis and Lukas Waymann ([#922](https://github.com/irssi/irssi/issues/922), [#925](https://github.com/irssi/irssi/issues/925), [#910](https://github.com/irssi/irssi/issues/910), [#909](https://github.com/irssi/irssi/issues/909), [#906](https://github.com/irssi/irssi/issues/906), [#871](https://github.com/irssi/irssi/issues/871), [#817](https://github.com/irssi/irssi/issues/817))
+- Also time-out servers in lookup phase ([#866](https://github.com/irssi/irssi/issues/866), [#130](https://github.com/irssi/irssi/issues/130))
+- Fix build with LibreSSL 2.7. By Dorian Harmans ([#865](https://github.com/irssi/irssi/issues/865))
+- Fix a crash when appending to a textbuffer without line. Reported by Jari Matilainen ([#862](https://github.com/irssi/irssi/issues/862))
+- Fix segfault on sending large messages ([#803](https://github.com/irssi/irssi/issues/803), [#796](https://github.com/irssi/irssi/issues/796), [#802](https://github.com/irssi/irssi/issues/802))
+- Fix segfault on invalid statusbar config ([#993](https://github.com/irssi/irssi/issues/993), [#994](https://github.com/irssi/irssi/issues/994))
+- Fix random memory writes on restoring queries of foreign protocols ([#999](https://github.com/irssi/irssi/issues/999), [#1000](https://github.com/irssi/irssi/issues/1000))
+- Make default keybinds deletable ([#859](https://github.com/irssi/irssi/issues/859), [#507](https://github.com/irssi/irssi/issues/507))
+- Fix freeze when resizing Irssi very small ([#946](https://github.com/irssi/irssi/issues/946))
+- Compare channels case-insensitively, avoiding confusions with the config file ([#857](https://github.com/irssi/irssi/issues/857), [#856](https://github.com/irssi/irssi/issues/856))
+- Fix DCC GET on Android. By Martin Staron ([#844](https://github.com/irssi/irssi/issues/844))
+- Improve rawlog performance ([#957](https://github.com/irssi/irssi/issues/957))
+- Fix nick escaping erroneously escaping quotes ([#978](https://github.com/irssi/irssi/issues/978), [#974](https://github.com/irssi/irssi/issues/974), [#709](https://github.com/irssi/irssi/issues/709))
+- Protect against theme recursion, improve padding performance, limit alignment padding. Credit to Oss-Fuzz ([#835](https://github.com/irssi/irssi/issues/835), [#851](https://github.com/irssi/irssi/issues/851), [#850](https://github.com/irssi/irssi/issues/850), [#846](https://github.com/irssi/irssi/issues/846), [#848](https://github.com/irssi/irssi/issues/848))
+- Fix recursive loop in replaces ([#833](https://github.com/irssi/irssi/issues/833), [GL#23](https://gitlab.com/irssi/irssi/issues/23))
+- Fix headers for compilation of C modules ([#939](https://github.com/irssi/irssi/issues/939))
+- Documentation. By Zero King ([#814](https://github.com/irssi/irssi/issues/814)). ([#852](https://github.com/irssi/irssi/issues/852))
+- Sync NEWS, docs, scripts ([#849](https://github.com/irssi/irssi/issues/849), [#855](https://github.com/irssi/irssi/issues/855))
+- Build system ([#868](https://github.com/irssi/irssi/issues/868), [#867](https://github.com/irssi/irssi/issues/867), [#985](https://github.com/irssi/irssi/issues/985), [#988](https://github.com/irssi/irssi/issues/988))
+- Fix build on IBM i and AIX. By Calvin Buckley ([#975](https://github.com/irssi/irssi/issues/975))
+- Misc fixes ([#840](https://github.com/irssi/irssi/issues/840), [#839](https://github.com/irssi/irssi/issues/839), [#843](https://github.com/irssi/irssi/issues/843), [#953](https://github.com/irssi/irssi/issues/953), [#962](https://github.com/irssi/irssi/issues/962)). Tests ([#806](https://github.com/irssi/irssi/issues/806), [#875](https://github.com/irssi/irssi/issues/875), [#905](https://github.com/irssi/irssi/issues/905), [#964](https://github.com/irssi/irssi/issues/964), [#1011](https://github.com/irssi/irssi/issues/1011)). Fuzzing ([#929](https://github.com/irssi/irssi/issues/929)).
 
 ---
 
@@ -62,7 +142,7 @@ The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15
 {:#v1-0-7-fixes }
 
 - Prevent use after free error during the execution of some commands. Found by Joseph Bisch ([GL#17](https://gitlab.com/irssi/irssi/issues/17), [GL!24](https://gitlab.com/irssi/irssi/merge_requests/24)).
-- Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465), [#809](https://github.com/irssi/irssi/issues/809), [#812](https://github.com/irssi/irssi/issues/812), [#819](https://github.com/irssi/irssi/issues/819), [#824](https://github.com/irssi/irssi/issues/824)).
+- Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465), [#809](https://github.com/irssi/irssi/issues/809), [#812](https://github.com/irssi/irssi/issues/812), [#819](https://github.com/irssi/irssi/issues/819), [#824](https://github.com/irssi/irssi/issues/824), [#832](https://github.com/irssi/irssi/issues/832)).
 - Fix use after free when SASL messages are received in unexpected order ([GL#26](https://gitlab.com/irssi/irssi/issues/26), [GL!33](https://gitlab.com/irssi/irssi/merge_requests/33)).
 - Fix null pointer dereference in the tab completion when an empty nick is joined ([GL#24](https://gitlab.com/irssi/irssi/issues/24), [GL!31](https://gitlab.com/irssi/irssi/merge_requests/31)).
 - Fix use after free when entering oper password ([GL#22](https://gitlab.com/irssi/irssi/issues/22), [GL!32](https://gitlab.com/irssi/irssi/merge_requests/32)).
