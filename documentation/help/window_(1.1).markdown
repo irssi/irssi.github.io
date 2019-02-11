@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: window (1.2)"
+title: "Help: window (1.1)"
 ---
 
 {% comment %}
@@ -15,17 +15,17 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.2))
+[Help index](/documentation/help/index_(1.1))
 </nav>
 
 <nav markdown="1">
-[ [v1.0](/documentation/help/window_(1.0)) ] - [ [v1.1](/documentation/help/window) ] - [ v1.2 ]
+[ [v1.0](/documentation/help/window_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/window) ]
 </nav>
 
 ### Subcommands
 
 
-#### [window/split window creation](/documentation/help/window_creation_(1.2))
+#### [window/split window creation](/documentation/help/window_creation_(1.1))
 
 <div markdown="1" class="helpindex">
 
@@ -37,7 +37,7 @@ Please submit changes to
 
 </div>
 
-#### [window changing](/documentation/help/window_changing_(1.2))
+#### [window changing](/documentation/help/window_changing_(1.1))
 
 <div markdown="1" class="helpindex">
 
@@ -93,7 +93,7 @@ Please submit changes to
 
 </div>
 
-#### [split window resizing](/documentation/help/window_resizing_(1.2))
+#### [split window resizing](/documentation/help/window_resizing_(1.1))
 
 <div markdown="1" class="helpindex">
 
@@ -104,7 +104,7 @@ Please submit changes to
 
 </div>
 
-#### [split window navigation](/documentation/help/window_navigation_(1.2))
+#### [split window navigation](/documentation/help/window_navigation_(1.1))
 
 <div markdown="1" class="helpindex">
 
@@ -115,7 +115,7 @@ Please submit changes to
 
 </div>
 
-#### [split window moving](/documentation/help/window_split_moving_(1.2))
+#### [split window moving](/documentation/help/window_split_moving_(1.1))
 
 <div markdown="1" class="helpindex">
 
@@ -140,11 +140,6 @@ Please submit changes to
 
 ### Parameters ###
 
-
-
-| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
-| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
-{:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
 

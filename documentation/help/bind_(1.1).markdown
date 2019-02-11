@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: bind (1.2)"
+title: "Help: bind (1.1)"
 ---
 
 {% comment %}
@@ -12,16 +12,16 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.2))
+[Help index](/documentation/help/index_(1.1))
 </nav>
 
 <nav markdown="1">
-[ [v1.1](/documentation/help/bind) ] - [ v1.2 ]
+[ v1.1 ] - [ [v1.2](/documentation/help/bind) ]
 </nav>
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:4ch"><code><span class="synB">BIND</span> <span class="syn10">[<span class="syn">-list</span>]</span> <span class="syn10">[<span class="syn">-delete</span> | <span class="syn">-reset</span>]</span> <span class="syn10">[<span class="syn09">&lt;key></span> <span class="syn14">[<span class="syn13">&lt;command></span> <span class="syn13">[<span class="syn14">&lt;data></span>]</span>]</span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:4ch"><code><span class="synB">BIND</span> <span class="syn10">[<span class="syn">-list</span>]</span> <span class="syn10">[<span class="syn">-delete</span>]</span> <span class="syn10">[<span class="syn09">&lt;key></span> <span class="syn14">[<span class="syn13">&lt;command></span> <span class="syn13">[<span class="syn14">&lt;data></span>]</span>]</span>]</span></code></pre></div>
 
 
 
@@ -29,8 +29,7 @@ Please submit changes to
 
 
 | `-list`: |       Displays a list of all the bindable commands. |
-| `-delete`: |     Removes the binding. |
-| `-reset`: |      Reset a key to its default binding. |
+| `-delete`: |     Removes the binding, |
 {:.table.kv}
 
 A name of the binding and the command to perform; if no parameter is given,
