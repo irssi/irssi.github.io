@@ -22,7 +22,7 @@ Please submit changes to
 </nav>
 
 <nav markdown="1">
-[ v1.0 ] - [ [v1.1](/documentation/help/window_properties) ]
+[ v1.0 ] - [ [v1.2](/documentation/help/window_properties) ]
 </nav>
 
 ### Syntax ###

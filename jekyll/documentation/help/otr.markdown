@@ -20,13 +20,13 @@ Please submit changes to
 
 Command to control the OTR module. Without an option, /OTR INFO is printed.
 
-This help contains three sections which are <strong>options, quickstart and files.</strong>
+This help contains three sections which are %9options, quickstart and files.%n
 
 To add the OTR status bar (highly recommended):
 
-<strong>/statusbar window add otr</strong>
+%9/statusbar window add otr%n
 
-<strong>Options:</strong>
+%9Options:%n
 
 AUTH &lt;secret>
 Start or respond to an authentication process.
@@ -34,7 +34,7 @@ Start or respond to an authentication process.
 AUTHQ &lt;question> &lt;secret>
 Start a SMP authentication process.
 
-Example: <strong>/otr authq "My question is" "this is the secret"</strong>
+Example: %9/otr authq "My question is" "this is the secret"%n
 
 AUTHABORT
 Abort an ongoing authentication process.
@@ -52,7 +52,7 @@ window for which the current fingerprint of the other person will be used
 or else set fp to a human readable OTR fingerprint available with the above
 contexts command.
 
-Examples: <strong>/otr distrust 487FFADA 5073FEDD C5AB5C14 5BB6C1FF 6D40D48A</strong>
+Examples: %9/otr distrust 487FFADA 5073FEDD C5AB5C14 5BB6C1FF 6D40D48A%n
 
 FINISH
 End the OTR session. This MUST be done inside a private conversation
@@ -86,34 +86,34 @@ distrust commands explained above.
 VERSION
 Print the version of the OTR module.
 
-<strong>Quickstart:</strong>
+%9Quickstart:%n
 
 Start a private conversation with the person you want to initiate a secure session. Once in the private message window:
 
-<strong>/otr init</strong>
+%9/otr init%n
 
 Key generation should start if no key is found for your account name. Once the process is done, either type a message which should automatically start the session or redo the init command.
 
 Time to authenticate the person. Either use a shared secret exchange through phone or GPG-signed email or use the socialist millionaire problem mechanism (SMP) which is basically to ask a question for which the answer can only be known by the other person.
 
-<strong>/otr auth &lt;shared-secret></strong> OR <strong>/otr authq "A question" &lt;shared-secret></strong>
+%9/otr auth &lt;shared-secret>%n OR %9/otr authq "A question" &lt;shared-secret>%n
 
 Or to respond to an authentication:
 
-<strong>/otr auth &lt;secret></strong>
+%9/otr auth &lt;secret>%n
 
-<strong>Files:</strong>
+%9Files:%n
 
-This otr modules creates a directory in <strong>$HOME/.irssi/otr</strong> and creates three files:
+This otr modules creates a directory in %9$HOME/.irssi/otr%n and creates three files:
 
-* <strong>otr.key</strong>
+* %9otr.key%n
 Contains your OTR private key(s). NEVER shared this directory with someone
 else unless you know what you are doing.
 
-* <strong>otr.fp</strong>
+* %9otr.fp%n
 The known fingerprints with their _trust_ status.
 
-* <strong>otr.instag</strong>
+* %9otr.instag
 Instance tag of the libotr. This should NEVER be copied to an other
 computer. If unsure, just ignore this file.
 

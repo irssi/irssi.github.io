@@ -23,21 +23,21 @@ Please submit changes to
 </nav>
 
 <nav markdown="1">
-[ v1.1 ] - [ [v1.2](/documentation/help/window_resizing_(1.2)) ]
+[ [v1.1](/documentation/help/window_resizing_(1.1)) ] - [ v1.2 ]
 </nav>
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">GROW</span> <span class="syn10">[<span class="syn09">&lt;lines></span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">GROW</span> <span class="syn10">[<span class="syn">-right</span>]</span> <span class="syn10">[<span class="syn09">&lt;lines></span>|<span class="syn09">&lt;columns></span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">WINDOW</span> <span class="synB">SHRINK</span> <span class="syn10">[<span class="syn09">&lt;lines></span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">WINDOW</span> <span class="synB">SHRINK</span> <span class="syn10">[<span class="syn">-right</span>]</span> <span class="syn10">[<span class="syn09">&lt;lines></span>|<span class="syn09">&lt;columns></span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">SIZE</span> <span class="synB05">&lt;lines></span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">SIZE</span> <span class="syn10">[<span class="syn">-right</span>]</span> <span class="synB05">&lt;lines></span>|<span class="synB05">&lt;columns></span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">WINDOW</span> <span class="synB">BALANCE</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">WINDOW</span> <span class="synB">BALANCE</span> <span class="syn10">[<span class="syn">-right</span>]</span></code></pre></div>
 
 
 
@@ -48,6 +48,10 @@ Please submit changes to
 | `SHRINK`: | Decrease the size of the active split window by the specified number of lines. |
 | `SIZE`: | Set the current split window size to the specified numer of lines. |
 | `BALANCE`: | Balance the heights of all split windows. |
+{:.table.kv}
+
+
+| `-right`: | Makes the command work on the width instead of height, or create the split window to the right instead of top. |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.

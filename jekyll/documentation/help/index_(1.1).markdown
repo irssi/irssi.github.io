@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Help (1.2)
+title: Help (1.1)
 ---
 
 These are the `/help` pages of the Irssi on-line help.
@@ -13,7 +13,7 @@ Please submit changes to
 {% endcomment %}
 
 <nav markdown="1">
-[ [v1.0](/documentation/help/index_(1.0)) ] - [ [v1.1](/documentation/help) ] - [ v1.2 ]
+[ [v1.0](/documentation/help/index_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help) ]
 </nav>
 
 <div markdown="1" class="helpindex">
@@ -25,7 +25,7 @@ Please submit changes to
 * [away](../away)
 * [ban](../ban)
 * [beep](../beep)
-* [bind](../bind_(1.2))
+* [bind](../bind_(1.1))
 * [cat](../cat)
 * [cd](../cd)
 * [channel](../channel)
@@ -82,7 +82,6 @@ Please submit changes to
 * [notify](../notify)
 * [op](../op)
 * [oper](../oper)
-* [otr](../otr)
 * [part](../part)
 * [ping](../ping)
 * [query](../query)
@@ -107,7 +106,7 @@ Please submit changes to
 * [squery](../squery)
 * [squit](../squit)
 * [stats](../stats)
-* [statusbar](../statusbar_(1.2))
+* [statusbar](../statusbar_(1.1))
 * [time](../time)
 * [toggle](../toggle)
 * [topic](../topic)
@@ -132,7 +131,7 @@ Please submit changes to
 * [who](../who)
 * [whois](../whois)
 * [whowas](../whowas)
-* [window](../window_(1.2))
+* [window](../window_(1.1))
 
 
 ### Connection
@@ -180,7 +179,7 @@ Please submit changes to
 * [lastlog](../lastlog)
 * [layout](../layout)
 * [scrollback](../scrollback)
-* [window](../window_(1.2))
+* [window](../window_(1.1))
 
 
 </div>
@@ -191,7 +190,7 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * [alias](../alias)
-* [bind](../bind_(1.2))
+* [bind](../bind_(1.1))
 * [completion](../completion)
 * [dehilight](../dehilight)
 * [format](../format)
@@ -203,12 +202,12 @@ Please submit changes to
 * [reload](../reload)
 * [save](../save)
 * [set](../set)
-* [statusbar](../statusbar_(1.2))
+* [statusbar](../statusbar_(1.1))
 * [toggle](../toggle)
 * [unalias](../unalias)
 * [unignore](../unignore)
 * [upgrade](../upgrade)
-* [window](../window_(1.2))
+* [window](../window_(1.1))
 
 
 </div>
@@ -322,7 +321,6 @@ Please submit changes to
 
 * [flushbuffer](../flushbuffer)
 * [levels](../levels)
-* [otr](../otr)
 * [rmrejoins](../rmrejoins)
 * [script](../script)
 

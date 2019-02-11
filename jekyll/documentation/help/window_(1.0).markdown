@@ -18,7 +18,7 @@ Please submit changes to
 </nav>
 
 <nav markdown="1">
-[ v1.0 ] - [ [v1.1](/documentation/help/window) ] - [ [v1.2](/documentation/help/window_(1.2)) ]
+[ v1.0 ] - [ [v1.1](/documentation/help/window_(1.1)) ] - [ [v1.2](/documentation/help/window) ]
 </nav>
 
 ### Subcommands
@@ -108,6 +108,8 @@ Please submit changes to
 
 * window up 
 * window down 
+* window left 
+* window right 
 
 </div>
 
@@ -116,6 +118,8 @@ Please submit changes to
 <div markdown="1" class="helpindex">
 
 * window stick 
+* window move left 
+* window move right 
 * window move up 
 * window move down 
 

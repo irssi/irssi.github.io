@@ -13,7 +13,7 @@ Please submit changes to
 {% endcomment %}
 
 <nav markdown="1">
-[ [v1.0](/documentation/help/index_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/index_(1.2)) ]
+[ [v1.0](/documentation/help/index_(1.0)) ] - [ [v1.1](/documentation/help/index_(1.1)) ] - [ v1.2 ]
 </nav>
 
 <div markdown="1" class="helpindex">
@@ -82,6 +82,7 @@ Please submit changes to
 * [notify](notify)
 * [op](op)
 * [oper](oper)
+* [otr](otr)
 * [part](part)
 * [ping](ping)
 * [query](query)
@@ -321,6 +322,7 @@ Please submit changes to
 
 * [flushbuffer](flushbuffer)
 * [levels](levels)
+* [otr](otr)
 * [rmrejoins](rmrejoins)
 * [script](script)
 

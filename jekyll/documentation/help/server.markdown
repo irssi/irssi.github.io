@@ -19,7 +19,7 @@ Please submit changes to
 </nav>
 
 <nav markdown="1">
-[ [v1.0](/documentation/help/server_(1.0)) ] - [ v1.1 ]
+[ [v1.0](/documentation/help/server_(1.0)) ] - [ v1.2 ]
 </nav>
 
 ### Syntax ###

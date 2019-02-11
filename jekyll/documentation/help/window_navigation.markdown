@@ -23,31 +23,35 @@ Please submit changes to
 </nav>
 
 <nav markdown="1">
-[ v1.1 ] - [ [v1.2](/documentation/help/window_navigation_(1.2)) ]
+[ [v1.1](/documentation/help/window_navigation_(1.1)) ] - [ v1.2 ]
 </nav>
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:8ch"><code><span class="synB">WINDOW</span> <span class="synB">UP</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">WINDOW</span> <span class="synB">UP</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">DOWN</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">DOWN</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">WINDOW</span> <span class="synB">LEFT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">LEFT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:11ch"><code><span class="synB">WINDOW</span> <span class="synB">RIGHT</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:12ch"><code><span class="synB">WINDOW</span> <span class="synB">RIGHT</span> <span class="syn10">[<span class="syn">-directional</span>]</span></code></pre></div>
 
 
 
 ### Parameters ###
 
 
-| `UP`: | Set the split window above the current one active. At the top, wraps to the bottom. |
-| `DOWN`: | Set the split window below the current one active. At the bottom, wraps to the top. |
+| `UP`: | Set the split window left or above the current one active. At the top, wraps to the bottom. |
+| `DOWN`: | Set the split window right or below the current one active. At the bottom, wraps teft. |
 | `LEFT`: | Go to the previous window numerically that is part of the current sticky group (or not part of any sticky group). |
 | `RIGHT`: | Go to the next window numerically that is part of the current sticky group (or not part of any sticky group). |
+{:.table.kv}
+
+
+| `-directional`: | Set the split window in the given direction to the current one active, or move the current window to the sticky group of the split window in the given direction. (If no sticky group remains, the split window collapses.) |
 {:.table.kv}
 
    Add the required arguments for the given command. Without arguments, the details (size, immortality, levels, server, name and sticky group) of the currently active window are displayed. If used with a number as argument, same as WINDOW REFNUM.
