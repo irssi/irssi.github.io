@@ -56,7 +56,7 @@ categories:
       - !!perl/regexp (?^:irc/proxy)
   - category: Other pages
 multiversion_pages:
-  - _default_: 1.1
+  - _default_: 1.2
   - page: network
     versions:
       - 1.0
@@ -68,29 +68,29 @@ multiversion_pages:
       - 1.0
   - page: bind
     versions:
-      - 1.2
+      - 1.1
   - page: window_creation
     versions:
-      - 1.2
+      - 1.1
   - page: window_changing
     versions:
-      - 1.2
+      - 1.1
   - page: window_navigation
     versions:
-      - 1.2
+      - 1.1
   - page: window_resizing
     versions:
-      - 1.2
+      - 1.1
   - page: window_split_moving
     versions:
-      - 1.2
+      - 1.1
   - page: statusbar
     versions:
-      - 1.2
+      - 1.1
   - page: window
     versions:
       - 1.0
-      - 1.2
+      - 1.1
 subcommand_pages:
   - command: window
     pages:
