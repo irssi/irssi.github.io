@@ -60,7 +60,8 @@ download in the
 repository, and an archive of the old stable version is available in
 [irssi-oldtest](https://software.opensuse.org/download.html?project=home:ailin_nemui:irssi-oldtest;package=irssi).
 
-Feel welcome to join our [IRC channel](/support/irc) to discuss this
-news.
+Feel welcome to join our [IRC channel](/support/irc), or discuss this
+news on [Lobsters](https://lobste.rs/s/bq2flt/irssi_1_2_0_released) or
+[Hacker News](https://news.ycombinator.com/item?id=19139803).
 
 The Irssi Team.
