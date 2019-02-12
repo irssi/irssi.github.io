@@ -16,7 +16,7 @@ These third-party modules come **without any support or warranty** from the Irss
 * [RobustIRC](https://github.com/robustirc/irssi-robustirc), see [robustirc.net](http://robustirc.net/)
 
 ## Functionality Enhancement
-* [OTR](https://github.com/cryptodotis/irssi-otr) message encryption
+* [OTR](https://github.com/cryptodotis/irssi-otr) message encryption (built-in since v1.2.0)
 * [FiSH](https://github.com/falsovsky/FiSH-irssi) encryption
 * some small modules on [elho.net](http://www.elho.net/irc/irssi/)
 
