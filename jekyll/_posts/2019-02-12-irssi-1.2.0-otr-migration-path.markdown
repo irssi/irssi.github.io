@@ -17,7 +17,7 @@ a given network the OTR implementation generates new keys for you.
 
 You can see your list of OTR keys in Irssi using `/otr info`.
 
-## Upgrade Path
+### Upgrade Path
 
 This requires a bit of manual work, but if you look at your `~/.irssi/otr`
 directory you should have 3 files:
