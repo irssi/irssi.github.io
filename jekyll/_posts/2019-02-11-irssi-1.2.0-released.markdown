@@ -24,7 +24,7 @@ Some notable changes:
 
 Some interesting new features:
 
- - The "Off-the-record" module is now included in the Irssi source
+ - The ["Off-the-record" module]({% post_url 2019-02-12-irssi-1.2.0-otr-migration-path %}) is now included in the Irssi source
  - Initial version of [horizontal splits]({% post_url 2017-05-06-test-sideways-splits %})
  - Formatting support for the input line, for example to hilight wrong words with spell checker script
 
