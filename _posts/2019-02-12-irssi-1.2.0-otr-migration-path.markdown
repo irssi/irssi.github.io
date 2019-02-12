@@ -1,0 +1,34 @@
+---
+layout: post
+title: "Irssi 1.2.0 OTR Migration Path"
+---
+
+With the release of Irssi 1.2.0 we now bundle the OTR plug-in as part of the
+Irssi source code. During the import phase of the `irssi-otr` codebase we fixed a
+number of issues, but one of them caused us to break backwards compatibility
+for old `irssi-otr` users.
+
+With the updated OTR implementation the secret keys of the user is no longer
+stored with an account name of `$nickname@$server` (for example:
+`user@chat.freenode.net`), but is rather stored with the network (or chatnet if
+you like) name from Irssi (for example: `Freenode`). This should remove the
+issue that some users have reported where if they connect to another server on
+a given network the OTR implementation generates new keys for you.
+
+You can see your list of OTR keys in Irssi using `/otr info`.
+
+## Upgrade Path
+
+This requires a bit of manual work, but if you look at your `~/.irssi/otr`
+directory you should have 3 files:
+
+- `otr.fp` - containing the fingerprints of your OTR buddies.
+- `otr.instag` - containing the tags from OTR.
+- `otr.key` - containing your secret keys.
+
+In `otr.fp` and `otr.key` you should manually open these files and modify the
+old strings to the new format. The `otr.key` file is the most important one
+since it contains the secret key material. The file contains an s-expression
+like structure where the account name key can be found in the `(name
+name-goes-here)` tuple. The `otr.fp` file contains a list of known
+fingerprints.  Correct the account name from your preview keys there as well.
