@@ -1,5 +1,6 @@
 {% capture news_path %}{{ site.paginate_path | replace: ':num', '' | replace: '//', '' }}{% endcapture %}{%
-capture news_path_url %}/{{ news_path }}/{% endcapture %}
+capture news_path_url
+    %}/{{ news_path }}/{% endcapture %}
 <li{% include active_class_in.html url=news_path_url %}><a href="{{ site.baseurl }}/{{ news_path }}">News</a></li>
 {% include navbar_dynamic.html %}
 <li><a href="https://github.com/irssi/irssi">Source Code</a></li>

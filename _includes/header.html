@@ -1,28 +1,30 @@
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <input type="checkbox" id="navbar-toggle-cbox">
-        <div class="navbar-header">
-            <label for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </label>
-            <a class="{% if page.url == "/index.html" or page.url == "/" %}active {% endif %} navbar-brand" href="{{ site.baseurl }}/">
-                <img alt="Irssi Logo" class="navbar-irssi-logo" src="{{ site.baseurl }}/assets/logo.png">
-                {% comment %}{{ site.title }}{% endcomment %}
-            </a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-{% include navbar.html %}
-            </ul>
-            <form class="navbar-form navbar-right gsearch-form hidden-xs hidden-sm hidden-md" role="search" action="{{ site.baseurl }}/gsearch/">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search" name="q" required>
+            <div class="navbar-header">
+                <label for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </label>
+                <a class="{% if page.url == "/index.html" or page.url == "/" %}active {% endif %} navbar-brand" href="{{ site.baseurl }}/">
+                    <img alt="Irssi Logo" class="navbar-irssi-logo" src="{{ site.baseurl }}/assets/logo.png">{%
+                    comment
+                        %}{{ site.title }}{%
+                    endcomment %}
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {% include navbar.html %}
+                </ul>
+                <form class="navbar-form navbar-right gsearch-form hidden-xs hidden-sm hidden-md" role="search" action="{{ site.baseurl }}/gsearch/">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" required>
+                        </div>
+                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-            </form>
-        </div>
-    </div>
-</nav>
+            </div>
+        </nav>

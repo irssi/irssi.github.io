@@ -31,10 +31,9 @@ include dl_os_icon.html name="openSUSE" text="**SUSE**" %}{%
 include dl_os_icon.html name="arch" text="**ArchLinux**" %}{%
 include dl_os_icon.html name="fedora" text="**Fedora/RHEL**" %}{%
 include dl_os_icon.html name="opencsw" text="**Solaris**" %}{%
-include dl_os_icon.html name="slackware" text="**Slackware**"%}{%
+include dl_os_icon.html name="slackware" text="**Slackware**" %}{%
 include dl_os_icon.html name="freebsd" text="**FreeBSD**" %}{%
-include dl_os_icon.html name="nixos" text="**NixOS**"
-%}
+include dl_os_icon.html name="nixos" text="**NixOS**" %}
 
 <!-- the following sections are opened purely based on the order, it
      has to follow the buttons above. scrolling is done with javascript to

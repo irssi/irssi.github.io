@@ -1,6 +1,5 @@
 <input id="in-{{ include.name }}" type="radio" name="distro" />
 <label for="in-{{ include.name }}" class="icon btn btn-default" onclick="chooseDlc(this, '{{ include.name }}')" markdown="1">
-<img src="{{ site.baseurl }}/assets/{{ include.name }}.png" class="osimg" alt="" /><br />
-  {{ include.text }}
-</label>{% comment %}
-{% endcomment %}
+    <img src="{{ site.baseurl }}/assets/{{ include.name }}.png" class="osimg" alt="" /><br />
+    {{ include.text }}
+</label>
