@@ -7,22 +7,24 @@
 
         <div class="page-content">
             <div class="toprule tr-{{page.layout}}"></div>
-            <div class="container {{page.container_class | default: layout.container_class}} {{page.collection}} {{page.layout}}">
-                {% if page.sidebar %}
-                <div class="col-xs-12 col-md-8">
-                    {{ content }}
-                </div>
-                <div class="sticken col-xs-12 col-md-4">
-                    <br />
-		    {% if page.sidebar
-                    %}<div class="default-sidebar">{% include {{page.sidebar}}
-		    %}</div>{% endif %}
-                </div>
-                {% else %}
-                <div class="col-xs-12 col-md-12">
-                    {{ content }}
-                </div>
-                {% endif %}
+            <div class="container {{page.container_class | default: layout.container_class}} {{page.collection}} {{page.layout}}">{%
+                if page.sidebar %}
+                    <div class="col-xs-12 col-md-8">
+                        {{ content }}
+                    </div>
+                    <div class="sticken col-xs-12 col-md-4">
+                        <br />{%
+                        if page.sidebar
+                            %}<div class="default-sidebar">{%
+                                include {{page.sidebar}}
+                            %}</div>{%
+                        endif %}
+                    </div>{%
+                else %}
+                    <div class="col-xs-12 col-md-12">
+                        {{ content }}
+                    </div>{%
+                endif %}
             </div>
         </div>
 

@@ -1,37 +1,47 @@
-{% comment %}
+{%
+comment %}
 For the pagination styles see http://getbootstrap.com/components/#pagination
-{% endcomment %}
+{%
+endcomment %}
 <nav>
     <ul class="pagination">
-        <li>
-            {% if paginator.previous_page %}
+        <li>{%
+            if paginator.previous_page %}
                 <a href="{{ paginator.previous_page_path }}" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
-                </a>
-            {% else %}
-                <span aria-hidden="true">&laquo;</span>
-            {% endif %}
-        </li>
-        {% comment %}
+                </a>{%
+            else %}
+                <span aria-hidden="true">&laquo;</span>{%
+            endif %}
+        </li>{%
+        comment %}
             The first page is a special flower, see
             http://jekyllrb.com/docs/pagination/
-        {% endcomment %}
-        <li{% if paginator.page == 1 %} class="active"{% endif %}>
+{%      endcomment %}
+        <li{%
+            if paginator.page == 1
+                %} class="active"{%
+            endif
+            %}>
             <a href="/{{ site.paginate_path | replace: ':num', '' | replace: '//', '' }}">1</a>
-        </li>
-        {% for i in (2..paginator.total_pages) %}
-            <li{% if paginator.page == i %} class="active"{% endif %}>
+        </li>{%
+        for i in (2..paginator.total_pages) %}
+            <li{%
+                if paginator.page == i
+                    %} class="active"{%
+                endif
+                %}>
                 <a href="/{{ site.paginate_path | replace: ':num', i }}">{{ i }}</a>
-            </li>
-        {% endfor %}
-        <li>
-            {% if paginator.next_page %}
+            </li>{%
+        endfor %}
+        <li>{%
+            if paginator.next_page %}
                 <a href="{{ paginator.next_page_path }}" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
-                </a>
-            {% else %}
-                <span aria-hidden="true">&raquo;</span>
-            {% endif %}
+                </a>{%
+            else %}
+                <span aria-hidden="true">&raquo;</span>{%
+            endif %}
         </li>
     </ul>
 </nav>

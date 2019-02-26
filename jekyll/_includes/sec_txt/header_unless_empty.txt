@@ -6,14 +6,13 @@ capture mycontent %}{%
         include sec_txt/wrap.txt text=include.text %}{%
     endif %}{%
 endcapture %}{%
-if mycontent != ""
-    %}
+if mycontent != "" %}
 {{include.title}}
-{%
-        for i in (1..include.title.size)
-	    %}{{include.ht}}{%
-	endfor %}
+{%  for i in (1..include.title.size)
+        %}{{include.ht}}{%
+    endfor %}
 
 {{mycontent}}{%
 else %}{%
-endif -%}
+endif
+-%}

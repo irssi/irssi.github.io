@@ -2,13 +2,14 @@
 layout: default
 ---
 <h1>News{% if paginator.page > 1 %} Archive{% endif %}</h1>
-
-{% for post in paginator.posts %}
+{%
+for post in paginator.posts %}
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
     {% include postmeta.html node=post %}
     {{ post.excerpt }}{%
-    if post.excerpt != post.content %}<p><a href="{{ site.baseurl }}{{ post.url }}">Read more...</a> the Irssi Team.</p>{%
-    endif %}
-{% endfor %}
+    if post.excerpt != post.content
+        %}<p><a href="{{ site.baseurl }}{{ post.url }}">Read more...</a> the Irssi Team.</p>{%
+    endif %}{%
+endfor %}
 
 {% include paginate.html %}

@@ -1,24 +1,21 @@
-{% assign node=include.node %}
-{% if node.author or node.date %}
+{% assign node=include.node %}{%
+if node.author or node.date %}
     <p>
         <small>
-            Posted {% comment %}
-            {% endcomment %}{% if node.author %}{% comment %}
-                {% endcomment %}by
-                {% if node.web %}
-                    <a href="{{ node.web }}">{{ node.author }}</a>
-                {% elsif node.email %}
-                    <a href="mailto:{{ node.email }}">{{ node.author }}</a>
-                {% else %}
+            Posted {%
+            if node.author
+                %}by
+{%              if node.web %}
+                    <a href="{{ node.web }}">{{ node.author }}</a>{%
+                elsif node.email %}
+                    <a href="mailto:{{ node.email }}">{{ node.author }}</a>{%
+                else %}
                     {{ node.author }}
-                {% endif %}
-            {% endif %}{% comment %}
-
-            {% endcomment %}{% if node.date %}{% comment %}
-                {% endcomment %}{% assign rd = node.date | date: "%-d" %}{% capture ordinalize %}{% include ordinal.html ordinalize=rd %}{% endcapture %}{% comment %}
-                {% endcomment %}on {{ node.date | date: "%B %-d" }}<sup>{{ ordinalize | strip_newlines }}</sup>{% comment %}
-                {% endcomment %} {{ node.date | date: "%Y" }}
-            {% endif %}
+{%              endif %}{%
+            endif %}{%
+            if node.date %}{% assign rd = node.date | date: "%-d" %}{% capture ordinalize %}{% include ordinal.html ordinalize=rd %}{% endcapture %}on {{ node.date | date: "%B %-d" }}<sup>{{ ordinalize | strip_newlines }}</sup> {{ node.date | date: "%Y" }}
+{%          endif %}
         </small>
-    </p>
-{% endif %}
+    </p>{%
+endif
+%}
