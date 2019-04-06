@@ -256,6 +256,11 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >
 > The maximum value for days is 24
 
+{:#scrollback_max_age}
+` scrollback_max_age` **`7days`**
+
+> Delete messages older than the given time in each scrollback buffer. The given time has the same format as the scrollback_time setting. Note: messages can only be deleted when there is activity in a buffer. Thus, "day changed" messages will trigger deletion in inactive buffers.
+
 {:#window_history}
 ` window_history` **`OFF`**
 
