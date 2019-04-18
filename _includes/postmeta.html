@@ -6,10 +6,10 @@ if node.author or node.date %}
             if node.author
                 %}by
 {%              if node.web %}
-                    <a href="{{ node.web }}">{{ node.author }}</a>{%
-                elsif node.email %}
-                    <a href="mailto:{{ node.email }}">{{ node.author }}</a>{%
-                else %}
+                    <a href="{{ node.web }}">{{ node.author }}</a>
+{%              elsif node.email %}
+                    <a href="mailto:{{ node.email }}">{{ node.author }}</a>
+{%              else %}
                     {{ node.author }}
 {%              endif %}{%
             endif %}{%
