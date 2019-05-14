@@ -268,10 +268,14 @@ blockquote {
     font-weight: bold;
 }
 
-.container.home > div > :not(h1) + h2,
+.container.home > div > :not(h1):not(nav) + h2,
 .container.home > :not(h1) + h2 {
     border-top: 2px solid #eceff4; /* .page-header (thicker) */
     padding-top: 20px;
+}
+
+.container.home > div > nav + h2 {
+    margin-top: 0;
 }
 
 .container.relnews > div > hr,
@@ -327,29 +331,29 @@ blockquote {
     .irssi-release,.irssi-git { display: inline-block; }
 }
 
-.dlc .info, .dlc .obs-info { display: none; }
+.dlc .info { display: none; }
 .row.obs-info, .row.obs-info .btn { font-size: small; }
 
-.dlc input:nth-of-type(1):checked ~ .info:nth-of-type(1),
-.dlc input:nth-of-type(2):checked ~ .info:nth-of-type(2),
-.dlc input:nth-of-type(3):checked ~ .info:nth-of-type(3),
-.dlc input:nth-of-type(4):checked ~ .info:nth-of-type(4),
-.dlc input:nth-of-type(5):checked ~ .info:nth-of-type(5),
-.dlc input:nth-of-type(6):checked ~ .info:nth-of-type(6),
-.dlc input:nth-of-type(7):checked ~ .info:nth-of-type(7),
-.dlc input:nth-of-type(8):checked ~ .info:nth-of-type(8),
-.dlc input:nth-of-type(9):checked ~ .info:nth-of-type(9),
-.dlc input:nth-of-type(10):checked ~ .info:nth-of-type(10),
-.dlc input:nth-of-type(11):checked ~ .info:nth-of-type(11),
-.dlc input:nth-of-type(12):checked ~ .info:nth-of-type(12),
-.dlc input:nth-of-type(13):checked ~ .info:nth-of-type(13),
-.dlc input:nth-of-type(14):checked ~ .info:nth-of-type(14),
-.dlc input:nth-of-type(15):checked ~ .info:nth-of-type(15),
-.dlc input:nth-of-type(16):checked ~ .info:nth-of-type(16),
-.dlc input:nth-of-type(17):checked ~ .info:nth-of-type(17),
-.dlc input:nth-of-type(18):checked ~ .info:nth-of-type(18),
-.dlc input:nth-of-type(19):checked ~ .info:nth-of-type(19),
-.dlc input ~ .no-info
+.dlc input:nth-of-type(1):checked ~ .info-frame .info:nth-of-type(1),
+.dlc input:nth-of-type(2):checked ~ .info-frame .info:nth-of-type(2),
+.dlc input:nth-of-type(3):checked ~ .info-frame .info:nth-of-type(3),
+.dlc input:nth-of-type(4):checked ~ .info-frame .info:nth-of-type(4),
+.dlc input:nth-of-type(5):checked ~ .info-frame .info:nth-of-type(5),
+.dlc input:nth-of-type(6):checked ~ .info-frame .info:nth-of-type(6),
+.dlc input:nth-of-type(7):checked ~ .info-frame .info:nth-of-type(7),
+.dlc input:nth-of-type(8):checked ~ .info-frame .info:nth-of-type(8),
+.dlc input:nth-of-type(9):checked ~ .info-frame .info:nth-of-type(9),
+.dlc input:nth-of-type(10):checked ~ .info-frame .info:nth-of-type(10),
+.dlc input:nth-of-type(11):checked ~ .info-frame .info:nth-of-type(11),
+.dlc input:nth-of-type(12):checked ~ .info-frame .info:nth-of-type(12),
+.dlc input:nth-of-type(13):checked ~ .info-frame .info:nth-of-type(13),
+.dlc input:nth-of-type(14):checked ~ .info-frame .info:nth-of-type(14),
+.dlc input:nth-of-type(15):checked ~ .info-frame .info:nth-of-type(15),
+.dlc input:nth-of-type(16):checked ~ .info-frame .info:nth-of-type(16),
+.dlc input:nth-of-type(17):checked ~ .info-frame .info:nth-of-type(17),
+.dlc input:nth-of-type(18):checked ~ .info-frame .info:nth-of-type(18),
+.dlc input:nth-of-type(19):checked ~ .info-frame .info:nth-of-type(19),
+.dlc input ~ .info-frame .no-info
 {
     display: block;
     margin: 2em;
@@ -357,23 +361,26 @@ blockquote {
     border: 1ex solid #f3dfb6; /* .bg-info color */
     border-radius: 4px; /* like .btn */
 }
+.dlc .info-frame .no-info,
+.dlc .info-frame .info {
+    min-height: 14em;
+}
+@media (min-width:768px) and (max-width: 991px) {
+    .dlc .info-frame .no-info,
+    .dlc .info-frame .info {
+	min-height: 10em;
+    }
+}
 
-.dlc input ~ .no-info {
+.dlc input ~ .info-frame .no-info {
     border-color: #e3b7aa; /* a.bg-warning:hover color */
 }
-.dlc input:checked ~ .no-info { display: none; }
+.dlc input:checked ~ .info-frame .no-info { display: none; }
 
-/* here the hard-coded item numbers which show obs download info */
-.dlc input:nth-of-type(2):checked ~ .obs-info,
-.dlc input:nth-of-type(3):checked ~ .obs-info,
-.dlc input:nth-of-type(6):checked ~ .obs-info,
-.dlc input:nth-of-type(7):checked ~ .obs-info,
-.dlc input:nth-of-type(8):checked ~ .obs-info {
+.dlc .obs-info {
     display: block;
     padding: 1em;
 }
-/* no irssi-git for arch linux currently */
-.dlc input:nth-of-type(7):checked ~ .obs-info .irssi-git { display: none; }
 
 
 /* collapsing the about-page columns */
