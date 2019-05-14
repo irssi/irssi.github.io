@@ -1,7 +1,10 @@
 ---
 layout: default
 ---
-<h1>News{% if paginator.page > 1 %} Archive{% endif %}</h1>
+<h1>News{% if paginator.page > 1 %} Archive{% endif %}</h1>{%
+if paginator.page > 1 %}
+    {% include paginate.html %}{%
+endif %}
 {%
 for post in paginator.posts %}
     <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>

@@ -38,6 +38,7 @@ include dl_os_icon.html name="nixos" text="**NixOS**" %}
 <!-- the following sections are opened purely based on the order, it
      has to follow the buttons above. scrolling is done with javascript to
      the about-class -->
+<div class="info-frame">
 <div class="info about-Windows" markdown="1">
 
 ### Windows
@@ -143,8 +144,11 @@ For SLES and SLED, you can also find irssi in the [SUSE Package Hub](https://pac
 If your system is not listed, you can still check your systems' package manager or otherwise compile Irssi from source<span class="visible-xs-inline visible-sm-inline">.</span><span class="hidden-xs hidden-sm"> **&#10230;**</span>
 
 </div>
+</div>
+</div>
 
-<!-- unfortunately we have to hard-code the display criteria for obs-info in the style.css -->
+## Build Service
+
 <div class="row obs-info" markdown="1">
 <div class="col-sm-2 col-md-3" markdown="1">
 
@@ -166,7 +170,6 @@ The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is bui
 
 [Install irssi release](//software.opensuse.org/download.html?project=home:ailin_nemui:irssi-test;package=irssi){:class='btn btn-success'}
 
-</div>
 </div>
 </div>
 </div>
