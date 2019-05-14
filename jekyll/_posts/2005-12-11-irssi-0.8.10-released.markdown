@@ -1,0 +1,40 @@
+---
+author: Geert
+layout: post
+---
+
+This is the moment we have all been waiting for...
+
+It is our pleasure to finally be able to release the latest stable version of Irssi v0.8.10. This would be where we'd say "cue drumroll" and the percussionist would start playing, however our drummer is chatting. So we shall instead start by introducing the Developers that have been working on this release! It is our pleasure to extend thanks to the following people:
+
+| **Original code:** |     |     |
+| ---                | --- | --- |
+| Timo Sirainen      | cras/tss | Original author |
+| ---                | --- | --- |
+| **The Irssi Core Team:** |  |  |
+| ---                | --- | --- |
+| Geert Hauwaerts    | Geert | Lead Project Oversight |
+| Wouter Coekaerts   | coekie | Lead Core Developer   |
+| Valentin Batz      | senneth | Core Developer       |
+| Jochen Eisinger    | c0ffee  | Core Developer       |
+| Marcus Rückert     | darix   | Packaging and distribution   |
+| Christel Dahlskjaer | christel | Site content  |
+{:.table}
+
+Since Irssi v0.8.9 we have made a lot of changes, lets take a look at the top new and exciting features. Feel free to check our [NEWS file](/NEWS/#v0-8-10) for a summary of the changes.
+
+### What's new in this release?
+
+- Recode support
+- Isupport (005 numeric)
+- Passive DCC support.
+- Many memleak fixes.
+- Network specific ignoring.
+- Updated internal error handling.
+- Complete 64bit support.
+- Revised default aliases.
+- Updated paste detection and settings.
+- Tons of bugfixes.
+- [Other changes](/NEWS/#v0-8-10)
+
+With that, we release Irssi v0.8.10 into the wild and we hope you enjoy it as much as we have enjoyed working on it!
