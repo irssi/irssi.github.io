@@ -57,7 +57,7 @@ Please submit changes to
 | `-visible`: |      Sets the visibility of the statusbar or item. If set to always it is visible on all screens, otherwise if set to inactive or active then it is only visible on inactive or active screens, respectively. |
 | `-before`: |       This item is added before the other item. |
 | `-after`: |        This item is added after the other item. |
-| `-priority`: |     When the statusbar items overflow, the item with the lowest priority is removed first |
+| `-priority`: |     When the statusbar items overflow, the item with the lowest priority is removed or truncated first. Priority can be negative, in which case it'll have to be quoted (e.g. -priority "-1") |
 | `-alignment`: |    Display the item on the right side. |
 {:.table.kv}
 
