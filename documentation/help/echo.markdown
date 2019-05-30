@@ -15,6 +15,10 @@ Please submit changes to
 [Help index](/documentation/help)
 </nav>
 
+<nav markdown="1">
+[ v1.2 ] - [ [v1.3](/documentation/help/echo_(1.3)) ]
+</nav>
+
 ### Syntax ###
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:4ch"><code><span class="synB">ECHO</span> <span class="syn10">[<span class="syn">-current</span>]</span> <span class="syn10">[<span class="syn">-window</span> <span class="syn09">&lt;name></span>]</span> <span class="syn10">[<span class="syn">-level</span> <span class="syn09">&lt;level></span>]</span> <span class="synB05">&lt;text></span></code></pre></div>
