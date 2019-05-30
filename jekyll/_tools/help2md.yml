@@ -91,6 +91,12 @@ multiversion_pages:
     versions:
       - 1.0
       - 1.1
+  - page: cat
+    versions:
+      - 1.3
+  - page: echo
+    versions:
+      - 1.3
 subcommand_pages:
   - command: window
     pages:

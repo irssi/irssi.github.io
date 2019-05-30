@@ -15,6 +15,10 @@ Please submit changes to
 [Help index](/documentation/help)
 </nav>
 
+<nav markdown="1">
+[ v1.2 ] - [ [v1.3](/documentation/help/cat_(1.3)) ]
+</nav>
+
 ### Syntax ###
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">CAT</span> <span class="synB05">&lt;file></span> <span class="syn10">[<span class="syn09">&lt;seek position></span>]</span></code></pre></div>
