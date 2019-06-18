@@ -1,0 +1,9 @@
+---
+title: "0.7.97 released"
+layout: post
+date: 2000-12-03 09:57:51
+---
+It's out with the new great theme templates. You can already find a
+[green theme](https://irssi-import.github.io/themes/green.theme) in
+addons page.
+

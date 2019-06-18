@@ -1,0 +1,12 @@
+---
+title: "2000-08-03 14:37"
+layout: post
+author: cras
+---
+GTK Irssi is almost working again, after 3 hours of coding, I think
+about 50% of it's functionality is workin again with 0.7.94. Here's a
+[screenshot](/images/historical/irssi-94.gif) :)
+
+I'll also be at [Assembly'2k](https://www.assembly.org/) if someone
+wants to see me for some reason :)
+

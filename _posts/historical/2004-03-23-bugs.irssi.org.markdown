@@ -1,0 +1,10 @@
+---
+title: "bugs.irssi.org"
+layout: post
+date: 2004-03-23 21:26:53
+---
+
+Irssi has had a [bug reporting
+system](https://github.com/irssi-import/bugs.irssi.org/issues) for a
+while now, thanks Geert. It's now the preferred way to report
+bugs. You could go and fix some of the reported bugs too :)

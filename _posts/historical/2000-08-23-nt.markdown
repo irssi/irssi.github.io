@@ -1,0 +1,12 @@
+---
+title: "2000-08-23 01:45"
+layout: post
+---
+Grr. We too have a remote crash bug. No, not a buffer overflow, we don't
+have them ;) And not the %s bug, but just some special case. It's not
+possible to make it run any arbitrary code, it can only crash irssi.
+This affects all 0.7.9x versions. You can get the patch
+here: \</files/crashfix.patch\> or get the whole 0.7.95-3 tarball.
+Updated .debs and .rpms would be nice to have soon :) UPDATE: .deb is
+now updated (version 0.7.95-2).
+

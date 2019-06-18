@@ -1,0 +1,13 @@
+---
+title: ".98.3 bugs"
+layout: post
+date: 2001-03-26 08:21:30
+author: cras
+---
+Still some nasty bugs left in .98 series. Themes cannot have highascii
+characters (green.theme is broken) and themes must have "replaces = {
+};" block specified. Guess I'll fix these and several others and release
+.98.4 :) It may take a while though, in the mean time you can go
+download one of the daily development versions which are working again
+(the box in right).
+

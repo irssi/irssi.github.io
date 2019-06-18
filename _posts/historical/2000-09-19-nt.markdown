@@ -1,0 +1,16 @@
+---
+title: "2000-09-19 05:28"
+layout: post
+author: cras
+---
+Hmh, again too much time has passed without much work being done. I
+guess the yet another reorganizing of code for adding of SILC support
+easier didn't do good for me. The code is mostly good but with a couple
+of ugly kludges. Perl support has also been broken for many weeks in CVS
+.. if I only could fix it I could release new version.
+
+But then some good news - I just spent 2 hours of writing
+**documentation** for irssi newbies (guess I finally got tired of
+explaining the same basic things for each new Irssi user). [Get the
+Startup-HOWTO here](/documentation/startup/).
+

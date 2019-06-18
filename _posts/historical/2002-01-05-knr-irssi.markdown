@@ -1,0 +1,15 @@
+---
+title: "K&R irssi :)"
+layout: post
+date: 2002-01-05 00:33:32
+author: cras
+---
+Just spent a few hours checking if irssi's sources could be ported to
+K&R easily. After finding
+[proto](http://www.research.att.com/~gsf/proto/proto.html), it was quite
+easy, but required some modifications. glib.h especially needed manual
+changes. Anyway, if you're interested in trying it, get the sources
+here: \</files/misc/irssi-kr-20020104.tar.gz\>. I compiled it
+succesfully with HP-UX 11.0's cc, there's a hpux-build script included
+which you probably want to look at even without HP-UX.
+

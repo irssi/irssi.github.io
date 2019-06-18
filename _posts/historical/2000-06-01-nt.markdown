@@ -1,0 +1,13 @@
+---
+title: "2000-06-01 21:11"
+layout: post
+author: cras
+---
+I don't think I will release a working GTK/GNOME version of Irssi 0.8,
+unless someone wants to help me with it. It hasn't been working for one
+or two months now since the big rewrite. It's mostly just the windowing
+system that needs to be rewritten, and I just don't have the interest to
+make it work again.. However, I'm considering of starting KDE version.
+
+Yesterday was the last day at my old job.
+

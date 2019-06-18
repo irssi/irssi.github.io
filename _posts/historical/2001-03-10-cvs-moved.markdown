@@ -1,0 +1,16 @@
+---
+title: "CVS moved"
+layout: post
+date: 2001-03-10 18:07:43
+---
+Now in same computer as the rest of the irssi.org. New CVSROOT is
+*:pserver:anonymous@cvs.irssi.org:/home/cvs*. Easiest way to change the
+existing CVS tree is to update the CVS/Root files, run this in irssi's
+root directory:
+
+    echo ":pserver:anonymous@cvs.irssi.org:/home/cvs" > CVS/Root
+    find . -name 'Root' -exec cp -f CVS/Root {} \;
+
+**UPDATE:** Sorry, anoncvs seems to be broken now, hopefully fixed soon
+:) **UPDATE:** Fixed now :)
+

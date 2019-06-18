@@ -1,0 +1,9 @@
+---
+title: "2000-03-12 12:19"
+layout: post
+date: 2000-03-12 12:19
+---
+First small bug found, timestamps are printed only once in a second by
+default (if they are enabled, of course), use */set timestamp\_timeout =
+-1* to fix this.
+

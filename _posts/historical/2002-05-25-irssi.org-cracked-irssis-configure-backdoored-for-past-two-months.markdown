@@ -1,0 +1,24 @@
+---
+title: "irssi.org cracked → irssi's configure backdoored for past two months"
+layout: post
+date: 2002-05-25 15:51:14
+author: cras
+---
+[Read all about it](/historical/backdoor). The binary isn't backdoored,
+but you might have run it while installing irssi.
+
+To prevent this from happening in future, the files are now signed with
+my GPG key. Get the key from here: \</files/tss.asc\>, or search for
+tss@iki.fi from [pgp net](http://www.pgp.net/). The actual signatures
+can be found from download page, right next to the file link. Only
+irssi-0.8.4a.tar.\* are signed for now, I'll do the rest later once I'm
+sure they aren't backdoored.
+
+OK, after switching the files a few times, the latest ones are now
+renamed as 0.8.4a. This is the original tarball that was released.
+
+cvs.irssi.org is down also temporarily - the [CVS
+mirrors](https://github.com/irssi/irssi) work though. Mirrors in general
+aren't updated until their DNS caches picks up the new main.irssi.org IP
+(1d timeout I think).
+

@@ -1,0 +1,19 @@
+---
+title: "msn.irssi.org update"
+layout: post
+date: 2003-10-19 21:50:07
+---
+
+* Changed port 6669 into 6667
+* Support the new MSN protocol.
+* For the new users:
+
+      /IRCNET ADD BitlBee
+      /SERVER ADD -ircnet BitlBee msn.irssi.org
+      /CONNECT BitlBee
+
+  Once connected to bitlbee type:
+
+      account add msn user@mail password
+      account on 0
+

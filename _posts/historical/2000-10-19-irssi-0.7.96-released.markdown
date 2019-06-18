@@ -1,0 +1,8 @@
+---
+title: "Irssi 0.7.96 released"
+layout: post
+date: 2000-10-19 22:55:31
+author: cras
+---
+Finally. I also released first public SILC plugin.
+

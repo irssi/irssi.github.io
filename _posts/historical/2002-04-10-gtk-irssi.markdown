@@ -1,0 +1,15 @@
+---
+title: "GTK+ irssi?"
+layout: post
+date: 2002-04-10 08:08:09
+author: cras
+---
+Just did a small GUI to irssi with GTK+ 2.0 - it's very basic but [as
+you can see](/images/historical/xirssi.png), it's working :) Took about
+3 hours to code it, but most of the time was spent learning GTK 2 ..
+It's new text widget seems great, except it's giving me glib-criticals
+all the time and I'm not sure of the best way to change text
+colors/style with it. If I'm still interested of it once I get some
+sleep, it'll probably be released with 0.8.5 irssi. UPDATE: yes, the
+screenshot has been updated a few times already :)
+

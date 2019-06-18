@@ -1,0 +1,7 @@
+---
+title: "2000-03-11 20:12"
+layout: post
+---
+Released 0.7.28. Lots of changes for irssi-text and a lot better support
+for multiple servers.
+

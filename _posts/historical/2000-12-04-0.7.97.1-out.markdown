@@ -1,0 +1,14 @@
+---
+title: "0.7.97.1 out"
+layout: post
+date: 2000-12-04 06:13:11
+---
+Continuing the bugfix release tradition.. ;) Updates are: own dcc
+messages were printed to status window, crashes fixed with linux/powerpc
+(probably could have happened with some other non-gcc/non-x86
+platforms), tab completion in query was buggy: if there was no other
+completion choices, word was replaced with queried nick's name. Also
+includes updated Brazilian Portuguese translation. Either get the full
+tarball or apply the patch: \</files/irssi-0.7.97.1.patch\> *(patch
+-p0 irssi-0.7.97.1.patch)*
+

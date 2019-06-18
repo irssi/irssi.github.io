@@ -1,0 +1,11 @@
+---
+title: "2000-01-18 00:29"
+layout: post
+author: cras
+---
+As usual, a small nasty bug was left to 0.7.22.. Default configuration
+file is invalid, you can fix it by adding comma at the end of the line 6
+of file 'config' in irssi's main directory and recompiling/installing.
+Or if you're lazy, you can get the new config here: \</files/config\>.
+I also fixed it in the source tar.
+

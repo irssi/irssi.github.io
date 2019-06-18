@@ -1,0 +1,11 @@
+---
+title: "Irssi 0.7.96-2 released"
+layout: post
+date: 2000-10-22 19:02:40
+---
+The usual bugfix release :) Here's a
+patch: \</files/irssi-0.7.96-2.patch\> (patch -p0
+irssi-0.7.96-2.patch). Fixes the glib warning that happens sometimes
+with autologging, not reading keyboard bindings from config file and a
+few smaller things.
+

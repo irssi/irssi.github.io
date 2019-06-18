@@ -1,0 +1,17 @@
+---
+title: "0.8.9 released"
+author: cras
+layout: post
+date: 2003-12-11 01:30:51
+---
+
+Most importantly fixes a remote crash with non-x86 architectures or
+with people running certain scripts (nicklist.pl, tab_stop.pl most
+importantly). Thanks to Rico Gloeckner for finding out and Wouter
+Coekaerts for debugging.
+
+[Download](/download)
+
+[Changes](/NEWS#v0-8-9)
+
+[Upgrading from older versions](/historical/upgrade)
