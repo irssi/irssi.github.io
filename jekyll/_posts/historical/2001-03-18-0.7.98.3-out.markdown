@@ -1,0 +1,9 @@
+---
+title: "0.7.98.3 out"
+layout: post
+date: 2001-03-18 15:41:02
+---
+Mostly just bugfixes, but statusbar was pretty much rewritten and it
+should finally work properly. See the [upgrade
+info](/historical/upgrade/).
+

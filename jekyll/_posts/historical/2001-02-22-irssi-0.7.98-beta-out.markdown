@@ -1,0 +1,12 @@
+---
+title: "Irssi 0.7.98 BETA out"
+layout: post
+date: 2001-02-22 11:07:25
+author: cras
+---
+Today's CVS snapshot: \</files/snapshots/irssi-20010222.tar.gz\> can
+be considered as 0.7.98 beta. The final .98 is out probably later today
+or tomorrow, so please try the beta soon and tell me if there's any
+problems with it so I can fix them for the final release. **UPDATE:**
+(13:12) /HILIGHT had some problems, fixed and repackaged new irssi.
+

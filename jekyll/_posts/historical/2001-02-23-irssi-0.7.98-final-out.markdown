@@ -1,0 +1,8 @@
+---
+title: "Irssi 0.7.98 final out"
+layout: post
+date: 2001-02-23 10:04:27
+---
+Hope it works. Since .98 beta there's been mostly just some compiling
+fixes.
+

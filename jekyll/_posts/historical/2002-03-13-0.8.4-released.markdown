@@ -1,0 +1,9 @@
+---
+title: "0.8.4 released"
+layout: post
+date: 2002-03-13 06:43:09
+---
+There you go, hopefully the last one for a while :) And reminder again:
+Use /UPGRADE, but don't understand wrong what it does - /HELP upgrade
+helps :)
+

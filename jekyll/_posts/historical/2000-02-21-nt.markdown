@@ -1,0 +1,20 @@
+---
+title: "2000-02-21 16:35"
+layout: post
+date: 2000-02-21 16:35
+author: cras
+---
+Just some advertising: **\#irssi** is now open in **ircnet**,
+**openprojects** network and **efnet**. So just join there and you can
+give me (cras) any suggestions, complains, etc.
+
+And I don't think I'll continue with i2k anyway ;) Too much work, much
+easier to do small fixes one at a time to Irssi but still go towards
+i2k's functionality (or what I thought it would be :).
+
+And my "Would Like To do" list for Irssi is now: Finish Perl support,
+rewrite irssi text widget with one that takes as little memory as
+possible but still is faster than ever and ability to have pics among
+text. Replace notebook widget's tabs with something prettier, do split
+windows to irssi-text and finally make a KDE version :)
+

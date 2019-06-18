@@ -1,0 +1,9 @@
+---
+title: "0.8.4a released"
+layout: post
+date: 2002-05-30 20:33:22
+---
+This is just the original 0.8.4 package. The 'a' was added after version
+number in the package file just to make sure it's not confused with the
+backdoored version.
+

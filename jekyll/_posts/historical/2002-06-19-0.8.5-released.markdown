@@ -1,0 +1,19 @@
+---
+title: "0.8.5 released"
+layout: post
+date: 2002-06-19 20:09:26
+author: cras
+---
+Yet another remote crash found. I'm getting tired of this. There's a few
+good things in irssi's code, and I'm still quite sure there's no (write)
+buffer overflows, but most of it is getting a big mess. I think the next
+thing I will do is rewrite the whole crap. Though imapd comes first - I
+need to do something else than irssi for a while.
+
+Anyway, I'm pretty sure this is the last remote crash that can be found
+from 0.8.x, there's only few potential places and I've looked most of
+them through already.
+
+Also, this release is the same as 0.8.4 with only the crash fixed, I
+didn't trust enough the current CVS code to release it as 0.8.5.
+

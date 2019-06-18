@@ -1,0 +1,12 @@
+---
+title: "New irssi.org"
+layout: post
+date: 2001-02-27 17:09:42
+author: cras
+---
+Learned CSS and did irssi.org fully with it without any horrible tables
+or other netscape kludges this time. Netscape has its own specific page
+done with tables. There's Lynx specific page too. I've tried this page
+with Mozilla .8, Konqueror, Netscape, Lynx, Links, w3m and IE 5.0. Bug
+reports, suggestions, general complains, etc. all welcome :)
+

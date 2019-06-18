@@ -1,0 +1,24 @@
+---
+title: "2000-04-25 10:26"
+layout: post
+author: cras
+---
+It's amazing how much you can do when there's no IRC you spend your time
+on. For example, you could code an IRC client 4 days in a row
+interrupted only by some sleep, 10 hours of x-files and few other tv
+shows :)
+
+So, I would have put the changelog here, but I forgot the disk to home
+:( I'll put it here tomorrow. There are **LOTS** of new really advanced
+features that I don't think many clients have (for example regexp
+support in several places, a lot better logging and notifylist notifies
+of away and idle changes). And there's a lot of EPIC-compatibility, I
+did it in as many places I could (and had time to), except where I could
+do better and break the epic syntax because of it. I'm not sure about
+it's scripting and /ON command, maybe.. as a separate module.
+
+I also quit my job today, an hour ago :) New place will be at
+[springtoys](https://en.wikipedia.org/wiki/Video_gaming_in_Finland), as
+a game developer. That's a great place to work for, even while I'm not
+very enthusiastic about games.
+

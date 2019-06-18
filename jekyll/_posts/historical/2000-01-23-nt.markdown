@@ -1,0 +1,6 @@
+---
+title: "2000-01-23 22:51"
+layout: post
+---
+0.7.23 released, no bad bugs left?
+

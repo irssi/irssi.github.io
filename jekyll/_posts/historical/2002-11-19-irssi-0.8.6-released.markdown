@@ -1,0 +1,10 @@
+---
+title: "0.8.6 released"
+layout: post
+date: 2002-11-19 12:25:04
+---
+
+Finally out. Lots of changes and fixes, including support for SSL
+servers (by vjt), DCC send queues (by Heikki Orsila) and better
+support for IRCNet !channels. This version also fixes the crash at
+startup with some newer distributions (eg. RedHat 8) using Perl 5.8.

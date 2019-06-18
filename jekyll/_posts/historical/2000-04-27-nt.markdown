@@ -1,0 +1,10 @@
+---
+title: "2000-04-27 13:56"
+layout: post
+author: cras
+---
+[The changelog is now available](/NEWS) (or has been since yesterday),
+and it's also in CVS if anyone wants to try. I've heard that it works
+even while there are some problems. Need to do a bit more coding until I
+release it.
+

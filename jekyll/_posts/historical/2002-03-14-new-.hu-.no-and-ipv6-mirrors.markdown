@@ -1,0 +1,9 @@
+---
+title: "New .hu, .no and IPv6 mirrors"
+layout: post
+date: 2002-03-14 08:15:30
+---
+Thanks to Tamas Pasztor and Kay Bærulfsen. UPDATE: CVS is also mirrored
+in cvs.hu.irssi.org, refreshed every 5 mins. UPDATE2: DawS made our
+first [IPv6 mirror](/) too.
+

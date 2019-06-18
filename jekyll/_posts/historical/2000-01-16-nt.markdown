@@ -1,0 +1,9 @@
+---
+title: "2000-01-16 21:19"
+layout: post
+author: cras
+---
+Too many suggested features, too many bugs, i2k coming out too slowly, I
+wanted some features too .. So, I released irssi 0.7.22, check the
+[changelog](/NEWS) for list of new features/fixes.
+

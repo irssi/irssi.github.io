@@ -1,0 +1,13 @@
+---
+title: "2000-03-20 00:03"
+layout: post
+author: cras
+---
+Yet another bug that affected new Irssi users, the default config file
+was broken.. Get a new one here: \</files/config\> and place it to
+irssi's source dir and recompile. Version 0.7.28-3 tarball also fixes
+this.
+
+I've also been cleaning up irssi's sources **a lot** and merging i2k's
+code to it. I'll try to release a new clean version next weekend :)
+

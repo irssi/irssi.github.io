@@ -1,0 +1,20 @@
+---
+title: "2000-05-26 13:56"
+layout: post
+date: 2000-05-26 13:56
+author: cras
+---
+FINALLY - I got internet to home :) Took only 2 weeks actually, even
+while they told it would take 3-4 months. It's a cable modem, hopefully
+works well where I live .. will see, it should work today/tomorrow. I
+was pretty desperate at some times actually :) I almost took a normal
+56k modem but phone lines cost **too** much here, about 1/3 of what ADSL
+would cost. But ADSL and the rest had mostly 2 months of delivery time..
+And the "free" internet that I was supposed to get .. well, don't know,
+those people are too busy, maybe I will still get it.
+
+And irssi - there's a few big things that need to be done (dcc chat) and
+lots of smaller things until I could get some release out. Maybe it will
+speed up now that I can IRC from home too :) I have also been doing
+botnet for irssi, will try to replace those eggdrops with it some day :)
+

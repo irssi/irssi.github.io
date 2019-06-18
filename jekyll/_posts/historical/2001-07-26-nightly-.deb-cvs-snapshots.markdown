@@ -1,0 +1,22 @@
+---
+title: "Nightly .deb CVS snapshots"
+layout: post
+date: 2001-07-26 00:28:09
+author: cras
+---
+For all you debian users:
+
+``` 
+  echo "deb http://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
+  echo "deb-src http://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
+  apt-get update
+  apt-get install irssi-text
+```
+
+Debian testing (woody) users can replace the *unstable* text with
+*testing*. If you wish to provide non-i386 .debs, contact me. Potato
+snapshots will come after I get my 386 ready for it :) And add those **/
+chars** at the end of debian/ and unstable/ - they're **required**.
+
+You can also download them directly from [here](/download).
+

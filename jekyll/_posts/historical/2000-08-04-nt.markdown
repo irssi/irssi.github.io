@@ -1,0 +1,10 @@
+---
+title: "2000-08-04 03:14"
+layout: post
+author: cras
+---
+GTK Irssi code is in CVS now, seems to work surprisingly well :) Nearly
+all GUI stuff of .28 work again except setup. I'll probably take another
+screenshot soon :) UPDATE: [Here's ther shot
+:)](/images/historical/gtk-irssi.gif)
+

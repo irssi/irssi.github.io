@@ -1,0 +1,10 @@
+---
+title: "2000-07-26 21:21"
+layout: post
+author: cras
+---
+Released 0.7.94, there's finally some help files (by Lite). Some
+bugfixes, some small new features, nothing really big. I've been playing
+a lot with [SILC](https://en.wikipedia.org/wiki/SILC_\(protocol\)) (new
+IRC-like protocol with cryptography).
+

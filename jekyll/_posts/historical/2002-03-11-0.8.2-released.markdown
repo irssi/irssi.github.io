@@ -1,0 +1,8 @@
+---
+title: "0.8.2 released"
+layout: post
+date: 2002-03-11 18:57:40
+---
+Lots of bugfixes with a few new features. Oh, and remember to use the
+new `/UPGRADE` command - no need to quit+restart :)
+

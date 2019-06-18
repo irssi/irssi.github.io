@@ -1,0 +1,9 @@
+---
+title: "2000-04-20 18:23"
+layout: post
+author: cras
+---
+So .. Still no internet at home, but I will most probably get it,
+hopefully soon :) I've been working on irssi's rewrite so I'll try to
+release pre-0.8.0 soon.
+

@@ -1,0 +1,11 @@
+---
+title: "2000-07-01 01:13"
+layout: post
+date: 2000-07-01 01:13
+---
+Released 0.7.92 - rewritten tab-completion with lots of new stuff you
+can complete. Improved also highlighting features.
+
+Irssi's CVS is also changing soon to cvs.irssi.org. Hopefully working
+this weekend :)
+

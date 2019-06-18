@@ -1,0 +1,9 @@
+---
+title: "2000-06-04 19:06"
+layout: post
+---
+Finally - 0.7.90 released. This version doesn't have GTK version, and
+there's probably some bugs and lots of things to do, but it should work
+pretty well. There's also a (incomplete) manual which you should look
+at, it's in docs/manual.txt.
+

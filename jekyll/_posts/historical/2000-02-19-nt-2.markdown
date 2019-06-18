@@ -1,0 +1,10 @@
+---
+title: "2000-02-19 16:41"
+layout: post
+date: 2000-02-19 16:41
+---
+Irssi 0.7.25 released. .24 had a pretty bad bug/feature with displaying
+highbit characters with some fonts. Anyway, it has some new features
+also. Prettier /NAMES list, /WQUERY and several irssi-text user
+interface changes.
+

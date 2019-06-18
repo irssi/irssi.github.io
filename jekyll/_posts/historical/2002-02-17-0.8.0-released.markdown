@@ -1,0 +1,10 @@
+---
+title: "0.8.0 released"
+layout: post
+date: 2002-02-17 12:54:00
+author: cras
+---
+Finally. [Download](/download), read [changes](/NEWS) and [upgrade
+information](/historical/upgrade/). I decided to call it 0.8.0 instead
+of 0.7.99 after all :)
+

@@ -1,0 +1,17 @@
+---
+title: "SILC"
+layout: post
+date: 2000-10-02 11:56:59 +1
+author: cras
+---
+[Screenshot :)](/images/historical/silc.gif) - not that pretty yet but
+we'll get there :)
+
+SILC support is working great :) If you want to try, go get latest SILC
+version from
+http://silc.pspt.fi/.
+You might want to use CVS version so you don't always have to patch the
+silc sources when I change something :) Build the SILC, update irssi's
+CVS tree and go to silc directory, run autogen.sh and do the rest as the
+README file says.
+

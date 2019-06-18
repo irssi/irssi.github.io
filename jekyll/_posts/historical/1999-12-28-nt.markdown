@@ -1,0 +1,27 @@
+---
+title: "1999-12-28 15:36"
+layout: post
+author: cras
+---
+I don't think I'll be updating irssi for a while (except maybe
+bugfixes..). I'm actually pretty much got bored of doing it. However,
+I'm sure the i2k will come some day :) Maybe soon (Q1 of '00 even? :)
+and probably with different name. I'll put updates about it here.
+
+Plans about i2k .. well, I'm going to concentrate more into the text
+version of it .. maybe we'll finally get ircii killer? :) ircii sources
+are IMHO pretty horrible so it shouldn't be too hard job ;) I thought
+about making it as epic much compatible as possible, maybe even be able
+to run epic scripts. And I'll do the scripting (epic, perl, python, ..)
+support as plugins, so if you don't need epic (or whatever) scripting
+support, you just don't load the plugin. Only minor drawback of this
+would be that everyone will create scripts with different languages and
+soon you would need to load all of the plugins anyway... Anyway, the
+goal is to make it faster, eat less memory, have a lot more
+understandable sources and be a lot easier to write expansions without
+needing to add lots of bloat to the main binary (like bitchx) than ircii
+(based clients).
+
+After I get this done I'll start thinking of GTK/GNOME/KDE (probably not
+plain QT :) frontends.
+

@@ -1,0 +1,9 @@
+---
+title: "2000-03-12 18:18"
+layout: post
+date: 2000-03-12 18:18
+---
+And another bug, you couldn't build GTK version without GNOME. Here's a
+small patch: \</files/irssi-0.7.28-2.diff\> to fix both of the
+problems. The version 0.7.28-2 tarball also has these problems fixed.
+

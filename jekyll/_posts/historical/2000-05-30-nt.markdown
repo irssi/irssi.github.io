@@ -1,0 +1,7 @@
+---
+title: "2000-05-30 01:28"
+layout: post
+---
+We have now irssi.org registered, thanks to Carl Drinkwater who
+registered it just after two days of using irssi ;)
+
