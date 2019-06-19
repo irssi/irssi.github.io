@@ -1,0 +1,10 @@
+---
+title: "1999-09-13 18:30"
+layout: post
+date: 1999-09-13 18:30
+author: cras
+---
+0.7.16 released. I did compile this with and without gnome and ipv6,
+it's also been running quite a while without crashes so I think this
+could finally be the "stable" irssi? :)
+

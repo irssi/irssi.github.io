@@ -1,0 +1,8 @@
+---
+title: "1999-04-22 20:36"
+layout: post
+---
+Irssi 0.7.9 released. Lots of bugs fixed, processes are used for
+nonblocking host resolving instead of threads and there's a new status
+dialog.
+

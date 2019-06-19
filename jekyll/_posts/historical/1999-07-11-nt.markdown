@@ -1,0 +1,6 @@
+---
+title: "1999-07-11 13:35"
+layout: post
+---
+Removed download counters. Made a new screenshot.
+

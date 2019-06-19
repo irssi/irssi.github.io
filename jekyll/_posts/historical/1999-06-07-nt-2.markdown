@@ -1,0 +1,14 @@
+---
+title: "1999-06-07 11:41"
+layout: post
+date: 1999-06-07 11:41
+author: cras
+---
+I hate coding in several places :) Home, work and in my friends computer
+.. All of them had different irssi versions, I've been diffing them
+together every now and then but still forgotten to diff some. Today
+fixed the same two bugs for the third time ..
+
+Anyway, irssi 0.7.11-2 released :) Those two small text mode version
+fixes and configure script bug fix.
+
