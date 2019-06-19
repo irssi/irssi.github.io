@@ -1,0 +1,6 @@
+---
+title: "1999-08-29 22:06"
+layout: post
+---
+0.7.15 released, it has lots of internal changes and IPv6 support :)
+

@@ -1,0 +1,8 @@
+---
+title: "1999-06-07 16:23"
+layout: post
+date: 1999-06-07 16:23
+---
+Moved irssi's web pages here and modified them a bit too.. Colors are
+taken from slashdot, looks nice :)
+

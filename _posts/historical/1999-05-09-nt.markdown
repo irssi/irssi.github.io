@@ -1,0 +1,8 @@
+---
+title: "1999-05-09 20:45"
+layout: post
+---
+Irssi 0.7.10 released. Lots of bugs fixed. ZVT support for displaying
+texts, a lot faster than GTK's text widget. New DCC transfer dialog, and
+some other new things.
+

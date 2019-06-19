@@ -1,0 +1,21 @@
+---
+title: "1999-08-31 20:46"
+layout: post
+date: 1999-08-31 20:46
+author: cras
+---
+Released 0.7.15-3, which will finally fix all those bugs .15 and .15-2
+sufferend. I've learned my lesson, never release software without
+testing it first well enough even how much you want to release it
+immediately :)
+
+.15-3 has also a rawlog window which you can use to check what's going
+on in server connection. Also great for debugging.
+
+I also released .15-2 -\> .15-3 patch: \</files/irssi.diff.bz2\>. To
+apply it go to irssi's directory and run  
+*cat \~/irssi.diff.bz2 | bunzip2 | patch -p1*
+
+If you applied any older patches, answer no to questions about applying
+reverted patches..
+

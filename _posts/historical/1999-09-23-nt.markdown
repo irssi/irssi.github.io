@@ -1,0 +1,16 @@
+---
+title: "1999-09-23 21:21"
+layout: post
+author: cras
+---
+First version of GtkIText is now in CVS. Summary of it's features:
+
+  - Proportional fonts
+  - It's fast - or at least I don't know how to make it any more faster
+  - When text is split to next line, it leaves some space before the
+    text. The amount of space will be the space used by nick in future.
+  - It will have graphics support :)
+
+Currently you can't select/copy text from it and /clear doesn't work
+either. You also can't select font or background..
+

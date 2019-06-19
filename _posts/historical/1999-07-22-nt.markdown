@@ -1,0 +1,8 @@
+---
+title: "1999-07-22 19:24"
+layout: post
+date: 1999-07-22 19:24
+---
+Here comes the usual bugfix release, 0.7.13-2 ;) Made a
+patch: \</files/irssi-0.7.13-2.diff\> for it this time too.
+

@@ -1,0 +1,7 @@
+---
+title: "1999-06-06 23:15"
+layout: post
+---
+Irssi 0.7.11 released. Almost a month since last version.. But this has
+lots and lots of buf fixes and new great stuff and more is coming soon.
+

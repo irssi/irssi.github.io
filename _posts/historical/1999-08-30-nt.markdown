@@ -1,0 +1,10 @@
+---
+title: "1999-08-30 14:32"
+layout: post
+author: cras
+---
+Right .. I compiled and tested 0.7.15 with gnome and IPv6, I compiled it
+without IPv6, didn't try it (I thought I did :), didn't compile without
+gnome. And of course there was bugs in them. So, here's 0.7.15-2 where
+you can actually connect to server and compile without gnome.
+

@@ -1,0 +1,7 @@
+---
+title: "1999-08-03 22:55"
+layout: post
+---
+Xlife's computer got upgraded to K6-2 450, no more slowups when loading
+web pages :)
+
