@@ -7,6 +7,55 @@
 
 ---
 
+## 1.2.1
+{:#v1-2-1 }
+
+The Irssi team released this <abbr class="timeago" title="2019-06-29">2019-06-29</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.2.1" %}
+
+Contains all changes from 1.1.3
+
+### Fixes
+{:#v1-2-1-fixes }
+
+- Fix a test on big endian machines ([#1014](https://github.com/irssi/irssi/issues/1014 "fix test on Big Endian 64bit, due to pointer size mismatch"))
+- Fix the compile time conditionality of wcwidth implementation ([#1019](https://github.com/irssi/irssi/issues/1019 "make utf8proc configurable"), gentoo#677804, [#720](https://github.com/irssi/irssi/issues/720 "mk_wcwidth will return outdated widths when glibc 2.26 (unicode 9.0) is out"))
+- Fix /save no longer working on old Solaris (pre POSIX.1-2008) ([#1042](https://github.com/irssi/irssi/issues/1042 "/SAVE fails in Solaris 10 ''Invalid argument''"), [#1043](https://github.com/irssi/irssi/issues/1043 "fix realpath on old solaris"))
+- Fix regression of [#764](https://github.com/irssi/irssi/issues/764 "Add color support for input bar") where display of 8-bit (legacy encoding) in the input prompt was broken ([#1018](https://github.com/irssi/irssi/issues/1018 "Input line is echoing utf8 chars on non-utf8 terminal"), [#1057](https://github.com/irssi/irssi/issues/1057 "restore 8bit support in input entry")). Initial patch by Артём Курашов
+
+---
+
+## 1.1.3
+{:#v1-1-3 }
+
+The Irssi team released this <abbr class="timeago" title="2019-06-29">2019-06-29</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.1.3" %}
+
+Contains all changes from 1.0.8
+
+### Fixes
+{:#v1-1-3-fixes }
+
+- Fix regression of [#779](https://github.com/irssi/irssi/issues/779 "Allow selection of what kind of activity targets to ignore v2") where autolog_ignore_targets would not matching itemless windows anymore ([#1012](https://github.com/irssi/irssi/issues/1012 "autolog_ignore_targets cannot ignore non-windowed targets"), [#1013](https://github.com/irssi/irssi/issues/1013 "do not stop autolog_ignore_targets from matching itemless targets"))
+
+---
+
+## 1.0.8
+{:#v1-0-8 }
+
+The Irssi team released this <abbr class="timeago" title="2019-06-29">2019-06-29</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.0.8" %}
+
+### Fixes
+{:#v1-0-8-fixes }
+
+- Fix a use after free issue when sending the SASL login on (automatic and manual) reconnects ([#1055](https://github.com/irssi/irssi/issues/1055 "memory corruption sasl reconnect? "), [#1058](https://github.com/irssi/irssi/issues/1058 "copy sasl username and password values")). Reported by ilbelkyr
+
+---
+
 ## 1.2.0
 {:#v1-2-0 }
 
@@ -19,31 +68,35 @@ Contains all changes from 1.1.2
 ### Changes
 {:#v1-2-0-changes }
 
-- Improved the /STATUSBAR commands ([#858](https://github.com/irssi/irssi/issues/858))
-- /SET no longer shows `=` between setting and value ([#886](https://github.com/irssi/irssi/issues/886))
-- /CUBES removed from default config (available as script) ([#956](https://github.com/irssi/irssi/issues/956))
-- /1 /2 /3 ... removed from default config (available as new setting window_number_commands) ([#958](https://github.com/irssi/irssi/issues/958))
-- Always redraw the screen on resize. By David Phillips ([#896](https://github.com/irssi/irssi/issues/896))
-- Private notices intended for channels are now displayed on the channel (new setting notice_channel_context) ([#959](https://github.com/irssi/irssi/issues/959))
+- Improved the /STATUSBAR commands ([#858](https://github.com/irssi/irssi/issues/858 "change the statusbar commands so that no accidential status bars are created"))
+- /SET no longer shows `=` between setting and value ([#886](https://github.com/irssi/irssi/issues/886 "remove = from format because people get confused by it"))
+- /CUBES removed from default config (available as script) ([#956](https://github.com/irssi/irssi/issues/956 "Remove cubes from irssi.conf"))
+- /1 /2 /3 ... removed from default config (available as new setting window_number_commands) ([#958](https://github.com/irssi/irssi/issues/958 "Make /1/2/3/... a setting"))
+- Always redraw the screen on resize. By David Phillips ([#896](https://github.com/irssi/irssi/issues/896 "Don't ignore SIGWINCH when window size is unchanged"))
+- Private notices intended for channels are now displayed on the channel (new setting notice_channel_context) ([#959](https://github.com/irssi/irssi/issues/959 "Route notices intended for channels into the channel"))
 
 ### Additions
 {:#v1-2-0-additions }
 
-- Imported the "Off-the-record" module into Irssi tree ([#854](https://github.com/irssi/irssi/issues/854), [#589](https://github.com/irssi/irssi/issues/589), [#196](https://github.com/irssi/irssi/issues/196))
-- Initial support for sideways split windows ([#697](https://github.com/irssi/irssi/issues/697), [#431](https://github.com/irssi/irssi/issues/431), [#224](https://github.com/irssi/irssi/issues/224), [#807](https://github.com/irssi/irssi/issues/807), [FS#310](https://github.com/irssi-import/bugs.irssi.org/issues/310), [#947](https://github.com/irssi/irssi/issues/947), [#955](https://github.com/irssi/irssi/issues/955), [#989](https://github.com/irssi/irssi/issues/989))
-- Change the implementation of `wcwidth`. This is used to calculate the width of emojis on your terminal screen ([#917](https://github.com/irssi/irssi/issues/917), [#720](https://github.com/irssi/irssi/issues/720))
-- Make the wcwidth functions available from Perl ([#973](https://github.com/irssi/irssi/issues/973)):
+- Imported the "Off-the-record" module into Irssi tree ([#854](https://github.com/irssi/irssi/issues/854 "OTR support, take 2"), [#589](https://github.com/irssi/irssi/issues/589 "''Native'' OTR Support"), [#196](https://github.com/irssi/irssi/issues/196 "Merge irssi-otr into the tree"), [#881](https://github.com/irssi/irssi/issues/881 "New release including OTR "))
+- Initial support for sideways split windows ([#697](https://github.com/irssi/irssi/issues/697 "sideways split support for Irssi"), [#431](https://github.com/irssi/irssi/issues/431 "[WIP] Lemons code for horizontal splits [Do not merge]"), [#224](https://github.com/irssi/irssi/issues/224 "Vertical split windows / tmux-like ''panes''"), [#807](https://github.com/irssi/irssi/issues/807 "fix format_real_length expected test result"), [FS#310](https://github.com/irssi-import/bugs.irssi.org/issues/310 "vertical splits"), [#947](https://github.com/irssi/irssi/issues/947 "Fix broken display after resizing many windows very small"), [#955](https://github.com/irssi/irssi/issues/955 "fix and document window width on screen width dependency"), [#989](https://github.com/irssi/irssi/issues/989 "update sidewayssplit syntax"))
+- Change the implementation of `wcwidth`. This is used to calculate the width of emojis on your terminal screen ([#917](https://github.com/irssi/irssi/issues/917 "Add a wrapper of wcwidth() that picks the best implementation"), [#720](https://github.com/irssi/irssi/issues/720 "mk_wcwidth will return outdated widths when glibc 2.26 (unicode 9.0) is out"))
+- Make the wcwidth functions available from Perl ([#973](https://github.com/irssi/irssi/issues/973 "expose wcwidth and related to perl")):
+  
+  
       string_width(str)
       string_chars_for_width(str, width)
       wcwidth(char)
-- Added completion_keep_word setting ([#979](https://github.com/irssi/irssi/issues/979))
-- Allow activity_hide_targets to hide activity in itemless windows ([#967](https://github.com/irssi/irssi/issues/967), [#997](https://github.com/irssi/irssi/issues/997), [#1001](https://github.com/irssi/irssi/issues/1001), [#1003](https://github.com/irssi/irssi/issues/1003))
-- Added activity_hide_visible setting ([#990](https://github.com/irssi/irssi/issues/990))
-- Allow hiding of lines through the /IGNORE system ([#901](https://github.com/irssi/irssi/issues/901), [#900](https://github.com/irssi/irssi/issues/900), [#892](https://github.com/irssi/irssi/issues/892), [#890](https://github.com/irssi/irssi/issues/890), [#884](https://github.com/irssi/irssi/issues/884), [#937](https://github.com/irssi/irssi/issues/937))
-- Add window_default_hidelevel setting. By Doug Freed ([#941](https://github.com/irssi/irssi/issues/941))
-- Add activity_hide_window_hidelevel setting, defaulting to ON ([#938](https://github.com/irssi/irssi/issues/938))
-- Add autolog_only_saved_channels setting, to autolog only channels that are in the config ([#968](https://github.com/irssi/irssi/issues/968))
-- Add format support for the input line. By Ben Paxton, originally by Jonas Hurrelmann ([#764](https://github.com/irssi/irssi/issues/764), [FS#621](https://github.com/irssi-import/bugs.irssi.org/issues/621), [#1004](https://github.com/irssi/irssi/issues/1004))
+- Added completion_keep_word setting ([#979](https://github.com/irssi/irssi/issues/979 "add keep_word setting to completion"))
+- Allow activity_hide_targets to hide activity in itemless windows ([#967](https://github.com/irssi/irssi/issues/967 "allow activity_hide_targets to hide activity in itemless windows"), [#997](https://github.com/irssi/irssi/issues/997 "some crash"), [#1001](https://github.com/irssi/irssi/issues/1001 "add missing NULL check"), [#1003](https://github.com/irssi/irssi/issues/1003 "correct fix for #997"))
+- Added activity_hide_visible setting ([#990](https://github.com/irssi/irssi/issues/990 "add activity_hide_visible setting"))
+- Allow hiding of lines through the /IGNORE system ([#901](https://github.com/irssi/irssi/issues/901 "core/ignore: fix #900"), [#900](https://github.com/irssi/irssi/issues/900 "NO_ACT ignores not working"), [#892](https://github.com/irssi/irssi/issues/892 "core/ignore: fix ignore_match_level handling of flag levels"), [#890](https://github.com/irssi/irssi/issues/890 "Lines matching NO_ACT ignores are hidden by /window hidelevel HIDDEN"), [#884](https://github.com/irssi/irssi/issues/884 "Added HIDDEN level to ignores"), [#937](https://github.com/irssi/irssi/issues/937 "correctly separate ignore flags (no_act, hidden) from level"))
+- Add window_default_hidelevel setting. By Doug Freed ([#941](https://github.com/irssi/irssi/issues/941 "Add window_default_hidelevel setting"))
+- Add activity_hide_window_hidelevel setting, defaulting to ON ([#938](https://github.com/irssi/irssi/issues/938 "Don't trigger activity on hidden lines by default"))
+- Add autolog_only_saved_channels setting, to autolog only channels that are in the config ([#968](https://github.com/irssi/irssi/issues/968 "Only log saved channels"))
+- Add format support for the input line. By Ben Paxton, originally by Jonas Hurrelmann ([#764](https://github.com/irssi/irssi/issues/764 "Add color support for input bar"), [FS#621](https://github.com/irssi-import/bugs.irssi.org/issues/621 "[PATCH] Color support for ''gui_entry'' to allow better spellcheckers."), [#1004](https://github.com/irssi/irssi/issues/1004 "fix gui_input_get_extent"))
+  
+  
       use Irssi::TextUI;
       gui_input_set_extent(pos, text)
       gui_input_set_extents(pos, len, left, right)
@@ -51,39 +104,39 @@ Contains all changes from 1.1.2
       gui_input_get_extent(pos)
       gui_input_get_text_and_extents()
       gui_input_set_text_and_extents(...)
-- Parsing of IRCv3 CAP 3.2 ([#775](https://github.com/irssi/irssi/issues/775), [#869](https://github.com/irssi/irssi/issues/869))
-- Show CAP-related events in the user interface ([#918](https://github.com/irssi/irssi/issues/918), [#916](https://github.com/irssi/irssi/issues/916), [#870](https://github.com/irssi/irssi/issues/870), [#704](https://github.com/irssi/irssi/issues/704))
-- Continue using separators when addressing multiple nicks with tab completion. By Manish Goregaokar ([#822](https://github.com/irssi/irssi/issues/822))
-- Bind Shift-tab by default. By Niklas Luokkala ([#830](https://github.com/irssi/irssi/issues/830), [#829](https://github.com/irssi/irssi/issues/829))
-- Fuzzing more things ([#913](https://github.com/irssi/irssi/issues/913), [#780](https://github.com/irssi/irssi/issues/780), [#813](https://github.com/irssi/irssi/issues/813))
+- Parsing of IRCv3 CAP 3.2 ([#775](https://github.com/irssi/irssi/issues/775 "CAP 3.2 support"), [#869](https://github.com/irssi/irssi/issues/869 "signals.txt: add missing 'server cap new│delete' signals"))
+- Show CAP-related events in the user interface ([#918](https://github.com/irssi/irssi/issues/918 "irc-cap: Don't show warning on CAP LIST response"), [#916](https://github.com/irssi/irssi/issues/916 "/quote cap list says ''Unhandled CAP subcommand'' but it is handled now"), [#870](https://github.com/irssi/irssi/issues/870 "Add fe-cap to show messages for CAP-related events in the UI "), [#704](https://github.com/irssi/irssi/issues/704 "output of any CAP command not shown"))
+- Continue using separators when addressing multiple nicks with tab completion. By Manish Goregaokar ([#822](https://github.com/irssi/irssi/issues/822 "Insert colons after completing nicks preceded by a list of other autocompleted nicks"))
+- Bind Shift-tab by default. By Niklas Luokkala ([#830](https://github.com/irssi/irssi/issues/830 "Add Shift-Tab completion to gui-readline"), [#829](https://github.com/irssi/irssi/issues/829 "Add <Shift><Tab> completion"))
+- Fuzzing more things ([#913](https://github.com/irssi/irssi/issues/913 "Add server-fuzz to fe-fuzz"), [#780](https://github.com/irssi/irssi/issues/780 "Add event_get_params to fe-fuzz"), [#813](https://github.com/irssi/irssi/issues/813 "Add theme_load to fe-fuzz"))
 
 ### Fixes
 {:#v1-2-0-fixes }
 
-- Disconnect SASL properly in case the SASL module got unloaded from server ([#931](https://github.com/irssi/irssi/issues/931), [#629](https://github.com/irssi/irssi/issues/629), [#618](https://github.com/irssi/irssi/issues/618), [#616](https://github.com/irssi/irssi/issues/616))
-- Fix backward completion jumping to the first instead of last word ([#979](https://github.com/irssi/irssi/issues/979))
-- Improve empty topic handling ([#961](https://github.com/irssi/irssi/issues/961), [#905](https://github.com/irssi/irssi/issues/905), [#911](https://github.com/irssi/irssi/issues/911), [#897](https://github.com/irssi/irssi/issues/897), [#888](https://github.com/irssi/irssi/issues/888))
-- Prevent config truncation when no space left. By dequis and Lukas Waymann ([#922](https://github.com/irssi/irssi/issues/922), [#925](https://github.com/irssi/irssi/issues/925), [#910](https://github.com/irssi/irssi/issues/910), [#909](https://github.com/irssi/irssi/issues/909), [#906](https://github.com/irssi/irssi/issues/906), [#871](https://github.com/irssi/irssi/issues/871), [#817](https://github.com/irssi/irssi/issues/817))
-- Also time-out servers in lookup phase ([#866](https://github.com/irssi/irssi/issues/866), [#130](https://github.com/irssi/irssi/issues/130))
-- Fix build with LibreSSL 2.7. By Dorian Harmans ([#865](https://github.com/irssi/irssi/issues/865))
-- Fix a crash when appending to a textbuffer without line. Reported by Jari Matilainen ([#862](https://github.com/irssi/irssi/issues/862))
-- Fix segfault on sending large messages ([#803](https://github.com/irssi/irssi/issues/803), [#796](https://github.com/irssi/irssi/issues/796), [#802](https://github.com/irssi/irssi/issues/802))
-- Fix segfault on invalid statusbar config ([#993](https://github.com/irssi/irssi/issues/993), [#994](https://github.com/irssi/irssi/issues/994))
-- Fix random memory writes on restoring queries of foreign protocols ([#999](https://github.com/irssi/irssi/issues/999), [#1000](https://github.com/irssi/irssi/issues/1000))
-- Make default keybinds deletable ([#859](https://github.com/irssi/irssi/issues/859), [#507](https://github.com/irssi/irssi/issues/507))
-- Fix freeze when resizing Irssi very small ([#946](https://github.com/irssi/irssi/issues/946))
-- Compare channels case-insensitively, avoiding confusions with the config file ([#857](https://github.com/irssi/irssi/issues/857), [#856](https://github.com/irssi/irssi/issues/856))
-- Fix DCC GET on Android. By Martin Staron ([#844](https://github.com/irssi/irssi/issues/844))
-- Improve rawlog performance ([#957](https://github.com/irssi/irssi/issues/957))
-- Fix nick escaping erroneously escaping quotes ([#978](https://github.com/irssi/irssi/issues/978), [#974](https://github.com/irssi/irssi/issues/974), [#709](https://github.com/irssi/irssi/issues/709))
-- Protect against theme recursion, improve padding performance, limit alignment padding. Credit to Oss-Fuzz ([#835](https://github.com/irssi/irssi/issues/835), [#851](https://github.com/irssi/irssi/issues/851), [#850](https://github.com/irssi/irssi/issues/850), [#846](https://github.com/irssi/irssi/issues/846), [#848](https://github.com/irssi/irssi/issues/848))
-- Fix recursive loop in replaces ([#833](https://github.com/irssi/irssi/issues/833), [GL#23](https://gitlab.com/irssi/irssi/issues/23))
-- Fix headers for compilation of C modules ([#939](https://github.com/irssi/irssi/issues/939))
-- Documentation. By Zero King ([#814](https://github.com/irssi/irssi/issues/814)). ([#852](https://github.com/irssi/irssi/issues/852))
-- Sync NEWS, docs, scripts ([#849](https://github.com/irssi/irssi/issues/849), [#855](https://github.com/irssi/irssi/issues/855))
-- Build system ([#868](https://github.com/irssi/irssi/issues/868), [#867](https://github.com/irssi/irssi/issues/867), [#985](https://github.com/irssi/irssi/issues/985), [#988](https://github.com/irssi/irssi/issues/988))
-- Fix build on IBM i and AIX. By Calvin Buckley ([#975](https://github.com/irssi/irssi/issues/975))
-- Misc fixes ([#840](https://github.com/irssi/irssi/issues/840), [#839](https://github.com/irssi/irssi/issues/839), [#843](https://github.com/irssi/irssi/issues/843), [#953](https://github.com/irssi/irssi/issues/953), [#962](https://github.com/irssi/irssi/issues/962)). Tests ([#806](https://github.com/irssi/irssi/issues/806), [#875](https://github.com/irssi/irssi/issues/875), [#905](https://github.com/irssi/irssi/issues/905), [#964](https://github.com/irssi/irssi/issues/964), [#1011](https://github.com/irssi/irssi/issues/1011)). Fuzzing ([#929](https://github.com/irssi/irssi/issues/929)).
+- Disconnect SASL properly in case the SASL module got unloaded from server ([#931](https://github.com/irssi/irssi/issues/931 "Disconnect SASL properly in case the sasl module got unloaded from server"), [#629](https://github.com/irssi/irssi/issues/629 "sasl_disconnect_on_failure not effective when server ignores CAP"), [#618](https://github.com/irssi/irssi/issues/618 "Print a warning if the server doesn't support SASL at all."), [#616](https://github.com/irssi/irssi/issues/616 "Display reason why when quitting because of sasl_disconnect_on_failure"))
+- Fix backward completion jumping to the first instead of last word ([#979](https://github.com/irssi/irssi/issues/979 "add keep_word setting to completion"))
+- Improve empty topic handling ([#961](https://github.com/irssi/irssi/issues/961 "Show the proper TXT when topic was unset"), [#905](https://github.com/irssi/irssi/issues/905 "Add tests for topic events"), [#911](https://github.com/irssi/irssi/issues/911 "Revert ''Flag topic as unset if it is zero length''"), [#897](https://github.com/irssi/irssi/issues/897 "Flag topic as unset if it is zero length"), [#888](https://github.com/irssi/irssi/issues/888 "/topic after topic is unset still shows topic as set"))
+- Prevent config truncation when no space left. By dequis and Lukas Waymann ([#922](https://github.com/irssi/irssi/issues/922 "Fix /save not working if the config didn't previously exist"), [#925](https://github.com/irssi/irssi/issues/925 "Improve error message when failing to create the config dir"), [#910](https://github.com/irssi/irssi/issues/910 "ERROR: Couldn't create $HOME/.irssi directory"), [#909](https://github.com/irssi/irssi/issues/909 "Fix `/save` replacing symlinks with regular files"), [#906](https://github.com/irssi/irssi/issues/906 "/save replaces symlinks with regular files"), [#871](https://github.com/irssi/irssi/issues/871 "Make config_write more atomic to prevent truncation when out of space"), [#817](https://github.com/irssi/irssi/issues/817 "Disk full / write error on exit destroys config file? :-\"))
+- Also time-out servers in lookup phase ([#866](https://github.com/irssi/irssi/issues/866 "reconnect lookup_servers also"), [#130](https://github.com/irssi/irssi/issues/130 "SSL connection does not timeout"))
+- Fix build with LibreSSL 2.7. By Dorian Harmans ([#865](https://github.com/irssi/irssi/issues/865 "fix build with LibreSSL 2.7.0/2.7.1"))
+- Fix a crash when appending to a textbuffer without line. Reported by Jari Matilainen ([#862](https://github.com/irssi/irssi/issues/862 "fix a crash when trying to append to a NULL line"))
+- Fix segfault on sending large messages ([#803](https://github.com/irssi/irssi/issues/803 "Postpone server cleanup until after unref"), [#796](https://github.com/irssi/irssi/issues/796 "Segfault on sending large message"), [#802](https://github.com/irssi/irssi/issues/802 "Test for segfault on disconnect during signal processing"))
+- Fix segfault on invalid statusbar config ([#993](https://github.com/irssi/irssi/issues/993 "segfault / null pointer dereference in statusbar_read()"), [#994](https://github.com/irssi/irssi/issues/994 "add more config checks and assertions in statusbar code"))
+- Fix random memory writes on restoring queries of foreign protocols ([#999](https://github.com/irssi/irssi/issues/999 "do not touch uninitialised protocols on item restore"), [#1000](https://github.com/irssi/irssi/issues/1000 "Store window bounds type"))
+- Make default keybinds deletable ([#859](https://github.com/irssi/irssi/issues/859 "make default keybinds deletable"), [#507](https://github.com/irssi/irssi/issues/507 "irssi doesn't remember /bind -delete on default build-in keybindings"))
+- Fix freeze when resizing Irssi very small ([#946](https://github.com/irssi/irssi/issues/946 "fix irssi being stuck when resized very small"))
+- Compare channels case-insensitively, avoiding confusions with the config file ([#857](https://github.com/irssi/irssi/issues/857 "Compare channels/networks fields case-insensitively"), [#856](https://github.com/irssi/irssi/issues/856 "/channel remove and case mismatch in buggy config"))
+- Fix DCC GET on Android. By Martin Staron ([#844](https://github.com/irssi/irssi/issues/844 "dcc get shouldn't fail when file attrs can't be changed"))
+- Improve rawlog performance ([#957](https://github.com/irssi/irssi/issues/957 "Improve rawlog performance"))
+- Fix nick escaping erroneously escaping quotes ([#978](https://github.com/irssi/irssi/issues/978 "Fix inconsistent escaping from expand_escapes"), [#974](https://github.com/irssi/irssi/issues/974 "Inconsistent escaping/unescaping of quotes"), [#709](https://github.com/irssi/irssi/issues/709 "Escape nicks during nick completion when expand_escapes is enabled"))
+- Protect against theme recursion, improve padding performance, limit alignment padding. Credit to Oss-Fuzz ([#835](https://github.com/irssi/irssi/issues/835 "protect theme recursion"), [#851](https://github.com/irssi/irssi/issues/851 "unblock theme elements when processing finished"), [#850](https://github.com/irssi/irssi/issues/850 "theme colours broken"), [#846](https://github.com/irssi/irssi/issues/846 "improve padding performance"), [#848](https://github.com/irssi/irssi/issues/848 "limit alignment padding to a screenful"))
+- Fix recursive loop in replaces ([#833](https://github.com/irssi/irssi/issues/833 "we probably should not try to replace replaces"), [GL#23](https://gitlab.com/irssi/irssi/issues/23))
+- Fix headers for compilation of C modules ([#939](https://github.com/irssi/irssi/issues/939 "some header fixes for C modules"))
+- Documentation. By Zero King ([#814](https://github.com/irssi/irssi/issues/814 "Update Irssi website URLs")). ([#852](https://github.com/irssi/irssi/issues/852 "Document second parameter (seek position) of /cat command"))
+- Sync NEWS, docs, scripts ([#849](https://github.com/irssi/irssi/issues/849 "add additional notes to NEWS"), [#855](https://github.com/irssi/irssi/issues/855 "run syncdocs.sh and syncscripts.sh"))
+- Build system ([#868](https://github.com/irssi/irssi/issues/868 "Add libgcrypt.m4 so autogen doesn't require libgcrypt-dev"), [#867](https://github.com/irssi/irssi/issues/867 "irssi autogen now depends on libgcrypt-dev"), [#985](https://github.com/irssi/irssi/issues/985 "automake warns that subdir-objects will be enabled in 2.0"), [#988](https://github.com/irssi/irssi/issues/988 "show output of git describe as PACKAGE_VERSION"))
+- Fix build on IBM i and AIX. By Calvin Buckley ([#975](https://github.com/irssi/irssi/issues/975 "Fix irssi build on IBM i and AIX"))
+- Misc fixes ([#840](https://github.com/irssi/irssi/issues/840 "ensure cap_supported is existent yet"), [#839](https://github.com/irssi/irssi/issues/839 "some crash "), [#843](https://github.com/irssi/irssi/issues/843 "restore compat with glib <2.40"), [#953](https://github.com/irssi/irssi/issues/953 "Use ##__VA_ARGS__ extension to allow for argument-less ..."), [#962](https://github.com/irssi/irssi/issues/962 "Fix some indentation and add some comments")). Tests ([#806](https://github.com/irssi/irssi/issues/806 "only use nonfatal assertions for GLib that actually supports it"), [#875](https://github.com/irssi/irssi/issues/875 "Fix test compilation on old glib"), [#905](https://github.com/irssi/irssi/issues/905 "Add tests for topic events"), [#964](https://github.com/irssi/irssi/issues/964 "fix duplicate include guard and link libs of test"), [#1011](https://github.com/irssi/irssi/issues/1011 "Use memcpy() instead of strncpy() to silence the compiler warning.")). Fuzzing ([#929](https://github.com/irssi/irssi/issues/929 "Remove incorrectly copied automake commands from fuzzer")).
 
 ---
 
@@ -97,19 +150,19 @@ The Irssi team released this <abbr class="timeago" title="2019-01-09">2019-01-09
 ### Fixes
 {:#v1-1-2-fixes }
 
-- Fix the resetting of window hiddenlevel ([#861](https://github.com/irssi/irssi/issues/861))
-- Fix clearing of hidelevel in layout ([#951](https://github.com/irssi/irssi/issues/951))
-- Fix accessing unallocated text when checking entry position ([#928](https://github.com/irssi/irssi/issues/928), [#930](https://github.com/irssi/irssi/issues/930))
-- Fix uninitialised memory on empty lines ([#873](https://github.com/irssi/irssi/issues/873), [GL#31](https://gitlab.com/irssi/irssi/issues/31), [#878](https://github.com/irssi/irssi/issues/878), [#877](https://github.com/irssi/irssi/issues/877), [#907](https://github.com/irssi/irssi/issues/907), [#914](https://github.com/irssi/irssi/issues/914))
-- Fix use-after-free on expiration of hidden lines ([#948](https://github.com/irssi/irssi/issues/948))
-- Fix use-after-frees. By Maya Rashish ([#919](https://github.com/irssi/irssi/issues/919))
-- Fix out of bounds access in help display when window width is small ([#949](https://github.com/irssi/irssi/issues/949))
-- Fix paste_join_multiline ([#970](https://github.com/irssi/irssi/issues/970), [#971](https://github.com/irssi/irssi/issues/971))
-- Correctly check for errno when displaying SSL errors. By Janik Rabe ([#895](https://github.com/irssi/irssi/issues/895))
-- Fix wrong signal emission argument count ([#965](https://github.com/irssi/irssi/issues/965))
-- Documentation ([#920](https://github.com/irssi/irssi/issues/920)). Sync NEWS, scripts ([#849](https://github.com/irssi/irssi/issues/849))
-- Fix Perl detection on MacOS. By Dominyk Tiller ([#927](https://github.com/irssi/irssi/issues/927))
-- Misc fixes. By Jaroslav Škarvada ([#981](https://github.com/irssi/irssi/issues/981), [#982](https://github.com/irssi/irssi/issues/982))
+- Fix the resetting of window hiddenlevel ([#861](https://github.com/irssi/irssi/issues/861 "in fact hidden levels should not be re-set when you run /set"))
+- Fix clearing of hidelevel in layout ([#951](https://github.com/irssi/irssi/issues/951 "fe-text: clear hidelevel in layout if default"))
+- Fix accessing unallocated text when checking entry position ([#928](https://github.com/irssi/irssi/issues/928 "Uninitialized access in pos2scrpos (gui-entry.c)"), [#930](https://github.com/irssi/irssi/issues/930 "fix accessing unallocated text when checking entry position"))
+- Fix uninitialised memory on empty lines ([#873](https://github.com/irssi/irssi/issues/873 "record line info on empty lines"), [GL#31](https://gitlab.com/irssi/irssi/issues/31), [#878](https://github.com/irssi/irssi/issues/878 "Revert ''record line info on empty lines''"), [#877](https://github.com/irssi/irssi/issues/877 "display corruption e.g. in trackbar"), [#907](https://github.com/irssi/irssi/issues/907 "HIDDEN level related crash"), [#914](https://github.com/irssi/irssi/issues/914 "properly record line info on empty lines"))
+- Fix use-after-free on expiration of hidden lines ([#948](https://github.com/irssi/irssi/issues/948 "invalidate startline and bottom_startline when hidden"))
+- Fix use-after-frees. By Maya Rashish ([#919](https://github.com/irssi/irssi/issues/919 "Use-after-frees"))
+- Fix out of bounds access in help display when window width is small ([#949](https://github.com/irssi/irssi/issues/949 "Fix insufficient size of help column when the window width is small"))
+- Fix paste_join_multiline ([#970](https://github.com/irssi/irssi/issues/970 "paste_join_multiline not working?"), [#971](https://github.com/irssi/irssi/issues/971 "fix paste_join_multiline"))
+- Correctly check for errno when displaying SSL errors. By Janik Rabe ([#895](https://github.com/irssi/irssi/issues/895 "Keep errstr set to NULL if errno is not set"))
+- Fix wrong signal emission argument count ([#965](https://github.com/irssi/irssi/issues/965 "Fix wrong signal emission arg count"))
+- Documentation ([#920](https://github.com/irssi/irssi/issues/920 "Add information about crash on unload to perl.txt")). Sync NEWS, scripts ([#849](https://github.com/irssi/irssi/issues/849 "add additional notes to NEWS"))
+- Fix Perl detection on MacOS. By Dominyk Tiller ([#927](https://github.com/irssi/irssi/issues/927 "configure: fix Perl detection on macOS Mojave"))
+- Misc fixes. By Jaroslav Škarvada ([#981](https://github.com/irssi/irssi/issues/981 "Coverity static analysis scan results"), [#982](https://github.com/irssi/irssi/issues/982 "Fixed problem found by Coverity Scan"))
 
 ---
 
@@ -125,9 +178,9 @@ Contains all changes from 1.0.7
 ### Fixes
 {:#v1-1-1-fixes }
 
-- Restore compatibility with OpenSSL &lt; 1.0.2 ([#820](https://github.com/irssi/irssi/issues/820), [#831](https://github.com/irssi/irssi/issues/831))
-- Fix test compilation on some platforms ([#815](https://github.com/irssi/irssi/issues/815), [#816](https://github.com/irssi/irssi/issues/816))
-- Fix portability and backwards compatibility of test runner ([#818](https://github.com/irssi/irssi/issues/818), [#845](https://github.com/irssi/irssi/issues/845))
+- Restore compatibility with OpenSSL &lt; 1.0.2 ([#820](https://github.com/irssi/irssi/issues/820 "crash in x509"), [#831](https://github.com/irssi/irssi/issues/831 "Do not use X509_STORE on OpenSSL < 1.0.2"))
+- Fix test compilation on some platforms ([#815](https://github.com/irssi/irssi/issues/815 "irssi-1.1.0 make check link errors on Solaris 11.3"), [#816](https://github.com/irssi/irssi/issues/816 "fix test builds on some platforms"))
+- Fix portability and backwards compatibility of test runner ([#818](https://github.com/irssi/irssi/issues/818 "add backwards compatible code for running tap tests"), [#845](https://github.com/irssi/irssi/issues/845 "warn if there is non-portable code in the test-driver"))
 
 ---
 
@@ -142,14 +195,14 @@ The Irssi team released this <abbr class="timeago" title="2018-02-15">2018-02-15
 {:#v1-0-7-fixes }
 
 - Prevent use after free error during the execution of some commands. Found by Joseph Bisch ([GL#17](https://gitlab.com/irssi/irssi/issues/17), [GL!24](https://gitlab.com/irssi/irssi/merge_requests/24)).
-- Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465), [#809](https://github.com/irssi/irssi/issues/809), [#812](https://github.com/irssi/irssi/issues/812), [#819](https://github.com/irssi/irssi/issues/819), [#824](https://github.com/irssi/irssi/issues/824), [#832](https://github.com/irssi/irssi/issues/832)).
+- Revert netsplit print optimisation due to crashes ([#465](https://github.com/irssi/irssi/issues/465 "Some small adjustments to the netsplit code."), [#809](https://github.com/irssi/irssi/issues/809 "Netsplits don't show in all windows where users split"), [#812](https://github.com/irssi/irssi/issues/812 "revert netsplit print optimisation"), [#819](https://github.com/irssi/irssi/issues/819 "Segmentation fault in normal usage"), [#824](https://github.com/irssi/irssi/issues/824 "Revert more of the netsplit print optimisation to fix crashes"), [#832](https://github.com/irssi/irssi/issues/832 "try to make sure the server is still good enough to call ischannel when printing netsplit/join")).
 - Fix use after free when SASL messages are received in unexpected order ([GL#26](https://gitlab.com/irssi/irssi/issues/26), [GL!33](https://gitlab.com/irssi/irssi/merge_requests/33)).
 - Fix null pointer dereference in the tab completion when an empty nick is joined ([GL#24](https://gitlab.com/irssi/irssi/issues/24), [GL!31](https://gitlab.com/irssi/irssi/merge_requests/31)).
 - Fix use after free when entering oper password ([GL#22](https://gitlab.com/irssi/irssi/issues/22), [GL!32](https://gitlab.com/irssi/irssi/merge_requests/32)).
-- Fix null pointer dereference when too many windows are opened ([GL#27](https://gitlab.com/irssi/irssi/issues/27), [#837](https://github.com/irssi/irssi/issues/837)).
-- Fix out of bounds access in theme strings when the last escape is incomplete. Credit to Oss-Fuzz ([#842](https://github.com/irssi/irssi/issues/842)).
-- Fix out of bounds write when using negative counts on window resize ([GL#25](https://gitlab.com/irssi/irssi/issues/25), [GL#29](https://gitlab.com/irssi/irssi/issues/29), [#836](https://github.com/irssi/irssi/issues/836)).
-- Minor help correction. By William Jackson ([#834](https://github.com/irssi/irssi/issues/834)).
+- Fix null pointer dereference when too many windows are opened ([GL#27](https://gitlab.com/irssi/irssi/issues/27), [#837](https://github.com/irssi/irssi/issues/837 "check the error condition of mainwindow_create")).
+- Fix out of bounds access in theme strings when the last escape is incomplete. Credit to Oss-Fuzz ([#842](https://github.com/irssi/irssi/issues/842 "Fix oob in escaped theme string")).
+- Fix out of bounds write when using negative counts on window resize ([GL#25](https://gitlab.com/irssi/irssi/issues/25), [GL#29](https://gitlab.com/irssi/irssi/issues/29), [#836](https://github.com/irssi/irssi/issues/836 "Fix resizing of windows when used incorrectly")).
+- Minor help correction. By William Jackson ([#834](https://github.com/irssi/irssi/issues/834 "Fix typo in help text for /ISON command")).
 
 ---
 
@@ -165,55 +218,55 @@ The Irssi team released this <abbr class="timeago" title="2018-01-15">2018-01-15
 ### Changes
 {:#v1-1-0-changes }
 
-- Colour is now re-set when reaching a comma, matching mIRC behaviour ([#742](https://github.com/irssi/irssi/issues/742), [#740](https://github.com/irssi/irssi/issues/740), [#790](https://github.com/irssi/irssi/issues/790))
-- Irssi now shows the initial nick and name on first start ([#785](https://github.com/irssi/irssi/issues/785), [#786](https://github.com/irssi/irssi/issues/786))
-- lynx is no longer required to run autogen.sh ([#81](https://github.com/irssi/irssi/issues/81), [#781](https://github.com/irssi/irssi/issues/781))
-- The command history no longer permits wrapping around ([#686](https://github.com/irssi/irssi/issues/686))
-- /foreach now correctly sends arguments as commands, stopping you from embarassing AMSGs ([#659](https://github.com/irssi/irssi/issues/659))
-- /server does not connect to servers anymore, use /server connect to change servers ([#559](https://github.com/irssi/irssi/issues/559), [#649](https://github.com/irssi/irssi/issues/649)).
-- The net_ip_compare API function is now deprecated, and the previously deprecated net_connect has been removed. By Will Storey ([#770](https://github.com/irssi/irssi/issues/770)).
+- Colour is now re-set when reaching a comma, matching mIRC behaviour ([#742](https://github.com/irssi/irssi/issues/742 "Reset foreground and background while only comma is specified"), [#740](https://github.com/irssi/irssi/issues/740 "Color codes which end in commas both reset background and print comma as literal"), [#790](https://github.com/irssi/irssi/issues/790 "reset colour at comma, like mIRC"))
+- Irssi now shows the initial nick and name on first start ([#785](https://github.com/irssi/irssi/issues/785 "IRSSI sends user's real name to all joined servers by default (originally: real_name defaults to actual name on OSX)"), [#786](https://github.com/irssi/irssi/issues/786 "show initial nick and name on first start"))
+- lynx is no longer required to run autogen.sh ([#81](https://github.com/irssi/irssi/issues/81 "Build system requires lynx or elinks and fails without it"), [#781](https://github.com/irssi/irssi/issues/781 "remove lynx from autogen and make a separate syncdocs script"))
+- The command history no longer permits wrapping around ([#686](https://github.com/irssi/irssi/issues/686 "Don't allow command history to wrap around"))
+- /foreach now correctly sends arguments as commands, stopping you from embarassing AMSGs ([#659](https://github.com/irssi/irssi/issues/659 "make foreach send commands"))
+- /server does not connect to servers anymore, use /server connect to change servers ([#559](https://github.com/irssi/irssi/issues/559 "Consider making /server <hostname> an error"), [#649](https://github.com/irssi/irssi/issues/649 "Do not alias /server <hostname> to /server connect <hostname>")).
+- The net_ip_compare API function is now deprecated, and the previously deprecated net_connect has been removed. By Will Storey ([#770](https://github.com/irssi/irssi/issues/770 "Remove a couple unused functions")).
 
 ### Additions
 {:#v1-1-0-additions }
 
-- Add an option to ignore all channels or ignore all queries using /set activity_hide_targets. By Jari Matilainen ([#612](https://github.com/irssi/irssi/issues/612), [#779](https://github.com/irssi/irssi/issues/779))
-- Add a startup warning if the TERM var is wrong inside tmux/screen ([#726](https://github.com/irssi/irssi/issues/726))
-- Add option to hide certain levels from the textbuffer using /window hidelevel ([#746](https://github.com/irssi/irssi/issues/746), [#808](https://github.com/irssi/irssi/issues/808))
-- Irssi now has its first unit test (for mode parsing). By Will Storey ([#793](https://github.com/irssi/irssi/issues/793))
-- Added access to global command history when using window history, and a binding to erase entries from the command history (erase_history_entry) ([#762](https://github.com/irssi/irssi/issues/762))
-- -alternate_nick is now available as a network specific property. By Paul Townsend ([#120](https://github.com/irssi/irssi/issues/120), [#771](https://github.com/irssi/irssi/issues/771))
-- On FreeBSD, Irssi now supports Capsicum sandbox (/capsicum enter). By Edward Tomasz Napierala ([#735](https://github.com/irssi/irssi/issues/735), [#755](https://github.com/irssi/irssi/issues/755), [#772](https://github.com/irssi/irssi/issues/772))
-- Filenames (directories) ending with a / now tab-complete ([#741](https://github.com/irssi/irssi/issues/741))
-- UTF-8 should now work in regular expressions when using GRegex (the default) ([#636](https://github.com/irssi/irssi/issues/636), [#653](https://github.com/irssi/irssi/issues/653))
-- Nicks are now properly escaped on completion. By Oscar Linderholm ([#693](https://github.com/irssi/irssi/issues/693), [#709](https://github.com/irssi/irssi/issues/709))
-- /server add -port &lt;num> now works. By Jari Matilainen ([#703](https://github.com/irssi/irssi/issues/703))
-- Add a setting key_timeout to make key sequences automatically re-set when not finished ([#644](https://github.com/irssi/irssi/issues/644), [#645](https://github.com/irssi/irssi/issues/645))
-- Warn users about expired client certificates, as servers may refuse them ([#211](https://github.com/irssi/irssi/issues/211), [#627](https://github.com/irssi/irssi/issues/627))
-- Add a new net_start_ssl function for StartTLS. This is available from ABI 8 and can be used by protocol modules ([#615](https://github.com/irssi/irssi/issues/615), [#622](https://github.com/irssi/irssi/issues/622)).
-- The %# code is now stored in the textbuffer, so for example web scripts can make use of it ([#626](https://github.com/irssi/irssi/issues/626))
-- Add new setting break_wide which can be used to enable breaking of wide characters (for east-asian users). Originally from FreeBSD ports. ([#625](https://github.com/irssi/irssi/issues/625))
-- Add fuzzing code ([#610](https://github.com/irssi/irssi/issues/610), [#620](https://github.com/irssi/irssi/issues/620), [#701](https://github.com/irssi/irssi/issues/701), [#713](https://github.com/irssi/irssi/issues/713))
+- Add an option to ignore all channels or ignore all queries using /set activity_hide_targets. By Jari Matilainen ([#612](https://github.com/irssi/irssi/issues/612 "Allow selection of what kind of activity targets to ignore"), [#779](https://github.com/irssi/irssi/issues/779 "Allow selection of what kind of activity targets to ignore v2"))
+- Add a startup warning if the TERM var is wrong inside tmux/screen ([#726](https://github.com/irssi/irssi/issues/726 "Add a startup warning if the TERM var is wrong inside tmux/screen"))
+- Add option to hide certain levels from the textbuffer using /window hidelevel ([#746](https://github.com/irssi/irssi/issues/746 "Add method to hide lines in a view"), [#808](https://github.com/irssi/irssi/issues/808 "Add perl access to hidden_level in TEXT_BUFFER_VIEW_REC "))
+- Irssi now has its first unit test (for mode parsing). By Will Storey ([#793](https://github.com/irssi/irssi/issues/793 "Add tests for mode parsing"))
+- Added access to global command history when using window history, and a binding to erase entries from the command history (erase_history_entry) ([#762](https://github.com/irssi/irssi/issues/762 "allow access to global command history when using a specifc history"))
+- -alternate_nick is now available as a network specific property. By Paul Townsend ([#120](https://github.com/irssi/irssi/issues/120 "Please add alternate_nick as being a NETWORK property"), [#771](https://github.com/irssi/irssi/issues/771 "Add alternate_nick as a network-specific property"))
+- On FreeBSD, Irssi now supports Capsicum sandbox (/capsicum enter). By Edward Tomasz Napierala ([#735](https://github.com/irssi/irssi/issues/735 "Add Capsicum support"), [#755](https://github.com/irssi/irssi/issues/755 "Get rid of the zombies in Capsicum capability mode."), [#772](https://github.com/irssi/irssi/issues/772 "Capsicum"))
+- Filenames (directories) ending with a / now tab-complete ([#741](https://github.com/irssi/irssi/issues/741 "Complete filenames ending with a slash"))
+- UTF-8 should now work in regular expressions when using GRegex (the default) ([#636](https://github.com/irssi/irssi/issues/636 "GRegex not utf8 compliant?"), [#653](https://github.com/irssi/irssi/issues/653 "Enable UTF8 in GRegex"))
+- Nicks are now properly escaped on completion. By Oscar Linderholm ([#693](https://github.com/irssi/irssi/issues/693 "Nick completion should escape nicks when expand_escapes is on"), [#709](https://github.com/irssi/irssi/issues/709 "Escape nicks during nick completion when expand_escapes is enabled"))
+- /server add -port &lt;num> now works. By Jari Matilainen ([#703](https://github.com/irssi/irssi/issues/703 "Allow -port <num> or irc.host.tld <num> in /server add "))
+- Add a setting key_timeout to make key sequences automatically re-set when not finished ([#644](https://github.com/irssi/irssi/issues/644 "Usage issues with multiple-key keybindings"), [#645](https://github.com/irssi/irssi/issues/645 "Timeout feature for keys"))
+- Warn users about expired client certificates, as servers may refuse them ([#211](https://github.com/irssi/irssi/issues/211 "Warn if the client certificate is expired"), [#627](https://github.com/irssi/irssi/issues/627 "Check whether the client certificate is expired."))
+- Add a new net_start_ssl function for StartTLS. This is available from ABI 8 and can be used by protocol modules ([#615](https://github.com/irssi/irssi/issues/615 "Make irssi_ssl_get_iochannel accessible for plugins"), [#622](https://github.com/irssi/irssi/issues/622 "provide net_start_ssl api")).
+- The %# code is now stored in the textbuffer, so for example web scripts can make use of it ([#626](https://github.com/irssi/irssi/issues/626 "support storing and replaying the monospace attribute in textbuffer"))
+- Add new setting break_wide which can be used to enable breaking of wide characters (for east-asian users). Originally from FreeBSD ports. ([#625](https://github.com/irssi/irssi/issues/625 "implement break_wide"))
+- Add fuzzing code ([#610](https://github.com/irssi/irssi/issues/610 "Add frontend for fuzzing"), [#620](https://github.com/irssi/irssi/issues/620 "Add SUPPRESS_PRINTF_FALLBACK"), [#701](https://github.com/irssi/irssi/issues/701 "Add fuzz.diff for fuzzing with afl"), [#713](https://github.com/irssi/irssi/issues/713 "Use CXX for fe-fuzz linking"))
 
 ### Fixes
 {:#v1-1-0-fixes }
 
-- Netsplits show properly again ([#812](https://github.com/irssi/irssi/issues/812))
-- Do not error on blank lines when using /exec -o. By Fabian Kurz ([FS#902](https://github.com/irssi-import/bugs.irssi.org/issues/902), [#805](https://github.com/irssi/irssi/issues/805))
-- Detect used nickname as reported by server. By Alexandre Morignot ([#219](https://github.com/irssi/irssi/issues/219), [#804](https://github.com/irssi/irssi/issues/804))
+- Netsplits show properly again ([#812](https://github.com/irssi/irssi/issues/812 "revert netsplit print optimisation"))
+- Do not error on blank lines when using /exec -o. By Fabian Kurz ([FS#902](https://github.com/irssi-import/bugs.irssi.org/issues/902 "Empty lines in output of ''exec'' command cause ''Not enough parameters given'' errors"), [#805](https://github.com/irssi/irssi/issues/805 "fix /exec -o for blank lines"))
+- Detect used nickname as reported by server. By Alexandre Morignot ([#219](https://github.com/irssi/irssi/issues/219 "handle an already used nick different from the one we send"), [#804](https://github.com/irssi/irssi/issues/804 "handle an already used nick different from the one we send"))
 - Prevent use after free error during the execution of some commands. Found by Joseph Bisch. ([GL#17](https://gitlab.com/irssi/irssi/issues/17), [GL!24](https://gitlab.com/irssi/irssi/merge_requests/24))
-- Fix MODE parameter parsing when colon was used at a place Irssi didn't expect ([#601](https://github.com/irssi/irssi/issues/601), [#766](https://github.com/irssi/irssi/issues/766))
-- Fixed code to compile with -Werror=declaration-after-statement ([#795](https://github.com/irssi/irssi/issues/795))
-- Clang-format is now supported for git-clang-format ([#784](https://github.com/irssi/irssi/issues/784))
-- Fix use after free when changing the network of hilights. Reported by Rui Mathias. ([#787](https://github.com/irssi/irssi/issues/787), [#788](https://github.com/irssi/irssi/issues/788))
-- Fix positioning error when tab-completing non-ascii strings. ([#752](https://github.com/irssi/irssi/issues/752), [#754](https://github.com/irssi/irssi/issues/754))
-- In-development issues ([#750](https://github.com/irssi/irssi/issues/750), [#751](https://github.com/irssi/irssi/issues/751))
-- Clarify Alis in /help list ([#699](https://github.com/irssi/irssi/issues/699), [#712](https://github.com/irssi/irssi/issues/712))
-- Improve /lastlog performance from O(N^2) to O(N) ([#715](https://github.com/irssi/irssi/issues/715))
-- Fix a segfault on "script destroyed" signal. By Stephen Oberholtzer ([#660](https://github.com/irssi/irssi/issues/660), [#661](https://github.com/irssi/irssi/issues/661)).
-- Fix early ISON error ([#596](https://github.com/irssi/irssi/issues/596), [#647](https://github.com/irssi/irssi/issues/647))
-- Documentation improvements. By Paolo Martini ([#639](https://github.com/irssi/irssi/issues/639)). By Tristan Pepin ([#731](https://github.com/irssi/irssi/issues/731)).  By Paul Townsend ([#684](https://github.com/irssi/irssi/issues/684), [#736](https://github.com/irssi/irssi/issues/736)). By Will Storey ([#777](https://github.com/irssi/irssi/issues/777))
-- Minor cleanups ([#590](https://github.com/irssi/irssi/issues/590)). By Edward Tomasz Napierala ([#734](https://github.com/irssi/irssi/issues/734), [#738](https://github.com/irssi/irssi/issues/738))
-- Fix space issue in glib-2.0.m4 ([#621](https://github.com/irssi/irssi/issues/621))
+- Fix MODE parameter parsing when colon was used at a place Irssi didn't expect ([#601](https://github.com/irssi/irssi/issues/601 "`MODE #foo +o :user` gets parsed as `+o :user`, not `+o user`"), [#766](https://github.com/irssi/irssi/issues/766 "Fix MODE parameter parsing"))
+- Fixed code to compile with -Werror=declaration-after-statement ([#795](https://github.com/irssi/irssi/issues/795 "check for declaration-after-statement on travis"))
+- Clang-format is now supported for git-clang-format ([#784](https://github.com/irssi/irssi/issues/784 "Turn the style guide into a clang-format file"))
+- Fix use after free when changing the network of hilights. Reported by Rui Mathias. ([#787](https://github.com/irssi/irssi/issues/787 "/hilight generating garbage when passed with multiple -network parameters"), [#788](https://github.com/irssi/irssi/issues/788 "Keep a copy of the strings coming from the config"))
+- Fix positioning error when tab-completing non-ascii strings. ([#752](https://github.com/irssi/irssi/issues/752 "tab completion miscounts characters "), [#754](https://github.com/irssi/irssi/issues/754 "add new function to set the position in bytes"))
+- In-development issues ([#750](https://github.com/irssi/irssi/issues/750 "Segfault in SSL code / sk_num"), [#751](https://github.com/irssi/irssi/issues/751 "Increment the X509_STORE refcount during the connection"))
+- Clarify Alis in /help list ([#699](https://github.com/irssi/irssi/issues/699 "Documentation for /list is incorrect(ish)"), [#712](https://github.com/irssi/irssi/issues/712 "Update list.in"))
+- Improve /lastlog performance from O(N^2) to O(N) ([#715](https://github.com/irssi/irssi/issues/715 "Performance improvements for /lastlog"))
+- Fix a segfault on "script destroyed" signal. By Stephen Oberholtzer ([#660](https://github.com/irssi/irssi/issues/660 "Segfault when unloading a script that registers for 'script destroyed' signals"), [#661](https://github.com/irssi/irssi/issues/661 "Fix for #660")).
+- Fix early ISON error ([#596](https://github.com/irssi/irssi/issues/596 "ISON sent too early when using SASL"), [#647](https://github.com/irssi/irssi/issues/647 "notify-ison: Don't send ison before the connection is done"))
+- Documentation improvements. By Paolo Martini ([#639](https://github.com/irssi/irssi/issues/639 "Make themes' docs more consistent.")). By Tristan Pepin ([#731](https://github.com/irssi/irssi/issues/731 "Clarified ambiguous autogen.sh error")).  By Paul Townsend ([#684](https://github.com/irssi/irssi/issues/684 "/help connect still says -ssl instead of -tls"), [#736](https://github.com/irssi/irssi/issues/736 "Update /CONNECT and /SERVER syntax tags (-ssl -> -tls).")). By Will Storey ([#777](https://github.com/irssi/irssi/issues/777 "Fix a typo in the readme"))
+- Minor cleanups ([#590](https://github.com/irssi/irssi/issues/590 "Minor cleanup in the highlighting signal.")). By Edward Tomasz Napierala ([#734](https://github.com/irssi/irssi/issues/734 "Don't compute log_dir_create_mode in three different places."), [#738](https://github.com/irssi/irssi/issues/738 "Fix indentation; no functional changes."))
+- Fix space issue in glib-2.0.m4 ([#621](https://github.com/irssi/irssi/issues/621 "Fix glib-2.0.m4 so that $PKG_CONFIG doesn't break configure script"))
 
 ---
 
@@ -229,7 +282,7 @@ The Irssi team released this <abbr class="timeago" title="2018-01-07">2018-01-07
 ### Fixes
 {:#v1-0-6-fixes }
 
-- Fix invalid memory access when reading hilight configuration ([#787](https://github.com/irssi/irssi/issues/787), [#788](https://github.com/irssi/irssi/issues/788)).
+- Fix invalid memory access when reading hilight configuration ([#787](https://github.com/irssi/irssi/issues/787 "/hilight generating garbage when passed with multiple -network parameters"), [#788](https://github.com/irssi/irssi/issues/788 "Keep a copy of the strings coming from the config")).
 - Fix null pointer dereference when the channel topic is set without specifying a sender ([GL#20](https://gitlab.com/irssi/irssi/issues/20), [GL!25](https://gitlab.com/irssi/irssi/merge_requests/25)).
 - Fix return of random memory when using incomplete escape codes ([GL#21](https://gitlab.com/irssi/irssi/issues/21), [GL!26](https://gitlab.com/irssi/irssi/merge_requests/26)).
 - Fix heap buffer overflow when completing certain strings ([GL#19](https://gitlab.com/irssi/irssi/issues/19), [GL!27](https://gitlab.com/irssi/irssi/merge_requests/27)).
@@ -247,15 +300,15 @@ The Irssi team released this <abbr class="timeago" title="2017-10-23">2017-10-23
 ### Fixes
 {:#v1-0-5-fixes }
 
-- Fix missing -sasl_method '' in /NETWORK ([#718](https://github.com/irssi/irssi/issues/718), [#719](https://github.com/irssi/irssi/issues/719)).
-- Fix incorrect restoration of term state when hitting SUSP inside screen ([#737](https://github.com/irssi/irssi/issues/737), [#733](https://github.com/irssi/irssi/issues/733)).
+- Fix missing -sasl_method '' in /NETWORK ([#718](https://github.com/irssi/irssi/issues/718 "Add -nosasl flag to /network modify"), [#719](https://github.com/irssi/irssi/issues/719 "Setting sasl_mechanism to '' disables the auth")).
+- Fix incorrect restoration of term state when hitting SUSP inside screen ([#737](https://github.com/irssi/irssi/issues/737 "Revert ''Merge pull request #452 from LemonBoy/terminfo-cup''"), [#733](https://github.com/irssi/irssi/issues/733 "Irssi terminal in inconsistent state after ignored suspend")).
 - Fix out of bounds read when compressing colour sequences. Found by Hanno Böck ([GL#12](https://gitlab.com/irssi/irssi/issues/12), [GL!18](https://gitlab.com/irssi/irssi/merge_requests/18)).
 - Fix use after free condition during a race condition when waiting on channel sync during a rejoin ([GL#13](https://gitlab.com/irssi/irssi/issues/13), [GL!19](https://gitlab.com/irssi/irssi/merge_requests/19)).
 - Fix null pointer dereference when parsing certain malformed CTCP DCC messages ([GL#14](https://gitlab.com/irssi/irssi/issues/14), [GL!20](https://gitlab.com/irssi/irssi/merge_requests/20)).
 - Fix crash due to null pointer dereference when failing to split messages due to overlong nick or target ([GL#15](https://gitlab.com/irssi/irssi/issues/15), [GL!21](https://gitlab.com/irssi/irssi/merge_requests/21)).
 - Fix out of bounds read when trying to skip a safe channel ID without verifying that the ID is long enough ([GL#16](https://gitlab.com/irssi/irssi/issues/16), [GL!22](https://gitlab.com/irssi/irssi/merge_requests/22)).
-- Fix return of random memory when inet_ntop failed ([#769](https://github.com/irssi/irssi/issues/769)).
-- Minor statusbar help update. By Robert Bisewski ([#758](https://github.com/irssi/irssi/issues/758), [#763](https://github.com/irssi/irssi/issues/763)).
+- Fix return of random memory when inet_ntop failed ([#769](https://github.com/irssi/irssi/issues/769 "Set host to an empty string on error")).
+- Minor statusbar help update. By Robert Bisewski ([#758](https://github.com/irssi/irssi/issues/758 "The /statusbar documentation is bad"), [#763](https://github.com/irssi/irssi/issues/763 "Improvements to statusbar documentation and help text.")).
 
 ---
 
@@ -271,11 +324,11 @@ The Irssi team released this <abbr class="timeago" title="2017-07-07">2017-07-07
 
 - Fix null pointer dereference when parsing invalid timestamp ([GL#10](https://gitlab.com/irssi/irssi/issues/10), [GL!15](https://gitlab.com/irssi/irssi/merge_requests/15)). Reported by Brian 'geeknik' Carpenter.
 - Fix use-after-free condition when removing nicks from the internal nicklist ([GL#11](https://gitlab.com/irssi/irssi/issues/11), [GL!16](https://gitlab.com/irssi/irssi/merge_requests/16)). Reported by Brian 'geeknik' Carpenter.
-- Fix incorrect string comparison in DCC file names ([#714](https://github.com/irssi/irssi/issues/714)).
-- Fix regression in Irssi 1.0.3 where it would claim "Invalid time '-1'" ([#716](https://github.com/irssi/irssi/issues/716), [#722](https://github.com/irssi/irssi/issues/722)).
-- Fix a bug when using \n to separate lines with expand_escapes ([#723](https://github.com/irssi/irssi/issues/723)).
-- Retain screen output on improper exit, to better see any error messages ([#287](https://github.com/irssi/irssi/issues/287), [#721](https://github.com/irssi/irssi/issues/721)).
-- Minor help update ([#729](https://github.com/irssi/irssi/issues/729)).
+- Fix incorrect string comparison in DCC file names ([#714](https://github.com/irssi/irssi/issues/714 "fe-dcc-(get│send): Fix some -Wpointer-compare with newer gcc")).
+- Fix regression in Irssi 1.0.3 where it would claim "Invalid time '-1'" ([#716](https://github.com/irssi/irssi/issues/716 "Warnings on start up: invalid time '-1'"), [#722](https://github.com/irssi/irssi/issues/722 "parse_time_interval: Allow negative time in settings")).
+- Fix a bug when using \n to separate lines with expand_escapes ([#723](https://github.com/irssi/irssi/issues/723 "fix weird n-fold unescaping in expand_escapes")).
+- Retain screen output on improper exit, to better see any error messages ([#287](https://github.com/irssi/irssi/issues/287 "Errors that call ''noperl_die()'' do exit(1) and the resulting error is not visible"), [#721](https://github.com/irssi/irssi/issues/721 "term-terminfo: Avoid switching out of alt screen on unexpected exits")).
+- Minor help update ([#729](https://github.com/irssi/irssi/issues/729 "More accurately describe clear")).
 
 ---
 
@@ -286,7 +339,7 @@ The Irssi team released this <abbr class="timeago" title="2017-06-06">2017-06-06
 
 {% include relnews_artef_block.markdown ver="1.0.3" %}
 
-Regression info in 1.0.3: [#716](https://github.com/irssi/irssi/issues/716) Warnings on start up: invalid time '-1'
+Regression info in 1.0.3: [#716](https://github.com/irssi/irssi/issues/716 "Warnings on start up: invalid time '-1'") Warnings on start up: invalid time '-1'
 
 ### Fixes
 {:#v1-0-3-fixes }
@@ -294,16 +347,16 @@ Regression info in 1.0.3: [#716](https://github.com/irssi/irssi/issues/716) Warn
 - Fix out of bounds read when scanning expandos ([GL!11](https://gitlab.com/irssi/irssi/merge_requests/11)).
 - Fix invalid memory access with quoted filenames in DCC ([GL#8](https://gitlab.com/irssi/irssi/issues/8), [GL!12](https://gitlab.com/irssi/irssi/merge_requests/12)).
 - Fix null-pointer dereference on DCC without address ([GL#9](https://gitlab.com/irssi/irssi/issues/9), [GL!13](https://gitlab.com/irssi/irssi/merge_requests/13)).
-- Improve integer overflow handling. Originally reported by [oss-fuzz#525](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=525) ([#706](https://github.com/irssi/irssi/issues/706)).
-- Improve nicklist performance from O(N^2) to O(N) ([#705](https://github.com/irssi/irssi/issues/705)).
-- Fix initial screen redraw delay. By Stephen Oberholtzer ([#680](https://github.com/irssi/irssi/issues/680), [bdo#856201](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=856201)).
-- Fix incorrect reset of true colours when resetting background. ([#711](https://github.com/irssi/irssi/issues/711)).
-- Fix missing -notls option in /SERVER. By Jari Matilainen ([#117](https://github.com/irssi/irssi/issues/117), [#702](https://github.com/irssi/irssi/issues/702)).
-- Fix minor history glitch on overcounter ([#462](https://github.com/irssi/irssi/issues/462), [#685](https://github.com/irssi/irssi/issues/685)).
-- Improved OpenSSL detection at compile time. By Rodrigo Rebello ([#677](https://github.com/irssi/irssi/issues/677)).
-- Improved NetBSD Terminfo detection. By Maya Rashish ([#694](https://github.com/irssi/irssi/issues/694), [#698](https://github.com/irssi/irssi/issues/698)).
-- Add missing syntax info for COMPLETION ([#687](https://github.com/irssi/irssi/issues/687), [#688](https://github.com/irssi/irssi/issues/688)).
-- Minor typo correction in help. By Michael Hansen ([#707](https://github.com/irssi/irssi/issues/707)).
+- Improve integer overflow handling. Originally reported by [oss-fuzz#525](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=525) ([#706](https://github.com/irssi/irssi/issues/706 "Add parse_uint function to improve integer overflow handling")).
+- Improve nicklist performance from O(N^2) to O(N) ([#705](https://github.com/irssi/irssi/issues/705 "improve nicklist performance")).
+- Fix initial screen redraw delay. By Stephen Oberholtzer ([#680](https://github.com/irssi/irssi/issues/680 "Fix slow startup with glib 2.49.3"), [bdo#856201](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=856201)).
+- Fix incorrect reset of true colours when resetting background. ([#711](https://github.com/irssi/irssi/issues/711 "do not reset true colour bit on colour reset")).
+- Fix missing -notls option in /SERVER. By Jari Matilainen ([#117](https://github.com/irssi/irssi/issues/117 "Add -nossl, -nossl_verify, and other missing -no* flags in /server"), [#702](https://github.com/irssi/irssi/issues/702 "Added support for -notls and -notls_verify")).
+- Fix minor history glitch on overcounter ([#462](https://github.com/irssi/irssi/issues/462 "Window input history works strangely with window history cleared"), [#685](https://github.com/irssi/irssi/issues/685 "Fix strange history behavior when history is empty")).
+- Improved OpenSSL detection at compile time. By Rodrigo Rebello ([#677](https://github.com/irssi/irssi/issues/677 "OpenSSL support detection and documentation fixes")).
+- Improved NetBSD Terminfo detection. By Maya Rashish ([#694](https://github.com/irssi/irssi/issues/694 "Accept -lcurses as well"), [#698](https://github.com/irssi/irssi/issues/698 "detect Netbsd terminfo")).
+- Add missing syntax info for COMPLETION ([#687](https://github.com/irssi/irssi/issues/687 "Syntax for /completion is missing in help"), [#688](https://github.com/irssi/irssi/issues/688 "Add syntax info for completion")).
+- Minor typo correction in help. By Michael Hansen ([#707](https://github.com/irssi/irssi/issues/707 "dcc.in: fixed typo 'resolved' -> 'resolves'")).
 
 ---
 
@@ -320,11 +373,11 @@ The Irssi team released this <abbr class="timeago" title="2017-03-10">2017-03-10
 {:#v1-0-2-fixes }
 
 - Prevent some null-pointer crashes ([GL!9](https://gitlab.com/irssi/irssi/merge_requests/9)).
-- Fix compilation with OpenSSL 1.1.0 ([#628](https://github.com/irssi/irssi/issues/628), [#597](https://github.com/irssi/irssi/issues/597)).
+- Fix compilation with OpenSSL 1.1.0 ([#628](https://github.com/irssi/irssi/issues/628 "Support OpenSSL 1.1.0."), [#597](https://github.com/irssi/irssi/issues/597 "OpenSSL 1.1 API deprecations")).
 - Correct dereferencing of already freed server objects during output of netjoins. Found by APic ([GL!10](https://gitlab.com/irssi/irssi/merge_requests/10), [GL#7](https://gitlab.com/irssi/irssi/issues/7)).
-- Fix in command arg parser to detect missing arguments in tail place ([#652](https://github.com/irssi/irssi/issues/652), [#651](https://github.com/irssi/irssi/issues/651)).
-- Fix regression that broke incoming DCC file transfers ([#667](https://github.com/irssi/irssi/issues/667), [#656](https://github.com/irssi/irssi/issues/656)).
-- Fix issue with escaping \ in evaluated strings ([#669](https://github.com/irssi/irssi/issues/669), [#520](https://github.com/irssi/irssi/issues/520)).
+- Fix in command arg parser to detect missing arguments in tail place ([#652](https://github.com/irssi/irssi/issues/652 "Properly check the command arguments in tail place."), [#651](https://github.com/irssi/irssi/issues/651 "Problem to parse options with captial letters with Irssi::command_parse_options")).
+- Fix regression that broke incoming DCC file transfers ([#667](https://github.com/irssi/irssi/issues/667 "fix dcc get"), [#656](https://github.com/irssi/irssi/issues/656 "DCC autoget stopped working")).
+- Fix issue with escaping \ in evaluated strings ([#669](https://github.com/irssi/irssi/issues/669 "expand_escape: expand double backslash as a backslash"), [#520](https://github.com/irssi/irssi/issues/520 "/set expand_escapes ON doesn't handle double-escaping (''\\n'')")).
 
 ---
 
@@ -338,13 +391,13 @@ The Irssi team released this <abbr class="timeago" title="2017-02-03">2017-02-03
 ### Fixes
 {:#v1-0-1-fixes }
 
-- Fix Perl compilation in object dir. By Martijn Dekker ([#602](https://github.com/irssi/irssi/issues/602), [#623](https://github.com/irssi/irssi/issues/623)).
-- Disable EC cryptography on Solaris to fix build ([#604](https://github.com/irssi/irssi/issues/604), [#598](https://github.com/irssi/irssi/issues/598)).
-- Fix incorrect HELP SERVER example ([#606](https://github.com/irssi/irssi/issues/606), [#519](https://github.com/irssi/irssi/issues/519)).
-- Correct memory leak in /OP and /VOICE. By Tim Konick ([#608](https://github.com/irssi/irssi/issues/608)).
-- Fix regression that broke second level completion ([#613](https://github.com/irssi/irssi/issues/613), [#609](https://github.com/irssi/irssi/issues/609)).
-- Correct missing NULL termination in perl_parse. By Hanno Böck ([#619](https://github.com/irssi/irssi/issues/619)).
-- Sync broken mail.pl script ([#624](https://github.com/irssi/irssi/issues/624), [#607](https://github.com/irssi/irssi/issues/607)).
+- Fix Perl compilation in object dir. By Martijn Dekker ([#602](https://github.com/irssi/irssi/issues/602 "make irssi --with-perl build with separate object directory"), [#623](https://github.com/irssi/irssi/issues/623 "irssi-1.0.0 perl extension fails to build ")).
+- Disable EC cryptography on Solaris to fix build ([#604](https://github.com/irssi/irssi/issues/604 "Add OPENSSL_NO_EC for solaris 11.3, see issue #598"), [#598](https://github.com/irssi/irssi/issues/598 "irssi 1.0.0 fails to compile on Solaris 11 because OpenSSL is not compiled with EC support")).
+- Fix incorrect HELP SERVER example ([#606](https://github.com/irssi/irssi/issues/606 "Fix syntax on /help SERVER example"), [#519](https://github.com/irssi/irssi/issues/519 "/help SERVER ADD -port and -! examples incorrect")).
+- Correct memory leak in /OP and /VOICE. By Tim Konick ([#608](https://github.com/irssi/irssi/issues/608 "Follow g_strsplit with call to g_strfreev")).
+- Fix regression that broke second level completion ([#613](https://github.com/irssi/irssi/issues/613 "fix regression in completion"), [#609](https://github.com/irssi/irssi/issues/609 "Regression in tab completion of setting values (`/set <name> <space><tab>`)")).
+- Correct missing NULL termination in perl_parse. By Hanno Böck ([#619](https://github.com/irssi/irssi/issues/619 "perl_parse needs NULL terminated parameter list.")).
+- Sync broken mail.pl script ([#624](https://github.com/irssi/irssi/issues/624 "sync mail.pl"), [#607](https://github.com/irssi/irssi/issues/607 "scripts/mail.pl not suited for 'use strict;' ")).
 - Prevent a memory leak during the processing of the SASL response ([GL!8](https://gitlab.com/irssi/irssi/merge_requests/8), [GL#5](https://gitlab.com/irssi/irssi/issues/5))
 
 ---
@@ -359,25 +412,25 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 ### Changes
 {:#v1-0-0-changes }
 
-- Removed \-\-disable-ipv6 ([#408](https://github.com/irssi/irssi/issues/408)).
-- /connect Network now aborts with an error if no servers have been added to that network ([#443](https://github.com/irssi/irssi/issues/443)).
+- Removed \-\-disable-ipv6 ([#408](https://github.com/irssi/irssi/issues/408 "Delete the HAVE_IPV6 ifdef.")).
+- /connect Network now aborts with an error if no servers have been added to that network ([#443](https://github.com/irssi/irssi/issues/443 "Throw an error when a chatnet has no available url")).
 - /dcc commands now use quotes around spaces consistently.
-- bell_beeps was removed ([#524](https://github.com/irssi/irssi/issues/524), [#565](https://github.com/irssi/irssi/issues/565)).
-- Switch to GRegex instead of regex.h ([#412](https://github.com/irssi/irssi/issues/412)).
+- bell_beeps was removed ([#524](https://github.com/irssi/irssi/issues/524 "Kill bell_beeps setting (or make it a no-op)"), [#565](https://github.com/irssi/irssi/issues/565 "Kill bell_beeps.")).
+- Switch to GRegex instead of regex.h ([#412](https://github.com/irssi/irssi/issues/412 "Use GLib's regexp interface (backed by PCRE)")).
 
 ### Additions
 {:#v1-0-0-additions }
 
-- irssiproxy can now forward all tags through a single port. By Lukas Mai (mauke, [#425](https://github.com/irssi/irssi/issues/425)).
-- irssiproxy can also listen on unix sockets. By Lukas Mai ([#427](https://github.com/irssi/irssi/issues/427)).
-- send channel -botcmds immediately when no mask is specified ([#175](https://github.com/irssi/irssi/issues/175), [#399](https://github.com/irssi/irssi/issues/399)).
-- the kill buffer now remembers consecutive kills. New bindings were added: yank_next_cutbuffer and append_next_kill By Todd A. Pratt ([#353](https://github.com/irssi/irssi/issues/353), [#414](https://github.com/irssi/irssi/issues/414), [#455](https://github.com/irssi/irssi/issues/455))
-- connections will avoid looking up IPv6 addresses if the machine does not have an IPv6 address assigned (exact behaviour is implementation defined, [#410](https://github.com/irssi/irssi/issues/410)).
-- Fix potential crash if scripts insert undef values into the completion list ([#413](https://github.com/irssi/irssi/issues/413)).
-- Paste warning is now also shown on pasting overlong lines. By Manish Goregaokar ([#426](https://github.com/irssi/irssi/issues/426)).
+- irssiproxy can now forward all tags through a single port. By Lukas Mai (mauke, [#425](https://github.com/irssi/irssi/issues/425 "irssi proxy: allow multiplexing multiple networks over a single port")).
+- irssiproxy can also listen on unix sockets. By Lukas Mai ([#427](https://github.com/irssi/irssi/issues/427 "irssi proxy: allow listening on unix sockets")).
+- send channel -botcmds immediately when no mask is specified ([#175](https://github.com/irssi/irssi/issues/175 "-botcmd only works on small channels"), [#399](https://github.com/irssi/irssi/issues/399 "Change when the autocmds are sent.")).
+- the kill buffer now remembers consecutive kills. New bindings were added: yank_next_cutbuffer and append_next_kill By Todd A. Pratt ([#353](https://github.com/irssi/irssi/issues/353 "Allow for prepending to the cutbuffer in addition to replacing it."), [#414](https://github.com/irssi/irssi/issues/414 "add an append operation to cut buffer handling"), [#455](https://github.com/irssi/irssi/issues/455 "improved cutbuffer handling"))
+- connections will avoid looking up IPv6 addresses if the machine does not have an IPv6 address assigned (exact behaviour is implementation defined, [#410](https://github.com/irssi/irssi/issues/410 "Getaddrinfo v6 flag")).
+- Fix potential crash if scripts insert undef values into the completion list ([#413](https://github.com/irssi/irssi/issues/413 "completion: Fix crash when the complist provided by a script has nulls")).
+- Paste warning is now also shown on pasting overlong lines. By Manish Goregaokar ([#426](https://github.com/irssi/irssi/issues/426 "Make pasting warning appear when long pastes are going to be split into many lines")).
 - autolog_ignore_targets and activity_hide_targets learn a new syntax
-      tag/* and * to ignore whole networks or everything. By Jari Matilainen (vague666, [#437](https://github.com/irssi/irssi/issues/437))
-- /hilight got a -matchcase flag to hilight case sensitively. By Thibault B (isundil, [#421](https://github.com/irssi/irssi/issues/421), [#476](https://github.com/irssi/irssi/issues/476)).
+      tag/* and * to ignore whole networks or everything. By Jari Matilainen (vague666, [#437](https://github.com/irssi/irssi/issues/437 "Use glob matching for activity_hide_targets"))
+- /hilight got a -matchcase flag to hilight case sensitively. By Thibault B (isundil, [#421](https://github.com/irssi/irssi/issues/421 "Add an option to make /hilight case sensitive"), [#476](https://github.com/irssi/irssi/issues/476 "Add an option to make /hilight case sensitive")).
 - Always build irssi with TLS support.
 - Rename SSL to TLS in the code and add -tls_* versions of the -ssl_* options to /CONNECT and /SERVER, but make sure the -ssl_* options continue to work.
 - Use TLS for Freenode, EFnet, EsperNet, OFTC, Rizon, and IRC6 in the default configuration.
@@ -405,33 +458,33 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 - Remove support for DANE validation of TLS certificates.
   
   There wasn't enough support in the IRC community to push for this on the majority of bigger IRC networks. If you believe this should be reintroduced into irssi, then please come up with an implementation that does not rely on the libval library. It is causing a lot of troubles for our downstream maintainers.
-- /names and $[...] now uses utf8 string operations. By Xavier G. ([#40](https://github.com/irssi/irssi/issues/40), [#411](https://github.com/irssi/irssi/issues/411), [#471](https://github.com/irssi/irssi/issues/471), [#480](https://github.com/irssi/irssi/issues/480)).
-- New setting completion_nicks_match_case ([#488](https://github.com/irssi/irssi/issues/488)).
-- /channel /server /network now support modify subcommand. By Jari Matilainen ([#338](https://github.com/irssi/irssi/issues/338), [#498](https://github.com/irssi/irssi/issues/498)).
-- Irssi::signal_remove now works with coderefs. By Tom Feist (shabble, [#512](https://github.com/irssi/irssi/issues/512)).
-- /script reset got an -autorun switch ([#540](https://github.com/irssi/irssi/issues/540), [#538](https://github.com/irssi/irssi/issues/538)).
-- cap_toggle can now be called from Perl, and fields cap_active and cap_supported can be inspected ([#542](https://github.com/irssi/irssi/issues/542)).
-- Make it possible to disable empty line completion. By Lauri Tirkkonen (lotheac, [#574](https://github.com/irssi/irssi/issues/574)).
-- New option sasl_disconnect_on_failure to disconnect when SASL log-in failed ([#514](https://github.com/irssi/irssi/issues/514)).
+- /names and $[...] now uses utf8 string operations. By Xavier G. ([#40](https://github.com/irssi/irssi/issues/40 "/names list isn't lined up properly if nicks are in UTF-8"), [#411](https://github.com/irssi/irssi/issues/411 "width calculation not handled correctly with regards to utf8 characters in variable expansion"), [#471](https://github.com/irssi/irssi/issues/471 "Handle utf8 nicks"), [#480](https://github.com/irssi/irssi/issues/480 "Handle utf8 nicks with mk_wcwidth()")).
+- New setting completion_nicks_match_case ([#488](https://github.com/irssi/irssi/issues/488 "Be smart about case-matching the nicks.")).
+- /channel /server /network now support modify subcommand. By Jari Matilainen ([#338](https://github.com/irssi/irssi/issues/338 "Add MODIFY to /network, /server and /channel"), [#498](https://github.com/irssi/irssi/issues/498 "Add modify to /channel, /server and /network")).
+- Irssi::signal_remove now works with coderefs. By Tom Feist (shabble, [#512](https://github.com/irssi/irssi/issues/512 "Allow Irssi::signal_remove to work properly with coderefs")).
+- /script reset got an -autorun switch ([#540](https://github.com/irssi/irssi/issues/540 "/script reset can now also run the autorun scripts"), [#538](https://github.com/irssi/irssi/issues/538 "/script reset unloads all scripts, but doesn't load autorun scripts")).
+- cap_toggle can now be called from Perl, and fields cap_active and cap_supported can be inspected ([#542](https://github.com/irssi/irssi/issues/542 "Expose the CAP fields to the perl scripts.")).
+- Make it possible to disable empty line completion. By Lauri Tirkkonen (lotheac, [#574](https://github.com/irssi/irssi/issues/574 "add completion_empty_line setting")).
+- New option sasl_disconnect_on_failure to disconnect when SASL log-in failed ([#514](https://github.com/irssi/irssi/issues/514 "Add an option to stop the connection when SASL fails.")).
 
 ### Fixes
 {:#v1-0-0-fixes }
 
 - IP addresses are no longer stored when resolve_reverse_lookup is used.
-- Removed broken support for curses ([#521](https://github.com/irssi/irssi/issues/521)).
-- Removed broken dummy mode ([#526](https://github.com/irssi/irssi/issues/526)).
-- Fix terminal state after suspend ([#450](https://github.com/irssi/irssi/issues/450), [#452](https://github.com/irssi/irssi/issues/452)).
-- Improve Perl library path detection ([#479](https://github.com/irssi/irssi/issues/479), [#132](https://github.com/irssi/irssi/issues/132)).
-- Reconnect now works on unix connections ([#493](https://github.com/irssi/irssi/issues/493)).
-- Fix completion warnings ([#125](https://github.com/irssi/irssi/issues/125), [#496](https://github.com/irssi/irssi/issues/496), [FS#124](https://github.com/irssi-import/bugs.irssi.org/issues/124)).
-- Fix a crash in the \-\-more-- item ([#501](https://github.com/irssi/irssi/issues/501)).
-- Fix a display issue in /unignore ([#517](https://github.com/irssi/irssi/issues/517), [bdo#577202](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=577202)).
-- Fix a crash in some netsplits ([#529](https://github.com/irssi/irssi/issues/529), [#500](https://github.com/irssi/irssi/issues/500)).
-- Fix crashes with some invalid config ([#550](https://github.com/irssi/irssi/issues/550), [#551](https://github.com/irssi/irssi/issues/551), [#563](https://github.com/irssi/irssi/issues/563), [#564](https://github.com/irssi/irssi/issues/564), [#587](https://github.com/irssi/irssi/issues/587), [#581](https://github.com/irssi/irssi/issues/581), [#570](https://github.com/irssi/irssi/issues/570)).
-- Add support for SASL Fragmentation. By Kenny Root (kruton, [#506](https://github.com/irssi/irssi/issues/506)).
-- Improve netsplit dumping ([#420](https://github.com/irssi/irssi/issues/420), [#465](https://github.com/irssi/irssi/issues/465)).
-- Improve responsibility under DCC I/O strain ([#578](https://github.com/irssi/irssi/issues/578), [#159](https://github.com/irssi/irssi/issues/159)).
-- Fix query nick change on open ([#580](https://github.com/irssi/irssi/issues/580), [#586](https://github.com/irssi/irssi/issues/586)).
+- Removed broken support for curses ([#521](https://github.com/irssi/irssi/issues/521 "remove curses terminal and ncurses macro")).
+- Removed broken dummy mode ([#526](https://github.com/irssi/irssi/issues/526 "remove broken dummy mode")).
+- Fix terminal state after suspend ([#450](https://github.com/irssi/irssi/issues/450 "potential terminal state not reset after 2x suspend"), [#452](https://github.com/irssi/irssi/issues/452 "Don't call terminfo_cont() twice on resume")).
+- Improve Perl library path detection ([#479](https://github.com/irssi/irssi/issues/479 "improve perl @INC detection"), [#132](https://github.com/irssi/irssi/issues/132 "sometimes wrong/useless path set for perl_use_lib")).
+- Reconnect now works on unix connections ([#493](https://github.com/irssi/irssi/issues/493 "servers-reconnect: pass unix_socket attribute to new connection")).
+- Fix completion warnings ([#125](https://github.com/irssi/irssi/issues/125 "Some glib assertion failure warnings when tab completing "), [#496](https://github.com/irssi/irssi/issues/496 "completion fixes"), [FS#124](https://github.com/irssi-import/bugs.irssi.org/issues/124 "Assertion failure in query window when cmdchars is set to a comma, typing '',wii <tab>''")).
+- Fix a crash in the \-\-more-- item ([#501](https://github.com/irssi/irssi/issues/501 "check for NULL in statusbar_more_updated")).
+- Fix a display issue in /unignore ([#517](https://github.com/irssi/irssi/issues/517 "Minor cosmetic fix in /unignore error message."), [bdo#577202](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=577202)).
+- Fix a crash in some netsplits ([#529](https://github.com/irssi/irssi/issues/529 "fix nick->host == NULL crash"), [#500](https://github.com/irssi/irssi/issues/500 "Random crash")).
+- Fix crashes with some invalid config ([#550](https://github.com/irssi/irssi/issues/550 "segfault / null pointer access in config file parser"), [#551](https://github.com/irssi/irssi/issues/551 "nullptr when doing module backward compat on invalid config"), [#563](https://github.com/irssi/irssi/issues/563 "Segfault caused by config file"), [#564](https://github.com/irssi/irssi/issues/564 "Segfault in config_node_first at get.c:330"), [#587](https://github.com/irssi/irssi/issues/587 "add assertion to statusbar_read_group"), [#581](https://github.com/irssi/irssi/issues/581 "Enforce the is_node_list contract in lib-config setters."), [#570](https://github.com/irssi/irssi/issues/570 "enforce check that chatnets are nodelists to handle invalid config")).
+- Add support for SASL Fragmentation. By Kenny Root (kruton, [#506](https://github.com/irssi/irssi/issues/506 "SASL: handle fragmentation")).
+- Improve netsplit dumping ([#420](https://github.com/irssi/irssi/issues/420 "Find a less-global method of deciding when to print netsplits/mode/joins"), [#465](https://github.com/irssi/irssi/issues/465 "Some small adjustments to the netsplit code.")).
+- Improve responsibility under DCC I/O strain ([#578](https://github.com/irssi/irssi/issues/578 "add a static buffer for dcc received data"), [#159](https://github.com/irssi/irssi/issues/159 "Freezing when receiving dcc")).
+- Fix query nick change on open ([#580](https://github.com/irssi/irssi/issues/580 "Private messages go to the status window when the other user changes to an equivalent nick"), [#586](https://github.com/irssi/irssi/issues/586 "Process the nick changes in queries before the PRIVMSG is handled.")).
 - Correct a few help texts.
 
 ---
@@ -449,7 +502,7 @@ The Irssi team released this <abbr class="timeago" title="2017-01-03">2017-01-03
 - Correct a NULL pointer dereference in the nickcmp function found by Joseph Bisch ([GL#1](https://gitlab.com/irssi/irssi/issues/1))
 - Correct an out of bounds read in certain incomplete control codes found by Joseph Bisch ([GL#2](https://gitlab.com/irssi/irssi/issues/2))
 - Correct an out of bounds read in certain incomplete character sequences found by Hanno Böck and independently by J. Bisch ([GL#3](https://gitlab.com/irssi/irssi/issues/3))
-- Correct an error when receiving invalid nick message ([GL#4](https://gitlab.com/irssi/irssi/issues/4), [#466](https://github.com/irssi/irssi/issues/466))
+- Correct an error when receiving invalid nick message ([GL#4](https://gitlab.com/irssi/irssi/issues/4), [#466](https://github.com/irssi/irssi/issues/466 "Assertion failure when sending an invalid NICK"))
 
 ---
 
@@ -463,14 +516,14 @@ The Irssi team released this <abbr class="timeago" title="2016-09-16">2016-09-16
 ### Fixes
 {:#v0-8-20-fixes }
 
-- Correct the name of an emitted sasl signal ([#484](https://github.com/irssi/irssi/issues/484))
-- Correct the prototype for the 'message private' signal ([#515](https://github.com/irssi/irssi/issues/515))
-- Corrections in away and hilight help text ([#477](https://github.com/irssi/irssi/issues/477), [#518](https://github.com/irssi/irssi/issues/518))
-- /squery and /servlist commands have been restored ([#461](https://github.com/irssi/irssi/issues/461)).
-- Where Irssi would previously only report "System error" on connect, it will now try harder to retrieve the system error message ([#467](https://github.com/irssi/irssi/issues/467)).
-- Fixed issue with +channels not working properly ([#533](https://github.com/irssi/irssi/issues/533))
-- Fixed crash in optchan when item has no server ([#485](https://github.com/irssi/irssi/issues/485), [bdo#826525](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826525))
-- Fixed random remote crash in the nicklist handling ([#529](https://github.com/irssi/irssi/issues/529))
+- Correct the name of an emitted sasl signal ([#484](https://github.com/irssi/irssi/issues/484 "Correct the name of the emitted signal."))
+- Correct the prototype for the 'message private' signal ([#515](https://github.com/irssi/irssi/issues/515 "Correct the prototype for the 'message private' signal."))
+- Corrections in away and hilight help text ([#477](https://github.com/irssi/irssi/issues/477 "Correct error/typo ''You''->''Your'' in help message"), [#518](https://github.com/irssi/irssi/issues/518 "Wrong order in the arguments in /hilight example, -mask doesn't take …"))
+- /squery and /servlist commands have been restored ([#461](https://github.com/irssi/irssi/issues/461 "Revert ''Removed the obsolete SQUERY and SERVLIST commands''")).
+- Where Irssi would previously only report "System error" on connect, it will now try harder to retrieve the system error message ([#467](https://github.com/irssi/irssi/issues/467 "net_gethosterror: Handle EAI_SYSTEM (''System error'') properly")).
+- Fixed issue with +channels not working properly ([#533](https://github.com/irssi/irssi/issues/533 "Set the default STATUSMSG to @ instead of @+ if it's missing"))
+- Fixed crash in optchan when item has no server ([#485](https://github.com/irssi/irssi/issues/485 "Do not crash on OPTCHAN when item has no server"), [bdo#826525](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826525))
+- Fixed random remote crash in the nicklist handling ([#529](https://github.com/irssi/irssi/issues/529 "fix nick->host == NULL crash"))
 - Fixed remote crash due to incorrect bounds checking on formats, reported by Gabriel Campana and Adrien Guinet from Quarkslab.
 
 ---
@@ -487,15 +540,15 @@ If your cursor keys stopped working, try this first: `/bind meta-O key meta2`
 ### Fixes
 {:#v0-8-19-fixes }
 
-- Fixed regression when joining and parting channels on IRCnet ([#435](https://github.com/irssi/irssi/issues/435))
-- Fixed SASL EXTERNAL. By Mantas Mikulėnas (grawity, [#432](https://github.com/irssi/irssi/issues/432))
-- Fixed regression when not using SASL ([#438](https://github.com/irssi/irssi/issues/438))
-- Fixed incorrect SSL disconnects when using SSL from modules/scripts. By Will Storey (horgh, [#439](https://github.com/irssi/irssi/issues/439))
-- Fixed regression where proxy_string could not be configured or certain file transfers could not be accepted ([#445](https://github.com/irssi/irssi/issues/445), [#446](https://github.com/irssi/irssi/issues/446))
-- Fixed storing layout of !channels ([#183](https://github.com/irssi/irssi/issues/183), [#405](https://github.com/irssi/irssi/issues/405))
-- Fixed restoration of bracketed paste mode on quit ([#449](https://github.com/irssi/irssi/issues/449), [#457](https://github.com/irssi/irssi/issues/457))
+- Fixed regression when joining and parting channels on IRCnet ([#435](https://github.com/irssi/irssi/issues/435 "joining +channels is broken"))
+- Fixed SASL EXTERNAL. By Mantas Mikulėnas (grawity, [#432](https://github.com/irssi/irssi/issues/432 "fix SASL EXTERNAL"))
+- Fixed regression when not using SASL ([#438](https://github.com/irssi/irssi/issues/438 "Remove sasl timeout source when the server disconnects"))
+- Fixed incorrect SSL disconnects when using SSL from modules/scripts. By Will Storey (horgh, [#439](https://github.com/irssi/irssi/issues/439 "Clear error queue before SSL I/O operations"))
+- Fixed regression where proxy_string could not be configured or certain file transfers could not be accepted ([#445](https://github.com/irssi/irssi/issues/445 "/eval set proxy_string broken"), [#446](https://github.com/irssi/irssi/issues/446 "strip less whitespace from commands"))
+- Fixed storing layout of !channels ([#183](https://github.com/irssi/irssi/issues/183 "/layout save stores the ''visible name'' of !-channels (safe channels) instead of the real one"), [#405](https://github.com/irssi/irssi/issues/405 "Serialize the 'name' attribute of the CHANNEL_REC."))
+- Fixed restoration of bracketed paste mode on quit ([#449](https://github.com/irssi/irssi/issues/449 "bracketed paste mode not deinitialised on leaving irssi"), [#457](https://github.com/irssi/irssi/issues/457 "fix race condition in terminal init"))
 - Make the usage of meta-O for cursor keys configurable with
-      /set term_appkey_mode off ([#430](https://github.com/irssi/irssi/issues/430), [#459](https://github.com/irssi/irssi/issues/459))
+      /set term_appkey_mode off ([#430](https://github.com/irssi/irssi/issues/430 "Binding meta-O causes arrow keys to stop working"), [#459](https://github.com/irssi/irssi/issues/459 "Make use of terminal application keys configurable"))
 
 ---
 
@@ -521,7 +574,7 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
       5: server, message, nick, address, target
   
   in order to support "self messages". Module authors should implement this change if they are using this signal.
-- Removing networks will now remove all attached servers and channels ([#45](https://github.com/irssi/irssi/issues/45)).
+- Removing networks will now remove all attached servers and channels ([#45](https://github.com/irssi/irssi/issues/45 "make it easy to delete default channels, servers and networks")).
 - The proxy module now has an /irssiproxy command.
 - sb_search has been moved to scripts.irssi.org
 - WIN32 has been completely removed (it had not been working and is lacking a maintainer.)
@@ -537,16 +590,16 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
       /set paste_use_bracketed_mode on
 - "Self messages" generated by some bouncers can now be received in the proper window.
 - Try to split long lines on spaces to avoid words being splitted. Adds a new option: `split_line_on_space` which defaults to on.
-- Add setting `hilight_nick_matches_everywhere` ([#56](https://github.com/irssi/irssi/issues/56)).
+- Add setting `hilight_nick_matches_everywhere` ([#56](https://github.com/irssi/irssi/issues/56 "Add an option to allow highlights of your own nick in any part of a message")).
 - The config parser is more robust and prints out better diagnostics on incorrect config files.
-- Ctrl+^ ([FS#721](https://github.com/irssi-import/bugs.irssi.org/issues/721)) and Ctrl+J can now be bound.
+- Ctrl+^ ([FS#721](https://github.com/irssi-import/bugs.irssi.org/issues/721 "binding ctrl-^")) and Ctrl+J can now be bound.
 - Command history can be cleared with /window history -clear
-- /hilight -mask -line is now supported ([FS#275](https://github.com/irssi-import/bugs.irssi.org/issues/275)).
+- /hilight -mask -line is now supported ([FS#275](https://github.com/irssi-import/bugs.irssi.org/issues/275 "/hilight -mask -line nick!*@* fails")).
 - CHANTYPES are now supported.
 - Improved reload speed of ignores.
 - Add -date feature to /lastlog
 - irssiproxy can be more easily enabled and disabled.
-- Expando for hostname ([FS#829](https://github.com/irssi-import/bugs.irssi.org/issues/829)).
+- Expando for hostname ([FS#829](https://github.com/irssi-import/bugs.irssi.org/issues/829 "Special variable for a hostname [patch]")).
 - UNIX sockets can now also be specified in the config file.
 - Disable SSLv3 due to the POODLE vulnerability.
 - SSL ciphers can now be specified per server.
@@ -555,11 +608,11 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 ### Fixes
 {:#v0-8-18-fixes }
 
-- /ignore now respects -pattern on merge ([#78](https://github.com/irssi/irssi/issues/78)).
+- /ignore now respects -pattern on merge ([#78](https://github.com/irssi/irssi/issues/78 "ignore overwrites")).
 - irssiproxy (BNC) module now uses correct line endings.
-- Fix missing lines on large pastes ([FS#905](https://github.com/irssi-import/bugs.irssi.org/issues/905)).
-- Correctly preserve STATUSMSG prefixes ([#291](https://github.com/irssi/irssi/issues/291)).
-- Fix infinite recursion in key bindings ([FS#817](https://github.com/irssi-import/bugs.irssi.org/issues/817)).
+- Fix missing lines on large pastes ([FS#905](https://github.com/irssi-import/bugs.irssi.org/issues/905 "paste_buffer_join_lines() - Mangled text when line length exceeds 400")).
+- Correctly preserve STATUSMSG prefixes ([#291](https://github.com/irssi/irssi/issues/291 "/msg +#channel (wallvoices) incorrectly shows up as Nick:@#channel")).
+- Fix infinite recursion in key bindings ([FS#817](https://github.com/irssi-import/bugs.irssi.org/issues/817 "SegFault when executing bind command")).
 - Fix incomplete awaylog caused by buffering.
 - Fix calculation of UTF-8 string length display in some cases.
 - Fix some Perl warnings related to @ISA.
@@ -567,7 +620,7 @@ The Irssi team released this <abbr class="timeago" title="2016-02-13">2016-02-13
 - Incremental help file improvements.
 - ANSI attributes are now properly reset.
 - Fixed regression where text would blink when terminal lacks color support.
-- Permit the usage of Freenode extban syntax in /ban ([#150](https://github.com/irssi/irssi/issues/150))
+- Permit the usage of Freenode extban syntax in /ban ([#150](https://github.com/irssi/irssi/issues/150 "freenode extbans don't work in /ban"))
 - Fixed regression in scriptassist on unload of scripts.
 - Fixed regression in -actcolor %n
 
@@ -583,15 +636,15 @@ The Irssi team released this <abbr class="timeago" title="2014-10-11">2014-10-11
 ### Additions
 {:#v0-8-17-additions }
 
-- Document that SSL connections aren't properly handled during /UPGRADE. See Github PR [#39](https://github.com/irssi/irssi/issues/39).
+- Document that SSL connections aren't properly handled during /UPGRADE. See Github PR [#39](https://github.com/irssi/irssi/issues/39 "Document that /UPGRADE doesn't work with SSL").
 - Synchronize scripts with scripts.irssi.org.
-- Performance enhancement of the nicklist as well as the window_item_find function. See Github PR [#24](https://github.com/irssi/irssi/issues/24).
+- Performance enhancement of the nicklist as well as the window_item_find function. See Github PR [#24](https://github.com/irssi/irssi/issues/24 "Speed up nicklist and window_find operations").
 - Disallow unloading of static modules.
-- Allow UTF-8 characters in /bind. See Github PR [#18](https://github.com/irssi/irssi/issues/18).
-- Split overlong outgoing messages instead of silently truncating them. Adds two new options: 'split_line_end' and 'split_line_start'. 'split_line_end' contains a string added to the end of line fragments. 'split_line_start' contains a string added to the beginning of line fragments. See Github PR [#29](https://github.com/irssi/irssi/issues/29).
+- Allow UTF-8 characters in /bind. See Github PR [#18](https://github.com/irssi/irssi/issues/18 "(from marienz, via debian) add support for utf8 chars to /bind, irssi fs#553").
+- Split overlong outgoing messages instead of silently truncating them. Adds two new options: 'split_line_end' and 'split_line_start'. 'split_line_end' contains a string added to the end of line fragments. 'split_line_start' contains a string added to the beginning of line fragments. See Github PR [#29](https://github.com/irssi/irssi/issues/29 "Properly split long IRC messages").
 - Added special /ignore NO_ACT level to ignore only activity (see /help ignore).
-- Support for 256 and true color terminals (see Github PR [#48](https://github.com/irssi/irssi/issues/48)).
-- Support for italics (see Github PR [#58](https://github.com/irssi/irssi/issues/58)).
+- Support for 256 and true color terminals (see Github PR [#48](https://github.com/irssi/irssi/issues/48 "256 colour support for Irssi")).
+- Support for italics (see Github PR [#58](https://github.com/irssi/irssi/issues/58 "Implement italics support for Irssi")).
 - Rewrote many help files.
 
 ### Fixes
@@ -599,11 +652,11 @@ The Irssi team released this <abbr class="timeago" title="2014-10-11">2014-10-11
 
 - Fixed various compiler warnings and use of deprecated functions.
 - Fixed Perl API usage and added PERL_NO_GET_CONTEXT to reduce code size.
-- Fixed format_get_text Perl API. See Github PR [#23](https://github.com/irssi/irssi/issues/23).
-- Fixed gui_printtext_after and term_refresh_*() visibility. See Github PR [#22](https://github.com/irssi/irssi/issues/22).
-- Fixed issue where UTF-8 characters was corrupted once for every 32k text. See Github PR [#12](https://github.com/irssi/irssi/issues/12).
+- Fixed format_get_text Perl API. See Github PR [#23](https://github.com/irssi/irssi/issues/23 "fix implementation of format_get_text script api").
+- Fixed gui_printtext_after and term_refresh_*() visibility. See Github PR [#22](https://github.com/irssi/irssi/issues/22 "Correct the packages of the scripting API").
+- Fixed issue where UTF-8 characters was corrupted once for every 32k text. See Github PR [#12](https://github.com/irssi/irssi/issues/12 "no split utf8 from the bug tracker").
 - Fixed redrawing issue with right-aligned statusbar.
-- Fixed use-after-free bug with cached settings values. See Github PR [#147](https://github.com/irssi/irssi/issues/147).
+- Fixed use-after-free bug with cached settings values. See Github PR [#147](https://github.com/irssi/irssi/issues/147 "Fix use-after-free bug with cached settings values").
 
 ---
 
@@ -618,14 +671,14 @@ The Irssi team released this <abbr class="timeago" title="2014-05-28">2014-05-28
 {:#v0-8-16-additions }
 
 - Add -noautosendcmd to /SERVER and /CONNECT. Passing this option will force Irssi to not execute the content of the autosendcmd chatnet-setting upon connect.
-- Accept names replies with nick!user@host instead of just nick, if they are enabled (see bug [FS#805](https://github.com/irssi-import/bugs.irssi.org/issues/805)).
+- Accept names replies with nick!user@host instead of just nick, if they are enabled (see bug [FS#805](https://github.com/irssi-import/bugs.irssi.org/issues/805 "Support for userhost in NAMES reply")).
 - Set window binds for channel items as sticky when re-creating window binds as part of /layout save. This fixes the bug where previously saved channel windows forgets their window number upon reconnect.
 - Add experimental support for DNSSEC DANE validation of certificates.
-- Strip the argument for boolean options (see bug [FS#769](https://github.com/irssi-import/bugs.irssi.org/issues/769)).
+- Strip the argument for boolean options (see bug [FS#769](https://github.com/irssi-import/bugs.irssi.org/issues/769 "[Patch] Strip leading and trailing whitespaces from /SET bool values")).
 - Freenode have been readded to the list of networks in the default configuration file.
 - Disabled support for the insecure SSLv2 protocol.
 - Various documentation enhancements.
-- Add -ssl_pass to /connect and /server (see bug [FS#305](https://github.com/irssi-import/bugs.irssi.org/issues/305)).
+- Add -ssl_pass to /connect and /server (see bug [FS#305](https://github.com/irssi-import/bugs.irssi.org/issues/305 "/connect -ssl_cert password_protected.pem problem")).
 
 ### Fixes
 {:#v0-8-16-fixes }
@@ -633,9 +686,9 @@ The Irssi team released this <abbr class="timeago" title="2014-05-28">2014-05-28
 - Fix crashing bug that can happen if the terminal height decreases before the first window is created.
 - Fixed minor compiler warnings.
 - Fixed possible crashing bug when processing an octal escape sequence.
-- Fixed the /ignore -network option (see bug [FS#748](https://github.com/irssi-import/bugs.irssi.org/issues/748)).
+- Fixed the /ignore -network option (see bug [FS#748](https://github.com/irssi-import/bugs.irssi.org/issues/748 "/ignore -network bug")).
 - Fixed signal handling for /exec'd commands. Irssi now sends the signal to the process group id instead of the process id.
-- Fixed segfault generated by SSL disconnections (see bug [FS#752](https://github.com/irssi-import/bugs.irssi.org/issues/752)).
+- Fixed segfault generated by SSL disconnections (see bug [FS#752](https://github.com/irssi-import/bugs.irssi.org/issues/752 "Segfault on unclean SSL disconnections.")).
 - Fix compilation when build with -Werror=format-security. Patch by Jaroslav Skarvada.
 
 ---
@@ -650,7 +703,7 @@ The Irssi team released this <abbr class="timeago" title="2010-04-03">2010-04-03
 ### Additions
 {:#v0-8-15-additions }
 
-- Add active_window_ignore_refnum option With active_window_ignore_refnum ON, the current behavior for the active_window key (meta-a by default) is preserved: it switches to the window with the highest activity level that was last activated. With active_window_ignore_refnum OFF, the old behavior is used: it switches to the window with the highest activity level with the lowest refnum. (by Matt Sparks, bug [FS#667](https://github.com/irssi-import/bugs.irssi.org/issues/667))
+- Add active_window_ignore_refnum option With active_window_ignore_refnum ON, the current behavior for the active_window key (meta-a by default) is preserved: it switches to the window with the highest activity level that was last activated. With active_window_ignore_refnum OFF, the old behavior is used: it switches to the window with the highest activity level with the lowest refnum. (by Matt Sparks, bug [FS#667](https://github.com/irssi-import/bugs.irssi.org/issues/667 "Change in Meta+a next active window logic"))
 - Show new Charybdis +q list in channel windows (numerics 728 and 729).
 - Allow servers to belong to multiple networks.
 - Improve paste detection. Irssi now detects a paste if it reads at least three bytes in a single read; subsequent reads are associated to the same paste if they happen before 'paste_detect_time' time since the last read. If no read occurs after 'paste_detect_time' time the paste buffer is flushed; if there is at least one complete line its content is sent as a paste, otherwise it is processed normally.
@@ -664,8 +717,8 @@ The Irssi team released this <abbr class="timeago" title="2010-04-03">2010-04-03
 
 - Change some characters illegal in Windows filenames to underscores in logs
 - Fix disconnects when sending large amounts of data over SSL
-- Show all nicks instead of just the first in an /accept * listing (Bug [FS#704](https://github.com/irssi-import/bugs.irssi.org/issues/704))
-- Make several signals without parameters available to perl again. In particular, this includes the "beep" signal (by Matt Sparks, bug [FS#674](https://github.com/irssi-import/bugs.irssi.org/issues/674))
+- Show all nicks instead of just the first in an /accept * listing (Bug [FS#704](https://github.com/irssi-import/bugs.irssi.org/issues/704 "server side ignore (usermode +g) ACCEPT list not fully displayed"))
+- Make several signals without parameters available to perl again. In particular, this includes the "beep" signal (by Matt Sparks, bug [FS#674](https://github.com/irssi-import/bugs.irssi.org/issues/674 "src/perl/get-signals.pl does not detect beep signal."))
 - Close the config file fd after saving (by Sven Wegener)
 - Check if an SSL certificate matches the hostname of the server we are connecting to.
 - Fix bash'isms, use command -v instead of which and use bc -l in /CALC.
@@ -696,7 +749,7 @@ The Irssi team released this <abbr class="timeago" title="2009-07-28">2009-07-28
 
 - Fix out of bounds access in event_wallops().
 - Build fix for OS X.
-- Fix the autolog_ignore_targets logic to work correctly with manually opened log files (see bug [FS#673](https://github.com/irssi-import/bugs.irssi.org/issues/673)).
+- Fix the autolog_ignore_targets logic to work correctly with manually opened log files (see bug [FS#673](https://github.com/irssi-import/bugs.irssi.org/issues/673 "autolog_ignore_targets affects manually opened logs")).
 
 ---
 
@@ -717,49 +770,49 @@ The Irssi team released this <abbr class="timeago" title="2009-04-01">2009-04-01
 - Remove methods to create/destroy TextBuffer and TextBufferView and low level api to add/remove lines, scripts should be fine using Window::print_after and TextBufferView::remove_line.
 - Add print_after method to Window perl object analogous to gui_printtext_after but which also expands formats and forces a full line.
 - Better mapping of signal parameters to Perl. All signals used in scripts now need to be registered with Irssi::signal_register.
-- Add public header with interfaces to manage statusbar items (bug [FS#535](https://github.com/irssi-import/bugs.irssi.org/issues/535))
-- Recode: assume utf-8 encoding for an ascii string in which no escape character occurs (bug [FS#392](https://github.com/irssi-import/bugs.irssi.org/issues/392)).
+- Add public header with interfaces to manage statusbar items (bug [FS#535](https://github.com/irssi-import/bugs.irssi.org/issues/535 "fe-text headers & deal with statusbar in modules"))
+- Recode: assume utf-8 encoding for an ascii string in which no escape character occurs (bug [FS#392](https://github.com/irssi-import/bugs.irssi.org/issues/392 "iso-2022 doesn't work with recode_autodetect_utf8")).
 - Allow /BAN, /UNBAN, /KICKBAN, /KNOCKOUT if channel is not synced. Requesting ban lists from an unsynced channel will ask them from the server, banning a user whose u@h irssi does not know will ban nick!\*@\* and only bans irssi knows about can be removed.
 - Allow storing multiple "other" prefixes such as +q and +a (original patch by JasonX)
 - Add /set autolog_ignore_targets for cherry-picking targets that shouldn't get logged.
 - Add support for 16 colors. Formats KBGCRMYW and mirc colors are now mapped to colors 8-15. fe-text translates colors 8-15 to bold/blink+0-7 if the terminal supports only 8 colors. If your theme uses one of the high color formats and you really want bold you can change %FMT&lt;string> to %fmt%_&lt;string>%_, it will work fine in all irssi versions.
-- Better 005 PREFIX support (bug [FS#580](https://github.com/irssi-import/bugs.irssi.org/issues/580)).
+- Better 005 PREFIX support (bug [FS#580](https://github.com/irssi-import/bugs.irssi.org/issues/580 "005 numeric PREFIX= value not interpreted correctly")).
 - Display 407 numerics other than "duplicate channel".
 - Fix display of ratbox-style operspy whois.
-- Recode outgoing irc away messages (bug [FS#412](https://github.com/irssi-import/bugs.irssi.org/issues/412)).
+- Recode outgoing irc away messages (bug [FS#412](https://github.com/irssi-import/bugs.irssi.org/issues/412 "recode not handling users away message")).
 - Recode outgoing irc quit messages.
 - Remove scrollback_levelclear_levels setting and add a 'level' option to 'sb levelclear' to specify a comma separated list of levels.
-- Add perl \_\_WARN\_\_ handler for scripts (bug [FS#427](https://github.com/irssi-import/bugs.irssi.org/issues/427)).
+- Add perl \_\_WARN\_\_ handler for scripts (bug [FS#427](https://github.com/irssi-import/bugs.irssi.org/issues/427 "warn() in perl script causes screen to distort")).
 - Add Irssi::command_parse_options function to parse options for a command.
 - Revert recode changes introduced in 0.8.12.
 - Add completion for /WINDOW SERVER.
 - Support for reading kicks/msgs from TARGMAX/MAXTARGETS 005 tokens.
 - Enhancements to the redirections code.
-- Support for RPL_WHOISACTUALLY (338 numeric) for both ratbox and ircu (bug [FS#428](https://github.com/irssi-import/bugs.irssi.org/issues/428)).
+- Support for RPL_WHOISACTUALLY (338 numeric) for both ratbox and ircu (bug [FS#428](https://github.com/irssi-import/bugs.irssi.org/issues/428 "numeric 338 (ircu & ratbox servers)")).
 - -idle option of /notify is gone.
-- /layout save now makes window-channel bindings instantly effective (bug [FS#35](https://github.com/irssi-import/bugs.irssi.org/issues/35)).
-- /ping without arguments does not send anymore a ctcp ping to a channel (bug [FS#542](https://github.com/irssi-import/bugs.irssi.org/issues/542)).
+- /layout save now makes window-channel bindings instantly effective (bug [FS#35](https://github.com/irssi-import/bugs.irssi.org/issues/35 "/layout save needs changing")).
+- /ping without arguments does not send anymore a ctcp ping to a channel (bug [FS#542](https://github.com/irssi-import/bugs.irssi.org/issues/542 "''/ping'' with no arguments CTCP PINGs the channel")).
 - Track IRC operator status of nicks a bit better.
 - new 'actlist_names' option to add active items names in 'act' statusbar item.
 - new 'word_completion_backward' command to scroll backwards in the completion list.
 - add 'list' option to /bind to print all the available commands.
 - show setter/time in +I lists
-- apply -usermode before -autosendcmd (bug [FS#548](https://github.com/irssi-import/bugs.irssi.org/issues/548)).
+- apply -usermode before -autosendcmd (bug [FS#548](https://github.com/irssi-import/bugs.irssi.org/issues/548 "change evaluation order of ''usermode'' vs. ''autosendcmd''")).
 - reduce memory usage of the scrollback buffer and make the display in /sb status more accurate (higher).
-- fix data getting dropped when a lot is sent at a time (e.g. when attaching to irssi-proxy, bug [FS#528](https://github.com/irssi-import/bugs.irssi.org/issues/528)).
+- fix data getting dropped when a lot is sent at a time (e.g. when attaching to irssi-proxy, bug [FS#528](https://github.com/irssi-import/bugs.irssi.org/issues/528 "irssi-proxy doesn't send all JOIN-commands for server with a lot of open channels")).
 - introduce the type Irssi::Irc::Client and signals to communicate with proxy clients to allow for scripting parts of the irssi-proxy.
 - Add sb_search.pl, a script for /SCROLLBACK SEARCH
 
 ### Fixes
 {:#v0-8-13-fixes }
 
-- Fix /NOTIFY list when nick is seen joining (bug [FS#642](https://github.com/irssi-import/bugs.irssi.org/issues/642)).
-- Include hostmask in 001 event sent by proxy (bug [FS#650](https://github.com/irssi-import/bugs.irssi.org/issues/650)).
-- Be more power-friendly: don't run any always-on &lt;1s timers (bug [FS#641](https://github.com/irssi-import/bugs.irssi.org/issues/641)).
-- Don't get confused by a failed /JOIN -window (bug [FS#644](https://github.com/irssi-import/bugs.irssi.org/issues/644)).
+- Fix /NOTIFY list when nick is seen joining (bug [FS#642](https://github.com/irssi-import/bugs.irssi.org/issues/642 "the notify list is broken")).
+- Include hostmask in 001 event sent by proxy (bug [FS#650](https://github.com/irssi-import/bugs.irssi.org/issues/650 "irssi proxy does not send a conform RPL_welcome")).
+- Be more power-friendly: don't run any always-on &lt;1s timers (bug [FS#641](https://github.com/irssi-import/bugs.irssi.org/issues/641 "irssi causes several CPU wakeups per second when completly idle")).
+- Don't get confused by a failed /JOIN -window (bug [FS#644](https://github.com/irssi-import/bugs.irssi.org/issues/644 "/wjoin bug")).
 - Properly initialize embedded Perl (PERL_SYS_INIT3).
 - Replace invalid utf-8 bytes with U+FFFD when drawing a line.
-- Properly unload the original script when using /script load to reload it. (bug [FS#525](https://github.com/irssi-import/bugs.irssi.org/issues/525), patch by Lukas Mai)
+- Properly unload the original script when using /script load to reload it. (bug [FS#525](https://github.com/irssi-import/bugs.irssi.org/issues/525 "Irssi doesnt properly release subrefs on double script load"), patch by Lukas Mai)
 - Clean up script loading in general:
    * Don't leak local variables to eval'd code.
    * Set filename/line number to get better error messages from perl.
@@ -771,15 +824,15 @@ The Irssi team released this <abbr class="timeago" title="2009-04-01">2009-04-01
 - Remove buggy /SCROLLBACK redraw and /SET scrollback_save_formats.
 - Always preserve the active mainwindow when resizing.
 - Ignore DNS not found errors when considering reconnect.
-- Do not strip the comma in a mirc color if it is not followed by a digit (bug [FS#250](https://github.com/irssi-import/bugs.irssi.org/issues/250)).
-- Fix building perl module with perl-5.10 (bug [FS#630](https://github.com/irssi-import/bugs.irssi.org/issues/630)).
+- Do not strip the comma in a mirc color if it is not followed by a digit (bug [FS#250](https://github.com/irssi-import/bugs.irssi.org/issues/250 "commas in colored messages")).
+- Fix building perl module with perl-5.10 (bug [FS#630](https://github.com/irssi-import/bugs.irssi.org/issues/630 "irssi fails to build with perl")).
 - fix leak with $L expando.
 - fix possible crash with /script reset.
 - ignore exceptions take precedence over ignores in all cases.
-- honour -channels preference for ignore -replies (bug [FS#227](https://github.com/irssi-import/bugs.irssi.org/issues/227)).
-- Fix mode display in whois with unreal (379 numeric) (bug [FS#479](https://github.com/irssi-import/bugs.irssi.org/issues/479)).
-- Fix regressions that prevented external modules from building/working (bugs [FS#537](https://github.com/irssi-import/bugs.irssi.org/issues/537) [FS#539](https://github.com/irssi-import/bugs.irssi.org/issues/539)).
-- Fix /set hilight_level not taking effect immediately (bug [FS#598](https://github.com/irssi-import/bugs.irssi.org/issues/598)).
+- honour -channels preference for ignore -replies (bug [FS#227](https://github.com/irssi-import/bugs.irssi.org/issues/227 "ignore -replies -channel ignores replies in wrong channel")).
+- Fix mode display in whois with unreal (379 numeric) (bug [FS#479](https://github.com/irssi-import/bugs.irssi.org/issues/479 "IRSSI fails to format the whois info and therefor fails to display usermodes on Unreal")).
+- Fix regressions that prevented external modules from building/working (bugs [FS#537](https://github.com/irssi-import/bugs.irssi.org/issues/537 "Removal of irssi-config.in breaks irssi-icb") [FS#539](https://github.com/irssi-import/bugs.irssi.org/issues/539 "fix for segfault with non-IRC protocols")).
+- Fix /set hilight_level not taking effect immediately (bug [FS#598](https://github.com/irssi-import/bugs.irssi.org/issues/598 "hilighting not triggered in a /msg window")).
 - Fix bold, blinking and indentation in /LASTLOG and buf.pl.
 
 ---
@@ -797,40 +850,40 @@ The Irssi team released this <abbr class="timeago" title="2007-10-06">2007-10-06
 - Some changes to character set recoding.
 - Rewrite SSL connection/handshake code.
 - Remove support for glib 1.x.
-- Do not send our hostname to the server (bug [FS#488](https://github.com/irssi-import/bugs.irssi.org/issues/488)).
+- Do not send our hostname to the server (bug [FS#488](https://github.com/irssi-import/bugs.irssi.org/issues/488 "[PATCH] Privacy fix for USER message")).
 - Add $tag to 'window' item in default configuration.
 - Pick up host changes on charybdis and ircu servers (396 numeric).
 - Show various errors such as "cannot send to channel" and "cannot /msg, user is +g" in the channel or query window, if possible, and always include the user or channel name.
 - Channel forwarding in hyperion and charybdis is now recognized (470 numeric) and the target channel is joined in the window where the original channel would have been joined.
 - Add support for the ACCEPT command, which is part of the CALLERID server side ignore system in hybrid7 and derived ircds.
-- Make /WINDOW GOTO start searching at the window after the active one and stop at the one before (bug [FS#332](https://github.com/irssi-import/bugs.irssi.org/issues/332)).
+- Make /WINDOW GOTO start searching at the window after the active one and stop at the one before (bug [FS#332](https://github.com/irssi-import/bugs.irssi.org/issues/332 "want /win goto <nick│channel> to start searching *past* current window")).
 - Improve completion for /SET.
-- Use CASEMAPPING dependent comparison to match channel names. Patch by Jon Mayo (bug [FS#436](https://github.com/irssi-import/bugs.irssi.org/issues/436)).
+- Use CASEMAPPING dependent comparison to match channel names. Patch by Jon Mayo (bug [FS#436](https://github.com/irssi-import/bugs.irssi.org/issues/436 "irc-style case-insensitivity does not work for channel names")).
 - Various improvements to the help files.
 - Add Perl bindings for some gui_entry methods
-- Make alt/meta+arrow keys work in recent versions of xterm (bug [FS#496](https://github.com/irssi-import/bugs.irssi.org/issues/496))
+- Make alt/meta+arrow keys work in recent versions of xterm (bug [FS#496](https://github.com/irssi-import/bugs.irssi.org/issues/496 "Alt+cursor keys do not work in recent xterm"))
 
 ### Fixes
 {:#v0-8-12-fixes }
 
-- Fix DCC get when file size is 0 (bug [FS#494](https://github.com/irssi-import/bugs.irssi.org/issues/494)).
+- Fix DCC get when file size is 0 (bug [FS#494](https://github.com/irssi-import/bugs.irssi.org/issues/494 "dcc stalled forever when sending 0kB files")).
 - Ignore empty lines when pasting.
-- Fix large file support on AIX (bug [FS#404](https://github.com/irssi-import/bugs.irssi.org/issues/404)).
+- Fix large file support on AIX (bug [FS#404](https://github.com/irssi-import/bugs.irssi.org/issues/404 "Large File Support on AIX")).
 - Remove broken code that prevents unloading of a script in some cases.
 - Fix logging lines with no target to all logs, broken in 0.8.11.
-- Fix casemapping dependent nick and channel matching (bug [FS#436](https://github.com/irssi-import/bugs.irssi.org/issues/436)).
+- Fix casemapping dependent nick and channel matching (bug [FS#436](https://github.com/irssi-import/bugs.irssi.org/issues/436 "irc-style case-insensitivity does not work for channel names")).
 - Update chanop flag before emitting nick mode changed signal (patch by Johan Kiviniemi)
 - Fix recognition of realnames starting with spaces in /WHO.
 - Show "Target left IRC" error messages fully (instead of reporting no such nick "*")
 - Repair channels_rejoin_unavailable. Enabled by default, this retries joins that failed because of netsplits (channel temporarily unavailable (437), duplicate channel). A few servers abuse 437 for juped channels which should not be retried, you should disable channels_rejoin_unavailable if this is a problem.
-- Display 437 and 407 numerics if channels_rejoin_unavailable is not enabled (bug [FS#495](https://github.com/irssi-import/bugs.irssi.org/issues/495)).
-- Don't add the same mask to the /KNOCKOUT list multiple times (bug [FS#510](https://github.com/irssi-import/bugs.irssi.org/issues/510)).
+- Display 437 and 407 numerics if channels_rejoin_unavailable is not enabled (bug [FS#495](https://github.com/irssi-import/bugs.irssi.org/issues/495 "No info in status window when joining channel that is temporary unavailable (due to split)")).
+- Don't add the same mask to the /KNOCKOUT list multiple times (bug [FS#510](https://github.com/irssi-import/bugs.irssi.org/issues/510 "/knockout removes bans that don't exist")).
 - Use MSGLEVEL_NICKS again for printing a nick change in queries, broken in r2389.
 - Fix some /LASTLOG -before/-after issues.
 - Some fixes to the build system.
-- Fix paste sending the first line twice (bug [FS#405](https://github.com/irssi-import/bugs.irssi.org/issues/405))
+- Fix paste sending the first line twice (bug [FS#405](https://github.com/irssi-import/bugs.irssi.org/issues/405 "Multiline paste duplicates the first line"))
 - When parsing a numeric option verify that the whole argument, rather than only the first character, is numeric.
-- Some fixes for notices, actions and ctcps to @#channel and +#channel (bug [FS#46](https://github.com/irssi-import/bugs.irssi.org/issues/46))
+- Some fixes for notices, actions and ctcps to @#channel and +#channel (bug [FS#46](https://github.com/irssi-import/bugs.irssi.org/issues/46 "msg/notices to prefixes (eg /msg +#chan) goes to status"))
 
 ---
 
@@ -846,22 +899,22 @@ The Irssi team released this <abbr class="timeago" title="2007-04-25">2007-04-25
 
 - Add completion for /WINDOW GOTO
 - New crapbuster-like "scrollback levelclear" command
-- irssi now aborts a connection when, on an attempt to connect, the server returns code 432 (Erroneous Nickname), bug [FS#425](https://github.com/irssi-import/bugs.irssi.org/issues/425)
-- Allow identifiers in config file to start with a digit, bug [FS#177](https://github.com/irssi-import/bugs.irssi.org/issues/177).
-- Modify Irssi::UI::Window::command to restore the original active window only if the command executed has not made another one active, bug [FS#403](https://github.com/irssi-import/bugs.irssi.org/issues/403).
-- Make awaylog_file respect \-\-home, bug [FS#304](https://github.com/irssi-import/bugs.irssi.org/issues/304)
+- irssi now aborts a connection when, on an attempt to connect, the server returns code 432 (Erroneous Nickname), bug [FS#425](https://github.com/irssi-import/bugs.irssi.org/issues/425 "irssi is trying to change the nick to a valid one all the time tho the prefix isn't valid")
+- Allow identifiers in config file to start with a digit, bug [FS#177](https://github.com/irssi-import/bugs.irssi.org/issues/177 "problems parsing config with network name like 123test").
+- Modify Irssi::UI::Window::command to restore the original active window only if the command executed has not made another one active, bug [FS#403](https://github.com/irssi-import/bugs.irssi.org/issues/403 "Irssi::active_win()->command is not working properly").
+- Make awaylog_file respect \-\-home, bug [FS#304](https://github.com/irssi-import/bugs.irssi.org/issues/304 "awaylog_file should default to dir specified with --home")
 - Send /QUOTE immediately if server didn't send the 001 event yet
 - If dcc_own_ip contains IPv4 address, listen only in IPv4
 - Negative scroll_page_count scrolls screensize-n lines (Patch by Chris Moore)
 - Sort nicks with custom prefix by the order defined in isupport in /NAMES
-- New perl command send_raw_first, patch by ComradeP (Bug  [FS#413](https://github.com/irssi-import/bugs.irssi.org/issues/413))
+- New perl command send_raw_first, patch by ComradeP (Bug  [FS#413](https://github.com/irssi-import/bugs.irssi.org/issues/413 "Patch for new scripting command (send_raw_first)"))
 - Let the module loader also check for fe_common_$protocol files
 - Don't wait for all /NAMES replies before syncing if we can't combine queries anyways (Patch by jilles)
 - Renamed irc.efnet.net to irc.efnet.org
 - /SCROLLBACK CLEAR accepts the same arguments as /CLEAR
 - Check if binary exists and can be executed before /UPGRADE
 - Change default value of override_coredump_limit to OFF
-- UPTIME command by Lauri Nurmi with some modifications (Bug  [FS#458](https://github.com/irssi-import/bugs.irssi.org/issues/458))
+- UPTIME command by Lauri Nurmi with some modifications (Bug  [FS#458](https://github.com/irssi-import/bugs.irssi.org/issues/458 "The /UPTIME alias does not work on Solaris and others + PATCH"))
 - Remove CR and LF from Perl commands, to make it harder to introduce a security bug
 - Remove bookmark on a line when line is removed (instead of moving it)
 - Don't fallback to generic word completer if the command specific completion list is not empty.
@@ -870,14 +923,14 @@ The Irssi team released this <abbr class="timeago" title="2007-04-25">2007-04-25
 ### Fixes
 {:#v0-8-11-fixes }
 
-- Fix some UTF-8 issues, bugs [FS#452](https://github.com/irssi-import/bugs.irssi.org/issues/452) (Patch by Yi-Hsuan Hsin), [FS#459](https://github.com/irssi-import/bugs.irssi.org/issues/459), [FS#460](https://github.com/irssi-import/bugs.irssi.org/issues/460)
+- Fix some UTF-8 issues, bugs [FS#452](https://github.com/irssi-import/bugs.irssi.org/issues/452 "Overlong topic/statusbar item (with wide character on the margin) issue") (Patch by Yi-Hsuan Hsin), [FS#459](https://github.com/irssi-import/bugs.irssi.org/issues/459 "Backspacing combining mark doesn't clear it"), [FS#460](https://github.com/irssi-import/bugs.irssi.org/issues/460 "Irssi lets (UTF-8 encoded) C1 control chars thru to terminal in UTF-8 mode")
 - Fixed segfault on quit introduced in 0.8.10
 - Fixed a bug where tab-completion didn't work with utf8/big5 properly
 - Ignore joins without a nick from broken servers
 - Fix whois_hide_safe_channel_id: only look at the beginning of a channel name, not in the middle
 - Don't assume that 7bit ascii strings are encoded in UTF-8, only validate the strings when they contain octest with highest bit set (patch by Mikko Rauhala)
 - Make random really random when resolving
-- Don't get confused by a join command with too many arguments, keys can't have spaces in them (Bug  [FS#437](https://github.com/irssi-import/bugs.irssi.org/issues/437))
+- Don't get confused by a join command with too many arguments, keys can't have spaces in them (Bug  [FS#437](https://github.com/irssi-import/bugs.irssi.org/issues/437 "Possible channel status bug"))
 - Don't crash on /QUIT with scripts causing and catching signals on UNLOAD
 - Fix %k and %K mappings in curses frontend
 - Fix bold on monochrome terminals in terminfo frontend
@@ -885,17 +938,17 @@ The Irssi team released this <abbr class="timeago" title="2007-04-25">2007-04-25
 - Fix crash with one line high terminal in terminfo frontend
 - Fix building with srcdir != builddir
 - Don't get confused and keep saying "Netsplit over" on every join for user that only rejoined some channels
-- Fix crash in /EXEC (Bug  [FS#439](https://github.com/irssi-import/bugs.irssi.org/issues/439))
+- Fix crash in /EXEC (Bug  [FS#439](https://github.com/irssi-import/bugs.irssi.org/issues/439 "irssi crash when using /exec (patch included)"))
 - Fix format string in printtext_dest call from Perl, patch by loafier
-- Fix memory leaks in expandos_deinit by Nicolas Collignon (Bug  [FS#419](https://github.com/irssi-import/bugs.irssi.org/issues/419))
+- Fix memory leaks in expandos_deinit by Nicolas Collignon (Bug  [FS#419](https://github.com/irssi-import/bugs.irssi.org/issues/419 "memory leak"))
 - Detect off_t size using AC_CHECK_SIZEOF because it works also when cross-compiling in autoconf-2.50 and higher
-- Fix failed assertion when the config file is unreadable, patch by Daniel Koning (Bug  [FS#164](https://github.com/irssi-import/bugs.irssi.org/issues/164))
+- Fix failed assertion when the config file is unreadable, patch by Daniel Koning (Bug  [FS#164](https://github.com/irssi-import/bugs.irssi.org/issues/164 "failed assertion in config_parse()"))
 - Removed automatic glib downloading and compiling.
 - Fix /FORMAT -delete daychange so it doesn't print an empty line
 - Forbid /WINDOW SHOW when the target window is sticky rather than when there is a window bound to the container of the target window.
 - Improve interaction between autolog and non autolog logs
 - Recognize local oper mode on ircnet (mode +O)
-- Properly initialize reference count for a new setting (Bug [FS#235](https://github.com/irssi-import/bugs.irssi.org/issues/235))
+- Properly initialize reference count for a new setting (Bug [FS#235](https://github.com/irssi-import/bugs.irssi.org/issues/235 "Irssi::settings_remove doesn't remove settings"))
 
 ---
 
@@ -957,32 +1010,32 @@ The Irssi team released this <abbr class="timeago" title="2005-12-11">2005-12-11
 - Handle 432 numeric (errorneus nickname) as "nick in use". Fixes problems with ircnet 2.11 ircd when irssi tries to reconnect using UID as nick. Patch by Petr Baudis
 - /SET -default fixes
 - /DCC SEND didn't actually use /SET dcc_upload_path
-- Fixed /WHOIS -yes (Bug  [FS#67](https://github.com/irssi-import/bugs.irssi.org/issues/67))
-- Make /JOIN -tag #channel and /JOIN #channel&lt;space> switch to that channel (Bugs  [FS#13](https://github.com/irssi-import/bugs.irssi.org/issues/13) and [FS#93](https://github.com/irssi-import/bugs.irssi.org/issues/93))
-- Fixed readded (changed) hilights being in config twice, resulted in duplicate hilights or removed hilights coming back (Bug  [FS#39](https://github.com/irssi-import/bugs.irssi.org/issues/39))
-- Fixed messages to @#channel showed **your** nickmode, not the one of the sender (part of Bug  [FS#80](https://github.com/irssi-import/bugs.irssi.org/issues/80))
+- Fixed /WHOIS -yes (Bug  [FS#67](https://github.com/irssi-import/bugs.irssi.org/issues/67 "-YES argument"))
+- Make /JOIN -tag #channel and /JOIN #channel&lt;space> switch to that channel (Bugs  [FS#13](https://github.com/irssi-import/bugs.irssi.org/issues/13 "'/join -tag #channel' does not forward like '/join #channel'") and [FS#93](https://github.com/irssi-import/bugs.irssi.org/issues/93 "/join #channel<space> doesn't work (when switching channels)"))
+- Fixed readded (changed) hilights being in config twice, resulted in duplicate hilights or removed hilights coming back (Bug  [FS#39](https://github.com/irssi-import/bugs.irssi.org/issues/39 "Duplicate hilight entries are saved to config file"))
+- Fixed messages to @#channel showed **your** nickmode, not the one of the sender (part of Bug  [FS#80](https://github.com/irssi-import/bugs.irssi.org/issues/80 "@#channel and +#channel messages are printed badly"))
 - Fixed /KNOCK support
 - Fixed own nick changes in irssi-proxy
-- Fixed /HILIGHT -actcolor -mask (Bug  [FS#131](https://github.com/irssi-import/bugs.irssi.org/issues/131))
+- Fixed /HILIGHT -actcolor -mask (Bug  [FS#131](https://github.com/irssi-import/bugs.irssi.org/issues/131 "Hilight, -actcolor doesn't work with -mask"))
 - Recognise a param of signal_emit/continue in perl script if it's int
 - Fixed bug 120 where proxy doesn't set the server_rec->away_reason
 - Fixed /join -invite -window bug if there is no invite
 - Fixed bug with time settings where hours actually returned 60*hours
-- Fix multiple entries for local IP in /etc/hosts prevents connecting, patch by eridius (Bug  [FS#167](https://github.com/irssi-import/bugs.irssi.org/issues/167))
+- Fix multiple entries for local IP in /etc/hosts prevents connecting, patch by eridius (Bug  [FS#167](https://github.com/irssi-import/bugs.irssi.org/issues/167 "multiple entries for local IP in /etc/hosts prevents connecting"))
 - Fixed a bug with /me, use the right arguments for "message irc own_action"
 - Update our own nickrec->gone flag on /away &lt;reason> or on /away
 - Fixed output of /hilight (add a space after -levels if any)
-- Add libtool's -module flag to get built properly on all platforms, by Toby Peterson (Bug  [FS#212](https://github.com/irssi-import/bugs.irssi.org/issues/212))
-- Don't apply emphasis on _foo_^ if it's a nick (Bug  [FS#52](https://github.com/irssi-import/bugs.irssi.org/issues/52))
-- Fix displaying of ctcp userinfo and clientinfo (Bug  [FS#222](https://github.com/irssi-import/bugs.irssi.org/issues/222))
-- Remember alternate_nick and max_whois on reconnect (Bug  [FS#181](https://github.com/irssi-import/bugs.irssi.org/issues/181))
+- Add libtool's -module flag to get built properly on all platforms, by Toby Peterson (Bug  [FS#212](https://github.com/irssi-import/bugs.irssi.org/issues/212 "modules (proxy, perl) built incorrectly [PATCH]"))
+- Don't apply emphasis on _foo_^ if it's a nick (Bug  [FS#52](https://github.com/irssi-import/bugs.irssi.org/issues/52 "Underline bug on nicks"))
+- Fix displaying of ctcp userinfo and clientinfo (Bug  [FS#222](https://github.com/irssi-import/bugs.irssi.org/issues/222 "irssi doesn't show ctcp userinfo requests"))
+- Remember alternate_nick and max_whois on reconnect (Bug  [FS#181](https://github.com/irssi-import/bugs.irssi.org/issues/181 "server->connrec->alternate_nick not carried between reconnects"))
 - Fix tr_TR locale problem for glib2 (still a bug with glib1.2) by David Pashley
-- Fixed pasting not using the character translation (Bug  [FS#151](https://github.com/irssi-import/bugs.irssi.org/issues/151))
-- Fixed a bug where the channel list to join/rejoin on reconnect gets too long, not all channels will be joined. (Bug  [FS#108](https://github.com/irssi-import/bugs.irssi.org/issues/108))
+- Fixed pasting not using the character translation (Bug  [FS#151](https://github.com/irssi-import/bugs.irssi.org/issues/151 "[PATCH] translate characters at paste"))
+- Fixed a bug where the channel list to join/rejoin on reconnect gets too long, not all channels will be joined. (Bug  [FS#108](https://github.com/irssi-import/bugs.irssi.org/issues/108 "not rejoining all channels because line too long"))
 - Print glib errors nicely, by David Pashley
 - Handle ^Z better, by David Pashley
 - Fixed /eval recursion crashing, by David Pashley
-- Fix notify with more nicks than max_whois_in_cmd (Bug  [FS#257](https://github.com/irssi-import/bugs.irssi.org/issues/257)), based on patch by Krzysztof Kowalik (Borys)
+- Fix notify with more nicks than max_whois_in_cmd (Bug  [FS#257](https://github.com/irssi-import/bugs.irssi.org/issues/257 "issues with notify in irssi 0.8.10-rc4 (20040324 1731)")), based on patch by Krzysztof Kowalik (Borys)
 - Fixed irssiproxy sometimes missing (parts of) lines
 - Fixed remote /WHOWAS
 - Parse negative time setting values, makes it possible again to do /SET server_reconnect_time -1 to disable reconnecting
@@ -1844,7 +1897,7 @@ Timo Sirainen released this <abbr class="timeago" title="2000-03-11">2000-03-11<
 ### Fixes
 {:#v0-7-28-fixes }
 
-- Autojoining doesn't switch automatically to the joined channel's window (try [FS#2](https://github.com/irssi-import/bugs.irssi.org/issues/2) :)
+- Autojoining doesn't switch automatically to the joined channel's window (try [FS#2](https://github.com/irssi-import/bugs.irssi.org/issues/2 "/set without arguments doesn't work") :)
 - Several (Perl) compilation problems fixed.
 - Text hilight color was dark grey, changed to white..
 - /LAST doesn't display the texts found from previous /LAST blocks
