@@ -32,6 +32,16 @@ Audible bell (switch Ctrl+a Ctrl+g)
 #### putty
 - no bell and steady on bell
 
+#### how to highlight my own lines ?
+for readability i like to have my own lines to use a specific color,
+to be able to differenciate my text from other's at a glance.
+paste this in irssi:
+
+    /format own_msg {ownmsgnick $2 {ownnick $0}}%g$1
+
+the last part `%g` is the color green. so all my lines will be green.
+don't forget to use `/save` to make this permanent.
+
 ### right aligned nicks
 
     /format own_msg {ownmsgnick $2 {ownnick $[-9]0}}$1
@@ -43,15 +53,7 @@ Audible bell (switch Ctrl+a Ctrl+g)
     /format pubmsg {pubmsgnick $2 {pubnick $[-9]0}}$1
     /format pubmsg_channel {pubmsgnick $3 {pubnick $[-9]0}{msgchannel $1}}$2
 
-### how to highlight my own lines ?
-for readability i like to have my own lines to use a specific color,
-to be able to differenciate my text from other's at a glance.
-paste this in irssi:
 
-    /format own_msg {ownmsgnick $2 {ownnick $0}}%g$1
-
-the last part `%g` is the color green. so all my lines will be green.
-don't forget to use `/save` to make this permanent.
 
 ### uptime 
 
