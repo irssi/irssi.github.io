@@ -25,6 +25,16 @@ to get notified off activities, while im working, i use the following setup:
 #### irssi
 
     /set beep_msg_level MSGS HILIGHT DCCMSGS
+    
+#### how to highlight my own lines ?
+for readability i like to have my own lines to use a specific color,
+to be able to differenciate my text from other's at a glance.
+paste this in irssi:
+
+    /format own_msg {ownmsgnick $2 {ownnick $0}}%g$1
+
+the last part `%g` is the color green. so all my lines will be green.
+don't forget to use `/save` to make this permanent.
 
 
 #### screen
