@@ -41,6 +41,7 @@ been reported first.
 - [Split windows handling Addendum](http://wouter.coekaerts.be/irssi/split){:rel='external'}
 - [Showing events in different windows](http://wouter.coekaerts.be/site/irssi/wclf){:rel='external'}
 - [Connecting to networks with SASL](https://nullroute.eu.org/~grawity/irssi-connect.html){:rel='external'}
+- [Connecting to Freenode with CertFP (no password)](https://github.com/shabble/irssi-docs/wiki/freenode_certfp){:rel='external'}
 
 ### Scripting
 
