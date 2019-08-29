@@ -1,0 +1,55 @@
+Just been thinking about some new extensions to themeing..
+
+I don't want to add internal scripting to irssi, but it's beginning to
+look like there's no choice really. Perl would be one possibility, but
+I'd rather not depend on it since I want at least the /NAMES thing to
+be in default.theme..
+
+Maybe a *SMALL* internal scripting support wouldn't be that bad. You
+could use it in themes, simple aliases etc. but for REAL scripts you'd
+still use perl.
+
+I'd also want to change the /FORMATs so that no-one would touch them
+anymore unless they wanted to change the actual english text. Everything
+should be customizable from a theme file.
+
+Below is some examples of what could be done with scripting - they
+should be quite clear if you know any C-like language. I'm not sure if
+$var[]s should be hashes or arrays, hashes probably.
+
+##
+## Indented nicks in .themes
+##
+
+# $0 = nick mode, $1 = nick
+$indent($0-, 10, RIGHT_JUSTIFY)
+ --> $indent("@cras", 10, RIGHT_JUSTIFY)
+ -->      @cras
+
+##
+## WHOIS problem (well, not _really_ but..)
+##
+
+# with ISO-8859 charset ascii 160 looks like a space, so people can
+# spoof that they're ops in some channel while they're really just op
+# in "#channel1\160@#channel2" - underlining channel names would fix this
+
+# $0 = channel, $1 = channels
+$list($1, "%U$0%U", ", ")
+ --> $list("#chan1 #chan2 #chan3", "%U$0%U", ", ")
+ --> %U#chan1%U, %U#chan2%U, %U#chan3%U
+
+##
+## End of NAMES list problem - we don't want to show "0 halfops" etc.
+##
+
+# define an array
+$nick_types[0] = "ops";
+$nick_types[1] = "halfops";
+$nick_types[2] = "voices";
+$nick_types[3] = "normal";
+
+# $0 = channel, $1 = nicks, $2 = ops, $3 = halfops, $4 = voices, $5 = rest
+$list($2-, $0 > 0 ? $nick_types[$list_index()] : "", ", ")
+ --> $list("53 0 0 92", $0 > 0 ? $nick_types[$list_index()] : "", ", ")
+ --> 53 ops, 92 normal

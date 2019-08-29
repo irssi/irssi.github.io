@@ -1,0 +1,160 @@
+Copyright (C) 2002 Timo Sirainen <tss@iki.fi>
+
+Here's my thoughts of all possible ways that I know of how to fix IRC, and
+at the bottom my preffered way to fix it.
+
+Current IRC
+-----------
+
+Good things about IRC:
+ - Lots of clients, lots of users.
+ - Pretty easy to use, and people are used to how it works.
+ - As long as servers have good connections between each others (and they
+   usually do), all users can talk to each others fine even if direct
+   connection between them would be horribly slow.
+
+Bad things:
+ - Listed below :)
+
+Netsplits
+---------
+
+The most annoying part of IRC is netsplits. Most of them today are probably
+because of DDoSing, fixing that would make splits happen a lot less. But
+how far should we go to fix that?
+
+One way would be to just make the netsplits more transparent, so killing
+one hub wouldn't yet kill all it's downlinks. This could be done with for
+example multiple connections between servers. Would this be enough? Maybe,
+but there's still not that many servers that they couldn't all be DoSed if
+someone really wants to.
+
+Another way would be to remove the reasons for DoSsing. Usually they're
+used to take over some channel, get someone's nick back, as a revenge to
+some server's operator, or maybe they just do it to annoy people? Services
+can be used to keep nicks and channels, and that works quite well in many
+networks. Though they've still been DoSed at times and sometimes for a long
+time.
+
+Hub/service hiding. Seems to work quite well I think :) If there's no way
+to find them, they can't DoS them. Of course, you could still DoS the
+servers separately..
+
+Peer to peer networks with hiding everyone's real IPs. I've thought of this
+many times, but it's very difficult to design one that would actually work.
+
+Nicks
+-----
+
+There's lots of people in big IRC networks, and so there's lots of nicks.
+Quite often you'll find someone else trying to use your nick as well.
+There's no good reason why two people who have nothing in common, never see
+each other and have no common friends couldn't use the same nick.
+
+IRC networks
+------------
+
+There's lots of networks, some public, some private. Finding servers for
+those big networks that let you in can sometimes be difficult (ircnet
+especially). Big networks have more problems and are usually more slower
+and difficult to get any updates done to the network. Smaller networks
+usually work better, but then again there's no people either who to talk
+to.
+
+There's also lots of overlapping channels in different networks. This could
+be bad because it divides the people who know about the stuff. A question
+asked in one network could easily be answered by someone in another
+network. However, sometimes it's good that there's multiple choices to
+channels, not everyone agrees how to run a channel.
+
+It's also a bit annoying that you can't just say "I'm xxx in IRC", you'll
+also need to say the IRC network name, and that may still not be enough if
+the network isn't one of the big ones. Many clients also don't handle
+multiple server connections very easily and even if they do, it's still a
+bit annoying to connect to some network just to talk to someone in there.
+
+Chicken-Egg problem
+-------------------
+
+The reason why IRC enhancements haven't succeeded so far is because they
+always create new networks, and the worst ones would require you to change
+your client. Why go through all that trouble just to be in a small network
+while everyone you really want to talk to is somewhere else? This
+chicken-egg problem needs to be solved if there's ever going to be any
+serious competitor to IRC.
+
+And how to solve it? You could try to get the problems to be fixed in those
+big networks. Patch ircd to support multiple connections between servers
+and maybe fix some other things, and then just get most servers to run that
+great new server code ... As if that could ever happen. Or maybe if you
+waited for years and years.
+
+Some gateways between old and new networks might work. You'd connect to
+only the gateway, and it would transparently handle the connections to old
+and new networks. But who would run the gateways? Not the users, they're
+too lazy to install it. Gateway admins would need to be people who are
+interested about the new network, and would also allow others to use their
+servers to connect to other IRC networks - quite possibly abusing them and
+getting that gateway k-lined. There goes the support for old networks.
+
+Even with those problems, I think it might be possible to get it to work
+via gateways. If there were many of them and they wouldn't let non-trusted
+users connect to the older networks, they wouldn't get k-lined either. But
+you'd still need to get lots of gateways and have them configured to
+connect to the new network. That wouldn't be too easy either, people would
+just think that they'd soon have to be reinstalling/reconfiguring anyway if
+this wouldn't work, or if there was a better alternative new network or if
+new versions of the gateway came out all the time or whatever..
+
+Networks this, networks that, what if we just GET RID OF THE NETWORKS ONCE
+AND FOR ALL. Do you really care who is running your network and how it's
+run? Very likely not, you just want it to work. You do however want to
+control your channels, and maybe filter the data that your client receives.
+If everyone could run servers, everyone could be admins and control what
+their clients get. If you don't like some server, go create your own.
+Private messages would be sent directly to the receiver's server, for
+channels there'd need to be something more complex (I already have some
+ideas).
+
+If we proved that after installing this thing's server/gateway, you'd never
+need to touch it again unless you wanted new features. Everyone would be
+using the same "network" because it wouldn't be possible not to do so
+unless you used another protocol entirely. The protocol should be as simple
+as possible and easy to add extensions so it would last for a long time. If
+time comes for a new protocol, it should be easy to be made backwards
+compatible with this one.
+
+In short, make everyone love it, don't require any other action from users
+than to connect to different server, and don't give any reasons why people
+wouldn't want to move to the new server.
+
+Roadmap
+-------
+
+ - Design the protocol and the core in general. Make sure people like it.
+   Have some ideas about what extensions will/might come and how to make
+   them.
+
+ - Start coding the server and IRC-gateway when the protocol looks like
+   it won't change much.
+
+ - Put some test servers out, but give IRC-gateway access only to some
+   trusted users. Make sure everyone knows that it isn't finished yet
+   and there's no guarantees of backwards compatibility.
+
+ - Start designing extensions, code them when finished.
+
+ - Lock the core protocol, and start creating hype :) Try to get everyone
+   to run those servers. Most server admins would give access only to
+   trusted users, so they may as well enable IRC-gateway for them.
+
+ - Now just wait for the masses to grow and keep coding the thing better
+   and better, but don't require anyone to upgrade unless they want some
+   new features.
+
+ - Start coding native protocol support for clients to get rid of some
+   IRC limitations and to enable new features.
+
+ - Everyone uses irc+ protocol enabled clients, backwards compatibility
+   for IRC protocol can be dropped, IRC-gateways can be dropped. IRC is
+   dead, long live the irc+ ;)

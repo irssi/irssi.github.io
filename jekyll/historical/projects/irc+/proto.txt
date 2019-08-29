@@ -1,0 +1,314 @@
+Copyright (C) 2002 Timo Sirainen <tss@iki.fi>
+
+I *really* want to hear any suggestions, complains, improvement,
+whatever related to this doc. I don't think I'm going to change the
+base concept (unless someone convinces me that something else is
+better), but pretty much everything else can be discussed :) Especially
+any kind of comments about the protocol section would be welcome.
+
+ History
+ -------
+
+ 2002-03-13 :
+   - channel wishlist with idea of how to prevent DOSing channels away
+   - several smaller updates
+
+ 2002-03-12 :
+   - added "netsplits" in "Things irc+ will fix" section
+   - updated Protocol and Commands sections
+
+
+ Rambling
+ --------
+
+For long time I've wanted an IRC-network which would be DOS-resistant
+and wouldn't have channel takeovers. Also it's very annoying that there
+even are "IRC-networks" - you don't have "email-networks" or
+"www-networks" either, why should IRC be special? Before I've thought
+some p2p network would fix these things, but it's quite difficult to
+make it work and there's not much point in it anyway.
+
+So, thanks to suo for convincing me this really is a good idea (this whole
+thing is mostly based to his talks), and thanks to Ozelot for telling how a
+good protocol should work + other stuff as well :) Only thing I actually
+figured out myself was that IRC protocol could still be used in client-side
+and some details in some stuff.
+
+Yes, I know jabber does something like this, but it's yet another
+protocol and I don't think XML is too great idea with realtime chats.
+Also, its channel support seems to be pretty limited at the moment.
+
+
+ Introduction
+ ------------
+
+The basic idea is very simple. IRC servers would be like SMTP servers,
+private messages would be like email, and channels would be like
+mailing lists. It might take a while to really understand that.
+
+Users and channels would always be accessed through server, so nicks
+would be user@server, channels channel@server. Anyone could run an IRC
+server, channels could be in dedicated servers or some public ones.
+
+For client<->server communication, we could first just use the old IRC
+protocol. Some new protocol could come later which servers would
+understand, or maybe the server<->server protocol could be used with
+clients as well, that's anyway easy to change later. The
+server<->server protocol is the one that must be kept backwards
+compatible and should now be designed well.
+
+The difference that current IRC users would see with the new server,
+would be mostly that each nick is user%server.com instead, and channels
+are joined with #channel@server.com. Other than that, it would look
+like yet another IRC network. NOTE: I'm not sure about the '%'
+character, '@' would have been so much prettier but it's completely
+aginst IRC RFC, even while it seemed to work in almost every client,
+but that's only because they were parsing it wrong..
+
+
+ Things irc+ will fix
+ --------------------
+
+ - No IRC networks, everyone can run servers and contact anyone by
+   knowing their user@server address, which could be identical to their
+   email address.
+
+ - No broadcasting: saves bandwidth, no scalability issues, and also
+   a bit more enhanced privacy, since now some random server doesn't know
+   everything about every user.
+
+ - Takeovers aren't possible. You can run your own channel server, and you
+   have absolute power over everything that happens in it. All servers
+   would most likely also contain some sort of chanserv built-in.
+
+ - No netsplits. Private messages are routed directly to destination so
+   there aren't any servers between to split. Channels will hopefully also
+   be as splitless as possible :)
+
+
+ Problems
+ --------
+
+ - It wouldn't really prevent DOSing away you or your channel server. But at
+   least you won't drag thousands of other users with you. Also there's not
+   much more point in DOSing IRC servers then than your email servers.
+
+ - Since everyone could run servers, the server you use would need to let
+   pretty much everyone connect to it if you want to receive private
+   messages. Server admin could decide to put some hosts to blacklists, so
+   they couldn't send you messages. This is however exactly the same problem
+   as with emails and spamming. You could always use another server or run
+   your own if you wanted to.
+
+ - It's a bit annoying that you need to remember the server name for users
+   and channels. The most difficult part is to find them, after that clients
+   could remember them. There probably would need to be some kind of list
+   servers for finding users.. Or at least the server where you're connected
+   to could give you a list of all user@hosts it knows about when you give
+   it a nick, user or channel name. The list server stuff would anyway be
+   completely server-side stuff, you'd just do /WHOIS nick|user.
+
+
+ Routing
+ -------
+
+When you send message to user@server, your server directly connects to
+the target server and sends the message. For channel messages, your
+server connects to the channel server and sends all messages to it, the
+channel server then forwards the message to all other servers connected
+to it. Just like emails/mailing lists. Of course, the TCP connections
+wouldn't be closed between messages.
+
+It should be possible to forward private messages, like emails are
+forwarded now, so the current email/web forwarders could forward IRC as
+well.
+
+
+ Channels
+ --------
+
+Channel server has absolute power over everything that happens, there
+should be some good defaults how channels behave but you could change
+everything if you so wish.
+
+Servers could have some default channels, so /JOIN irssi.org would
+actually join to #irssi@irssi.org.
+
+Since channels are in just one server, if it dies the whole channel
+dies. There could be some backup channel servers, maybe specified with
+round robin IP addresses and/or some messages between servers so they'd
+know what server to try next if primary one dies. When the primary
+server comes back it would notify the backup server that it wants the
+clients back. Even two random public channel servers could backup each
+others if server admins haven't disallowed it and channel operator
+wants to do it.
+
+Users could normally be found with user@server address - the user part
+isn't same as nick since it shouldn't be changed, but nick could
+default to same as user. There could be some channel-specific nicks
+however so /NICK command would work, but with the current IRC protocol
+if two channels get same nick for different users there'd need to be
+some kludging, like showing nick%server for both. /MSG nick, /MSG
+nick@server, /msg nick%server and /MSG user@server should all work.
+
+WISHLIST: make channel server failures fully transparent to users and
+don't let any message get lost because of it.
+
+... or what about not having channel servers at all? just have this
+concept of "channel" between different user servers which trust certain
+users in channel (chanops), also support multiple connections between
+people in channel. List servers could be then notified of the different
+server locations where you could connect to. This should make it a lot
+more DOS-proof as you'd need to DOS all chanops away, and even then the
+channel could stay quite functional but just not allow new users to
+join. This would make the whole thing a lot more complicated as well,
+and it would require extensive use of digital signatures / certificates
+and I was wishing I could avoid that.
+
+
+ Protocol
+ --------
+
+Someone wiser should really do the server<->server protocol, but
+basically it should be something like this:
+
+ASCII (+) vs. binary (-)?
+
+ + excellent for debugging
+ + no byte order issues with numbers
+ - a bit slower to parse than binary protocols
+ - requires quoting some reserved characters -> eats more bandwidth
+   .. however, with one byte field separators instead of 2-byte field
+   length specifiers it may eat less bandwidth actually
+
+Speed is hardly an issue, it's just a few CPU cycles, and typical irc+
+server would take near zero CPU usage anyway. Debugging is also a lot
+more easier when you don't need to create a separate debugging program.
+So, ASCII I'd say. Something like:
+
+ <origin> <targets> <ID> <command> [<param> [...]]
+
+Fields would be separated with TABs, record (line) would end with LF.
+The maximum size for the record is 4096 bytes including the LF. There's
+no maximum field length, or maximum number of fields. Fields must not
+contain NUL, TAB or LF characters. Targets are space-separated. The ID
+field can be used to identify query/reply pair.
+
+In initial parsing servers should just treat all the command parameters
+as single string, most of the commands are just routed elsewhere and
+server doesn't care what's actually in them. Or ideally, that is :)
+Currently we'd need to do conversion with the IRC-protocol, but that
+code should be fully separated from rest of the server code so it will
+be easy to get rid of it later.
+
+Command parameters can be either binary data or UTF-8 encoded text, no
+other character sets are allowed. All NUL, TAB, LF or <escape>
+characters must be escaped. The escape character is .. well, unless
+someone figures out a better one, it could be ^A for now (..what about
+two char escape string?). So:
+
+  ^A '0' -> NUL
+  ^A 't' -> TAB
+  ^A 'n' -> LF
+  ^A 'a' -> ^A
+
+.. what about sending images, voice, video, .. ? Is it reasonable to
+just group that kind of stuff to same ID'd messages and send it in ~4kB
+blocks? Maybe entirely different protocol for that kind of data? Don't
+know really, please help :)
+
+
+ Commands
+ --------
+
+Replies:
+
+ - RPL [<tag> [...]]
+ - ERR [<tag> [...]] - Reply to some command. RPL if the command was
+   successful, ERR if any error occured. Tag specifies a short name for the
+   reply, this is optional and different commands may use the same tag for
+   different purposes. There's some global error tags however that shouldn't
+   be used for other purposes:
+     - UNKNOWN_CMD  Unknown command
+
+Login:
+
+ - HANDSHAKE <protocol> <options> - Protocol is a space separated list of
+   supported protocols, options a space separated list of supported option
+   names. Both sides send this command to each other immediately after
+   connected. No replies are sent.
+(SSL/whatever crypting is initialized here)
+ - LOGIN <user> - Specifies the username to log in with.
+     - RPL  LOGGED     Logged in
+     - RPL  NEED_PASS  Password required
+     - ERR  INVALID    Invalid user/password
+         - used only if password was sent before LOGIN with some other
+	   method than using PASS command.
+ - PASS <password> - Specifies the password to use - this isn't required if
+   user doesn't need a password or if the password is supplied with some
+   different command (eg. public key stuff)
+     - RPL  LOGGED     Logged in
+     - ERR  INVALID    Invalid user/password
+
+Commands:
+
+ - MSG <command> [<param> [...]]
+     - M|ACTION <message>     - message/action to user/channel, additional
+                                field/value parameters allowed
+        - .. <message> could be crypted using various algorithms, clients
+	  could first ask with QUERY which ones are supported and then
+	  decide what to use .. public key crypting + preshared secrets
+	  should both work.
+     - QUERY <command> [...]  - query something from user/channel (CTCP-like)
+
+ - NICK <nick> - specify the nick you wish to use (target specific)
+     - RPL  NICK       <nick>  (may not be same as requested)
+     - ERR  INUSE      Nick already in use
+     - ERR  INVALID    Invalid nick
+     - ERR  TOOLONG    Too long nick, max. %d characters
+
+ - JOIN <channel> [<password>] - join to channel
+     - RPL  JOIN       <channel>  (may not be same as requested)
+     - ERR  .. lots of ..
+
+ - PART <channel> [<message>] - leave a channel
+     - RPL  PART       <channel>
+     - ERR  NOTJOINED  Not joined to channel
+
+ - QUIT <message> - quit
+     - RPL
+
+ - STATUS available|away|... [<reason>]
+     - RPL
+
+ - WHO: Requests user information, target specifies the user@server
+     - RPL  WHO        <field name> <field value> [...]
+         - Realname <name>
+	 - Status <status> [<reason>]
+	 - ...
+     - ERR  NO_USER    Unknown user
+
+ .. etc. etc. we'd need pretty much all commands from IRC. MODE should be
+ split into multiple commands though, and maybe done entirely differently.
+
+
+ Example
+ -------
+
+You're an ADSL user for isp.com, your host is adsl.isp.com. Your ISP has
+irc+ server in irc.isp.com, and you want to join to #irssi@irc.irssi.org.
+You'd do something like:
+
+  /SERVER irc.isp.com
+  /JOIN #irssi@irc.irssi.org
+
+The server assigns you a user name based on either the nick/user name you
+gave, or maybe something else. Let's say you're luser.
+
+Everyone in the channel would see you as luser@irc.isp.com. They could send
+a /MSG to you in that address. The msg wouldn't go through the channel server
+but directly from the other user's server to your server.
+
+Now if you send a message to #irssi, it first goes to irc.isp.com which
+forwards it to irc.irssi.org. irc.irssi.org then forwards it to every other
+server who is connected to it and joined to #irssi.
