@@ -7,6 +7,21 @@
 
 ---
 
+## 1.2.2
+{:#v1-2-2 }
+
+The Irssi team released this <abbr class="timeago" title="2019-08-29">2019-08-29</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.2.2" %}
+
+### Fixes
+{:#v1-2-2-fixes }
+
+- Fix a use after free issue when receiving IRCv3 CAP information from the server ([GL#34](https://gitlab.com/irssi/irssi/issues/34))
+- Fix a crash during startup when windows weren't fully initialised yet ([#1114](https://github.com/irssi/irssi/issues/1114 "fix crash on startup when resizing before active_win"), [bdo#935813](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=935813))
+
+---
+
 ## 1.2.1
 {:#v1-2-1 }
 
