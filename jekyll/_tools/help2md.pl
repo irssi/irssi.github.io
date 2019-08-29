@@ -146,7 +146,7 @@ sub main {
     system("cd \Q$dir\E; perl utils/syntax.pl");
 
     chomp (my @help_files = `find \Q$dir\E/docs/help -type f`);
-    @help_files = grep !/[~#]$/, grep !/Makefile/, @help_files;
+    @help_files = grep !/[~#]$/, grep !/Makefile/, grep !/meson\.build/, @help_files;
 
     s{^\Q$dir\E/docs/help(?:/|$)}{} for @help_files;
 
