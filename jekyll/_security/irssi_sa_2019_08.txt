@@ -1,0 +1,27 @@
+---
+name: IRSSI-SA-2019-08
+release_date: 2019-08-29
+bugs:
+  -
+    cve: CVE-2019-15717
+    cwe: CWE-416
+    exploitable_by: server
+    affected_versions:
+      from: 1.2.0
+      to: 1.2.1
+    fixed_version:
+      - 1.2.2
+    description: Use after free when receiving duplicate CAP
+    credit: 'Joseph Bisch'
+impact: >
+  May affect the stability of Irssi.
+recommended_action: >
+  Upgrade to Irssi 1.2.2. We've published maintenance releases,
+  without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+mitigating_info: >
+  Most servers do not send duplicate CAP
+---
