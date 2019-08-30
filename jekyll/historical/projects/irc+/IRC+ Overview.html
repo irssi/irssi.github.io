@@ -1,0 +1,192 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>IRC+ Overview</title>
+</head>
+<body>
+<h1>IRC+ Overview</h1>
+
+<p>NOTE: I use the name IRC+ for this thing for now, it really should be
+changed since there already exists ircplus.com, also
+<a href="http://web.archive.org/web/20030529104315/http://www.holoweb.net/~liam/irc++/">irc++</a> is taken. Other
+somewhat similiar projects include
+<a href="http://web.archive.org/web/20030529104315/http://www.jabber.org/">Jabber</a>
+and <a href="http://web.archive.org/web/20030529104315/http://www.wwcn.org/">WWCN</a>.</p>
+
+<p>The biggest reason I want this: I hate IRC networks, I just want to talk
+to people, not figure out how to connect to yet another network.</p>
+
+<h2>Basic Structure</h2>
+
+<img src="IRC+%20Overview_files/irc.html">
+
+<p>IRC+ servers are very much like SMTP servers. Everyone can run them, and
+they connect directly to each other to send messages. Usually servers allow
+only trusted clients (user/pass login, from specific IPs, ..) but there
+could be several public servers as well. Users are identified by their
+user@server address, very much like an email address.</p>
+
+<p>Clients use normal IRC protocol to connect to IRC+ servers. Clients
+never need more than one connection to the server, but servers may connect
+to multiple other servers.</p>
+
+<ul>
+<li>john and david are joined to channels in ircnet and efnet</li>
+<li>jane is joined to channels in ircnet</li>
+</ul>
+
+<p>Since IRC+ servers aren't directly connected to ircnet or efnet servers,
+they need to create a new regular client connection for each user. So,
+other people in ircnet would see john and jane as <em>john@irc+.isp.fi</em>
+and <em>jane@irc+.isp.fi</em>, david would be seen as
+<em>david@irc.example.com</em> - their nicks would default to same as user
+but could be changed.</p>
+
+<p>If john sends a private message to jane@irc+.isp.fi, it's sent directly
+to her. If john sends a private message to david@irc+.example.com,
+irc+.isp.fi connects to irc+.example.com, and sends the message to david.
+The connection is left open for further communication until it's been idle
+for a few minutes.</p>
+
+<p>Users in ircnet and efnet are seen to you as <em>nick@ircnet</em> or
+<em>nick@efnet</em>.</p>
+
+<h2>Channels</h2>
+
+<img src="IRC+%20Overview_files/ircchannel.html">
+
+<p>Channels are located in one or more servers. Usually each channel
+operator's server would be set as "channel server". Other users (or their
+servers really) would then connect to any one of the channel servers to get
+on the channel. Servers should have multiple connections between each
+others (especially channel servers) so netsplits wouldn't happen so easily
+(see if <a href="http://web.archive.org/web/20030529104315/http://achurch.org/irc3/">IRC3 specs</a> could be
+used).</p>
+
+<p>So according to the pic above they'd join to
+<em>#irssi@irc.irssi.org</em> or <em>#irssi@irc2.irssi.org</em>. Depending
+on the channel settings, <em>#irssi@irc.private.org</em> could work as
+well. Since john is a channel operator there, the default behaviour would
+be to set irc.private.org as channel server for the time that john is an
+operator there. But in our example, *.irssi.org would be the only allowed
+channel servers.</p>
+
+<p>All channel messages go to the channel servers, which then send the
+messages to everyone else. Channel servers handle all the kicking etc. so
+operators should trust them enough not to do any abusing. Anyway, if they
+do notice that, they can just stop using that server and all will be well
+again. If for some reason all channel servers go down, the other servers
+may try to connect to each others and keep the channel together until they
+can connect back to the real channel servers.</p>
+
+<p>We probably also need to use digital signatures with all op-related
+commands and each server would verify it before executing it. And in
+general, servers should trust each other as little as possible.</p>
+
+<h2>Router Network (optional)</h2>
+
+<img src="IRC+%20Overview_files/ircrouters.html">
+
+<p>They're very much like current IRC networks, except only servers connect
+to them. <strong>Usage of them isn't required in any way</strong>, and
+there may possibly be multiple router networks. Of course, the official
+router network should be made good enough so there wouldn't be much point
+in having alternative networks.</p>
+
+<p>They exist for two purposes: make it easy to find information (channels
+especially) and route the messages between servers when they can't connect
+to each other directly (firewalls, temporary network breakage or just bad
+connectivity).</p>
+
+<h3>Locating Channels</h3>
+
+<p>This is maybe their most important role. It's too difficult for normal
+people to figure out which servers host the channel they want to join. The
+channel operators may register their channel here, and advertise the
+addresses for the channel servers. This way users can just <code>/JOIN
+#channel</code> and their server would ask location of #channel from the
+router servers, and connect there. If there's multiple registered
+#channels, they could probably show a list of which the user can pick which
+one to join. They'd also give the public keys for the channels, so servers
+could be sure that they're joining to a valid server.</p>
+
+<h3>Locating People?</h3>
+
+<p>Maybe some people want to advertise themselves to others so they can
+receive spam? :)</p>
+
+<h3>Routing</h3>
+
+<p>Router servers should have good network connections, so if a connection
+breaks between two ISPs, other routes could still be used. Normal servers
+may choose to communicate between each others either by directly, or
+telling the router servers to send the message. By default, direct
+connection would be tried first and router servers as a fallback. Channel
+servers should be connected to each others both ways.</p>
+
+<p>While it's not recommended to run servers inside NAT or firewall, router
+servers would anyway allow sending messages to them whenever they're
+connected to router network. This would be especially useful if you can't
+find a good IRC+ server and otherwise couldn't run your own because your
+ISP has firewalled/NATed you.</p>
+
+<h3>..and we're back with the same old problems of IRC networks?</h3>
+
+<p>Not really. Most annoying problem with different IRC networks is that
+you need to connect to each network separately and that can be difficult
+especially if you can't find a good server. It's also more difficult to
+manage with many clients, and in general it's just not worth the trouble to
+be connected in more than a few networks. With IRC+, it doesn't really
+matter which router network you're connected to, if any. You can
+<strong>always</strong> do <code>/MSG cras@irssi.org hello</code> and it
+goes to me, or join to channels with <code>/JOIN
+#irssi@irssi.org</code>. Router network only makes it possible for
+<code>/JOIN #irssi</code> to work.</p>
+
+<h3>Security</h3>
+
+<p>Router networks could also give the public keys of servers so other
+servers can verify that no-one's doing man-in-the-middle attack. Also in
+wishlist for future: distribute the public keys and irc+ servers' IP
+addresses with DNS, similiar to MX fields.</p>
+
+<h2>DoSsing</h2>
+
+<p>I don't think DoS will be that much of a problem with IRC+. For killing
+a channel, you'd need DoS each channel operator's server down, and even
+then the other servers in channels might just connect to each other and
+continue chatting without the chanops.</p>
+
+<p>Servers of users in channel could also be hidden, so people couldn't be
+DoSsed except by channel operators (unless of course they go and tell their
+address). This however would prevent the possibility of non-channel servers
+to connect to each other .. or maybe they could connect to each other
+through the router network then? That would require servers to announce
+which channels they've joined to the routers.</p>
+
+<h2>Contacting</h2>
+
+<p><a href="http://web.archive.org/web/20030529104315/mailto:tss@iki.fi">Timo Sirainen</a>,
+<a href="http://web.archive.org/web/20030529104315/http://irssi.org/?page=projects">main project page</a></p>
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 10:43:15 May 29, 2003 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:32:58 Jun 18, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 67.362 (3)
+  esindex: 0.007
+  captures_list: 105.459
+  CDXLines.iter: 12.031 (3)
+  PetaboxLoader3.datanode: 122.6 (4)
+  exclusion.robots: 0.269
+  exclusion.robots.policy: 0.258
+  RedisCDXSource: 22.667
+  PetaboxLoader3.resolve: 112.913
+  load_resource: 181.941
+-->

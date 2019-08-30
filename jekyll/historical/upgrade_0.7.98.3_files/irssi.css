@@ -1,0 +1,237 @@
+body {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: x-large;
+  padding: 10px;
+  margin: 0px;
+}
+
+img {
+  border-style: none;
+}
+
+.small {
+  font-size: small;
+}
+
+.tiny {
+  font-size: 10px;
+}
+
+span.dlsource {
+  font-size: 130%;
+  font-weight: bold;
+}
+
+div.top {
+  background: black url("/web/20011029123422im_/http://irssi.org/gfx/shade.png");
+  background-repeat: repeat-x;
+  background-position: 100% 100%;
+  color: white;
+  padding: 10px 20px;
+  height: 60px;
+}
+
+div.top a {
+  color: white;
+}
+
+.banner {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+div.main {
+  margin-left: 10.5em;
+  padding: 0px 10px;
+}
+
+div.main h2 {
+  background: #006699;
+  color: white;
+
+  margin-top: 0px;
+  margin-right: 7.5em;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+
+  padding-left: 0.3em;
+}
+
+div.main h3 {
+  font-size: large;
+  text-decoration: underline;
+}
+
+div.info {
+  text-align: center;
+  font-size: x-small;
+}
+
+div.cmd {
+  text-align: left;
+  font-weight: bold;
+  margin-left: 3em;
+}
+
+a {
+  /*background: white;*/
+  color: #003767;
+}
+
+/* ---- side bars ---- */
+
+div.leftbar {
+  position: absolute;
+  width: 10em;
+  left: 0.5em;
+}
+
+div.rightbar {
+  float: right;
+  width: 10em;
+  margin-left: 2em;
+  margin-right: 0.5em;
+}
+
+div.box {
+  background: #eeeeee;
+  color: black;
+
+  border-style: none solid solid solid;
+  border-width: 1px;
+
+  margin-bottom: 10px;
+}
+
+div.box h3 {
+  background: #006699;
+  color: white;
+  font-size: medium;
+
+  border-style: solid none;
+  border-width: 1px;
+  border-color: black;
+
+  padding: 3px 5px;
+  margin: 0px;
+}
+
+div.box p {
+  margin: 2px 5px;
+}
+
+h3 a {
+  color: black;
+}
+
+div.box a {
+  background: inherit;
+  color: black;
+  /*color: #006699;
+  text-decoration: none;*/
+}
+
+div.box ul {
+  padding: 0px 0px;
+  margin-top: 2px;
+  margin-left: 1.4em;
+}
+
+div.box ul {
+  margin-bottom: 10px;
+}
+
+/* ---- topic box ---- */
+
+div.itemtitle {
+  background: #eeeeee;
+  color: black;
+  width: 300px;
+
+  font-size: medium;
+  font-weight: bold;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+
+  padding: 3px 5px;
+  margin: 0px;
+}
+
+div.itemtitle a {
+  color: black;
+}
+
+div.item h3 {
+  font-size: medium;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.date {
+  font-size: x-small;
+  font-weight: normal;
+}
+
+/* --- changelog --- */
+div.entry {
+  /*background: #eeeeee;*/
+  margin: 10px;
+  margin-right: 11em;
+  padding-bottom: 0.5em;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: black;
+}
+
+span.date {
+  font-weight: bold;
+}
+
+span.minordate {
+  font-size: 80%;
+}
+
+div.file {
+  font-size: 80%;
+  margin-left: 3em;
+}
+
+div.msg {
+  margin-left: 5em;
+  font-weight: bold;
+}
+
+/*
+     FILE ARCHIVED ON 12:34:22 Oct 29, 2001 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:20:07 Jun 19, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 23.705 (3)
+  esindex: 0.009
+  captures_list: 40.58
+  CDXLines.iter: 11.605 (3)
+  PetaboxLoader3.datanode: 38.274 (4)
+  exclusion.robots: 0.264
+  exclusion.robots.policy: 0.25
+  RedisCDXSource: 1.998
+  PetaboxLoader3.resolve: 22.349
+  load_resource: 79.499
+*/

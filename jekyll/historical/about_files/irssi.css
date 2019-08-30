@@ -1,0 +1,230 @@
+body {
+  background: white;
+  color: black;
+
+  text-align: justify;
+  font-family: sans-serif;
+
+  width: 56em;
+  margin: 0px 0px 20px 0px;
+  padding: 0px;
+}
+
+pre {
+  text-align: left;
+}
+
+h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+h2 {
+  font-size: 130%;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  border-style: none;
+}
+
+.small {
+  font-size: 12px;
+}
+
+dt {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
+/* ********* topbar ********* */
+div.top {
+  margin-top: 5px;
+  margin-left: 2em;
+  margin-bottom: 10px;
+}
+
+table.toplinks {
+  font-size: 110%;
+  font-weight: bold;
+  line-height: 110%;
+  vertical-align: center;
+}
+
+table.toplinks td:first-child {
+  padding: 0px;
+}
+
+table.toplinks td {
+  vertical-align: top;
+  padding: 50px 0px 0px 1em;
+}
+
+table.toplinks a {
+  text-decoration: none;
+}
+
+/* ************ main *********** */
+
+div.main {
+  margin: 0px 2em;
+}
+
+div.main h2 {
+  background: #8F8877;
+  color: white;
+
+  margin-top: 0px;
+
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+
+  padding-left: 0.3em;
+}
+
+div.main h3 {
+  font-size: 130%;
+  text-decoration: underline;
+}
+
+div.info {
+  text-align: center;
+  font-size: x-small;
+}
+
+div.cmd {
+  text-align: left;
+  font-weight: bold;
+  margin-left: 3em;
+}
+
+/* those <a id="xxx"> things */
+h3 a {
+  color: black;
+  background: inherit;
+}
+
+a {
+  color: #564C32;
+  background: inherit;
+  text-decoration: underline;
+}
+
+/* ******** topic boxes ******** */
+
+div.item {
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 0px;
+}
+
+div.firstitem {
+  border-style: none none solid none;
+  border-width: 2px;
+  border-color: black;
+}
+
+div.firstitem div.itemtitle {
+  background: white;
+}
+
+div.itemtitle {
+  position: relative;
+
+  background: #E6E4DF;
+  /*border-style: none none solid none;
+  border-width: 1px;
+  border-color: black;*/
+  padding: 5px;
+}
+
+div.itemtitle span.title {
+  font-weight: bold;
+}
+
+div.itemtitle span.date {
+  /*position: relative;
+  right: 1em;
+  bottom: 6px;*/
+
+  font-size: 10px;
+  margin-left: 1em;
+}
+
+div.firstitem p {
+  padding: 0px 1em;
+  margin: 0.5em 0px 1em 0px;
+}
+
+div.item p {
+  padding: 0px 1em;
+}
+
+/* ********* changelog ********* */
+div.entry {
+  /*background: #eeeeee;*/
+  margin: 10px;
+  margin-right: 11em;
+  padding-bottom: 0.5em;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: black;
+}
+
+div.entry span.date {
+  font-weight: bold;
+}
+
+div.entry span.minordate {
+  font-size: 80%;
+}
+
+div.entry div.file {
+  font-size: 80%;
+  margin-left: 3em;
+}
+
+div.entry div.msg {
+  margin-left: 5em;
+  font-weight: bold;
+}
+
+/* ********* themes ******** */
+
+table.themes td {
+  text-align: center;
+}
+
+table.themes p {
+  margin: 0px;
+  padding: 0px;
+}
+
+code, kbd {
+     text-align: left;
+     white-space: nowrap;
+}
+
+/*
+     FILE ARCHIVED ON 19:12:20 Oct 16, 2005 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:28:08 Jun 19, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 116.041 (3)
+  esindex: 0.014
+  captures_list: 152.872
+  CDXLines.iter: 17.153 (3)
+  PetaboxLoader3.datanode: 124.744 (4)
+  exclusion.robots: 0.291
+  exclusion.robots.policy: 0.272
+  RedisCDXSource: 14.052
+  PetaboxLoader3.resolve: 35.923
+  load_resource: 61.98
+*/

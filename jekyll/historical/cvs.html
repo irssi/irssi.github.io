@@ -1,0 +1,205 @@
+<!--?xml version="1.0" encoding="iso-8859-1"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>irssi</title>
+  <link href="cvs_files/irssi.css" rel="stylesheet" type="text/css">
+  <meta name="description" content="irssi IRC-client home page">
+  <meta name="keywords" content="irssi, irc, irc client, linux, unix">
+</head>
+
+<body>
+<div class="top">
+  <table class="toplinks">
+    <tbody><tr>
+      <td>
+        <h1><a href="http://web.archive.org/web/20050308143346/http://irssi.org/">
+          <img src="../images/historical/irssilogo.jpg" alt="irssi.org">
+        </a></h1>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=news">News</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=download">Download</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=docs">Documentation</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=support">Support</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=about">About</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://wiki.irssi.org/">Wiki</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=projects">Projects</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=changelog-cvs">CVS&nbsp;Changes</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/scripts/">Scripts</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=themes">Themes</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=plugins">Plugins</a><br>
+        <a href="http://web.archive.org/web/20050308143346/http://bugs.irssi.org/">Bugs</a><br>
+      </td>
+    </tr>
+  </tbody></table>
+  <div class="small">
+    <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=mirrors">Mirrors:</a>
+    <strong>us</strong>
+<a href="http://web.archive.org/web/20050308143346/http://fi.irssi.org/">fi</a>
+<a href="http://web.archive.org/web/20050308143346/http://hu.irssi.org/">hu</a>
+<a href="http://web.archive.org/web/20050308143346/http://de.irssi.org/">de</a>
+<a href="http://web.archive.org/web/20050308143346/http://uk.irssi.org/">uk</a>
+<a href="http://web.archive.org/web/20050308143346/http://ie.irssi.org/">ie</a>
+<a href="http://web.archive.org/web/20050308143346/http://lt.irssi.org/">lt</a>
+<a href="http://web.archive.org/web/20050308143346/http://be.irssi.org/">be</a>
+<a href="http://web.archive.org/web/20050308143346/http://dk.irssi.org/">dk</a>
+<a href="http://web.archive.org/web/20050308143346/http://ca.irssi.org/">ca</a>
+<a href="http://web.archive.org/web/20050308143346/http://lv.irssi.org/">lv</a>
+ - USA mirror #1
+  </div>
+</div>
+
+<div class="main">
+  <h2>CVS</h2>
+
+<h3>Needed software</h3>
+
+  <p>To build irssi from CVS, you need to have <strong>autoconf</strong>,
+  <strong>automake</strong> and <strong>libtool</strong> installed. These
+  come with most distributions. You also need either <strong>GLib 1.2 or
+  GLib 2.0</strong>.</p>
+
+<h3>Getting it</h3>
+
+  <p>First login to cvs, you only need to do this the first time you check
+  out the sources:</p>
+
+  <div class="cmd">
+  cvs -d:pserver:anonymous@cvs.irssi.org:/home/cvs login
+  </div>
+
+  <p>Just hit enter as the password.</p>
+
+  <p>And then check out the sources:</p>
+
+  <div class="cmd">
+  cvs -z3 -d:pserver:anonymous@cvs.irssi.org:/home/cvs co -P irssi
+  </div>
+
+  <p><strong>NOTE:</strong> Because of some bug in CVS 1.11.2 server, if
+  you connect with older clients and use -z option, it hangs at the end.
+  Everything is transferred, but it just gets stuck there. So your options
+  are: a) ignore and just hit Ctrl-C, b) upgrade to CVS 1.11.2, c) don't use
+  -z option, d) try to get CVS authors to fix it - this is not a new
+  problem.</p>
+
+  <p>To update sources later, use this command in irssi directory:</p>
+
+  <div class="cmd">
+  cvs -z3 update -dP
+  </div>
+
+  <p>and to compile it, run <strong>./autogen.sh</strong></p>
+
+<h3><a id="xirssi">xirssi</a></h3>
+
+  <p>Just like above with irssi, except checkout xirssi instead:</p>
+
+  <div class="cmd">
+  cvs -d:pserver:anonymous@cvs.irssi.org:/home/cvs login<br>
+  cvs -z3 -d:pserver:anonymous@cvs.irssi.org:/home/cvs co -P xirssi
+  </div>
+
+  <p>You need to have irssi compiled and configured with
+  <strong>--with-glib2</strong> option. xirssi also needs to find irssi's
+  sources, by default it looks into ../ and ../irssi/ directories, but if
+  it's not there, you need to give <strong>--with-irssi=&lt;path&gt;</strong>
+  option to configure.</p>
+
+<h3><a id="mirrors">CVS mirrors</a></h3>
+
+  <ul>
+    <li>Poland: <strong>:pserver:anonymous@cvs.pl.irssi.org:/cvs</strong> - updated once in hour</li>
+  </ul>
+
+  <p>Read the <a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=mirrors">mirroring page</a> if you wish to
+  mirror yourself</p>
+
+<h3><a id="troubleshooting">Troubleshooting</a></h3>
+
+  <p>Make sure you have all the required software and new enough
+  versions of them. These are known to work:</p>
+
+  <ul>
+  <li>autoconf 2.13</li>
+  <li>automake 1.4</li>
+  <li>libtool 1.3.5</li>
+  <li>GNU make 3.77 - non-GNU makes won't work</li>
+  <li>GLib 1.2.6</li>
+  </ul>
+
+  <p>If you get some errors about AC_CHECK_CURSES or AM_CONFIG_HEADER
+  or something, you're missing some of the .m4 files. They should exist
+  in /usr/share/aclocal/ directory, if you have them somewhere else,
+  specify them with <strong>export ACLOCAL_FLAGS='-I /dir -I
+  /dir2'</strong> before running autogen.sh.  These files are
+  required:</p>
+
+  <ul>
+  <li>libtool.m4 (in libtool package)</li>
+  <li>header.m4 (in automake package - there's lots of others too, but at 
+  least this one)</li>
+  </ul>
+
+<h3><a id="nightly">Nightly development snaphots</a></h3>
+
+  <ul>
+    <li><a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/?page=changelog-cvs">ChangeLog</a></li>
+    <li><a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/files/snapshots/">Source tarballs</a></li>
+    <li><a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/files/snapshots/slackware/">Slackware binary</a></li>
+    <li>Debian testing or unstable: <kbd>apt-get install irssi-snapshot</kbd>
+        and <kbd>apt-get install xirssi</kbd></li>
+    <li><a href="http://web.archive.org/web/20050308143346/http://www.apt-get.org/search.php?query=irssi&amp;submit=Submit+Query&amp;arch%5B%5D=i386&amp;arch%5B%5D=alpha&amp;arch%5B%5D=arm&amp;arch%5B%5D=hppa&amp;arch%5B%5D=hurd-i386&amp;arch%5B%5D=ia64&amp;arch%5B%5D=m68k&amp;arch%5B%5D=mipsel&amp;arch%5B%5D=mips&amp;arch%5B%5D=powerpc&amp;arch%5B%5D=s390&amp;arch%5B%5D=sh&amp;arch%5B%5D=sparc&amp;arch%5B%5D=all">Debian unofficial packages</a>,
+        <a href="http://web.archive.org/web/20050308143346/http://irssi.qvr.info/">qvr's unstable packages</a>.</li>
+    <li>apt-get for RedHat 9:
+    <pre>rpm <a href="http://web.archive.org/web/20050308143346/http://ninja.no/apt/9/i386/RPMS.irssi/">http://ninja.no/apt</a> 9/i386 irssi
+rpm-src <a href="http://web.archive.org/web/20050308143346/http://ninja.no/apt/9/SRPMS.irssi/">http://ninja.no/apt</a> 9/i386 irssi
+    </pre></li>
+    <li>apt-get for RedHat 8.0:
+    <pre>rpm <a href="http://web.archive.org/web/20050308143346/http://ninja.no/apt/8.0/i386/RPMS.irssi/">http://ninja.no/apt</a> 8.0/i386 irssi
+rpm-src <a href="http://web.archive.org/web/20050308143346/http://ninja.no/apt/8.0/SRPMS.irssi/">http://ninja.no/apt</a> 8.0/i386 irssi
+    </pre></li>
+    <li><a href="http://web.archive.org/web/20050308143346/http://www.irssi.org/files/snapshots/cygwin/">Cygwin binary</a> (non-existent
+        at the moment)</li>
+    <li>Gentoo users can get it via <strong>emerge irssi-cvs</strong></li>
+  </ul>
+</div>
+
+<div class="info">
+  Comments to <a href="http://web.archive.org/web/20050308143346/mailto:webmaster@irssi.org">webmaster@irssi.org</a><br>
+  Pure <a href="http://web.archive.org/web/20050308143346/http://validator.w3.org/check/referer">XHTML</a><br>
+  <br>
+  using
+  <a href="http://web.archive.org/web/20050308143346/http://www.apache.org/">apache</a>,
+  <a href="http://web.archive.org/web/20050308143346/http://www.php.net/">php4</a>,
+  <a href="http://web.archive.org/web/20050308143346/http://cr.yp.to/djbdns.html">djbdns</a>,
+  <a href="http://web.archive.org/web/20050308143346/http://www.postfix.org/">postfix</a>
+</div>
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 14:33:46 Mar 08, 2005 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:21:17 Jun 19, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 73.778 (3)
+  esindex: 0.009
+  captures_list: 93.132
+  CDXLines.iter: 12.622 (3)
+  PetaboxLoader3.datanode: 105.497 (4)
+  exclusion.robots: 0.436
+  exclusion.robots.policy: 0.422
+  RedisCDXSource: 2.19
+  PetaboxLoader3.resolve: 145.773
+  load_resource: 458.199
+-->

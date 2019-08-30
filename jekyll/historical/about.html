@@ -1,0 +1,261 @@
+<!--?xml version="1.0" encoding="iso-8859-1"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <title>irssi</title>
+  <link href="about_files/irssi.css" rel="stylesheet" type="text/css">
+  <meta name="description" content="irssi IRC-client home page">
+  <meta name="keywords" content="irssi, irc, irc client, linux, unix">
+</head>
+
+<body>
+<div class="top">
+  <table class="toplinks">
+    <tbody><tr>
+      <td>
+        <h1><a href="http://web.archive.org/web/20051016080925/http://irssi.org/">
+          <img src="../images/historical/irssilogo.jpg" alt="irssi.org">
+        </a></h1>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=news">News</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=download">Download</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=docs">Documentation</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=support">Support</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=about">About</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://wiki.irssi.org/">Wiki</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=projects">Projects</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=changelog-cvs">CVS&nbsp;Changes</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/scripts/">Scripts</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=themes">Themes</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=plugins">Plugins</a><br>
+        <a href="http://web.archive.org/web/20051016080925/http://bugs.irssi.org/">Bugs</a><br>
+      </td>
+    </tr>
+  </tbody></table>
+  <div class="small">
+    <a href="http://web.archive.org/web/20051016080925/http://irssi.org/?page=mirrors">Mirrors:</a>
+    <strong>us</strong>
+<a href="http://web.archive.org/web/20051016080925/http://fi.irssi.org/">fi</a>
+<a href="http://web.archive.org/web/20051016080925/http://hu.irssi.org/">hu</a>
+<a href="http://web.archive.org/web/20051016080925/http://de.irssi.org/">de</a>
+<a href="http://web.archive.org/web/20051016080925/http://uk.irssi.org/">uk</a>
+<a href="http://web.archive.org/web/20051016080925/http://ie.irssi.org/">ie</a>
+<a href="http://web.archive.org/web/20051016080925/http://lt.irssi.org/">lt</a>
+<a href="http://web.archive.org/web/20051016080925/http://be.irssi.org/">be</a>
+<a href="http://web.archive.org/web/20051016080925/http://dk.irssi.org/">dk</a>
+<a href="http://web.archive.org/web/20051016080925/http://ca.irssi.org/">ca</a>
+<a href="http://web.archive.org/web/20051016080925/http://lv.irssi.org/">lv</a>
+ - USA mirror #1
+  </div>
+</div>
+
+<div class="main">
+  <h2>About Irssi</h2>
+
+<h3>Introduction</h3>
+
+  <p>Irssi is a modular IRC client for UNIX that currently has only text
+  mode user interface, but 80-90% of the code isn't text mode specific, so
+  other UIs could be created pretty easily. Also, Irssi isn't really even
+  IRC specific anymore, there's already working
+  <a href="http://web.archive.org/web/20051016080925/http://www.silcnet.org/">SILC</a> and
+  <a href="http://web.archive.org/web/20051016080925/http://www.icb.net/">ICB</a> modules available. Support for other
+  protocols like ICQ and Jabber could be created some day too.</p>
+
+<h3>Where's the GTK+/GNOME version?</h3>
+
+  <p>This has been asked from me <strong>many</strong> times. There
+  <strong>used to be</strong> GTK+/GNOME user interface, but I stopped
+  updating it when I was rewriting lots of code. Main reasons for it were
+  that lots of people wanted a better text mode UI, but only a few people
+  ever gave comments about the GUI version. Though looking at the
+  download counters when 0.7.90 was released (first non-GUI version), the
+  counter dropped from (in the next 2 days after release) ~1000 to
+  ~100.</p>
+
+  <p>The next often asked question is: Am I going to fix the GUI code to
+  work again? The old code: not likely, writing a new GUI: yes, I think
+  so :) I have a few new great ideas for it already. It isn't fun to make
+  something old to work again, especially if it wouldn't be clearly
+  better than competing products ;) When the next release of GTK+/GNOME
+  Irssi is released, I intend it to be clearly the best GUI client there
+  is.</p>
+
+  <p>And what about QT/KDE port, or windows port? Well, I'm probably not
+  going to write them at least soon, you go ahead and start them :)
+  Windows port might be possible to do with GTK's Win32 port. Or Qt's of
+  course.</p>
+
+<h3>But there's already ircII and others..</h3>
+
+  <p>What separates Irssi from ircII, BitchX, epic and the rest text
+  clients? The code. I'm not using the crappy ugly kludgy code of ircII.
+  Non-developers don't probably care that much about it, but that means a
+  few good things anyway:</p>
+
+  <ul>
+
+  <li><strong>Security</strong> - I'm quite confident that there's no
+  security bugs in Irssi. No buffer overflows, no format bugs (%s%s%s),
+  no remote exploits, nothing.</li>
+
+  <li><strong>Modularity</strong> - Irssi is highly extensible, you could
+  change almost anything in Irssi with a runtime loadable module. And you
+  can probably change anything you actually need to change with a Perl
+  script.</li>
+
+  </ul>
+
+<h3>Features</h3>
+
+  <p>So what's so great about Irssi? Here's a list of some features I can
+  think of currently:</p>
+
+  <ul>
+
+  <li><strong>Optional automation</strong> - There's lots of things Irssi
+  does for you automatically that some people like and others just hate.
+  Things like: nick completion, creating new window for newly joined
+  channel, creating queries when msgs/notices are received or when you
+  send a msg, closing queries when it's been idle for some time,
+  etc.</li>
+
+  <li><strong>Multiserver friendly</strong> - I think Irssi has clearly
+  the best support for handling multiple server connections. You can have
+  as many as you want in as many ircnets as you want. Having several
+  connections in one server works too, for example when you hit the
+  (ircnet's) 10 channels/connection limit you can just create another
+  connection and you hardly notice it. If connection to server is lost,
+  Irssi tries to connect back until it's successful. Also channels you
+  were joined before disconnection are restored, even if they're
+  "temporarily unavailable" because of netsplits, Irssi keeps
+  rejoining back to them. Also worth noticing - there's not that stupid
+  "server is bound to this window, if this window gets closed the
+  connection closes" thing that ircII based clients have.</li>
+
+  <li><strong>Channel automation</strong> - You can specify what channels
+  to join to immediately after connected to some server or IRC network.
+  After joined to channel, Irssi can automatically request ops for you
+  (or do anything, actually) from channel's bots.</li>
+
+  <li><strong>Window content saving</strong> - Say /LAYOUT SAVE when you've
+  put all the channels and queries to their <strong>correct place</strong>,
+  and after restarting Irssi, the channels will be joined back into windows
+  where they were saved.</li>
+
+  <li><strong>Tab completing anything</strong> - You can complete lots of
+  things with tab: nicks, commands, command -options, file names,
+  settings, text format names, channels and server names. There's also an
+  excellent /msg completion that works transparently with multiple IRC
+  networks. Completing channel nicks is also pretty intelligent, it first
+  goes through the people who have talked to you recently, then the
+  people who have talked to anyone recently and only then it fallbacks to
+  rest of the nicks. You can also complete a set of words you've
+  specified, for example homepage&lt;tab&gt; changes it to your actual
+  home page URL.</li>
+
+  <li><strong>Excellent logging</strong> - You can log any way you want
+  and as easily or hard as you want. With autologging Irssi logs
+  everything to specified directory, one file per channel/nick. ircII
+  style /WINDOW LOG ON is also supported. There's also the "hard
+  way" of logging - /LOG command which lets you specify exactly what
+  you wish to log and where. Log rotating is supported with all the
+  different logging methods, you can specify how often you want it to
+  rotate and what kind of time stamp to use.</li>
+
+  <li><strong>Excellent ignoring</strong> - You can most probably ignore
+  anything any way you want. Nick masks, words, regular expressions. You
+  can add exceptions to ignores. You can ignore other people's replies in
+  channels to nicks you have ignored. You can also specify that the
+  specific ignores work only in specific channel(s).</li>
+
+  <li><strong>Lastlog and scrollback handling</strong> - /LASTLOG command
+  has some new features: -new option checks only lines that came since
+  you last did /LASTLOG command, -away option checks new lines since you
+  last went away. Regular expression matches work also, of course. Going
+  to some wanted place at scrollback has always been hard with non-GUI
+  clients. A search command that jumps around in scrollback in GUI-style
+  is still missing from Irssi, but there's something that's almost as
+  good as it. /LASTLOG always shows timestamps when the line was printed,
+  even if you didn't have timestamps on. Now doing /SB GOTO
+  &lt;timestamp&gt; jumps directly to the position in scrollback you
+  wanted. Great feature when you want to browse a bit of the discussion
+  what happened when someone said your name (as seen in awaylog) or topic
+  was changed (/last -topics)</li>
+
+  </ul>
+
+<h3>Source code</h3>
+
+  <p>IMHO, irssi's source code is (mostly) excellent :) Because of it's
+  modular design and signals it uses to communicate between (and inside)
+  the modules, it's extremely easy to add new features and change
+  existing, even in run time by loading modules.</p>
+
+<h3>Contributors</h3>
+
+  <ul>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:cras@irssi.org">Timo Sirainen</a> -
+  me. I've written most of the code.</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:jtraub@dragoncat.net">JT Traub</a> -
+  maintains mailing lists.</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:david@davidpashley.com">David Pashley</a> -
+  builds Debian packages.</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:mutru@nallukka.net">Otto Hilska</a> -
+  maintains NetBSD package.</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:carldrinkwater@hotmail.com">Carl Drinkwater</a> -
+  registered irssi.org for me</li>
+  <li><a href="http://web.archive.org/web/20051016080925/http://www.pp.htv.fi/jfiner/">Jani Finér</a> -
+  made the irssi logo</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:neta@irssi.org">Francesco Restuccia</a> - Italian translation</li>
+  </ul>
+
+  <p>Nightly CVS snapshot builders</p>
+
+  <ul>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:shasta@irc.pl">Jakub Jankowski</a> - Slackware packages</li>
+  <li><a href="http://web.archive.org/web/20051016080925/mailto:peder@irssi.org">Peder Stray</a> - RedHat packages</li>
+  </ul>
+
+  <p>And then there's the people who provided
+  <a href="http://web.archive.org/web/20051016080925/http://irssi.org/index.php?page=mirrors">mirrors</a></p>
+</div>
+
+<div class="info">
+  Comments to <a href="http://web.archive.org/web/20051016080925/mailto:webmaster@irssi.org">webmaster@irssi.org</a><br>
+  Pure <a href="http://web.archive.org/web/20051016080925/http://validator.w3.org/check/referer">XHTML</a><br>
+  <br>
+  using
+  <a href="http://web.archive.org/web/20051016080925/http://www.apache.org/">apache</a>,
+  <a href="http://web.archive.org/web/20051016080925/http://www.php.net/">php4</a>,
+  <a href="http://web.archive.org/web/20051016080925/http://cr.yp.to/djbdns.html">djbdns</a>,
+  <a href="http://web.archive.org/web/20051016080925/http://www.postfix.org/">postfix</a>
+</div>
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 08:09:25 Oct 16, 2005 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:28:11 Jun 19, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 61.352 (3)
+  esindex: 0.014
+  captures_list: 86.135
+  CDXLines.iter: 15.153 (3)
+  PetaboxLoader3.datanode: 207.201 (4)
+  exclusion.robots: 0.465
+  exclusion.robots.policy: 0.446
+  RedisCDXSource: 3.558
+  PetaboxLoader3.resolve: 142.099
+  load_resource: 290.576
+-->

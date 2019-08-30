@@ -1,0 +1,190 @@
+<!--?xml version="1.0" encoding="iso-8859-1"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic10.dtd">
+<html xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>irssi</title>
+  <link href="security_files/irssi.css" rel="stylesheet" type="text/css">
+  <meta name="description" content="irssi IRC-client home page">
+  <meta name="keywords" content="irssi, irc, irc client, linux, unix">
+</head>
+
+<body>
+<div class="top">
+  <table class="toplinks">
+    <tbody><tr>
+      <td>
+        <h1><a href="http://web.archive.org/web/20031214171859/http://irssi.org/">
+          <img src="../images/historical/irssilogo.jpg" alt="irssi.org">
+        </a></h1>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=news">News</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=download">Download</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=docs">Documentation</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=support">Support</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=about">About</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=mirrors">Mirroring</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=projects">Projects</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=changelog-cvs">CVS&nbsp;Changes</a><br>
+      </td>
+      <td>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/scripts/">Scripts</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=themes">Themes</a><br>
+        <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=plugins">Plugins</a><br>
+      </td>
+    </tr>
+  </tbody></table>
+  <div class="small">
+    <a href="http://web.archive.org/web/20031214171859/http://irssi.org/?page=mirrors">Mirrors:</a>
+    <a href="http://web.archive.org/web/20031214171859/http://no.irssi.org/">no</a>
+<a href="http://web.archive.org/web/20031214171859/http://us.irssi.org/">us</a>
+<strong>fi</strong>
+<a href="http://web.archive.org/web/20031214171859/http://de.irssi.org/">de</a>
+<a href="http://web.archive.org/web/20031214171859/http://uk.irssi.org/">uk</a>
+<a href="http://web.archive.org/web/20031214171859/http://nl.irssi.org/">nl</a>
+<a href="http://web.archive.org/web/20031214171859/http://fr.irssi.org/">fr</a>
+<a href="http://web.archive.org/web/20031214171859/http://lv.irssi.org/">lv</a>
+<a href="http://web.archive.org/web/20031214171859/http://lt.irssi.org/">lt</a>
+<a href="http://web.archive.org/web/20031214171859/http://be.irssi.org/">be</a>
+<a href="http://web.archive.org/web/20031214171859/http://dk.irssi.org/">dk</a>
+<a href="http://web.archive.org/web/20031214171859/http://ca.irssi.org/">ca</a>
+<a href="http://web.archive.org/web/20031214171859/http://ipv6.irssi.org/">ipv6</a>
+ - Finnish mirror #1
+  </div>
+</div>
+
+<div class="main">
+  <h2>Security Challenge</h2>
+
+  <p>Problems found so far - too many, oh well, at least they're just
+  crashes :) - 0.9 irssi hopefully will fix everything :)</p>
+
+  <ul>
+    <li><strong>0.7.98 - 0.8.0</strong> - remote crash</li>
+    <li><strong>0.7.98.3</strong> - $ + hibit ascii character in topic
+        crashed</li>
+  </ul>
+
+  <p><strong>temporarily frozen (2002-02-15)</strong> - since I'm currently
+  very much out of money, I can't take the risk of someone actually finding
+  any of these bugs :) This will be back in maybe around summer 2002 when I
+  should have paid back most of my debts.</p>
+
+  <p><strong>Challenge started: Tuesday, December 19 2000</strong></p>
+
+  <p>I talk a lot about Irssi being secure. It having no buffer
+  overflows, no remote exploits, nothing. So maybe instead of just
+  bragging about it without any real security audits from other people, I
+  thought once again about doing this challenge. Or actually I just
+  mentioned about thinking it once in one IRC channel, and one guy said
+  soon that he'd do it for a prize of $300. So I got excited about this
+  again :)</p>
+
+<h3>Prizes</h3>
+
+  <ul>
+  <li>Security bug found when connected to any common ircd - $300</li>
+  <li>Security bug found when connected to <strong>any</strong>
+      ircd (patched as much as you like) - $100</li>
+  <li>Remote crash found when connected to any common ircd - $50</li>
+  </ul>
+
+<h3>Rules</h3>
+
+  <ul>
+  <li>I won't give more than one prize for security bug and one for remote
+      crash. First people that send them win. One person can win both series.
+      Same bug that causes both security breaks and crashes cannot win both
+      series. If different people send such bug reports, the one who sent it
+      first wins.</li>
+  <li>This challenge may end at any time I announce so at this web site.</li>
+  <li>Only latest released Irssi is valid.</li>
+  <li>Plain irssi without any scripts or plugins loaded</li>
+  <li>Settings must be reasonable, something that could be believable from a
+      normal user with some brains. For example setting dcc download dir to
+      /etc and running irssi as root doesn't count or some specially tweaked
+      strange format string that would crash in certain conditions (although
+      I don't think there's those either)</li>
+  <li>Bugs caused by operating system or libraries don't count</li>
+  <li>Some kind of demonstration is a must. Just something that I can find the
+      bug and fix it. Maybe a small explanation or list of commands to send to
+      irssi or pointing the error in sources</li>
+  <li>Security bugs: these must let you to either run arbitrary code in the
+      computer, or modify/create some unwanted file to your filesystem (no,
+      dcc download dir, log dirs and config dirs don't count ;) or maybe some
+      other security issues I can't currently think about.</li>
+  <li>Remote crashes: Irssi has to be made crash remotely without any local
+      user interaction. And it has to crash because server sent you something
+      unexpected, not just that you noticed that irssi crashes because some
+      rarely used setting is changed and irssi crashes every time with
+      it.</li>
+  <li>And finally, common sense should be used when reading these rules,
+      figuring out some stupid loophole in my english is not acceptable ;)</li>
+  </ul>
+
+<h3>Common IRC daemons vs. others</h3>
+
+  <p>There's a different prize given depending if the security bug is
+  found when using irssi with commonly used IRC daemons than others.
+  Commonly used daemons include only public IRC networks with thousands
+  of users, like IRCNet, EFNet, DALNet and freenode.</p>
+
+  <p>The reason for this? Most IRC clients only work securely with
+  commonly used ircds. If for example the max. length of channel's
+  password raises from 23 to, say, 100 a lot of IRC clients could be
+  exploited through this. Using those clients to connect to unknown IRC
+  servers could easily cause your box to get cracked. I believe Irssi
+  doesn't suffer this problem, not as strongly as with common ircds
+  though so the prize is smaller :)</p>
+
+<h3>Things to check for in IRC clients</h3>
+
+  <ul>
+  <li>Buffer overflows - "256 chars is enough for everybody forever".</li>
+  <li>CTCPs - replying to them is done automatically, easy to cause 
+      problems.</li>
+  <li>DCC - <strong>lots</strong> of potential problems.</li>
+  <li>Screen handling - some specific format combination might cause crashes.
+      ANSI and MIRC colors may cause crashes when used "improperly".</li>
+  <li>Executing external commands - especially when it's done automatically,
+      and <strong>especially</strong> when it's executed through shell and
+      with unchecked arbitrary parameters. Like some widely used IRC client
+      did those only a few months ago.</li>
+  </ul>
+</div>
+
+<div class="info">
+  Comments to <a href="http://web.archive.org/web/20031214171859/mailto:webmaster@irssi.org">webmaster@irssi.org</a><br>
+  Pure <a href="http://web.archive.org/web/20031214171859/http://validator.w3.org/check/referer">XHTML</a><br>
+  <br>
+  using
+  <a href="http://web.archive.org/web/20031214171859/http://www.apache.org/">apache</a>,
+  <a href="http://web.archive.org/web/20031214171859/http://www.php.net/">php4</a>,
+  <a href="http://web.archive.org/web/20031214171859/http://cr.yp.to/djbdns.html">djbdns</a>,
+  <a href="http://web.archive.org/web/20031214171859/http://www.postfix.org/">postfix</a>
+</div>
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 17:18:59 Dec 14, 2003 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 11:27:23 Jun 19, 2019.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  LoadShardBlock: 49.89 (3)
+  esindex: 0.01
+  captures_list: 74.741
+  CDXLines.iter: 15.548 (3)
+  PetaboxLoader3.datanode: 107.261 (4)
+  exclusion.robots: 0.424
+  exclusion.robots.policy: 0.408
+  RedisCDXSource: 4.287
+  PetaboxLoader3.resolve: 88.418
+  load_resource: 175.715
+-->
