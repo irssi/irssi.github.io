@@ -6,7 +6,7 @@ use Cwd;
 
 my $src = shift || "$FindBin::Bin/../../irssi-git";
 
-unless (-f "$src/irssi-config.in") {
+unless (-f "$src/irssi.conf") {
     die "Irssi sources not found in $src";
 }
 
