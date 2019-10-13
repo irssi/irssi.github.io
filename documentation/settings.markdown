@@ -1231,7 +1231,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Your real name.
 
 {:#resolve_prefer_ipv6}
-` resolve_prefer_ipv6 = OFF `
+` resolve_prefer_ipv6` **`OFF`**
 
 > Turn this option on to prefer using an ipv6 address when a host has both ipv4 and ipv6 addresses.
 
