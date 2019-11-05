@@ -434,7 +434,7 @@ Please submit changes to
 		}
 		else {
 		    finish_table($syn, \%table_state);
-		    s/</&lt;/g;
+		    s/</&lt;/g unless /^ {4}/;
 		}
 
 		unless (/^ {4}/ && $in ne 'param') {

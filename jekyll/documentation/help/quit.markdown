@@ -33,7 +33,7 @@ networks you are connected to.
 ### Examples ###
 
     /QUIT
-    /QUIT &lt;@cartman> Screw you guys, I'm going home!
+    /QUIT <@cartman> Screw you guys, I'm going home!
 
 ### See also ###
 [DISCONNECT](/documentation/help/disconnect)
