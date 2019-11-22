@@ -1231,14 +1231,9 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Your real name.
 
 {:#resolve_prefer_ipv6}
-` resolve_prefer_ipv6 = OFF `
+` resolve_prefer_ipv6` **`OFF`**
 
 > Turn this option on to prefer using an ipv6 address when a host has both ipv4 and ipv6 addresses.
-
-{:#resolve_reverse_lookup}
-` resolve_reverse_lookup` **`OFF`**
-
-> When connecting, resolve the server's IP address back into its hostname. Probably useful for figuring out exactly which server you're on after resolving a round-robin host.
 
 {:#sasl_disconnect_on_failure}
 ` sasl_disconnect_on_failure` **`ON`**
