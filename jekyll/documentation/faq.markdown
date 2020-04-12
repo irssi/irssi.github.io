@@ -5,7 +5,7 @@ permalink: documentation/faq/
 ---
 ### Q: Why doesn't irssi display colors even when ircii etc. displays them?
 
-A: They force ANSI colors even if terminal doesn't support them. By default, irssi uses colors only if terminfo/termcap so says. The correct way to fix this would be to change your TERM environment to a value where colors work, like xterm-color or color_xterm (eg. `TERM=xterm-color irssi`). If this doesn't help, then use the evil way of `/SET term_force_colors ON`.
+A: They force ANSI colors even if terminal doesn't support them. By default, irssi uses colors only if terminfo/termcap so says. The correct way to fix this would be to change your TERM environment to a value where colors work, like xterm-256color or color_xterm (eg. `TERM=xterm-256color irssi`). If this doesn't help, then use the evil way of `/SET term_force_colors ON`.
 
 ### Q: How do I easily write text to channel that starts with '/' character?
 
