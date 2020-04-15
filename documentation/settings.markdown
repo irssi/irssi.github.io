@@ -5,7 +5,7 @@ permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
 licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
 ---
-Irssi settings notes. Updated for 1.1.0
+Irssi settings notes. Updated for 1.2.2
 
 This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how Irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
@@ -46,6 +46,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >
 > Added in Irssi 1.0.0
 
+{:#completion_keep_word}
+` completion_keep_word` **`ON`**
+
+> Whether to keep the original word that was completed, in the list of completions. This way, you can "undo" accidential completions more easily with Shift-Tab.
+>
+> Added in Irssi 1.2.0
+
 {:#completion_keep_privates}
 ` completion_keep_privates` **`10`**
 
@@ -72,6 +79,17 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >>     vis: hello
 >
 > With strict completion on, it will only match nicknames beginning with vis. With strict completion off, it may match visitors or _visitors_ or [visitors], and so on.
+
+{:#completion_nicks_match_case}
+` completion_nicks_match_case` **`auto`**
+
+> Whether to enforce the case of the letters you typed while completing nicks. Accepted values:
+>
+> * `never` - ignore the case of nicks when completing.
+> * `always` - nicks are only completed when the case matches.
+> * `auto` (default) - as soon as you type an uppercase letter, the nick case has to match.
+>
+> Added in Irssi 1.0.0
 
 ##  [dcc]
 
@@ -257,9 +275,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > The maximum value for days is 24
 
 {:#scrollback_max_age}
-` scrollback_max_age` **`7days`**
+` scrollback_max_age` **`0`**
 
 > Delete messages older than the given time in each scrollback buffer. The given time has the same format as the scrollback_time setting. Note: messages can only be deleted when there is activity in a buffer. Thus, "day changed" messages will trigger deletion in inactive buffers.
+>
+> Currently, the oldest time you can set is 24days.
+>
+> Added in Irssi 1.3
 
 {:#window_history}
 ` window_history` **`OFF`**
@@ -298,6 +320,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > The path where autolog saves logs.
 >
 > See Appendix B for Irssi's special variables. Irssi's special variables can be used to do fancy things like daily log rotations.
+
+{:#autolog_only_saved_channels}
+` autolog_only_saved_channels` **`OFF`**
+
+> Only autolog channels that are added in /channel list
+>
+> Added in Irssi 1.2.0
 
 {:#awaylog_colors}
 ` awaylog_colors` **`ON`**
@@ -405,10 +434,31 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Flag a channel as active when messages of this type are displayed there.
 
+{:#activity_hide_window_hidelevel}
+` activity_hide_window_hidelevel` **`ON`**
+
+> Do not flag a window as active if the message is hidden with /window hidelevel
+>
+> Added in Irssi 1.2.0
+
+{:#activity_hide_visible}
+` activity_hide_visible` **`ON`**
+
+> Whether to hide the active flag when the window is visible.
+>
+> Added in Irssi 1.2.0
+
 {:#actlist_names}
 ` actlist_names` **`OFF`**
 
 > Turn on to add active items names in 'act' statusbar item.
+
+{:#actlist_prefer_window_name}
+` actlist_prefer_window_name` **`OFF`**
+
+> Whether to show the window name instead of the item name when actlist_names is enabled.
+>
+> Added in Irssi 1.3
 
 {:#actlist_sort}
 ` actlist_sort` **`refnum`**
@@ -463,6 +513,15 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` autostick_split_windows` **`OFF`**
 
 > Whether creating split windows (or showing windows) will automatically stick them to the split window (/window stick on)
+>
+> The default was changed to `OFF` in Irssi 1.2.0
+
+{:#autounstick_windows}
+` autounstick_windows` **`ON`**
+
+> Whether windows should automatically unstick when you try to /window show or /window hide them
+>
+> Added in Irssi 1.2.0
 
 {:#beep_msg_level}
 ` beep_msg_level` **` `**
@@ -632,6 +691,15 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >> from MIRC colors. Set this to ON, if your terminal shows bright
 >> background colors as blinking.
 
+{:#colors_ansi_24bit}
+` colors_ansi_24bit` **`OFF`**
+
+> Enable the use of 24-bit color codes, when compiled with `-Denable-true-color=yes`.
+>
+> Note: not all terminals support this. If yours does not, it may result in horrible screen distortion.
+>
+> Added in Irssi 0.8.17
+
 {:#names_max_columns}
 ` names_max_columns` **`6`**
 
@@ -669,10 +737,24 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > When on, only show /away messages in the window that's currently open. Otherwise the message will appear in every window you share with the away person.
 
+{:#away_notify_public}
+` away_notify_public` **`OFF`**
+
+> Whether to show /away changes of other users in the channel. Only affects servers that actively inform about away changes.
+>
+> Added in Irssi 1.3
+
 {:#show_names_on_join}
 ` show_names_on_join` **`ON`**
 
 > Display the list of names in a channel when you join that channel. It's generally recommended, but you can disable it for pathologically huge channels or in case you just don't care.
+
+{:#show_extended_join}
+` show_extended_join` **`OFF`**
+
+> Whether to show extended join information (real name and services account) when others users join the channel. Only affects servers that send extended joins information.
+>
+> Added in Irssi 1.3
 
 {:#show_nickmode}
 ` show_nickmode` **`ON`**
@@ -689,6 +771,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` show_nickmode_empty` **`ON`**
 
 > If a person has no channel modes, prefix their nickname with a blank space. This keeps nicknames of normal people aligned with those of voiced, half-opped, and opped people.
+
+{:#show_account_notify}
+` show_account_notify` **`OFF`**
+
+> Whether to show account changes of other users in the channel. Only affects servers that actively inform about account changes.
+>
+> Added in Irssi 1.3
 
 {:#show_own_nickchange_once}
 ` show_own_nickchange_once` **`OFF`**
@@ -809,6 +898,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 >
 > Wouter Coekaerts has made a nice explanation about this, see <<http://wouter.coekaerts.be/site/irssi/wclf>>
 
+{:#window_default_hidelevel}
+` window_default_hidelevel` **`HIDDEN`**
+
+> The default /window hidelevel for newly created windows. You can add other levels here to hide joins/parts/quits by default.
+>
+> Added in Irssi 1.2.0
+
 {:#windows_auto_renumber}
 ` windows_auto_renumber` **`ON`**
 
@@ -923,6 +1019,8 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > This is useful if you have key combos that extend others. For example, if you have `meta-a` and `meta-a-meta-b` this setting allows you to use `meta-a` after waiting some time.
 >
 > Setting it to very low values may result in issues such as partial key combos getting processed accidentally. 1000 or 500 might be good starting points
+>
+> Restart Irssi to enable the new timeout.
 >
 > Added in Irssi 1.1.0
 
@@ -1075,7 +1173,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Added in Irssi 0.8.10
 
 {:#recode_autodetect_utf8}
-` recode_autodetect_utf8 = ON `
+` recode_autodetect_utf8` **`ON`**
 
 > Irssi's recode system is broken. This tries to cover up for it by leaving messages intact that seem to decode fine as Unicode UTF-8.
 >
@@ -1146,6 +1244,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Default modes to set yourself once you've connected to a server.
 
+{:#notice_channel_context}
+` notice_channel_context` **`ON`**
+
+> Whether Irssi should recognise the channel context in /notices and show the notice in the appropriate channel window.
+>
+> Added in Irssi 1.2.0
+
 {:#wall_format}
 ` wall_format` **`[Wall/$0] $1-`**
 
@@ -1162,6 +1267,31 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > Amount of time to keep text in memory. A buffer is flushed to disk if the text in it is this old, even if the buffer isn't full.
 >
 > Useful in conjunction with really large write_buffer_size values, to prevent a lot of text from being lost if Irssi crashes or is killed.
+
+{:#window_number_commands}
+` window_number_commands` **`ON`**
+
+> Whether `/<number>` can be used to change windows.
+>
+> Added in Irssi 1.2.0
+
+{:#wcwidth_implementation}
+` wcwidth_implementation` **`system`**
+
+> The implementation Irssi should use to calculate and match the width of characters (like emoji) to the width that the terminal emulator assumes. If these widths don't add up, lines may not line up. Accepted values:
+>
+> `old` - the old built-in calculation (may be preferable on old systems)
+> `system` (default) - use the calculation of your operating system
+> `julia` - use the calculation of the utf8proc library (only when compiled with utf8proc)
+>
+> Added in Irssi 1.2.0
+
+{:#quit_on_hup}
+` quit_on_hup` **`OFF`**
+
+> Whether Irssi should /quit itself on receiving the HUP signal or reload its config instead. This setting may be desirable if you want to /quit Irssi with the [x] button on your terminal emulator window.
+>
+> Added in Irssi 1.3
 
 ##  [perl]
 
@@ -1235,6 +1365,11 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Turn this option on to prefer using an ipv6 address when a host has both ipv4 and ipv6 addresses.
 
+{:#resolve_reverse_lookup}
+` resolve_reverse_lookup` **`OFF`**
+
+> Removed in Irssi 1.3. See [resolve_reverse_lookup issues](https://github.com/irssi/irssi/issues?q=resolve_reverse_lookup) for more information.
+
 {:#sasl_disconnect_on_failure}
 ` sasl_disconnect_on_failure` **`ON`**
 
@@ -1276,11 +1411,41 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > Determines whether channels are rejoined on reconnect. Possible values are OFF, ON and AUTO:
 >
-> * OFF: no channels are rejoined.
-> * ON: all channels are rejoined (default).
-> * AUTO: only channels configured with autojoins are rejoined.
+> * `off` - no channels are rejoined.
+> * `on` (default) - all channels are rejoined.
+> * `auto` - only channels configured with autojoins are rejoined.
 >
-> Added in Irssi 1.0.0
+> Added in Irssi 0.8.18. `auto` was added in Irssi 1.0.0
+
+##  [irssiproxy]
+
+Also see [proxy.txt](/documentation/proxy) for more information about the irssiproxy module.
+
+{:#irssiproxy_ports}
+` irssiproxy_ports` **``**
+
+> A space-separated list of `networktag=port` that the irssiproxy should listen on. If you connect to the port, you will share the connection of the specified network in your Irssi.
+>
+> The special network name `?=port` can be used to select the network through your connect password.
+>
+> `?` was added in Irssi 1.0.0
+
+{:#irssiproxy_password}
+` irssiproxy_password` **``**
+
+> The password required to connect to the irssiproxy.
+
+{:#irssiproxy_bind}
+` irssiproxy_bind` **``**
+
+> The interface that the irssiproxy should listen on.
+
+{:#irssiproxy}
+` irssiproxy` **`ON`**
+
+> Here you can enable and disable the proxy.
+>
+> Added in Irssi 0.8.18
 
 * * *
 
