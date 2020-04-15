@@ -97,6 +97,9 @@ multiversion_pages:
   - page: echo
     versions:
       - 1.3
+  - page: set
+    versions:
+      - 1.3
 subcommand_pages:
   - command: window
     pages:
