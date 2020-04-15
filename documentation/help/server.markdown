@@ -93,6 +93,8 @@ connect to the specified server; the server in the active window will be
 disconnected unless you prepend the server with the '+' character; the same
 method is applicable to the CONNECT parameter.
 
+Specify '-' as password to remove a server password
+
 ### Examples ###
 
     /SERVER
@@ -101,6 +103,7 @@ method is applicable to the CONNECT parameter.
     /SERVER ADD -network Freenode -noautosendcmd orwell.freenode.net
     /SERVER ADD -! -auto -host staff.irssi.org -4 -network Freenode -noproxy orwell.freenode.net 6667
     /SERVER MODIFY -network Freenode -noauto orwell.freenode.net
+    /SERVER MODIFY -network Freenode orwell.freenode.net 6697 -
     /SERVER REMOVE orwell.freenode.net 6667 Freenode
     /SERVER PURGE
     /SERVER PURGE orwell.freenode.net

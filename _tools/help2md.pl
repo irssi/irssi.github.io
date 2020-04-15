@@ -69,10 +69,23 @@ sub _get_mv {
     my ($page, $ver) = @_;
     my $multiver_links = '';
     my $ver_suffix = '';
-    my @multiver = map { @{ $_->{versions} || [] } } grep { $_->{page} && ($page eq 'index' || $_->{page} eq $page) } @{ $config->{multiversion_pages} || [] };
+    my @multiver = map {
+	@{ $_->{versions} || [] }
+    } grep {
+	$_->{page} && ($page eq 'index' || $_->{page} eq $page)
+    } @{ $config->{multiversion_pages} || [] };
+
     if (@multiver) {
-	my ($default_ver) = map { $_->{_default_} } grep { $_->{_default_} } @{ $config->{multiversion_pages} || [] };
-	@multiver = uniq sort { version->parse("v$a") <=> version->parse("v$b") } ($default_ver, @multiver);
+	my ($default_ver) = map {
+	    $_->{_default_}
+	} grep {
+	    $_->{_default_}
+	} @{ $config->{multiversion_pages} || [] };
+
+	@multiver = uniq sort {
+	    version->parse("v$a") <=> version->parse("v$b")
+	} ($default_ver, @multiver);
+
 	$multiver_links = join ' - ', map {
 	    my $link;
 	    my $name = "v$_";
@@ -92,7 +105,9 @@ sub _get_mv {
 	    }
 	    $link
 	} @multiver;
-	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver) && version->parse("v$ver") != version->parse("v$default_ver") ? "_($ver)" : '';
+	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver)
+	    && version->parse("v$ver") != version->parse("v$default_ver")
+	    ? "_($ver)" : '';
 	$multiver_links = "\n<nav markdown=\"1\">\n$multiver_links\n</nav>\n";
     }
     ($multiver_links, $ver_suffix)
@@ -138,8 +153,18 @@ sub main {
     $ver ||= '';
     $ver =~ s/^v//;
 
-    my @allver = uniq sort { version->parse("v$b") <=> version->parse("v$a") } map { $_->{_default_} ? ($_->{_default_}) : @{ $_->{versions} || [] } } @{ $config->{multiversion_pages} || [] };
-    my ($default_ver) = map { $_->{_default_} } grep { $_->{_default_} } @{ $config->{multiversion_pages} || [] };
+    # all versions from newest to oldest
+    my @allver = uniq sort {
+	version->parse("v$b") <=> version->parse("v$a")
+    } map {
+	$_->{_default_} ? ($_->{_default_}) : @{ $_->{versions} || [] }
+    } @{ $config->{multiversion_pages} || [] };
+
+    my ($default_ver) = map {
+	$_->{_default_}
+    } grep {
+	$_->{_default_}
+    } @{ $config->{multiversion_pages} || [] };
 
     $ver = $allver[0] unless $ver;
 
@@ -197,12 +222,24 @@ $multiver_links_main
     my %table_state;
     for (@help_files) {
 	my $help_file_name = $_;
+
 	# should this file be split into subcommand pages?
-	my (@subcommand_split) = map { @{$_->{pages}} } grep { $_->{command} eq $help_file_name } @{$config->{subcommand_pages} || []};
+	my (@subcommand_split) = map {
+	    @{$_->{pages}}
+	} grep {
+	    $_->{command} eq $help_file_name
+	} @{$config->{subcommand_pages} || []};
+
 	open my $sin, '<', "$dir/docs/help/$_";
 	chomp (my @tx = <$sin>);
 	my @otx = @tx;
-	my @sub_pages = ( +{ file => $help_file_name, title => $help_file_name, is_sub_page => undef } );
+	my @sub_pages = (
+	    +{
+		file => $help_file_name,
+		title => $help_file_name,
+		is_sub_page => undef
+	    } );
+
 	while (@sub_pages) {
 	    my $page = shift @sub_pages;
 	    @tx = @otx;
@@ -272,7 +309,8 @@ Please submit changes to
 		}
 		print $syn "$multiver_links\n### Subcommands\n\n";
 		for (@subcommand_split) {
-		    my ($sub_page_name, $title, $commands, $not_commands) = @{$_}{qw(name title commands excludes)};
+		    my ($sub_page_name, $title, $commands, $not_commands)
+			= @{$_}{qw(name title commands excludes)};
 		    my @sub_page_commands;
 		    if ($commands) {
 			my $re = join '|', map { quotemeta "$help_file_name $_ " } sort { length $b <=> length $a } sort @$commands;
@@ -304,7 +342,14 @@ Please submit changes to
 ';
 			my $sub_page_commands_re = join '|', map { quotemeta } @sub_page_commands;
 			$title = "$help_file_name: $title" unless $title =~ /^\Q$help_file_name\E\b/i;
-			push @sub_pages, +{ file => "${help_file_name}_${sub_page_name}", title => $title, filter => \@sub_page_commands, filter_re => $sub_page_commands_re, filter_not_re => $not, is_sub_page => 1 };
+			push @sub_pages, +{
+			    file => "${help_file_name}_${sub_page_name}",
+			    title => $title,
+			    filter => \@sub_page_commands,
+			    filter_re => $sub_page_commands_re,
+			    filter_not_re => $not,
+			    is_sub_page => 1
+			};
 			@commands_seen{@sub_page_commands} = (1) x @sub_page_commands;
 		    }
 		}
@@ -421,6 +466,9 @@ Please submit changes to
 			    $word =~ s/:`/`:/;
 			    $_ = $rest;
 			    finish_table($syn, \%table_state);
+			    if ($word eq '`-list`:' && $page->{file} eq 'bind') {
+				$word =~ s{(\`(.*)\`)}{[$1](/documentation/help/$page->{file}_$2)};
+			    }
 			    $table_state{WORD} = $word;
 			}
 			else {

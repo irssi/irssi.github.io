@@ -3,6 +3,14 @@ layout: page
 title: "Help: List of key bindable commands"
 ---
 
+<nav markdown="1">
+[Help index](/documentation/help)
+</nav>
+
+<nav markdown="1">
+[Bind help](/documentation/help/bind)
+</nav>
+
 #### Core bindable commands
 
 | Key command | Description | Arguments |
