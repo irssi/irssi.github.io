@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: set"
+title: "Help: set (1.3)"
 ---
 
 {% comment %}
@@ -12,16 +12,16 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.3))
 </nav>
 
 <nav markdown="1">
-[ v1.2 ] - [ [v1.3](/documentation/help/set_(1.3)) ]
+[ [v1.2](/documentation/help/set) ] - [ v1.3 ]
 </nav>
 
 ### Syntax ###
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">SET</span> <span class="syn10">[<span class="syn">-clear</span> | <span class="syn">-default</span>]</span> <span class="syn10">[<span class="syn09">&lt;key></span> <span class="syn14">[<span class="syn13">&lt;value></span>]</span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:3ch"><code><span class="synB">SET</span> <span class="syn10">[<span class="syn">-clear</span> | <span class="syn">-default</span> | <span class="syn">-section</span>]</span> <span class="syn10">[<span class="syn09">&lt;key></span> <span class="syn14">[<span class="syn13">&lt;value></span>]</span>]</span></code></pre></div>
 
 
 
@@ -30,6 +30,7 @@ Please submit changes to
 
 | `-clear`: |       Removes the setting's value from the configuration. |
 | `-default`: |     Restore the setting to its default value. |
+| `-section`: |     Print settings under the specified section |
 {:.table.kv}
 
 The setting and the value; if no value is given, the list of settings that
@@ -51,6 +52,7 @@ into your configuration.
     /SET -clear nick
     /SET log_timestamp %H:%H:%S
     /SET -default log_timestamp
+    /SET -section lookandfeel
     /SET close
 
 ### See also ###

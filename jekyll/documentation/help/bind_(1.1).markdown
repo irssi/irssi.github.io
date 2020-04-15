@@ -28,7 +28,7 @@ Please submit changes to
 ### Parameters ###
 
 
-| `-list`: |       Displays a list of all the bindable commands. |
+| [`-list`](/documentation/help/bind_-list): |       Displays a list of all the bindable commands. |
 | `-delete`: |     Removes the binding, |
 {:.table.kv}
 
