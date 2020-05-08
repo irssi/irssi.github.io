@@ -24,7 +24,8 @@ cd "$srcdir"
 
 unset VER
 unset GITHUB
-ONLINE=${ONLINE-1} perl news2md.pl "$P"/NEWS > ../_includes/relnews.markdown~tmp~
+ONLINE=${ONLINE-1} TITLES=${TITLES-1} \
+      perl news2md.pl "$P"/NEWS > ../_includes/relnews.markdown~tmp~
 export version="$(grep '^## ' ../_includes/relnews.markdown~tmp~|grep -v '-head$'|head -1|awk '{print $2}')"
 if [ -z "$version" ]; then
     echo No version found
