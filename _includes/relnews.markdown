@@ -14,6 +14,8 @@ The Irssi team released this <abbr class="timeago" title="2019-08-29">2019-08-29
 
 {% include relnews_artef_block.markdown ver="1.2.2" %}
 
+**Note**. Apply glib-2-63.patch if you intend to use Irssi on GLib >2.62 in order to fix [#1180](https://github.com/irssi/irssi/issues/1180 "ctrl+space freezes irssi on GLib >2.62")
+
 ### Fixes
 {:#v1-2-2-fixes }
 
@@ -35,7 +37,7 @@ Contains all changes from 1.1.3
 {:#v1-2-1-fixes }
 
 - Fix a test on big endian machines ([#1014](https://github.com/irssi/irssi/issues/1014 "fix test on Big Endian 64bit, due to pointer size mismatch"))
-- Fix the compile time conditionality of wcwidth implementation ([#1019](https://github.com/irssi/irssi/issues/1019 "make utf8proc configurable"), gentoo#677804, [#720](https://github.com/irssi/irssi/issues/720 "mk_wcwidth will return outdated widths when glibc 2.26 (unicode 9.0) is out"))
+- Fix the compile time conditionality of wcwidth implementation ([#1019](https://github.com/irssi/irssi/issues/1019 "make utf8proc configurable"), [gentoo#677804](https://bugs.gentoo.org/show_bug.cgi?id=677804), [#720](https://github.com/irssi/irssi/issues/720 "mk_wcwidth will return outdated widths when glibc 2.26 (unicode 9.0) is out"))
 - Fix /save no longer working on old Solaris (pre POSIX.1-2008) ([#1042](https://github.com/irssi/irssi/issues/1042 "/SAVE fails in Solaris 10 ''Invalid argument''"), [#1043](https://github.com/irssi/irssi/issues/1043 "fix realpath on old solaris"))
 - Fix regression of [#764](https://github.com/irssi/irssi/issues/764 "Add color support for input bar") where display of 8-bit (legacy encoding) in the input prompt was broken ([#1018](https://github.com/irssi/irssi/issues/1018 "Input line is echoing utf8 chars on non-utf8 terminal"), [#1057](https://github.com/irssi/irssi/issues/1057 "restore 8bit support in input entry")). Initial patch by Артём Курашов
 

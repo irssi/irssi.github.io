@@ -1,9 +1,13 @@
 #!/usr/bin/perl
 
+# pipe a NEWS file to this script and get a markdown version back
+
 # Env variables:
-#   GITHUB - Disable Github links (for use on Github releases page)
-#   VER    - show this version only
-#   ONLINE - Download release asset links from Github
+#   GITHUB=1  - Disable Github links (for use on Github releases page)
+#   VER=1.2.3 - show this version only
+#   ONLINE=1  - Download release asset links from Github
+#   REORG=1   - manage github milestones
+#   TITLES=1  - add issue titles as link titles
 #   ...
 
 use strict;
@@ -11,19 +15,66 @@ use warnings;
 use version;
 use POSIX qw(ceil);
 use JSON::PP;
-use CPAN::Meta::YAML qw(LoadFile DumpFile);
-#use YAML::Tiny qw(LoadFile DumpFile);
+use CPAN::Meta::YAML qw();
+use YAML qw(LoadFile DumpFile);
+use if $ENV{REORG}, 'Net::GitHub';
 use FindBin;
 
 my $artef_extra = {};
 my $artef_extra_file = "$FindBin::Bin/../_data/relnews_artef.yml";
+my $issue_file = "$FindBin::Bin/gh_issues.yml";
+my $cache_file = "$FindBin::Bin/.issue_cache.yml";
+my $issues;
+if ($ENV{TITLES}) {
+    warn "Loading Issues Dump...\n";
+    unless (-f $issue_file) {
+	system $^X, "$FindBin::Bin/issue_titles.pl"
+	    or die "there was an error downloading issue titles\n";
+    }
+    $issues = LoadFile($issue_file);
+}
 unless (-d "$FindBin::Bin/../_data") {
     $artef_extra_file = ".relnews_artef.yml";
 }
 if (-f $artef_extra_file) {
+    warn "Loading artef data...\n";
     $artef_extra = LoadFile($artef_extra_file);
 }
 
+my $github;
+my $github_issues;
+my %milestones;
+my %ms_todo;
+if ($ENV{REORG}) {
+    warn "Logging in to GitHub...\n";
+    my $secret = `git config hub.oauthtoken | tr -d '\n'`;
+    die 'Please configure an oauth token for REORG with
+
+    git config hub.oauthtoken YOURTOKEN
+
+' unless $secret;
+    $github = Net::GitHub->new(
+	access_token => $secret);
+    $github->set_default_user_repo('irssi', 'irssi');
+    $github_issues = $github->issue;
+    if (-f $cache_file) {
+	print STDERR "Loading GitHub Issues Cache...";
+	my $cache = LoadFile($cache_file);
+	while (my ($k, $v) = splice @{ $cache->{cache} }, 0, 2) {
+	    print STDERR '.';
+	    $github_issues->cache->set($k, $v);
+	}
+	print STDERR "\n";
+    }
+    warn "Loading Milestones from GitHub...\n";
+    %milestones = map {
+	( $_->{title} => $_->{number} )
+    }
+	$github_issues->milestones({ state => 'all' });
+    warn "Loaded milestones: ". YAML::Dump(\%milestones) . "\n";
+}
+
+warn "Start processing...\n";
 chomp ( my @news = <> );
 
 
@@ -59,6 +110,7 @@ my %link_type = (
     'bdo#'	=> 'https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=',
     'bgo#'      => 'https://bugzilla.gnome.org/show_bug.cgi?id=',
     'oss-fuzz#' => 'https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=',
+    'gentoo#'   => 'https://bugs.gentoo.org/show_bug.cgi?id=',
    );
 
 sub issue_links {
@@ -98,7 +150,33 @@ sub issue_links {
       (?!\w)
     }{
 	if (defined $link_type{$1}) {
-	    "[$1$2]($link_type{$1}$2)"
+	    my $lt = $link_type{$1};
+	    my $num = $2;
+	    my $short = $1;
+	    my $title;
+	    if (($ENV{TITLES} || $ENV{REORG}) && $lt =~ m{github\.com/([^/]+)/([^/]+)/issues}) {
+		my $u = $1;
+		my $p = $2;
+		$title = $issues->{$u}{$p}{$num}{title}
+		    if $ENV{TITLES};
+		if ($ENV{REORG} && $u eq 'irssi') {
+		    unless (defined $milestones{$ver}) {
+			warn "creating MS $ver\n";
+			my %ms = $github_issues->create_milestone({
+			    title => $ver,
+			    description => '',
+			    state => 'closed'
+			});
+			$milestones{ $ms{title} } = $ms{number};
+		    }
+		    $ms_todo{$u}{$p}{$num} = $ver
+			if defined $S{section_title};
+		}
+		my %re = ( '|' => '│', '"' => "''" );
+		$title =~ s/[|"]/$re{$&}/g
+		    if $title;
+	    }
+	    "[$short$num]($lt$num".($title?" \"$title\"":"").")"
 	}
 	else {
 	    "$1$2"
@@ -166,7 +244,7 @@ sub finish_S {
 	    });
 	    delete $artef_extra->{"v$S{ver}"}{rg};
 	    $artef_extra->{"v$S{ver}"}{artef_rg} = \@rg;
-	    DumpFile($artef_extra_file, $artef_extra);
+	    CPAN::Meta::YAML::DumpFile($artef_extra_file, $artef_extra);
 
 	    if ($ENV{ONLINE}) {
 		my $mod_header = "";
@@ -226,7 +304,7 @@ sub finish_S {
 			delete $artef_extra->{"v$S{ver}"}{artef_extra};
 		    }
 		}
-		DumpFile($artef_extra_file, $artef_extra);
+		CPAN::Meta::YAML::DumpFile($artef_extra_file, $artef_extra);
 	    }
 	    print qq@{% include relnews_artef_block.markdown ver="$S{ver}" %}@;
 	    print "\n\n";
@@ -238,6 +316,8 @@ sub finish_S {
     for my $section (@sections) {
 	my @e = @{ (delete $S{$section} || [] )};
 	next unless @e;
+	local $S{section_title} = $section_title{$section};
+	local $S{section} = $section;
 	if (defined $section_title{$section}) {
 	    print "### $section_title{$section}\n";
 	    print "{:#v@{[ $S{ver} =~ s/[.]/-/gr ]}-\L@{[ $section_title{$section} =~ s/\W+/-/gr ]} }\n"
@@ -349,4 +429,35 @@ for (@news) {
 
 if (%S) {
     finish_S();
+}
+
+for my $u (sort keys %ms_todo) {
+    for my $p (sort keys %{ $ms_todo{$u} }) {
+	for my $num (sort keys %{ $ms_todo{$u}{$p} }) {
+	    my $ver = $ms_todo{$u}{$p}{$num};
+	    unless ($issues->{$u}{$p}{$num}{milestone} &&
+		    $issues->{$u}{$p}{$num}{milestone}{title} eq $ver ) {
+		warn "assigning MS $ver to $num\n";
+		$github_issues->update_issue($num, {
+		    milestone => $milestones{ $ver }
+		});
+		$issues->{$u}{$p}{$num}{milestone}{title} = $ver;
+		$issues->{$u}{$p}{$num}{milestone}{number} = $milestones{ $ver };
+	    }
+	    if ($issues->{$u}{$p}{$num}{milestone} &&
+		$issues->{$u}{$p}{$num}{milestone}{title} eq $ver
+		&& !$issues->{$u}{$p}{$num}{milestone}{number}) {
+		$issues->{$u}{$p}{$num}{milestone}{number} = $milestones{ $ver };
+	    }
+	}
+    }
+}
+
+END {
+    if ($ENV{REORG}) {
+	warn "Writing GitHub Issues Cache...\n";
+	DumpFile($cache_file, { cache => $github_issues->cache->{_fifo} });
+	warn "Writing Issues Dump...\n";
+	DumpFile($issue_file, $issues);
+    }
 }
