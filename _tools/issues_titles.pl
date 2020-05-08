@@ -1,18 +1,23 @@
 use strict;
 use warnings;
+use Storable qw(nstore retrieve);
 use YAML qw(LoadFile DumpFile);
 use Net::GitHub;
 use FindBin;
 
 my $issue_file = "$FindBin::Bin/gh_issues.yml";
-my $cache_file = "$FindBin::Bin/.issue_cache.yml";
+my $cache_file2 = "$FindBin::Bin/.issue_cache.sto";
 
 my $github = Net::GitHub->new();
 $github->set_default_user_repo('irssi', 'irssi');
 my $issue = $github->issue;
-if (-f $cache_file) {
-    print STDERR "Loading cache...";
-    my $cache = LoadFile($cache_file);
+my $cache;
+if (-f $cache_file2) {
+    print STDERR "Loading cache(sto)...";
+    $cache = retrieve($cache_file2);
+}
+
+if ($cache) {
     while (my ($k, $v) = splice @{ $cache->{cache} }, 0, 2) {
 	print STDERR '.';
 	$issue->cache->set($k, $v);
@@ -32,6 +37,9 @@ for my $ur (
 }
 
 END {
-    DumpFile($cache_file, { cache => $issue->cache->{_fifo} });
+    print STDERR "saving cache...\n";
+    nstore({ cache => $issue->cache->{_fifo} }, $cache_file2);
+    print STDERR "saving issues...\n";
     DumpFile($issue_file, \%x);
+    print STDERR "...end\n";
 }

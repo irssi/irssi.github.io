@@ -16,6 +16,7 @@ use version;
 use POSIX qw(ceil);
 use JSON::PP;
 use CPAN::Meta::YAML qw();
+use Storable qw(nstore retrieve);
 use YAML qw(LoadFile DumpFile);
 use if $ENV{REORG}, 'Net::GitHub';
 use FindBin;
@@ -23,7 +24,7 @@ use FindBin;
 my $artef_extra = {};
 my $artef_extra_file = "$FindBin::Bin/../_data/relnews_artef.yml";
 my $issue_file = "$FindBin::Bin/gh_issues.yml";
-my $cache_file = "$FindBin::Bin/.issue_cache.yml";
+my $cache_file2 = "$FindBin::Bin/.issue_cache.sto";
 my $issues;
 if ($ENV{TITLES}) {
     warn "Loading Issues Dump...\n";
@@ -57,9 +58,9 @@ if ($ENV{REORG}) {
 	access_token => $secret);
     $github->set_default_user_repo('irssi', 'irssi');
     $github_issues = $github->issue;
-    if (-f $cache_file) {
+    if (-f $cache_file2) {
 	print STDERR "Loading GitHub Issues Cache...";
-	my $cache = LoadFile($cache_file);
+	my $cache = retrieve($cache_file2);
 	while (my ($k, $v) = splice @{ $cache->{cache} }, 0, 2) {
 	    print STDERR '.';
 	    $github_issues->cache->set($k, $v);
@@ -456,7 +457,7 @@ for my $u (sort keys %ms_todo) {
 END {
     if ($ENV{REORG}) {
 	warn "Writing GitHub Issues Cache...\n";
-	DumpFile($cache_file, { cache => $github_issues->cache->{_fifo} });
+	nstore({ cache => $github_issues->cache->{_fifo} }, $cache_file2);
 	warn "Writing Issues Dump...\n";
 	DumpFile($issue_file, $issues);
     }
