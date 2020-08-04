@@ -12,9 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 
-<nav markdown="1">
-[ [v1.0](/documentation/help/index_(1.0)) ] - [ [v1.1](/documentation/help/index_(1.1)) ] - [ [v1.2](/documentation/help) ] - [ v1.3 ]
-</nav>
+<div markdown="1" class="version">
+* [v1.0](/documentation/help/index_(1.0))
+* [v1.1](/documentation/help/index_(1.1))
+* [v1.2](/documentation/help)
+* v1.3
+</div>
 
 <div markdown="1" class="helpindex">
 

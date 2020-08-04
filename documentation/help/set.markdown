@@ -15,9 +15,10 @@ Please submit changes to
 [Help index](/documentation/help)
 </nav>
 
-<nav markdown="1">
-[ v1.2 ] - [ [v1.3](/documentation/help/set_(1.3)) ]
-</nav>
+<div markdown="1" class="version">
+* v1.2
+* [v1.3](/documentation/help/set_(1.3))
+</div>
 
 ### Syntax ###
 

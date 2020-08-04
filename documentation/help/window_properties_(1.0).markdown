@@ -21,9 +21,10 @@ Please submit changes to
 [Window subcommands index](/documentation/help/window_(1.0))
 </nav>
 
-<nav markdown="1">
-[ v1.0 ] - [ [v1.2](/documentation/help/window_properties) ]
-</nav>
+<div markdown="1" class="version">
+* v1.0
+* [v1.2](/documentation/help/window_properties)
+</div>
 
 ### Syntax ###
 

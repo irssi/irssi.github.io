@@ -18,9 +18,11 @@ Please submit changes to
 [Help index](/documentation/help/index_(1.1))
 </nav>
 
-<nav markdown="1">
-[ [v1.0](/documentation/help/window_(1.0)) ] - [ v1.1 ] - [ [v1.2](/documentation/help/window) ]
-</nav>
+<div markdown="1" class="version">
+* [v1.0](/documentation/help/window_(1.0))
+* v1.1
+* [v1.2](/documentation/help/window)
+</div>
 
 ### Subcommands
 
