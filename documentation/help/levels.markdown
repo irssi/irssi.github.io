@@ -50,6 +50,7 @@ These are the special levels you can use:
 
 | `HILIGHT` | The text is highlighted. |
 | `NEVER` | Never ignores or logs the message. |
+| `HIDDEN` | Hides the message when window HIDELEVEL includes HIDDEN. |
 | `NO_ACT` | Doesn't trigger any activity in the statusbar. |
 | `NOHILIGHT` | The text is not highlighted. |
 {:.table.kv}

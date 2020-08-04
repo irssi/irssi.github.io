@@ -47,6 +47,8 @@ Ignores nicknames or text that matches a pattern.
 The special level 'NO_ACT' can be used to ignore activity in the statusbar
 without actually ignoring the message; this behavior is somewhat special
 because it is allowed in addition to other ignores for the same target.
+The special level 'HIDDEN' can be used to hide matching messages that can
+later be revealed using /WINDOW HIDELEVEL -HIDDEN
 
 ### Examples ###
 
@@ -62,6 +64,7 @@ because it is allowed in addition to other ignores for the same target.
     /IGNORE *away* NICKS
     /IGNORE #irssi NO_ACT JOINS PARTS QUITS
     /IGNORE mike NO_ACT -MSGS
+    /IGNORE mike HIDDEN PUBLIC JOINS PARTS QUITS
     /IGNORE -regexp -pattern
 
 ### See also ###
