@@ -22,9 +22,10 @@ Please submit changes to
 [Window subcommands index](/documentation/help/window_(1.1))
 </nav>
 
-<nav markdown="1">
-[ v1.1 ] - [ [v1.2](/documentation/help/window_split_moving) ]
-</nav>
+<div markdown="1" class="version">
+* v1.1
+* [v1.2](/documentation/help/window_split_moving)
+</div>
 
 ### Syntax ###
 

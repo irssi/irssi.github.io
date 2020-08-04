@@ -86,21 +86,21 @@ sub _get_mv {
 	    version->parse("v$a") <=> version->parse("v$b")
 	} ($default_ver, @multiver);
 
-	$multiver_links = join ' - ', map {
+	$multiver_links = join "\n", map {
 	    my $link;
 	    my $name = "v$_";
 	    my @latest = ($default_ver, (grep { version->parse("v$_") <= version->parse("v$ver") } @multiver));
 	    if (version->parse("v$_") == version->parse("v".$latest[-1])) {
-		$link = "[ $name ]";
+		$link = "* $name";
 	    }
 	    else {
 		my $xz = "$_";
 		my $suffix = version->parse("v$xz") == version->parse("v$default_ver") ? '' : "_($xz)";
 		if ($page eq 'index' && $suffix eq '') {
-		    $link = "[ [$name](/documentation/help) ]";
+		    $link = "* [$name](/documentation/help)";
 		}
 		else {
-		    $link = "[ [$name](/documentation/help/$page$suffix) ]";
+		    $link = "* [$name](/documentation/help/$page$suffix)";
 		}
 	    }
 	    $link
@@ -108,7 +108,7 @@ sub _get_mv {
 	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver)
 	    && version->parse("v$ver") != version->parse("v$default_ver")
 	    ? "_($ver)" : '';
-	$multiver_links = "\n<nav markdown=\"1\">\n$multiver_links\n</nav>\n";
+	$multiver_links = "\n<div markdown=\"1\" class=\"version\">\n$multiver_links\n</div>\n";
     }
     ($multiver_links, $ver_suffix)
 }

@@ -401,6 +401,7 @@ blockquote {
     }
 }
 
+/* width restricted container */
 .container.wrc > blockquote,
 .container.wrc > div > blockquote,
 .container.wrc > div > dl,
@@ -553,6 +554,26 @@ div.toprule {
 .syn14 { color: #4c566a; }
 .syn10 { color: #3e6766; }
 .syn09 { color: #719453; }
+
+div.version > ul {
+    padding-left: 0;
+}
+div.version > ul > li::before {
+    content: "[ ";
+    white-space: nowrap;
+}
+div.version > ul > li::after {
+    content: " ]";
+    white-space: nowrap;
+}
+div.version > ul > li + li::before {
+    content: " - [ ";
+    white-space: nowrap;
+}
+div.version > ul > li {
+    display: inline-block;
+    width: auto;
+}
 
 .helpindex {
     width: 100%;
