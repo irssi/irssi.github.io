@@ -319,6 +319,9 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > The path where autolog saves logs.
 >
+> $0 is the target (channel or query name usually)
+> $1 is the server tag (same as $tag)
+>
 > See Appendix B for Irssi's special variables. Irssi's special variables can be used to do fancy things like daily log rotations.
 
 {:#autolog_only_saved_channels}
