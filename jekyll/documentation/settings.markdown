@@ -3,7 +3,7 @@ layout: page
 title: Settings Documentation
 permalink: documentation/settings/
 sidebar: sb_sidebar_settings.html
-licence: "[Creative Commons Attribution-ShareAlike 2.5 License](http://creativecommons.org/licenses/by-sa/2.5/)"
+licence: "[Creative Commons Attribution-ShareAlike 2.5 License](https://creativecommons.org/licenses/by-sa/2.5/)"
 ---
 Irssi settings notes. Updated for 1.2.2
 
@@ -980,7 +980,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > The reply to send when someone queries your user information. By default, it's $Y, which is defined by the real_name setting.
 >
-> See <<http://irssi.org/documentation/special_vars>> for more special variables you can use.
+> See <<https://irssi.org/documentation/special_vars>> for more special variables you can use.
 
 {:#ctcp_version_reply}
 ` ctcp_version_reply` **`irssi v$J - running on $sysname $sysarch`**
@@ -1501,7 +1501,7 @@ Several settings allow special variables. These variables will be replaced by th
 
 They are mostly used for formatting text in themes.
 
-From <http://irssi.org/documentation/special_vars>:
+From <https://irssi.org/documentation/special_vars>:
 
 
 NOTE: This is just a slightly modified file taken from EPIC's help.
@@ -1674,7 +1674,7 @@ Messages that describe times are formatted according to the strftime() function 
 
 Irssi defines codes to represent colors. They work like the `strftime()` codes in Appendix C.
 
-From <http://irssi.org/documentation/formats>:
+From <https://irssi.org/documentation/formats>:
 
 Irssi's colors that you can use in text formats, hilights, etc. :
 
@@ -1722,7 +1722,7 @@ We ask the same respect in return.
 
 The original portions of this document are Copyright 2005 by Rocco Caputo rcaputo@cpan.org and Nei (on irc.freenode.net #irssi). Other portions are Copyright by their respective authors or licensors.
 
-This work is licensed under a Creative Commons Attribution-ShareAlike 2.5 License. Please see <http://creativecommons.org/licenses/by-sa/2.5/> for details. Summary:
+This work is licensed under a Creative Commons Attribution-ShareAlike 2.5 License. Please see <https://creativecommons.org/licenses/by-sa/2.5/> for details. Summary:
 
 > You are free:
 >

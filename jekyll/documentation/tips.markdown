@@ -81,9 +81,9 @@ hmm now there is a script for this purpose too. checkout [news.pl][6] ([source][
 
     /completion -auto .) :)
     /completion -auto anywya anyway
-    /completion sio http://scripts.irssi.org/
+    /completion sio https://scripts.irssi.org/
 
-Write `sio` press `<tab>` key and it will be replaced with `http://irssi.org/scripts/`.
+Write `sio` press `<tab>` key and it will be replaced with `https://irssi.org/scripts/`.
 
 ### Where are my completions/replaces gone?
 With latest irssi cvs the format changed a bit. cras merged replaces and completions
@@ -91,7 +91,7 @@ With latest irssi cvs the format changed a bit. cras merged replaces and complet
     completions = {
       wid = { value = ""; };
       sid = { value = "http://scripts.irssi.de/"; };
-      ios = { value = "http://irssi.org/scripts/"; };
+      ios = { value = "https://irssi.org/scripts/"; };
       ":9" = { value = ":)"; auto = "yes"; };
     };
 
@@ -200,9 +200,9 @@ of course you can bind it in irssi aswell: `/bind ^L redraw`.
 
 <script type="text/javascript" src="/assets/js/faq.js"></script>
 
-[1]: http://sourceforge.net/p/zsh/code/ci/master/tree/Completion/Unix/Command/_irssi?format=raw
-[2]: http://scripts.irssi.org/scripts/hide.pl
+[1]: https://sourceforge.net/p/zsh/code/ci/master/tree/Completion/Unix/Command/_irssi?format=raw
+[2]: https://scripts.irssi.org/scripts/hide.pl
 [3]: //github.com/irssi/scripts.irssi.org/blob/gh-pages/scripts/hide.pl
 [5]: https://www.bitlbee.org/
-[6]: http://scripts.irssi.org/scripts/news.pl
+[6]: https://scripts.irssi.org/scripts/news.pl
 [7]: //github.com/irssi/scripts/blob/gh-pages/scripts/news.pl

@@ -9,6 +9,6 @@ Irssi 0.8.11-rc1 has been released. The changes are mostly bugfixes, and small
 improvements, so it should be quite safe to upgrade.
 
 It can be downloaded from
-[http://irssi.org/files/irssi-0.8.11-rc1.tar.gz](http://irssi.org/files/irssi-0.8.11-rc1.tar.gz).
+[https://irssi.org/files/irssi-0.8.11-rc1.tar.gz](https://irssi.org/files/irssi-0.8.11-rc1.tar.gz).
 
 The Irssi Team.

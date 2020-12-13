@@ -9,8 +9,8 @@ Nightly .debs for HPPA and sparc architectures are now created by
 arch work so you'll need to update your sources.list to:
 
 ``` 
-  deb http://irssi.org/debian unstable ./
-  deb-src http://irssi.org/debian/ sources/
+  deb https://irssi.org/debian unstable ./
+  deb-src https://irssi.org/debian/ sources/
 ```
 
 BTW. The nightly snapshot generation was broken for the last few days

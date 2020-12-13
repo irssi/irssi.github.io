@@ -57,7 +57,7 @@ A: Make sure your terminal supports UTF-8 (for example, `xterm -u8`). If you use
 
 ### Q: Will there be /DETACH-like feature?
 
-A: [tmux](http://tmux.github.io/), [screen](http://www.gnu.org/software/screen/screen.html) and [dtach](http://dtach.sf.net/) can be used to do it just fine.
+A: [tmux](https://tmux.github.io/), [screen](https://www.gnu.org/software/screen/screen.html) and [dtach](http://dtach.sf.net/) can be used to do it just fine.
 
 ### Q: How do I run scripts automatically at startup?
 
@@ -73,7 +73,7 @@ A: `/TOPIC <tab>`
 
 ### Q: How can I have /WHOIS replies to active window?
 
-A: You can disable the status window, or do `/WINDOW LEVEL -CRAP` in it which would also make several other messages show up in active window. You can also use a [script](http://dgl.cx/irssi/hack-whois-in-current-window.pl).
+A: You can disable the status window, or do `/WINDOW LEVEL -CRAP` in it which would also make several other messages show up in active window. You can also use a [script](https://dgl.cx/irssi/hack-whois-in-current-window.pl).
 
 ### Q: How do I add the active network to the statusbar
 

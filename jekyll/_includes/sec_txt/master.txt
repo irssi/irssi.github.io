@@ -78,7 +78,7 @@ Description
             assign t = '[' | append: refctr | append: ']' %}{%
             include sec_txt/link.md t=t l="#references" md=include.md %}{%
             assign refs = refs
-                | append: 'http://cve.mitre.org/cgi-bin/cvename.cgi?name='
+                | append: 'https://cve.mitre.org/cgi-bin/cvename.cgi?name='
                 | append: bug.cve
                 | append: ' ' %}{%
             assign refctr = refctr | plus: 1
