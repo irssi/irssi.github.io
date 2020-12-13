@@ -3,7 +3,7 @@ layout: page
 title: Startup How-To
 permalink: documentation/startup/
 redirect_from: /beginner/
-licence: "[GNU FDL](http://www.gnu.org/licenses/fdl.html) 1.1 license"
+licence: "[GNU FDL](https://www.gnu.org/licenses/fdl.html) 1.1 license"
 ---
 ### To new Irssi users (not to new IRC users ..)
 
@@ -136,7 +136,7 @@ And how exactly do you set these X resources? For Debian, there's `/etc/X11/Xres
 
 *Note: [this guide][quadpoint] might be a better introduction to window splits*
 
-[quadpoint]: http://quadpoint.org/articles/irssisplit/
+[quadpoint]: https://quadpoint.org/articles/irssisplit/
 
 Irssi also supports split windows, they've had some problems in past but I think they should work pretty well now :) Here's some commands related to them:
 
@@ -718,5 +718,5 @@ Statusbar items can also be added or removed via command. Note that when loading
 
 For statusbar scripts, the item name is usually equivalent to the script name. The documentation of the script ought to tell you if this is not the case. For example, to add mail.pl before the window activity item, use: `/STATUSBAR window ADD -before act mail`.
 
-[1]: http://www.gnu.org/licenses/fdl.html
-[2]: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+[1]: https://www.gnu.org/licenses/fdl.html
+[2]: https://www.chiark.greenend.org.uk/~sgtatham/putty/

@@ -42,7 +42,7 @@ Most of the existing documentation regarding themes can be found in the `default
 [4]: //github.com/irssi/irssi/pull/148
 [5]: //github.com/shabble/irssi-docs/wiki/Roadmap
 [6]: //github.com/irssi/irssi/labels/easy
-[7]: http://scripts.irssi.org/
+[7]: https://scripts.irssi.org/
 [8]: /documentation/
 [9]: //github.com/shabble/irssi-docs/wiki
 [10]: //irssi-import.github.io/themes/

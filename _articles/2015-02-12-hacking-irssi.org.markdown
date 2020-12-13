@@ -2,13 +2,13 @@
 layout: post
 title: Hacking irssi.org
 author: Nicolas Kuttler
-web: http://kuttler.eu
+web: https://kuttler.eu/
 ---
 
 Get a local copy
 ----------------
 
-If you would like to work on the source code of [irssi.org](http://irssi.org)
+If you would like to work on the source code of [irssi.org](https://irssi.org/)
 
 1. Fork [the code](https://github.com/irssi/irssi.github.io).
 2. Clone your repository to your local machine.
@@ -28,7 +28,7 @@ previewable. To do this:
 3. Never work on this branch again. But when you create a pull request for
    your main work branch merge your main work branch into `gh-pages` and push
    it to github. So it will be possible to preview your changes under
-   `http://username.github.io/irssi.github.io/` which displays your `gh-pages`
+   `https://username.github.io/irssi.github.io/` which displays your `gh-pages`
    branch.
 
 Notes

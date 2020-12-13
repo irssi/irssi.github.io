@@ -9,7 +9,7 @@ Please welcome the new Irssi 0.8.12 release, check the [NEWS
 file](/NEWS#v0-8-12) for all changes!
 
 It can be downloaded from
-[http://irssi.org/files/irssi-0.8.12.tar.gz](http://irssi.org/files/irssi-0.8.12.tar.gz).
+[https://irssi.org/files/irssi-0.8.12.tar.gz](https://irssi.org/files/irssi-0.8.12.tar.gz).
 
 This release was made possible with the help of the Irssi core team. We also
 welcome a new developer ***Jilles Tjoelker (jilles)*** who has joined the Irssi

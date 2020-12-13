@@ -55,7 +55,7 @@ Download setup.exe from [Cygwin][2]{:rel='external'} and select irssi during the
 `apt install irssi`.  
 You may find more up to date version on [Debian Backports][5]{:rel='external'}
 
-[5]: http://backports.debian.org/
+[5]: https://backports.debian.org/
 
 </div>
 <div class="info about-ubuntu" markdown="1">
@@ -73,7 +73,7 @@ Install [Homebrew][7]{:rel='external'}, then
 `brew install irssi`  
 You can also install Git with `--HEAD`
 
-[7]: http://brew.sh/
+[7]: https://brew.sh/
 
 </div>
 <div class="info about-gentoo" markdown="1">
@@ -93,7 +93,7 @@ You may find more up to date versions on [openSUSE Package Search][20]{:rel='ext
 
 For SLES and SLED, you can also find irssi in the [SUSE Package Hub](https://packagehub.suse.com/){:rel='external'}
 
-[20]: http://software.opensuse.org/package/irssi
+[20]: https://software.opensuse.org/package/irssi
 
 </div>
 <div class="info about-arch" markdown="1">
@@ -158,7 +158,7 @@ If your system is not listed, you can still check your systems' package manager 
 <div class="col-sm-10 col-md-9">
 <div class="col-sm-12 col-lg-6" markdown="1">
 
-The [openSUSE Build Service](http://build.opensuse.org/){:rel='external'} is building Irssi release packages and Irssi git snapshot packages for Debian, Fedora, Ubuntu, and openSUSE.
+The [openSUSE Build Service](https://build.opensuse.org/){:rel='external'} is building Irssi release packages and Irssi git snapshot packages for Debian, Fedora, Ubuntu, and openSUSE.
 
 </div>
 <div class="irssi-git col-sm-6" markdown="1">

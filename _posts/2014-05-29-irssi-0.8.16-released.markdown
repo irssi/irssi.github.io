@@ -17,8 +17,8 @@ to the project works in the future.
 The release can be downloaded from [our download page](/NEWS/#v0-8-16).
 
 Remember to check out Irssi's [Facebook fan
-page](http://www.facebook.com/irssi), [Google+
+page](https://www.facebook.com/irssi), [Google+
 Community](https://plus.google.com/communities/112792798498391615694) and
-[LinkedIn group](http://www.linkedin.com/groups?gid=147751) as well.
+[LinkedIn group](https://www.linkedin.com/groups?gid=147751) as well.
 
 The Irssi Team.
