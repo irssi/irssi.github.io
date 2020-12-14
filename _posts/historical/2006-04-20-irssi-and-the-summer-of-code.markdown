@@ -99,7 +99,7 @@ application deadline. The following is a suggested outline for your
 proposal, adapted from the [Perl foundation Open Source Proposal
 HOWTO](https://www.perlfoundation.org/how-to-write-a-proposal.html),
 and the [FreeBSD summer of code
-page](http://www.freebsd.org/projects/summerofcode.html):
+page](https://www.freebsd.org/projects/summerofcode.html):
 
 - Name
 - E-mail address

@@ -7,7 +7,7 @@ permalink: support/irc/
 Official international channel
 -------------------------------
 
-- \#irssi at [Freenode](http://freenode.net/) -- English only
+- \#irssi at [Freenode](https://freenode.net/) -- English only
 
 To join, `/connect Freenode`, then `/join #irssi`
 

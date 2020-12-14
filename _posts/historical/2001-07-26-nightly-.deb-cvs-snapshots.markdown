@@ -7,8 +7,8 @@ author: cras
 For all you debian users:
 
 ``` 
-  echo "deb http://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
-  echo "deb-src http://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
+  echo "deb https://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
+  echo "deb-src https://irssi.org/debian/ unstable/" >> /etc/apt/sources.list
   apt-get update
   apt-get install irssi-text
 ```

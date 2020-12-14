@@ -19,7 +19,7 @@ also like to take this opportunity to welcome two new developers to the team;
 
 Alexander has been involved with Irssi for a while and joined the development
 team back in October 2008. He's also involved with the [Exherbo
-project](http://www.exherbo.org/) and he will be implementing some nifty new
+project](https://www.exherbo.org/) and he will be implementing some nifty new
 features for the next release! So keep your eyes peeled on the changelog and
 look out for his contributions!
 
@@ -39,7 +39,7 @@ by starting work on some of the outstanding issues in the [Irssi
 bug](https://github.com/irssi/irssi/issues) list! We don't bite, much! ;)
 
 If you just *love* Irssi you might want to join our [LinkedIn
-group](http://www.linkedin.com/groups?gid=147751) or the [Facebook fan
-page](http://www.facebook.com/pages/IRSSI/40806744458?ref=mf).
+group](https://www.linkedin.com/groups?gid=147751) or the [Facebook fan
+page](https://www.facebook.com/pages/IRSSI/40806744458?ref=mf).
 
 The Irssi Team.

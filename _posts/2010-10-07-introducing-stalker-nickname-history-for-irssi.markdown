@@ -17,7 +17,7 @@ identify all nicknames it has used" is that you can identify nicknames across
 hostmask addresses.
 
 Stalker can be found on GitHub at
-[http://github.com/symkat/Stalker](http://github.com/symkat/Stalker).
+[https://github.com/symkat/Stalker](https://github.com/symkat/Stalker).
 
 More information can be found on [the authors
 blog](http://symkat.com/132/introducing-stalker-nickname-history-for-irssi/).

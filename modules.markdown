@@ -10,10 +10,10 @@ These third-party modules come **without any support or warranty** from the Irss
 * IRC (built-in)
 * [ICB](https://github.com/jperkin/irssi-icb)
 * [SILC](http://www.silcnet.org/)
-* [XMPP](https://github.com/cdidier/irssi-xmpp/network) (Jabber), see [cybione.org](http://cybione.org/~irssi-xmpp/)
-* [PSYC](https://github.com/electric-blue/irssyc), see [psyc.eu](http://psyc.eu/)
-* [Quassel](https://github.com/phhusson/quassel-irssi), see [quassel-irc.org](http://quassel-irc.org/)
-* [RobustIRC](https://github.com/robustirc/irssi-robustirc), see [robustirc.net](http://robustirc.net/)
+* [XMPP](https://github.com/cdidier/irssi-xmpp/network) (Jabber), see [cybione.org](https://cybione.org/~irssi-xmpp/)
+* [PSYC](https://github.com/electric-blue/irssyc), see [psyc.eu](https://psyc.eu/)
+* [Quassel](https://github.com/phhusson/quassel-irssi), see [quassel-irc.org](https://quassel-irc.org/)
+* [RobustIRC](https://github.com/robustirc/irssi-robustirc), see [robustirc.net](https://robustirc.net/)
 
 ## Functionality Enhancement
 * [OTR](https://github.com/cryptodotis/irssi-otr) message encryption (built-in since v1.2.0)

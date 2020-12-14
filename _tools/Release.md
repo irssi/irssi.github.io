@@ -30,7 +30,7 @@ parent folder to Github.
 
 ## `update_release.sh`
 
-Update the http://irssi.org/NEWS document and the release version
+Update the https://irssi.org/NEWS document and the release version
 number mentioned on https://irssi.org/download/ according to the NEWS
 file in the Irssi source folder.
 

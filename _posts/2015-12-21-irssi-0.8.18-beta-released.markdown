@@ -25,7 +25,7 @@ for details.
 This pre-release can be downloaded from
 [our releases page](https://github.com/irssi/irssi/releases).
 
-Thanks to the [Open Build Service](https://build.opensuse.org/) testing packages for some distributions were prepared on [ailin_nemui:irssi-test](http://download.opensuse.org/repositories/home:/ailin_nemui:/irssi-test/).
+Thanks to the [Open Build Service](https://build.opensuse.org/) testing packages for some distributions were prepared on [ailin_nemui:irssi-test](https://download.opensuse.org/repositories/home:/ailin_nemui:/irssi-test/).
 
 We are always looking for contributors so if you find any
 [Issues](https://github.com/irssi/irssi/issues) report them, and if
@@ -33,7 +33,7 @@ you can fix any of them do not hesitate to send in a
 [Patch](https://github.com/irssi/irssi/pulls)!
 
 Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
-[LinkedIn group](http://www.linkedin.com/groups?gid=147751), [Twitter
+[LinkedIn group](https://www.linkedin.com/groups?gid=147751), [Twitter
 profile](https://twitter.com/IrssiProject) or pop into `#irssi` on freenode.
 
 The Irssi Team.

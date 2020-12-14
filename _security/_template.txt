@@ -3,7 +3,7 @@
 name: Name of the bug group / security advisory, e.g.: IRSSI-SA-2099-01
 heading: Subheading above CVE list (optional)
 description: Description preface for whole advisory (optional)
-link: link to the advisory, e.g.: http://www.openwall.com/xxx (optional)
+link: link to the advisory, e.g.: https://www.openwall.com/xxx (optional)
 affected_note: Some additional info for the Versions column, e.g.: script.pl if group affects only a single script (optional)
 release_date: date of release in YYYY-mm-dd format, e.g.: 2099-01-02
 repo: repository for the git commit, e.g.: scripts.irssi.org (optional, defaults to irssi)

@@ -1,4 +1,4 @@
-// http://stackoverflow.com/a/34003331
+// https://stackoverflow.com/a/34003331
 if (Element.prototype.scrollIntoView && !Element.prototype.scrollIntoViewIfNeeded) {
     Element.prototype.scrollIntoViewIfNeeded = function (centerIfNeeded) {
         function withinBounds(value, min, max, extent) {
