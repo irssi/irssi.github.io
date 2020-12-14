@@ -57,7 +57,7 @@ A: Make sure your terminal supports UTF-8 (for example, `xterm -u8`). If you use
 
 ### Q: Will there be /DETACH-like feature?
 
-A: [tmux](https://tmux.github.io/), [screen](https://www.gnu.org/software/screen/screen.html) and [dtach](http://dtach.sf.net/) can be used to do it just fine.
+A: [tmux](https://tmux.github.io/), [screen](https://www.gnu.org/software/screen/screen.html) and [dtach](https://sourceforge.net/projects/dtach/) can be used to do it just fine.
 
 ### Q: How do I run scripts automatically at startup?
 
