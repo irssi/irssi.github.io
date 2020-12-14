@@ -5,6 +5,6 @@ date: 1999-09-13 21:30
 author: cras
 ---
 First icon for irssi, pretty weird but better than nothing I guess ;)
-Made by [tonic](http://www.iki.fi/jetro/)  
+Made by [tonic](https://www.iki.fi/jetro/)  
 [![(png)](/images/historical/irssi-icon.png)](/images/historical/irssi-icon.png)
 

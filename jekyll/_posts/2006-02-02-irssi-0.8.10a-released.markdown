@@ -4,13 +4,13 @@ author: Geert
 layout: post
 ---
 
-Due to a bug in the [Gentoo](http://www.gentoo.org/) autoconf package we decided to release
-a new source-package generated on a [Debian](http://www.debian.org/) system.
+Due to a bug in the [Gentoo](https://www.gentoo.org/) autoconf package we decided to release
+a new source-package generated on a [Debian](https://www.debian.org/) system.
 
 We apologize for any inconvenience caused by the previously released version. Please bear in mind that
 this release does NOT include any new features or code-changes. It's just a re-packaged source.
 
 If you have problems compiling Irssi due to autoconf or ./configure errors, please go to
-[the download section](http://www.irssi.org/download) and give the re-packaged source a shot.
+[the download section](https://www.irssi.org/download) and give the re-packaged source a shot.
 
 The Irssi Team

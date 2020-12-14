@@ -92,16 +92,16 @@ realize it makes more sense to keep everything together at freenode.
 ### Closing Words
 
 The changes to our contribution model will also affect people who are pulling
-from Subversion or [scripts.irssi.org](http://scripts.irssi.org/)
+from Subversion or [scripts.irssi.org](https://scripts.irssi.org/)
 automatically.
 
 ***Access to our Subversion repositories will be revoked and the move of
-[scripts.irssi.org](http://scripts.irssi.org/) to the new Github site will
+[scripts.irssi.org](https://scripts.irssi.org/) to the new Github site will
 happen on July 31st, 2014.*** Until then, neither of the two systems will be
 maintained and no new content will be published there.
 
 Until the migration to Github is completed, you can find our official script
-repository at [ghscripts.irssi.org](http://scripts.irssi.org/).  tomaw will
+repository at [ghscripts.irssi.org](https://scripts.irssi.org/).  tomaw will
 continue being in charge of scripts and will happily review your pull requests
 on Github.
 

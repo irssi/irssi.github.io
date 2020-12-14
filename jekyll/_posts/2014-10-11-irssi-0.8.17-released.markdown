@@ -16,7 +16,7 @@ The release can be downloaded from [our download page](/NEWS/#v0-8-17).
 Please report bugs at our [Github issue tracker](https://github.com/irssi/irssi/issues).
 
 Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
-[LinkedIn group](http://www.linkedin.com/groups?gid=147751), [Twitter
+[LinkedIn group](https://www.linkedin.com/groups?gid=147751), [Twitter
 profile](https://twitter.com/IrssiProject) or pop into `#irssi` on freenode.
 
 The Irssi Team.

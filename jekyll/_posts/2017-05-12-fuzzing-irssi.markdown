@@ -215,5 +215,5 @@ staff. Staff can be reached at staff@irssi.org.
 
 [hacker news discussion](https://news.ycombinator.com/item?id=14330989)
 
-Thanks to [Softdroid](http://softdroid.net/) for a
-[Russian translation](http://softdroid.net/fuzzing-irssi-ru) of this article.
+Thanks to [Softdroid](https://softdroid.net/) for a
+[Russian translation](https://softdroid.net/fuzzing-irssi-ru) of this article.

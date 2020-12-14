@@ -4,6 +4,6 @@ author: Geert
 layout: post
 ---
 
-Google has opened the registration process for students. Please [sign yourself up for the Summer of Code.](http://code.google.com/soc)
+Google has opened the registration process for students. Please [sign yourself up for the Summer of Code.](https://code.google.com/soc)
 
 The Irssi Team

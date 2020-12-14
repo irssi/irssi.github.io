@@ -11,9 +11,9 @@ process of being updated for Irssi 0.8.15.
 Before the new Windows binaries are released, we'd like some Windows users to
 test the 0.8.15 installer in order to prepare it for prime time. If you would
 like to help with the test effort, please read [the testing
-notes](http://irssi.org/files/irssi_0_8_15_windows_testing.txt) that outline
+notes](https://irssi.org/files/irssi_0_8_15_windows_testing.txt) that outline
 the testing details, then download the [test
-installer](http://www.irssi.org/files/irssi_0_8_15_TEST3.exe).
+installer](https://www.irssi.org/files/irssi_0_8_15_TEST3.exe).
 
 The Irssi Team would also like to wish you a happy holidays and all the best
 for the New Year.

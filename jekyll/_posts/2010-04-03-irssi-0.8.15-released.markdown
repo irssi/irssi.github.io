@@ -16,7 +16,7 @@ bug.
 For a complete listing of the changes and bugfixes since 0.8.14, please have a
 look at the [ChangeLog](/NEWS/#v0-8-15).
 
-Remember to check out Irssi's [Facebook fan page](http://www.facebook.com/irssi)
-and [LinkedIn](http://www.linkedin.com/groups?gid=147751) as well.
+Remember to check out Irssi's [Facebook fan page](https://www.facebook.com/irssi)
+and [LinkedIn](https://www.linkedin.com/groups?gid=147751) as well.
 
 The Irssi Team.

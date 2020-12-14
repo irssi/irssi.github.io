@@ -5,8 +5,8 @@ author: "Sebastian Pipping"
 email: "staff@irssi.org"
 ---
 
-[Joshua Dick](http://joshdick.net/) and [Sebastian
-Pipping](http://www.hartwork.org/) have been putting our work into improving the
+[Joshua Dick](https://joshdick.net/) and [Sebastian
+Pipping](https://www.hartwork.org/) have been putting our work into improving the
 Irssi experience for Windows users. We made an installer built on NSIS and an
 USB archive made to be put on an USB stick and allow carrying your personal
 Irssi instance with you.
@@ -27,8 +27,8 @@ looks better than cmd.
 
 Have fun with it and report any bugs!
 
-- Installer: [/files/irssi_0_8_12_setup_2.exe](http://www.irssi.org/files/irssi_0_8_12_setup_2.exe).
-- USB archive: [/files/irssi_0_8_12_usb_2.zip](http://www.irssi.org/files/irssi_0_8_12_usb_2.zip).
+- Installer: [/files/irssi_0_8_12_setup_2.exe](https://www.irssi.org/files/irssi_0_8_12_setup_2.exe).
+- USB archive: [/files/irssi_0_8_12_usb_2.zip](https://www.irssi.org/files/irssi_0_8_12_usb_2.zip).
 - SVN repo: [https://github.com/irssi-import/contrib-w32installer](https://github.com/irssi-import/contrib-w32installer).
 
 The Irssi Team.
