@@ -637,3 +637,156 @@ table.kv > tbody > tr > td:first-child {
 	column-count: 7;
     }
 }
+body,
+.jumbotron {
+    transition: opacity 300ms linear, color 150ms, background-color 150ms, border-color 150ms;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+	background-color: #2e3440;
+	color: #ffffff;
+    }
+    .jumbotron {
+	background-color: #434c5e;
+    }
+    .btn-default,
+    .btn-default:focus,
+    .btn-default.focus,
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+	background-color: #3b4252;
+    }
+    .btn-default {
+	color: #e6e6e6;
+    }
+    .btn-default:focus,
+    .btn-default.focus,
+    .btn-default:active,
+    .btn-default.active,
+    .open > .dropdown-toggle.btn-default {
+	color: #ffffff;
+    }
+    .btn-default:hover,
+    .btn-default:focus,
+    .btn-default:active,
+    .btn-default.active,
+    .dlc input:checked + label {
+	color: #ffffff;
+	background-color: #466387;
+    }
+    code,
+    pre {
+	background-color: #1d232e;/*#3b4252*/;
+	color: #eceff4;
+    }
+    .default-sidebar {
+	background-color: #2e3440;
+    }
+    .pagination > li > a,
+    .pagination > li > span,
+    .col-xs-12.col-md-4 select,
+    a {
+	color: #8699bb;
+    }
+    a:hover,
+    a:focus {
+	color: #5e81ac;
+    }
+    h1 a,
+    h2 a,
+    h3 a {
+	color: #fff; /* body color */
+    }
+    .pagination > li > a,
+    .pagination > li > span {
+	background-color: #2e3440;
+	border-color: #3b4252;
+    }
+    .pagination > li > a:hover,
+    .pagination > li > span:hover,
+    .pagination > li > a:focus,
+    .pagination > li > span:focus {
+	background-color: #405c7d;
+	color: #fff;
+	border-color: #466387;
+    }
+    .navbar-form .form-control {
+	background-color: #3b4252;
+    }
+    div.toprule,
+    div.container > div > h1:nth-child(1), div.container > h1:nth-child(1) {
+	background-color: #3b4252;
+    }
+    hr,
+    blockquote,
+    .container.home > div > :not(h1):not(nav) + h2, .container.home > :not(h1) + h2,
+    .container.relnews > div > hr, .container.relnews > hr,
+    .table > tbody + tbody,
+    .table > thead > tr > th,
+    .table > tbody > tr > th,
+    .table > tfoot > tr > th,
+    .table > thead > tr > td,
+    .table > tbody > tr > td,
+    .table > tfoot > tr > td {
+	border-color: #3b4252;
+    }
+    object#fig_break_wide {
+	filter: invert();
+    }
+    #___gcse_0 .gsc-input {
+	background-color: #3b4252 !important;
+    }
+    #___gcse_0 .gsc-webResult.gsc-result,
+    #___gcse_0 .gsc-control-cse,
+    #___gcse_0 .gsc-results {
+	background-color: #2e3440;
+	color: #ffffff;
+    }
+    #___gcse_0 .gsc-webResult.gsc-result {
+	border-color: #2e3440;
+    }
+    #___gcse_0 .gs-webResult.gs-result a.gs-title,
+    #___gcse_0 .gs-webResult.gs-result a.gs-title b,
+    #___gcse_0 .gs-imageResult a.gs-title,
+    #___gcse_0 .gs-imageResult a.gs-title b {
+	font-weight: 800;
+    }
+    #___gcse_0 .gs-webResult div.gs-visibleUrl,
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:visited,
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:visited b,
+    #___gcse_0 .gs-imageResult a.gs-title:visited,
+    #___gcse_0 .gs-imageResult a.gs-title:visited b {
+	color: #e6e6e6;
+    }
+    #___gcse_0 .gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,
+    #___gcse_0 .gs-webResult .gs-per-result-labels .gs-label {
+	color: #fff;
+    }
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:link,
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:link b,
+    #___gcse_0 .gs-imageResult a.gs-title:link,
+    #___gcse_0 .gs-imageResult a.gs-title:link b {
+	color: #fff;
+    }
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:hover,
+    #___gcse_0 .gs-webResult.gs-result a.gs-title:hover b,
+    #___gcse_0 .gs-imageResult a.gs-title:hover,
+    #___gcse_0 .gs-imageResult a.gs-title:hover b {
+	color: #5e81ac;
+    }
+    #___gcse_0 .gsc-cursor-page {
+	background-color: #2e3440;
+	border-color: #3b4252;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1ex;
+    }
+    #___gcse_0 .gsc-cursor-page:hover,
+    #___gcse_0 .gsc-cursor-page:focus,
+    #___gcse_0 .gsc-cursor-current-page {
+	background-color: #405c7d;
+	color: #fff;
+	border-color: #466387;
+    }
+}
