@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.1))
+[Help index](/documentation/help/index_(1.1)/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.1
-* [v1.2](/documentation/help/bind)
+* [v1.2](/documentation/help/bind/)
 </div>
 
 ### Syntax ###
@@ -29,7 +29,7 @@ Please submit changes to
 ### Parameters ###
 
 
-| [`-list`](/documentation/help/bind_-list): |       Displays a list of all the bindable commands. |
+| [`-list`](/documentation/help/bind_-list/): |       Displays a list of all the bindable commands. |
 | `-delete`: |     Removes the binding, |
 {:.table.kv}
 
@@ -56,5 +56,5 @@ pressed to use the binding.
     /BIND ^[[12~ command AWAY
 
 ### See also ###
-[ALIAS](/documentation/help/alias)
+[ALIAS](/documentation/help/alias/)
 

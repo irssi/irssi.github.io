@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -39,5 +39,5 @@ a nuisance of themselves.
     /KICK #irssi bob,sarah Stop flooding!
 
 ### See also ###
-[BAN](/documentation/help/ban), [KICKBAN](/documentation/help/kickban), [KNOCKOUT](/documentation/help/knockout)
+[BAN](/documentation/help/ban/), [KICKBAN](/documentation/help/kickban/), [KNOCKOUT](/documentation/help/knockout/)
 

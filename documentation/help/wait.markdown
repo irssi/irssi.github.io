@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ to the server.
     /WAIT 5000
 
 ### See also ###
-[ALIAS](/documentation/help/alias)
+[ALIAS](/documentation/help/alias/)
 

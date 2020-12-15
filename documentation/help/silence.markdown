@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -47,5 +47,5 @@ This command does not work on all IRC networks.
     /SILENCE -*!*@*.irssi.org
 
 ### See also ###
-[ACCEPT](/documentation/help/accept), [IGNORE](/documentation/help/ignore)
+[ACCEPT](/documentation/help/accept/), [IGNORE](/documentation/help/ignore/)
 

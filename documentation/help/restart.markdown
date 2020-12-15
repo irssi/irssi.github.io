@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -31,5 +31,5 @@ administrators.
     /RESTART
 
 ### See also ###
-[DIE](/documentation/help/die), [KILL](/documentation/help/kill), [OPER](/documentation/help/oper), [REHASH](/documentation/help/rehash)
+[DIE](/documentation/help/die/), [KILL](/documentation/help/kill/), [OPER](/documentation/help/oper/), [REHASH](/documentation/help/rehash/)
 

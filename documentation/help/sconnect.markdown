@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -40,5 +40,5 @@ operators.
     /SCONNECT ircsource.irssi.org 6667 be.hub
 
 ### See also ###
-[DIE](/documentation/help/die), [KILL](/documentation/help/kill), [OPER](/documentation/help/oper), [RESTART](/documentation/help/restart), [SQUIT](/documentation/help/squit)
+[DIE](/documentation/help/die/), [KILL](/documentation/help/kill/), [OPER](/documentation/help/oper/), [RESTART](/documentation/help/restart/), [SQUIT](/documentation/help/squit/)
 

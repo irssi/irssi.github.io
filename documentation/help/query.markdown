@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ Starts a private conversation with a nickname.
     /QUERY -freenode -window sarah
 
 ### See also ###
-[MSG](/documentation/help/msg), [UNQUERY](/documentation/help/unquery), [WINDOW](/documentation/help/window)
+[MSG](/documentation/help/msg/), [UNQUERY](/documentation/help/unquery/), [WINDOW](/documentation/help/window/)
 

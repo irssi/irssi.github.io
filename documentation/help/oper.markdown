@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Grants you the IRC operator status.
     /OPER mike WzerT8zq 
 
 ### See also ###
-[DIE](/documentation/help/die), [KILL](/documentation/help/kill)
+[DIE](/documentation/help/die/), [KILL](/documentation/help/kill/)
 

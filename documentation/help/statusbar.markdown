@@ -12,11 +12,11 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <div markdown="1" class="version">
-* [v1.1](/documentation/help/statusbar_(1.1))
+* [v1.1](/documentation/help/statusbar_(1.1)/)
 * v1.2
 </div>
 
@@ -86,5 +86,5 @@ Statusbar syntax was changed in Irssi 1.2. The old syntax is still
 accepted for backward compatibility, but no longer documented.
 
 ### See also ###
-[WINDOW](/documentation/help/window)
+[WINDOW](/documentation/help/window/)
 

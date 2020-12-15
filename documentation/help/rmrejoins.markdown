@@ -11,7 +11,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -26,5 +26,5 @@ Removes all active and pending join requests.
     /RMREJOINS
 
 ### See also ###
-[JOIN](/documentation/help/join), [PART](/documentation/help/part)
+[JOIN](/documentation/help/join/), [PART](/documentation/help/part/)
 

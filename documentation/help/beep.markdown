@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -30,5 +30,5 @@ Outputs the bell-character, usually causing your terminal to beep.
     /BEEP
 
 ### See also ###
-[CLEAR](/documentation/help/clear)
+[CLEAR](/documentation/help/clear/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -50,5 +50,5 @@ well as your away message.
     /AWAY -one Feeding the cat!
 
 ### See also ###
-[DISCONNECT](/documentation/help/disconnect)
+[DISCONNECT](/documentation/help/disconnect/)
 

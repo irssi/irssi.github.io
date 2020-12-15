@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -34,5 +34,5 @@ Removes a module from the memory.
     /UNLOAD fish
 
 ### See also ###
-[LOAD](/documentation/help/load), [SCRIPT](/documentation/help/script)
+[LOAD](/documentation/help/load/), [SCRIPT](/documentation/help/script/)
 

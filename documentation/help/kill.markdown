@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -39,5 +39,5 @@ these practices are generally frowned upon.
     /KILL bob Stop breaking the network rules!
 
 ### See also ###
-[DIE](/documentation/help/die), [OPER](/documentation/help/oper), [WALLOPS](/documentation/help/wallops)
+[DIE](/documentation/help/die/), [OPER](/documentation/help/oper/), [WALLOPS](/documentation/help/wallops/)
 

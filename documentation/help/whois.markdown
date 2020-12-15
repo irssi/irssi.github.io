@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -47,5 +47,5 @@ performed.
     /WHOIS sarah sarah
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [NAMES](/documentation/help/names), [WHO](/documentation/help/who), [WHOWAS](/documentation/help/whowas)
+[CHANNEL](/documentation/help/channel/), [NAMES](/documentation/help/names/), [WHO](/documentation/help/who/), [WHOWAS](/documentation/help/whowas/)
 

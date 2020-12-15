@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -53,5 +53,5 @@ Common flags:
     /WHO sar*
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [NAMES](/documentation/help/names), [WHOIS](/documentation/help/whois)
+[CHANNEL](/documentation/help/channel/), [NAMES](/documentation/help/names/), [WHOIS](/documentation/help/whois/)
 

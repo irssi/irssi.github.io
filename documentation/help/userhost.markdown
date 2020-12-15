@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ nickname is AWAY or available.
     /USERHOST bob sarah
 
 ### See also ###
-[WHOIS](/documentation/help/whois)
+[WHOIS](/documentation/help/whois/)
 

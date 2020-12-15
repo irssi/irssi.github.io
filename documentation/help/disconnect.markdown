@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ server.
     /DISCONNECT
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [SERVER](/documentation/help/server)
+[CONNECT](/documentation/help/connect/), [SERVER](/documentation/help/server/)
 

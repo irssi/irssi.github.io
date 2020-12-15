@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ bear in mind that it does not download or compile a new version.
     /UPGRADE /home/mike/irssi-dev/bin/irssi
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [HELP](/documentation/help/help)
+[CONNECT](/documentation/help/connect/), [DISCONNECT](/documentation/help/disconnect/), [HELP](/documentation/help/help/)
 

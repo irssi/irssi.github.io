@@ -15,11 +15,11 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <nav markdown="1">
-[Window subcommands index](/documentation/help/window)
+[Window subcommands index](/documentation/help/window/)
 </nav>
 
 ### Syntax ###
@@ -52,5 +52,5 @@ Manipulates the window layout and positioning attributes.
     /WINDOW LOGFILE ~/logs/notices.log
 
 ### See also ###
-[JOIN](/documentation/help/join), [LEVELS](/documentation/help/levels), [LOG](/documentation/help/log), [QUERY](/documentation/help/query)
+[JOIN](/documentation/help/join/), [LEVELS](/documentation/help/levels/), [LOG](/documentation/help/log/), [QUERY](/documentation/help/query/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -31,5 +31,5 @@ reserved for IRC operators and does not work on all servers.
     /MAP
 
 ### See also ###
-[DIE](/documentation/help/die), [LINKS](/documentation/help/links), [LUSERS](/documentation/help/lusers)
+[DIE](/documentation/help/die/), [LINKS](/documentation/help/links/), [LUSERS](/documentation/help/lusers/)
 

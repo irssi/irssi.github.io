@@ -11,7 +11,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -45,5 +45,5 @@ Interact with the Perl engine to execute scripts.
     /SCRIPT EXEC foreach my $channel (Irssi::channels()) { Irssi::print($channel->{name} . ' @ ' . $channel->{server}->{tag}); }
 
 ### See also ###
-[LOAD](/documentation/help/load), [SAVE](/documentation/help/save), [UNLOAD](/documentation/help/unload)
+[LOAD](/documentation/help/load/), [SAVE](/documentation/help/save/), [UNLOAD](/documentation/help/unload/)
 

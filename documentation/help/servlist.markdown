@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -39,5 +39,5 @@ List the network services currently present on the
     /SERVLIST * 0xD000
 
 ### See also ###
-[SQUERY](/documentation/help/squery)
+[SQUERY](/documentation/help/squery/)
 

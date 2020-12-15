@@ -28,4 +28,4 @@ These third-party modules come **without any support or warranty** from the Irss
 
 ## Front-end Modules
 * GTK Front-end: [xirssi](https://github.com/irssi-import/xirssi) (unmaintained)
-* [proxy](/documentation/proxy): built-in IRC BNC
+* [proxy](/documentation/proxy/): built-in IRC BNC

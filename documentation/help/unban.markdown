@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -62,5 +62,5 @@ a ban based on the nick!\*@\*.domain.tld format.
     /SET ban_type custom user host
 
 ### See also ###
-[BAN](/documentation/help/ban), [DEOP](/documentation/help/deop), [KICKBAN](/documentation/help/kickban), [KNOCKOUT](/documentation/help/knockout), [OP](/documentation/help/op)
+[BAN](/documentation/help/ban/), [DEOP](/documentation/help/deop/), [KICKBAN](/documentation/help/kickban/), [KNOCKOUT](/documentation/help/knockout/), [OP](/documentation/help/op/)
 

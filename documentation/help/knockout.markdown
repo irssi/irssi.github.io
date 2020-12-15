@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ network.
     /KNOCKOUT bob,sarah Chill down a bit.
 
 ### See also ###
-[BAN](/documentation/help/ban), [KICK](/documentation/help/kick), [KICKBAN](/documentation/help/kickban)
+[BAN](/documentation/help/ban/), [KICK](/documentation/help/kick/), [KICKBAN](/documentation/help/kickban/)
 

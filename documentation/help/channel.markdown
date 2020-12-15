@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -73,5 +73,5 @@ the channels you are present on into the configuration.
     /ADDALLCHANS
 
 ### See also ###
-[JOIN](/documentation/help/join), [TS](/documentation/help/ts)
+[JOIN](/documentation/help/join/), [TS](/documentation/help/ts/)
 

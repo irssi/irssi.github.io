@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.2
-* [v1.3](/documentation/help/cat_(1.3))
+* [v1.3](/documentation/help/cat_(1.3)/)
 </div>
 
 ### Syntax ###
@@ -45,5 +45,5 @@ omitted the whole file is shown.
     /CAT contact_details.txt
 
 ### See also ###
-[CD](/documentation/help/cd), [EXEC](/documentation/help/exec)
+[CD](/documentation/help/cd/), [EXEC](/documentation/help/exec/)
 

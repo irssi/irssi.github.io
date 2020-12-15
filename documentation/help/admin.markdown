@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Displays the administrative details of a server.
     /ADMIN mike
 
 ### See also ###
-[INFO](/documentation/help/info)
+[INFO](/documentation/help/info/)
 

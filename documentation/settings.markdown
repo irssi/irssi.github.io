@@ -7,7 +7,7 @@ licence: "[Creative Commons Attribution-ShareAlike 2.5 License](https://creative
 ---
 Irssi settings notes. Updated for 1.2.2
 
-This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation) for more complete understanding of how Irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
+This is not an attempt to document Irssi completely. It should be used along with the documents at [Documentation](/documentation/) for more complete understanding of how Irssi works. For example, the startup HOWTO and tips/tricks show sample uses for these settings, including some very useful stuff.
 
 See the [appendix](#a_credits) for credits and license information of this document.
 
@@ -980,7 +980,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > The reply to send when someone queries your user information. By default, it's $Y, which is defined by the real_name setting.
 >
-> See <<https://irssi.org/documentation/special_vars>> for more special variables you can use.
+> See <<https://irssi.org/documentation/special_vars/>> for more special variables you can use.
 
 {:#ctcp_version_reply}
 ` ctcp_version_reply` **`irssi v$J - running on $sysname $sysarch`**
@@ -1422,7 +1422,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 ##  [irssiproxy]
 
-Also see [proxy.txt](/documentation/proxy) for more information about the irssiproxy module.
+Also see [proxy.txt](/documentation/proxy/) for more information about the irssiproxy module.
 
 {:#irssiproxy_ports}
 ` irssiproxy_ports` **``**
@@ -1501,7 +1501,7 @@ Several settings allow special variables. These variables will be replaced by th
 
 They are mostly used for formatting text in themes.
 
-From <https://irssi.org/documentation/special_vars>:
+From <https://irssi.org/documentation/special_vars/>:
 
 
 NOTE: This is just a slightly modified file taken from EPIC's help.
@@ -1674,7 +1674,7 @@ Messages that describe times are formatted according to the strftime() function 
 
 Irssi defines codes to represent colors. They work like the `strftime()` codes in Appendix C.
 
-From <https://irssi.org/documentation/formats>:
+From <https://irssi.org/documentation/formats/>:
 
 Irssi's colors that you can use in text formats, hilights, etc. :
 

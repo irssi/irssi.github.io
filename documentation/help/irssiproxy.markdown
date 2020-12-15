@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:16ch"><code><span class="synB">IRSSIPROXY</span> <span class="synB">STATUS</span></code></pre></div>
@@ -32,5 +32,5 @@ Displays the list of clients connected to irssiproxy.
     /IRSSIPROXY STATUS
 
 ### See also ###
-[LOAD](/documentation/help/load), [PROXY](/documentation/help/proxy), [SET](/documentation/help/set), [irssiproxy](/documentation/help/irssiproxy)
+[LOAD](/documentation/help/load/), [PROXY](/documentation/help/proxy/), [SET](/documentation/help/set/), [irssiproxy](/documentation/help/irssiproxy/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -42,5 +42,5 @@ Allows you to reconfigure the way messages are displayed.
     /FORMAT -reset irc away
 
 ### See also ###
-[RELOAD](/documentation/help/reload), [SAVE](/documentation/help/save), [SET](/documentation/help/set)
+[RELOAD](/documentation/help/reload/), [SAVE](/documentation/help/save/), [SET](/documentation/help/set/)
 

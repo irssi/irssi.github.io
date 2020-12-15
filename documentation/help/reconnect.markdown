@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Disconnect and reconnect from a network.
     /RECONNECT EFnet BRB :)
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network), [RMRECONNS](/documentation/help/rmreconns), [SERVER](/documentation/help/server)
+[CONNECT](/documentation/help/connect/), [DISCONNECT](/documentation/help/disconnect/), [NETWORK](/documentation/help/network/), [RMRECONNS](/documentation/help/rmreconns/), [SERVER](/documentation/help/server/)
 

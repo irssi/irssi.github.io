@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -77,5 +77,5 @@ maximize your IRC experience.
     /MODE mike +iw
 
 ### See also ###
-[BAN](/documentation/help/ban), [DEOP](/documentation/help/deop), [DEVOICE](/documentation/help/devoice), [OP](/documentation/help/op), [UNBAN](/documentation/help/unban), [VOICE](/documentation/help/voice)
+[BAN](/documentation/help/ban/), [DEOP](/documentation/help/deop/), [DEVOICE](/documentation/help/devoice/), [OP](/documentation/help/op/), [UNBAN](/documentation/help/unban/), [VOICE](/documentation/help/voice/)
 

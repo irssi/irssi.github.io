@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Removes an entry from the ignore list.
     /UNIGNORE mike
 
 ### See also ###
-[ACCEPT](/documentation/help/accept), [IGNORE](/documentation/help/ignore), [SILENCE](/documentation/help/silence)
+[ACCEPT](/documentation/help/accept/), [IGNORE](/documentation/help/ignore/), [SILENCE](/documentation/help/silence/)
 

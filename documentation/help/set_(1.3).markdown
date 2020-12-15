@@ -12,11 +12,11 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.3))
+[Help index](/documentation/help/index_(1.3)/)
 </nav>
 
 <div markdown="1" class="version">
-* [v1.2](/documentation/help/set)
+* [v1.2](/documentation/help/set/)
 * v1.3
 </div>
 
@@ -57,5 +57,5 @@ into your configuration.
     /SET close
 
 ### See also ###
-[SAVE](/documentation/help/save), [TOGGLE](/documentation/help/toggle)
+[SAVE](/documentation/help/save/), [TOGGLE](/documentation/help/toggle/)
 

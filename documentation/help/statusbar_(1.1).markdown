@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.1))
+[Help index](/documentation/help/index_(1.1)/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.1
-* [v1.2](/documentation/help/statusbar)
+* [v1.2](/documentation/help/statusbar/)
 </div>
 
 ### Syntax ###
@@ -83,5 +83,5 @@ as where it is located and whether or not it is currently visible.
     /STATUSBAR topic ENABLE
 
 ### See also ###
-[WINDOW](/documentation/help/window_(1.1))
+[WINDOW](/documentation/help/window_(1.1)/)
 

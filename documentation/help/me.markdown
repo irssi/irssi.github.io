@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Sends an action emote to the active nickname or channel.
     /ME is happy it's Friday
 
 ### See also ###
-[ACTION](/documentation/help/action), [CTCP](/documentation/help/ctcp)
+[ACTION](/documentation/help/action/), [CTCP](/documentation/help/ctcp/)
 

@@ -8,19 +8,19 @@ categories: [ _nav ]
 
 ### Documentation
 
-- [Frequently Asked Questions](faq)
-- [Startup How-To](startup)
-- [Check the built-in `/HELP`](help), it has all the details on command syntax
-- [Settings](settings)
-- [Design](design)
+- [Frequently Asked Questions](faq/)
+- [Startup How-To](startup/)
+- [Check the built-in `/HELP`](help/), it has all the details on command syntax
+- [Settings](settings/)
+- [Design](design/)
 - [Manual](//github.com/irssi/irssi/blob/master/docs/manual.txt){:rel='external'}, a bit dated and unfinished
-- [Contributing](/development)
+- [Contributing](/development/)
 
 ### Support
 
-- [`#irssi` IRC](/support/irc)
+- [`#irssi` IRC](/support/irc/)
 
-> If your irssi crashes, it's always a bug. Please read [bugreporting howto](/documentation/crash)
+> If your irssi crashes, it's always a bug. Please read [bugreporting howto](/documentation/crash/)
 and send one. For other type of bugs, it would still be nice to hear of them,
 but chances are that it's already known. Send all bugreports to irssi's [bug
 reporting system](//github.com/irssi/irssi/issues), but check if it has already
@@ -28,12 +28,12 @@ been reported first.
 
 ### Miscellaneous
 
-- [Tips & Tricks](tips)
+- [Tips & Tricks](tips/)
 - [Irssi Proxy](//github.com/irssi/irssi/blob/master/docs/proxy.txt){:rel='external'}, the mini-bnc module
 - [Colour Formats](//github.com/irssi/irssi/blob/master/docs/formats.txt){:rel='external'}
 - [Special Variables](//github.com/irssi/irssi/blob/master/docs/special_vars.txt){:rel='external'}
 - [Irssi 0.8.17 Tips](//github.com/shabble/irssi-docs/wiki/Irssi-0.8.17){:rel='external'}
-- [About Irssi](about) (historical)
+- [About Irssi](about/) (historical/)
 
 ### Tutorials
 
@@ -58,9 +58,9 @@ problems.
 
 ### Still problems?
 
-Read the [FAQ](/documentation/faq)
+Read the [FAQ](/documentation/faq/)
 before asking anything.
-The [Startup How-To](/documentation/startup) is quite useful as well.
+The [Startup How-To](/documentation/startup/) is quite useful as well.
 And if you just want to know about some setting, you could very well guess
 it yourself too, like if you want to change something related to windows,
 try `/SET window`.

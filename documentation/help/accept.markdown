@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -45,5 +45,5 @@ This command only works on IRC servers that support the callerid user mode.
     /ACCEPT sarah,-bob
 
 ### See also ###
-[IGNORE](/documentation/help/ignore), [SILENCE](/documentation/help/silence)
+[IGNORE](/documentation/help/ignore/), [SILENCE](/documentation/help/silence/)
 

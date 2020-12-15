@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -44,5 +44,5 @@ variables and separate multiple commands by using the ';' character.
 
 
 ### See also ###
-[CAT](/documentation/help/cat), [CD](/documentation/help/cd), [ECHO](/documentation/help/echo), [EXEC](/documentation/help/exec)
+[CAT](/documentation/help/cat/), [CD](/documentation/help/cd/), [ECHO](/documentation/help/echo/), [EXEC](/documentation/help/exec/)
 

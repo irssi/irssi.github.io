@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -51,5 +51,5 @@ need to enclose the completion between "'" characters.
     /COMPLETION -delete without
 
 ### See also ###
-[BIND](/documentation/help/bind)
+[BIND](/documentation/help/bind/)
 

@@ -16,7 +16,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -77,5 +77,5 @@ the filename within quotes. For example: 'my file with spaces.txt'.
     /DCC CLOSE send bob "summer vacation.mkv"
 
 ### See also ###
-[CD](/documentation/help/cd)
+[CD](/documentation/help/cd/)
 

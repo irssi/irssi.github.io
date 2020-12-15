@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -55,5 +55,5 @@ Common statistics:
     /STATS I ircsource.irssi.org
 
 ### See also ###
-[MOTD](/documentation/help/motd), [OPER](/documentation/help/oper)
+[MOTD](/documentation/help/motd/), [OPER](/documentation/help/oper/)
 

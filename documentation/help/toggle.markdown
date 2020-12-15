@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ value.
     /TOGGLE channels_rejoin_unavailable ON
 
 ### See also ###
-[SET](/documentation/help/set)
+[SET](/documentation/help/set/)
 

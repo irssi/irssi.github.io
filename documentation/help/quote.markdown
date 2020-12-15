@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Sends raw data to the server without any parsing.
     /QUOTE OPERWALL :Meow!
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [JOIN](/documentation/help/join), [MSG](/documentation/help/msg), [PART](/documentation/help/part)
+[CONNECT](/documentation/help/connect/), [DISCONNECT](/documentation/help/disconnect/), [JOIN](/documentation/help/join/), [MSG](/documentation/help/msg/), [PART](/documentation/help/part/)
 

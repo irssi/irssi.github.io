@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Displays the welcome message of an IRC server.
     /MOTD bob
 
 ### See also ###
-[ADMIN](/documentation/help/admin), [INFO](/documentation/help/info), [LINKS](/documentation/help/links), [MAP](/documentation/help/map)
+[ADMIN](/documentation/help/admin/), [INFO](/documentation/help/info/), [LINKS](/documentation/help/links/), [MAP](/documentation/help/map/)
 

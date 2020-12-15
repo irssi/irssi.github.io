@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Removes the specified highlight from the configuration.
     /DEHILIGHT 31
 
 ### See also ###
-[HILIGHT](/documentation/help/hilight)
+[HILIGHT](/documentation/help/hilight/)
 

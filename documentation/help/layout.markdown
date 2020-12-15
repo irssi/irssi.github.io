@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -48,5 +48,5 @@ into the configuration file.
     /LAYOUT RESET
 
 ### See also ###
-[SAVE](/documentation/help/save), [WINDOW](/documentation/help/window)
+[SAVE](/documentation/help/save/), [WINDOW](/documentation/help/window/)
 

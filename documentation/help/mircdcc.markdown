@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -45,5 +45,5 @@ automatically be enabled.
     /MIRCDCC OFF
 
 ### See also ###
-[ACTION](/documentation/help/action), [CTCP](/documentation/help/ctcp), [DCC](/documentation/help/dcc)
+[ACTION](/documentation/help/action/), [CTCP](/documentation/help/ctcp/), [DCC](/documentation/help/dcc/)
 

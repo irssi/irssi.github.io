@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Disconnects a server from the IRC network; this command is restricted to
     /SQUIT ircsource.irssi.org I'm fixing a desync!
 
 ### See also ###
-[DIE](/documentation/help/die), [OPER](/documentation/help/oper), [SCONNECT](/documentation/help/sconnect)
+[DIE](/documentation/help/die/), [OPER](/documentation/help/oper/), [SCONNECT](/documentation/help/sconnect/)
 

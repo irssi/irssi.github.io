@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ Saves the configuration file.
     /SAVE ~/.irssi/config-new
 
 ### See also ###
-[RELOAD](/documentation/help/reload), [SET](/documentation/help/set)
+[RELOAD](/documentation/help/reload/), [SET](/documentation/help/set/)
 

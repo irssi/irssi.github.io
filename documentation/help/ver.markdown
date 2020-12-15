@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ users on the channel.
     /VER mike
 
 ### See also ###
-[CTCP](/documentation/help/ctcp)
+[CTCP](/documentation/help/ctcp/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Scrolls up the text in the window and fills the window with blank lines; you
 may want to use this to make new text start at the top of the window again.
 
 ### See also ###
-[REDRAW](/documentation/help/redraw), [SCROLLBACK](/documentation/help/scrollback), [CLEAR](/documentation/help/clear)
+[REDRAW](/documentation/help/redraw/), [SCROLLBACK](/documentation/help/scrollback/), [CLEAR](/documentation/help/clear/)
 

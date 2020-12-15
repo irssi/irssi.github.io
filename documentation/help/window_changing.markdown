@@ -15,15 +15,15 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <nav markdown="1">
-[Window subcommands index](/documentation/help/window)
+[Window subcommands index](/documentation/help/window/)
 </nav>
 
 <div markdown="1" class="version">
-* [v1.1](/documentation/help/window_changing_(1.1))
+* [v1.1](/documentation/help/window_changing_(1.1)/)
 * v1.2
 </div>
 
@@ -81,5 +81,5 @@ Manipulates the window layout and positioning attributes.
     /WINDOW GOTO #irssi
 
 ### See also ###
-[JOIN](/documentation/help/join), [LEVELS](/documentation/help/levels), [LOG](/documentation/help/log), [QUERY](/documentation/help/query)
+[JOIN](/documentation/help/join/), [LEVELS](/documentation/help/levels/), [LOG](/documentation/help/log/), [QUERY](/documentation/help/query/)
 

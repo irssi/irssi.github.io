@@ -14,16 +14,16 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.0))
+[Help index](/documentation/help/index_(1.0)/)
 </nav>
 
 <nav markdown="1">
-[Window subcommands index](/documentation/help/window_(1.0))
+[Window subcommands index](/documentation/help/window_(1.0)/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.0
-* [v1.2](/documentation/help/window_properties)
+* [v1.2](/documentation/help/window_properties/)
 </div>
 
 ### Syntax ###
@@ -77,5 +77,5 @@ Manipulates the window layout and positioning attributes.
     /WINDOW LEVEL -ALL +NOTICES
 
 ### See also ###
-[JOIN](/documentation/help/join), [LEVELS](/documentation/help/levels), [LOG](/documentation/help/log), [QUERY](/documentation/help/query)
+[JOIN](/documentation/help/join/), [LEVELS](/documentation/help/levels/), [LOG](/documentation/help/log/), [QUERY](/documentation/help/query/)
 

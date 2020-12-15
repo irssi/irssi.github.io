@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ be able to send messages to the channel.
     /DEVOICE *
 
 ### See also ###
-[DEOP](/documentation/help/deop), [MODE](/documentation/help/mode), [OP](/documentation/help/op), [VOICE](/documentation/help/voice)
+[DEOP](/documentation/help/deop/), [MODE](/documentation/help/mode/), [OP](/documentation/help/op/), [VOICE](/documentation/help/voice/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -55,5 +55,5 @@ service bot (confirm with /WHOIS ALIS):
     /MSG Alis HELP
 
 ### See also ###
-[STATS](/documentation/help/stats), [SQUERY](/documentation/help/squery), [WHOIS](/documentation/help/whois)
+[STATS](/documentation/help/stats/), [SQUERY](/documentation/help/squery/), [WHOIS](/documentation/help/whois/)
 

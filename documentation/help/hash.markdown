@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -42,5 +42,5 @@ documentation.
 
 
 ### See also ###
-[DIE](/documentation/help/die), [KILL](/documentation/help/kill), [OPER](/documentation/help/oper)
+[DIE](/documentation/help/die/), [KILL](/documentation/help/kill/), [OPER](/documentation/help/oper/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Changes the current active directory.
     /CD /var/log
 
 ### See also ###
-[CAT](/documentation/help/cat)
+[CAT](/documentation/help/cat/)
 

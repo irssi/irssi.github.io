@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -52,5 +52,5 @@ Sends a message to a nickname or channel.
     /MSG * Do you want to build a snowman?
 
 ### See also ###
-[ACTION](/documentation/help/action), [DCC](/documentation/help/dcc), [JOIN](/documentation/help/join)
+[ACTION](/documentation/help/action/), [DCC](/documentation/help/dcc/), [JOIN](/documentation/help/join/)
 

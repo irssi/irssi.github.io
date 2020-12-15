@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.0))
+[Help index](/documentation/help/index_(1.0)/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.0
-* [v1.2](/documentation/help/network)
+* [v1.2](/documentation/help/network/)
 </div>
 
 ### Syntax ###
@@ -82,5 +82,5 @@ prevent you from being kicked from the network due to flooding commands.
     /NETWORK REMOVE Freenode
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [SERVER](/documentation/help/server_(1.0))
+[CHANNEL](/documentation/help/channel/), [CONNECT](/documentation/help/connect/), [SERVER](/documentation/help/server_(1.0)/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -60,5 +60,5 @@ connections are kept.
     /CONNECT irc.irssi.org 6667 WzerT8zq mike
 
 ### See also ###
-[DISCONNECT](/documentation/help/disconnect), [RMRECONNS](/documentation/help/rmreconns), [SERVER](/documentation/help/server)
+[DISCONNECT](/documentation/help/disconnect/), [RMRECONNS](/documentation/help/rmreconns/), [SERVER](/documentation/help/server/)
 

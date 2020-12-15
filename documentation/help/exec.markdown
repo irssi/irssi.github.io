@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -72,5 +72,5 @@ detach from it; the process will keep running until it terminates.
     /EXEC -close %0
 
 ### See also ###
-[CAT](/documentation/help/cat), [CD](/documentation/help/cd), [ECHO](/documentation/help/echo), [EVAL](/documentation/help/eval)
+[CAT](/documentation/help/cat/), [CD](/documentation/help/cd/), [ECHO](/documentation/help/echo/), [EVAL](/documentation/help/eval/)
 

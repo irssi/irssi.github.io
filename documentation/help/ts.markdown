@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -30,5 +30,5 @@ Displays a list of the channels you are on and their topics.
     /TS
 
 ### See also ###
-[JOIN](/documentation/help/join), [TOPIC](/documentation/help/topic)
+[JOIN](/documentation/help/join/), [TOPIC](/documentation/help/topic/)
 

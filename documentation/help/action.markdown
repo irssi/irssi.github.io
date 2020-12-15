@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -40,5 +40,5 @@ Sends an action emote to a nickname or a channel.
     /ACTION -efnet #irssi is happy it's Friday
 
 ### See also ###
-[ME](/documentation/help/me)
+[ME](/documentation/help/me/)
 

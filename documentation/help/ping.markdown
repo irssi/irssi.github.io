@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ out the latency on the network.
     /PING #irssi
 
 ### See also ###
-[CTCP](/documentation/help/ctcp), [MSG](/documentation/help/msg)
+[CTCP](/documentation/help/ctcp/), [MSG](/documentation/help/msg/)
 

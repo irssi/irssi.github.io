@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Displays the links between an IRC server and its connections.
     /LINKS ircsource.irssi.org *.hub
 
 ### See also ###
-[LUSERS](/documentation/help/lusers), [MAP](/documentation/help/map)
+[LUSERS](/documentation/help/lusers/), [MAP](/documentation/help/map/)
 

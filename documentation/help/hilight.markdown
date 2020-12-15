@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -64,5 +64,5 @@ important messages.
 
 
 ### See also ###
-[DEHILIGHT](/documentation/help/dehilight), [LEVELS](/documentation/help/levels)
+[DEHILIGHT](/documentation/help/dehilight/), [LEVELS](/documentation/help/levels/)
 

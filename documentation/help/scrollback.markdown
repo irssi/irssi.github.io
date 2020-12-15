@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -67,5 +67,5 @@ The timestamp format is format is '[dd[.mm] | -&lt;days ago>] hh:mi[:ss]'.
     /SCROLLBACK END
 
 ### See also ###
-[CLEAR](/documentation/help/clear), [WINDOW](/documentation/help/window)
+[CLEAR](/documentation/help/clear/), [WINDOW](/documentation/help/window/)
 

@@ -97,10 +97,10 @@ sub _get_mv {
 		my $xz = "$_";
 		my $suffix = version->parse("v$xz") == version->parse("v$default_ver") ? '' : "_($xz)";
 		if ($page eq 'index' && $suffix eq '') {
-		    $link = "* [$name](/documentation/help)";
+		    $link = "* [$name](/documentation/help/)";
 		}
 		else {
-		    $link = "* [$name](/documentation/help/$page$suffix)";
+		    $link = "* [$name](/documentation/help/$page$suffix/)";
 		}
 	    }
 	    $link
@@ -194,7 +194,7 @@ sub main {
 
     @help_files = sort @help_files;
 
-    system("mkdir -p \Q$out\E/documentation/help");
+    system("mkdir -p \Q$out\E/documentation/help/");
     my ($multiver_links_main, $ver_suffix_main) = _get_mv('index', $ver);
     my $ver_suffix_title_main = $ver_suffix_main ? " ($ver)" : '';
     my $ver_prefix_main = $ver_suffix_main ? '../' : '';
@@ -252,7 +252,7 @@ $multiver_links_main
 		$ver_suffix_title = " ($ver)";
 	    }
 	    unless ($page->{is_sub_page}) {
-		print $index "* [$page->{file}]($ver_prefix_main$page->{file}$ver_suffix)\n";
+		print $index "* [$page->{file}]($ver_prefix_main$page->{file}$ver_suffix/)\n";
 	    }
 	    print $syn qq'---
 layout: page
@@ -274,12 +274,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help$ver_suffix_main_link)
+[Help index](/documentation/help$ver_suffix_main_link/)
 </nav>
 ';
 
 	    if ($page->{is_sub_page}) {
-		print $syn "\n<nav markdown=\"1\">\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix)\n</nav>\n$multiver_links";
+		print $syn "\n<nav markdown=\"1\">\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix/)\n</nav>\n$multiver_links";
 	    }
 	    elsif (@subcommand_split) { # main help page of a page with sub pages
 		# find valid subpages
@@ -329,7 +329,7 @@ Please submit changes to
 		    if (@sub_page_commands) {
 			my ($multiver_links, $ver_suffix) = _get_mv("${help_file_name}_${sub_page_name}", $ver);
 			print $syn qq'
-#### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix)
+#### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix/)
 
 <div markdown="1" class="helpindex">
 
@@ -391,7 +391,7 @@ Please submit changes to
 			my (undef, $ver_suffix1) = _get_mv("\L$_", $ver);
 			my (undef, $ver_suffix2) = _get_mv($page->{file}, $ver);
 			my $ver_suffix = $ver_suffix1 eq $ver_suffix2 ? $ver_suffix2 : '';
-			$_ = "[$_](/documentation/help/\L$_\E$ver_suffix)";
+			$_ = "[$_](/documentation/help/\L$_\E$ver_suffix/)";
 		    }
 		    $_ = $res . join ", ", @see_also;
 		}
@@ -467,7 +467,7 @@ Please submit changes to
 			    $_ = $rest;
 			    finish_table($syn, \%table_state);
 			    if ($word eq '`-list`:' && $page->{file} eq 'bind') {
-				$word =~ s{(\`(.*)\`)}{[$1](/documentation/help/$page->{file}_$2)};
+				$word =~ s{(\`(.*)\`)}{[$1](/documentation/help/$page->{file}_$2/)};
 			    }
 			    $table_state{WORD} = $word;
 			}
@@ -569,7 +569,7 @@ Please submit changes to
 	    next unless $found;
 	    $help_file_seen{$_} = 1;
 	    my ($multiver_links, $ver_suffix) = _get_mv($_, $ver);
-	    print $index "* [$_]($ver_prefix_main$_$ver_suffix)\n";
+	    print $index "* [$_]($ver_prefix_main$_$ver_suffix/)\n";
 	}
 	print $index '
 

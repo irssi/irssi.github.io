@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Invites the specified nick to a channel.
     /INVITE bob #irssi
 
 ### See also ###
-[MODE](/documentation/help/mode), [WHOIS](/documentation/help/whois)
+[MODE](/documentation/help/mode/), [WHOIS](/documentation/help/whois/)
 

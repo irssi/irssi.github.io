@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ targets by separating them with a comma.
     /NCTCP bob,#freenode USERINFO I am bob :p
 
 ### See also ###
-[CTCP](/documentation/help/ctcp)
+[CTCP](/documentation/help/ctcp/)
 

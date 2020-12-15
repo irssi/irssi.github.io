@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Closes a query window for a nickname.
     /UNQUERY mike
 
 ### See also ###
-[MSG](/documentation/help/msg), [QUERY](/documentation/help/query), [WINDOW](/documentation/help/window)
+[MSG](/documentation/help/msg/), [QUERY](/documentation/help/query/), [WINDOW](/documentation/help/window/)
 

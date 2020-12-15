@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Removes and then bans the given nicknames from the specified channel.
     /KICKBAN #irssi bob,sarah You guys broke the rules for the last time.
 
 ### See also ###
-[BAN](/documentation/help/ban), [KICK](/documentation/help/kick), [KNOCKOUT](/documentation/help/knockout)
+[BAN](/documentation/help/ban/), [KICK](/documentation/help/kick/), [KNOCKOUT](/documentation/help/knockout/)
 

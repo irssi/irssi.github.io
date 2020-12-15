@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Displays whether the specified nicknames are online.
     /ISON sarah bob
 
 ### See also ###
-[NOTIFY](/documentation/help/notify), [WHOWAS](/documentation/help/whowas), [WHOIS](/documentation/help/whois)
+[NOTIFY](/documentation/help/notify/), [WHOWAS](/documentation/help/whowas/), [WHOIS](/documentation/help/whois/)
 

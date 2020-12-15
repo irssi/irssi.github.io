@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ Sends a CTCP request towards the given target nickname or channel.
     /CTCP john TIME
 
 ### See also ###
-[ACTION](/documentation/help/action), [ME](/documentation/help/me)
+[ACTION](/documentation/help/action/), [ME](/documentation/help/me/)
 

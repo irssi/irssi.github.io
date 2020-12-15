@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -47,5 +47,5 @@ Displays the documentation for the given command.
 
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [MSG](/documentation/help/msg), [NETWORK](/documentation/help/network), [SERVER](/documentation/help/server)
+[CONNECT](/documentation/help/connect/), [MSG](/documentation/help/msg/), [NETWORK](/documentation/help/network/), [SERVER](/documentation/help/server/)
 

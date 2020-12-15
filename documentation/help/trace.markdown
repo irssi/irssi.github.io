@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -40,5 +40,5 @@ This command is usually restricted to IRC operators.
     /TRACE ircsource.irssi.org
 
 ### See also ###
-[MAP](/documentation/help/map), [TIME](/documentation/help/time), [WHOIS](/documentation/help/whois)
+[MAP](/documentation/help/map/), [TIME](/documentation/help/time/), [WHOIS](/documentation/help/whois/)
 

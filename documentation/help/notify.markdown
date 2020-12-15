@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -46,5 +46,5 @@ list comes online or offline.
     /NOTIFY *!*@staff.irssi.org
 
 ### See also ###
-[AWAY](/documentation/help/away), [HILIGHT](/documentation/help/hilight), [UNNOTIFY](/documentation/help/unnotify)
+[AWAY](/documentation/help/away/), [HILIGHT](/documentation/help/hilight/), [UNNOTIFY](/documentation/help/unnotify/)
 

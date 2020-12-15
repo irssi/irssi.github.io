@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -78,5 +78,5 @@ recommend you to enable autolog if you are interested in keeping logs.
 
 
 ### See also ###
-[SET](/documentation/help/set), [LOG](/documentation/help/log), [WINDOW](/documentation/help/window), [LOG](/documentation/help/log)
+[SET](/documentation/help/set/), [LOG](/documentation/help/log/), [WINDOW](/documentation/help/window/), [LOG](/documentation/help/log/)
 

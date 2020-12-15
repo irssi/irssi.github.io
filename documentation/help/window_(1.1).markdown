@@ -15,19 +15,19 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help/index_(1.1))
+[Help index](/documentation/help/index_(1.1)/)
 </nav>
 
 <div markdown="1" class="version">
-* [v1.0](/documentation/help/window_(1.0))
+* [v1.0](/documentation/help/window_(1.0)/)
 * v1.1
-* [v1.2](/documentation/help/window)
+* [v1.2](/documentation/help/window/)
 </div>
 
 ### Subcommands
 
 
-#### [window/split window creation](/documentation/help/window_creation_(1.1))
+#### [window/split window creation](/documentation/help/window_creation_(1.1)/)
 
 <div markdown="1" class="helpindex">
 
@@ -39,7 +39,7 @@ Please submit changes to
 
 </div>
 
-#### [window changing](/documentation/help/window_changing_(1.1))
+#### [window changing](/documentation/help/window_changing_(1.1)/)
 
 <div markdown="1" class="helpindex">
 
@@ -53,7 +53,7 @@ Please submit changes to
 
 </div>
 
-#### [window attribute manipulation](/documentation/help/window_properties)
+#### [window attribute manipulation](/documentation/help/window_properties/)
 
 <div markdown="1" class="helpindex">
 
@@ -69,7 +69,7 @@ Please submit changes to
 
 </div>
 
-#### [window items](/documentation/help/window_items)
+#### [window items](/documentation/help/window_items/)
 
 <div markdown="1" class="helpindex">
 
@@ -80,7 +80,7 @@ Please submit changes to
 
 </div>
 
-#### [window moving/number changing](/documentation/help/window_moving)
+#### [window moving/number changing](/documentation/help/window_moving/)
 
 <div markdown="1" class="helpindex">
 
@@ -95,7 +95,7 @@ Please submit changes to
 
 </div>
 
-#### [split window resizing](/documentation/help/window_resizing_(1.1))
+#### [split window resizing](/documentation/help/window_resizing_(1.1)/)
 
 <div markdown="1" class="helpindex">
 
@@ -106,7 +106,7 @@ Please submit changes to
 
 </div>
 
-#### [split window navigation](/documentation/help/window_navigation_(1.1))
+#### [split window navigation](/documentation/help/window_navigation_(1.1)/)
 
 <div markdown="1" class="helpindex">
 
@@ -117,7 +117,7 @@ Please submit changes to
 
 </div>
 
-#### [split window moving](/documentation/help/window_split_moving_(1.1))
+#### [split window moving](/documentation/help/window_split_moving_(1.1)/)
 
 <div markdown="1" class="helpindex">
 
@@ -129,7 +129,7 @@ Please submit changes to
 
 </div>
 
-#### [logging](/documentation/help/window_logging)
+#### [logging](/documentation/help/window_logging/)
 
 <div markdown="1" class="helpindex">
 
@@ -164,5 +164,5 @@ Manipulates the window layout and positioning attributes.
     /WINDOW LOGFILE ~/logs/notices.log
 
 ### See also ###
-[JOIN](/documentation/help/join), [LEVELS](/documentation/help/levels), [LOG](/documentation/help/log), [QUERY](/documentation/help/query)
+[JOIN](/documentation/help/join/), [LEVELS](/documentation/help/levels/), [LOG](/documentation/help/log/), [QUERY](/documentation/help/query/)
 

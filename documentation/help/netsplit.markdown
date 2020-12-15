@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -31,5 +31,5 @@ more net splits.
     /NETSPLIT
 
 ### See also ###
-[JOIN](/documentation/help/join), [LINKS](/documentation/help/links), [MAP](/documentation/help/map), [PART](/documentation/help/part)
+[JOIN](/documentation/help/join/), [LINKS](/documentation/help/links/), [MAP](/documentation/help/map/), [PART](/documentation/help/part/)
 

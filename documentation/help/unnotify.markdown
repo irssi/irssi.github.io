@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Removes an entry from the notify list.
     /UNNOTIFY *!*@staff.irssi.org
 
 ### See also ###
-[AWAY](/documentation/help/away), [HILIGHT](/documentation/help/hilight), [NOTIFY](/documentation/help/notify)
+[AWAY](/documentation/help/away/), [HILIGHT](/documentation/help/hilight/), [NOTIFY](/documentation/help/notify/)
 

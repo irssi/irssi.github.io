@@ -13,7 +13,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -41,5 +41,5 @@ for the server the target nickname is on.
     /VERSION ircsource.irssi.org
 
 ### See also ###
-[ADMIN](/documentation/help/admin), [STATS](/documentation/help/stats)
+[ADMIN](/documentation/help/admin/), [STATS](/documentation/help/stats/)
 

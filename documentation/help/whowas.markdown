@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -39,5 +39,5 @@ Displays historical user information.
     /WHOWAS sarah 5 ircsource.irssi.org
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [NAMES](/documentation/help/names), [WHO](/documentation/help/who), [WHOIS](/documentation/help/whois)
+[CHANNEL](/documentation/help/channel/), [NAMES](/documentation/help/names/), [WHO](/documentation/help/who/), [WHOIS](/documentation/help/whois/)
 

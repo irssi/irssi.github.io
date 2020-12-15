@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -30,5 +30,5 @@ Displays how long Irssi has been running.
     /UPTIME
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [EXIT](/documentation/help/exit)
+[CONNECT](/documentation/help/connect/), [EXIT](/documentation/help/exit/)
 

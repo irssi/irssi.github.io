@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ use the wildcard character '*' in a nickname.
     /DEOP *
 
 ### See also ###
-[DEVOICE](/documentation/help/devoice), [MODE](/documentation/help/mode), [OP](/documentation/help/op), [VOICE](/documentation/help/voice)
+[DEVOICE](/documentation/help/devoice/), [MODE](/documentation/help/mode/), [OP](/documentation/help/op/), [VOICE](/documentation/help/voice/)
 

@@ -15,7 +15,7 @@ There are several ways you can get Irssi<span class="hidden-md hidden-lg">:</spa
 
 </div>
 
-[Security information](/security)
+[Security information](/security/)
 
 <div class="col-lg-6 col-md-7" markdown="1">
 

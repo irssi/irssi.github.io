@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Removes an alias.
     /UNALIAS K
 
 ### See also ###
-[ALIAS](/documentation/help/alias)
+[ALIAS](/documentation/help/alias/)
 

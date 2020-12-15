@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ To load a perl script, you must use the SCRIPT command.
     /LOAD ~/irssi-fish/libfish.so
 
 ### See also ###
-[SCRIPT](/documentation/help/script), [UNLOAD](/documentation/help/unload)
+[SCRIPT](/documentation/help/script/), [UNLOAD](/documentation/help/unload/)
 

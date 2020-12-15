@@ -20,7 +20,7 @@ the usage example specifies the current folder as the output folder
 for the Markdown help pages). For multiple help versions to work
 properly, it **must** be run in this order, on each version.
 
-Help will be created in `/documentation/help`. You need to **add** the
+Help will be created in `/documentation/help/`. You need to **add** the
 new/changed files to Git and are advised to review any changes.
 
 ### Configuration

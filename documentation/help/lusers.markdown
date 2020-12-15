@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -39,5 +39,5 @@ confusion.
     /LUSERS
 
 ### See also ###
-[LINKS](/documentation/help/links), [MAP](/documentation/help/map)
+[LINKS](/documentation/help/links/), [MAP](/documentation/help/map/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ networks you are connected to.
     /QUIT <@cartman> Screw you guys, I'm going home!
 
 ### See also ###
-[DISCONNECT](/documentation/help/disconnect)
+[DISCONNECT](/documentation/help/disconnect/)
 

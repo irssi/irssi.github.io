@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -37,5 +37,5 @@ Leaves and rejoins a channel.
     /CYCLE #irssi BRB :)
 
 ### See also ###
-[JOIN](/documentation/help/join), [PART](/documentation/help/part)
+[JOIN](/documentation/help/join/), [PART](/documentation/help/part/)
 

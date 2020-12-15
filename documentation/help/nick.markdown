@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ Changes your nickname on the active server.
     /NICK bob
 
 ### See also ###
-[CONNECT](/documentation/help/connect), [JOIN](/documentation/help/join), [MSG](/documentation/help/msg), [PART](/documentation/help/part)
+[CONNECT](/documentation/help/connect/), [JOIN](/documentation/help/join/), [MSG](/documentation/help/msg/), [PART](/documentation/help/part/)
 

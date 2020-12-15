@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -60,5 +60,5 @@ Searches the active window for a pattern and displays the result.
     /LASTLOG -5 searchterm
 
 ### See also ###
-[HILIGHT](/documentation/help/hilight), [SCROLLBACK](/documentation/help/scrollback)
+[HILIGHT](/documentation/help/hilight/), [SCROLLBACK](/documentation/help/scrollback/)
 

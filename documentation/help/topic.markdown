@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -42,5 +42,5 @@ Displays or modifies the topic of a channel.
     /TOPIC #shakespeare /bb|[^b]{2}/
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [DEOP](/documentation/help/deop), [DEVOICE](/documentation/help/devoice), [JOIN](/documentation/help/join), [OP](/documentation/help/op), [VOICE](/documentation/help/voice)
+[CHANNEL](/documentation/help/channel/), [DEOP](/documentation/help/deop/), [DEVOICE](/documentation/help/devoice/), [JOIN](/documentation/help/join/), [OP](/documentation/help/op/), [VOICE](/documentation/help/voice/)
 

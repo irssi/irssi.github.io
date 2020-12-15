@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -68,5 +68,5 @@ later be revealed using /WINDOW HIDELEVEL -HIDDEN
     /IGNORE -regexp -pattern
 
 ### See also ###
-[ACCEPT](/documentation/help/accept), [SILENCE](/documentation/help/silence), [UNIGNORE](/documentation/help/unignore)
+[ACCEPT](/documentation/help/accept/), [SILENCE](/documentation/help/silence/), [UNIGNORE](/documentation/help/unignore/)
 

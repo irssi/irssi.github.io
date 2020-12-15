@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -35,5 +35,5 @@ enabled; this command is restricted to IRC operators.
     /WALLOPS Hi everybody!
 
 ### See also ###
-[OPER](/documentation/help/oper), [STATS](/documentation/help/stats)
+[OPER](/documentation/help/oper/), [STATS](/documentation/help/stats/)
 

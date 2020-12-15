@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <div markdown="1" class="version">
 * v1.2
-* [v1.3](/documentation/help/echo_(1.3))
+* [v1.3](/documentation/help/echo_(1.3)/)
 </div>
 
 ### Syntax ###
@@ -47,5 +47,5 @@ Displays the given text.
     /ECHO -window #irssi Special variables such as ${N} will not be expanded.
 
 ### See also ###
-[CAT](/documentation/help/cat), [EVAL](/documentation/help/eval), [EXEC](/documentation/help/exec), [LEVELS](/documentation/help/levels)
+[CAT](/documentation/help/cat/), [EVAL](/documentation/help/eval/), [EXEC](/documentation/help/exec/), [LEVELS](/documentation/help/levels/)
 

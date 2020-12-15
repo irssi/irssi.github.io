@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -30,5 +30,5 @@ Terminates the IRC server; this command is reserved for IRC operators.
     /DIE
 
 ### See also ###
-[KILL](/documentation/help/kill), [OPER](/documentation/help/oper), [WALLOPS](/documentation/help/wallops)
+[KILL](/documentation/help/kill/), [OPER](/documentation/help/oper/), [WALLOPS](/documentation/help/wallops/)
 

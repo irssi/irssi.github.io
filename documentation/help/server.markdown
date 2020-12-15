@@ -15,11 +15,11 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 <div markdown="1" class="version">
-* [v1.0](/documentation/help/server_(1.0))
+* [v1.0](/documentation/help/server_(1.0)/)
 * v1.2
 </div>
 
@@ -110,5 +110,5 @@ Specify '-' as password to remove a server password
     /SERVER PURGE orwell.freenode.net
 
 ### See also ###
-[CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)
+[CHANNEL](/documentation/help/channel/), [CONNECT](/documentation/help/connect/), [DISCONNECT](/documentation/help/disconnect/), [NETWORK](/documentation/help/network/), [RECONNECT](/documentation/help/reconnect/), [RMRECONNS](/documentation/help/rmreconns/)
 

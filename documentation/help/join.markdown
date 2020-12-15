@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -43,5 +43,5 @@ Joins the given channels.
     /JOIN -freenode #github,#freenode,#irssi
 
 ### See also ###
-[KICK](/documentation/help/kick), [PART](/documentation/help/part)
+[KICK](/documentation/help/kick/), [PART](/documentation/help/part/)
 

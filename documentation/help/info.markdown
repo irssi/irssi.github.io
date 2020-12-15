@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -36,5 +36,5 @@ Displays information about the IRC server software.
     /INFO orwell.freenode.net
 
 ### See also ###
-[ADMIN](/documentation/help/admin)
+[ADMIN](/documentation/help/admin/)
 

@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -49,5 +49,5 @@ server into a log file.
     /RAWLOG CLOSE
 
 ### See also ###
-[LOG](/documentation/help/log)
+[LOG](/documentation/help/log/)
 

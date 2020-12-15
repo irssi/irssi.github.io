@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -56,5 +56,5 @@ automatically appended after it.
 
 
 ### See also ###
-[BIND](/documentation/help/bind), [UNALIAS](/documentation/help/unalias)
+[BIND](/documentation/help/bind/), [UNALIAS](/documentation/help/unalias/)
 

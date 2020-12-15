@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -33,5 +33,5 @@ Please submit changes to
     /SQUERY sends a query to the specified service.
 
 ### See also ###
-[SERVLIST](/documentation/help/servlist), [LIST](/documentation/help/list), [MSG](/documentation/help/msg)
+[SERVLIST](/documentation/help/servlist/), [LIST](/documentation/help/list/), [MSG](/documentation/help/msg/)
 

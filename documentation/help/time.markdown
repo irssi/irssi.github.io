@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ connected to.
     /TIME ircsource.irssi.org
 
 ### See also ###
-[MAP](/documentation/help/map), [TRACE](/documentation/help/trace), [WHOIS](/documentation/help/whois)
+[MAP](/documentation/help/map/), [TRACE](/documentation/help/trace/), [WHOIS](/documentation/help/whois/)
 

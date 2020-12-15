@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ You can provide multiple targets by separating them with a comma.
     /NOTICE bob,#irssi Fish go blub :p
 
 ### See also ###
-[CTCP](/documentation/help/ctcp), [MSG](/documentation/help/msg), [NCTCP](/documentation/help/nctcp)
+[CTCP](/documentation/help/ctcp/), [MSG](/documentation/help/msg/), [NCTCP](/documentation/help/nctcp/)
 

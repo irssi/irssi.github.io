@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -38,5 +38,5 @@ individually.
     /WALL #irssi I'm feeling supercalifragilisticexpialidocious today :D
 
 ### See also ###
-[MSG](/documentation/help/msg), [NOTICE](/documentation/help/notice)
+[MSG](/documentation/help/msg/), [NOTICE](/documentation/help/notice/)
 

@@ -11,7 +11,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -30,5 +30,5 @@ enabled.
     /SET write_buffer_timeout
 
 ### See also ###
-[REDRAW](/documentation/help/redraw), [SCROLLBACK](/documentation/help/scrollback)
+[REDRAW](/documentation/help/redraw/), [SCROLLBACK](/documentation/help/scrollback/)
 

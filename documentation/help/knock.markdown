@@ -12,7 +12,7 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/)
 </nav>
 
 ### Syntax ###
@@ -45,5 +45,5 @@ The following conditions must be met:
     /KNOCK #github
 
 ### See also ###
-[INVITE](/documentation/help/invite), [JOIN](/documentation/help/join)
+[INVITE](/documentation/help/invite/), [JOIN](/documentation/help/join/)
 
