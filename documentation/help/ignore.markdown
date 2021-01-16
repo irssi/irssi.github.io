@@ -59,13 +59,13 @@ later be revealed using /WINDOW HIDELEVEL -HIDDEN
     /IGNORE #irssi ALL -PUBLIC -ACTIONS
     /IGNORE -replies *!*@*.irssi.org ALL
     /IGNORE -regexp -pattern (away|gone|back|playing|returned) * ACTIONS
+    /IGNORE -regexp -pattern (away|gone|back|playing|returned) #channel ACTIONS
     /IGNORE *zzz* NICKS
     /IGNORE *afk* NICKS
     /IGNORE *away* NICKS
     /IGNORE #irssi NO_ACT JOINS PARTS QUITS
     /IGNORE mike NO_ACT -MSGS
     /IGNORE mike HIDDEN PUBLIC JOINS PARTS QUITS
-    /IGNORE -regexp -pattern
 
 ### See also ###
 [ACCEPT](/documentation/help/accept), [SILENCE](/documentation/help/silence), [UNIGNORE](/documentation/help/unignore)
