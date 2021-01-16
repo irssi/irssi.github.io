@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Help: scrollback"
+title: "Help: scrollback (1.3)"
 ---
 
 {% comment %}
@@ -12,12 +12,12 @@ Please submit changes to
 
 {% endcomment %}
 <nav markdown="1">
-[Help index](/documentation/help)
+[Help index](/documentation/help/index_(1.3))
 </nav>
 
 <div markdown="1" class="version">
-* v1.2
-* [v1.3](/documentation/help/scrollback_(1.3))
+* [v1.2](/documentation/help/scrollback)
+* v1.3
 </div>
 
 ### Syntax ###
@@ -34,7 +34,10 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:14ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">HOME</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:-2ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">END</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">END</span></code></pre></div>
+
+
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:-2ch"><code><span class="synB">SCROLLBACK</span> <span class="synB">REDRAW</span></code></pre></div>
 
 
 
