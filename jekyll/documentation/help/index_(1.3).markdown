@@ -102,7 +102,7 @@ Please submit changes to
 * [save](../save)
 * [sconnect](../sconnect)
 * [script](../script)
-* [scrollback](../scrollback)
+* [scrollback](../scrollback_(1.3))
 * [server](../server)
 * [servlist](../servlist)
 * [set](../set_(1.3))
@@ -182,7 +182,7 @@ Please submit changes to
 * [clear](../clear)
 * [lastlog](../lastlog)
 * [layout](../layout)
-* [scrollback](../scrollback)
+* [scrollback](../scrollback_(1.3))
 * [window](../window)
 
 
