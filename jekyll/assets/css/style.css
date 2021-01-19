@@ -68,6 +68,25 @@ p.center {
 #___gcse_0:before { display: inline; }
 #___gcse_0 div.gsc-adBlock { display: none ! important; }
 
+#___gcse_0 .gsc-cursor-page {
+    border-width: 1px;
+    border-style: solid;
+    padding: 6px 12px;
+    margin-left: -1px;
+    margin-right: 0;
+    border-collapse: collapse;
+    color: #5e81ac;
+    background-color: #fff;
+    border-color: #d8dee9;
+}
+#___gcse_0 .gsc-cursor-page:hover,
+#___gcse_0 .gsc-cursor-page:focus,
+#___gcse_0 .gsc-cursor-current-page {
+    background-color: #5e81ac;
+    color: #fff;
+}
+
+
 /* This is for mobile devices and the size of the youtube video */
 iframe {
     max-width: 100%;
@@ -778,15 +797,11 @@ body,
     #___gcse_0 .gsc-cursor-page {
 	background-color: #2e3440;
 	border-color: #3b4252;
-	border-width: 1px;
-	border-style: solid;
-	padding: 1ex;
     }
     #___gcse_0 .gsc-cursor-page:hover,
     #___gcse_0 .gsc-cursor-page:focus,
     #___gcse_0 .gsc-cursor-current-page {
 	background-color: #405c7d;
-	color: #fff;
 	border-color: #466387;
     }
 }
