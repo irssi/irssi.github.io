@@ -1391,6 +1391,8 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` server_reconnect_time` **`5min`**
 
 > How long to wait between reconnects to the same server. Some servers will k-line you if you reconnect too quickly, so be careful setting this value lower.
+>
+> Setting the value to -1 will disable reconnects
 
 {:#skip_motd}
 ` skip_motd` **`OFF`**
