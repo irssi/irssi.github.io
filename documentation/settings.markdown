@@ -792,6 +792,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 
 > When turned on, a quit message will only be shown once. Otherwise it will be displayed in every window you share with the quitter.
 
+{:#show_server_time}
+` show_server_time` **`OFF`**
+
+> Whether to show the server-provided time on messages when available, or only the local time of reception.
+>
+> Added in Irssi 1.3
+
 {:#term_appkey_mode}
 ` term_appkey_mode` **`ON`**
 
@@ -826,6 +833,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 > How to format the time used in timestamps.
 >
 > See Appendix C for the meanings of Irssi's time format codes.
+
+{:#timestamp_format_alt}
+` timestamp_format_alt` **`%a %e %b %H:%M`**
+
+> How to format messages with an old timestamp, for example messages from the past emitted by the server.
+>
+> Added in Irssi 1.3
 
 {:#timestamp_level}
 ` timestamp_level` **`ALL`**
@@ -912,6 +926,13 @@ See the [appendix](#a_credits) for credits and license information of this docum
 ` windows_auto_renumber` **`ON`**
 
 > Closing windows can create gaps in the window list. When windows_auto_renumber is turned on, however, windows are shifted to lower numbers in the list to fill those gaps.
+
+{:#scrollback_format}
+` scrollback_format` **`ON`**
+
+> Whether to store the format and arguments for printed text in the scrollback, or the final rendered text instead. Turning it off restores pre-1.3 behaviour. Some features may not work depending on this setting.
+>
+> Added in Irssi 1.3
 
 ##  [misc]
 
