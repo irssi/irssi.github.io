@@ -7,14 +7,49 @@
 
 ---
 
+## 1.2.3
+{:#v1-2-3 }
+
+The Irssi team released this <abbr class="timeago" title="2021-04-11">2021-04-11</abbr> 
+
+{% include relnews_artef_block.markdown ver="1.2.3" %}
+
+### Fixes
+{:#v1-2-3-fixes }
+
+- Fix the compilation of utf8proc ([#1021](https://github.com/irssi/irssi/issues/1021 "fix the compilation of utf8proc code if desired"))
+- Fix wrong call to free. By Zero King ([#1076](https://github.com/irssi/irssi/issues/1076 "Free g_strdup() allocated memory with g_free()"))
+- Fix a colour reset in true colour themes when encountering mIRC colours ([#1059](https://github.com/irssi/irssi/issues/1059 "Use the 24bit mIRC colour mappings if colors_ansi_24bit is enabled"))
+- Fix memory leak on malformed CAP requests ([#1120](https://github.com/irssi/irssi/issues/1120 "free params"))
+- Fix an erroneous free of SASL data. Credit to Oss-Fuzz ([#1128](https://github.com/irssi/irssi/issues/1128 "Properly free sasl_buffer GString"), [#1130](https://github.com/irssi/irssi/issues/1130 "Only call g_string_free if there is a string"))
+- Re-set the TLS flag when reconnecting ([#1027](https://github.com/irssi/irssi/issues/1027 "TLS flag not reset during connection attempts"), [#1134](https://github.com/irssi/irssi/issues/1134 "Use correct TLS settings when reconnecting"))
+- Fix the scrollback getting stuck after /clear ([#1115](https://github.com/irssi/irssi/issues/1115 "window scroll frozen on top after /clear and switching windows"), [#1136](https://github.com/irssi/irssi/issues/1136 "Make sure the bottom_startline is not lost when removing lines"))
+- Fix the input of Ctrl+C as the first character ([#1153](https://github.com/irssi/irssi/issues/1153 "Cannot input ^C as first character with Julia' wcwidth_implementation"),  [#1154](https://github.com/irssi/irssi/issues/1154 "refine zero width input test in empty line"))
+- Fix crash on quit during unloading of modules on certain platforms ([#1167](https://github.com/irssi/irssi/issues/1167 "fix crash on /quit when unloading modules"))
+- Fix Irssi freezing input after Ctrl+Space on GLib >2.62 ([#1180](https://github.com/irssi/irssi/issues/1180 "ctrl+space freezes irssi on GLib >2.62"), [#1183](https://github.com/irssi/irssi/issues/1183 "manually handle NUL unicode in g_utf8_get_next_char_validated"))
+- Fix layout of IDCHANs. By Lauri Tirkkonen ([#1197](https://github.com/irssi/irssi/issues/1197 "use visible channel name in layout save"))
+- Fix crash when server got reconnected before it was properly connected ([#1210](https://github.com/irssi/irssi/issues/1210 "crash before automatic reconnect when the module_data was not inited"), [#1211](https://github.com/irssi/irssi/issues/1211 "fix crash when server got disconnected/reconnected before it was properly connected"))
+- Fix multiple identical active caps ([#1249](https://github.com/irssi/irssi/issues/1249 "fix multiple identical active caps"))
+- Minor help corrections ([#1156](https://github.com/irssi/irssi/issues/1156 "Improve help for how to remove saved server password"), [#1213](https://github.com/irssi/irssi/issues/1213 "Update help with HIDDEN level"), [#1214](https://github.com/irssi/irssi/issues/1214 "Update ignore help"), [#1255](https://github.com/irssi/irssi/issues/1255 "Update ignore.in examples "))
+- Remove erroneous colour in the colorless theme. Reported and fixed by Nutchanon Wetchasit ([#1220](https://github.com/irssi/irssi/issues/1220 "The stock `colorless` theme does not de-color the vertical window split bar"), [#1221](https://github.com/irssi/irssi/issues/1221 "Decolor the vertical window split bar in stock `colorless` theme"))
+- Fix invalid bounds calculation when editing the text entry. Found and fixed by Sergey Valentey ([#1269](https://github.com/irssi/irssi/issues/1269 "fix invalid unsigned arithmetic."))
+- Fix passing of negative size in buffer writes. Found and fixed by Sergey Valentey ([#1270](https://github.com/irssi/irssi/issues/1270 "correction of incorrect sequence of checks."))
+- Fix Irssi freezing on slow hardware and fast DCC transfers ([#159](https://github.com/irssi/irssi/issues/159 "Freezing when receiving dcc"), [#1271](https://github.com/irssi/irssi/issues/1271 "Update dcc-get.c"))
+- Fix compilation on Solaris ([#1291](https://github.com/irssi/irssi/issues/1291 "remove unused bool include"))
+- Fix null pointer dereference when receiving broken JOIN record. Credit to Oss-Fuzz ([#1292](https://github.com/irssi/irssi/issues/1292 "don't bother if we don't have a nick"))
+- Fix crash on /connect to some sockets ([#1239](https://github.com/irssi/irssi/issues/1239 "Crashes with /connect "), [#1298](https://github.com/irssi/irssi/issues/1298 "fix crash on /connect -tls"))
+- Fix Irssi rendering on Apple ARM. By Misty De Méo ([#1267](https://github.com/irssi/irssi/issues/1267 "header filename conflict in term.h"), [#1268](https://github.com/irssi/irssi/issues/1268 "configure automake with nostdinc"), [#1290](https://github.com/irssi/irssi/issues/1290 "Add a check for term.h"))
+- Fix crash on /lastlog with broken lines ([#1281](https://github.com/irssi/irssi/issues/1281 "fix assertion failure when the line does not have text (yet)"), [#1299](https://github.com/irssi/irssi/issues/1299 "fail on empty text"))
+- Fix memory leak when receiving bogus SASL authentication data. Found and fixed by Sergey Valentey ([#1293](https://github.com/irssi/irssi/issues/1293 "fix memory leak."))
+
+---
+
 ## 1.2.2
 {:#v1-2-2 }
 
 The Irssi team released this <abbr class="timeago" title="2019-08-29">2019-08-29</abbr> 
 
 {% include relnews_artef_block.markdown ver="1.2.2" %}
-
-**Note**. Apply glib-2-63.patch if you intend to use Irssi on GLib >2.62 in order to fix [#1180](https://github.com/irssi/irssi/issues/1180 "ctrl+space freezes irssi on GLib >2.62")
 
 ### Fixes
 {:#v1-2-2-fixes }
