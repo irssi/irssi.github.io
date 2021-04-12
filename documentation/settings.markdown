@@ -1448,7 +1448,7 @@ See the [appendix](#a_credits) for credits and license information of this docum
 Also see [proxy.txt](/documentation/proxy) for more information about the irssiproxy module.
 
 {:#irssiproxy_ports}
-`irssiproxy_ports` **``**
+`irssiproxy_ports` **` `**
 
 > A space-separated list of `networktag=port` that the irssiproxy should listen on. If you connect to the port, you will share the connection of the specified network in your Irssi.
 >
@@ -1457,12 +1457,12 @@ Also see [proxy.txt](/documentation/proxy) for more information about the irssip
 > `?` was added in Irssi 1.0.0
 
 {:#irssiproxy_password}
-`irssiproxy_password` **``**
+`irssiproxy_password` **` `**
 
 > The password required to connect to the irssiproxy.
 
 {:#irssiproxy_bind}
-`irssiproxy_bind` **``**
+`irssiproxy_bind` **` `**
 
 > The interface that the irssiproxy should listen on.
 
