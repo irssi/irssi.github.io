@@ -26,13 +26,12 @@
                     endif %}{%
                     if category == cat or cat == "ALL" %}{%
                         assign is_anchor = line | normalize_whitespace | truncate: 3, "" %}{%
-                        assign is_setting = line | normalize_whitespace | truncate: 2, "" %}{%
+                        assign is_setting = line | normalize_whitespace | truncate: 1, "" %}{%
                         if is_anchor == "{:#" %}{%
                             assign anchor = line | normalize_whitespace | replace: "{:#" | replace: "}" %}{%
-                        elsif is_setting == "` " %}{%
-                            assign setting0 = line | split: " " %}{%
-                            assign setting1 = setting0[1] | split: "`" %}{%
-                            assign setting = setting1[0] %}{%
+                        elsif is_setting == "`" %}{%
+                            assign setting1 = line | split: "`" %}{%
+                            assign setting = setting1[1] %}{%
                             if setting == anchor
                                 %}{{ setting | downcase }}#{{ setting }}
 {%                          else
