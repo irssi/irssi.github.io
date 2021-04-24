@@ -565,6 +565,10 @@ v1.2.2:
         url: https://github.com/irssi/irssi/releases/download/1.2.2/irssi-1.2.2.tar.gz.asc
   last_modified: 'Thu, 07 May 2020 08:55:13 GMT'
 v1.2.3:
+  artef_extra:
+    -
+      name: no-term.h.patch
+      url: https://github.com/irssi/irssi/releases/download/1.2.3/no-term.h.patch
   artef_rg:
     -
       a:
@@ -580,3 +584,4 @@ v1.2.3:
       sig:
         name: signature.asc
         url: https://github.com/irssi/irssi/releases/download/1.2.3/irssi-1.2.3.tar.gz.asc
+  last_modified: 'Sat, 24 Apr 2021 15:23:00 GMT'

@@ -14,6 +14,8 @@ The Irssi team released this <abbr class="timeago" title="2021-04-11">2021-04-11
 
 {% include relnews_artef_block.markdown ver="1.2.3" %}
 
+**Note.** Apply [no-term.h.patch](https://github.com/irssi/irssi/releases/download/1.2.3/no-term.h.patch) on NetBSD and other systems using libcurses. This regression is introduced by trying to fix rendering on Apple ARM. See [#1305](https://github.com/irssi/irssi/pull/1305 "Fix compat with NetBSD libcurses by using tiparm() instead of tparm()")
+
 ### Fixes
 {:#v1-2-3-fixes }
 
