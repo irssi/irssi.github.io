@@ -60,7 +60,7 @@ title: "Help: List of key bindable commands"
 | `↹` | word_completion | Complete the current word |
 | Shift-`↹` | word_completion_backward | Choose previous completion suggestion |
 | Alt-`k` | erase_completion | Remove the completion added by word_completion |
-| ``   `` (Space), `↵` | check_replaces | Check word replaces |
+| <code>   </code> (Space), `↵` | check_replaces | Check word replaces |
 | Ctrl-`P` | previous_window | Go to the previous window |
 | Ctrl-`N` | next_window | Go to the next window |
 | Alt-`↑`  | upper_window | Go to the split window above |
