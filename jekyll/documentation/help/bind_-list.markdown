@@ -85,7 +85,7 @@ title: "Help: List of key bindable commands"
 
 | Default key | Name |
 | ----------- | ---- |
-| `   ` (Space) | space |
+| <code>   </code> (Space) | space |
 | `↵`, Ctrl-`M`, Ctrl-`J` | return |
 | `⌫`, Ctrl-`?`, Ctrl-`H` | backspace |
 | `↹`, Ctrl-`I` | tab |
