@@ -7,13 +7,13 @@ permalink: support/irc/
 Official international channel
 -------------------------------
 
-- \#irssi at [Freenode](https://freenode.net/) -- English only
+- \#irssi at [Libera.Chat](https://libera.chat/) -- English only
 
-To join, `/connect Freenode`, then `/join #irssi`
+To join, `/connect -tls_verify irc.libera.chat`, then `/join #irssi`
 
-If you have trouble getting Irssi to work, you can use the Freenode
-provided [webchat](https://webchat.freenode.net/?channels=irssi) in
-the meantime.
+If you have trouble getting Irssi to work, you can use a
+[webchat](https://kiwiirc.com/nextclient/#ircs://irc.libera.chat/#irssi)
+in the meantime.
 
 Other channels
 --------------
@@ -32,7 +32,8 @@ can ask or if someone can help or if anyone is there**.
 Servers
 -------
 
-To connect with Freenode, `/connect Freenode` or `/connect chat.freenode.net`
+To connect with Libera.Chat, `/connect -tls_verify irc.libera.chat` or on
+Irssi 1.3 or later `/connect liberachat`
 
 Most IRCnet servers aren't open for everyone, so if you're having trouble
 finding one, use open.ircnet.net which resolves to a number of open IRCnet

@@ -32,6 +32,6 @@ page](https://facebook.com/irssi), [LinkedIn
 group](https://www.linkedin.com/groups?gid=147751), [Twitter
 profile](https://twitter.com/IrssiProject),
 discuss this news on [reddit](https://www.reddit.com/r/linux/comments/4brrb7)
-or pop into `#irssi` on freenode.
+or pop into `#irssi` on irc.libera.chat.
 
 The Irssi Team.

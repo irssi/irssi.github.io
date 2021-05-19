@@ -13,6 +13,6 @@ Requests.
 
 Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
 [LinkedIn group](https://www.linkedin.com/groups?gid=147751), [Twitter
-profile](https://twitter.com/IrssiProject) or pop into `#irssi` on freenode.
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on irc.libera.chat.
 
 The Irssi Team.

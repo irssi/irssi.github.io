@@ -206,7 +206,7 @@ frontend](https://github.com/irssi/irssi/tree/master/src/fe-fuzz) that is
 libfuzzer based. So that is something else you can take a look at improving.
 There may be another blog post soon that takes a look at the fuzzing frontend.
 
-As always, #irssi on Freenode is a great place to discuss Irssi.
+As always, #irssi on irc.libera.chat is a great place to discuss Irssi.
 
 And we would like to hear about any bugs you find, whether by fuzzing or other
 methods. You can report non-security bugs via the [Irssi GitHub

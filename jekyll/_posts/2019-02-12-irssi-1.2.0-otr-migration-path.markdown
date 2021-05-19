@@ -10,8 +10,8 @@ for old `irssi-otr` users.
 
 With the updated OTR implementation the secret keys of the user is no longer
 stored with an account name of `$nickname@$server` (for example:
-`user@chat.freenode.net`), but is rather stored with the network (or chatnet if
-you like) name from Irssi (for example: `Freenode`). This should remove the
+`user@irc.libera.chat`), but is rather stored with the network (or chatnet if
+you like) name from Irssi (for example: `liberachat`). This should remove the
 issue that some users have reported where if they connect to another server on
 a given network the OTR implementation generates new keys for you.
 
