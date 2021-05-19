@@ -46,7 +46,7 @@ IRC Networks are made of servers, and servers have channels. The default config 
 
 And to connect to one of those networks and join a channel:
 
-    /CONNECT Freenode
+    /CONNECT liberachat
     /JOIN #irssi
 
 To add more networks:
@@ -67,7 +67,7 @@ To modify existing networks (or servers, or channels) just ADD again using the s
 
 If you have irssi 0.8.18 or higher and the irc network supports it, you can use SASL instead of nickserv, which is more reliable:
 
-    /NETWORK ADD -sasl_username yourname -sasl_password yourpassword -sasl_mechanism PLAIN Freenode
+    /NETWORK ADD -sasl_username yourname -sasl_password yourpassword -sasl_mechanism PLAIN ExampleNet
 
 These commands have many more options, see their help for details:
 

@@ -85,9 +85,9 @@ should be working as usual, without you having to touch anything.
 ### Official IRC Channels
 
 We are moving the official development and user support channel to `#irssi` on
-freenode. Historically, we have had our official development channel on IRCnet,
-a social channel on EFnet and a user support channel on freenode, but we
-realize it makes more sense to keep everything together at freenode.
+Libera.Chat. Historically, we have had our official development channel on IRCnet,
+a social channel on EFnet and a user support channel on Libera.Chat, but we
+realize it makes more sense to keep everything together at Libera.Chat.
 
 ### Closing Words
 
@@ -106,7 +106,7 @@ continue being in charge of scripts and will happily review your pull requests
 on Github.
 
 Feel free to reach out to anyone within the development team for questions,
-comments or ideas. We are hanging out in the `#irssi` channel on freenode,
+comments or ideas. We are hanging out in the `#irssi` channel on irc.libera.chat,
 EFnet and IRCnet. You can contact us using email at staff@irssi.org.  You are
 also welcome to PM me directly for questions; I am `ahf` on most of the larger
 IRC networks.

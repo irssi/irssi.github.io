@@ -50,6 +50,6 @@ That said, there is still lots of things to do:
 * layout set code
 * support for more complex split window layouts
 
-If any of that seems interesting to you, do not hesitate to contribute the code. We can also discuss any details if you feel unsure how to approach some things on IRC (#irssi on chat.freenode.net)
+If any of that seems interesting to you, do not hesitate to contribute the code. We can also discuss any details if you feel unsure how to approach some things on IRC (#irssi on irc.libera.chat)
 
 Happy window splitting!

@@ -1743,7 +1743,7 @@ We respect the work of others. Parts of this document have been collected from o
 
 We ask the same respect in return.
 
-The original portions of this document are Copyright 2005 by Rocco Caputo rcaputo@cpan.org and Nei (on irc.freenode.net #irssi). Other portions are Copyright by their respective authors or licensors.
+The original portions of this document are Copyright 2005 by Rocco Caputo rcaputo@cpan.org and Nei (on irc.libera.chat #irssi). Other portions are Copyright by their respective authors or licensors.
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 2.5 License. Please see <https://creativecommons.org/licenses/by-sa/2.5/> for details. Summary:
 
