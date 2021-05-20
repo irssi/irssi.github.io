@@ -62,10 +62,10 @@ recommend you to enable autolog if you are interested in keeping logs.
 ### Examples ###
 
     /LOG OPEN -targets mike ~/irclogs/mike.log MSGS
-    /LOG OPEN -targets #irssi-freenode ~/irclogs/freenode/irssi-%Y-%m-%d
-    /LOG CLOSE ~/irclogs/freenode/irssi-%Y-%m-%d
-    /LOG STOP ~/irclogs/freenode/irssi-%Y-%m-%d
-    /LOG START ~/irclogs/freenode/irssi-%Y-%m-%d
+    /LOG OPEN -targets #irssi ~/irclogs/liberachat/irssi-%Y-%m-%d
+    /LOG CLOSE ~/irclogs/liberachat/irssi-%Y-%m-%d
+    /LOG STOP ~/irclogs/liberachat/irssi-%Y-%m-%d
+    /LOG START ~/irclogs/liberachat/irssi-%Y-%m-%d
 
     /SET autolog ON
 

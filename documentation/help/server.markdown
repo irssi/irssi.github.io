@@ -31,7 +31,7 @@ Please submit changes to
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:13ch"><code><span class="synB">SERVER</span> <span class="synB">REMOVE</span> <span class="synB05">&lt;address></span> <span class="syn10">[<span class="syn09">&lt;port></span>]</span> <span class="syn10">[<span class="syn09">&lt;network></span>]</span></code></pre></div>
 
 
-<div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">SERVER</span> <span class="synB">ADD</span>|<span class="synB">MODIFY</span> <span class="syn10">[<span class="syn">-4</span> | <span class="syn">-6</span>]</span> <span class="syn10">[<span class="syn">-tls</span>]</span> <span class="syn10">[<span class="syn">-tls_cert</span> <span class="syn09">&lt;cert></span>]</span> <span class="syn10">[<span class="syn">-tls_pkey</span> <span class="syn09">&lt;pkey></span>]</span> <span class="syn10">[<span class="syn">-tls_pass</span> <span class="syn09">&lt;password></span>]</span> <span class="syn10">[<span class="syn">-tls_verify</span>]</span> <span class="syn10">[<span class="syn">-tls_cafile</span> <span class="syn09">&lt;cafile></span>]</span> <span class="syn10">[<span class="syn">-tls_capath</span> <span class="syn09">&lt;capath></span>]</span> <span class="syn10">[<span class="syn">-tls_ciphers</span> <span class="syn09">&lt;list></span>]</span> <span class="syn10">[<span class="syn">-auto</span> | <span class="syn">-noauto</span>]</span> <span class="syn10">[<span class="syn">-network</span> <span class="syn09">&lt;network></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;hostname></span>]</span> <span class="syn10">[<span class="syn">-cmdspeed</span> <span class="syn09">&lt;ms></span>]</span> <span class="syn10">[<span class="syn">-cmdmax</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-port</span> <span class="syn09">&lt;port></span>]</span> <span class="synB05">&lt;address></span> <span class="syn10">[<span class="syn09">&lt;port></span> <span class="syn14">[<span class="syn13">&lt;password></span>]</span>]</span></code></pre></div>
+<div class="highlight irssisyntax"><pre style="\-\-cmdlen:9ch"><code><span class="synB">SERVER</span> <span class="synB">ADD</span>|<span class="synB">MODIFY</span> <span class="syn10">[<span class="syn">-4</span> | <span class="syn">-6</span>]</span> <span class="syn10">[<span class="syn">-tls_cert</span> <span class="syn09">&lt;cert></span>]</span> <span class="syn10">[<span class="syn">-tls_pkey</span> <span class="syn09">&lt;pkey></span>]</span> <span class="syn10">[<span class="syn">-tls_pass</span> <span class="syn09">&lt;password></span>]</span> <span class="syn10">[<span class="syn">-tls_verify</span>]</span> <span class="syn10">[<span class="syn">-tls_cafile</span> <span class="syn09">&lt;cafile></span>]</span> <span class="syn10">[<span class="syn">-tls_capath</span> <span class="syn09">&lt;capath></span>]</span> <span class="syn10">[<span class="syn">-tls_ciphers</span> <span class="syn09">&lt;list></span>]</span> <span class="syn10">[<span class="syn">-tls</span> | <span class="syn">-notls</span>]</span> <span class="syn10">[<span class="syn">-starttls</span> | <span class="syn">-nostarttls</span> | <span class="syn">-disallow_starttls</span> | <span class="syn">-nodisallow_starttls</span>]</span> <span class="syn10">[<span class="syn">-auto</span> | <span class="syn">-noauto</span>]</span> <span class="syn10">[<span class="syn">-network</span> <span class="syn09">&lt;network></span>]</span> <span class="syn10">[<span class="syn">-host</span> <span class="syn09">&lt;hostname></span>]</span> <span class="syn10">[<span class="syn">-cmdspeed</span> <span class="syn09">&lt;ms></span>]</span> <span class="syn10">[<span class="syn">-cmdmax</span> <span class="syn09">&lt;count></span>]</span> <span class="syn10">[<span class="syn">-port</span> <span class="syn09">&lt;port></span>]</span> <span class="synB05">&lt;address></span> <span class="syn10">[<span class="syn09">&lt;port></span> <span class="syn14">[<span class="syn13">&lt;password></span>]</span>]</span></code></pre></div>
 
 
 <div class="highlight irssisyntax"><pre style="\-\-cmdlen:10ch"><code><span class="synB">SERVER</span> <span class="synB">LIST</span></code></pre></div>
@@ -99,15 +99,15 @@ Specify '-' as password to remove a server password
 ### Examples ###
 
     /SERVER
-    /SERVER CONNECT chat.freenode.net
-    /SERVER CONNECT +chat.freenode.net
-    /SERVER ADD -network Freenode -noautosendcmd orwell.freenode.net
-    /SERVER ADD -! -auto -host staff.irssi.org -4 -network Freenode -noproxy orwell.freenode.net 6667
-    /SERVER MODIFY -network Freenode -noauto orwell.freenode.net
-    /SERVER MODIFY -network Freenode orwell.freenode.net 6697 -
-    /SERVER REMOVE orwell.freenode.net 6667 Freenode
+    /SERVER CONNECT irc.libera.chat
+    /SERVER CONNECT +irc.libera.chat
+    /SERVER ADD -network liberachat -noautosendcmd irc.libera.chat
+    /SERVER ADD -! -auto -host staff.irssi.org -4 -network liberachat -noproxy irc.libera.chat 6667
+    /SERVER MODIFY -network liberachat -noauto irc.libera.chat
+    /SERVER MODIFY -network liberachat irc.libera.chat 6697 -
+    /SERVER REMOVE irc.libera.chat 6667 liberachat
     /SERVER PURGE
-    /SERVER PURGE orwell.freenode.net
+    /SERVER PURGE irc.libera.chat
 
 ### See also ###
 [CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)

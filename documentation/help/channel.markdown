@@ -61,12 +61,12 @@ the channels you are present on into the configuration.
 
     /CHANNEL
     /CHANNEL LIST
-    /CHANNEL ADD -auto #irssi Freenode
+    /CHANNEL ADD -auto #irssi liberachat
     /CHANNEL ADD -auto #basementcat Quakenet secret_lair
-    /CHANNEL ADD -auto -bots '*!@*.irssi.org *!bot@irssi.org' -botcmd 'msg $0 op WzerTrzq' #hideout Freenode
+    /CHANNEL ADD -auto -bots '*!@*.irssi.org *!bot@irssi.org' -botcmd 'msg $0 op WzerTrzq' #hideout liberachat
     /CHANNEL ADD -auto -bots 'Q!TheQBot@CServe.quakenet.org' -botcmd '^MSG Q op #irssi' #irssi Quakenet
-    /CHANNEL MODIFY -noauto #irssi Freenode
-    /CHANNEL REMOVE #hideout Freenode
+    /CHANNEL MODIFY -noauto #irssi liberachat
+    /CHANNEL REMOVE #hideout liberachat
 
 ### Special Example ###
 

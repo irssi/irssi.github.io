@@ -97,16 +97,16 @@ method is applicable to the CONNECT parameter.
 ### Examples ###
 
     /SERVER
-    /SERVER chat.freenode.net
-    /SERVER +chat.freenode.net
-    /SERVER CONNECT chat.freenode.net
-    /SERVER CONNECT +chat.freenode.net
-    /SERVER ADD -network Freenode -noautosendcmd orwell.freenode.net
-    /SERVER ADD -! -auto -host staff.irssi.org -4 -network Freenode -noproxy orwell.freenode.net 6667
-    /SERVER MODIFY -network Freenode -noauto orwell.freenode.net
-    /SERVER REMOVE orwell.freenode.net 6667 Freenode
+    /SERVER irc.libera.chat
+    /SERVER +irc.libera.chat
+    /SERVER CONNECT irc.libera.chat
+    /SERVER CONNECT +irc.libera.chat
+    /SERVER ADD -network liberachat -noautosendcmd irc.libera.chat
+    /SERVER ADD -! -auto -host staff.irssi.org -4 -network liberachat -noproxy irc.libera.chat 6667
+    /SERVER MODIFY -network liberachat -noauto irc.libera.chat
+    /SERVER REMOVE irc.libera.chat 6667 liberachat
     /SERVER PURGE
-    /SERVER PURGE orwell.freenode.net
+    /SERVER PURGE irc.libera.chat
 
 ### See also ###
 [CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network_(1.0)), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)

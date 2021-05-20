@@ -33,7 +33,7 @@ Disconnect and reconnect from a network.
 ### Examples ###
 
     /RECONNECT
-    /RECONNECT Freenode
+    /RECONNECT liberachat
     /RECONNECT EFnet BRB :)
 
 ### See also ###
