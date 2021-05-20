@@ -40,7 +40,7 @@ Joins the given channels.
     /JOIN #irssi
     /JOIN #basementcat secret_lair
     /JOIN -invite
-    /JOIN -freenode #github,#freenode,#irssi
+    /JOIN -liberachat #github,#libera,#irssi
 
 ### See also ###
 [KICK](/documentation/help/kick), [PART](/documentation/help/part)

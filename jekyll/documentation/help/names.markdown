@@ -41,7 +41,7 @@ by separating them with a comma.
 ### Examples ###
 
     /NAMES -ops
-    /NAMES -voices #irssi,#freenode
+    /NAMES -voices #irssi,#libera
 
 ### See also ###
 [JOIN](/documentation/help/join), [PART](/documentation/help/part), [WHO](/documentation/help/who), [WHOIS](/documentation/help/whois)

@@ -33,7 +33,7 @@ Displays the welcome message of an IRC server.
 ### Examples ###
 
     /MOTD
-    /MOTD orwel.freenode.org
+    /MOTD irc.libera.chat
     /MOTD bob
 
 ### See also ###

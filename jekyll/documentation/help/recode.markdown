@@ -48,7 +48,7 @@ the 'iconv -l' command.
 ### Examples ###
 
     /RECODE
-    /RECODE ADD Freenode/mike utf-8
+    /RECODE ADD liberachat/mike utf-8
     /RECODE ADD #korea euc-kr
     /RECODE REMOVE #korea
 

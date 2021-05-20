@@ -76,11 +76,11 @@ prevent you from being kicked from the network due to flooding commands.
 ### Examples ###
 
     /NETWORK ADD -usermode +giw EFnet
-    /NETWORK ADD -usermode +iw -nick mike -realname 'The one and only mike!' -host staff.irssi.org Freenode
-    /NETWORK ADD -autosendcmd '^MSG NickServ identify WzerT8zq' Freenode
+    /NETWORK ADD -usermode +iw -nick mike -realname 'The one and only mike!' -host staff.irssi.org liberachat
+    /NETWORK ADD -autosendcmd '^MSG NickServ identify WzerT8zq' liberachat
     /NETWORK ADD -autosendcmd '^MSG Q@CServe.quakenet.org AUTH mike WzerT8zq; WAIT 2000; OPER mike WzerT8zq; WAIT 2000; MODE mike +kXP' Quakenet
     /NETWORK MODIFY -usermode +gi EFnet
-    /NETWORK REMOVE Freenode
+    /NETWORK REMOVE liberachat
 
 ### See also ###
 [CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [SERVER](/documentation/help/server)

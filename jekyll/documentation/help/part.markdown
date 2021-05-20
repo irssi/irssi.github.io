@@ -32,7 +32,7 @@ Leaves the given channels.
 ### Examples ###
 
     /PART #irssi
-    /PART #freenode,#irssi
+    /PART #libera,#irssi
 
 ### See also ###
 [JOIN](/documentation/help/join), [KICK](/documentation/help/kick)
