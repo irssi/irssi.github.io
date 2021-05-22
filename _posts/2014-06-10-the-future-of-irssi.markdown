@@ -86,7 +86,7 @@ should be working as usual, without you having to touch anything.
 
 We are moving the official development and user support channel to `#irssi` on
 Libera.Chat. Historically, we have had our official development channel on IRCnet,
-a social channel on EFnet and a user support channel on Libera.Chat, but we
+a social channel on EFnet and a user support channel on Freenode, but we
 realize it makes more sense to keep everything together at Libera.Chat.
 
 ### Closing Words
