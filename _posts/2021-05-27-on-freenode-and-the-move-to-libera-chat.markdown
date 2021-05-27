@@ -30,7 +30,7 @@ We want to make it explicitly clear that the entire irssi team was always
 aligned with the general plan and shared the goal to migrate from freenode
 to another network. In no way do we endorse any recent actions taken by new
 representatives of freenode staff, nor are we associated with freenode in
-any manner besides it hosting our former primary suppport channel. However, the
+any manner besides it hosting our former primary support channel. However, the
 initial commit created a possible legal issue which had to be investigated.
 This was not a case of rogue developers taking decisions on their own, and no
 changes to the development team have taken place nor are any anticipated.
