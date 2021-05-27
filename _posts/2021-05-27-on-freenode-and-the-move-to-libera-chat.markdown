@@ -12,7 +12,7 @@ the default config.
 
 This was the result of an internal disagreement between staff members - those
 who were happy to move everything immediately, and those who wanted to wait for
-things to settle down and allow us to assess the possible legal consequences of
+things to settle down and allow us to assess the possible legal issue of
 removing freenode as a network in our source code.
 
 The [first commit][c1] ("update default network") was acked by several of us
@@ -27,11 +27,13 @@ taken in both cases and history can't be rewritten, neither in git nor in real
 life.
 
 We want to make it explicitly clear that the entire irssi team was always
-aligned with the general plan and goal to migrate from freenode to another
-network. However, the initial commit created a legal liability which,
-unfortunately, had to be addressed rather quickly and drastically. This was not
-a case of rogue developers taking decisions on their own, and no changes to the
-development team have taken place nor anticipated.
+aligned with the general plan and shared the goal to migrate from freenode
+to another network. In no way do we endorse any recent actions taken by new
+representatives of freenode staff, nor are we associated with freenode in
+any manner besides it hosting our former primary suppport channel. However, the
+initial commit created a possible legal issue which had to be investigated.
+This was not a case of rogue developers taking decisions on their own, and no
+changes to the development team have taken place nor are any anticipated.
 
 Moving forward, we will do the following:
 
