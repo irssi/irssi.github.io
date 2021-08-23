@@ -63,7 +63,7 @@ Automatically join to channels after connected to server:
 
 To modify existing networks (or servers, or channels) just ADD again using the same name as before. This configures a network to identify with nickserv and wait for 2 seconds before joining channels:
 
-    /NETWORK ADD -autosendcmd "/^msg nickserv ident pass;wait 2000" ExampleNet
+    /NETWORK ADD -autosendcmd "/msg nickserv ident pass;wait 2000" ExampleNet
 
 If you have irssi 0.8.18 or higher and the irc network supports it, you can use SASL instead of nickserv, which is more reliable:
 
