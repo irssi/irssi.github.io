@@ -105,6 +105,7 @@ my %section_title = (
 
 my %link_type = (
     '#'		=> 'https://github.com/irssi/irssi/issues/',
+    'an#'	=> 'https://github.com/ailin-nemui/irssi/issues/',
     'GL#'	=> 'https://gitlab.com/irssi/irssi/issues/',
     'GL!'	=> 'https://gitlab.com/irssi/irssi/merge_requests/',
     'FS#'	=> 'https://github.com/irssi-import/bugs.irssi.org/issues/',
@@ -154,6 +155,9 @@ sub issue_links {
 	    my $lt = $link_type{$1};
 	    my $num = $2;
 	    my $short = $1;
+	    if ($short eq '#' && $num < 100) {
+		$lt = $link_type{'an#'};
+	    }
 	    my $title;
 	    if (($ENV{TITLES} || $ENV{REORG}) && $lt =~ m{github\.com/([^/]+)/([^/]+)/issues}) {
 		my $u = $1;

@@ -28,7 +28,8 @@ if ($cache) {
 my %x;
 for my $ur (
     ['irssi','irssi'],
-    ['irssi-import','bugs.irssi.org']
+    ['irssi-import','bugs.irssi.org'],
+    ['ailin-nemui', 'irssi'],
    ) {
     while (my $r_issue = $issue->next_repos_issue(@$ur, { state => 'all' })) {
 	print "@$ur ", $r_issue->{number}, "\n";
