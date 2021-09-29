@@ -6,7 +6,7 @@
 #   GITHUB=1  - Disable Github links (for use on Github releases page)
 #   VER=1.2.3 - show this version only
 #   ONLINE=1  - Download release asset links from Github
-#   REORG=1   - manage github milestones
+#   REORG=$u  - manage github milestones
 #   TITLES=1  - add issue titles as link titles
 #   ...
 
@@ -56,7 +56,7 @@ if ($ENV{REORG}) {
 ' unless $secret;
     $github = Net::GitHub->new(
 	access_token => $secret);
-    $github->set_default_user_repo('irssi', 'irssi');
+    $github->set_default_user_repo(($ENV{REORG} // 'irssi'), 'irssi');
     $github_issues = $github->issue;
     if (-f $cache_file2) {
 	print STDERR "Loading GitHub Issues Cache...";
@@ -88,8 +88,10 @@ for (@news) {
 
 my %S; # state
 my %E;
+my $nested_list;
 
 sub finish_E {
+    $nested_list = undef;
     $E{text} =~ s/\n+\Z//;
     push @{ $S{ $E{type} || "?" } }, $E{text};
     %E = ();
@@ -155,16 +157,13 @@ sub issue_links {
 	    my $lt = $link_type{$1};
 	    my $num = $2;
 	    my $short = $1;
-	    if ($short eq '#' && $num < 100) {
-		$lt = $link_type{'an#'};
-	    }
 	    my $title;
 	    if (($ENV{TITLES} || $ENV{REORG}) && $lt =~ m{github\.com/([^/]+)/([^/]+)/issues}) {
 		my $u = $1;
 		my $p = $2;
 		$title = $issues->{$u}{$p}{$num}{title}
 		    if $ENV{TITLES};
-		if ($ENV{REORG} && $u eq 'irssi') {
+		if ($ENV{REORG} && $u eq $ENV{REORG}) {
 		    unless (defined $milestones{$ver}) {
 			warn "creating MS $ver\n";
 			my %ms = $github_issues->create_milestone({
@@ -314,7 +313,7 @@ sub finish_S {
 	    print qq@{% include relnews_artef_block.markdown ver="$S{ver}" %}@;
 	    print "\n\n";
 	}
-    } elsif ($S{ver} =~ /-head$/ && !$ENV{GITHUB}) {
+    } elsif ($S{ver} =~ /-head/ && !$ENV{GITHUB}) {
 	print qq{<span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/irssi/irssi`\n\n[Commit log](https://github.com/irssi/irssi/commits)\n\n};
     }
 
@@ -408,10 +407,20 @@ for (@news) {
 	}
 	$E{text} .= $2;
     }
+    elsif ($nested_list and /^ {12}/) {
+	if (/^ {12}\s/) {
+	    $E{text} .= "\n";
+	} elsif (length $E{text} && $E{text} !~ /\s\Z/) {
+	    $E{text} .= ' ';
+	}
+
+	$E{text} .= substr $_, 12;
+    }
     elsif (/^ {10}/) {
 	warn "no type of E on line $l: $_\n" unless defined $E{type};
-	if (/^ {10}\s/) {
+	if (/^ {10}(-?)\s/) {
 	    $E{text} .= "\n";
+	    $nested_list = $1;
 	} elsif (length $E{text} && $E{text} !~ /\s\Z/) {
 	    $E{text} .= ' ';
 	}
