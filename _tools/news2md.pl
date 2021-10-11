@@ -29,7 +29,7 @@ my $issues;
 if ($ENV{TITLES}) {
     warn "Loading Issues Dump...\n";
     unless (-f $issue_file) {
-	system $^X, "$FindBin::Bin/issue_titles.pl"
+	system $^X, "$FindBin::Bin/issues_titles.pl"
 	    or die "there was an error downloading issue titles\n";
     }
     $issues = LoadFile($issue_file);
