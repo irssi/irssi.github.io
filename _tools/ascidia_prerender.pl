@@ -20,19 +20,21 @@ for my $file (@ARGV) {
 	next;
     }
     my $c = do { local $/; <$fh> };
-    while ($c =~ /^ ((>*\s*)\`{3,}) \s? ascidia \s*? $
-		  (.*?)
-		  ^ \1 \s*
-		  ^\2 \{:(.*?)\}/gsmx) {
-	my ($tx, $k, $p) = ($3, $4, $2);
+    while ($c =~ /^ (?<codeblock> (?<indent> >*\s*)\`{3,}) \s? ascidia(?<tag> \S*) \s*? $
+		  (?<content> .*?)
+		  ^ \g{codeblock} \s*
+		  /gsmx) {
+	my ($tx, $k, $p) = ($+{content}, $+{tag}, $+{indent});
 	if ($k =~ /\.repl\b/ && $k =~ /\#(\w+)/) {
 	    my $fn = $1;
 	    my $p_s = 0;
-	    $p =~ s/(\s+)$// && ($p_s = length $1);
-	    eval "\$tx =~ s/^\\Q\$p\\E\\s{0,$p_s}//gm";
+	    #$p =~ s/(\s+)$// && ($p_s = length $1);
+	    #eval "\$tx =~ s/^\\Q\$p\\E\\s{0,$p_s}//gm";
+	    $tx =~ s/^\Q$p\E//gm;
 	    $tx =~ s/^\s*$//m;
+	    $tx =~ s/\A\n//;
 	    $tx =~ s/(.)/$1 . " " x max( 0, mbwidth($1) - 1 )/ge;
-	    my $ofn = ($file =~ /\/index\.[^\/]*$/ ? dirname($file) : $file =~ s/\.[^.\/]*?$//r) . "/${fn}.svg";
+	    my $ofn = '_static/' . ($file =~ /\/index\.[^\/]*$/ ? dirname($file) : $file =~ s/\.[^.\/]*?$//r) . "/${fn}.svg";
 	    info ".. found image $fn";
 	    my $ac;
 	    my @cmd = ('ascidia', '-t', 'svg', '-c', '16');
@@ -58,7 +60,8 @@ for my $file (@ARGV) {
 	    }
 	    $out =~ s{<svg }{<svg width="$width" height="$height" };
 	    $out =~ s{ stroke-width="2\.5"(?= |>)}{ stroke-width="0.7"}gm;
-	    $out =~ s{ font-size="10"(?= |>)}{ font-size="12"}gm;
+	    $out =~ s{ font-size="10"(?= |>)}{ font-size="13"}gm;
+	    $out =~ s{ fill="rgb\(255,255,255\)" fill-opacity="1"}{ fill-opacity="0"}gm;
 	    system("mkdir -p ".quotemeta(dirname($ofn)));
 	    my $oh;
 	    unless (open $oh, '>', $ofn) {
