@@ -5,12 +5,13 @@ use FindBin;
 use Cwd;
 
 my $src = shift || "$FindBin::Bin/../../irssi-git";
+my $doc = shift || "$FindBin::Bin/../../irssi-an-docs2";
 
 unless (-f "$src/irssi.conf") {
     die "Irssi sources not found in $src";
 }
 
-my $sfn = File::Spec->abs2rel("$FindBin::Bin/../documentation/settings.markdown", getcwd);
+my $sfn = File::Spec->abs2rel("$doc/documentation/settings.md", getcwd);
 
 open my $if, '<', $sfn
     or die "$sfn not found: $!";
@@ -25,8 +26,8 @@ while (my $line = <$if>) {
 	$section = $1;
 	$sect_jm{ $section } = $. + 1;
     }
-    if ($line =~ /^` (\w+)/) {
-	$line =~ /^(?:` (.*) `|` (.*)` \*\*`(.*)`\*\*)$/;
+    if ($line =~ /^`(\w+)/) {
+	$line =~ /^(?:`(.*)`|`(.*)` \*\*`(.*)`\*\*)$/;
 	my $setting = defined $1 ? $1 : $2;
 	my $value = $3;
 
@@ -86,8 +87,8 @@ for my $srcfn (@sources) {
 	    unless ($settings{ $name }) {
 		warn "$sfn:$sect_jm{ $cat }: error: Missing setting: ## [$cat]
 
-{:#$name}
-` $name` **`$value`**
+($name)=
+`$name` **`$value`**
 
 ";
 		if (@choice) {

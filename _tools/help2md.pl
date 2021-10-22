@@ -119,7 +119,7 @@ sub finish_table {
 	#$PARAM_WORD =~ s/</&lt;/g;
 	push @{$state->{table}}, "| $state->{WORD} | @{$state->{INFO}} |\n";
     } elsif (@{$state->{table}||[]}) {
-	print $out @{$state->{table}}, "{:.table.kv}\n\n";
+	print $out "| | |\n| --- | --- |\n", @{$state->{table}}, "\n";
 	@{$state->{table}} = ();
     }
     $state->{WORD} = '';
@@ -200,26 +200,29 @@ sub main {
     my $ver_prefix_main = $ver_suffix_main ? '../' : '';
 
     # Main help index page
-    open my $index, '>', "$out/documentation/help/index${ver_suffix_main}.markdown";
-    print $index qq'---
-layout: page
-title: Help$ver_suffix_title_main
----
+    open my $index, '>', "$out/documentation/help/index${ver_suffix_main}.md";
+    print $index qq'# Help$ver_suffix_title_main
 
 These are the `/help` pages of the Irssi on-line help.
-{% comment %}
+
+<!-- comment
 
 Please submit changes to
-- https://github.com/irssi/irssi/tree/master/docs/help/in
-- https://github.com/irssi/irssi.github.io/blob/master/_tools/help2md.yml
+- https://github.com/ailin-nemui/irssi/tree/master/docs/help/in
+- https://github.com/ailin-nemui/irssi-website-tools/blob/master/_tools/help2md.yml
 
-{% endcomment %}
+endcomment -->
+
 $multiver_links_main
-<div markdown="1" class="helpindex">
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
 
 ';
 
     my %table_state;
+    my %short_descs;
     for (@help_files) {
 	my $help_file_name = $_;
 
@@ -244,7 +247,7 @@ $multiver_links_main
 	    my $page = shift @sub_pages;
 	    @tx = @otx;
 	    my ($multiver_links, $ver_suffix) = _get_mv($page->{file}, $ver);
-	    open my $syn, '>', "$out/documentation/help/$page->{file}${ver_suffix}.markdown";
+	    open my $syn, '>', "$out/documentation/help/$page->{file}${ver_suffix}.md";
 	    my $ver_suffix_main_link = '';
 	    my $ver_suffix_title = '';
 	    if ($ver_suffix) {
@@ -252,34 +255,40 @@ $multiver_links_main
 		$ver_suffix_title = " ($ver)";
 	    }
 	    unless ($page->{is_sub_page}) {
-		print $index "* [$page->{file}]($ver_prefix_main$page->{file}$ver_suffix)\n";
+		#print $index "$page->{file}\n";
 	    }
-	    print $syn qq'---
-layout: page
-title: "Help: $page->{title}$ver_suffix_title"
----
+	    print $syn qq'# $page->{title}$ver_suffix_title
 
-{% comment %}
+<!-- comment
 
 Please submit changes to
-- https://github.com/irssi/irssi/blob/master/docs/help/in/$help_file_name.in
+- https://github.com/ailin-nemui/irssi/blob/master/docs/help/in/$help_file_name.in
 ';
 	    # List of syntax sources
 	    if ($cmd{"\U$help_file_name"}) {
 		for (sort keys %{$cmd{"\U$help_file_name"}}) {
-		    print $syn "- https://github.com/irssi/irssi/blob/master/$_\n";
+		    print $syn "- https://github.com/ailin-nemui/irssi/blob/master/$_\n";
 		}
 	    }
 	    print $syn qq'
 
-{% endcomment %}
-<nav markdown="1">
-[Help index](/documentation/help$ver_suffix_main_link)
-</nav>
+endcomment -->
+
 ';
+	    if ($page->{file} eq 'bind') {
+		print $syn q'
+:::{toctree}
+:maxdepth: 1
+:hidden:
+
+bind_-list
+
+:::
+';
+	    }
 
 	    if ($page->{is_sub_page}) {
-		print $syn "\n<nav markdown=\"1\">\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix)\n</nav>\n$multiver_links";
+		#print $syn "\n<nav markdown=\"1\">\n\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix)\n\n</nav>\n$multiver_links";
 	    }
 	    elsif (@subcommand_split) { # main help page of a page with sub pages
 		# find valid subpages
@@ -307,7 +316,7 @@ Please submit changes to
 			push @all_commands, $command;
 		    }
 		}
-		print $syn "$multiver_links\n### Subcommands\n\n";
+		print $syn "$multiver_links\n## Subcommands\n\n";
 		for (@subcommand_split) {
 		    my ($sub_page_name, $title, $commands, $not_commands)
 			= @{$_}{qw(name title commands excludes)};
@@ -326,12 +335,16 @@ Please submit changes to
 			$not = join '|', map { quotemeta "$help_file_name $_ " } sort { length $b <=> length $a } sort @$not_commands;
 			@sub_page_commands = grep !/^($not)/, @sub_page_commands;
 		    }
+		    my @toctree;
 		    if (@sub_page_commands) {
 			my ($multiver_links, $ver_suffix) = _get_mv("${help_file_name}_${sub_page_name}", $ver);
+			my $toctitle = $title;
+			$toctitle =~ s{^(window)?/?(split window)? ?}{};
+			push @toctree, "$toctitle <${help_file_name}_${sub_page_name}$ver_suffix>";
 			print $syn qq'
-#### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix)
+### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix)
 
-<div markdown="1" class="helpindex">
+<div markdown="1" class="helpindex sub">
 
 '; #
 			for (@sub_page_commands) {
@@ -352,6 +365,17 @@ Please submit changes to
 			};
 			@commands_seen{@sub_page_commands} = (1) x @sub_page_commands;
 		    }
+		    if (@toctree) {
+			print $syn qq'
+:::{toctree}
+:maxdepth: 1
+:hidden:
+
+@{[join "\n", @toctree]}
+
+:::
+';
+		    }
 		}
 		my $all_re = join '|', map { quotemeta } sort { length $b <=> length $a } sort keys %commands_seen;
 		$page->{filter_re} = $page->{filter_not_re} = $all_re;
@@ -362,6 +386,7 @@ Please submit changes to
 		print $syn $multiver_links;
 	    }
 	    my $in = 'syn';
+	    my $in_section = '';
 	    for (@tx) {
 		if (/^$re{bold}Syntax:/) {
 		    $in = 'syn';
@@ -381,10 +406,13 @@ Please submit changes to
 		    finish_table($syn, \%table_state);
 		    $in = '';
 		}
-		s/^$re{section_head}$/### $1 ###/;
+		if (s/^$re{section_head}$/## $1 ##/) {
+		    $in_section = $1;
+		}
 		if (/^$re{bold}(See also):$re{bold} (.*)$/i) {
-		    my $res = "### $1 ###
+		    my $res = "## $1 ##
 ";
+		    $in_section = $1;
 		    my @see_also = split " ", $2;
 		    s/,$// for @see_also;
 		    for (@see_also) {
@@ -406,7 +434,7 @@ Please submit changes to
 
 		    push @{$page->{_syn}}, $_;
 
-		    $_ = qq'<div class="highlight irssisyntax"><pre style="--cmdlen:${cmdlen}ch"><code>'
+		    $_ = qq'<div class="irssisyntax highlight"><pre style="--cmdlen:${cmdlen}ch"><code>'
 			._add_syn_colors($_, ["*", "*05", "10"], ["09", "14"], ["*", "13", "13"], ["14"], [])
 			. "</code></pre></div>\n\n";
 		}
@@ -533,22 +561,60 @@ Please submit changes to
 		else {
 		    # non-tabular line
 		    print $syn "$_\n";
+		    if ($in_section eq 'Description' and not $page->{is_sub_page}) {
+			if (/^##/) {
+			    # skip
+			} else {
+			    if (not exists $short_descs{$help_file_name}) {
+				$short_descs{$help_file_name} = $_;
+			    } elsif (/^\s*$/) {
+				$short_descs{$help_file_name} .= "\n";
+			    } else {
+				if ($short_descs{$help_file_name} !~ /\n\z/) {
+				    $short_descs{$help_file_name} .= ' ';
+				}
+				$short_descs{$help_file_name} .= $_;
+			    }
+			}
+		    }
 		}
 	    }
 	    #print $syn "```\n",(join "\n", @otx),"\n```\n";
 	}
     }
+
     my %help_file_seen;
     # create category sections on the main help index
     for my $cat (@{$config->{categories}}) {
+	print $index "cat_$cat->{category}${ver_suffix_main}\n";
+    }
+    print $index qq'
+
+:::
+';
+    for my $cat (@{$config->{categories}}) {
 	print $index qq'
 
-### $cat->{category}
+## $cat->{category}
 
 <div markdown="1" class="helpindex">
 
 ';
 
+	open my $cat_index, '>', "$out/documentation/help/cat_$cat->{category}${ver_suffix_main}.md";
+	print $cat_index qq'# $cat->{category}
+
+<!-- comment
+
+Please submit changes to
+- https://github.com/ailin-nemui/irssi/tree/master/docs/help/in
+- https://github.com/ailin-nemui/irssi-website-tools/blob/master/_tools/help2md.yml
+
+endcomment -->
+
+';
+	my @cat_toctree;
+	print $cat_index "| | |\n| --- | --- |\n";
 	for (@help_files) {
 	    my $cmd = "\U$_";
 	    my $srcf = $cmd{$cmd};
@@ -567,9 +633,27 @@ Please submit changes to
 		$found = !$help_file_seen{$_};
 	    }
 	    next unless $found;
+	    my $toc_seen = $help_file_seen{$_};
 	    $help_file_seen{$_} = 1;
 	    my ($multiver_links, $ver_suffix) = _get_mv($_, $ver);
-	    print $index "* [$_]($ver_prefix_main$_$ver_suffix)\n";
+	    print $index "* [$_](./$ver_prefix_main$_$ver_suffix)\n";
+	    my $short_desc = $short_descs{$_} // do { warn qq{no desc for $_\n}; '' };
+	    $short_desc =~ s/\n+\z//;
+	    $short_desc =~ s/\n.*\z/ .../s;
+	    print $cat_index "| [$_](./$ver_prefix_main$_$ver_suffix) | $short_desc |\n";
+	    push @cat_toctree, "$ver_prefix_main$_$ver_suffix" unless $toc_seen;
+	}
+	if (@cat_toctree) {
+	    print $cat_index qq'
+
+:::{toctree}
+:maxdepth: 1
+:hidden:
+
+@{[join "\n", @cat_toctree]}
+
+:::
+';
 	}
 	print $index '
 
