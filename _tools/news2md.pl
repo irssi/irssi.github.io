@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+use strict;
+use warnings;
 
 # pipe a NEWS file to this script and get a markdown version back
 
@@ -6,12 +8,23 @@
 #   GITHUB=1  - Disable Github links (for use on Github releases page)
 #   VER=1.2.3 - show this version only
 #   ONLINE=1  - Download release asset links from Github
-#   REORG=$u  - manage github milestones
+#   REORG=$u  - manage github milestones of user $u
 #   TITLES=1  - add issue titles as link titles
 #   ...
+$ENV{TITLES} = 1 unless defined $ENV{TITLES};
 
-use strict;
-use warnings;
+# header
+print q'
+# NEWS
+
+:::{toctree}
+:hidden:
+
+Irssi-1.3.0
+:::
+
+' unless $ENV{VER};
+
 use version;
 use POSIX qw(ceil);
 use JSON::PP;
@@ -180,7 +193,8 @@ sub issue_links {
 		$title =~ s/[|"]/$re{$&}/g
 		    if $title;
 	    }
-	    "[$short$num]($lt$num".($title?" \"$title\"":"").")"
+	    #"[$short$num]($lt$num".($title?" \"$title\"":"").")"
+	    qq{<a href="$lt$num"@{[$title?qq{ title="$title"}:""]}>$short$num</a>}
 	}
 	else {
 	    "$1$2"
@@ -201,9 +215,9 @@ sub finish_S {
     }
 
     unless ($ENV{VER}) {
-	print "## $S{ver}\n";
-	print "{:#v@{[ $S{ver} =~ s/[.]/-/gr ]} }\n"
+	print "(news-v@{[ $S{ver} =~ s/[.]/-/gr ]})=\n"
 	    unless $ENV{GITHUB};
+	print "## $S{ver}\n";
 	print "\n";
     }
 
@@ -310,11 +324,11 @@ sub finish_S {
 		}
 		CPAN::Meta::YAML::DumpFile($artef_extra_file, $artef_extra);
 	    }
-	    print qq@{% include relnews_artef_block.markdown ver="$S{ver}" %}@;
+	    #print qq@{% include relnews_artef_block.markdown ver="$S{ver}" %}@;
 	    print "\n\n";
 	}
     } elsif ($S{ver} =~ /-head/ && !$ENV{GITHUB}) {
-	print qq{<span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/irssi/irssi`\n\n[Commit log](https://github.com/irssi/irssi/commits)\n\n};
+	print qq{<span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/ailin-nemui/irssi`\n\n[Commit log](https://github.com/ailin-nemui/irssi/commits)\n\n};
     }
 
     for my $section (@sections) {
@@ -323,9 +337,9 @@ sub finish_S {
 	local $S{section_title} = $section_title{$section};
 	local $S{section} = $section;
 	if (defined $section_title{$section}) {
-	    print "### $section_title{$section}\n";
-	    print "{:#v@{[ $S{ver} =~ s/[.]/-/gr ]}-\L@{[ $section_title{$section} =~ s/\W+/-/gr ]} }\n"
+	    print "(v@{[ $S{ver} =~ s/[.]/-/gr ]}-\L@{[ $section_title{$section} =~ s/\W+/-/gr ]})=\n"
 		unless $ENV{GITHUB};
+	    print "### $section_title{$section}\n";
 	    print "\n";
 	}
 	for my $e (@e) {
