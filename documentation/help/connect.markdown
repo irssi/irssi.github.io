@@ -54,9 +54,9 @@ connections are kept.
 
 ### Examples ###
 
-    /CONNECT liberachat
-    /CONNECT -6 liberachat
-    /CONNECT -4 -! -host staff.irssi.org -network liberachat irc.libera.chat
+    /CONNECT ExampleNet
+    /CONNECT -6 ExampleNet
+    /CONNECT -4 -! -host staff.irssi.org -network ExampleNet irc.example.com
     /CONNECT irc.irssi.org 6667 WzerT8zq mike
 
 ### See also ###

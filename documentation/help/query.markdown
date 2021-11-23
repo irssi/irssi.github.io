@@ -37,8 +37,8 @@ Starts a private conversation with a nickname.
 ### Examples ###
 
     /QUERY mike
-    /QUERY -liberachat bob
-    /QUERY -liberachat -window sarah
+    /QUERY -ExampleNet bob
+    /QUERY -ExampleNet -window sarah
 
 ### See also ###
 [MSG](/documentation/help/msg), [UNQUERY](/documentation/help/unquery), [WINDOW](/documentation/help/window)

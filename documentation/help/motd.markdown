@@ -33,7 +33,7 @@ Displays the welcome message of an IRC server.
 ### Examples ###
 
     /MOTD
-    /MOTD irc.libera.chat
+    /MOTD irc.example.com
     /MOTD bob
 
 ### See also ###

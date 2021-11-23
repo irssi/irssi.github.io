@@ -41,7 +41,7 @@ The following conditions must be met:
 ### Examples ###
 
     /KNOCK #irssi
-    /KNOCK #libera
+    /KNOCK #example
     /KNOCK #github
 
 ### See also ###

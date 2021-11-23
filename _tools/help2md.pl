@@ -519,6 +519,9 @@ Please submit changes to
 		# irssi escapes
 		s/%%/%/g;
 
+		# bold to markdown bold
+		s/%_/**/g;
+
 		if ($in eq '' && /^ {4}/ && $page->{filter_re} && $page->{is_sub_page}) {
 		    if (/^ {4}\/(\Q$help_file_name\E .*)/i) {
 			# filter examples on sub pages

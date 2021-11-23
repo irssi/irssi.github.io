@@ -33,7 +33,7 @@ Displays the administrative details of a server.
 ### Examples ###
 
     /ADMIN
-    /ADMIN irc.libera.chat
+    /ADMIN irc.example.com
     /ADMIN mike
 
 ### See also ###

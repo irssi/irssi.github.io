@@ -36,7 +36,7 @@ server.
 
 ### Examples ###
 
-    /DISCONNECT liberachat I'm off for today, take care!
+    /DISCONNECT ExampleNet I'm off for today, take care!
     /DISCONNECT * Vacation time :D
     /DISCONNECT
 

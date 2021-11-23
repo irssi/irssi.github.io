@@ -33,7 +33,7 @@ Displays information about the IRC server software.
 ### Examples ###
 
     /INFO
-    /INFO irc.libera.chat
+    /INFO irc.example.com
 
 ### See also ###
 [ADMIN](/documentation/help/admin)

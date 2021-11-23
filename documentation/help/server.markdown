@@ -99,15 +99,15 @@ Specify '-' as password to remove a server password
 ### Examples ###
 
     /SERVER
-    /SERVER CONNECT irc.libera.chat
-    /SERVER CONNECT +irc.libera.chat
-    /SERVER ADD -network liberachat -noautosendcmd irc.libera.chat
-    /SERVER ADD -! -auto -host staff.irssi.org -4 -network liberachat -noproxy irc.libera.chat 6667
-    /SERVER MODIFY -network liberachat -noauto irc.libera.chat
-    /SERVER MODIFY -network liberachat irc.libera.chat 6697 -
-    /SERVER REMOVE irc.libera.chat 6667 liberachat
+    /SERVER CONNECT irc.example.com
+    /SERVER CONNECT +irc.example.com
+    /SERVER ADD -network ExampleNet -noautosendcmd irc.example.com
+    /SERVER ADD -! -auto -host staff.irssi.org -4 -network ExampleNet -noproxy irc.example.com 6667
+    /SERVER MODIFY -network ExampleNet -noauto irc.example.com
+    /SERVER MODIFY -network ExampleNet irc.example.com 6697 -
+    /SERVER REMOVE irc.example.com 6667 ExampleNet
     /SERVER PURGE
-    /SERVER PURGE irc.libera.chat
+    /SERVER PURGE irc.example.com
 
 ### See also ###
 [CHANNEL](/documentation/help/channel), [CONNECT](/documentation/help/connect), [DISCONNECT](/documentation/help/disconnect), [NETWORK](/documentation/help/network), [RECONNECT](/documentation/help/reconnect), [RMRECONNS](/documentation/help/rmreconns)

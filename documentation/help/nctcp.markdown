@@ -33,7 +33,7 @@ targets by separating them with a comma.
 ### Examples ###
 
     /NCTCP #irssi VERSION King of the Jungle v1.0
-    /NCTCP bob,#libera USERINFO I am bob :p
+    /NCTCP bob,#example USERINFO I am bob :p
 
 ### See also ###
 [CTCP](/documentation/help/ctcp)

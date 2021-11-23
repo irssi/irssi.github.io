@@ -32,7 +32,7 @@ Leaves the given channels.
 ### Examples ###
 
     /PART #irssi
-    /PART #libera,#irssi
+    /PART #example,#irssi
 
 ### See also ###
 [JOIN](/documentation/help/join), [KICK](/documentation/help/kick)
