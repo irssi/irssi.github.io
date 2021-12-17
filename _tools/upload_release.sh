@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ $# -lt 2 ] || [ $# -gt 3 ]; then
     echo Usage: "$0" /path/to/irssi VERSION [path to release files]
     exit 1
@@ -15,7 +15,11 @@ else
     relpath=..
 fi
 
-ORG=${ORG:-irssi}
+if [ "${VER%-an}" = "$VER" ]; then
+    ORG=${ORG:-irssi}
+else
+    ORG=${ORG:-ailin-nemui}
+fi
 
 mydir=`pwd`
 
@@ -41,24 +45,27 @@ if [ -z "$description" ]; then
     exit 1
 fi
 
-if github-release info -u "$ORG" -r irssi -t "$VER" >/dev/null; then
+if gh release view -R "$ORG"/irssi "$VER" >/dev/null; then
     echo release "$VER" already exists
     exit 1
 fi
 
 echo deleting old draft...
-github-release delete -u "$ORG" -r irssi -t "$VER" >/dev/null
-github-release release -u "$ORG" -r irssi -t "$VER" --draft -d "$description"
+gh release delete -R "$ORG"/irssi "$VER" -y >/dev/null
 
+files=()
 for f in irssi-"$VER".tar.xz irssi-"$VER".tar.xz.asc irssi-"$VER".tar.gz irssi-"$VER".tar.gz.asc; do
     if [ -f "$relpath"/"$f" ]; then
-	echo uploading "$f"
-	github-release upload -u "$ORG" -r irssi -t "$VER" -n "$f" -f "$relpath"/"$f"
+	files+=("$relpath"/"$f")
     else
 	echo \*\*Warning\*\* "$f" not found
     fi
 done
-file="$(mktemp)"
-echo 'Use tarball or git clone instead!' > "$file"
-github-release upload -u "$ORG" -r irssi -t "$VER" -n ZZZZZ_DO_NOT_USE_GITHUB_SOURCE_LINK -f "$file"
-rm "$file"
+file="$(mktemp -d)"
+echo 'Use tarball or git clone instead!' > "$file/ZZZZZ_DO_NOT_USE_GITHUB_SOURCE_LINK"
+files+=("$file/ZZZZZ_DO_NOT_USE_GITHUB_SOURCE_LINK")
+
+gh release create -R "$ORG"/irssi -d -n "$description" "$VER" "${files[@]}"
+
+rm "$file/ZZZZZ_DO_NOT_USE_GITHUB_SOURCE_LINK"
+rmdir "$file"
