@@ -20,7 +20,7 @@ print q'
 :::{toctree}
 :hidden:
 
-Irssi-1.3.0
+Irssi-1.3
 :::
 
 ' unless $ENV{VER};
