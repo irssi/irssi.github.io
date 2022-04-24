@@ -4,7 +4,7 @@ use File::Spec;
 use FindBin;
 use Cwd;
 
-my $src = shift || "$FindBin::Bin/../../irssi-git";
+my $src = shift || "$FindBin::Bin/../../irssi";
 my $doc = shift || "$FindBin::Bin/../../irssi-an-docs2";
 
 unless (-f "$src/irssi.conf") {
