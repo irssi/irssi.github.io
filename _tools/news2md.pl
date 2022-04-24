@@ -14,16 +14,11 @@ use warnings;
 $ENV{TITLES} = 1 unless defined $ENV{TITLES};
 
 # header
-print q'
-# NEWS
-
-:::{toctree}
-:hidden:
-
-Irssi-1.3
-:::
-
-' unless $ENV{VER};
+if ($ENV{HEADER} && -f $ENV{HEADER}) {
+    system { 'cat' } 'cat', $ENV{HEADER};
+} elsif ($ENV{HEADER}) {
+    warn "Header not found: $ENV{HEADER}";
+}
 
 use version;
 use POSIX qw(ceil);
