@@ -128,6 +128,7 @@ my %link_type = (
     'bgo#'      => 'https://bugzilla.gnome.org/show_bug.cgi?id=',
     'oss-fuzz#' => 'https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=',
     'gentoo#'   => 'https://bugs.gentoo.org/show_bug.cgi?id=',
+    'freebsd#'  => 'https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=',
    );
 
 sub issue_links {
