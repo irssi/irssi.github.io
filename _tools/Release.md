@@ -6,7 +6,7 @@ Upload Irssi version to Github.
 
 ### Prerequisite
 
-* [github-release](https://github.com/aktau/github-release)
+* [gh](https://cli.github.com/)
 * `news2md.pl` and its prerequisites
 
 ### Usage
