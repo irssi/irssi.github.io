@@ -5,11 +5,12 @@ use warnings;
 # pipe a NEWS file to this script and get a markdown version back
 
 # Env variables:
-#   GITHUB=1  - Disable Github links (for use on Github releases page)
-#   VER=1.2.3 - show this version only
-#   ONLINE=1  - Download release asset links from Github
-#   REORG=$u  - manage github milestones of user $u
-#   TITLES=1  - add issue titles as link titles
+#   GITHUB=1   - Disable Github links (for use on Github releases page)
+#   MARKDOWN=1 - Write Markdown instead of Sphinx-HTML
+#   VER=1.2.3  - show this version only
+#   ONLINE=1   - Download release asset links from Github
+#   REORG=$u   - manage github milestones of user $u
+#   TITLES=1   - add issue titles as link titles
 #   ...
 $ENV{TITLES} = 1 unless defined $ENV{TITLES};
 
@@ -189,8 +190,8 @@ sub issue_links {
 		$title =~ s/[|"]/$re{$&}/g
 		    if $title;
 	    }
-	    #"[$short$num]($lt$num".($title?" \"$title\"":"").")"
-	    qq{<a href="$lt$num"@{[$title?qq{ title="$title"}:""]}>$short$num</a>}
+	    $ENV{MARKDOWN} ? "[$short$num]($lt$num".($title?" \"$title\"":"").")"
+	    : qq{<a href="$lt$num"@{[$title?qq{ title="$title"}:""]}>$short$num</a>}
 	}
 	else {
 	    "$1$2"
@@ -212,7 +213,7 @@ sub finish_S {
 
     unless ($ENV{VER}) {
 	print "(news-v@{[ $S{ver} =~ s/[.]/-/gr ]})=\n"
-	    unless $ENV{GITHUB};
+	    unless $ENV{GITHUB} || $ENV{MARKDOWN};
 	print "## $S{ver}\n";
 	print "\n";
     }
@@ -334,7 +335,7 @@ sub finish_S {
 	local $S{section} = $section;
 	if (defined $section_title{$section}) {
 	    print "(v@{[ $S{ver} =~ s/[.]/-/gr ]}-\L@{[ $section_title{$section} =~ s/\W+/-/gr ]})=\n"
-		unless $ENV{GITHUB};
+		unless $ENV{GITHUB} || $ENV{MARKDOWN};
 	    print "### $section_title{$section}\n";
 	    print "\n";
 	}
