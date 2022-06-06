@@ -27,9 +27,6 @@ paginate: 8
 paginate_path: "posts/:num/"
 
 collections:
-  articles:
-    output: true
-    permalink: "/articles/:title/"
   security_html:
     output: true
     permalink: "/security/html/:title/"
@@ -42,8 +39,7 @@ defaults:
      path: "_security_html"
    values:
      layout: security_html
- -
-   scope:
+ - scope:
      path: "_security"
    values:
      layout: security_txt
