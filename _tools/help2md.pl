@@ -208,7 +208,7 @@ These are the `/help` pages of the Irssi on-line help.
 <!-- comment
 
 Please submit changes to
-- https://github.com/ailin-nemui/irssi/tree/master/docs/help/in
+- https://github.com/irssi/irssi/tree/master/docs/help/in
 - https://github.com/ailin-nemui/irssi-website-tools/blob/sphinx-mod/_tools/help2md.yml
 
 endcomment -->
@@ -262,12 +262,12 @@ $multiver_links_main
 <!-- comment
 
 Please submit changes to
-- https://github.com/ailin-nemui/irssi/blob/master/docs/help/in/$help_file_name.in
+- https://github.com/irssi/irssi/blob/master/docs/help/in/$help_file_name.in
 ';
 	    # List of syntax sources
 	    if ($cmd{"\U$help_file_name"}) {
 		for (sort keys %{$cmd{"\U$help_file_name"}}) {
-		    print $syn "- https://github.com/ailin-nemui/irssi/blob/master/$_\n";
+		    print $syn "- https://github.com/irssi/irssi/blob/master/$_\n";
 		}
 	    }
 	    print $syn qq'
@@ -607,7 +607,7 @@ bind_-list
 <!-- comment
 
 Please submit changes to
-- https://github.com/ailin-nemui/irssi/tree/master/docs/help/in
+- https://github.com/irssi/irssi/tree/master/docs/help/in
 - https://github.com/ailin-nemui/irssi-website-tools/blob/sphinx-mod/_tools/help2md.yml
 
 endcomment -->

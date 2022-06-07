@@ -325,7 +325,7 @@ sub finish_S {
 	    print "\n\n";
 	}
     } elsif ($S{ver} =~ /-head/ && !$ENV{GITHUB}) {
-	print qq{<span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/ailin-nemui/irssi`\n\n[Commit log](https://github.com/ailin-nemui/irssi/commits)\n\n};
+	print qq{<span class="glyphicon glyphicon-download-alt"></span> `git clone https://github.com/irssi/irssi`\n\n[Commit log](https://github.com/irssi/irssi/commits)\n\n};
     }
 
     for my $section (@sections) {
