@@ -7,10 +7,10 @@ email: "ahf@irssi.org"
 
 Please welcome the 0.8.14 release of your favourite IRC-client, Irssi!
 
-Check out the [NEWS file](/NEWS/#v0-8-14) for a summary of the changes since
+Check out the [NEWS file](/NEWS/#news-v0-8-14) for a summary of the changes since
 last release.
 
 The release is available from
-[our download page](/NEWS/#v0-8-14).
+[our download page](/NEWS/#news-v0-8-14).
 
 The Irssi Team.

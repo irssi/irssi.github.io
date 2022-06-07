@@ -21,7 +21,7 @@ It is our pleasure to finally be able to release the latest stable version of Ir
 | Christel Dahlskjaer | christel | Site content  |
 {:.table}
 
-Since Irssi v0.8.9 we have made a lot of changes, lets take a look at the top new and exciting features. Feel free to check our [NEWS file](/NEWS/#v0-8-10) for a summary of the changes.
+Since Irssi v0.8.9 we have made a lot of changes, lets take a look at the top new and exciting features. Feel free to check our [NEWS file](/NEWS/#news-v0-8-10) for a summary of the changes.
 
 ### What's new in this release?
 
@@ -35,6 +35,6 @@ Since Irssi v0.8.9 we have made a lot of changes, lets take a look at the top ne
 - Revised default aliases.
 - Updated paste detection and settings.
 - Tons of bugfixes.
-- [Other changes](/NEWS/#v0-8-10)
+- [Other changes](/NEWS/#news-v0-8-10)
 
 With that, we release Irssi v0.8.10 into the wild and we hope you enjoy it as much as we have enjoyed working on it!

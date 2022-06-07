@@ -8,7 +8,7 @@ Happy New Year from the Irssi Team!
 Irssi 1.1.2 has been released! This release fixes some stability
 issues in Irssi 1.1 as well as a few bug fixes. There are no new
 features. **All Irssi 1.1 users should upgrade to this version**. See
-the [NEWS](/NEWS/#v1-1-2) for details.
+the [NEWS](/NEWS/#news-v1-1-2) for details.
 
 For more information refer to the [security
 advisory](/security/html/irssi_sa_2019_01).

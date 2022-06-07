@@ -6,6 +6,7 @@ future: true
 baseurl: ""
 excerpt_separator: "\n\n\n"
 
+markdown: GFM
 
 title: Irssi
 project: The Irssi Project
@@ -43,3 +44,9 @@ defaults:
      path: "_security"
    values:
      layout: security_txt
+
+exclude:
+ - Gemfile
+ - Gemfile.lock
+ - README.markdown
+

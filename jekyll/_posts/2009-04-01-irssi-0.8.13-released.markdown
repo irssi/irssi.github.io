@@ -7,10 +7,10 @@ email: "geert@irssi.org"
 
 It has been a while since we last released. First off, this is ***NOT*** an
 April Fool's joke! Irssi 0.8.13 is out and we ask that you check the [NEWS
-file](/NEWS/#v0-8-13) for changes!
+file](/NEWS/#news-v0-8-13) for changes!
 
 It can be downloaded from
-[our download page](/NEWS/#v0-8-13).
+[our download page](/NEWS/#news-v0-8-13).
 
 This release was brought to you by the Irssi Core Development teams tears, sweat
 and hard work and with invaluable contributions from our fabulous users. We'd

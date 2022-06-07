@@ -5,7 +5,7 @@ title: "Irssi 1.2.3 Released"
 
 Irssi 1.2.3 has been released! It contains a large number of fixes to
 increase overall stability. There are no new features. **All Irssi 1.2
-users should upgrade to this version**. See the [NEWS](/NEWS/#v1-2-3)
+users should upgrade to this version**. See the [NEWS](/NEWS/#news-v1-2-3)
 for details.
 
 If you had previously applied the GLib patch this is now of course

@@ -7,12 +7,12 @@ including native CAP SASL support, "self messages" shown in the
 correct window, line splitting on spaces, bracketed paste markers
 support for better paste detection, nick hilighting everywhere in a
 message, a more robust Config parser, and as usual many fixes, see the
-[NEWS](/NEWS/#v0-8-18) for
+[NEWS](/NEWS/#news-v0-8-18) for
 details. **Thanks to everyone who made this possible!**
 
 
 This release can be downloaded from [our releases
-page](/NEWS/#v0-8-18).
+page](/NEWS/#news-v0-8-18).
 
 We are always looking for contributors so if you find any
 [Issues](https://github.com/irssi/irssi/issues) report them, and if

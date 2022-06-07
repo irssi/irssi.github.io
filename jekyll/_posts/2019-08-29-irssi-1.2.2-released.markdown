@@ -5,7 +5,7 @@ title: "Irssi 1.2.2 Released"
 
 Irssi 1.2.2 has been released! It contains some critical updates which
 we hope you'll enjoy. There are no new features. **All Irssi 1.2 users
-should upgrade to this version**. See the [NEWS](/NEWS/#v1-2-2) for
+should upgrade to this version**. See the [NEWS](/NEWS/#news-v1-2-2) for
 details.
 
 For more information refer to the [security

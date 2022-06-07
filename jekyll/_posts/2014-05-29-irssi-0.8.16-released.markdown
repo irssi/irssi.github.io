@@ -7,14 +7,14 @@ email: "ahf@irssi.org"
 
 The Irssi team is pleased to announce the 0.8.16 release of Irssi. It has been
 quite some time since our last release and there has been [various feature
-enhancements and bugfixes added since then](/NEWS/#v0-8-16).
+enhancements and bugfixes added since then](/NEWS/#news-v0-8-16).
 
 
 We hope to have Irssi 0.8.17 out in a much shorter time than it took to get
 0.8.16 out and there may be some announcements on changes to how contributing
 to the project works in the future.
 
-The release can be downloaded from [our download page](/NEWS/#v0-8-16).
+The release can be downloaded from [our download page](/NEWS/#news-v0-8-16).
 
 Remember to check out Irssi's [Facebook fan
 page](https://www.facebook.com/irssi), [Google+

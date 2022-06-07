@@ -8,7 +8,7 @@ Happy Lunar New Year from the Irssi Team!
 Irssi 1.1.1 and 1.0.7 have been released! They contain some critical
 updates which we hope you'll enjoy. There are no new features. **All
 Irssi users should upgrade to this version**. See the
-[NEWS](/NEWS/#v1-1-1) for details.
+[NEWS](/NEWS/#news-v1-1-1) for details.
 
 For more information refer to the [security
 advisory](/security/html/irssi_sa_2018_02).
