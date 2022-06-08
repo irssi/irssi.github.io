@@ -261,6 +261,10 @@ blockquote {
     font-size: inherit;
 }
 
+input.form-control {
+    color: inherit;
+}
+
 .gsearch-form input.form-control {
     width: 120px;
 }
