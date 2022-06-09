@@ -225,7 +225,11 @@ sub finish_S {
 	my $type = 'xz';
 	my $sig = 'asc';
 	my $no_gz_sig;
-	my $ver = $S{ver}; $ver =~ s/-.*//;
+	my $ver = $S{ver};
+	if ($ver =~ /-an/) {
+	    $org = 'ailin-nemui';
+	}
+	$ver =~ s/-.*//;
 	if (qv("v$ver") < qv("v0.8.18")) {
 	    $org = 'irssi-import';
 	    $type = 'bz2';
