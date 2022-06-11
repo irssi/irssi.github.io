@@ -1,0 +1,115 @@
+a[title^="Permalink to this"]::after { content: "¶" }
+
+.js-skip-to-content {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 16px !important;
+    background-color: var(--color-highlighted-background) !important;
+    color: var(--color-highlighted-text) !important;
+}
+
+.js-skip-to-content:focus {
+    z-index: 50;
+    width: auto;
+    height: auto;
+    clip: auto;
+}
+
+.announcement-content p {
+    white-space: normal;
+}
+
+.sidebar-brand-text {
+    text-align: center;
+}
+
+.synB { font-weight: bold; }
+.synB05 { font-weight: bold; color: #bf616a; }
+.syn13 { color: #b48ead; }
+.syn14 { color: #4c566a; }
+.syn10 { color: #3e6766; }
+.syn09 { color: #719453; }
+
+article table.align-default {
+    margin-left: inherit;
+}
+
+td code.literal {
+    white-space: pre;
+}
+
+div.irssisyntax {
+    --cmdlen: 0ch;
+}
+div.irssisyntax pre {
+    word-break: inherit;
+    word-wrap: inherit;
+    padding-left: 9.5px;
+    white-space: pre-wrap;
+}
+@media (min-width: 768px) {
+    div.irssisyntax pre {
+	padding-left: calc(9.5px + 1ch + var(--cmdlen));
+	text-indent: calc(0px - 1ch - var(--cmdlen));
+    }
+}
+
+.rst-other-versions dd {
+  display: inline-block;
+  margin-left: 1ex;
+}
+
+.helpindex {
+    width: 100%;
+}
+.helpindex > ul {
+    column-gap: 3;
+}
+.helpindex > ul > li {
+    display: inline-block;
+    padding: 0 1em;
+    min-width: 5em;
+    width: auto;
+    white-space: nowrap;
+}
+.sub.helpindex > ul > li {
+    min-width: 10em;
+}
+
+.mlinks > ul {
+    list-style-type: "» ";
+}
+
+img[src*="_dark."] {
+    display: none;
+}
+
+@media not print {
+body[data-theme=dark] object#fig_break_wide {
+    filter: invert();
+}
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme=light]) object#fig_break_wide {
+	filter: invert();
+    }
+}
+
+body[data-theme=dark] img[src*="_dark."] {
+    display: inherit;
+}
+body[data-theme=dark] img[src*="_light."] {
+    display: none;
+}
+@media (prefers-color-scheme: dark) {
+    body:not([data-theme=light]) img[src*="_dark."] {
+	display: inherit;
+    }
+    body:not([data-theme=light]) img[src*="_light."] {
+	display: none;
+    }
+}
+}

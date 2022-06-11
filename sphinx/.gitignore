@@ -1,0 +1,5 @@
+_build*/
+documentation/help/
+_static/documentation/settings/fig_break_wide.svg
+NEWS/index.md
+gh-pages/
