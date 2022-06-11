@@ -1,0 +1,91 @@
+---
+layout: post
+title: "Irssi 1.4.1 Released"
+---
+
+Irssi 1.4.1 has been released! There have been 596 commits since Irssi
+1.2.0. All fixes of Irssi 1.2.3 are also included in Irssi 1.4.
+
+> This release wouldn't be possible without all the people: Alex Shafer, Andrej Kacian, Berker Peksag, Claes Nästén, Dan Collins, David Gall, Dennis Pentmeier, DFrostByte, Doug Freed, dx, ffrogman, Francis Mteo, Geert Hauwaerts, Guntbert Reiter, Heikki Orsila, Jacob V. Rasmussen, Jari Matilainen, Jessica Sophie Porter, Joseph Bisch, Lauri Tirkkonen, Marcus "Teschi" Prinz, Marius Gedminas, Mathis Beer, Michael Hansen, Mikael Magnusson, Mike Quin, Misty De Meo, Nia Alarie, Nutchanon Wetchasit, Pinguin1234, Rene Kita, Sergey Valentey, Shivaram Lingamneni, Thomas Stagner, Tom Wesley, Val Lorentz, Will Storey, Zero King
+
+Special thanks to Jookia for finding a memory leak and to Jari
+Matilainen, qwerty and primalz for helping test the pre releases.
+
+In other news, Ticho started to work on a Matrix plug-in for Irssi at
+https://codeberg.org/ticho/irssi-matrix/ -- maybe some more people can
+help out? It is likely that this effort might require additional fixes
+inside Irssi, too.
+
+Irssi itself could benefit from more contributions as well :-)
+
+**Note**. Irssi 1.4 will be the last series to support Autotools
+`./configure` for building. Packagers are advised to test the
+`meson` build system.
+
+This release can be downloaded from [our releases page](/download).
+
+### Major news in Irssi 1.4 coming from Irssi 1.2.3
+
+There are some breaking changes mentioned below.
+
+- **Note**: botti no longer compiles; get in touch if you use it
+
+- Several [IRCv3](https://ircv3.net/) features were added: extended-join (tracks account names on join), setname, account-notify, invite-notify, away-notify, chghost, (message-tags are received--and ignored), server-time
+
+  These features are hidden behind /SETs: show_extended_join, away_notify_public, show_account_notify, show_server_time
+
+- Accounts are tracked with WHOX on join
+
+- There is a script for using IRCv3 account-tag at https://anti.teamidiot.de/static/nei/*/Code/Irssi/account_expando.pl  -- it should be able to completely replace old Freenode's identify-msg (using account-tag, WHOX, and extended-join)
+
+- TLS connections now default to certificate verification
+
+- The display system now renders formats on the fly. That means something will happen if you change the theme and do /SCROLLBACK REDRAW
+
+  It also means that some scripts such as nickcolor.pl are now broken. Apart from using nickcolor_expando.pl, trilkk also published a replacement script at https://github.com/trilkk/irssi-colored-nicks
+
+- /IGNORE ... NOHILIGHT can be used to ignore some hilights
+
+- Unignore time is shown in /IGNORE output
+
+* A memory leak in /IGNORE was found by Jookia. Fixing this seems to stop my Irssi from crashing after some time!
+
+- irc_op_public messages should now trigger hilights
+
+  However, you can also try the script https://anti.teamidiot.de/static/nei/*/Code/Irssi/no_opmsg.pl to get rid of this message type when you are frequently using +mz channels on Libera.Chat
+
+* New paste detection feature. Pastes from your clip-board can be automatically redirected to a pastebin site or edited in the input line instead. A sample script is on https://anti.teamidiot.de/static/nei/*/Code/Irssi/pastebin.pl
+
+* Server-side HELP (/quote help) has a new default alias: /SHELP in fresh configs and improved rendering. By Val Lorentz
+
+* The NAMES list is now hidden by default if there are more than 18 users on the channel
+
+  To revert to the previous behaviour
+
+      /SET show_names_on_join_limit -1
+
+- Scripts can use module formats using ...->format_create_dest(...)->printformat_module("module", "format", args...) -- no more CORE::GLOBAL::caller hacks
+
+- The Build System was ported to Meson
+
+- Some function names were corrected, module authors please take note.
+
+* New settings:
+
+  * account_max_chase
+  * actlist_prefer_window_name
+  * actlist_separator
+  * autoload_modules
+  * empty_kill_clears_cutbuffer
+  * glib_log_domains
+  * log_server_time
+  * paste_ignore_first_nl
+  * quit_on_hup
+  * scrollback_format
+  * scrollback_max_age
+  * starttls_sts
+  * timestamp_format_alt
+
+See the [NEWS](/NEWS/#news-v1-4-1) for details.
+
+The Irssi Team.

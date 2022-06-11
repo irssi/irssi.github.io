@@ -1,6 +1,5 @@
 -
+  key: irssi-1.4.1-released
+-
   key: irssi-1.2.3-released
   tag: Security
--
-  key: pyircfuzz
-  title: Introducing PyIRCFuzz
