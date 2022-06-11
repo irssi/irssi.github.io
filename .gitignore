@@ -1,0 +1,12 @@
+Ascidia/
+furo/
+irssi-website-tools/
+irssi.github.io/
+irssi/
+sphinx/
+sphinx-for-*/
+tmp-site/
+_build/
+_tmp/
+gh-pages/
+.relnews_artef.yml

@@ -1,0 +1,76 @@
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: checkout Irssi
+        uses: actions/checkout@v3
+        with:
+          repository: irssi/irssi
+          fetch-depth: 0
+          path: irssi
+      - name: checkout sphinx website
+        uses: actions/checkout@v3
+        with:
+          ref: sphinx
+          path: sphinx
+      - name: checkout jekyll website
+        uses: actions/checkout@v3
+        with:
+          ref: master
+          path: irssi.github.io
+      - name: checkout sphinx theme
+        uses: actions/checkout@v3
+        with:
+          repository: ailin-nemui/furo
+          path: furo
+      - name: checkout irssi-website-tools
+        uses: actions/checkout@v3
+        with:
+          repository: ailin-nemui/irssi-website-tools
+          path: irssi-website-tools
+      - name: checkout Ascidia
+        uses: actions/checkout@v3
+        with:
+          repository: ailin-nemui/Ascidia
+          path: Ascidia
+      - run: mkdir -p ~/.local/bin && ln -rst ~/.local/bin ./Ascidia/ascidia
+      - uses: actions/setup-python@v3
+      - run: pip install -r sphinx/requirements.txt
+      - run: pip install -e ./furo
+      - name: cpm irssi-website-tools/_tools
+        uses: perl-actions/install-with-cpm@stable
+        with:
+          cpanfile: irssi-website-tools/_tools/cpanfile
+      - run: perl irssi-website-tools/_tools/issues_titles.pl
+      - run: |
+          # set jekyll baseurl
+          . ./_conf.env
+          sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' irssi.github.io/_config.yml
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: irssi.github.io
+          destination: irssi.github.io/_site
+          future: true
+      - run: bash -x ./make_help_build.sh
+      - name: Upload Pages artifact
+        uses:  actions/upload-pages-artifact@v0
+        with:
+          path: gh-pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+        with:
+          emit_telemetry: false
