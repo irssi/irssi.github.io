@@ -20,7 +20,7 @@ if node.author or show_date %}
                     <a href="mailto:{{ node.email }}">{{ node.author }}</a>{%
                 else %}
                     {{ node.author }}
-{%              endif %}{%
+{%              endif %} {%
             endif %}{%
             if show_date %}{%
                 assign rd = node.date | date: "%-d" %}{%
