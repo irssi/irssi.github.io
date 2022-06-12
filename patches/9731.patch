@@ -1,0 +1,22 @@
+From 98b90037fafa858cc0250e4ef6f6f9f95a9648e1 Mon Sep 17 00:00:00 2001
+From: Alex Domingo <alex.domingo.toro@vub.be>
+Date: Sun, 3 Oct 2021 12:51:17 +0200
+Subject: [PATCH] set pageurl through get_target_uri in StandaloneHTMLBuilder
+
+---
+ sphinx/builders/html/__init__.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sphinx/builders/html/__init__.py b/sphinx/builders/html/__init__.py
+index 6e732538b60..af71fbe5c89 100644
+--- a/sphinx/builders/html/__init__.py
++++ b/sphinx/builders/html/__init__.py
+@@ -995,7 +995,7 @@ def handle_page(self, pagename: str, addctx: Dict, templatename: str = 'page.htm
+ 
+         if self.config.html_baseurl:
+             ctx['pageurl'] = posixpath.join(self.config.html_baseurl,
+-                                            pagename + self.out_suffix)
++                                            self.get_target_uri(pagename))
+         else:
+             ctx['pageurl'] = None
+ 

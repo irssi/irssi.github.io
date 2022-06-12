@@ -49,6 +49,8 @@ jobs:
       - run: mkdir -p ~/.local/bin && ln -rst ~/.local/bin ./Ascidia/ascidia
       - uses: actions/setup-python@v3
       - run: pip install -r sphinx/requirements.txt
+      - run: |
+          patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch
       - run: pip install -e ./furo
       - name: cpm irssi-website-tools/_tools
         uses: perl-actions/install-with-cpm@stable
