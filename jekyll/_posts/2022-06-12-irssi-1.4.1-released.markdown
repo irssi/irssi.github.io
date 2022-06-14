@@ -24,6 +24,13 @@ Irssi itself could benefit from more contributions as well :-)
 
 This release can be downloaded from [our releases page](/download).
 
+#### Update June 15
+
+As issue reports from the release are slowly coming in, I'm collecting
+patches on https://github.com/ailin-nemui/irssi/tree/maint/1.4.1 that
+are intended to be eventually included in 1.4.2. If you use them,
+preferably indicate so in the PACKAGE_VERSION to aid in trouble-shooting.
+
 ### Major news in Irssi 1.4 coming from Irssi 1.2.3
 
 There are some breaking changes mentioned below.
