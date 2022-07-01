@@ -55,8 +55,6 @@ categories:
     paths:
       - !!perl/regexp (?^:irc/proxy)
   - category: Other pages
-multiversion_pages:
-  - _default_: 1.3
 subcommand_pages:
   - command: window
     pages:

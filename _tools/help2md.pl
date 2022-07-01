@@ -4,7 +4,6 @@ use YAML qw(LoadFile DumpFile);
 use FindBin;
 use List::Util qw(uniq);
 use Hash::Util qw(lock_keys);
-use version;
 
 my $config_file = "$FindBin::Bin/help2md.yml";
 my $config = LoadFile($config_file);
@@ -64,55 +63,6 @@ sub _add_syn_colors {
           }gexr;
 }
 
-# Multi-version link/suffix generator
-sub _get_mv {
-    my ($page, $ver) = @_;
-    my $multiver_links = '';
-    my $ver_suffix = '';
-    my @multiver = map {
-	@{ $_->{versions} || [] }
-    } grep {
-	$_->{page} && ($page eq 'index' || $_->{page} eq $page)
-    } @{ $config->{multiversion_pages} || [] };
-
-    if (@multiver) {
-	my ($default_ver) = map {
-	    $_->{_default_}
-	} grep {
-	    $_->{_default_}
-	} @{ $config->{multiversion_pages} || [] };
-
-	@multiver = uniq sort {
-	    version->parse("v$a") <=> version->parse("v$b")
-	} ($default_ver, @multiver);
-
-	$multiver_links = join "\n", map {
-	    my $link;
-	    my $name = "v$_";
-	    my @latest = ($default_ver, (grep { version->parse("v$_") <= version->parse("v$ver") } @multiver));
-	    if (version->parse("v$_") == version->parse("v".$latest[-1])) {
-		$link = "* $name";
-	    }
-	    else {
-		my $xz = "$_";
-		my $suffix = version->parse("v$xz") == version->parse("v$default_ver") ? '' : "_($xz)";
-		if ($page eq 'index' && $suffix eq '') {
-		    $link = "* [$name](/documentation/help)";
-		}
-		else {
-		    $link = "* [$name](/documentation/help/$page$suffix)";
-		}
-	    }
-	    $link
-	} @multiver;
-	$ver_suffix = (grep { version->parse("v$_") == version->parse("v$ver") } @multiver)
-	    && version->parse("v$ver") != version->parse("v$default_ver")
-	    ? "_($ver)" : '';
-	$multiver_links = "\n<div markdown=\"1\" class=\"version\">\n$multiver_links\n</div>\n";
-    }
-    ($multiver_links, $ver_suffix)
-}
-
 sub finish_table {
     my ($out, $state) = @_;
     if ($state->{WORD}) {
@@ -147,31 +97,16 @@ sub main {
     my $dir = shift;
     my $out = shift;
     unless ($dir && $out) {
-	die "syntax: perl $0 <path> <outpath> [<version>]\n";
+	die "syntax: perl $0 <path> <outpath>\n";
     }
-    my $ver = shift;
-    $ver ||= '';
-    $ver =~ s/^v//;
-
-    # all versions from newest to oldest
-    my @allver = uniq sort {
-	version->parse("v$b") <=> version->parse("v$a")
-    } map {
-	$_->{_default_} ? ($_->{_default_}) : @{ $_->{versions} || [] }
-    } @{ $config->{multiversion_pages} || [] };
-
-    my ($default_ver) = map {
-	$_->{_default_}
-    } grep {
-	$_->{_default_}
-    } @{ $config->{multiversion_pages} || [] };
-
-    $ver = $allver[0] unless $ver;
-
     system("cd \Q$dir\E; perl utils/syntax.pl");
 
     chomp (my @help_files = `find \Q$dir\E/docs/help -type f`);
-    @help_files = grep !/[~#]$/, grep !/Makefile/, grep !/meson\.build/, @help_files;
+    @help_files =
+	grep !/[~#]$/,
+	grep !/Makefile/,
+	grep !/meson\.build/,
+	@help_files;
 
     s{^\Q$dir\E/docs/help(?:/|$)}{} for @help_files;
 
@@ -195,13 +130,10 @@ sub main {
     @help_files = sort @help_files;
 
     system("mkdir -p \Q$out\E/documentation/help");
-    my ($multiver_links_main, $ver_suffix_main) = _get_mv('index', $ver);
-    my $ver_suffix_title_main = $ver_suffix_main ? " ($ver)" : '';
-    my $ver_prefix_main = $ver_suffix_main ? '../' : '';
 
     # Main help index page
-    open my $index, '>', "$out/documentation/help/index${ver_suffix_main}.md";
-    print $index qq'# Help$ver_suffix_title_main
+    open my $index, '>', "$out/documentation/help/index.md";
+    print $index qq'# Help
 
 These are the `/help` pages of the Irssi on-line help.
 
@@ -212,8 +144,6 @@ Please submit changes to
 - https://github.com/ailin-nemui/irssi-website-tools/blob/sphinx-mod/_tools/help2md.yml
 
 endcomment -->
-
-$multiver_links_main
 
 :::{toctree}
 :maxdepth: 1
@@ -246,18 +176,11 @@ $multiver_links_main
 	while (@sub_pages) {
 	    my $page = shift @sub_pages;
 	    @tx = @otx;
-	    my ($multiver_links, $ver_suffix) = _get_mv($page->{file}, $ver);
-	    open my $syn, '>', "$out/documentation/help/$page->{file}${ver_suffix}.md";
-	    my $ver_suffix_main_link = '';
-	    my $ver_suffix_title = '';
-	    if ($ver_suffix) {
-		$ver_suffix_main_link = "/index$ver_suffix";
-		$ver_suffix_title = " ($ver)";
-	    }
+	    open my $syn, '>', "$out/documentation/help/$page->{file}.md";
 	    unless ($page->{is_sub_page}) {
 		#print $index "$page->{file}\n";
 	    }
-	    print $syn qq'# $page->{title}$ver_suffix_title
+	    print $syn qq'# $page->{title}
 
 <!-- comment
 
@@ -288,7 +211,7 @@ bind_-list
 	    }
 
 	    if ($page->{is_sub_page}) {
-		#print $syn "\n<nav markdown=\"1\">\n\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name$ver_suffix)\n\n</nav>\n$multiver_links";
+		#print $syn "\n<nav markdown=\"1\">\n\n[\u$help_file_name subcommands index](/documentation/help/$help_file_name)\n\n</nav>\n";
 	    }
 	    elsif (@subcommand_split) { # main help page of a page with sub pages
 		# find valid subpages
@@ -316,7 +239,7 @@ bind_-list
 			push @all_commands, $command;
 		    }
 		}
-		print $syn "$multiver_links\n## Subcommands\n\n";
+		print $syn "\n## Subcommands\n\n";
 		for (@subcommand_split) {
 		    my ($sub_page_name, $title, $commands, $not_commands)
 			= @{$_}{qw(name title commands excludes)};
@@ -337,12 +260,12 @@ bind_-list
 		    }
 		    my @toctree;
 		    if (@sub_page_commands) {
-			my ($multiver_links, $ver_suffix) = _get_mv("${help_file_name}_${sub_page_name}", $ver);
 			my $toctitle = $title;
-			$toctitle =~ s{^(window)?/?(split window)? ?}{};
-			push @toctree, "$toctitle <${help_file_name}_${sub_page_name}$ver_suffix>";
+			$toctitle =~ s{^window(?:/split window)? |(?<=^split )window }{}
+			    or $toctitle =~ s{^(\Q$help_file_name\E) }{};
+			push @toctree, "$toctitle <${help_file_name}_${sub_page_name}>";
 			print $syn qq'
-### [$title](/documentation/help/${help_file_name}_${sub_page_name}$ver_suffix)
+### [$title](/documentation/help/${help_file_name}_${sub_page_name})
 
 <div markdown="1" class="helpindex sub">
 
@@ -381,10 +304,6 @@ bind_-list
 		$page->{filter_re} = $page->{filter_not_re} = $all_re;
 		@tx = @otx;
 	    }
-	    elsif ($multiver_links) {
-		# Links to other versions of this help page
-		print $syn $multiver_links;
-	    }
 	    my $in = 'syn';
 	    my $in_section = '';
 	    for (@tx) {
@@ -416,10 +335,7 @@ bind_-list
 		    my @see_also = split " ", $2;
 		    s/,$// for @see_also;
 		    for (@see_also) {
-			my (undef, $ver_suffix1) = _get_mv("\L$_", $ver);
-			my (undef, $ver_suffix2) = _get_mv($page->{file}, $ver);
-			my $ver_suffix = $ver_suffix1 eq $ver_suffix2 ? $ver_suffix2 : '';
-			$_ = "[$_](/documentation/help/\L$_\E$ver_suffix)";
+			$_ = "[$_](/documentation/help/\L$_\E)";
 		    }
 		    $_ = $res . join ", ", @see_also;
 		}
@@ -586,7 +502,7 @@ bind_-list
     my %help_file_seen;
     # create category sections on the main help index
     for my $cat (@{$config->{categories}}) {
-	print $index "cat_$cat->{category}${ver_suffix_main}\n";
+	print $index "cat_$cat->{category}\n";
     }
     print $index qq'
 
@@ -601,7 +517,7 @@ bind_-list
 
 ';
 
-	open my $cat_index, '>', "$out/documentation/help/cat_$cat->{category}${ver_suffix_main}.md";
+	open my $cat_index, '>', "$out/documentation/help/cat_$cat->{category}.md";
 	print $cat_index qq'# $cat->{category}
 
 <!-- comment
@@ -635,13 +551,12 @@ endcomment -->
 	    next unless $found;
 	    my $toc_seen = $help_file_seen{$_};
 	    $help_file_seen{$_} = 1;
-	    my ($multiver_links, $ver_suffix) = _get_mv($_, $ver);
-	    print $index "* [$_](./$ver_prefix_main$_$ver_suffix)\n";
+	    print $index "* [$_](./$_)\n";
 	    my $short_desc = $short_descs{$_} // do { warn qq{no desc for $_\n}; '' };
 	    $short_desc =~ s/\n+\z//;
 	    $short_desc =~ s/\n.*\z/ .../s;
-	    print $cat_index "| [$_](./$ver_prefix_main$_$ver_suffix) | $short_desc |\n";
-	    push @cat_toctree, "$ver_prefix_main$_$ver_suffix" unless $toc_seen;
+	    print $cat_index "| [$_](./$_) | $short_desc |\n";
+	    push @cat_toctree, "$_" unless $toc_seen;
 	}
 	if (@cat_toctree) {
 	    print $cat_index qq'
