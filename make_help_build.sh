@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 srcdir="$(dirname "$(realpath "$0")")"
 
@@ -9,11 +9,70 @@ NL="
 
 cd "$srcdir"
 
-mkdir -p sphinx/"$NEWS_DIR"
-HEADER="$srcdir"/"$NEWS_HEADER" perl "$srcdir"/irssi-website-tools/_tools/news2md.pl irssi/NEWS > sphinx/"$NEWS_DIR"/index.md
+if [ -d local/lib/perl5 ]; then
+    PERL5LIB="$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB"
+    export PERL5LIB
+fi
+
+PATH="$(pwd)/Ascidia:$PATH"
+export PATH
 
 rm -fr _build || :
 mkdir -p _build
+mkdir -p _tmp
+
+rm -fr _tmp/site || :
+[ -d jekyll/_site ] || echo "The Jekyll part of the website was not built! Cannot continue"
+cp -a jekyll/_site _tmp/site
+
+META_INFO="describe --always --long --tags --dirty"
+github=https://github.com
+rev_link() {
+    local dir="$1"
+    local url="$(git -C "$dir" remote get-url origin 2>/dev/null)"
+    local desc="$(git -C "$dir" $META_INFO)"
+    if [ -z "$url" ]; then
+        echo "$desc"
+    else
+        url=${url/*@*:/$github/}
+        url=${url%/}
+        url=${url%.git}
+        echo "[$desc]($url/tree/$(git -C "$dir" rev-parse HEAD))"
+    fi
+}
+cat <<META >sphinx/build-meta.md
+---
+orphan: True
+nosearch: True
+generated: True
+---
+
+# Website build meta-data
+
+- main site: $(rev_link .)
+
+- jekyll-site: $(rev_link jekyll)
+
+- sphinx-site: $(rev_link sphinx)
+
+- irssi: $(rev_link irssi)
+
+- irssi-website-tools: $(rev_link irssi-website-tools)
+
+- furo: $(rev_link furo)
+
+- Ascidia: $(rev_link Ascidia)
+
+- sphinx-build: $(sphinx-build --version)
+
+- docutils: $(rst2html5.py --version)
+
+- build date: $(LC_ALL=C.UTF-8 date)
+META
+
+[ -d sphinx/"$NEWS_DIR" ] || mkdir sphinx/"$NEWS_DIR"
+HEADER="$srcdir"/"$NEWS_HEADER" perl "$srcdir"/irssi-website-tools/_tools/news2md.pl irssi/NEWS > sphinx/"$NEWS_DIR"/index.md
+
 irssi_src_orig="$srcdir"/irssi
 for vtn in $VERS; do
     tag=$(echo "$vtn" | cut -d: -f3)
@@ -21,8 +80,9 @@ for vtn in $VERS; do
     prj=$(echo "$vtn" | cut -d: -f1)
 
     { (
-        cp -a sphinx sphinx-for-"$tag"
-        cd sphinx-for-"$tag"
+        rm -fr _tmp/sphinx-for-"$tag" || :
+        cp -a sphinx _tmp/sphinx-for-"$tag"
+        cd _tmp/sphinx-for-"$tag"
 
         irssi_src="$srcdir"/_tmp/irssi-"$tag"
         rm -fr "$irssi_src" || :
@@ -47,50 +107,47 @@ for vtn in $VERS; do
             rsync -aC _overlay/documentation/ documentation/
             find . -name \*.md -exec perl "$srcdir"/irssi-website-tools/_tools/ascidia_prerender.pl {} +
 
-            rm -fr ../_build/main || :
+            rm -fr "$srcdir"/_build/main || :
             # BASEURL for sitemap
-            { BASEURL=$BASEURL$ABS_BASE EDIT_LINK=$EDIT_LINK make "$SPHINXTYPE" BUILDDIR=../_build/main 2>&1 >&3 | sed -e "s|^|[main:E] |" >&2; } 3>&1 | sed -e "s|^|[main:O] |" &
+            { BASEURL=$BASEURL$ABS_BASE EDIT_LINK=$EDIT_LINK FORCE_COLOR=1 make "$SPHINXTYPE" BUILDDIR="$srcdir"/_build/main 2>&1 >&3 | sed -e "s|^|[main:E] |" >&2; } 3>&1 | sed -e "s|^|[main:O] |" &
 
             sphinxopts_rel=""
         else
             sphinxopts_rel="-D release=$ver"
         fi
 
-        rm -fr ../_build/"$ver" || :
-        VER="$ver" PRJ="$prj" VERS="$VERS" STABLE="$STABLE" make "$SPHINXTYPE" SPHINXOPTS="${sphinxopts_rel} -D project=$prj" BUILDDIR=../_build/"$ver"
+        rm -fr "$srcdir"/_build/"$ver" || :
+        VER="$ver" PRJ="$prj" VERS="$VERS" STABLE="$STABLE" FORCE_COLOR=1 make "$SPHINXTYPE" SPHINXOPTS="${sphinxopts_rel} -D project=$prj" BUILDDIR="$srcdir"/_build/"$ver"
+        find "$srcdir"/_build/"$ver"/"$SPHINXTYPE"/documentation/help -type f -exec sed -i -e 's|\(- '"$prj"' '"$ver"'\)\(</title>\)|\1 help page\2|' {} +
 
         if [ "$ver" != "dev" ]; then
             sed -i -e "s|<help/\\([^/]*/\\)\\?index>\$|<help/index>|" documentation/index.md
         fi
 
-        cd ..
+        cd "$srcdir"
         if [ "$ver" != "dev" ]; then
-            rm -fr sphinx-for-"$tag"
-	fi
+            rm -fr _tmp/sphinx-for-"$tag"
+        fi
     ) 2>&1 >&3 | sed -e "s|^|[${tag}:E] |" >&2; } 3>&1 | sed -e "s|^|[${tag}:O] |" &
 done
-
-rm -fr gh-pages || :
-mkdir -p gh-pages
-
-rm -fr tmp-site || :
-cp -a irssi.github.io/_site tmp-site
-( cd tmp-site && rm -v $(grep -FxRl '# sphinx') )
-# need to investigate...
-OIFS=$IFS
-IFS=$NL
-fix_source_link=$(grep -FRl '/tree/gh-pages/' tmp-site)
-if [ -n "$fix_source_link" ]; then
-    sed -i -e 's|/tree/gh-pages/|/tree/master/|g' $fix_source_link
-fi
-IFS=$OIFS
-mv tmp-site/sitemap.xml tmp-site/sitemap2.xml
 
 ######################
 wait
 ######################
 
-rm -fr sphinx-for-dev
+rm -fr gh-pages || :
+mkdir -p gh-pages
+
+( cd _tmp/site && rm -v $(grep -FxRl '# sphinx') )
+# need to investigate...
+OIFS=$IFS
+IFS=$NL
+fix_source_link=$(grep -FRl '/tree/gh-pages/' _tmp/site)
+if [ -n "$fix_source_link" ]; then
+    sed -i -e 's|/tree/gh-pages/|/tree/jekyll/|g' $fix_source_link
+fi
+IFS=$OIFS
+mv _tmp/site/sitemap.xml _tmp/site/sitemap2.xml
 
 rsync -aC _build/main/"$SPHINXTYPE"/ gh-pages/
 rm -fr gh-pages/documentation/help gh-pages/_sources/documentation/help
@@ -103,6 +160,8 @@ for vtn in $VERS; do
     if [ "$ver" != "dev" ]; then
         cp -r _build/"$ver"/"$SPHINXTYPE"/documentation/help/"$ver" gh-pages/documentation/help
         cp -r _build/"$ver"/"$SPHINXTYPE"/_sources/documentation/help/"$ver" gh-pages/_sources/documentation/help
+    else
+        rm -fr _tmp/sphinx-for-"$tag"
     fi
 done
 
@@ -147,8 +206,8 @@ if [ -n "$fix_base" ]; then
 fi
 IFS=$OIFS
 
-rsync -aC tmp-site/ gh-pages/
-rm -fr tmp-site
+rsync -aC _tmp/site/ gh-pages/
+rm -fr _tmp/site
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
    <sitemap>

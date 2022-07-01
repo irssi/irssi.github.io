@@ -29,8 +29,8 @@ jobs:
       - name: checkout jekyll website
         uses: actions/checkout@v3
         with:
-          ref: master
-          path: irssi.github.io
+          ref: jekyll
+          path: jekyll
       - name: checkout sphinx theme
         uses: actions/checkout@v3
         with:
@@ -60,11 +60,11 @@ jobs:
       - run: |
           # set jekyll baseurl
           . ./_conf.env
-          sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' irssi.github.io/_config.yml
+          sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' jekyll/_config.yml
       - uses: actions/jekyll-build-pages@v1
         with:
-          source: irssi.github.io
-          destination: irssi.github.io/_site
+          source: jekyll
+          destination: jekyll/_site
           future: true
       - run: bash -x ./make_help_build.sh
       - name: Upload Pages artifact

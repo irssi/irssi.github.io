@@ -2,7 +2,7 @@
 set -e
 
 . ./_conf.env
-sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' irssi.github.io/_config.yml
+sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' jekyll/_config.yml
 
-cd irssi.github.io
+cd jekyll
 bundle exec jekyll build
