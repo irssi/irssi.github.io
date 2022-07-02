@@ -4,17 +4,17 @@ This repository builds the irssi.org website
 
 The website consists of
 
-- Jekyll blog
-- Sphinx documentation
-- Irssi /help files
+- [Jekyll blog](https://github.com/irssi/irssi.github.io/tree/jekyll)
+- [Sphinx documentation](https://github.com/irssi/irssi.github.io/tree/sphinx)
+- [Irssi /help files](https://github.com/irssi/irssi/tree/master/docs/help/in)
 
 To build it, you need
 
-- Ruby & `bundle`
-- Python & `pip`
-- Perl & `cpm`
+- [Ruby](https://www.ruby-lang.org) & [`bundle`](https://bundler.io/)
+- [Python](https://www.python.org/) & [`pip`](https://pip.pypa.io/)
+- Perl & [`cpm`](https://metacpan.org/pod/App::cpm::Tutorial)
 
-Join us in `#irssi` on irc.libera.chat, if you are interested in
+Join us in [`#irssi`](https://irssi.org/support/irc/) on irc.libera.chat, if you are interested in
 helping out.
 
 ## Manual process
