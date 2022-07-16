@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Irssi 1.4.2 Released"
+---
+
+Irssi 1.4.2 has been released! Our first bug-fix release in the 1.4 series.
+
+Includes the following fixes:
+
+- default to joining `#`channels when no type is specified
+- crash when using `/lastlog`
+- missing lines when changing dynamic textbuffer contents
+- compile fixes with Meson 0.60 
+- compile fixes with Perl 5.36
+
+Please update!
+
+The Irssi Team.
