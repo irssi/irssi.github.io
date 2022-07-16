@@ -1,0 +1,26 @@
+<div id="furo-readthedocs-versions" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="{{ _('Versions') }}" tabindex="0">
+    <div class="rst-other-versions">
+        <dl>
+            <dt>{{ _('Versions') }}</dt>{%
+            for ver in help_versions %}{%
+                if release == "" %}{%
+                    if ver == "dev" %}
+                        <dd><b>dev</b></dd>{%
+                    else %}
+                        <dd><a href="{{ pathto(pagename.replace("/help/", "/help/" + ver + "/")) }}">{{ ver }}</a></dd>{%
+                    endif %}{%
+                else %}{%
+                    if ver == release %}
+                        <dd><b>{{ ver }}</b></dd>{%
+                    else %}{%
+                        if ver == "dev" %}
+                            <dd><a href="{{ pathto(pagename.replace("/" + release + "/", "/")) }}">dev</a></dd>{%
+                        else %}
+                            <dd><a href="{{ pathto(pagename.replace("/" + release + "/", "/" + ver + "/")) }}">{{ ver }}</a></dd>{%
+                        endif %}{%
+                    endif %}{%
+                endif %}{%
+            endfor %}
+        </dl>
+    </div>
+</div>

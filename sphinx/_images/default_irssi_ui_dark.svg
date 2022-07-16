@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 1381.9 606.58" style="background-color: #131416" xmlns="http://www.w3.org/2000/svg">
+ <desc>Irssi Default User Interface, annotated</desc>
+ <g transform="translate(275.09 36.181)" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="18px">
+  <rect width="804" height="484"/>
+  <rect width="804" height="484"/>
+  <rect x="2" y="2" width="800" height="20" fill="#00e"/>
+  <g fill="#e5e5e5">
+   <text x="12" y="17">W</text>
+   <text x="22" y="17">e</text>
+   <text x="32" y="17">l</text>
+   <text x="42" y="17">c</text>
+   <text x="52" y="17">o</text>
+   <text x="62" y="17">m</text>
+   <text x="72" y="17">e</text>
+   <text x="92" y="17">t</text>
+   <text x="102" y="17">o</text>
+   <text x="122" y="17">#</text>
+   <text x="132" y="17">#</text>
+   <text x="142" y="17">c</text>
+   <text x="152" y="17">h</text>
+   <text x="162" y="17">a</text>
+   <text x="172" y="17">t</text>
+   <text x="182" y="17">,</text>
+   <text x="202" y="17">a</text>
+   <text x="222" y="17">s</text>
+   <text x="232" y="17">o</text>
+   <text x="242" y="17">c</text>
+   <text x="252" y="17">i</text>
+   <text x="262" y="17">a</text>
+   <text x="272" y="17">l</text>
+   <text x="292" y="17">a</text>
+   <text x="302" y="17">n</text>
+   <text x="312" y="17">d</text>
+   <text x="332" y="17">o</text>
+   <text x="342" y="17">f</text>
+   <text x="352" y="17">f</text>
+   <text x="362" y="17">t</text>
+   <text x="372" y="17">o</text>
+   <text x="382" y="17">p</text>
+   <text x="392" y="17">i</text>
+   <text x="402" y="17">c</text>
+   <text x="422" y="17">c</text>
+   <text x="432" y="17">h</text>
+   <text x="442" y="17">a</text>
+   <text x="452" y="17">n</text>
+   <text x="462" y="17">n</text>
+   <text x="472" y="17">e</text>
+   <text x="482" y="17">l</text>
+   <text x="502" y="17">f</text>
+   <text x="512" y="17">o</text>
+   <text x="522" y="17">r</text>
+   <text x="542" y="17">s</text>
+   <text x="552" y="17">e</text>
+   <text x="562" y="17">n</text>
+   <text x="572" y="17">s</text>
+   <text x="582" y="17">i</text>
+   <text x="592" y="17">b</text>
+   <text x="602" y="17">l</text>
+   <text x="612" y="17">e</text>
+   <text x="632" y="17">c</text>
+   <text x="642" y="17">o</text>
+   <text x="652" y="17">n</text>
+   <text x="662" y="17">v</text>
+   <text x="672" y="17">e</text>
+   <text x="682" y="17">r</text>
+   <text x="692" y="17">s</text>
+   <text x="702" y="17">a</text>
+   <text x="712" y="17">t</text>
+   <text x="722" y="17">i</text>
+   <text x="732" y="17">o</text>
+   <text x="742" y="17">n</text>
+   <text x="752" y="17">s</text>
+  </g>
+  <rect x="2" y="22" width="260" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="37">D</text>
+   <text x="12" y="37">a</text>
+   <text x="22" y="37">y</text>
+   <text x="42" y="37">c</text>
+   <text x="52" y="37">h</text>
+   <text x="62" y="37">a</text>
+   <text x="72" y="37">n</text>
+   <text x="82" y="37">g</text>
+   <text x="92" y="37">e</text>
+   <text x="102" y="37">d</text>
+   <text x="122" y="37">t</text>
+   <text x="132" y="37">o</text>
+   <text x="152" y="37">0</text>
+   <text x="162" y="37">9</text>
+   <text x="182" y="37">J</text>
+   <text x="192" y="37">a</text>
+   <text x="202" y="37">n</text>
+   <text x="222" y="37">2</text>
+   <text x="232" y="37">0</text>
+   <text x="242" y="37">2</text>
+   <text x="252" y="37">2</text>
+  </g>
+  <rect x="262" y="22" width="540" height="20"/>
+  <rect x="2" y="42" width="800" height="20"/>
+  <rect x="2" y="62" width="800" height="20"/>
+  <rect x="2" y="82" width="10" height="20" fill="#00e"/>
+  <rect x="12" y="82" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="12" y="97">[</text>
+  </g>
+  <rect x="22" y="82" width="10" height="20" fill="#00e"/>
+  <g fill="#e5e5e5">
+   <text x="22" y="97">2</text>
+  </g>
+  <rect x="32" y="82" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="32" y="97">]</text>
+  </g>
+  <rect x="42" y="82" width="760" height="20" fill="#00e"/>
+  <rect x="2" y="102" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="117">2</text>
+   <text x="12" y="117">3</text>
+   <text x="22" y="117">:</text>
+   <text x="32" y="117">5</text>
+   <text x="42" y="117">9</text>
+  </g>
+  <rect x="62" y="102" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="62" y="117">-</text>
+  </g>
+  <rect x="72" y="102" width="10" height="20"/>
+  <g fill="#fff">
+   <text x="72" y="117">!</text>
+  </g>
+  <rect x="82" y="102" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="82" y="117">-</text>
+  </g>
+  <rect x="92" y="102" width="110" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="117">T</text>
+   <text x="112" y="117">o</text>
+   <text x="122" y="117">p</text>
+   <text x="132" y="117">i</text>
+   <text x="142" y="117">c</text>
+   <text x="162" y="117">f</text>
+   <text x="172" y="117">o</text>
+   <text x="182" y="117">r</text>
+  </g>
+  <rect x="202" y="102" width="60" height="20"/>
+  <g fill="#00cdcd">
+   <text x="202" y="117">#</text>
+   <text x="212" y="117">#</text>
+   <text x="222" y="117">c</text>
+   <text x="232" y="117">h</text>
+   <text x="242" y="117">a</text>
+   <text x="252" y="117">t</text>
+  </g>
+  <rect x="262" y="102" width="510" height="20"/>
+  <g fill="#fff">
+   <text x="262" y="117">:</text>
+   <text x="282" y="117">W</text>
+   <text x="292" y="117">e</text>
+   <text x="302" y="117">l</text>
+   <text x="312" y="117">c</text>
+   <text x="322" y="117">o</text>
+   <text x="332" y="117">m</text>
+   <text x="342" y="117">e</text>
+   <text x="362" y="117">t</text>
+   <text x="372" y="117">o</text>
+   <text x="392" y="117">#</text>
+   <text x="402" y="117">#</text>
+   <text x="412" y="117">c</text>
+   <text x="422" y="117">h</text>
+   <text x="432" y="117">a</text>
+   <text x="442" y="117">t</text>
+   <text x="452" y="117">,</text>
+   <text x="472" y="117">a</text>
+   <text x="492" y="117">s</text>
+   <text x="502" y="117">o</text>
+   <text x="512" y="117">c</text>
+   <text x="522" y="117">i</text>
+   <text x="532" y="117">a</text>
+   <text x="542" y="117">l</text>
+   <text x="562" y="117">a</text>
+   <text x="572" y="117">n</text>
+   <text x="582" y="117">d</text>
+   <text x="602" y="117">o</text>
+   <text x="612" y="117">f</text>
+   <text x="622" y="117">f</text>
+   <text x="632" y="117">t</text>
+   <text x="642" y="117">o</text>
+   <text x="652" y="117">p</text>
+   <text x="662" y="117">i</text>
+   <text x="672" y="117">c</text>
+   <text x="692" y="117">c</text>
+   <text x="702" y="117">h</text>
+   <text x="712" y="117">a</text>
+   <text x="722" y="117">n</text>
+   <text x="732" y="117">n</text>
+   <text x="742" y="117">e</text>
+   <text x="752" y="117">l</text>
+  </g>
+  <rect x="772" y="102" width="30" height="20"/>
+  <rect x="2" y="122" width="100" height="20"/>
+  <rect x="102" y="122" width="680" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="137">f</text>
+   <text x="112" y="137">o</text>
+   <text x="122" y="137">r</text>
+   <text x="142" y="137">s</text>
+   <text x="152" y="137">e</text>
+   <text x="162" y="137">n</text>
+   <text x="172" y="137">s</text>
+   <text x="182" y="137">i</text>
+   <text x="192" y="137">b</text>
+   <text x="202" y="137">l</text>
+   <text x="212" y="137">e</text>
+   <text x="232" y="137">c</text>
+   <text x="242" y="137">o</text>
+   <text x="252" y="137">n</text>
+   <text x="262" y="137">v</text>
+   <text x="272" y="137">e</text>
+   <text x="282" y="137">r</text>
+   <text x="292" y="137">s</text>
+   <text x="302" y="137">a</text>
+   <text x="312" y="137">t</text>
+   <text x="322" y="137">i</text>
+   <text x="332" y="137">o</text>
+   <text x="342" y="137">n</text>
+   <text x="352" y="137">s</text>
+   <text x="372" y="137">|</text>
+   <text x="392" y="137">T</text>
+   <text x="402" y="137">H</text>
+   <text x="412" y="137">I</text>
+   <text x="422" y="137">S</text>
+   <text x="442" y="137">I</text>
+   <text x="452" y="137">S</text>
+   <text x="472" y="137">A</text>
+   <text x="492" y="137">P</text>
+   <text x="502" y="137">O</text>
+   <text x="512" y="137">L</text>
+   <text x="522" y="137">I</text>
+   <text x="532" y="137">T</text>
+   <text x="542" y="137">I</text>
+   <text x="552" y="137">C</text>
+   <text x="562" y="137">S</text>
+   <text x="572" y="137">-</text>
+   <text x="582" y="137">F</text>
+   <text x="592" y="137">R</text>
+   <text x="602" y="137">E</text>
+   <text x="612" y="137">E</text>
+   <text x="632" y="137">Z</text>
+   <text x="642" y="137">O</text>
+   <text x="652" y="137">N</text>
+   <text x="662" y="137">E</text>
+   <text x="672" y="137">!</text>
+   <text x="692" y="137">Y</text>
+   <text x="702" y="137">o</text>
+   <text x="712" y="137">u</text>
+   <text x="732" y="137">h</text>
+   <text x="742" y="137">a</text>
+   <text x="752" y="137">v</text>
+   <text x="762" y="137">e</text>
+  </g>
+  <rect x="782" y="122" width="20" height="20"/>
+  <rect x="2" y="142" width="100" height="20"/>
+  <rect x="102" y="142" width="690" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="157">b</text>
+   <text x="112" y="157">e</text>
+   <text x="122" y="157">e</text>
+   <text x="132" y="157">n</text>
+   <text x="152" y="157">w</text>
+   <text x="162" y="157">a</text>
+   <text x="172" y="157">r</text>
+   <text x="182" y="157">n</text>
+   <text x="192" y="157">e</text>
+   <text x="202" y="157">d</text>
+   <text x="212" y="157">.</text>
+   <text x="232" y="157">|</text>
+   <text x="252" y="157">R</text>
+   <text x="262" y="157">u</text>
+   <text x="272" y="157">l</text>
+   <text x="282" y="157">e</text>
+   <text x="292" y="157">s</text>
+   <text x="302" y="157">:</text>
+   <text x="322" y="157">h</text>
+   <text x="332" y="157">t</text>
+   <text x="342" y="157">t</text>
+   <text x="352" y="157">p</text>
+   <text x="362" y="157">s</text>
+   <text x="372" y="157">:</text>
+   <text x="382" y="157">/</text>
+   <text x="392" y="157">/</text>
+   <text x="402" y="157">p</text>
+   <text x="412" y="157">a</text>
+   <text x="422" y="157">s</text>
+   <text x="432" y="157">t</text>
+   <text x="442" y="157">e</text>
+   <text x="452" y="157">b</text>
+   <text x="462" y="157">i</text>
+   <text x="472" y="157">n</text>
+   <text x="482" y="157">.</text>
+   <text x="492" y="157">c</text>
+   <text x="502" y="157">o</text>
+   <text x="512" y="157">m</text>
+   <text x="522" y="157">/</text>
+   <text x="532" y="157">r</text>
+   <text x="542" y="157">a</text>
+   <text x="552" y="157">w</text>
+   <text x="562" y="157">/</text>
+   <text x="572" y="157">n</text>
+   <text x="582" y="157">t</text>
+   <text x="592" y="157">T</text>
+   <text x="602" y="157">c</text>
+   <text x="612" y="157">x</text>
+   <text x="622" y="157">2</text>
+   <text x="632" y="157">x</text>
+   <text x="642" y="157">b</text>
+   <text x="662" y="157">|</text>
+   <text x="682" y="157">W</text>
+   <text x="692" y="157">e</text>
+   <text x="712" y="157">r</text>
+   <text x="722" y="157">e</text>
+   <text x="732" y="157">s</text>
+   <text x="742" y="157">e</text>
+   <text x="752" y="157">r</text>
+   <text x="762" y="157">v</text>
+   <text x="772" y="157">e</text>
+  </g>
+  <rect x="792" y="142" width="10" height="20"/>
+  <rect x="2" y="162" width="100" height="20"/>
+  <rect x="102" y="162" width="510" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="177">t</text>
+   <text x="112" y="177">h</text>
+   <text x="122" y="177">e</text>
+   <text x="142" y="177">r</text>
+   <text x="152" y="177">i</text>
+   <text x="162" y="177">g</text>
+   <text x="172" y="177">h</text>
+   <text x="182" y="177">t</text>
+   <text x="202" y="177">t</text>
+   <text x="212" y="177">o</text>
+   <text x="232" y="177">r</text>
+   <text x="242" y="177">e</text>
+   <text x="252" y="177">m</text>
+   <text x="262" y="177">o</text>
+   <text x="272" y="177">v</text>
+   <text x="282" y="177">e</text>
+   <text x="302" y="177">a</text>
+   <text x="312" y="177">n</text>
+   <text x="322" y="177">n</text>
+   <text x="332" y="177">o</text>
+   <text x="342" y="177">y</text>
+   <text x="352" y="177">i</text>
+   <text x="362" y="177">n</text>
+   <text x="372" y="177">g</text>
+   <text x="392" y="177">p</text>
+   <text x="402" y="177">e</text>
+   <text x="412" y="177">o</text>
+   <text x="422" y="177">p</text>
+   <text x="432" y="177">l</text>
+   <text x="442" y="177">e</text>
+   <text x="462" y="177">|</text>
+   <text x="482" y="177">F</text>
+   <text x="492" y="177">r</text>
+   <text x="502" y="177">e</text>
+   <text x="512" y="177">e</text>
+   <text x="532" y="177">S</text>
+   <text x="542" y="177">p</text>
+   <text x="552" y="177">e</text>
+   <text x="562" y="177">e</text>
+   <text x="572" y="177">c</text>
+   <text x="582" y="177">h</text>
+   <text x="592" y="177">:</text>
+  </g>
+  <rect x="612" y="162" width="190" height="20"/>
+  <rect x="2" y="182" width="100" height="20"/>
+  <rect x="102" y="182" width="670" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="197">h</text>
+   <text x="112" y="197">t</text>
+   <text x="122" y="197">t</text>
+   <text x="132" y="197">p</text>
+   <text x="142" y="197">s</text>
+   <text x="152" y="197">:</text>
+   <text x="162" y="197">/</text>
+   <text x="172" y="197">/</text>
+   <text x="182" y="197">x</text>
+   <text x="192" y="197">k</text>
+   <text x="202" y="197">c</text>
+   <text x="212" y="197">d</text>
+   <text x="222" y="197">.</text>
+   <text x="232" y="197">c</text>
+   <text x="242" y="197">o</text>
+   <text x="252" y="197">m</text>
+   <text x="262" y="197">/</text>
+   <text x="272" y="197">1</text>
+   <text x="282" y="197">3</text>
+   <text x="292" y="197">5</text>
+   <text x="302" y="197">7</text>
+   <text x="312" y="197">/</text>
+   <text x="332" y="197">|</text>
+   <text x="352" y="197">I</text>
+   <text x="362" y="197">n</text>
+   <text x="382" y="197">c</text>
+   <text x="392" y="197">a</text>
+   <text x="402" y="197">s</text>
+   <text x="412" y="197">e</text>
+   <text x="432" y="197">o</text>
+   <text x="442" y="197">f</text>
+   <text x="462" y="197">P</text>
+   <text x="472" y="197">M</text>
+   <text x="492" y="197">s</text>
+   <text x="502" y="197">p</text>
+   <text x="512" y="197">a</text>
+   <text x="522" y="197">m</text>
+   <text x="532" y="197">,</text>
+   <text x="552" y="197">'</text>
+   <text x="562" y="197">/</text>
+   <text x="572" y="197">m</text>
+   <text x="582" y="197">o</text>
+   <text x="592" y="197">d</text>
+   <text x="602" y="197">e</text>
+   <text x="622" y="197">y</text>
+   <text x="632" y="197">o</text>
+   <text x="642" y="197">u</text>
+   <text x="652" y="197">r</text>
+   <text x="662" y="197">_</text>
+   <text x="672" y="197">n</text>
+   <text x="682" y="197">i</text>
+   <text x="692" y="197">c</text>
+   <text x="702" y="197">k</text>
+   <text x="712" y="197">_</text>
+   <text x="722" y="197">h</text>
+   <text x="732" y="197">e</text>
+   <text x="742" y="197">r</text>
+   <text x="752" y="197">e</text>
+  </g>
+  <rect x="772" y="182" width="30" height="20"/>
+  <rect x="2" y="202" width="100" height="20"/>
+  <rect x="102" y="202" width="40" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="217">+</text>
+   <text x="112" y="217">R</text>
+   <text x="122" y="217">'</text>
+  </g>
+  <rect x="142" y="202" width="660" height="20"/>
+  <rect x="2" y="222" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="237">2</text>
+   <text x="12" y="237">3</text>
+   <text x="22" y="237">:</text>
+   <text x="32" y="237">5</text>
+   <text x="42" y="237">9</text>
+  </g>
+  <rect x="62" y="222" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="62" y="237">-</text>
+  </g>
+  <rect x="72" y="222" width="10" height="20"/>
+  <g fill="#fff">
+   <text x="72" y="237">!</text>
+  </g>
+  <rect x="82" y="222" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="82" y="237">-</text>
+  </g>
+  <rect x="92" y="222" width="140" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="237">T</text>
+   <text x="112" y="237">o</text>
+   <text x="122" y="237">p</text>
+   <text x="132" y="237">i</text>
+   <text x="142" y="237">c</text>
+   <text x="162" y="237">s</text>
+   <text x="172" y="237">e</text>
+   <text x="182" y="237">t</text>
+   <text x="202" y="237">b</text>
+   <text x="212" y="237">y</text>
+  </g>
+  <rect x="232" y="222" width="80" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="232" y="237">M</text>
+   <text x="242" y="237">e</text>
+   <text x="252" y="237">t</text>
+   <text x="262" y="237">a</text>
+   <text x="272" y="237">N</text>
+   <text x="282" y="237">o</text>
+   <text x="292" y="237">v</text>
+   <text x="302" y="237">a</text>
+  </g>
+  <rect x="312" y="222" width="10" height="20"/>
+  <rect x="322" y="222" width="20" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="322" y="237">[</text>
+   <text x="332" y="237">]</text>
+  </g>
+  <rect x="342" y="222" width="10" height="20"/>
+  <rect x="352" y="222" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="352" y="237">[</text>
+  </g>
+  <rect x="362" y="222" width="240" height="20"/>
+  <g fill="#fff">
+   <text x="362" y="237">S</text>
+   <text x="372" y="237">u</text>
+   <text x="382" y="237">n</text>
+   <text x="402" y="237">D</text>
+   <text x="412" y="237">e</text>
+   <text x="422" y="237">c</text>
+   <text x="442" y="237">2</text>
+   <text x="452" y="237">6</text>
+   <text x="472" y="237">0</text>
+   <text x="482" y="237">3</text>
+   <text x="492" y="237">:</text>
+   <text x="502" y="237">3</text>
+   <text x="512" y="237">7</text>
+   <text x="522" y="237">:</text>
+   <text x="532" y="237">3</text>
+   <text x="542" y="237">4</text>
+   <text x="562" y="237">2</text>
+   <text x="572" y="237">0</text>
+   <text x="582" y="237">2</text>
+   <text x="592" y="237">1</text>
+  </g>
+  <rect x="602" y="222" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="602" y="237">]</text>
+  </g>
+  <rect x="612" y="222" width="190" height="20"/>
+  <rect x="2" y="242" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="257">2</text>
+   <text x="12" y="257">3</text>
+   <text x="22" y="257">:</text>
+   <text x="32" y="257">5</text>
+   <text x="42" y="257">9</text>
+  </g>
+  <rect x="62" y="242" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="62" y="257">-</text>
+  </g>
+  <rect x="72" y="242" width="10" height="20"/>
+  <g fill="#fff">
+   <text x="72" y="257">!</text>
+  </g>
+  <rect x="82" y="242" width="10" height="20"/>
+  <g fill="#5c5cff">
+   <text x="82" y="257">-</text>
+  </g>
+  <rect x="92" y="242" width="10" height="20"/>
+  <rect x="102" y="242" width="60" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="102" y="257">I</text>
+   <text x="112" y="257">r</text>
+   <text x="122" y="257">s</text>
+   <text x="132" y="257">s</text>
+   <text x="142" y="257">i</text>
+   <text x="152" y="257">:</text>
+  </g>
+  <rect x="162" y="242" width="10" height="20"/>
+  <rect x="172" y="242" width="60" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="172" y="257">#</text>
+   <text x="182" y="257">#</text>
+   <text x="192" y="257">c</text>
+   <text x="202" y="257">h</text>
+   <text x="212" y="257">a</text>
+   <text x="222" y="257">t</text>
+  </g>
+  <rect x="232" y="242" width="110" height="20"/>
+  <g fill="#fff">
+   <text x="232" y="257">:</text>
+   <text x="252" y="257">T</text>
+   <text x="262" y="257">o</text>
+   <text x="272" y="257">t</text>
+   <text x="282" y="257">a</text>
+   <text x="292" y="257">l</text>
+   <text x="312" y="257">o</text>
+   <text x="322" y="257">f</text>
+  </g>
+  <rect x="342" y="242" width="30" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="342" y="257">4</text>
+   <text x="352" y="257">5</text>
+   <text x="362" y="257">8</text>
+  </g>
+  <rect x="372" y="242" width="70" height="20"/>
+  <g fill="#fff">
+   <text x="382" y="257">n</text>
+   <text x="392" y="257">i</text>
+   <text x="402" y="257">c</text>
+   <text x="412" y="257">k</text>
+   <text x="422" y="257">s</text>
+  </g>
+  <rect x="442" y="242" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="442" y="257">[</text>
+  </g>
+  <rect x="452" y="242" width="10" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="452" y="257">2</text>
+  </g>
+  <rect x="462" y="242" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="472" y="257">o</text>
+   <text x="482" y="257">p</text>
+   <text x="492" y="257">s</text>
+   <text x="502" y="257">,</text>
+  </g>
+  <rect x="522" y="242" width="10" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="522" y="257">0</text>
+  </g>
+  <rect x="532" y="242" width="100" height="20"/>
+  <g fill="#fff">
+   <text x="542" y="257">h</text>
+   <text x="552" y="257">a</text>
+   <text x="562" y="257">l</text>
+   <text x="572" y="257">f</text>
+   <text x="582" y="257">o</text>
+   <text x="592" y="257">p</text>
+   <text x="602" y="257">s</text>
+   <text x="612" y="257">,</text>
+  </g>
+  <rect x="632" y="242" width="10" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="632" y="257">1</text>
+  </g>
+  <rect x="642" y="242" width="90" height="20"/>
+  <g fill="#fff">
+   <text x="652" y="257">v</text>
+   <text x="662" y="257">o</text>
+   <text x="672" y="257">i</text>
+   <text x="682" y="257">c</text>
+   <text x="692" y="257">e</text>
+   <text x="702" y="257">s</text>
+   <text x="712" y="257">,</text>
+  </g>
+  <rect x="732" y="242" width="30" height="20"/>
+  <g fill="#fff" font-weight="bold">
+   <text x="732" y="257">4</text>
+   <text x="742" y="257">5</text>
+   <text x="752" y="257">5</text>
+  </g>
+  <rect x="762" y="242" width="10" height="20"/>
+  <rect x="772" y="242" width="30" height="20"/>
+  <rect x="2" y="262" width="100" height="20"/>
+  <rect x="102" y="262" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="102" y="277">n</text>
+   <text x="112" y="277">o</text>
+   <text x="122" y="277">r</text>
+   <text x="132" y="277">m</text>
+   <text x="142" y="277">a</text>
+   <text x="152" y="277">l</text>
+  </g>
+  <rect x="162" y="262" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="162" y="277">]</text>
+  </g>
+  <rect x="172" y="262" width="630" height="20"/>
+  <rect x="2" y="282" width="60" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="297">2</text>
+   <text x="12" y="297">3</text>
+   <text x="22" y="297">:</text>
+   <text x="32" y="297">5</text>
+   <text x="42" y="297">9</text>
+  </g>
+  <rect x="62" y="282" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="62" y="297">-</text>
+  </g>
+  <rect x="72" y="282" width="80" height="20"/>
+  <g fill="#f0f">
+   <text x="72" y="297">C</text>
+   <text x="82" y="297">h</text>
+   <text x="92" y="297">a</text>
+   <text x="102" y="297">n</text>
+   <text x="112" y="297">S</text>
+   <text x="122" y="297">e</text>
+   <text x="132" y="297">r</text>
+   <text x="142" y="297">v</text>
+  </g>
+  <rect x="152" y="282" width="10" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="152" y="297">(</text>
+  </g>
+  <rect x="162" y="282" width="290" height="20"/>
+  <g fill="#cd00cd">
+   <text x="162" y="297">C</text>
+   <text x="172" y="297">h</text>
+   <text x="182" y="297">a</text>
+   <text x="192" y="297">n</text>
+   <text x="202" y="297">S</text>
+   <text x="212" y="297">e</text>
+   <text x="222" y="297">r</text>
+   <text x="232" y="297">v</text>
+   <text x="242" y="297">@</text>
+   <text x="252" y="297">s</text>
+   <text x="262" y="297">e</text>
+   <text x="272" y="297">r</text>
+   <text x="282" y="297">v</text>
+   <text x="292" y="297">i</text>
+   <text x="302" y="297">c</text>
+   <text x="312" y="297">e</text>
+   <text x="322" y="297">s</text>
+   <text x="332" y="297">.</text>
+   <text x="342" y="297">l</text>
+   <text x="352" y="297">i</text>
+   <text x="362" y="297">b</text>
+   <text x="372" y="297">e</text>
+   <text x="382" y="297">r</text>
+   <text x="392" y="297">a</text>
+   <text x="402" y="297">.</text>
+   <text x="412" y="297">c</text>
+   <text x="422" y="297">h</text>
+   <text x="432" y="297">a</text>
+   <text x="442" y="297">t</text>
+  </g>
+  <rect x="452" y="282" width="20" height="20"/>
+  <g fill="#7f7f7f">
+   <text x="452" y="297">)</text>
+   <text x="462" y="297">-</text>
+  </g>
+  <rect x="472" y="282" width="320" height="20"/>
+  <g fill="#fff">
+   <text x="482" y="297">[</text>
+   <text x="492" y="297">#</text>
+   <text x="502" y="297">#</text>
+   <text x="512" y="297">c</text>
+   <text x="522" y="297">h</text>
+   <text x="532" y="297">a</text>
+   <text x="542" y="297">t</text>
+   <text x="552" y="297">]</text>
+   <text x="572" y="297">W</text>
+   <text x="582" y="297">e</text>
+   <text x="592" y="297">l</text>
+   <text x="602" y="297">c</text>
+   <text x="612" y="297">o</text>
+   <text x="622" y="297">m</text>
+   <text x="632" y="297">e</text>
+   <text x="652" y="297">t</text>
+   <text x="662" y="297">o</text>
+   <text x="682" y="297">#</text>
+   <text x="692" y="297">#</text>
+   <text x="702" y="297">c</text>
+   <text x="712" y="297">h</text>
+   <text x="722" y="297">a</text>
+   <text x="732" y="297">t</text>
+   <text x="742" y="297">!</text>
+   <text x="762" y="297">B</text>
+   <text x="772" y="297">y</text>
+  </g>
+  <rect x="792" y="282" width="10" height="20"/>
+  <rect x="2" y="302" width="100" height="20"/>
+  <rect x="102" y="302" width="650" height="20"/>
+  <g fill="#fff">
+   <text x="562" y="317">a</text>
+   <text x="572" y="317">n</text>
+   <text x="582" y="317">d</text>
+   <text x="602" y="317">u</text>
+   <text x="612" y="317">n</text>
+   <text x="622" y="317">d</text>
+   <text x="632" y="317">e</text>
+   <text x="642" y="317">r</text>
+   <text x="652" y="317">s</text>
+   <text x="662" y="317">t</text>
+   <text x="672" y="317">o</text>
+   <text x="682" y="317">o</text>
+   <text x="692" y="317">d</text>
+   <text x="712" y="317">t</text>
+   <text x="722" y="317">h</text>
+   <text x="732" y="317">e</text>
+  </g>
+  <rect x="752" y="302" width="50" height="20"/>
+  <rect x="2" y="322" width="100" height="20"/>
+  <rect x="102" y="322" width="680" height="20"/>
+  <g fill="#fff">
+   <text x="562" y="337">x</text>
+   <text x="572" y="337">b</text>
+   <text x="592" y="337">|</text>
+   <text x="612" y="337">O</text>
+   <text x="622" y="337">p</text>
+   <text x="632" y="337">s</text>
+   <text x="652" y="337">c</text>
+   <text x="662" y="337">a</text>
+   <text x="672" y="337">n</text>
+   <text x="692" y="337">b</text>
+   <text x="702" y="337">e</text>
+   <text x="722" y="337">f</text>
+   <text x="732" y="337">o</text>
+   <text x="742" y="337">u</text>
+   <text x="752" y="337">n</text>
+   <text x="762" y="337">d</text>
+  </g>
+  <rect x="782" y="322" width="20" height="20"/>
+  <rect x="2" y="342" width="100" height="20"/>
+  <rect x="102" y="342" width="320" height="20"/>
+  <rect x="422" y="342" width="380" height="20"/>
+  <rect x="2" y="362" width="60" height="20"/>
+  <rect x="62" y="362" width="10" height="20"/>
+  <rect x="72" y="362" width="10" height="20"/>
+  <rect x="82" y="362" width="10" height="20"/>
+  <rect x="92" y="362" width="150" height="20"/>
+  <rect x="242" y="362" width="60" height="20"/>
+  <rect x="302" y="362" width="350" height="20"/>
+  <g fill="#fff">
+   <text x="562" y="377">/</text>
+   <text x="572" y="377">n</text>
+   <text x="582" y="377">t</text>
+   <text x="592" y="377">T</text>
+   <text x="602" y="377">c</text>
+   <text x="612" y="377">x</text>
+   <text x="622" y="377">2</text>
+   <text x="632" y="377">x</text>
+   <text x="642" y="377">b</text>
+  </g>
+  <rect x="652" y="362" width="150" height="20"/>
+  <rect x="2" y="382" width="60" height="20"/>
+  <rect x="62" y="382" width="10" height="20"/>
+  <rect x="72" y="382" width="10" height="20"/>
+  <rect x="82" y="382" width="10" height="20"/>
+  <rect x="92" y="382" width="90" height="20"/>
+  <rect x="182" y="382" width="60" height="20"/>
+  <rect x="242" y="382" width="330" height="20"/>
+  <rect x="572" y="382" width="230" height="20"/>
+  <rect x="2" y="402" width="60" height="20"/>
+  <rect x="62" y="402" width="10" height="20"/>
+  <rect x="72" y="402" width="10" height="20"/>
+  <rect x="82" y="402" width="10" height="20"/>
+  <rect x="92" y="402" width="10" height="20"/>
+  <rect x="102" y="402" width="60" height="20"/>
+  <rect x="162" y="402" width="90" height="20"/>
+  <rect x="252" y="402" width="60" height="20"/>
+  <rect x="312" y="402" width="150" height="20"/>
+  <rect x="462" y="402" width="10" height="20"/>
+  <rect x="472" y="402" width="50" height="20"/>
+  <rect x="522" y="402" width="280" height="20"/>
+  <rect x="2" y="422" width="260" height="20"/>
+  <rect x="262" y="422" width="540" height="20"/>
+  <rect x="2" y="442" width="10" height="20" fill="#00e"/>
+  <rect x="12" y="442" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="12" y="457">[</text>
+  </g>
+  <rect x="22" y="442" width="50" height="20" fill="#00e"/>
+  <g fill="#e5e5e5">
+   <text x="22" y="457">0</text>
+   <text x="32" y="457">0</text>
+   <text x="42" y="457">:</text>
+   <text x="52" y="457">0</text>
+   <text x="62" y="457">0</text>
+  </g>
+  <rect x="72" y="442" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="72" y="457">]</text>
+  </g>
+  <rect x="82" y="442" width="10" height="20" fill="#00e"/>
+  <rect x="92" y="442" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="92" y="457">[</text>
+  </g>
+  <rect x="102" y="442" width="60" height="20" fill="#00e"/>
+  <g transform="translate(-6)" fill="#e5e5e5">
+   <text x="112" y="457">N</text>
+   <text x="122" y="457">e</text>
+   <text x="132" y="457">i</text>
+   <text x="152" y="457">(</text>
+  </g>
+  <rect x="162" y="442" width="10" height="20" fill="#00e"/>
+  <g transform="translate(-6)" fill="#00cdcd">
+   <text x="162" y="457">+</text>
+  </g>
+  <rect x="172" y="442" width="40" height="20" fill="#00e"/>
+  <g transform="translate(-6)" fill="#e5e5e5">
+   <text x="172" y="457">Z</text>
+   <text x="182" y="457">i</text>
+   <text x="192" y="457">w</text>
+   <text x="202" y="457">)</text>
+  </g>
+  <rect x="212" y="442" width="10" height="20" fill="#00e"/>
+  <g transform="translate(-6)" fill="#00cdcd">
+   <text x="212" y="457">]</text>
+  </g>
+  <rect x="222" y="442" width="10" height="20" fill="#00e"/>
+  <rect x="232" y="442" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="232" y="457">[</text>
+  </g>
+  <rect x="242" y="442" width="200" height="20" fill="#00e"/>
+  <g fill="#e5e5e5">
+   <text x="242" y="457">3</text>
+   <text x="252" y="457">:</text>
+   <text x="262" y="457">l</text>
+   <text x="272" y="457">i</text>
+   <text x="282" y="457">b</text>
+   <text x="292" y="457">e</text>
+   <text x="302" y="457">r</text>
+   <text x="312" y="457">a</text>
+   <text x="322" y="457">c</text>
+   <text x="332" y="457">h</text>
+   <text x="342" y="457">a</text>
+   <text x="352" y="457">t</text>
+   <text x="362" y="457">/</text>
+   <text x="372" y="457">#</text>
+   <text x="382" y="457">#</text>
+   <text x="392" y="457">c</text>
+   <text x="402" y="457">h</text>
+   <text x="412" y="457">a</text>
+   <text x="422" y="457">t</text>
+   <text x="432" y="457">(</text>
+  </g>
+  <rect x="442" y="442" width="10" height="20" fill="#00e"/>
+  <g fill="#00cdcd">
+   <text x="442" y="457">+</text>
+  </g>
+  <rect x="452" y="442" width="290" height="20" fill="#00e"/>
+  <g fill="#e5e5e5">
+   <text x="452" y="457">C</text>
+   <text x="462" y="457">c</text>
+   <text x="472" y="457">f</text>
+   <text x="482" y="457">l</text>
+   <text x="492" y="457">n</text>
+   <text x="502" y="457">r</text>
+   <text x="512" y="457">t</text>
+   <text x="532" y="457">#</text>
+   <text x="542" y="457">#</text>
+   <text x="552" y="457">c</text>
+   <text x="562" y="457">h</text>
+   <text x="572" y="457">a</text>
+   <text x="582" y="457">t</text>
+   <text x="592" y="457">-</text>
+   <text x="602" y="457">o</text>
+   <text x="612" y="457">v</text>
+   <text x="622" y="457">e</text>
+   <text x="632" y="457">r</text>
+   <text x="642" y="457">f</text>
+   <text x="652" y="457">l</text>
+   <text x="662" y="457">o</text>
+   <text x="672" y="457">w</text>
+   <text x="692" y="457">2</text>
+   <text x="702" y="457">0</text>
+  </g>
+  <rect x="742" y="442" width="10" height="20" fill="#00e"/>
+  <rect x="752" y="442" width="50" height="20" fill="#00e"/>
+  <rect x="2" y="462" width="90" height="20"/>
+  <g fill="#fff">
+   <text x="2" y="477">[</text>
+   <text x="12" y="477">#</text>
+   <text x="22" y="477">#</text>
+   <text x="32" y="477">c</text>
+   <text x="42" y="477">h</text>
+   <text x="52" y="477">a</text>
+   <text x="62" y="477">t</text>
+   <text x="72" y="477">]</text>
+  </g>
+  <rect x="92" y="462" width="710" height="20"/>
+  <g transform="translate(169.9 -.040584)" fill="#00cdcd">
+   <text x="552" y="457">[</text>
+  </g>
+  <g transform="translate(169.9 -.040584)" fill="#e5e5e5">
+   <text x="562" y="457">A</text>
+   <text x="572" y="457">c</text>
+   <text x="582" y="457">t</text>
+   <text x="592" y="457">:</text>
+  </g>
+  <g transform="translate(169.9 -.040584)" fill="#fff">
+   <text x="612" y="457">3</text>
+  </g>
+  <g transform="translate(169.9 -.040584)" fill="#00cdcd">
+   <text x="622" y="457">]</text>
+  </g>
+ </g>
+ <g transform="translate(275.09 36.181)">
+  <rect x="-1.4437" y="458.67" width="85.593" height="29.701" fill="none" stroke="#800000" stroke-width="4"/>
+  <rect x="-.26856" y="23.505" width="803.38" height="77.583" fill="none" stroke="#800000" stroke-width="4"/>
+  <g font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px">
+   <text x="943.27429" y="42.567177" stroke="#800000" style="line-height:1.25" xml:space="preserve"><tspan x="798.33044" y="42.567177" fill="#800000" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" stroke="none" text-align="end" text-anchor="end">Split window A</tspan></text>
+   <text x="848.88226" y="16.943457" style="line-height:1.25" xml:space="preserve"><tspan x="848.88226" y="16.943457" fill="#800000">root status bar</tspan></text>
+   <text x="128.7796" y="455.97409" style="line-height:1.25" xml:space="preserve"><tspan x="-26.794239" y="455.97409" fill="#800000" text-align="end" text-anchor="end">window status bar</tspan></text>
+  </g>
+  <g fill="none" stroke="#800000" stroke-width="4">
+   <path d="m-21.916 449.48c29.836 2.8565 31.687 2.5514 31.687 2.5514"/>
+   <path d="m767.17 10.248c72.954 2.5513 77.479 2.2788 77.479 2.2788"/>
+   <rect x="649.39" y="23.801" width="153.44" height="23.287" stroke-width="4"/>
+  </g>
+  <g stroke="#800000">
+   <rect x="649.29" y="101.01" width="153.72" height="23.287" stroke-dasharray="8, 8" stroke-width="4"/>
+   <text x="942.81476" y="119.77301" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="798.51416" y="119.77301" fill="#800000" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" stroke="none" text-align="end" text-anchor="end">Split window B</tspan></text>
+   <path d="m13.063 442.02h66.379" fill="none" stroke-width="4"/>
+   <path d="m102.68 442.08h39.229" fill="none" stroke-width="4"/>
+  </g>
+  <text x="16.967758" y="437.05438" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="-26.95718" y="437.05438" fill="#800000" stroke-width="4" text-align="end" text-anchor="end">clock</tspan></text>
+  <text x="54.052925" y="416.15106" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="-27.110882" y="416.15106" fill="#800000" stroke-width="4" text-align="end" text-anchor="end">your nick</tspan></text>
+  <path d="m804.74 106.43c34.81-0.0791 20.345 157.36 35.498 162.56-14.542 11.281-0.334 170.34-36.017 170.18" fill="none" stroke="#800000" stroke-width="4"/>
+  <g font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px">
+   <text x="860.95337" y="264.29846" style="line-height:1" xml:space="preserve"><tspan x="860.95337" y="264.29846"/></text>
+   <text x="850.03821" y="249.02356" style="line-height:1.25" xml:space="preserve"><tspan x="850.03821" y="249.02356" fill="#800000">area showing</tspan></text>
+   <text x="850.03821" y="273.81732" style="line-height:1.25" xml:space="preserve"><tspan x="850.03821" y="273.81732" fill="#800000">chat and</tspan></text>
+   <text x="850.03821" y="298.91348" style="line-height:1.25" xml:space="preserve"><tspan x="850.03821" y="298.91348" fill="#800000">status messages</tspan></text>
+  </g>
+  <rect x="721.33" y="438.13" width="73.339" height="25.577" fill="none" stroke="#800000" stroke-width="4"/>
+  <text transform="scale(.99117 1.0089)" x="834.31403" y="495.147" fill="#800000" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.488px" stroke-width="1.0089" style="line-height:0.65" xml:space="preserve"><tspan x="834.31403" y="496.45859">activity indicator:</tspan><tspan x="834.31403" y="519.19257"> shows  numbers of window</tspan><tspan x="834.31403" y="541.92657"> with new text/messages</tspan><tspan x="834.31403" y="553.29358"/></text>
+  <text x="836.27271" y="534.62823" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="836.27271" y="534.62823" fill="#800000"/></text>
+  <g fill="none" stroke="#800000">
+   <path d="m793.8 463.5c43.805 3.3448 48.168 23.204 48.168 23.204" stroke-width="4"/>
+   <path d="m552.31 441.33v-130.04h-573.58" stroke-width="3"/>
+   <rect x="-.27266" y="101.02" width="803.38" height="359.12" stroke-dasharray="15.8996, 15.8996" stroke-width="4"/>
+  </g>
+  <text x="128.7796" y="95.974091" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="-26.794239" y="95.974091" fill="#800000" text-align="end" text-anchor="end">window status bar</tspan></text>
+  <path d="m-21.916 89.479c29.836 2.8565 31.687 2.5514 31.687 2.5514" fill="none" stroke="#800000" stroke-width="4"/>
+ </g>
+ <text x="1087.5043" y="35.733135" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="25.333px" style="line-height:1.25" xml:space="preserve"><tspan x="1087.5043" y="35.733135"/></text>
+ <text x="364.57333" y="514.48322" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="364.57333" y="514.48322" fill="#800000" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-style="italic" stroke="#800000" stroke-width=".5">~~~~~ write text and commands here in the input line and send them with Enter</tspan></text>
+ <path d="m289.26 116.64h23.532" fill="none" stroke="#800000" stroke-width="4"/>
+ <text x="366.41629" y="113.24948" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="248.08131" y="113.24948" fill="#800000" text-align="end" text-anchor="end">window number</tspan></text>
+ <path d="m516.1 479.01h11.333" fill="none" stroke="#800000" stroke-width="4"/>
+ <text x="366.73297" y="412.37683" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="248.39801" y="412.37683" fill="#800000" text-align="end" text-anchor="end">window number</tspan></text>
+ <text x="274.259" y="553.21198" fill="#800000" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" text-anchor="middle" style="line-height:0.65" xml:space="preserve"><tspan x="274.259" y="554.51196" text-align="center">active window indicator      </tspan><tspan x="274.259" y="577.04529" text-align="center">(your text will be sent here) </tspan><tspan x="274.259" y="588.31189" text-align="center"/></text>
+ <path d="m538.49 477.02h96.869" fill="none" stroke="#800000" stroke-width="4"/>
+ <text x="347.9938" y="392.33145" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="248.2106" y="392.33145" fill="#800000" text-align="end" text-anchor="end">network tag</tspan></text>
+ <path d="m645.29 478.11h62.146" fill="none" stroke="#800000" stroke-width="4"/>
+ <text x="357.40305" y="373.66324" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="248.31003" y="373.66324" fill="#800000" text-align="end" text-anchor="end">channel name</tspan></text>
+ <path d="m283.19 37.927h754.21" fill="none" stroke="#800000" stroke-width="4"/>
+ <text x="449.41489" y="32.559654" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="247.22479" y="32.559654" fill="#800000" text-align="end" text-anchor="end">topic of active window</tspan></text>
+ <path d="m432.53 478.21h38.991" fill="none" stroke="#800000" stroke-width="3"/>
+ <text x="426.73465" y="431.87015" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="14.667px" style="line-height:1.25" xml:space="preserve"><tspan x="247.82304" y="431.87015" fill="#800000" font-size="14.667px" text-align="end" text-anchor="end">nick mode on the server</tspan></text>
+ <path d="m719.06 476.75h266.93" fill="none" stroke="#800000" stroke-width="3"/>
+ <text x="340.08469" y="352.29935" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="14.667px" style="line-height:1.25" xml:space="preserve"><tspan x="247.77139" y="352.29935" fill="#800000" font-size="14.667px" text-align="end" text-anchor="end">channel mode</tspan></text>
+ <g transform="translate(23.482 .52452)" fill="none" stroke="#800000">
+  <path d="m297.32 477.57v-10.671h-67.47" stroke-width="4"/>
+  <path d="m377.57 476.98v-29.724h-147.72" stroke-width="4"/>
+  <path d="m436.82 477.87v-51.314h-206.96" stroke-width="3"/>
+  <g stroke-width="4">
+   <path d="m497.98 478.93v-73.539h-268.13"/>
+   <path d="m565.9 476.98v-89.929h-336.04"/>
+   <path d="m654.33 477.33v-109.74h-424.48"/>
+   <path d="m250.58 523.57-14.28 17.913"/>
+   <path d="m278.09 116.43v-8.1551h-47.772"/>
+   <path d="m642.07 37.393v-9.1183h-411.53"/>
+  </g>
+ </g>
+</svg>
