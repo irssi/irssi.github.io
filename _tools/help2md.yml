@@ -1,0 +1,131 @@
+---
+categories:
+  - category: Connection
+    excludes:
+      - MSG
+      - FOREACH
+    paths:
+      - !!perl/regexp (?^:fe-irc-server)
+      - !!perl/regexp (?^:fe-ircnet)
+      - !!perl/regexp (?^:core/servers)
+      - !!perl/regexp (?^:core/chat-commands)
+      - !!perl/regexp (?^:fe-server)
+      - !!perl/regexp (?^:rawlog)
+  - category: Core Commands
+    paths:
+      - !!perl/regexp (?^:core/chat-commands)
+      - !!perl/regexp (?^:fe-channels)
+      - !!perl/regexp (?^:fe-queries)
+  - category: Window Commands
+    paths:
+      - !!perl/regexp (?^:textbuffer-commands)
+      - !!perl/regexp (?^:mainwindows)
+      - !!perl/regexp (?^:window-commands)
+      - !!perl/regexp (?^:lastlog)
+  - category: Settings
+    excludes:
+      - FOREACH
+    paths:
+      - !!perl/regexp (?^:fe-settings)
+      - !!perl/regexp (?^:themes)
+      - !!perl/regexp (?^:keyboard)
+      - !!perl/regexp (?^:statusbar-config)
+      - !!perl/regexp (?^:session)
+      - !!perl/regexp (?^:fe-recode)
+      - !!perl/regexp (?^:window-commands)
+      - !!perl/regexp (?^:completion)
+      - !!perl/regexp (?^:hilight-text)
+      - !!perl/regexp (?^:fe-ignore)
+      - !!perl/regexp (?^:fe-log)
+  - category: Misc
+    paths:
+      - !!perl/regexp (?^:fe-modules)
+      - !!perl/regexp (?^:fe-help)
+      - !!perl/regexp (?^:fe-exec)
+      - !!perl/regexp (?^:fe-core-commands)
+      - !!perl/regexp (?^:core/commands)
+  - category: IRC Commands
+    paths:
+      - !!perl/regexp (?^:irc-commands)
+      - !!perl/regexp (?^:fe-netsplit)
+      - !!perl/regexp (?^:dcc)
+      - !!perl/regexp (?^:notify-commands)
+      - !!perl/regexp (?^:irc/core)
+  - category: IRC Proxy
+    paths:
+      - !!perl/regexp (?^:irc/proxy)
+  - category: Other pages
+subcommand_pages:
+  - command: window
+    pages:
+      - commands:
+          - new
+          - close
+          - hide
+          - show
+          - list
+        name: creation
+        title: window/split window creation
+      - commands:
+          - goto
+          - next
+          - last
+          - previous
+          - refnum
+          - left
+          - right
+        name: changing
+        title: window changing
+      - commands:
+          - number
+          - level
+          - immortal
+          - server
+          - name
+          - history
+          - theme
+          - stick
+          - hidelevel
+        name: properties
+        title: window attribute manipulation
+      - commands:
+          - item
+        name: items
+        title: window items
+      - commands:
+          - number
+          - move
+        excludes:
+          - move up
+          - move down
+        name: moving
+        title: window moving/number changing
+      - commands:
+          - grow
+          - shrink
+          - size
+          - balance
+        name: resizing
+        title: split window resizing
+      - commands:
+          - up
+          - left
+          - down
+          - right
+        name: navigation
+        title: split window navigation
+      - commands:
+          - move left
+          - move right
+          - move up
+          - move down
+          - stick
+        name: split_moving
+        title: split window moving
+      - commands:
+          - log
+          - logfile
+        name: logging
+        title: logging
+      - name: misc
+        title: other subcommands
