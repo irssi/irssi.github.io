@@ -156,6 +156,35 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
   text-decoration: none;
 }
 
+/* next / previous blog post links */
+.post nav {
+    font-size: 14px;
+    display: block;
+    width: auto;
+    max-width: 750px;
+    overflow: hidden;
+}
+
+.post nav > a {
+    display: block;
+    width: 50%;
+    float: left;
+    margin: 1em 0;
+}
+
+.post nav > .prev {
+    float: right;
+    text-align: right;
+}
+
+.post nav > .next::before {
+    content: "« ";
+}
+
+.post nav > .prev::after {
+    content: " »";
+}
+
 /* Reduce navbar spacing on resolutions that are small,
    but not quite as small as the block below */
 @media (max-width:1200px) and (min-width:991px) {
