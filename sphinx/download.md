@@ -4,8 +4,8 @@ Irssi runs on Unix-like systems. If you download the source code, you have to co
 
 Current release source code download:
 
-Download: https://github.com/irssi/irssi/releases/download/1.4.1/irssi-1.4.1.tar.xz  
-Signature: https://github.com/irssi/irssi/releases/download/1.4.1/irssi-1.4.1.tar.xz.asc
+Download: https://codeberg.org/irssi/irssi/releases/download/1.4.2/irssi-1.4.2.tar.xz  
+Signature: https://codeberg.org/irssi/irssi/releases/download/1.4.2/irssi-1.4.2.tar.xz.asc
 
 You should verify the signature file using `gpg --verify` to make sure that the download was not tampered with.
 
