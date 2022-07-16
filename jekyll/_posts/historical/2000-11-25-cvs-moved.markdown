@@ -1,0 +1,10 @@
+---
+title: "CVS moved"
+layout: post
+date: 2000-11-25 18:41:25
+author: cras
+---
+Well, it actually did about a week ago, but I was too lazy to announce
+it before cvs.irssi.org domain was moved too :) Check the CVS page for
+the new address (directory changed).
+

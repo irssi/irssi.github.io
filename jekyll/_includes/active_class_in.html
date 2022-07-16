@@ -1,0 +1,7 @@
+{%
+assign prefix_len = include.url | size %}{%
+assign page_prefix = page.url | slice: 0, prefix_len %}{%
+if page_prefix == include.url
+    %} class="active"{%
+endif
+%}

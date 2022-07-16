@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Irssi 0.8.15-rc1 Released"
+author: "Alexander Færøy"
+email: "ahf@irssi.org"
+---
+
+Irssi 0.8.15-rc1 has been released. The changes are mostly bugfixes, and small
+improvements, so it should be quite safe to upgrade. Check [NEWS
+file](//github.com/irssi-import/irssi/releases) for all changes!
+
+It can be downloaded from
+[our download page](/download).
+
+The Irssi Team.

@@ -1,0 +1,26 @@
+---
+title: "2000-02-21 01:35"
+layout: post
+date: 2000-02-21 01:35
+author: cras
+---
+Just though to mention, next irssi will have Perl support. There's
+already some preliminary work in CVS. And I'm not very good with all
+those C \<-\> Perl stuffs (or Perl even..) so any help would be nice :)
+Anyway, here's a sample.pl that already works:
+
+``` 
+ 
+use Irssi;
+
+sub myfunc {
+        # $data = all arguments to /SAY, $server = current window's server
+        my ($data, $server) = @_;
+
+        $server->irc_send_cmd("PRIVMSG mynick :$data");
+        return 1; # stops the /SAY from going to server
+}
+ 
+Irssi::signal_add("command say", "myfunc");
+```
+

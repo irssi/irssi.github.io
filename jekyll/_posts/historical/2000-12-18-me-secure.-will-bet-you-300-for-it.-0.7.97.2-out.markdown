@@ -1,0 +1,22 @@
+---
+title: "Me secure. Will bet you $300 for it. 0.7.97.2 out"
+layout: post
+date: 2000-12-18 22:51:44
+author: cras
+---
+I don't usually give away money, hopefully not this time either ;) I
+really think irssi doesn't have any security related problems. Instead
+of just telling myself that, here's a challenge for everyone to try find
+them and win some money with it. See the [security challenge
+page](/historical/challenge) for more information. Who knows if this
+could be even used as publicity stunt to get more users and coders for
+irssi ;)
+
+Also I did a quick audit of my own and released Irssi 0.7.97.2. It
+contains fixes for a few potential security bugs which shouldn't
+practically happen ever: joining to \#../../../somefile with autologging
+on, a few format bugs found (argh\! luckily only when printing nicks in
+/names list and % is invalid nick char). Also the highascii control
+characters aren't printed as-is to screen so those screen messing
+problems are fixed now.
+

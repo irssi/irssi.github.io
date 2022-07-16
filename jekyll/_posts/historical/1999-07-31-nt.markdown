@@ -1,0 +1,11 @@
+---
+title: "1999-07-31 15:47"
+layout: post
+---
+SuSE RPM of irssi 0.7.13-2 is now available in download page.
+
+Just noticed how slow irssi's web pages were .. took 30-60 seconds to
+load a page. It's a problem with our mysql hit database getting too
+large and one of my selects took pretty long :) Changed it, but it still
+takes 10-20 seconds to load, it will hopefully be fixed pretty soon.
+

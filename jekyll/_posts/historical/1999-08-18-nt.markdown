@@ -1,0 +1,15 @@
+---
+title: "1999-08-18 21:23"
+layout: post
+author: cras
+---
+Just released irssi 0.7.14 alpha-3. I've removed my horribly slow
+configuration file routines (well, gnome version was still fast..) and
+replaced them with libPropList. This means that configuration file
+format is completely different now, and I had to change quite a lot of
+code to make it work.. So, could try if this alpha versions works
+properly so I could release the final 0.7.14? :)
+
+Get the irssi alpha [here](/download), and libPropList from download
+page (..or apt-get install libproplist0-dev).
+

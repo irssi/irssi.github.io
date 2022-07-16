@@ -1,0 +1,16 @@
+---
+title: "1999-07-07 21:08"
+layout: post
+author: cras
+---
+Released v0.7.12-2 :) Just a few bugfixes..
+
+  - configure checks for -lnsl too
+  - changed default font to fixed size so I wouldn't have to hear all
+    the time how screen is messed up with zvt :)
+  - background color couldn't be changed with zvt
+  - irssi-text sometimes crashed at startup because of uninitialized
+    variable..
+  - you had to use \-\-without-gnome-panel even if you didn't build with
+    gnome
+

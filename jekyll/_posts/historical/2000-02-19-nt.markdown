@@ -1,0 +1,12 @@
+---
+title: "2000-02-19 19:00"
+layout: post
+date: 2000-02-19 19:00
+author: cras
+---
+Irssi 0.7.26 released. This one will be the final, I promise ;) There's
+only one bugfix, space didn't work with GTK version if numlock/capslock
+was on. You can also get the diff to 0.7.25
+here: \</files/irssi-0.7.26.diff\>. Apply it with *cd
+.../irssi-0.7.25/src/gui-gnome; patch \< irssi-0.7.26.diff*
+

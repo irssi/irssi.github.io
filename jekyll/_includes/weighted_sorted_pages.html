@@ -1,0 +1,10 @@
+{% capture sorted %}{%
+    for node in site.pages %}{% assign top = node.categories | join:'~' | split:'~' | sort | first | remove_first:'_' | plus:10000 %}|{%
+        if top != 10000
+            %}{{ top }}{%
+        endif
+        %}|{{ node.url }}|{{ forloop.index0 | plus:10000 }}*{%
+    endfor %}{% endcapture %}{% capture sorted %}{{ sorted | split:'*' | sort | join:'*' }}{% endcapture %}{% assign sortedarr = sorted | split:'*' %}{%
+for item in sortedarr %}{% assign i2 = item | split:'|' %}{% assign iv = i2[3] | minus:10000 %}{{ iv }}{% unless forloop.last %},{% endunless %}{%
+endfor
+%}

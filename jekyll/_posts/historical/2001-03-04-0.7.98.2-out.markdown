@@ -1,0 +1,9 @@
+---
+title: "0.7.98.2 out"
+layout: post
+date: 2001-03-04 18:44:38
+---
+This is mostly a bugfix release, but there's a lot of bugs fixed :)
+There's some new features too, like /NAMES can now have -ops -voices
+etc. options and some changes in how split windows work.
+

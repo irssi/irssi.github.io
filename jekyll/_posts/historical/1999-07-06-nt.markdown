@@ -1,0 +1,6 @@
+---
+title: "1999-07-06 19:40"
+layout: post
+---
+Released v0.7.12 .. made hit counter for it too :)
+

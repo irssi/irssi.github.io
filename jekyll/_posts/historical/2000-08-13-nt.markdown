@@ -1,0 +1,7 @@
+---
+title: "2000-08-13 17:49"
+layout: post
+---
+Released 0.7.95. And .95-2, the only difference is that there's updated
+help files.
+

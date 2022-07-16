@@ -1,0 +1,91 @@
+---
+name: IRSSI-SA-2017-10
+release_date: 2017-10-23
+git_commit: 43e44d553d44e313003cee87e6ea5e24d68b84a1
+bugs:
+  -
+    cve: CVE-2017-15228
+    exploitable_by: formats
+    affected_versions:
+      to: 1.0.4
+    fixed_version: 1.0.5
+    credit: 'Hanno Böck'
+    description: 'Unterminated colour formatting sequences may cause data access beyond the end of the buffer'
+    description_long: >
+      When installing themes with unterminated colour formatting
+      sequences, Irssi may access data beyond the end of the
+      string. (CWE-126) Found by Hanno Böck.
+    impact: >
+      May result in denial of service (remote crash).
+    mitigating_info: >
+      requires user to install malicious or broken theme file
+  -
+    cve: CVE-2017-15227
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.4
+    fixed_version: 1.0.5
+    credit: 'Joseph Bisch'
+    description: 'Failure to remove destroyed channels from the query list while waiting for the channel synchronisation may result in use after free conditions when updating the state later on'
+    description_long: >
+      While waiting for the channel synchronisation, Irssi may
+      incorrectly fail to remove destroyed channels from the query list,
+      resulting in use after free conditions when updating the state
+      later on. Found by Joseph Bisch. (CWE-416 caused by CWE-672)
+    impact: >
+      May result in denial of service (remote crash).
+    mitigating_info: >
+      requires a broken ircd or control over the ircd
+  -
+    cve: CVE-2017-15721
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.4
+    fixed_version: 1.0.5
+    credit: 'Joseph Bisch'
+    description: 'Certain incorrectly formatted DCC CTCP messages could cause NULL pointer dereference'
+    description_long: >
+      Certain incorrectly formatted DCC CTCP messages could cause NULL
+      pointer dereference. Found by Joseph Bisch. This is a separate,
+      but similar issue to CVE-2017-9468. (CWE-690)
+    impact: >
+      May result in denial of service (remote crash).
+    mitigating_info: >
+      requires a broken ircd or control over the ircd
+  -
+    cve: CVE-2017-15723
+    exploitable_by: server
+    affected_versions:
+      from: 0.8.17
+      to: 1.0.4
+    fixed_version: 1.0.5
+    credit: 'Joseph Bisch'
+    description: 'Overlong nicks or targets may result in a NULL pointer dereference while splitting the message'
+    impact: >
+      May result in denial of service (remote crash).
+    mitigating_info: >
+      irc servers typically have length limits in place
+  -
+    cve: CVE-2017-15722
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.4
+    fixed_version: 1.0.5
+    credit: 'Joseph Bisch'
+    description: 'Read beyond end of buffer may occur if a Safe channel ID is not long enough'
+    description_long: >
+      In certain cases Irssi may fail to verify that a Safe channel ID
+      is long enough, causing reads beyond the end of the string. Found
+      by Joseph Bisch. (CWE-126)
+    impact: >
+      May affect the stability of Irssi.
+    mitigating_info: >
+      requires a broken ircd or control over the ircd
+recommended_action: >
+  Upgrade to Irssi 1.0.5. Irssi 1.0.5 is a maintenance release in the
+  1.0 series, without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+---

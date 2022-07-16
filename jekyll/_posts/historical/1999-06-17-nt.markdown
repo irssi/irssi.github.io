@@ -1,0 +1,6 @@
+---
+title: "1999-06-17 18:18"
+layout: post
+---
+Made a nice [screenshot](/historical/screenshots) of irssi-text :)
+

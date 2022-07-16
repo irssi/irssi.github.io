@@ -1,0 +1,8 @@
+---
+title: "UK irssi.org mirror"
+layout: post
+date: 2001-08-23 12:46:18
+---
+Yet another mirror (yes, the more the better :) - provided by [Jonathan
+McDowell](mailto:noodles@earth.li).
+

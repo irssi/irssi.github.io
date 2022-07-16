@@ -1,0 +1,38 @@
+---
+layout: post
+title: "Irssi 0.8.18-beta2 Released"
+---
+
+**Irssi 0.8.18-beta2 has been released.** Beta 2 has only a few minor
+changes compared to [beta 1](/2015/12/21/irssi-0.8.18-beta-released/)
+and fixes one regression  in /hilight reported from beta 1 testing.
+**Thanks to everyone who helped test beta 1!**
+See our [Github](https://github.com/irssi/irssi)
+repository for details.
+
+
+**New in this release** (unchanged from beta 1). CAP SASL supported
+natively. ZNC "self messages" shown in the correct window. Line splitting
+now splits on space. Bracketed paste markers supported for better paste
+detection. Nick is hilighted everywhere in a message. Config parser is
+more robust. And as usual many fixes, see the
+[NEWS](https://raw.githubusercontent.com/irssi/irssi/0.8.18-beta2/NEWS)
+for details.
+
+This pre-release can be downloaded from
+[our releases page](https://github.com/irssi/irssi/releases).
+
+Thanks to the [Open Build Service](https://build.opensuse.org/) testing
+packages for some distributions were prepared on
+[ailin_nemui:irssi-test](https://download.opensuse.org/repositories/home:/ailin_nemui:/irssi-test/).
+
+We are always looking for contributors so if you find any
+[Issues](https://github.com/irssi/irssi/issues) report them, and if
+you can fix any of them do not hesitate to send in a
+[Patch](https://github.com/irssi/irssi/pulls)!
+
+Remember to check out Irssi's [Facebook fan page](https://facebook.com/irssi),
+[LinkedIn group](https://www.linkedin.com/groups?gid=147751), [Twitter
+profile](https://twitter.com/IrssiProject) or pop into `#irssi` on irc.libera.chat.
+
+The Irssi Team.

@@ -1,0 +1,35 @@
+{% assign node=include.node %}{%
+assign show_date = false %}{%
+if node.date %}{%
+    assign show_date = true %}{%
+    assign nodate_test = node.date | date: "%Y-%m-%d" %}{%
+    assign title_word = node.title | split: " " %}{%
+    if nodate_test == title_word[0] %}{%
+        assign show_date = false %}{%
+    endif %}{%
+endif %}{%
+if node.author or show_date %}
+    <p>
+        <small>
+            Posted {%
+            if node.author
+                %}by
+{%              if node.web %}
+                    <a href="{{ node.web }}">{{ node.author }}</a>{%
+                elsif node.email %}
+                    <a href="mailto:{{ node.email }}">{{ node.author }}</a>{%
+                else %}
+                    {{ node.author }}
+{%              endif %} {%
+            endif %}{%
+            if show_date %}{%
+                assign rd = node.date | date: "%-d" %}{%
+                capture ordinalize %}{%
+                    include ordinal.html ordinalize=rd %}{%
+                endcapture
+                %}on {{ node.date | date: "%B %-d" }}<sup>{{ ordinalize | strip_newlines }}</sup> {{ node.date | date: "%Y" }}
+{%          endif %}
+        </small>
+    </p>{%
+endif
+%}

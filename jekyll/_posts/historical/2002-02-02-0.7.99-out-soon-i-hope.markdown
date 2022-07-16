@@ -1,0 +1,19 @@
+---
+title: "0.7.99 out soon (I hope)"
+layout: post
+date: 2002-02-02 04:34:52
+author: cras
+---
+Now that I **finally** found the bug that had been crashing my irssi,
+0.7.99 will be soon out. It was solaris-specific (as in, not at least
+linux :) actually, but I had been doing some major changes to irssi
+while moving to IRC from solaris box, so I didn't see the connection.
+Luckily I found and fixed several other bugs that had been crashing
+irssi as well.
+
+Anyway, unless I see my irssi crash before next weekend, 0.7.99 will be
+out then. Now's a good time to go grab [latest development
+snapshot](/download) and see if there's any bugs left. I'd at least need
+to create some /STATUSBAR command so users don't need to edit the config
+file manually..
+

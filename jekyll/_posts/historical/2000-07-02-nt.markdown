@@ -1,0 +1,8 @@
+---
+title: "2000-07-02 00:48"
+layout: post
+---
+Another bad bug found - Irssi crashes after midnight .. 0.7.92-3 fixes
+this. Patch is available again: \</files/irssi-0.7.92-3.patch\>, use
+*patch -p0 \< irssi-0.7.92-3.patch* to apply it.
+

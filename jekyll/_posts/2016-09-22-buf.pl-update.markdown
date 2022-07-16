@@ -1,0 +1,12 @@
+---
+layout: post
+title: "buf.pl update available"
+---
+
+An update to the [buf.pl](//scripts.irssi.org/scripts/buf.pl) script
+has been released. This release fixes an information disclosure
+vulnerability. All users should upgrade to this version.
+
+The updated buf.pl script can be found on [scripts.irssi.org](//scripts.irssi.org).
+
+Read the [security advisory](/security/html/buf_pl_sa_2016).

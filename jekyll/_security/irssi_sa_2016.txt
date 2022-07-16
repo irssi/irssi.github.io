@@ -1,0 +1,85 @@
+---
+name: IRSSI-SA-2016
+heading: heap corruption and missing boundary checks
+release_date: 2016-09-14
+git_commit: 295a4b77f07f14602eeaa371f00ddbf09910c82b
+bugs:
+  -
+    cve: CVE-2016-7044
+    cwe: CWE-20, CWE-823, CWE-126, CWE-122
+    exploitable_by: client
+    affected_versions:
+      from: 0.8.17
+      to: 0.8.19
+    affected_note_bottom: '(with truecolor)'
+    affected_note_long: only when compiled with true-color enabled.
+    fixed_version: 0.8.20
+    credit: 'Gabriel Campana and Adrien Guinet from Quarkslab'
+    description: 'Remote crash and heap corruption in format parsing code'
+    discussion: >
+      Bug 1
+
+      The unformat_24bit_color() function is called by format_send_to_gui()
+      to decode 24bit color codes into their components. The pointer is
+      advanced unconditionally without checking if a complete code was
+      supplied.
+
+      Thus, after the return of unformat_24bit_color(), ptr might be invalid
+      and point out of the buffer.
+
+  -
+    cve: CVE-2016-7045
+    cwe: CWE-20, CWE-823, CWE-126, CWE-122
+    exploitable_by: client
+    affected_versions:
+      from: 0.8.17
+      to: 0.8.19
+    fixed_version: 0.8.20
+    credit: 'Gabriel Campana and Adrien Guinet from Quarkslab'
+    description: 'Remote crash and heap corruption in format parsing code'
+    discussion: >
+      Bug 2
+
+      The format_send_to_gui() function does not validate the length of the
+      string before incrementing the `ptr' pointer in all cases.
+
+      If that happens, the pointer `ptr' can be incremented twice and thus
+      end past the boundaries of the original `dup' buffer.
+
+description: >
+  Gabriel Campana and Adrien Guinet from Quarkslab reported two remote
+  crash and heap corruption vulnerabilites in Irssi's format parsing
+  code.
+
+  They also provided us with proof of concept exploit code and patches
+  to fix those issues.
+
+impact: >
+  Remote crash and heap corruption. Remote code execution seems
+  difficult since only Nuls are written.
+
+recommended_action: >
+  Upgrade to Irssi 0.8.20. Irssi 0.8.20 is a maintenance release
+  without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+
+extra2:
+  - title: Fallback action
+    text: >
+      Distributions which need to remain on Irssi 0.8.17 are strongly urged
+      to apply the patch and provide updated packages.
+
+      Those who cannot upgrade right now, but with Perl support enabled in
+      their Irssi, can load the following script and add it to
+      ~/.irssi/scripts/autorun as a first aid to mitigating these issues: 
+
+      https://irssi.org/security/sa_patch.pl
+
+discussion: >
+  Based on analysis Provided by Gabriel Campana and Adrien Guinet from
+  Quarkslab.
+
+---

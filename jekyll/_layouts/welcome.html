@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    {% include head.html %}
+
+    <body>
+        {% include header.html %}
+
+        <div class="page-content">
+            <div class="container">
+
+                <br class="clearfix" />
+                <div class="jumbotron flex">
+                    <div class="row">
+                        <div class="visible-xs col-xs-1"></div>
+                        <div class="col-md-6 col-sm-12 col-xs-10">
+                            <h1>Irssi</h1>
+                            <h2>Chat Client</h2>
+                            <p class="center">Your text mode chatting application since 1999.</p>
+                            <div class="hidden-xs">
+                                {% include mini_intro.html %}
+                            </div>
+                            <p style="line-height: 3"><a class="btn btn-lg btn-danger" href="{{ site.baseurl }}/download/" role="button">Getting Irssi »</a>
+                                <a class="btn btn-lg btn-info" href="{{ site.baseurl }}/documentation/" role="button">Read tutorials and docs »</a>
+                            </p>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="visible-xs col-xs-1"></div>
+                        <div class="col-md-6 col-sm-12 col-xs-10 welcome-img">
+                            &nbsp;
+                        </div>
+                        <div class="visible-xs col-xs-1"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-3 raggedright">
+                        <h3>What's new</h3>
+                        {% include sb_whatsnew.html %}
+                    </div>
+                    <div class="visible-xs col-sm-4">
+                        <h3>About</h3>
+                        {% include mini_intro.html %}
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <h3>Themes</h3>
+                        <p>
+                            Irssi is completely themeable. Every single message
+                            can be themed. True colours can be used in your
+                            themes. Check
+                            the <a rel="external" href="//irssi-import.github.io/themes/">theme
+                        gallery</a> for some impressions.</p>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <h3>Modules</h3>
+                        <p>
+                            Irssi makes it easy to write protocol modules in
+                            C. You can enjoy the chatting power of Irssi in
+                            combination with IRC, ICB or SILC. Find more modules on the <a href="{{ site.baseurl }}/modules/">Modules</a> page.</p>
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <h3>Scripting</h3>
+                        <p>
+                            Irssi features a sane and minimal scripting API
+                            together with a coherent signal handling
+                            mechanism.
+                            There are many existing scripts for
+                            Irssi,
+                            see <a rel="external" href="https://github.com/shabble/irssi-docs/wiki/Usage#finding-scripts">Finding
+                        scripts</a> for some good resources.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/assets/js/welcome.js"></script>
+        {% include footer.html %}
+    </body>
+</html>

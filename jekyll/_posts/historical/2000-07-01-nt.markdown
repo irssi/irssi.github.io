@@ -1,0 +1,11 @@
+---
+title: "2000-07-01 03:41"
+layout: post
+date: 2000-07-01 03:41
+author: cras
+---
+Released 0.7.92-2 :) Only one nasty bug fixed. Only a few people
+downloaded the .92 so I didn't bother to change version number in the
+package itself.. The patch is also
+available.: \</files/irssi-0.7.92-2.patch\>
+

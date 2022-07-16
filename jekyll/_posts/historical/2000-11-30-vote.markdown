@@ -1,0 +1,7 @@
+---
+title: "Vote"
+layout: post
+date: 2000-11-30 00:58:06
+---
+Votes are nice, vote (in the box left below) :)
+

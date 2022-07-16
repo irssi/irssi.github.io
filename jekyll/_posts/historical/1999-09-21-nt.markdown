@@ -1,0 +1,17 @@
+---
+title: "1999-09-21 00:11"
+layout: post
+author: cras
+---
+Hm.. Spent a week for coding new text widget for irssi. It finally
+works, but the code is really horrible ;) And then I even noticed that
+it couldn't handle bold fonts and it was a bit slow too, so .. I'll
+start it all over again :) But now at least I know how to code gtk
+widgets. At least somehow. And I really need to rewrite only one
+function so it should be a day or two now that I've designed it well in
+my head :) Anyway, it will support proportional fonts, graphics, etc.
+nice things and should be really fast :) I'm quite busy at work also,
+hopefully I get this itext widget to cvs this week :)
+
+BTW, I've got **zero** bugreports about irssi 0.7.16\!\!
+

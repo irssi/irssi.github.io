@@ -1,0 +1,59 @@
+---
+name: IRSSI-SA-2018-01
+release_date: 2018-01-07
+bugs:
+  -
+    cve: CVE-2018-5206
+    cwe: CWE-476
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.5
+    fixed_version: 1.0.6
+    credit: 'Joseph Bisch'
+    description: 'When the channel topic is set without specifying a sender, Irssi may dereference NULL pointer.'
+    mitigating_info: >
+      requires a broken ircd or control over the ircd
+  -
+    cve: CVE-2018-5205
+    cwe: CWE-126
+    exploitable_by: formats
+    affected_versions:
+      to: 1.0.5
+    fixed_version: 1.0.6
+    credit: 'Joseph Bisch'
+    description: 'When using incomplete escape codes, Irssi may access data beyond the end of the string.'
+    mitigating_info: >
+      requires user to install malicious or broken files or enter
+      affected commands
+  -
+    cve: CVE-2018-5208
+    cwe: CWE-126
+    exploitable_by: server
+    affected_versions:
+      to: 1.0.5
+    fixed_version: 1.0.6
+    credit: 'Joseph Bisch'
+    description: 'A calculation error in the completion code could cause a heap buffer overflow when completing certain strings.'
+  -
+    cve: CVE-2018-5207
+    cwe: CWE-126
+    exploitable_by: formats
+    affected_versions:
+      to: 1.0.5
+    fixed_version: 1.0.6
+    credit: 'Joseph Bisch'
+    description: 'When using an incomplete variable argument, Irssi may access data beyond the end of the string.'
+    mitigating_info: >
+      requires user to install malicious or broken files or enter
+      affected commands
+impact: >
+  May affect the stability of Irssi.
+recommended_action: >
+  Upgrade to Irssi 1.0.6. Irssi 1.0.6 is a maintenance release in the
+  1.0 series, without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+patch: https://github.com/irssi/irssi/releases/download/1.0.6/irssi-1.0.5_1.0.6.diff
+---

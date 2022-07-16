@@ -1,0 +1,6 @@
+---
+title: "1999-08-14 17:41"
+layout: post
+---
+Development irssi versions are now available [here](/download).
+

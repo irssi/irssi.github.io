@@ -1,0 +1,11 @@
+---
+title: "1999-06-10 23:40"
+layout: post
+author: cras
+---
+After moving irssi's pages here I made hit counters .. I always thought
+irssi's pages would take 5-10 or so hits / day .. Big surprise :) 126
+hits yesterday of which 51 were from different IPs and 226 today of
+which 82 were different.. Need to get download counters done before I
+release 0.7.12 :)
+

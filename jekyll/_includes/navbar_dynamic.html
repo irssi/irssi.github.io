@@ -1,0 +1,25 @@
+{%
+comment %}
+
+The dynamic navbar generates links to all pages which have `_nav`
+listed in their `categories` in the YAML Frontmatter. The order of the
+pages is specified by an accompanying `_#` (where `#` is any number)
+in the categories.
+
+{%
+endcomment %}{%
+capture pageidx %}{%
+    include weighted_sorted_pages.html %}{%
+endcapture %}{%
+assign pageidx = pageidx | strip_newlines | split:',' %}{%
+assign ap = site.pages %}{%
+for it in pageidx %}{%
+    assign p_idx = it | times:1 %}{%
+    assign node = ap[p_idx] %}{%
+    if node.categories contains "_nav" %}
+        <li{% include active_class_in.html url=node.url %}>
+            <a href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a>
+        </li>{%
+    endif %}{%
+endfor
+%}

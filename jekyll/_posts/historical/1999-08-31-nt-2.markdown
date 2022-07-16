@@ -1,0 +1,9 @@
+---
+title: "1999-08-31 13:13"
+layout: post
+date: 1999-08-31 13:13
+---
+And yet another problem when compiling without gnome .. Here's the
+diff: \</files/irssi-patch.diff\>. Check for download page for more
+information.
+

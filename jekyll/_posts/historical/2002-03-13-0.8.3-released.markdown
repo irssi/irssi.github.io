@@ -1,0 +1,9 @@
+---
+title: "0.8.3 released"
+layout: post
+date: 2002-03-13 03:41:42
+---
+There was few nasty bugs in 0.8.2 so had to try again :) This fixes
+those perl errors and IPv6 connection problems. **UPDATE: wait..** Still
+some stupid errors :) 0.8.4 will be out soon.
+

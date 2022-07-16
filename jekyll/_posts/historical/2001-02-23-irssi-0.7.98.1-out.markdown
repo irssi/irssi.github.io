@@ -1,0 +1,9 @@
+---
+title: "Irssi 0.7.98.1 out ;)"
+layout: post
+date: 2001-02-23 13:42:12
+---
+Sorry, just found a bug from .98 that could crash irssi. If you already
+downloaded 0.7.98, you can get patch for it here. Apply it with *patch
+-p1 \< irssi-0.7.98.1.patch* in irssi directory.
+

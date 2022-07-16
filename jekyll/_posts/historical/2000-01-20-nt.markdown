@@ -1,0 +1,10 @@
+---
+title: "2000-01-20 22:32"
+layout: post
+author: cras
+---
+Finally, I got i2k somehow doing something ;) I also though that I'd
+release the version 0.0 sources: \</files/i2k.tar.bz2\>. It's only a
+\_really\_ simple client, don't bother downloading it unless you're
+interested in it's sources or something.
+

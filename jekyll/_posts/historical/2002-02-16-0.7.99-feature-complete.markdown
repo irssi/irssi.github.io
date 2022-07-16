@@ -1,0 +1,15 @@
+---
+title: "0.7.99 feature complete"
+layout: post
+date: 2002-02-16 00:36:10
+author: cras
+---
+Fixed the last important nasty bugs, added /STATUSBAR command, added
+support for UTF-8.. That's pretty much it, I think. Only some
+documentation updates and 0.7.99 is released then. So, treat the current
+CVS snapshot as 0.7.99 beta and go test if there's still some problems
+with it.
+
+Here's the tarballs: \</files/snapshots/\> and [here's the upgrade
+info](/historical/upgrade-cvs).
+

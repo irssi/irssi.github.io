@@ -1,0 +1,7 @@
+---
+title: "msn.irssi.org down"
+layout: post
+date: 2003-12-20 05:30:41
+---
+
+[Bitlbee](http://www.bitlbee.org/) had a bit too many bugs, so msn.irssi.org is down at least until it stabilizes.

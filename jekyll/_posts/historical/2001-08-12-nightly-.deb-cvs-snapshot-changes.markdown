@@ -1,0 +1,18 @@
+---
+title: "Nightly .deb CVS snapshot CHANGES"
+layout: post
+date: 2001-08-12 17:40:15
+author: cras
+---
+Nightly .debs for HPPA and sparc architectures are now created by
+[nk](mailto:nk@bsdirc.net). I had to make some changes to make non-i386
+arch work so you'll need to update your sources.list to:
+
+``` 
+  deb https://irssi.org/debian unstable ./
+  deb-src https://irssi.org/debian/ sources/
+```
+
+BTW. The nightly snapshot generation was broken for the last few days
+but should work again.
+

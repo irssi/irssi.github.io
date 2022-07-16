@@ -1,0 +1,11 @@
+---
+title: "0.8.1 released :)"
+layout: post
+date: 2002-02-17 17:53:07
+author: cras
+---
+With two annoying remote crash fixes I forgot to fix before. So yes,
+upgrade highly recommended :) **UPDATE:** if you're upgrading from
+0.7.98.x irssi, **read the [upgrade
+information](/historical/upgrade/)**.
+

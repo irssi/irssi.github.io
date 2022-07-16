@@ -1,0 +1,9 @@
+---
+title: "2000-01-19 14:00"
+layout: post
+author: cras
+---
+Again. There was still a bug in the config file. Get new one
+here: \</files/config\>. There's also a couple more bugs that need to
+be fixed, so I'll probably release .23 soon.
+

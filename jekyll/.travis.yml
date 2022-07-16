@@ -1,0 +1,6 @@
+sudo: false
+language: ruby
+dist: bionic
+
+install: gem install github-pages
+script: jekyll build --future

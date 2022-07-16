@@ -1,0 +1,10 @@
+---
+title: "1999-08-23 19:05"
+layout: post
+author: cras
+---
+So far so good, no crashes reported yet :) There's now SuSE version also
+available in download page. Hm.. Maybe I should drop my diary (which I
+haven't written anything for a month anyway) and try to update this news
+page a bit more often. And move the old news somewhere else..
+

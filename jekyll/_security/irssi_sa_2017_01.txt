@@ -1,0 +1,162 @@
+---
+name: IRSSI-SA-2017-01
+release_date: 2017-01-05
+git_commit: 6c6c42e3d1b49d90aacc0b67f8540471cae02a1d
+bugs:
+  -
+    cve: CVE-2017-5193
+    cwe: CWE-690
+    exploitable_by: server
+    affected_versions:
+      to: 0.8.20
+    fixed_version: 0.8.21
+    credit: 'Joseph Bisch'
+    description: 'NULL pointer dereference in the nickcmp function'
+    mitigating_info: requires control over the ircd
+    discussion: >
+      CVE-2017-5193: A NULL pointer dereference in the nickcmp function
+      found by Joseph Bisch.
+
+      The irc_query_find function will call nick_comp_func in order to
+      retrieve an associated existing query.
+
+      However, the precondition whether nick was not NULL was not
+      verified, leading to incorrect API usage of the nick_comp_func and
+      ultimately NULL pointer dereference resulting in a crash whenever
+      the server produced such a message without nick.
+  -
+    cve: CVE-2017-5194
+    cwe: CWE-417
+    exploitable_by: server
+    affected_versions:
+      to: 0.8.20
+    fixed_version: 0.8.21
+    credit: ~
+    description: 'Use after free when receiving invalid nick message'
+    mitigating_info: require control over the ircd or otherwise can be
+      triggered / avoided by the user themselves
+    discussion: >
+      CVE-2017-5194: Use after free when receiving invalid nick message.
+
+      Irssi is programmed to cancel the connection when the server
+      indicates an invalid nick during the registration phase (in the
+      event_nick_invalid function), because Irssi cannot recover from
+      this.
+
+      A complex (and still not properly fixed) chain of signal
+      dependencies emitted by the server_disconnect function, combined
+      with the lack of reference counting, leads to multiple use after
+      free issues when the server object has already been destroyed, but
+      there is currently no way to inform the surrounding code of this
+      fact.
+
+      As a mitigation, the server_disconnect function is no longer used
+      in this case and instead the clean-up is pushed to some upper
+      layer. Fixing this properly will still be a lot of work.
+  -
+    cve: CVE-2017-5356
+    cwe: CWE-126
+    exploitable_by: formats
+    affected_versions:
+      to: 0.8.20
+    fixed_version: 0.8.21
+    credit: 'Hanno Böck'
+    description: 'Out of bounds read when printing the value %['
+    mitigating_info: can be triggered / avoided by the user themselves
+    discussion: >
+      CVE-2017-5356: Out of bounds read when Printing the value %[
+      Found by Hanno Böck.
+
+      The formatting sequence %[...] can be used to execute the
+      timestamp and "line_start" commands on each printed line.
+
+      The scanner in format_expand_styles will expect it to read unto
+      the closing ], but in case the end of string has already been
+      reached while searching for the closing bracket, calling code is
+      not prepared to deal with this and may advance the char* beyond
+      end of string.
+  -
+    cve: CVE-2017-5195
+    cwe: CWE-126
+    exploitable_by: client
+    affected_versions:
+      from: 0.8.17
+      to: 0.8.20
+    fixed_version: 0.8.21
+    credit: 'Joseph Bisch'
+    description: 'Out of bounds read in certain incomplete control codes'
+    discussion: >
+      CVE-2017-5195: Out of bounds read in certain incomplete control
+      codes found by Joseph Bisch.
+
+      While parsing the ANSI x8 colour codes, Irssi in many cases failed
+      to check whether the end of string had already been reached,
+      resulting in this vulnerability.
+  -
+    cve: CVE-2017-5196
+    cwe: CWE-126
+    exploitable_by: server
+    affected_versions:
+      from: 0.8.18
+      to: 0.8.20
+    fixed_version: 0.8.21
+    credit: 'Hanno Böck and independently by Joseph Bisch'
+    description: 'Out of bounds read in certain incomplete character sequences'
+    mitigating_info: >-
+      require control over the ircd or otherwise can be
+      triggered / avoided by the user themselves
+    discussion: >
+      CVE-2017-5196: Out of bounds read in certain incomplete character
+      sequences found by Hanno Böck and independently by J. Bisch.
+
+      When copying characters to the terminal screen in the term_addstr
+      function, the g_utf8_get_char function was used unconditionally
+      without verifying that the input string is proper utf8. As the
+      behaviour of that function is undefined for invalid input, it
+      would result in this invalid memory access. The correction is to
+      use the g_utf8_get_char_validated function instead.
+
+impact: >
+  These issues may result in denial of service (remote crash).
+
+recommended_action: >
+  Upgrade to Irssi 0.8.21. Irssi 0.8.21 is a maintenance release
+  without any new features.
+
+  After installing the updated packages, one can issue the /upgrade
+  command to load the new binary. TLS connections will require
+  /reconnect.
+
+fixed_in: >
+  Irssi 0.8.21, Irssi 1.0.0
+
+extra2:
+  - title: A Note to Distributors
+    text: >
+      First of all, thanks to every maintainer for their awesome job in
+      packaging Irssi and backporting security fixes.
+
+      When we had to release a security advisory last year with Irssi
+      0.8.20, we noticed there was a huge confusion amongst Ubuntu users
+      about whether their Irssi version was safe to use.
+
+      Since all our releases 0.8.18, 0.8.19, 0.8.20 and 0.8.21 have been bug
+      fix only, we think distributions should just ship the release.
+
+      But if the security fixes only are backported on top of an old
+      version, we would like to urge distributions to consider indicating
+      this in a way that is visible inside Irssi. One way to do this would
+      be to manually overwrite the PACKAGE_VERSION and marking your package
+      as patched. This can be done for example like this:
+
+          ./configure PACKAGE_VERSION=0.8.17-sa201701
+
+
+      You can then check the version from inside Irssi with /eval echo $J
+
+      As an added benefit over relying on dpkg, this will also correctly
+      report whether you had /upgrade done or not. We are looking for a ways
+      to make this easier to handle for both packagers and us, so if you
+      have a good idea on this matter please speak forth.
+
+---

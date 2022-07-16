@@ -1,0 +1,6 @@
+---
+title: "1999-07-03 15:51"
+layout: post
+---
+Yesterday started \#irssi in IRCnet.
+

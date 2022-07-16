@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Irssi 0.8.11 Released"
+author: "Geert Hauwaerts"
+email: "geert@irssi.org"
+---
+
+Please welcome the new Irssi 0.8.11 release, check the [NEWS
+file](/NEWS#v0-8-11) for all changes!
+
+It can be downloaded from
+[https://irssi.org/files/irssi-0.8.11.tar.gz](https://irssi.org/files/irssi-0.8.11.tar.gz).
+
+This release was made possible by the help of the Irssi core team. We also
+welcome a new developer ***Emanuele Giaquinta (exg)*** who has
+joined the Irssi staff!
+
+With that, we release Irssi v0.8.11 into the wild and we hope you enjoy it as
+much as we have enjoyed working on it!
+
+The Irssi Team.

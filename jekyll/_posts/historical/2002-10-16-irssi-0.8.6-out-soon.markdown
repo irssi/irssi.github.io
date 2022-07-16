@@ -1,0 +1,16 @@
+---
+title: "0.8.6 out soon"
+layout: post
+date: 2002-10-16 00:41:21
+---
+
+Try the [CVS snapshots](https://github.com/irssi/irssi) now and see if
+you have problems with them. 0.8.6 will be released in a few days if I
+don't hear about any problems. And yes, 0.8.6 fixes the crash at
+startup with Perl 5.8 (yes, that's why 0.8.5 crashes with RedHat 8).
+
+[Download](/download)
+
+[Changes](/NEWS#v0-8-6)
+
+[Upgrading from older versions](/historical/upgrade)

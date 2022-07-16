@@ -1,0 +1,9 @@
+---
+title: "1999-09-27 21:33"
+layout: post
+author: cras
+---
+Updated GtkIText. Selecting fonts and background works now. Also took a
+screenshot, it's in [screenshots page](/historical/screenshots). I'm
+having some problems with doing the transparency support, please help :)
+

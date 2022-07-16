@@ -1,0 +1,7 @@
+---
+title: "1999-09-04 14:46"
+layout: post
+---
+Finally we have anonymous CVS from Polish Linux Distribution's CVS,
+check [cvs page](https://github.com/irssi) for more information.
+

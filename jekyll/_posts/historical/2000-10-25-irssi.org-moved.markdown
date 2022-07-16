@@ -1,0 +1,8 @@
+---
+title: "irssi.org moved"
+layout: post
+date: 2000-10-25 18:52:57
+---
+Now in a new computer, irssi.org will be forwarded here until the DNS is
+updated..
+

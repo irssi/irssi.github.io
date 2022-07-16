@@ -1,0 +1,16 @@
+---
+title: "0.7.98.4 released"
+layout: post
+date: 2001-08-31 20:21:43
+author: cras
+---
+So, the first remote crash was found (isn't exploitable). Go upgrade to
+0.7.98.4, or try the CVS version which should mostly work better than
+.98.4. Thanks for Snakeladder/OPN \#irssi for noticing :)
+
+UPDATE: 0.7.98.4 is pretty much the same as 0.7.98.3, except fixes this
+remote crash (well, and contains one small fix too). So those of you who
+user CVS, or nightly CVS snaphots should just cvs update / get new
+nightly CVS snapshot. 0.7.99 will be released when I have time to fix
+those few nasty bugs in it..
+

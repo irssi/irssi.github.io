@@ -1,0 +1,8 @@
+---
+title: "2000-02-25 19:10"
+layout: post
+---
+Released 0.7.27 with extremely flexible Perl scripting support. See
+[here](https://github.com/irssi/irssi/tree/0.7.27/examples) for a few
+example scripts (these come with irssi too).
+

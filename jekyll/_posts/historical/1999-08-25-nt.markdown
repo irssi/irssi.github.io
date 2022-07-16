@@ -1,0 +1,10 @@
+---
+title: "1999-08-25 12:57"
+layout: post
+author: cras
+---
+Still no crashes, but several other problems. I'll fix them and release
+.15 so that I'll get a stable 0.8.0 out sometimes :) But right now I'm
+pretty busy at work (doing 10-12 hours/day or so..). Will try to fix all
+the things next weekend.
+
