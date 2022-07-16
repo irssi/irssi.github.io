@@ -10,9 +10,9 @@ pip install -e ./furo
 
 PERL5LIB="$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL5LIB
-cpm install --cpanfile=./irssi-website-tools/_tools/cpanfile
+cpm install --cpanfile=./_tools/cpanfile
 
-perl irssi-website-tools/_tools/issues_titles.pl
+perl ./_tools/issues_titles.pl
 
 cd jekyll
 bundle install

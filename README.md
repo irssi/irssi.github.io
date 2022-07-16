@@ -4,8 +4,8 @@ This repository builds the irssi.org website
 
 The website consists of
 
-- [Jekyll blog](https://github.com/irssi/irssi.github.io/tree/jekyll)
-- [Sphinx documentation](https://github.com/irssi/irssi.github.io/tree/sphinx)
+- [Jekyll blog](jekyll)
+- [Sphinx documentation](sphinx)
 - [Irssi /help files](https://github.com/irssi/irssi/tree/master/docs/help/in)
 
 To build it, you need
@@ -41,6 +41,7 @@ This builds the website, and the help for all versions specified in
 for a successful build.
 
 ```
+./jekyll.sh
 ./make_help_build.sh
 ```
 

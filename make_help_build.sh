@@ -51,13 +51,7 @@ generated: True
 
 - main site: $(rev_link .)
 
-- jekyll-site: $(rev_link jekyll)
-
-- sphinx-site: $(rev_link sphinx)
-
 - irssi: $(rev_link irssi)
-
-- irssi-website-tools: $(rev_link irssi-website-tools)
 
 - furo: $(rev_link furo)
 
@@ -71,7 +65,7 @@ generated: True
 META
 
 [ -d sphinx/"$NEWS_DIR" ] || mkdir sphinx/"$NEWS_DIR"
-HEADER="$srcdir"/"$NEWS_HEADER" perl "$srcdir"/irssi-website-tools/_tools/news2md.pl irssi/NEWS > sphinx/"$NEWS_DIR"/index.md
+HEADER="$srcdir"/"$NEWS_HEADER" perl "$srcdir"/_tools/news2md.pl irssi/NEWS > sphinx/"$NEWS_DIR"/index.md
 
 irssi_src_orig="$srcdir"/irssi
 for vtn in $VERS; do
@@ -89,7 +83,7 @@ for vtn in $VERS; do
         git clone --no-local "$irssi_src_orig" "$irssi_src" && git -C "$irssi_src" checkout "$tag"
         mkdir -p "$irssi_src"/utils
         cp "$irssi_src_orig"/utils/syntax.pl "$irssi_src"/utils
-        perl "$srcdir"/irssi-website-tools/_tools/help2md.pl "$irssi_src" tmp-"$tag"
+        perl "$srcdir"/_tools/help2md.pl "$irssi_src" tmp-"$tag"
 
         rm -fr documentation/help || :
         if [ "$ver" = "dev" ]; then
@@ -105,7 +99,7 @@ for vtn in $VERS; do
 
         if [ "$ver" = "dev" ]; then
             rsync -aC _overlay/documentation/ documentation/
-            find . -name \*.md -exec perl "$srcdir"/irssi-website-tools/_tools/ascidia_prerender.pl {} +
+            find . -name \*.md -exec perl "$srcdir"/_tools/ascidia_prerender.pl {} +
 
             rm -fr "$srcdir"/_build/main || :
             # BASEURL for sitemap
@@ -144,7 +138,7 @@ OIFS=$IFS
 IFS=$NL
 fix_source_link=$(grep -FRl '/tree/gh-pages/' _tmp/site)
 if [ -n "$fix_source_link" ]; then
-    sed -i -e 's|/tree/gh-pages/|/tree/jekyll/|g' $fix_source_link
+    sed -i -e 's|/tree/gh-pages/|/tree/main/jekyll/|g' $fix_source_link
 fi
 IFS=$OIFS
 mv _tmp/site/sitemap.xml _tmp/site/sitemap2.xml

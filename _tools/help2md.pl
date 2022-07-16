@@ -141,7 +141,7 @@ These are the `/help` pages of the Irssi on-line help.
 
 Please submit changes to
 - https://github.com/irssi/irssi/tree/master/docs/help/in
-- https://github.com/ailin-nemui/irssi-website-tools/blob/sphinx-mod/_tools/help2md.yml
+- https://github.com/irssi/irssi.github.io/blob/main/_tools/help2md.yml
 
 endcomment -->
 
@@ -524,7 +524,7 @@ bind_-list
 
 Please submit changes to
 - https://github.com/irssi/irssi/tree/master/docs/help/in
-- https://github.com/ailin-nemui/irssi-website-tools/blob/sphinx-mod/_tools/help2md.yml
+- https://github.com/irssi/irssi.github.io/blob/main/_tools/help2md.yml
 
 endcomment -->
 

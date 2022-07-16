@@ -5,6 +5,9 @@ permissions:
   id-token: write
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -21,42 +24,26 @@ jobs:
           repository: irssi/irssi
           fetch-depth: 0
           path: irssi
-      - name: checkout sphinx website
-        uses: actions/checkout@v3
-        with:
-          ref: sphinx
-          path: sphinx
-      - name: checkout jekyll website
-        uses: actions/checkout@v3
-        with:
-          ref: jekyll
-          path: jekyll
       - name: checkout sphinx theme
         uses: actions/checkout@v3
         with:
           repository: ailin-nemui/furo
           path: furo
-      - name: checkout irssi-website-tools
-        uses: actions/checkout@v3
-        with:
-          repository: ailin-nemui/irssi-website-tools
-          path: irssi-website-tools
       - name: checkout Ascidia
         uses: actions/checkout@v3
         with:
           repository: ailin-nemui/Ascidia
           path: Ascidia
-      - run: mkdir -p ~/.local/bin && ln -rst ~/.local/bin ./Ascidia/ascidia
       - uses: actions/setup-python@v3
       - run: pip install -r sphinx/requirements.txt
       - run: |
           patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch
       - run: pip install -e ./furo
-      - name: cpm irssi-website-tools/_tools
+      - name: cpm _tools
         uses: perl-actions/install-with-cpm@stable
         with:
-          cpanfile: irssi-website-tools/_tools/cpanfile
-      - run: perl irssi-website-tools/_tools/issues_titles.pl
+          cpanfile: _tools/cpanfile
+      - run: perl _tools/issues_titles.pl
       - run: |
           # set jekyll baseurl
           . ./_conf.env
