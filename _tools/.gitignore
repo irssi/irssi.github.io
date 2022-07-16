@@ -1,0 +1,4 @@
+# used by issue_titles and news2md
+.issue_cache.sto
+gh_issues.yml
+.relnews_artef.yml

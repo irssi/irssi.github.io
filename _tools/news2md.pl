@@ -157,7 +157,7 @@ sub issue_links {
 	 }gex
 	     for @_;
     }
-    local $link_type{'#'} if $ENV{GITHUB};
+    #local $link_type{'#'} if $ENV{GITHUB};
     s{(?<!\w)
       (?<!(?i)Release\s)
       ($keywords)(\d+)
