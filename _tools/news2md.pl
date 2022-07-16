@@ -87,6 +87,48 @@ if ($ENV{REORG}) {
 warn "Start processing...\n";
 chomp ( my @news = <> );
 
+if ($ENV{REORG} || $ENV{FAKEHIST}) {
+    # fixup history
+    my $ver;
+    @news = map {
+	my $line = $_;
+	if ($line =~ /^v(\S+)/) {
+	    $ver = $1;
+	}
+	my @ret;
+	if ($ver eq '1.4.1' && $line =~ m{\* Format the output of /QUOTE HELP \(.*?\)\. By Val}) {
+	    unshift @ret,
+		'	- Scriptable pastebin (an#88)',
+		'',
+		'v1.4.0-an 2022-05-31  Ailin Nemui <Nei>';
+	    $ver = '1.4.0-an';
+	}
+	if ($ver eq '1.4.0-an' && $line =~ m{\+ Scriptable pastebin \(.*?an#88.*?\)}) {
+	    $line =~ s/(?:, )?(?<=[( ])an#88(?=[,)])//;
+	}
+	if ($ver eq '1.4.0-an' && $line =~ m{- CHANTYPES take precedence over \(missing\) STATUSMSG in /join}) {
+	    unshift @ret,
+		'',
+		'v1.3.2-an 2022-01-14  Ailin Nemui <Nei>';
+	    $ver = '1.3.2-an';
+	}
+	if ($ver eq '1.3.2-an' && $line =~ m{- Minor help fixes \(.*?\)}) {
+	    unshift @ret,
+		'',
+		'v1.3.1-an 2021-12-17  Ailin Nemui <Nei>';
+	    $ver = '1.3.1-an';
+	}
+	if ($ver eq '1.3.1-an' && $line =~ m{\* /SET resolve_reverse_lookup setting was removed \(.*?}) {
+	    unshift @ret,
+		'',
+		'v1.3.0-an 2021-11-11  Ailin Nemui <Nei>';
+	    $ver = '1.3.0-an';
+	}
+	push @ret, $line
+	    if $line;
+	@ret;
+    } @news;
+}
 
 for (@news) {
     my $tw = 8;
