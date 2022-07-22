@@ -27,6 +27,33 @@ a[title^="Permalink to this"]::after { content: "¶" }
     text-align: center;
 }
 
+.mobile-header .nav-overlay-icon .icon,
+.mobile-header .toc-overlay-icon .icon,
+.mobile-header .theme-toggle svg {
+    color: var(--color-header-text);
+}
+
+.page .main,
+.sidebar-drawer .sidebar-top {
+    border-top: 10px solid var(--color-header-background);
+}
+
+.sidebar-drawer .sidebar-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+@media (max-width: 67em) {
+    .sidebar-drawer .sidebar-top {
+	display: none;
+    }
+    .page .main,
+    .sidebar-drawer .sidebar-top {
+	border-top: 0;
+    }
+}
+
 .synB { font-weight: bold; }
 .synB05 { font-weight: bold; color: #bf616a; }
 .syn13 { color: #b48ead; }

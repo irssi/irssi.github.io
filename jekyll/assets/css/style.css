@@ -1,4 +1,29 @@
+html {
+    --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+		  sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: inherit;
+}
+
 body {
+    font-family: var(--font-stack);
+    font-size: inherit;
+}
+
+footer {
+    font-size: 12.25px;
+}
+
+.navbar .nav {
+    font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
 }
 
 .navbar-static-top {
@@ -204,8 +229,8 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
 @media (max-width:991px) and (min-width:768px) {
     .nav > li > a {
         padding-left: 6px;
-        padding-right: 4px;
-	font-size: 95%;
+        /*padding-right: 4px;*/
+	/*font-size: 95%;*/
 	letter-spacing: -0.2px;
     }
     .nav > li > a[rel="external"] {
@@ -517,7 +542,7 @@ body,
 }
 @media (prefers-color-scheme: dark) {
     body {
-	background-color: #2e3440;
+	background-color: #131416;/*#2e3440*/
 	color: #ffffff;
     }
     .jumbotron {
@@ -544,8 +569,7 @@ body,
     .btn-default:hover,
     .btn-default:focus,
     .btn-default:active,
-    .btn-default.active,
-    .dlc input:checked + label {
+    .btn-default.active {
 	color: #ffffff;
 	background-color: #466387;
     }
@@ -555,7 +579,7 @@ body,
 	color: #eceff4;
     }
     .default-sidebar {
-	background-color: #2e3440;
+	background-color: #131416;/*#2e3440*/;
     }
     .pagination > li > a,
     .pagination > li > span,
@@ -572,9 +596,14 @@ body,
     h3 a {
 	color: #fff; /* body color */
     }
+    h1 a:hover, h1 a:focus,
+    h2 a:hover, h2 a:focus,
+    h3 a:hover, h3 a:focus {
+	color: #d8dee9;
+    }
     .pagination > li > a,
     .pagination > li > span {
-	background-color: #2e3440;
+	background-color: #131416;/*#2e3440*/
 	border-color: #3b4252;
     }
     .pagination > li > a:hover,
@@ -590,7 +619,7 @@ body,
     }
     div.toprule,
     div.container > div > h1:nth-child(1), div.container > h1:nth-child(1) {
-	background-color: #3b4252;
+	background-color: #1a1c1e;/*#3b4252*/
     }
     hr,
     blockquote,
@@ -614,11 +643,11 @@ body,
     #___gcse_0 .gsc-webResult.gsc-result,
     #___gcse_0 .gsc-control-cse,
     #___gcse_0 .gsc-results {
-	background-color: #2e3440;
+	background-color: #131416;/*#2e3440*/
 	color: #ffffff;
     }
     #___gcse_0 .gsc-webResult.gsc-result {
-	border-color: #2e3440;
+	border-color: #131416;/*#2e3440*/
     }
     #___gcse_0 .gs-webResult.gs-result a.gs-title,
     #___gcse_0 .gs-webResult.gs-result a.gs-title b,
@@ -650,7 +679,7 @@ body,
 	color: #5e81ac;
     }
     #___gcse_0 .gsc-cursor-page {
-	background-color: #2e3440;
+	background-color: #131416;/*#2e3440*/
 	border-color: #3b4252;
     }
     #___gcse_0 .gsc-cursor-page:hover,

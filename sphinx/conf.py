@@ -39,6 +39,18 @@ html_css_files = [
 html_theme_options = {
     'light_logo': 'logo_light.png',
     'dark_logo': 'logo_dark.png',
+    'light_css_variables': {
+        'color-brand-primary': '#405c7d',
+        'color-brand-content': '#5e81ac',
+        'color-header-background': '#405c7d',
+        'color-header-text': '#d8dee9',
+    },
+    'dark_css_variables': {
+        'color-brand-primary': '#8699bb',
+        'color-brand-content': '#8699bb',
+        'color-header-background': '#405c7d',
+        'color-header-text': '#d8dee9',
+    },
 }
 _edit_link = os.getenv('EDIT_LINK', None)
 if _edit_link is not None:
