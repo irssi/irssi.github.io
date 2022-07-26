@@ -26,6 +26,13 @@ h6 {
     font-weight: bold;
 }
 
+/* make the font slightly bigger on big screens */
+@media (min-width: 97em) {
+    html {
+	font-size: 110%;
+    }
+}
+
 .navbar-static-top {
     margin-bottom: 0;
 }
@@ -212,7 +219,7 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
 
 /* Reduce navbar spacing on resolutions that are small,
    but not quite as small as the block below */
-@media (max-width:1200px) and (min-width:991px) {
+@media (max-width: 1200px) and (min-width: 991px) {
     .nav > li > a {
         padding-left: 8px;
 	padding-right: 8px;
@@ -226,7 +233,7 @@ a[rel="external"]:hover:after,a.rel-external:hover:after {
 
 /* Reduce navbar spacing on small resolutions,
    to avoid wrapping */
-@media (max-width:991px) and (min-width:768px) {
+@media (max-width: 991px) and (min-width: 768px) {
     .nav > li > a {
         padding-left: 6px;
         /*padding-right: 4px;*/
@@ -293,19 +300,19 @@ select .header {
     }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .jumbotron.flex .row {
 	display: flex;
     }
 }
 
-@media (max-width:991px) {
+@media (max-width: 991px) {
     .welcome-img {
 	height: 350px;
     }
 }
 
-@media (max-width:767px) {
+@media (max-width: 767px) {
     .welcome-img {
 	height: 250px;
     }
@@ -368,7 +375,7 @@ input.form-control {
 
 
 /* collapsing the about-page columns */
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .two-column {
 	-moz-column-count: 2;
 	-moz-column-gap: 20px;
@@ -416,7 +423,7 @@ input.form-control {
     max-width: 100%;
 }
 
-@media (min-width:768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .container.wrc > div > div > div.highlight,
     .container.wrc > div > div.highlight {
 	display: inline-block;
