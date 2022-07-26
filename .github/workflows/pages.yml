@@ -35,14 +35,43 @@ jobs:
           repository: ailin-nemui/Ascidia
           path: Ascidia
       - uses: actions/setup-python@v3
+      - name: cache python
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt', '**/pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       - run: pip install -r sphinx/requirements.txt
       - run: |
           patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch
       - run: pip install -e ./furo
+      - run: |
+          echo "PERL5LIB=$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB" >> $GITHUB_ENV
+      - name: check Perl ver
+        id: perl-ver
+        run: |
+          echo ::set-output name=perl_version::$(perl -e'print $^V')
+      - name: cache perl
+        uses: actions/cache@v3
+        with:
+          path: local
+          key: ${{ runner.os }}-${{ steps.perl-ver.outputs.perl_version }}-cpan-${{ hashFiles('**/cpanfile') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ steps.perl-ver.outputs.perl_version }}-cpan-
       - name: cpm _tools
         uses: perl-actions/install-with-cpm@stable
         with:
           cpanfile: _tools/cpanfile
+          global: false
+          sudo: false
+      - name: cache issues titles
+        uses: actions/cache@v3
+        with:
+          path: _tools/.issue_cache.sto
+          key: issue_cache-${{ github.run_number }}
+          restore-keys: |
+            issue_cache-
       - run: perl _tools/issues_titles.pl
       - run: |
           # set jekyll baseurl
