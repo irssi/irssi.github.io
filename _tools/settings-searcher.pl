@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use strict;
 use warnings;
 use File::Spec;
@@ -5,13 +6,13 @@ use FindBin;
 use Cwd;
 
 my $src = shift || "$FindBin::Bin/../../irssi";
-my $doc = shift || "$FindBin::Bin/../../irssi-an-docs2";
+my $doc = shift || "$FindBin::Bin/../../irssi.github.io";
 
 unless (-f "$src/irssi.conf") {
     die "Irssi sources not found in $src";
 }
 
-my $sfn = File::Spec->abs2rel("$doc/documentation/settings.md", getcwd);
+my $sfn = File::Spec->abs2rel("$doc/sphinx/documentation/settings.md", getcwd);
 
 open my $if, '<', $sfn
     or die "$sfn not found: $!";
