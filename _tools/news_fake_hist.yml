@@ -1,0 +1,32 @@
+---
+-
+  - 1.4.1
+  -
+    -
+      - !!perl/regexp (?^:\* Format the output of /QUOTE HELP \(.*?\)\. By Val)
+      - '	- Scriptable pastebin (an#88)'
+      - 'v1.4.0-an 2022-05-31  Ailin Nemui <Nei>'
+-
+  - 1.4.0-an
+  -
+    -
+      - !!perl/regexp (?^:\+ Scriptable pastebin \(.*?an#88.*?\))
+      - !!perl/code |
+        {
+            s/(?:, )?(?<=[( ])an#88(?=[,)])//;
+        }
+    -
+      - !!perl/regexp '(?^:- CHANTYPES take precedence over \(missing\) STATUSMSG in /join)'
+      - 'v1.3.2-an 2022-01-14  Ailin Nemui <Nei>'
+-
+  - 1.3.2-an
+  -
+    -
+      - !!perl/regexp '(?^:- Minor help fixes \(.*?\))'
+      - 'v1.3.1-an 2021-12-17  Ailin Nemui <Nei>'
+-
+  - 1.3.1-an
+  -
+    -
+      - !!perl/regexp (?^:\* /SET resolve_reverse_lookup setting was removed \(.*?)
+      - 'v1.3.0-an 2021-11-11  Ailin Nemui <Nei>'

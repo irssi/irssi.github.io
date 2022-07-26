@@ -2,24 +2,27 @@
 use strict;
 use warnings;
 
-# pipe a NEWS file to this script and get a markdown version back
+# give a NEWS file to this script and get a markdown version back
 
 # Env variables:
-#   GITHUB=1   - Disable Github links (for use on Github releases page)
-#   MARKDOWN=1 - Write Markdown instead of Sphinx-HTML
-#   VER=1.2.3  - show this version only
-#   ONLINE=1   - Download release asset links from Github
-#   REORG=$u   - manage github milestones of user $u
-#   TITLES=1   - add issue titles as link titles
+#   GITHUB=1     - Disable "released this" and Sphinx-HTML (for use on Github releases page)
+#   MARKDOWN=1   - Write Markdown instead of Sphinx-HTML
+#   HEADER=file  - add contents of `file' as header
+#   VER=1.2.3    - show this version only
+#   ONLINE=1     - Download release asset links from Github
+#   TITLES=1     - add issue titles as link titles (default)
+#   REORG=$u     - manage github milestones of user $u
+#   DRYRUN=1     - do not actually REORG
 #   ...
 $ENV{TITLES} = 1 unless defined $ENV{TITLES};
 
-# header
-if ($ENV{HEADER} && -f $ENV{HEADER}) {
-    system { 'cat' } 'cat', $ENV{HEADER};
-} elsif ($ENV{HEADER}) {
-    warn "Header not found: $ENV{HEADER}";
-}
+my @sections = ('!', '*', '+', '-', '?');
+
+my %section_title = (
+    '*' => 'Changes',
+    '+' => 'Additions',
+    '-' => 'Fixes',
+   );
 
 use version;
 use POSIX qw(ceil);
@@ -34,6 +37,10 @@ my $artef_extra = {};
 my $artef_extra_file = "$FindBin::Bin/../_data/relnews_artef.yml";
 my $issue_file = "$FindBin::Bin/gh_issues.yml";
 my $cache_file2 = "$FindBin::Bin/.issue_cache.sto";
+my $fakehist_file = "$FindBin::Bin/news_fake_hist.yml";
+my $link_type_file = "$FindBin::Bin/news_link_type.yml";
+my %link_type = LoadFile($link_type_file)->%*;
+
 my $issues;
 if ($ENV{TITLES}) {
     warn "Loading Issues Dump...\n";
@@ -55,16 +62,22 @@ my $github;
 my $github_issues;
 my %milestones;
 my %ms_todo;
+my $ms_dry = -1;
 if ($ENV{REORG}) {
+    die 'Need to specify organization in REORG
+' if $ENV{REORG} eq '1';
     warn "Logging in to GitHub...\n";
-    my $secret = `git config hub.oauthtoken | tr -d '\n'`;
-    die 'Please configure an oauth token for REORG with
+    my $secret;
+    unless ($ENV{DRYRUN}) {
+	$secret = `git config hub.oauthtoken | tr -d '\n'`;
+	die 'Please configure an oauth token for REORG with
 
     git config hub.oauthtoken YOURTOKEN
 
 ' unless $secret;
+    }
     $github = Net::GitHub->new(
-	access_token => $secret);
+	($secret ? (access_token => $secret) : ()));
     $github->set_default_user_repo(($ENV{REORG} // 'irssi'), 'irssi');
     $github_issues = $github->issue;
     if (-f $cache_file2) {
@@ -84,11 +97,19 @@ if ($ENV{REORG}) {
     warn "Loaded milestones: ". YAML::Dump(\%milestones) . "\n";
 }
 
+# header
+if ($ENV{HEADER} && -f $ENV{HEADER}) {
+    system { 'cat' } 'cat', $ENV{HEADER};
+} elsif ($ENV{HEADER}) {
+    warn "Header not found: $ENV{HEADER}";
+}
+
 warn "Start processing...\n";
 chomp ( my @news = <> );
 
 if ($ENV{REORG} || $ENV{FAKEHIST}) {
     # fixup history
+    my $fakehist = do { local $YAML::UseCode = 1; LoadFile($fakehist_file) };
     my $ver;
     @news = map {
 	my $line = $_;
@@ -96,36 +117,29 @@ if ($ENV{REORG} || $ENV{FAKEHIST}) {
 	    $ver = $1;
 	}
 	my @ret;
-	if ($ver eq '1.4.1' && $line =~ m{\* Format the output of /QUOTE HELP \(.*?\)\. By Val}) {
-	    unshift @ret,
-		'	- Scriptable pastebin (an#88)',
-		'',
-		'v1.4.0-an 2022-05-31  Ailin Nemui <Nei>';
-	    $ver = '1.4.0-an';
-	}
-	if ($ver eq '1.4.0-an' && $line =~ m{\+ Scriptable pastebin \(.*?an#88.*?\)}) {
-	    $line =~ s/(?:, )?(?<=[( ])an#88(?=[,)])//;
-	}
-	if ($ver eq '1.4.0-an' && $line =~ m{- CHANTYPES take precedence over \(missing\) STATUSMSG in /join}) {
-	    unshift @ret,
-		'',
-		'v1.3.2-an 2022-01-14  Ailin Nemui <Nei>';
-	    $ver = '1.3.2-an';
-	}
-	if ($ver eq '1.3.2-an' && $line =~ m{- Minor help fixes \(.*?\)}) {
-	    unshift @ret,
-		'',
-		'v1.3.1-an 2021-12-17  Ailin Nemui <Nei>';
-	    $ver = '1.3.1-an';
-	}
-	if ($ver eq '1.3.1-an' && $line =~ m{\* /SET resolve_reverse_lookup setting was removed \(.*?}) {
-	    unshift @ret,
-		'',
-		'v1.3.0-an 2021-11-11  Ailin Nemui <Nei>';
-	    $ver = '1.3.0-an';
+	for my $fht ($fakehist->@*) {
+	    my $mver = $fht->[0];
+	    if ($ver eq $mver) {
+		for my $fht_entry ($fht->[1]->@*) {
+		    my ($re, @actions) = $fht_entry->@*;
+		    if ($line =~ $re) {
+			my $final_action = pop @actions;
+			if (ref $final_action) {
+			    local *_ = \$line;
+			    $final_action->();
+			}
+			else {
+			    unshift @ret, @actions, '', $final_action;
+			    if ($final_action =~ /^v(\S+)/) {
+				$ver = $1;
+			    }
+			}
+		    }
+		}
+	    }
 	}
 	push @ret, $line
-	    if $line;
+	    if defined $line;
 	@ret;
     } @news;
 }
@@ -147,27 +161,6 @@ sub finish_E {
     push @{ $S{ $E{type} || "?" } }, $E{text};
     %E = ();
 }
-
-my @sections = ('!', '*', '+', '-', '?');
-
-my %section_title = (
-    '*' => 'Changes',
-    '+' => 'Additions',
-    '-' => 'Fixes',
-   );
-
-my %link_type = (
-    '#'		=> 'https://github.com/irssi/irssi/issues/',
-    'an#'	=> 'https://github.com/ailin-nemui/irssi/issues/',
-    'GL#'	=> 'https://gitlab.com/irssi/irssi/issues/',
-    'GL!'	=> 'https://gitlab.com/irssi/irssi/merge_requests/',
-    'FS#'	=> 'https://github.com/irssi-import/bugs.irssi.org/issues/',
-    'bdo#'	=> 'https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=',
-    'bgo#'      => 'https://bugzilla.gnome.org/show_bug.cgi?id=',
-    'oss-fuzz#' => 'https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=',
-    'gentoo#'   => 'https://bugs.gentoo.org/show_bug.cgi?id=',
-    'freebsd#'  => 'https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=',
-   );
 
 sub issue_links {
     my $keywords = join '|', map { quotemeta } sort { length $b <=> length $a } keys %link_type;
@@ -218,12 +211,17 @@ sub issue_links {
 		if ($ENV{REORG} && $u eq $ENV{REORG}) {
 		    unless (defined $milestones{$ver}) {
 			warn "creating MS $ver\n";
-			my %ms = $github_issues->create_milestone({
-			    title => $ver,
-			    description => '',
-			    state => 'closed'
-			});
-			$milestones{ $ms{title} } = $ms{number};
+			unless ($ENV{DRYRUN}) {
+			    my %ms = $github_issues->create_milestone({
+				title => $ver,
+				description => '',
+				state => 'closed'
+			    });
+			    $milestones{ $ms{title} } = $ms{number};
+			}
+			else {
+			    $milestones{ $ver } = $ms_dry--;
+			}
 		    }
 		    $ms_todo{$u}{$p}{$num} = $ver
 			if defined $S{section_title};
@@ -267,9 +265,15 @@ sub finish_S {
 	my $type = 'xz';
 	my $sig = 'asc';
 	my $no_gz_sig;
+	my $no_sig;
 	my $ver = $S{ver};
 	if ($ver =~ /-an/) {
-	    $org = 'ailin-nemui';
+	    $org = 'irssi-import';
+	}
+	my $lver = $S{ver};
+	if ($lver eq '1.3.0-an') {
+	    $lver =~ s/-an/-pre8/;
+	    $no_sig = $no_gz_sig = 1;
 	}
 	$ver =~ s/-.*//;
 	if (qv("v$ver") < qv("v0.8.18")) {
@@ -284,21 +288,23 @@ sub finish_S {
 	    my @rg;
 	    @rg = (+{
 		a => +{
-		    url => "https://github.com/$org/irssi/releases/download/$S{ver}/irssi-$S{ver}.tar.$type",
-		    name => "irssi-$S{ver}.tar.$type",
+		    url => "https://github.com/$org/irssi/releases/download/$lver/irssi-$lver.tar.$type",
+		    name => "irssi-$lver.tar.$type",
 		},
-		sig => +{
-		    url => "https://github.com/$org/irssi/releases/download/$S{ver}/irssi-$S{ver}.tar.$type.$sig",
-		    name => "signature.$sig",
-		},
+		( $no_sig ? () : (
+		    sig => +{
+			url => "https://github.com/$org/irssi/releases/download/$lver/irssi-$lver.tar.$type.$sig",
+			name => "signature.$sig",
+		    },
+		   )),
 	    }, +{
 		a => +{
-		    url => "https://github.com/$org/irssi/releases/download/$S{ver}/irssi-$S{ver}.tar.gz",
-		    name => "irssi-$S{ver}.tar.gz",
+		    url => "https://github.com/$org/irssi/releases/download/$lver/irssi-$lver.tar.gz",
+		    name => "irssi-$lver.tar.gz",
 		},
 		( $no_gz_sig ? () : (
 		    sig => +{
-			url => "https://github.com/$org/irssi/releases/download/$S{ver}/irssi-$S{ver}.tar.gz.$sig",
+			url => "https://github.com/$org/irssi/releases/download/$lver/irssi-$lver.tar.gz.$sig",
 			name => "signature.$sig",
 		    },
 		   )),
@@ -316,7 +322,7 @@ sub finish_S {
 		    print STDERR " / $mod";
 		}
 		print STDERR "\n";
-		my $info = `curl -Ssfi $mod_header "https://api.github.com/repos/$org/irssi/releases/tags/$S{ver}"`;
+		my $info = `curl -Ssfi $mod_header "https://api.github.com/repos/$org/irssi/releases/tags/$lver"`;
 		if ($? == -1) {
 		    die "failed to run curl: $!\n";
 		}
@@ -353,7 +359,7 @@ sub finish_S {
 		    for my $asset (@{$info_ref->{assets}}) {
 			my $url = $asset->{browser_download_url};
 			my $name = $asset->{name};
-			next if $name =~ /^irssi-\Q$S{ver}\E\.tar\.(gz|bz2|xz)(\.(asc|sig))?$/;
+			next if $name =~ /^irssi-\Q$lver\E\.tar\.(gz|bz2|xz)(\.(asc|sig))?$/;
 			next if $name =~ /^ZZZZ/;
 			next if $name =~ /\.sig\.sig$/;
 			push @new_info, +{ name => $name, url => $url };
@@ -506,29 +512,25 @@ for my $u (sort keys %ms_todo) {
     for my $p (sort keys %{ $ms_todo{$u} }) {
 	for my $num (sort keys %{ $ms_todo{$u}{$p} }) {
 	    my $ver = $ms_todo{$u}{$p}{$num};
+	    $issues->{$u}{$p}{$num}{milestone} = $issues->{$u}{$p}{$num}{milestone}{title}
+		if ref $issues->{$u}{$p}{$num}{milestone};
 	    unless ($issues->{$u}{$p}{$num}{milestone} &&
-		    $issues->{$u}{$p}{$num}{milestone}{title} eq $ver ) {
+		    $issues->{$u}{$p}{$num}{milestone} eq $ver ) {
 		warn "assigning MS $ver to $num\n";
-		$github_issues->update_issue($num, {
-		    milestone => $milestones{ $ver }
-		});
-		$issues->{$u}{$p}{$num}{milestone}{title} = $ver;
-		$issues->{$u}{$p}{$num}{milestone}{number} = $milestones{ $ver };
-	    }
-	    if ($issues->{$u}{$p}{$num}{milestone} &&
-		$issues->{$u}{$p}{$num}{milestone}{title} eq $ver
-		&& !$issues->{$u}{$p}{$num}{milestone}{number}) {
-		$issues->{$u}{$p}{$num}{milestone}{number} = $milestones{ $ver };
+		unless ($ENV{DRYRUN}) {
+		    $github_issues->update_issue($num, {
+			milestone => $milestones{ $ver }
+		    });
+		    $issues->{$u}{$p}{$num}{milestone} = $ver;
+		}
 	    }
 	}
     }
 }
 
-END {
-    if ($ENV{REORG}) {
-	warn "Writing GitHub Issues Cache...\n";
-	nstore({ cache => $github_issues->cache->{_fifo} }, $cache_file2);
-	warn "Writing Issues Dump...\n";
-	DumpFile($issue_file, $issues);
-    }
+if ($ENV{REORG}) {
+    warn "Writing GitHub Issues Cache...\n";
+    nstore({ cache => $github_issues->cache->{_fifo} }, $cache_file2);
+    warn "Writing Issues Dump...\n";
+    DumpFile($issue_file, $issues);
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/perl
 use strict;
 use warnings;
 use Storable qw(nstore retrieve);
@@ -33,14 +34,17 @@ for my $ur (
    ) {
     while (my $r_issue = $issue->next_repos_issue(@$ur, { state => 'all' })) {
 	print "@$ur ", $r_issue->{number}, "\n";
-	$x{ $ur->[0] }{ $ur->[1] }{ $r_issue->{number} } = $r_issue;
+	$x{ $ur->[0] }{ $ur->[1] }{ $r_issue->{number} } = +{
+	    (title => $r_issue->{title}),
+	    ($r_issue->{milestone}
+	     ? (milestone => $r_issue->{milestone}{title})
+	     : ()),
+	   };
     }
 }
 
-END {
-    print STDERR "saving cache...\n";
-    nstore({ cache => $issue->cache->{_fifo} }, $cache_file2);
-    print STDERR "saving issues...\n";
-    DumpFile($issue_file, \%x);
-    print STDERR "...end\n";
-}
+print STDERR "saving cache...\n";
+nstore({ cache => $issue->cache->{_fifo} }, $cache_file2);
+print STDERR "saving issues...\n";
+DumpFile($issue_file, \%x);
+print STDERR "...end\n";
