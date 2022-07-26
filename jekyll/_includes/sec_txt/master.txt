@@ -51,7 +51,7 @@ Description
             %}({{ lttrs[forloop.index0] }}){%
         endcapture %}{%
         if include.md %}{%
-            assign fl = "0." %}{%
+            assign fl = '' | append: forloop.index | append: '.' %}{%
         endif %}{%
         capture text %}{%
             if bug.description_long
@@ -102,7 +102,7 @@ Description
                     %}({{ lttrs[forloop.index0] }}){%
                 endcapture %}{%
                 if include.md %}{%
-                    assign fl = "0." %}{%
+                    assign fl = '' | append: forloop.index | append: '.' %}{%
                 endif %}{%
                 if include.md or bug.impact %}{%
                     include sec_txt/wrap.txt text=bug.impact fl=fl md=include.md %}{%
@@ -124,7 +124,7 @@ Description
                 %}({{ lttrs[forloop.index0] }}){%
             endcapture %}{%
             if include.md %}{%
-                assign fl = "0." %}{%
+                assign fl = '' | append: forloop.index | append: '.' %}{%
             endif %}{%
             capture text %}{%
                 if bug.affected_versions.from
@@ -201,7 +201,7 @@ Description
                     %}({{ lttrs[forloop.index0] }}){%
                 endcapture %}{%
                 if include.md %}{%
-                    assign fl = "0." %}{%
+                    assign fl = '' | append: forloop.index | append: '.' %}{%
                 endif %}{%
                 if include.md or bug.mitigating_info %}{%
                     include sec_txt/wrap.txt text=bug.mitigating_info fl=fl md=include.md %}{%
@@ -256,7 +256,7 @@ Description
                     %}({{ lttrs[forloop.index0] }}){%
                 endcapture %}{%
                 if include.md %}{%
-                    assign fl = "0." %}{%
+                    assign fl = '' | append: forloop.index | append: '.' %}{%
                 endif %}{%
                 if include.md or bug.discussion %}{%
                     include sec_txt/wrap.txt text=bug.discussion fl=fl md=include.md %}{%
@@ -276,23 +276,22 @@ References
 ----------
 
 {%  if include.md
-        %}<div class="references" markdown="1">
-0. [https://irssi.org{{page.url | replace: '/html/', '/' | split: '' | reverse | join: '' | remove_first: '/' | split: '' | reverse
-    | join: '' }}.txt](https://irssi.org{{page.url | replace: '/html/', '/' | split: '' | reverse | join: '' | remove_first: '/' | split: '' | reverse
-    | join: '' }}.txt)
+        %}<div class="references"><ol><li><a href="https://irssi.org{{page.url | replace: '/html/', '/' | split: '' | reverse | join: '' | remove_first: '/' | split: '' | reverse
+    | join: '' }}.txt">https://irssi.org{{page.url | replace: '/html/', '/' | split: '' | reverse | join: '' | remove_first: '/' | split: '' | reverse
+    | join: '' }}.txt</a></li>
 {%  else
         %}[1] https://irssi.org{{page.url}}
 {%  endif %}{%
     assign refarr = refs | split: ' ' %}{%
     for ref in refarr %}{%
         if include.md
-            %}0. [{{ref}}]({{ref}})
+            %}<li><a href="{{ref}}">{{ref}}</a></li>
 {%      else
             %}[{{ forloop.index | plus: 1 }}] {{ref}}
 {%      endif %}{%
     endfor %}{%
     if include.md
-        %}</div>{%
+        %}</ol></div>{%
     endif -%}{%
 else
     %}{{ content }}{%
