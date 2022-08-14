@@ -11,8 +11,9 @@ Irssi experience for Windows users. We made an installer built on NSIS and an
 USB archive made to be put on an USB stick and allow carrying your personal
 Irssi instance with you.
 
-{:.clearfix}
 {% include img_link.html link="/images/historical/irssi_installer_100.png" src="/images/historical/irssi_installer_40.png" float="left" %}
+
+<div style="clear:both"></div>
 
 Welcome page.
 
@@ -22,8 +23,9 @@ looks better than cmd.
 
 {% include img_link.html link="/images/historical/irssi_puttycyg_100.png" src="/images/historical/irssi_puttycyg_40.png" float="left" %}
 
-{:.clearfix}
 {% include img_link.html link="/images/historical/irssi_cmd_100.png" src="/images/historical/irssi_cmd_40.png" float="left" %}
+
+<div style="clear:both"></div>
 
 Have fun with it and report any bugs!
 

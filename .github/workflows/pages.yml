@@ -45,7 +45,7 @@ jobs:
       - run: pip install -r sphinx/requirements.txt
       - run: |
           patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch
-      - run: pip install -e ./furo
+      - run: pip install ./furo
       - run: |
           echo "PERL5LIB=$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB" >> $GITHUB_ENV
       - name: check Perl ver
@@ -73,16 +73,14 @@ jobs:
           restore-keys: |
             issue_cache-
       - run: perl _tools/issues_titles.pl
-      - run: |
-          # set jekyll baseurl
-          . ./_conf.env
-          sed -i -e 's|^baseurl: "[^"]*"|baseurl: "'"$ABS_BASE"'"|' jekyll/_config.yml
+      - run: bash -x ./make_help_build.sh
+      - run: bash -x ./jekyll.sh -x
       - uses: actions/jekyll-build-pages@v1
         with:
           source: jekyll
           destination: jekyll/_site
           future: true
-      - run: bash -x ./make_help_build.sh
+      - run: bash -x ./merge_pages.sh
       - name: Upload Pages artifact
         uses:  actions/upload-pages-artifact@v0
         with:

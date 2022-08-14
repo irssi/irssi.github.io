@@ -38,7 +38,6 @@ Here is a picture of what Irssi looks like at this point. It crashed so quickly
 get a screenshot of the fuzzing in action.
 
 <img style="max-width:100%" src="/images/irssi_pyircfuzz_crash.png" />
-{:.wide}
 
 Here is the AddressSanitizer output (from asan.log):
 

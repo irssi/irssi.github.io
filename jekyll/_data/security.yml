@@ -21,7 +21,6 @@
 #         -
 #           # add more links here...
 #       exploitable_by: one of server/client/local/formats/local (remote)/remote
-#       affected_note_top: some remark to show on a row before the versions (optional)
 #       # which versions are affected
 #       affected_versions:
 #         from: first version affected

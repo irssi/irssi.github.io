@@ -40,5 +40,4 @@ the end of your markdown file or footer:
     <script src="/_static/prerenderimg.js"></script>
 
 Keep in mind that you have to rerun the prerender script each time you
-update the ascidia drawings and manually **add and commit** the
-changed images.
+update the ascidia drawings.

@@ -1,16 +1,7 @@
 ---
-layout: default
-container_class: wrc
+layout: sphinx_posts
 ---
 
 <h1>{{ page.title }}</h1>
 {% include postmeta.html node=page %}
 {{ content }}
-<nav>{%
-    if page.next.url %}
-        <a class="next" href="{{ page.next.url }}">{{ page.next.title }}</a>{%
-    endif %}{%
-    if page.previous.url %}
-        <a class="prev" href="{{ page.previous.url }}">{{ page.previous.title }}</a>{%
-    endif %}
-</nav>

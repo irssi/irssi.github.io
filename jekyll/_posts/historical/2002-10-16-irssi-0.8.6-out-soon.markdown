@@ -11,6 +11,6 @@ startup with Perl 5.8 (yes, that's why 0.8.5 crashes with RedHat 8).
 
 [Download](/download)
 
-[Changes](/NEWS#v0-8-6)
+[Changes](/NEWS#news-v0-8-6)
 
 [Upgrading from older versions](/historical/upgrade)

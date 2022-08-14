@@ -41,8 +41,9 @@ This builds the website, and the help for all versions specified in
 for a successful build.
 
 ```
-./jekyll.sh
 ./make_help_build.sh
+./jekyll.sh
+./merge_pages.sh
 ```
 
 ### Serve website

@@ -9,7 +9,7 @@ we'll get there :)
 
 SILC support is working great :) If you want to try, go get latest SILC
 version from
-http://silc.pspt.fi/.
+http://www.silcnet.org/.
 You might want to use CVS version so you don't always have to patch the
 silc sources when I change something :) Build the SILC, update irssi's
 CVS tree and go to silc directory, run autogen.sh and do the rest as the

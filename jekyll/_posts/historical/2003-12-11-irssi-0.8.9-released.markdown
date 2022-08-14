@@ -12,6 +12,6 @@ Coekaerts for debugging.
 
 [Download](/download)
 
-[Changes](/NEWS#v0-8-9)
+[Changes](/NEWS#news-v0-8-9)
 
 [Upgrading from older versions](/historical/upgrade)

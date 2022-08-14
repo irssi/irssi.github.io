@@ -1,0 +1,226 @@
+/* begin security overview */
+div.wide-table {
+    /* .sidebar-drawer + .content padding */
+    width: calc(100vw - calc(max(calc((100vw - 82em) / 2 + 21em), 21em)));
+    /* .content + .toc-drawer */
+    max-width: 61em;
+    max-height: calc(90vh - 2em);
+}
+@media (max-width: 82em) {
+div.wide-table {
+    width: calc(100vw - calc((100vw - 67em) / 2 + 21em));
+}
+}
+@media (max-width: 67em) {
+div.wide-table {
+    width: calc(100vw - 6em);
+    margin-left: calc(3em + calc(-50vw + 50%));
+    max-height: calc(90vh - calc(2em + var(--header-height)));
+}
+}
+@media (max-width: 46em) {
+div.wide-table {
+    width: calc(100vw - 2em);
+    margin-left: calc(1em + calc(-50vw + 50%));
+}
+}
+article[role="main"] table.sec-table th:first-child {
+    text-align: left;
+}
+article[role="main"] table.sec-table td,
+article[role="main"] table.sec-table th {
+    padding: 0;
+    border-left: none;
+    border-right: none;
+}
+article[role="main"] table.sec-table td.has-next-row,
+article[role="main"] table.sec-table th.has-next-row {
+    padding-bottom: 0;
+}
+article[role="main"] table.sec-table td.has-previous-row {
+    border-top: 0;
+    padding-top: 0;
+}
+/* end security overview */
+/* begin security advisories */
+.article-container.security_html article > ol > li:empty {
+    visibility: hidden;
+    height: 0;
+}
+
+.article-container.security_html article > ol > li::before {
+    content: "(  )"; position: absolute; margin-left:-1.5em;
+    white-space: pre;
+}
+
+.article-container.security_html article > ol {
+    list-style-type: lower-alpha;
+    list-style-position: outside;
+}
+
+.article-container.security_html .references > ol > li::before {
+    content: "[  ]"; position: absolute; margin-left:-1.4em;
+    white-space: pre;
+}
+
+.article-container.security_html article > ol,
+.article-container.security_html .references > ol {
+    margin-left: 0.5em;
+}
+/* end security advisories */
+/* begin bootstrap pagination */
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #5e81ac;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #d8dee9;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    z-index: 2;
+    color: #405c7d;
+    background-color: #eceff4;
+    border-color: #d8dee9;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    z-index: 3;
+    color: #ffffff;
+    cursor: default;
+    background-color: #5e81ac;
+    border-color: #5e81ac;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+    color: #e5e9f0;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    border-color: #d8dee9;
+}
+/* end bootstrap pagination */
+article[role="main"] table td:first-child, article[role="main"] table th:first-child {
+    border-left: none;
+}
+article[role="main"] table td:last-child, article[role="main"] table th:last-child {
+    border-right: none;
+}
+article[role="main"] table td:not(:empty), article[role="main"] table th:not(:empty) {
+    padding: 0.25rem 0.5rem;
+}
+article[role="main"] table td, article[role="main"] table th {
+    padding: 0 0.25rem;
+    border-left: 1px solid var(--color-table-border);
+    border-right: 1px solid var(--color-table-border);
+    border-bottom: 1px solid var(--color-table-border);
+}
+article[role="main"] table th {
+    background: var(--color-table-header-background);
+}
+article[role="main"] table {
+    padding-top: 0.2rem;
+    padding-bottom: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.2rem;
+    border-collapse: collapse;
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), 0 0 0.0625rem rgba(0, 0, 0, 0.1);
+}
+article[role="main"] pre {
+    line-height: 1.5;
+    font-size: var(--code-font-size);
+    margin: 1em 0;
+    padding: 0.625rem 0.875rem;
+    overflow: auto;
+}
+article[role="main"] :not(pre) > code {
+    border: 1px solid var(--color-background-border);
+    background: var(--color-inline-code-background);
+    border-radius: 0.2em;
+    font-size: var(--font-size--small--2);
+    padding: 0.1em 0.2em;
+}
+pre { background: #f8f8f8; }
+@media not print {
+/* begin bootstrap pagination */
+body[data-theme="dark"] .pagination > li > a,
+body[data-theme="dark"] .pagination > li > span {
+    color: #8699bb;
+}
+body[data-theme="dark"] .pagination > li > a,
+body[data-theme="dark"] .pagination > li > span {
+    background-color: #131416;/*#2e3440*/
+    border-color: #3b4252;
+}
+body[data-theme="dark"] .pagination > .active > a,
+body[data-theme="dark"] .pagination > .active > span,
+body[data-theme="dark"] .pagination > li > a:hover,
+body[data-theme="dark"] .pagination > li > span:hover,
+body[data-theme="dark"] .pagination > li > a:focus,
+body[data-theme="dark"] .pagination > li > span:focus {
+    background-color: #405c7d;
+    color: #fff;
+    border-color: #466387;
+}
+/* end bootstrap pagination */
+body[data-theme="dark"] pre { background: #202020; color: #d0d0d0 }
+}
+@media (prefers-color-scheme: dark) {
+/* begin bootstrap pagination */
+body:not([data-theme="light"]) .pagination > li > a,
+body:not([data-theme="light"]) .pagination > li > span {
+    color: #8699bb;
+}
+body:not([data-theme="light"]) .pagination > li > a,
+body:not([data-theme="light"]) .pagination > li > span {
+    background-color: #131416;/*#2e3440*/
+    border-color: #3b4252;
+}
+body:not([data-theme="light"]) .pagination > .active > a,
+body:not([data-theme="light"]) .pagination > .active > span,
+body:not([data-theme="light"]) .pagination > li > a:hover,
+body:not([data-theme="light"]) .pagination > li > span:hover,
+body:not([data-theme="light"]) .pagination > li > a:focus,
+body:not([data-theme="light"]) .pagination > li > span:focus {
+    background-color: #405c7d;
+    color: #fff;
+    border-color: #466387;
+}
+/* end bootstrap pagination */
+body:not([data-theme="light"]) pre { background: #202020; color: #d0d0d0 }
+}

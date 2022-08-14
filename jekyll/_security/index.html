@@ -1,13 +1,16 @@
 ---
-layout: page
+layout: sphinx_security
 title: Security
 permalink: security/
 ---
 
+<h1>Security</h1>
+
 Please report security issues to staff&#64;irssi&#46;org. Thanks!
 
 <h2>Past issues overview</h2>
-<table class="table wide">
+<div class="table-wrapper wide-table">
+<table class="sec-table">
     <thead>
         <tr class="text-nowrap">
             <th colspan="2">Links</th>
@@ -28,7 +31,7 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
                         if advisory.link
                             %}<a href="{{ advisory.link }}">{{ advisory.name }}</a>{%
                         elsif advisory.name contains "-SA-"
-                            %}<a href="{{ site.baseurl }}/security/html/{{ advisory.name | slugify	 | replace: '-', '_' }}">{{ advisory.name }}</a>{%
+                            %}<a href="{{ site.baseurl }}/security/html/{{ advisory.name | slugify | replace: '-', '_' }}">{{ advisory.name }}</a>{%
                         else
                             %}{{ advisory.name }}{%
                         endif
@@ -55,8 +58,8 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
             <tbody>{%
                 for bug in advisory.bugs %}
                     <tr>
-                        <td rowspan="3"></td>
-                        <td rowspan="3" class="text-nowrap">{%
+                        <td rowspan="2"></td>
+                        <td rowspan="2" class="text-nowrap">{%
                             if bug.name %}
                                 <div>{%
                                     if bug.link
@@ -80,71 +83,34 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
                                 <div><a href="{{ link.url }}">{{ link.id }}</a></div>{%
                             endfor %}
                         </td>
-                        <td rowspan="3">{{ bug.exploitable_by }}</td>{%
-                        if bug.affected_note_top
-                            %}<td class="has-next-row" colspan="4">{{ bug.affected_note_top }}</td>{%
-                        else %}
-                            <td class="has-next-row">{%
-                                if bug.affected_versions.from
-                                    %}{{ bug.affected_versions.from | join: "<br/>" }}{%
-                                else
-                                    %}*{% endif %}</td>
-                            <td class="has-next-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
-                            <td class="has-next-row">{{ bug.affected_versions.to | join: "<br/>"}}</td>
-                            <td class="has-next-row">{%
-                                if bug.git_commit
-                                    %}<a href="https://github.com/irssi/{%
-                                        if bug.repo
-                                            %}{{ bug.repo }}{%
-                                        else
-                                            %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{%
-                                else
-                                    %}{{ bug.fixed_version | join: "<br/>" }}{%
-                                endif %}
-                            </td>{%
-                        endif %}
-                        <td rowspan="3">{{ bug.credit }}</td>
-                        <td rowspan="3">{{ bug.description }}</td>
-                        <td rowspan="3"></td>
+                        <td rowspan="2">{{ bug.exploitable_by }}</td>
+                        <td {% if bug.affected_note_bottom %}class="has-next-row"{% else %}rowspan="2"{% endif %}>{%
+                            if bug.affected_versions.from
+                                %}{{ bug.affected_versions.from | join: "<br/>" }}{%
+                            else
+                                %}*{% endif %}</td>
+                        <td {% if bug.affected_note_bottom %}class="has-next-row"{% else %}rowspan="2"{% endif %}>{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
+                        <td {% if bug.affected_note_bottom %}class="has-next-row"{% else %}rowspan="2"{% endif %}>{{ bug.affected_versions.to | join: "<br/>"}}</td>
+                        <td {% if bug.affected_note_bottom %}class="has-next-row"{% else %}rowspan="2"{% endif %}>{%
+                            if bug.git_commit
+                                %}<a href="https://github.com/irssi/{%
+                                    if bug.repo
+                                        %}{{ bug.repo }}{%
+                                    else
+                                        %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{%
+                            else
+                                %}{{ bug.fixed_version | join: "<br/>" }}{%
+                            endif %}
+                        </td>
+                        <td rowspan="2">{{ bug.credit }}</td>
+                        <td rowspan="2">{{ bug.description }}</td>
+                        <td rowspan="2"></td>
                     </tr>
                     <tr>{%
-                        if bug.affected_note_top %}
-                            <td class="has-next-row has-previous-row">{%
-                                if bug.affected_versions.from
-                                    %}{{ bug.affected_versions.from }}{%
-                                else
-                                    %}*{% endif %}</td>
-                            <td class="has-next-row has-previous-row">{% if bug.affected_versions.to %}&ndash;{% endif %}</td>
-                            <td class="has-next-row has-previous-row">{{ bug.affected_versions.to }}</td>
-                            <td class="has-next-row has-previous-row">{%
-                                if bug.git_commit
-                                    %}<a href="https://github.com/irssi/{%
-                                        if bug.repo
-                                            %}{{ bug.repo }}{%
-                                        else
-                                            %}irssi{% endif %}/commit/{{ bug.git_commit }}">{{ bug.fixed_version }}</a>{%
-                                else
-                                    %}{{ bug.fixed_version }}{%
-                                endif %}
-                            </td>{%
-                        else %}
-                            <td class="has-previous-row" colspan="3" rowspan="2">{%
-                                if bug.affected_note_bottom
-                                    %}{{ bug.affected_note_bottom }}{%
-                                endif
-                            %}</td>
-                            <td class="has-previous-row" rowspan="2"></td>{%
-                        endif %}
-                    </tr>
-                    <tr>{%
-                        if bug.affected_note_top %}
-                            <td class="has-previous-row" colspan="3">{%
-                                if bug.affected_note_bottom
-                                    %}{{ bug.affected_note_bottom }}{%
-                                endif
-                            %}</td>
-                            <td class="has-previous-row"></td>{%
-                        endif %}
+                    if bug.affected_note_bottom %}
+                        <td class="has-previous-row" colspan="3">{{ bug.affected_note_bottom }}</td>
+                        <td class="has-previous-row"></td>{%
+                    endif %}
                     </tr>{%
                 endfor %}
             </tbody>{%
@@ -152,6 +118,7 @@ Please report security issues to staff&#64;irssi&#46;org. Thanks!
     endfor %}
 
 </table>
+</div>
 
 <h2>Reference</h2>
 
