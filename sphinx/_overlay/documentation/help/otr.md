@@ -3,7 +3,7 @@
 <!-- comment
 
 Please submit changes to
-- https://github.com/irssi/irssi.github.io/blob/sphinx/_overlay/documentation/help/otr.md
+- https://github.com/irssi/irssi.github.io/blob/main/sphinx/_overlay/documentation/help/otr.md
 
 
 endcomment -->
