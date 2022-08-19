@@ -20,7 +20,8 @@ a[title^="Permalink to this"]::after { content: "¶" }
 }
 
 .welcome-img {
-    width: 291px;
+    width: 100%;
+    max-width: 291px;
     height: 250px;
     background-image: url(../assets/irssi2017.jpg);
     background-repeat: no-repeat;
