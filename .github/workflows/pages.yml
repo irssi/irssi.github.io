@@ -81,6 +81,7 @@ jobs:
           destination: jekyll/_site
           future: true
       - run: bash -x ./merge_pages.sh
+      - run: bash -x ./jekyll_index.sh -x
       - name: Upload Pages artifact
         uses:  actions/upload-pages-artifact@v0
         with:

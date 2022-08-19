@@ -7,6 +7,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'myst_parser',
     'sphinx_sitemap',
+    'sphinx_design',
 ]
 
 _html_baseurl = os.getenv('BASEURL', None)

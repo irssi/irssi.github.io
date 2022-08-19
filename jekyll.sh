@@ -14,8 +14,12 @@ fi
 
 ./_tools/sphinx_to_jekyll_layout.sh _build/main/"$SPHINXTYPE"/security"$ext" >jekyll/_layouts/sphinx_security.html
 ./_tools/sphinx_to_jekyll_layout.sh _build/main/"$SPHINXTYPE"/posts"$ext" >jekyll/_layouts/sphinx_posts.html
+WELCOME=1 ./_tools/sphinx_to_jekyll_layout.sh _build/main/"$SPHINXTYPE"/index.html >jekyll/_layouts/sphinx_welcome.html
 
 if [ $# -eq 0 ] || [ "$1" != "-x" ]; then
     cd jekyll
     bundle exec jekyll build
+else
+    # skip building, for github actions
+    :
 fi

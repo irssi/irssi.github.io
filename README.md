@@ -43,6 +43,7 @@ for a successful build.
 ```
 ./make_help_build.sh
 ./jekyll.sh
+./jekyll_index.sh
 ./merge_pages.sh
 ```
 

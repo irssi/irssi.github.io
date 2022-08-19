@@ -32,7 +32,10 @@ s{<link rel="stylesheet".*?/theme_tweak.css".*?>\n\K}{    <link rel="stylesheet"
 } or die;
 
 # create link to current page
-s{(<li class=".*?current.*?"><a class=".*?current.*?" href=")#(">.*?</a></li>)}{${1}'"$linkpath"'${2}} or die;
+$ENV{WELCOME} or s{(<li class=".*?current.*?"><a class=".*?current.*?" href=")#(">.*?</a></li>)}{${1}'"$linkpath"'${2}} or die;
+
+# pass through jekyll includes without p
+$ENV{WELCOME} and s{<p>(\{%.*?%\})</p>}{$1}gs;
 
 # add jekyll edit page link
 s{(<a class="muted-link" href=").*?(" title="Edit this page">)}{${1}{%
@@ -58,10 +61,10 @@ s{(<a class="muted-link" href=").*?(" title="Edit this page">)}{${1}{%
 s{(<div class=".*?article-container.*?)(")}{${1} {{ page.container_class | default: layout.container_class }} {{ page.collection }} {{ page.layout }}${2}} or die;
 
 # insert main content
-s{<section.*?<h1>.*?</section>}{{{ content }}}s or die;
+$ENV{WELCOME} or s{<section.*?<h1>.*?</section>}{{{ content }}}s or die;
 
 # include jekyll previous/next pages
-s{(<div class="related-pages">)(\s*<a class="next-page" href=".*?">.*?</a>)(\s*<a class="prev-page" href=".*?">.*?</a>)(\s*</div>)}{${1}{%
+$ENV{WELCOME} or s{(<div class="related-pages">)(\s*<a class="next-page" href=".*?">.*?</a>)(\s*<a class="prev-page" href=".*?">.*?</a>)(\s*</div>)}{${1}{%
           if page.previous.url and page.collection != "" and page.collection != "security" and page.previous.path != "_security_html/index.html" %}
           <a class="next-page" href="{{ page.previous.url }}">
               <div class="page-info">
@@ -111,7 +114,7 @@ s{(</body>)}{<script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
 </script>${1}} or die;
 
 # fix href and src to be absolute (set ABS_BASE if needed)
-s{\b(href|src)="([^"]+?)"}{
+s{\b(href|src|action)="([^"]+?)"}{
   my ($attr, $link) = ($1, $2);
   $link =~ s{^[.][.]/}{} if "dirhtml" eq "'"$SPHINXTYPE"'";
   $link = "'"$ABS_BASE"'/$link"
