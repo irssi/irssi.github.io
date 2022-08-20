@@ -16,6 +16,7 @@ from myst_parser.parsers.mdit import create_md_parser
 from myst_parser.config.main import read_topmatter
 from myst_parser.config.main import MdParserConfig
 
+sys.dont_write_bytecode = True
 sys.path.append(path.join(path.dirname(__file__), '..', 'sphinx'))
 import conf as sphinx_conf
 
