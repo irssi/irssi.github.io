@@ -16,5 +16,5 @@ fi
 
 [ -f "$idx" ] || { echo "Could not find $idx! Cannot continue"; exit 1; }
 
-# index blog posts for sphinx search
+echo '>>>' index blog posts for sphinx search
 python ./_tools/manual_index.py "$idx" ./jekyll/_posts/*.markdown ./jekyll/_posts/historical/*.markdown ./jekyll/_security_html/*_sa_*.txt

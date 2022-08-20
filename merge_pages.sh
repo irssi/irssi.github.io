@@ -4,6 +4,14 @@ srcdir="$(dirname "$(realpath "$0")")"
 
 . ./_conf.env
 
+if [ $# -gt 0 ] && [ "$1" = "-no-help" ]; then
+    shift
+    NO_HELP=1
+    VERS="$(echo "$VERS"|grep :dev:)"
+else
+    NO_HELP=0
+fi
+
 NL="
 "
 
@@ -14,7 +22,7 @@ mkdir -p _tmp
 rm -fr _tmp/site || :
 [ -d jekyll/_site ] || { echo "The Jekyll part of the website was not built! Cannot continue"; exit 1; }
 [ -d _build/main/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
-[ -d _build/dev/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
+[ $NO_HELP -eq 1 ] || [ -d _build/dev/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
 cp -a jekyll/_site _tmp/site
 
 ( cd _tmp/site && rm -v $(grep -FxRl '# sphinx') )
@@ -32,10 +40,14 @@ rm -fr gh-pages || :
 mkdir -p gh-pages
 
 rsync -aC _build/main/"$SPHINXTYPE"/ gh-pages/
-rm -fr gh-pages/documentation/help gh-pages/_sources/documentation/help
+if [ $NO_HELP -eq 1 ]; then
+    : # skip help versions, for quick preview only
+else
+    rm -fr gh-pages/documentation/help gh-pages/_sources/documentation/help
 
-cp -r _build/dev/"$SPHINXTYPE"/documentation/help gh-pages/documentation/
-cp -r _build/dev/"$SPHINXTYPE"/_sources/documentation/help gh-pages/_sources/documentation/
+    cp -r _build/dev/"$SPHINXTYPE"/documentation/help gh-pages/documentation/
+    cp -r _build/dev/"$SPHINXTYPE"/_sources/documentation/help gh-pages/_sources/documentation/
+fi
 
 for vtn in $VERS; do
     tag=$(echo "$vtn" | cut -d: -f3)

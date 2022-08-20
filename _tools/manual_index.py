@@ -54,7 +54,7 @@ class ManualIndex:
         with open(searchindexfn, encoding='utf-8') as ft:
             self.indexer.load(ft, self.indexer_format)
 
-        for source in sources:
+        for source in sorted(sources):
             bn = path.basename(source)
             source = path.relpath(source)
             for sfx in ['.markdown', '.md', '.txt', '.html']:
@@ -80,7 +80,7 @@ class ManualIndex:
                 parser = create_md_parser(self.mconfig, DocutilsRenderer)
                 parser.options["document"] = doctree
                 parser.render(text)
-            print({'source': source, 'title': title})
+            # print({'source': source, 'title': title})
             self.indexer.feed(pagename, source, title, doctree)
         # first write to a temporary file, so that if dumping fails,
         # the existing index won't be overwritten

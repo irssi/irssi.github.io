@@ -19,6 +19,8 @@ WELCOME=1 ./_tools/sphinx_to_jekyll_layout.sh _build/main/"$SPHINXTYPE"/index.ht
 if [ $# -eq 0 ] || [ "$1" != "-x" ]; then
     cd jekyll
     bundle exec jekyll build
+    cd ..
+    ./_tools/jekyll_index.sh
 else
     # skip building, for github actions
     :

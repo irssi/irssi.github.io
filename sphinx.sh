@@ -4,6 +4,14 @@ srcdir="$(dirname "$(realpath "$0")")"
 
 . ./_conf.env
 
+if [ $# -gt 0 ] && [ "$1" = "-no-help" ]; then
+    shift
+    NO_HELP=1
+    VERS="$(echo "$VERS"|grep :dev:)"
+else
+    NO_HELP=0
+fi
+
 cd "$srcdir"
 
 if [ -d local/lib/perl5 ]; then
@@ -71,31 +79,39 @@ for vtn in $VERS; do
         cp -a sphinx _tmp/sphinx-for-"$tag"
         cd _tmp/sphinx-for-"$tag"
 
-        irssi_src="$srcdir"/_tmp/irssi-"$tag"
-        rm -fr "$irssi_src" || :
-        git clone --no-local "$irssi_src_orig" "$irssi_src" && git -C "$irssi_src" checkout "$tag"
-        mkdir -p "$irssi_src"/utils
-        cp "$irssi_src_orig"/utils/syntax.pl "$irssi_src"/utils
-        perl "$srcdir"/_tools/help2md.pl "$irssi_src" tmp-"$tag"
-        rm -fr "$irssi_src"
-
-        rm -fr documentation/help || :
-        if [ "$ver" = "dev" ]; then
-            mv tmp-"$tag"/documentation/help documentation
+        if [ $NO_HELP -eq 1 ]; then
+            : # skip building help, for quick preview only
         else
-            sed -i -e "s|/documentation/help/|/documentation/help/$ver/|g" tmp-"$tag"/documentation/help/*.md
-            mkdir -p documentation/help
-            mv tmp-"$tag"/documentation/help documentation/help/"$ver"
-            sed -i -e "s|<help/\\([^/]*/\\)\\?index>\$|<help/$ver/index>|" documentation/index.md
-        fi
+            irssi_src="$srcdir"/_tmp/irssi-"$tag"
+            rm -fr "$irssi_src" || :
+            git clone --no-local "$irssi_src_orig" "$irssi_src" && git -C "$irssi_src" checkout "$tag"
+            mkdir -p "$irssi_src"/utils
+            cp "$irssi_src_orig"/utils/syntax.pl "$irssi_src"/utils
+            perl "$srcdir"/_tools/help2md.pl "$irssi_src" tmp-"$tag"
+            rm -fr "$irssi_src"
 
-        rm -fr tmp-"$tag"
+            rm -fr documentation/help || :
+            if [ "$ver" = "dev" ]; then
+                mv tmp-"$tag"/documentation/help documentation
+            else
+                sed -i -e "s|/documentation/help/|/documentation/help/$ver/|g" tmp-"$tag"/documentation/help/*.md
+                mkdir -p documentation/help
+                mv tmp-"$tag"/documentation/help documentation/help/"$ver"
+                sed -i -e "s|<help/\\([^/]*/\\)\\?index>\$|<help/$ver/index>|" documentation/index.md
+            fi
+
+            rm -fr tmp-"$tag"
+        fi
 
         if [ "$ver" = "dev" ]; then
             rsync -aC _overlay/documentation/ documentation/
             find . -name \*.md -exec perl "$srcdir"/_tools/ascidia_prerender.pl {} +
 
-            rm -fr "$srcdir"/_build/main || :
+            if [ $NO_HELP -eq 1 ]; then
+                : # skip cleaning build folder, for quick preview only
+            else
+                rm -fr "$srcdir"/_build/main || :
+            fi
             # BASEURL for sitemap
             { BASEURL=$BASEURL$ABS_BASE EDIT_LINK=$EDIT_LINK FORCE_COLOR=1 make "$SPHINXTYPE" BUILDDIR="$srcdir"/_build/main 2>&1 >&3 | sed -e "s|^|[main:E] |" >&2; } 3>&1 | sed -e "s|^|[main:O] |" &
 
@@ -104,9 +120,13 @@ for vtn in $VERS; do
             sphinxopts_rel="-D release=$ver"
         fi
 
-        rm -fr "$srcdir"/_build/"$ver" || :
-        VER="$ver" PRJ="$prj" VERS="$VERS" STABLE="$STABLE" FORCE_COLOR=1 make "$SPHINXTYPE" SPHINXOPTS="${sphinxopts_rel} -D project=$prj" BUILDDIR="$srcdir"/_build/"$ver"
-        find "$srcdir"/_build/"$ver"/"$SPHINXTYPE"/documentation/help -type f -exec sed -i -e 's|\(- '"$prj"' '"$ver"'\)\(</title>\)|\1 help page\2|' {} +
+        if [ $NO_HELP -eq 1 ]; then
+            : # skip building version specific editions, for quick preview only
+        else
+            rm -fr "$srcdir"/_build/"$ver" || :
+            VER="$ver" PRJ="$prj" VERS="$VERS" STABLE="$STABLE" FORCE_COLOR=1 make "$SPHINXTYPE" SPHINXOPTS="${sphinxopts_rel} -D project=$prj" BUILDDIR="$srcdir"/_build/"$ver"
+            find "$srcdir"/_build/"$ver"/"$SPHINXTYPE"/documentation/help -type f -exec sed -i -e 's|\(- '"$prj"' '"$ver"'\)\(</title>\)|\1 help page\2|' {} +
+        fi
 
         if [ "$ver" != "dev" ]; then
             sed -i -e "s|<help/\\([^/]*/\\)\\?index>\$|<help/index>|" documentation/index.md

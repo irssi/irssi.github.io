@@ -41,11 +41,12 @@ This builds the website, and the help for all versions specified in
 for a successful build.
 
 ```
-./make_help_build.sh
+./sphinx.sh
 ./jekyll.sh
-./jekyll_index.sh
 ./merge_pages.sh
 ```
+
+To skip building the help, use the `-no-help` flag.
 
 ### Serve website
 

@@ -73,15 +73,15 @@ jobs:
           restore-keys: |
             issue_cache-
       - run: perl _tools/issues_titles.pl
-      - run: bash -x ./make_help_build.sh
-      - run: bash -x ./jekyll.sh -x
+      - run: ./sphinx.sh
+      - run: ./jekyll.sh -x
       - uses: actions/jekyll-build-pages@v1
         with:
           source: jekyll
           destination: jekyll/_site
           future: true
-      - run: bash -x ./merge_pages.sh
-      - run: bash -x ./jekyll_index.sh -x
+      - run: ./merge_pages.sh
+      - run: ./_tools/jekyll_index.sh -x
       - name: Upload Pages artifact
         uses:  actions/upload-pages-artifact@v0
         with:
