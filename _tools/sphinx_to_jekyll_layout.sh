@@ -28,7 +28,7 @@ s{(<title>).*?(</title>)}{${1}{%
         %}{{title}}${2}} or die;
 
 # add compatibility style sheet
-s{<link rel="stylesheet".*?/theme_tweak.css".*?>\n\K}{    <link rel="stylesheet" href="../assets/css/compat.css" />
+s{<link rel="stylesheet".*?/theme_tweak.css".*?>\n\K}{    <link rel="stylesheet" href="../_static/compat.css" />
 } or die;
 
 # create link to current page
@@ -104,7 +104,7 @@ s{(<div class="left-details">).*?(</div>)}{${1}            All the content of th
             endif %}
 ${2}}s or die;
 
-s{(</body>)}{<script src="{{ site.baseurl }}/assets/js/anchor.js"></script>
+s{(</body>)}{<script src="{{ site.baseurl }}/_static/anchor.js"></script>
 <script>
   anchors.options = {
     icon: "¶",

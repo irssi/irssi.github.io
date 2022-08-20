@@ -23,14 +23,14 @@ a[title^="Permalink to this"]::after { content: "¶" }
     width: 100%;
     max-width: 291px;
     height: 250px;
-    background-image: url(../assets/irssi2017.jpg);
+    background-image: url(irssi2017.jpg);
+    filter: invert() hue-rotate(90deg);
     background-repeat: no-repeat;
     background-position: 5% 95%;
     background-size: cover;
     border: 5px solid black;
     box-shadow: 0px 0px 5px black, inset 0 0 10px white;
     border-radius: 10px;
-    transition-duration: 1s;
 }
 
 .search .context br + br + br {
@@ -152,9 +152,15 @@ img[src*="_dark."] {
 body[data-theme=dark] object#fig_break_wide {
     filter: invert();
 }
+body[data-theme=dark] .welcome-img {
+    filter: contrast(80%);
+}
 @media (prefers-color-scheme: dark) {
     body:not([data-theme=light]) object#fig_break_wide {
 	filter: invert();
+    }
+    body:not([data-theme=light]) .welcome-img {
+	filter: contrast(80%);
     }
 }
 

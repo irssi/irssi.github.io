@@ -25,11 +25,14 @@ rm -fr _tmp/site || :
 [ $NO_HELP -eq 1 ] || [ -d _build/dev/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
 cp -a jekyll/_site _tmp/site
 
-( cd _tmp/site && rm -v $(grep -FxRl '# sphinx') )
-# need to investigate...
 OIFS=$IFS
 IFS=$NL
-fix_source_link=$(grep -FRl '/tree/gh-pages/' _tmp/site)
+clean_placeholder=$(grep -FxRl '# sphinx' _tmp/site || :)
+if [ -n "$clean_placeholder" ]; then
+    rm -v $clean_placeholder
+fi
+# need to investigate...
+fix_source_link=$(grep -FRl '/tree/gh-pages/' _tmp/site || :)
 if [ -n "$fix_source_link" ]; then
     sed -i -e 's|/tree/gh-pages/|/tree/main/jekyll/|g' $fix_source_link
 fi
