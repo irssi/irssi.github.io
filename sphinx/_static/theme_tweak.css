@@ -76,6 +76,12 @@ a[title^="Permalink to this"]::after { content: "¶" }
     }
 }
 
+@media (max-height: 30em) and (max-width: 67em) {
+    .mobile-header {
+	height: calc(var(--header-height) / 2);
+    }
+}
+
 .announcement-content p {
     white-space: normal;
 }
