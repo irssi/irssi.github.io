@@ -56,6 +56,26 @@ a[title^="Permalink to this"]::after { content: "¶" }
     }
 }
 
+@media (max-height: 45em) {
+    .sidebar-sticky {
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: var(--color-foreground-border) transparent;
+	scroll-behavior: smooth;
+    }
+    .sidebar-sticky::-webkit-scrollbar {
+	width: 0.25rem;
+	height: 0.25rem;
+    }
+    .sidebar-sticky::-webkit-scrollbar-thumb {
+	background-color: var(--color-foreground-border);
+	border-radius: 0.125rem;
+    }
+    .sidebar-scroll {
+	overflow: initial;
+    }
+}
+
 .announcement-content p {
     white-space: normal;
 }
@@ -79,6 +99,7 @@ a[title^="Permalink to this"]::after { content: "¶" }
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 @media (max-width: 67em) {
