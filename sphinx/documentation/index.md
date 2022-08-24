@@ -9,5 +9,6 @@ manual/index
 qna/index
 Built-in help <help/index>
 Settings <settings>
+scripting
 Security information <../security>
 :::
