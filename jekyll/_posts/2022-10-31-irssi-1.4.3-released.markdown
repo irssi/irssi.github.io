@@ -1,0 +1,14 @@
+---
+layout: post
+title: "Irssi 1.4.3 Released"
+---
+
+Irssi 1.4.3 has been released!
+
+Includes the following important fix:
+
+- do not freeze-crash Irssi when using Alt+arrows
+
+Please update!
+
+The Irssi Team.
