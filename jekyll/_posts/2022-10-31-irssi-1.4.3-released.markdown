@@ -9,6 +9,6 @@ Includes the following important fix:
 
 - do not freeze-crash Irssi when using Alt+arrows
 
-Please update!
+Please [update](/download)!
 
 The Irssi Team.

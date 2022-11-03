@@ -13,6 +13,6 @@ Includes the following fixes:
 - compile fixes with Meson 0.60 
 - compile fixes with Perl 5.36
 
-Please update!
+Please [update](/download)!
 
 The Irssi Team.
