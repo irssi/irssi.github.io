@@ -30,6 +30,10 @@ Some more details can be found in the [INSTALL](https://github.com/irssi/irssi/b
 
 Many distributions have an Irssi package! Search for `irssi` in your package manager of choice.
 
+### Windows
+
+If you want to use Irssi on Windows, you can do so either through [Cygwin](https://www.cygwin.com/install.html) (search for and enable irssi in the "Cygwin Setup - Select Packages" screen) or with Microsoft's Linux VM [WSL](https://learn.microsoft.com/en-us/windows/wsl/).
+
 ## Binary packages
 
 The [openSUSE Build Service](https://build.opensuse.org/) is creating binary builds for popular Linux distributions (Debian, Fedora). These can be installed with root permissions using the distribution package manager.
