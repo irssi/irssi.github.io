@@ -1026,7 +1026,7 @@
  <path d="m283.19 37.927h754.21" fill="none" stroke="#800000" stroke-width="4"/>
  <text x="449.41489" y="32.559654" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="17.333px" style="line-height:1.25" xml:space="preserve"><tspan x="247.22479" y="32.559654" fill="#800000" text-align="end" text-anchor="end">topic of active window</tspan></text>
  <path d="m432.53 478.21h38.991" fill="none" stroke="#800000" stroke-width="3"/>
- <text x="426.73465" y="431.87015" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="14.667px" style="line-height:1.25" xml:space="preserve"><tspan x="247.82304" y="431.87015" fill="#800000" font-size="14.667px" text-align="end" text-anchor="end">nick mode on the server</tspan></text>
+ <text x="426.73465" y="431.87015" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="14.667px" style="line-height:1.25" xml:space="preserve"><tspan x="247.82304" y="431.87015" fill="#800000" font-size="14.667px" text-align="end" text-anchor="end">user mode on the server</tspan></text>
  <path d="m719.06 476.75h266.93" fill="none" stroke="#800000" stroke-width="3"/>
  <text x="340.08469" y="352.29935" font-family="SFMono-Regular, Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace" font-size="14.667px" style="line-height:1.25" xml:space="preserve"><tspan x="247.77139" y="352.29935" fill="#800000" font-size="14.667px" text-align="end" text-anchor="end">channel mode</tspan></text>
  <g transform="translate(23.482 .52452)" fill="none" stroke="#800000">
