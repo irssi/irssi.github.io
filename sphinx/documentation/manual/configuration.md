@@ -34,3 +34,6 @@ then `/TOGGLE` behaves exactly like `/SET`.
 
 Remember that changes are not saved until you use `/SAVE`, or until
 the periodic auto-save, or on `/QUIT` when auto-save is enabled.
+
+For a complete documentation of the available settings, refer to the
+[Settings Documentation](../settings.md).
