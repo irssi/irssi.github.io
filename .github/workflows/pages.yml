@@ -1,6 +1,8 @@
 
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
   pages: write
   id-token: write
 
@@ -73,6 +75,8 @@ jobs:
           restore-keys: |
             issue_cache-
       - run: perl _tools/issues_titles.pl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: ./sphinx.sh
       - run: ./jekyll.sh -x
       - uses: actions/jekyll-build-pages@v1

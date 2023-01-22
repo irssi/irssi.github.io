@@ -9,7 +9,8 @@ use FindBin;
 my $issue_file = "$FindBin::Bin/gh_issues.yml";
 my $cache_file2 = "$FindBin::Bin/.issue_cache.sto";
 
-my $github = Net::GitHub->new();
+my $github = Net::GitHub->new(
+    $ENV{GITHUB_TOKEN} ? (access_token => $ENV{GITHUB_TOKEN}) : ());
 $github->set_default_user_repo('irssi', 'irssi');
 my $issue = $github->issue;
 my $cache;
