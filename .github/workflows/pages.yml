@@ -36,7 +36,7 @@ jobs:
         with:
           repository: ailin-nemui/Ascidia
           path: Ascidia
-      - uses: actions/setup-python@v3
+      - uses: actions/setup-python@v4
       - name: cache python
         uses: actions/cache@v3
         with:
@@ -53,7 +53,7 @@ jobs:
       - name: check Perl ver
         id: perl-ver
         run: |
-          echo ::set-output name=perl_version::$(perl -e'print $^V')
+          echo perl_version=$(perl -e'print $^V') >> $GITHUB_OUTPUT
       - name: cache perl
         uses: actions/cache@v3
         with:
@@ -93,5 +93,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        with:
-          emit_telemetry: false
