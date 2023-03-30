@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Irssi 1.4.4 Released"
+---
+
+Irssi 1.4.4 has been released!
+
+Includes the following important fix:
+
+- do not crash Irssi when one line is printed as the result of another line being printed
+- also solve a memory leak while printing unformatted lines
+
+Please [update](/download)!
+
+The Irssi Team.
