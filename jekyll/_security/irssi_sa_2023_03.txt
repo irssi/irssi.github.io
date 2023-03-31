@@ -20,5 +20,5 @@ recommended_action: >
   After installing the updated packages, one can issue the /upgrade
   command to load the new binary.
 mitigating_info: >
-  The precondition for this issue is printing a non-formatted line during the printing of a formatted line. This is unlikely to happen without scripts, and is obscured by the slice allocator when using GLib before version 2.77.
+  The precondition for this issue is printing a non-formatted line during the printing of a formatted line. This is unlikely to happen without scripts, and is obscured by the slice allocator when using GLib before version 2.75.
 ---
