@@ -1,5 +1,6 @@
 ---
 name: IRSSI-SA-2023-03
+release_date: 2023-03-31
 bugs:
   -
     cve: CVE-2023-29132
