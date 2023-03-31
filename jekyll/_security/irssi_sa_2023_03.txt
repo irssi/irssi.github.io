@@ -2,7 +2,7 @@
 name: IRSSI-SA-2023-03
 bugs:
   -
-    cve: ~
+    cve: CVE-2023-29132
     cwe: CWE-416
     exploitable_by: local (remote)
     affected_versions:
