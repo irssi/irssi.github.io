@@ -951,7 +951,7 @@ See the [appendix](#a-credits) for credits and license information of this docum
 
   Try to choose better the window where we print when matching by level and multiple windows have a match. Should fix problems with query windows with a default msgs window + /SET window_check_level_first ON.
 
-  Wouter Coekaerts has made a nice explanation about this, see <<http://wouter.coekaerts.be/site/irssi/wclf>>
+  Wouter Coekaerts has made a nice explanation about this, see <<http://wouter.coekaerts.be/irssi/wclf>>
 
 (window_default_hidelevel)=
 `window_default_hidelevel` **`HIDDEN`**
