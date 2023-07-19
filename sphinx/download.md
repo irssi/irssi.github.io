@@ -5,7 +5,8 @@ Irssi runs on Unix-like systems. If you download the source code, you have to co
 Current release source code download:
 
 Download: https://codeberg.org/irssi/irssi/releases/download/1.4.4/irssi-1.4.4.tar.xz  
-Signature: https://codeberg.org/irssi/irssi/releases/download/1.4.4/irssi-1.4.4.tar.xz.asc
+Signature: https://codeberg.org/irssi/irssi/releases/download/1.4.4/irssi-1.4.4.tar.xz.asc  
+**Note.** Apply [perl-ntype.patch](https://codeberg.org/irssi/irssi/releases/download/1.4.4/perl-ntype.patch) when building Irssi with Perl 5.37 or later. Otherwise some script functions will be broken at run-time due to a change in Perl's ExtUtils::ParseXS. See <a href="https://github.com/irssi/irssi/pull/1474" title="fix usage of $type in ExtUtils::ParseXS 3.50">#1474</a>
 
 You should verify the signature file using `gpg --verify` to make sure that the download was not tampered with.
 
