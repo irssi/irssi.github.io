@@ -51,10 +51,7 @@ however it is also in low maintenance mode.
 
       /py exec import irssi;help(irssi.Window)
 
-- [Hello.py sample script](https://github.com/irssi-import/irssi-python/blob/py3/scripts/hello.py)
-
-  there are more sample scripts but only the hello script has been
-  ported to Python 3 so far.
+- [Sample scripts](https://github.com/irssi-import/irssi-python/blob/py3/scripts)
 
 ## Irssi Tcl scripts
 
