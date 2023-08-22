@@ -2,7 +2,7 @@
 
 ## New to IRC
 
-Internet Relay Chat was created in 1988 and has hardly changed. It can be used to exchange text messages (one message = single line) with other people, either privately (called query, PM, private message, MSG) or in a room (channel). Pictures are shared by uploading them to a temporary host like https://uguu.se/ and then pasting the HTTP links. Code snippets or longer texts are shared by pasting them to a Pastebin like https://paste.opensuse.org/ and then sharing the HTTP link.
+Internet Relay Chat was created in 1988 and has hardly changed. It can be used to exchange text messages (one message = single line) with other people, either privately (called query, PM, private message, MSG) or in a room (channel). Pictures are shared by uploading them to a temporary host like https://litterbox.catbox.moe/ and then pasting the HTTP links. Code snippets or longer texts are shared by pasting them to a Pastebin like https://paste.opensuse.org/ and then sharing the HTTP link.
 
 IRC does not have message history. You can only receive replies while your computer is turned on and connected to the channel you want to follow. Some people run their IRC programs on remote servers for that reason.
 
