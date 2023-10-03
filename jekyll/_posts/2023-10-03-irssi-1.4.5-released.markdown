@@ -1,0 +1,18 @@
+---
+layout: post
+title: "Irssi 1.4.5 Released"
+---
+
+Irssi 1.4.5 has been released!
+
+Includes the following fixes:
+
+- Fix for Perl scripts not working on Perl 5.37 or later
+- Workaround for Perl 5.38.0 breaking the program locale and rendering of some unicode characters
+- Document some workarounds for building with meson on Apple (see [INSTALL](https://codeberg.org/irssi/irssi/src/tag/1.4.5/INSTALL#L149))
+
+If you are not affected by these issues, the update is not strictly necessary.
+
+[Download page](/download)
+
+The Irssi Team.
