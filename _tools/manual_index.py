@@ -13,6 +13,7 @@ from sphinx.search import IndexBuilder
 import myst_parser
 from myst_parser.mdit_to_docutils.base import DocutilsRenderer
 from myst_parser.parsers.mdit import create_md_parser
+from myst_parser.mdit_to_docutils.base import make_document
 from myst_parser.config.main import read_topmatter
 from myst_parser.config.main import MdParserConfig
 
@@ -76,8 +77,9 @@ class ManualIndex:
                     title = meta['title']
                 elif 'name' in meta:
                     title = meta['name']
-                doctree = docutils.utils.new_document(source)
+                doctree = make_document(source)
                 parser = create_md_parser(self.mconfig, DocutilsRenderer)
+                doctree.settings.__dict__["myst_suppress_warnings"] = None
                 parser.options["document"] = doctree
                 parser.render(text)
             # print({'source': source, 'title': title})
