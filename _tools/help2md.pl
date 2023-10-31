@@ -333,11 +333,20 @@ bind_-list
 		    my $res = "## $1 ##
 ";
 		    $in_section = $1;
-		    my @see_also = split " ", $2;
-		    s/,$// for @see_also;
-		    for (@see_also) {
-			$_ = "[$_](/documentation/help/\L$_\E)";
-		    }
+		    my @see_also = split ", ", $2;
+		    @see_also = map {
+			my @words = split " ", $_;
+			if ("\L$words[0]" eq "set" && @words > 1) {
+			    my $anchor = $words[1];
+			    $anchor =~ y/_/-/;
+			    @words = "[@words](/documentation/settings.md#\L$anchor)";
+			} elsif ("\L@words" eq "window log") {
+			    @words = "[@words](/documentation/help/window_logging/)";
+			} else {
+			    $words[0] = "[$words[0]](/documentation/help/\L$words[0]\E)";
+			}
+			$_ = "@words";
+		    } @see_also;
 		    $_ = $res . join ", ", @see_also;
 		}
 		# deindent textual paragraphs (try to keep examples)
