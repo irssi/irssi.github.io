@@ -6,7 +6,7 @@ Current release source code download:
 
 Download: https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz  
 Signature: https://codeberg.org/irssi/irssi/releases/download/1.4.5/irssi-1.4.5.tar.xz.asc  
-
+**Note.** Apply [perl-again.patch](https://codeberg.org/irssi/irssi/releases/download/1.4.5/perl-again.patch) when building Irssi with Perl 5.37 or later. Otherwise Irssi's locale/unicode handling may break due to a bug in Perl. See <a href="https://github.com/Perl/perl5/issues/21366" title="When embedding Perl in C, the locale is switched to C/ASCII">Perl/perl5#21366</a>
 
 You should verify the signature file using `gpg --verify` to make sure that the download was not tampered with.
 
