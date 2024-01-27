@@ -87,9 +87,9 @@ jobs:
       - run: ./merge_pages.sh
       - run: ./_tools/jekyll_index.sh -x
       - name: Upload Pages artifact
-        uses:  actions/upload-pages-artifact@v0
+        uses:  actions/upload-pages-artifact@v3
         with:
           path: gh-pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
