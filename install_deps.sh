@@ -11,7 +11,7 @@ patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__
 
 python -m pip install -e ./furo
 
-PERL5LIB="$(pwd)/local/lib/perl5/$(perl -e'print substr $^V,1')${PERL5LIB+:}$PERL5LIB"
+PERL5LIB="$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB"
 export PERL5LIB
 cpm install --cpanfile=./_tools/cpanfile
 
