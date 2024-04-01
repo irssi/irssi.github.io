@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+python -m venv local
+. ./local/bin/activate
+
 python -m pip install -r sphinx/requirements.txt
 
 patch --no-backup-if-mismatch -r - -R -f -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch || :

@@ -3,6 +3,10 @@ set -eu
 
 . ./_conf.env
 
+if [ -f local/bin/activate ]; then
+    . ./local/bin/activate
+fi
+
 [ -d _build/main/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
 [ -d jekyll/_site ] || { echo "The Jekyll part of the website was not built! Cannot continue"; exit 1; }
 

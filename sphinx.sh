@@ -18,6 +18,9 @@ if [ -d local/lib/perl5 ]; then
     PERL5LIB="$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB"
     export PERL5LIB
 fi
+if [ -f local/bin/activate ]; then
+    . ./local/bin/activate
+fi
 
 PATH="$(pwd)/Ascidia:$PATH"
 export PATH
