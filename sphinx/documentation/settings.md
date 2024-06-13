@@ -785,6 +785,8 @@ See the [appendix](#a-credits) for credits and license information of this docum
 
 : Do not show the NAMES list on join if there are more than show_names_on_join_limit users in the channel.
 
+  Set to -1 to disable.
+
   Added in Irssi 1.3
 
 (show_extended_join)=
