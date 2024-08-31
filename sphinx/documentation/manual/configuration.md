@@ -8,7 +8,7 @@ and they stay there even if `/SAVE` is used. Comments are the lines
 starting with `#` character. Any errors in config file are displayed
 at startup.
 
-Irssi uses it's own config library for handling the config file.
+Irssi uses its own config library for handling the config file.
 The format is pretty much the same as in libPropList and should be
 easily understandable.
 
