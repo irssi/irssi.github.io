@@ -109,7 +109,7 @@ See the [appendix](#a-credits) for credits and license information of this docum
 (dcc_autoget_masks)=
 `dcc_autoget_masks` **` `**
 
-: Set dcc_autoget_masks with user masks to automatically accept files sent to you via DCC. When unset, Irssi's auto-get settings will work for everyone who attempts to send you files.
+: Set dcc_autoget_masks with user masks to automatically accept files sent to you via DCC. Masks must be separated by spaces. When unset, Irssi's auto-get settings will work for everyone who attempts to send you files.
 
   This setting is only significant if dcc_autoget is ON.
 
