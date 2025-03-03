@@ -1,4 +1,4 @@
 linkify-it-py==2.0.0
 sphinx-sitemap==2.2.0
-myst-parser==1.0.0
+myst-parser==0.18.1
 sphinx-design==0.2.0
