@@ -1,0 +1,15 @@
+From https://github.com/executablebooks/MyST-Parser/issues/760#issuecomment-1951013994
+
+diff --git a/myst_parser/mdit_to_docutils/base.py b/myst_parser/mdit_to_docutils/base.py
+index 4a02459..cee67c9 100644
+--- a/myst_parser/mdit_to_docutils/base.py
++++ b/myst_parser/mdit_to_docutils/base.py
+@@ -955,7 +955,7 @@ class DocutilsRenderer(RendererProtocol):
+             if "classes" in conversion:
+                 ref_node["classes"].extend(conversion["classes"])
+ 
+-        ref_node["refuri"] = escapeHtml(uri)
++        ref_node["refuri"] = uri
+         if implicit_text is not None:
+             with self.current_node_context(ref_node, append=True):
+                 self.current_node.append(nodes.Text(implicit_text))

@@ -9,6 +9,9 @@ python -m pip install -r sphinx/requirements.txt
 patch --no-backup-if-mismatch -r - -R -f -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch || :
 patch -d "$(python -c 'import sphinx.builders.html;print(sphinx.builders.html.__path__[0])')" -p4 < patches/9731.patch
 
+patch --no-backup-if-mismatch -r - -R -f -d "$(python -c 'import myst_parser.mdit_to_docutils;print(myst_parser.mdit_to_docutils.__path__[0])')" -p3 < patches/760.patch || :
+patch -d "$(python -c 'import myst_parser.mdit_to_docutils;print(myst_parser.mdit_to_docutils.__path__[0])')" -p3 < patches/760.patch
+
 python -m pip install -e ./furo
 
 PERL5LIB="$(pwd)/local/lib/perl5${PERL5LIB+:}$PERL5LIB"

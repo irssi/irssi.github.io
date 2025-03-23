@@ -11,7 +11,7 @@ diff --git a/sphinx/builders/html/__init__.py b/sphinx/builders/html/__init__.py
 index 6e732538b60..af71fbe5c89 100644
 --- a/sphinx/builders/html/__init__.py
 +++ b/sphinx/builders/html/__init__.py
-@@ -995,7 +995,7 @@ def handle_page(self, pagename: str, addctx: Dict, templatename: str = 'page.htm
+@@ -1036,7 +1036,7 @@ def handle_page(self, pagename: str, addctx: Dict, templatename: str = 'page.htm
  
          if self.config.html_baseurl:
              ctx['pageurl'] = posixpath.join(self.config.html_baseurl,
