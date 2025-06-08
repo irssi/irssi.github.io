@@ -12,4 +12,4 @@ proxychains4 irssi
 
 Now your connections will go through the Proxy configured in ProxyChains-NG (Tor by default).
 
-IRC networks may have different requirements to be able to connect via Tor. For the Libera Chat network, you will first need to set up [](certfp) using a clearnet connection, and then connect to their [Onion Service](https://libera.chat/guides/connect#accessing-liberachat-via-tor) `palladium.libera.chat`.
+IRC networks may have different requirements to be able to connect via Tor. For the Libera Chat network, you will first need to set up [](certfp) using a clearnet connection, and then connect to their [Onion Service](https://libera.chat/guides/connect#accessing-liberachat-via-tor) `palladium.libera.chat`. More detailed instructions can be found here => https://github.com/shabble/irssi-docs/wiki/liberator
