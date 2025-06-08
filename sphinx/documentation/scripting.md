@@ -42,7 +42,7 @@ things, but their quality may vary.
 The Python module is supposed to be modeled after the Perl scripting,
 however it is also in low maintenance mode.
 
-- [Module documentation](https://github.com/irssi-import/irssi-python/blob/py3/docs/irssi-python.html)
+- [Module documentation](https://irssi-import.github.io/irssi-python/irssi-python.html)
 
   the most official Python documentation produced so far is this
   auto-generated module documentation.
