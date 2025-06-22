@@ -133,3 +133,8 @@ You can enhance your Irssi by installing scripts. Many Perl scripts written by o
 
 Most of them should be compatible with Irssi 1.4 (but some may not, also see the Full Change log for some incompatible ones)
 
+## About Themes
+
+Irssi's look can be thoroughly changed with themes. Many themes created by other Irssi users can be found on https://themes.irssi.org/
+
+If you want to modify the look of Irssi yourself, the *default* theme which can be found in your `~/.irssi` folder is a good starting point. It also has a few comments explaining what some of the abstracts are used for
