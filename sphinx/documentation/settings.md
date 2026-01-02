@@ -1783,32 +1783,35 @@ From <https://irssi.org/documentation/formats>:
 
 Irssi's colors that you can use in text formats, hilights, etc. :
 
-|      |      |      | text     | text         | background |
-| ---- | ---- | ---- | -------- | ------------ | ---------- |
-|  %k  |  %K  |  %0  | black    | dark grey    | black      |
-|  %r  |  %R  |  %1  | red      | bold red     | red        |
-|  %g  |  %G  |  %2  | green    | bold green   | green      |
-|  %y  |  %Y  |  %3  | yellow   | bold yellow  | yellow     |
-|  %b  |  %B  |  %4  | blue     | bold blue    | blue       |
-|  %m  |  %M  |  %5  | magenta  | bold magenta | magenta    |
-|  %p  |  %P  |      | magenta  | (think: purple) |         |
-|  %c  |  %C  |  %6  | cyan     | bold cyan    | cyan       |
-|  %w  |  %W  |  %7  | white    | bold white   | white      |
+| text  | background | color    |   | text | background | color        |
+| ----- | ---------- | -------- | - | ---- | ---------- | ------------ |
+|  %k   |  %0        | black    |   |  %K  |  %x08      | dark gray    |
+|  %r   |  %1        | red      |   |  %R  |  %x0C      | bright red   |
+|  %g   |  %2        | green    |   |  %G  |  %x0A      | bright green |
+|  %y   |  %3        | brown    |   |  %Y  |  %x0E      | yellow       |
+|  %b   |  %4        | blue     |   |  %B  |  %x09      | bright blue  |
+|  %m   |  %5        | purple   |   |  %M  |  %x0D      | magenta      |
+|  %p   |            | purple   |   |  %P  |            | magenta      |
+|  %c   |  %6        | teal     |   |  %C  |  %x0B      | cyan         |
+|  %w   |  %7        | gray     |   |  %W  |  %x0F      | white        |
 
-|      |      |      |                                      |
-| ---- | ---- | ---- | ------------------------------------ |
-|  %n  |  %N  |      | Changes the color to default color, removing all other coloring and formatting. %N is always the terminal's default color. %n is usually too, except in themes it changes to previous color, ie. hello = %Rhello%n and %G{hello} world would print hello in red, and %n would turn back into %G making world green. |
-|  %F  |      |      | Blinking on/off (think: flash)       |
-|  %U  |      |      | Underline on/off                     |
-|  %8  |      |      | Reverse on/off                       |
-|  %9  |  %_  |      | Bold on/off                          |
-|  %I  |      |      | Italic on/off                        |
-|  %:  |      |      | Insert newline                       |
-|  %\| |      |      | Marks the indentation position       |
-|  %#  |      |      | Monospace font on/off (useful with lists and GUI) |
-|  %%  |      |      | A single %                           |
-|  %XAB |     |  %xAB | Color from extended plane (A=1-7, B=0-Z) |
-|  %ZAABBCC | |  %zAABBCC | HTML color (in hex notation)    |
+| text  | background | color    |
+| ----- | ---------- | -------- |
+| %XAB | %xAB | Color from extended plane (A=1-7, B=0-Z) |
+| %ZRRGGBB | %zRRGGBB | HTML color (in hex notation) |
+
+| text |      | style                                |
+| ---- | ---- | ------------------------------------ |
+|  %n  |  %N  | Changes the color to default color, removing all other coloring and formatting. %N is always the terminal's default color. %n is usually too, except in themes it changes to previous color, ie. hello = %Rhello%n and %G{hello} world would print hello in red, and %n would turn back into %G making world green. |
+|  %F  |      | Blinking on/off (think: flash)       |
+|  %U  |      | Underline on/off                     |
+|  %8  |      | Reverse on/off                       |
+|  %9  |  %_  | Bold on/off                          |
+|  %I  |      | Italic on/off                        |
+|  %:  |      | Insert newline                       |
+|  %\| |      | Marks the indentation position       |
+|  %#  |      | Monospace font on/off (useful with lists and GUI) |
+|  %%  |      | A single %                           |
 
 In .theme files %n works a bit differently. See default.theme for more
 information.
