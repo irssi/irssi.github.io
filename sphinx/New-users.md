@@ -12,6 +12,8 @@ Each network contains many channels, rooms that are often dedicated to discussin
 
 There is a rather large IRC network catering to free and open-source software and peer directed projects at https://libera.chat/ and a smaller one at https://www.oftc.net/ -- many free software projects still have support channels on these IRC networks (although some have moved to Matrix or proprietary platforms like Discord).
 
+Be aware that on some IRC networks, when you join a channel, everyone in the channel can see your public IP address. For IP privacy, some networks support hiding it, usually by registering. You can look at the guides for [Libera Chat](https://libera.chat/guides/cloaks), [OFTC](https://www.oftc.net/UserCloaks/), [IRCnet](https://www.ircnet.com/sasl), [Undernet](https://undernet.org/docs/the-undernet-primer#d.2), or [Quakenet](http://quakenet.org/help/96) to see how to do that for some networks.
+
 ## First start
 
 After (compiling and) installing Irssi, to start it, open a shell (Terminal) and type:
