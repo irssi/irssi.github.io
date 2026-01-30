@@ -106,6 +106,9 @@ IFS=$OIFS
 
 rsync -aC _tmp/site/ gh-pages/
 rm -fr _tmp/site
+
+# install GPG wkd key
+rsync -aC overlay/_well-known/ gh-pages/.well-known/
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
    <sitemap>
