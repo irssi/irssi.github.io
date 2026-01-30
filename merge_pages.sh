@@ -23,14 +23,18 @@ rm -fr _tmp/site || :
 [ -d jekyll/_site ] || { echo "The Jekyll part of the website was not built! Cannot continue"; exit 1; }
 [ -d _build/main/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
 [ $NO_HELP -eq 1 ] || [ -d _build/dev/"$SPHINXTYPE" ] || { echo "The Sphinx part of the website was not built! Cannot continue"; exit 1; }
+
+# install the jekyll page
 cp -a jekyll/_site _tmp/site
 
+# remove sphinx placeholder pages from the jekyll installation
 OIFS=$IFS
 IFS=$NL
 clean_placeholder=$(grep -FxRl '# sphinx' _tmp/site || :)
 if [ -n "$clean_placeholder" ]; then
     rm -v $clean_placeholder
 fi
+
 # need to investigate...
 fix_source_link=$(grep -FRl '/tree/gh-pages/' _tmp/site || :)
 if [ -n "$fix_source_link" ]; then
@@ -42,6 +46,7 @@ mv _tmp/site/sitemap.xml _tmp/site/sitemap2.xml
 rm -fr gh-pages || :
 mkdir -p gh-pages
 
+# install the main sphinx page
 rsync -aC _build/main/"$SPHINXTYPE"/ gh-pages/
 if [ $NO_HELP -eq 1 ]; then
     : # skip help versions, for quick preview only
@@ -52,6 +57,7 @@ else
     cp -r _build/dev/"$SPHINXTYPE"/_sources/documentation/help gh-pages/_sources/documentation/
 fi
 
+# install the version-specific help pages
 for vtn in $VERS; do
     tag=$(echo "$vtn" | cut -d: -f3)
     ver=$(echo "$vtn" | cut -d: -f2)
@@ -68,6 +74,7 @@ sed -i \
     -e 's|<loc>'"$BASEURL$ABS_BASE"'en/|<loc>'"$BASEURL$ABS_BASE"'|g' \
     gh-pages/sitemap.xml
 
+# uninclude 404 error page and sphinx genindex
 if [ "$SPHINXTYPE" = "dirhtml" ]; then
     mv gh-pages/404/index.html gh-pages/404.html
     rmdir gh-pages/404
@@ -96,6 +103,7 @@ perl -i -p -e 's{\b(href|src)="([^"]+?)"}{
 s{\b(data-url_root)="[^"]+?"}{$1="'"$ABS_BASE"'/"}g;
 $_="" if / rel="canonical" /' gh-pages/404.html
 
+# replace @@ABS_BASE@@ references used on some pages
 OIFS=$IFS
 IFS=$NL
 fix_base=$(grep -RlF "@@ABS_BASE@@" gh-pages | grep -v '^gh-pages/_sources')
@@ -104,11 +112,14 @@ if [ -n "$fix_base" ]; then
 fi
 IFS=$OIFS
 
+# install jekyll page to the final site
 rsync -aC _tmp/site/ gh-pages/
 rm -fr _tmp/site
 
 # install GPG wkd key
 rsync -aC overlay/_well-known/ gh-pages/.well-known/
+
+# create sitemap consisting of jekyll and sphinx sitemap
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
    <sitemap>
