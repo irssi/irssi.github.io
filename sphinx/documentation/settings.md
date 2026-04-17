@@ -939,7 +939,7 @@ See the [appendix](#a-credits) for credits and license information of this docum
 (window_auto_change)=
 `window_auto_change` **`OFF`**
 
-: Turn this on to automatically switch to newly-created windows. This may cause you to misdirect messages, so be careful.
+: Turn this on to automatically switch to automatically-created windows (for example, incoming queries). This may cause you to misdirect messages, so be careful.
 
 (window_check_level_first)=
 `window_check_level_first` **`OFF`**
