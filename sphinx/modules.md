@@ -5,6 +5,7 @@ These third-party modules come **without any support or warranty** from the Irss
 ## Protocol Modules
 * IRC (built-in)
 * [Matrix](https://codeberg.org/ticho/irssi-matrix/) (under development)
+* [Matrix](https://github.com/pawelb0/matrirc) via matrirc — local IRC server bridging Matrix with E2EE
 * [Rocket.Chat](https://github.com/jajm/irssi-rocketchat) (under development)
 * [ICB](https://github.com/mglocker/irssi-icb)
 * [SILC](http://www.silcnet.org/)
