@@ -53,6 +53,8 @@ Another possibility is to use the `WAIT` command inside the autosendcmd to add a
 /NETWORK MODIFY -autosendcmd "^msg NickServ identify YOURPASSWORD YOURNICK;wait -OFTC 2000" OFTC
 ```
 
+For the identify command most services expect 'nick password'; OFTC expects 'password nick', so make sure before you connect what the nickserv service expects.
+
 ## See also
 
 https://github.com/shabble/irssi-docs/wiki/liberachat  
